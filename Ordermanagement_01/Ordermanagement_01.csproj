@@ -855,6 +855,12 @@
     <Compile Include="Employee\Break_Details.Designer.cs">
       <DependentUpon>Break_Details.cs</DependentUpon>
     </Compile>
+    <Compile Include="Employee\Break_DetailsNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\Break_DetailsNew.Designer.cs">
+      <DependentUpon>Break_DetailsNew.cs</DependentUpon>
+    </Compile>
     <Compile Include="Employee\Chart_Report.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -3096,6 +3102,7 @@
     <EmbeddedResource Include="Employee\Break_Details.resx">
       <DependentUpon>Break_Details.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Employee\Break_DetailsNew.resx" />
     <EmbeddedResource Include="Employee\Chart_Report.resx">
       <DependentUpon>Chart_Report.cs</DependentUpon>
     </EmbeddedResource>

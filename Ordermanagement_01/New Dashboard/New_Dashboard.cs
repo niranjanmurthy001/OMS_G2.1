@@ -709,6 +709,12 @@ namespace Ordermanagement_01.New_Dashboard
                     {
                         case "Start":
                             StartProcess(obj_Order_Details_List);
+
+
+                            foreach (WindowsUIButton button in Window_Ui_Btn_View_List.Buttons)
+                            {
+                                if (button != e.Button) button.Checked = false;
+                            }
                             break;
 
                         case "View":

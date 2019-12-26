@@ -332,7 +332,7 @@ namespace Ordermanagement_01.Employee
                                             {
                                                 if (response2.StatusCode == HttpStatusCode.OK)
                                                 {
-                                                    var result2 = await response2.Content.ReadAsStringAsync();
+                                                    var result2 = await response.Content.ReadAsStringAsync();
                                                     DataTable dtupdate1 = JsonConvert.DeserializeObject<DataTable>(result2);
                                                     if (dtupdate1.Rows.Count > 0)
                                                     {
@@ -438,34 +438,40 @@ namespace Ordermanagement_01.Employee
                             if (dt_Select_Order_Details.Rows.Count > 0)
                             {
                                 StringBuilder bs = new StringBuilder();
-                                bs.AppendLine("ORDER NO #      :" + " " + "" + dt_Select_Order_Details.Rows[0]["Client_Order_Number"].ToString() + "");
-
-                                bs.AppendLine("ADDRESS		   :" + " " + "" + dt_Select_Order_Details.Rows[0]["Address"].ToString() + "");
-                                bs.AppendLine("STATE		   :" + " " + "" + dt_Select_Order_Details.Rows[0]["State"].ToString() + "");
-                                bs.AppendLine("COUNTY		   :" + " " + "" + dt_Select_Order_Details.Rows[0]["County"].ToString() + "");
-                                bs.AppendLine("APN		       :" + " " + "" + dt_Select_Order_Details.Rows[0]["APN"].ToString() + "");
-                                bs.AppendLine("BORROWER NAME   :" + " " + "" + dt_Select_Order_Details.Rows[0]["Borrower_Name"].ToString() + "");
-                                bs.AppendLine("EFFECTIVE DATE  :" + " " + "");
-                                bs.AppendLine(Environment.NewLine);
-                                bs.AppendLine("Names Run	   :" + "" + "");
+                                bs.AppendLine("ORDER NO #                                          :" + " " + "    " + dt_Select_Order_Details.Rows[0]["Client_Order_Number"].ToString() + "");
                                 bs.AppendLine("" + "" + Environment.NewLine);
-                                bs.AppendLine("Legal Reference :" + " " + "" + "" + Environment.NewLine);
-                                bs.AppendLine("Data Depth      :" + " " + "" + "" + Environment.NewLine);
-                                bs.AppendLine("Open Items:" + "" + Environment.NewLine);
-                                bs.AppendLine("Deeds:   " + "" + Environment.NewLine);
+                                bs.AppendLine("ADDRESS                                               :" + " " + "    " + dt_Select_Order_Details.Rows[0]["Address"].ToString() + "");
                                 bs.AppendLine("" + "" + Environment.NewLine);
-                                bs.AppendLine("Mortgages:   " + "" + Environment.NewLine);
+                                bs.AppendLine("STATE                                                   :" + " " + "    " + dt_Select_Order_Details.Rows[0]["State"].ToString() + "");
                                 bs.AppendLine("" + "" + Environment.NewLine);
-                                bs.AppendLine("Judgments/Liens: " + "" + Environment.NewLine);
+                                bs.AppendLine("COUNTY                                                :" + " " + "    " + dt_Select_Order_Details.Rows[0]["County"].ToString() + "");
                                 bs.AppendLine("" + "" + Environment.NewLine);
-                                bs.AppendLine("Additional documents : " + "" + Environment.NewLine);
+                                bs.AppendLine("APN                                                      :" + " " + "    " + dt_Select_Order_Details.Rows[0]["APN"].ToString() + "");
                                 bs.AppendLine("" + "" + Environment.NewLine);
-                                bs.AppendLine("Closed Items:" + "" + Environment.NewLine);
+                                bs.AppendLine("BORROWER NAME                                   :" + " " + "    " + dt_Select_Order_Details.Rows[0]["Borrower_Name"].ToString() + "");
                                 bs.AppendLine("" + "" + Environment.NewLine);
-                                bs.AppendLine("General Comments:" + "" + Environment.NewLine);
+                                bs.AppendLine("EFFECTIVE DATE                                    :" + " " + "    ");
                                 bs.AppendLine("" + "" + Environment.NewLine);
-                                bs.AppendLine("Client instructions/requirements:" + "" + Environment.NewLine);
+                                bs.AppendLine("NAMES RUN                                           :" + "    " + "");
                                 bs.AppendLine("" + "" + Environment.NewLine);
+                                bs.AppendLine("LEGAL REFERENCE                                  :" + " " + "    " + "" + Environment.NewLine);
+                                bs.AppendLine("" + "" + Environment.NewLine);
+                                bs.AppendLine("DATA DEPTH                                          :" + " " + "    " + "" + Environment.NewLine);
+                                bs.AppendLine("" + "" + Environment.NewLine);
+                                bs.AppendLine("OPEN ITEMS                                          :" + "    " + Environment.NewLine);
+                                bs.AppendLine("" + "" + Environment.NewLine);
+                                bs.AppendLine("DEEDS                                                  :" + "    " + Environment.NewLine);
+                                bs.AppendLine("" + "" + Environment.NewLine);
+                                bs.AppendLine("MORTGAGES                                          :" + "    " + Environment.NewLine);
+                                bs.AppendLine("" + "" + Environment.NewLine);
+                                bs.AppendLine("JUDGEMENTS/LIENS                               :" + "    " + Environment.NewLine);
+                                bs.AppendLine("" + "" + Environment.NewLine);
+                                bs.AppendLine("ADDITIONAL DOCUMENTS                       :" + "    " + Environment.NewLine);
+                                bs.AppendLine("" + "" + Environment.NewLine);
+                                bs.AppendLine("CLOSED ITEMS                                      :" + "    " + Environment.NewLine);
+                                bs.AppendLine("" + "" + Environment.NewLine);
+                                bs.AppendLine("GENERAL COMMENTS                              :" + "    " + Environment.NewLine);                                                                
+                                bs.AppendLine("CLIENT INSTRUCTIONS/REQUIREMENTS    :" + "    " + Environment.NewLine);
                                 txt_rich_Note_Details.Text = bs.ToString();
 
                             }

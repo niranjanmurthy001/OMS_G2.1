@@ -76,6 +76,8 @@
             // 
             // txt_rich_Note_Details
             // 
+            this.txt_rich_Note_Details.Appearance.Text.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_rich_Note_Details.Appearance.Text.Options.UseFont = true;
             this.txt_rich_Note_Details.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txt_rich_Note_Details.Location = new System.Drawing.Point(3, 3);
             this.txt_rich_Note_Details.LookAndFeel.SkinName = "Office 2010 Blue";

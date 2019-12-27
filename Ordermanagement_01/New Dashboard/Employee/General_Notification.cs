@@ -9,6 +9,10 @@ using Newtonsoft.Json;
 using Ordermanagement_01.Masters;
 using Ordermanagement_01.Models;
 using System.Net;
+using DevExpress.XtraGrid.Views.Grid;
+using System.Drawing;
+using DevExpress.XtraGrid.Views.Layout;
+using DevExpress.XtraGrid.Views.Base;
 
 namespace Ordermanagement_01.New_Dashboard.Employee
 {
@@ -63,10 +67,22 @@ namespace Ordermanagement_01.New_Dashboard.Employee
         {
             if (e.Column.FieldName == "Message")
             {
-                string msg = advBandedGridView1.GetRowCellValue(advBandedGridView1.FocusedRowHandle, "Message").ToString();
+                string msg = layoutView1.GetRowCellValue(layoutView1.FocusedRowHandle, "Message").ToString();
                 Ordermanagement_01.Employee.Genral_Message_View alertmesgview = new Ordermanagement_01.Employee.Genral_Message_View(null, msg);
                 alertmesgview.Show();
             }
-        }        
+        }
+        private void layoutView1_CustomDrawCardBackground(object sender, DevExpress.XtraGrid.Views.Layout.Events.LayoutViewCustomDrawCardBackgroundEventArgs e)
+        {
+            e.DefaultDraw();
+            LayoutView view = sender as LayoutView;
+            string cliente = view.GetRowCellValue(e.RowHandle, "Message").ToString();
+            Color bgColor = cliente == "S" ? Color.FromArgb(50,Color.Yellow) : Color.FromArgb(50,Color.DeepSkyBlue);
+            Rectangle rect = e.Bounds;
+            rect.Inflate(-1, -1);
+            using (SolidBrush brush = new SolidBrush(bgColor))
+                e.Graphics.FillRectangle(brush, rect);
+            e.Handled = true;
+        }
     }
 }

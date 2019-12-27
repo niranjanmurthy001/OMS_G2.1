@@ -92,11 +92,11 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.gridControlComment, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 24);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 21);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(644, 382);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(644, 385);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // gridControlComment
@@ -110,7 +110,7 @@
             this.repositoryItemHypertextLabel1,
             this.repositoryItemTimeEdit1,
             this.repositoryItemDateEdit1});
-            this.gridControlComment.Size = new System.Drawing.Size(638, 376);
+            this.gridControlComment.Size = new System.Drawing.Size(638, 379);
             this.gridControlComment.TabIndex = 2;
             this.gridControlComment.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.layoutView1});

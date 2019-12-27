@@ -118,37 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <metadata name="defaultLookAndFeel1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>24, 24</value>
-  </metadata>
-  <metadata name="barManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>191, 24</value>
+    <value>17, 17</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>49</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="groupControl1.CaptionImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA68AAAOvAGVvHJJAAAAAmJL
-        R0QAAKqNIzIAAAAHdElNRQfjDAQQLzVOH+bkAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE5LTEyLTA0VDE2
-        OjQ3OjUzKzAwOjAwBxculgAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxOS0xMi0wNFQxNjo0Nzo1MyswMDow
-        MHZKlioAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwaAAACu0lEQVRYR8WXS6iOQRjH
-        PwtyFzZuG+RSYoOUcs1OYcFGSSzIFmWrSCSShUg2RFF0KBZsWaCEYiGEIgvlEkuX/+9r5vQ2Z55n5j19
-        Ok/9+uZ97mdm3nnndDrtZYxC9ovH4rv4Fsb79Ivtv8oiZX8tbosNYkaA8Z1gWzjYDqYrcIvDVtk+iT2N
-        Ajs0hijYPgp8rVybZZuWa/KRlA/FPYNf0p9IAjfqGZpyUg/4WnmoAQPkjTSLcwbpJoufYmJiH6tnaMqk
-        4MtvTqhBrX4ZqdEs8cFpgDW+n8l2SDpI5YEU650GqEVNandeiq/it9PAdtluZhIelQ5SwXeb0wC1qPkC
-        n7+CqfWWYJ3sT1o08FS+a50GqEVNalc1MEF+P8TMJGluBmYH3/G9bIBcp0SfGNZIfFBjiILtVvA16nc3
-        eusZINlo8VycF93NIxkeYDxKXBDPgm/PGyAhrxYn3nvB7t8UYMzO5oS0Xr/YUHEGONNzh8iuxp+0SuPT
-        4m2A8cqGHd9cjr3SFxtYIKfcMTonM6fWazjXyEHuYgOsK6+IxYhGI2kD2LxYchcbOCcn3k+Lq04D1wqx
-        Z2sayMy0qbKWwMtRnIFlimYTWaxwZoCN6MWSu9jAbjkxlRbs5CjpDGDzYmmu2MCQL8GQNsDh4U1htB0J
-        UxmXYLme0dXEUsP8FhwubKK4wY7L74vggvpO8G1H523AaKPGoD5G6dLMl4K7H1c1Tr5acTehdwBFG7eZ
-        JaHaFf1eDuOl+sVWk8OcgdVK4B2l2LicRDmmAUTBVoqnRraBVzIcEN7/BqmtT/7QJoYa1BpwJdsp5V1h
-        3ed7pacG/8z0N/BHD2sEm6OWcY1pj0N0tfH4UZPa3SsWa1LLZ/lezzRwQzpstXnw48vbWrjtchM6I+YF
-        +MyS0LoJty5SCpgqh0uCwwguiimloJz9H5SMURxa4+RyAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <metadata name="richEditBarController1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>316, 24</value>
+    <value>33</value>
   </metadata>
 </root>

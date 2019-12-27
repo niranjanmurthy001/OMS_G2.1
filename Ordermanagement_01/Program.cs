@@ -26,14 +26,22 @@ namespace Ordermanagement_01
 
             // Application.Run(new Reports.BreakIdleReports(1,1));
 
-           // Application.Run(new New_Dashboard.Employee.Dashboard(183,1,"12/13/2019"));
+            // Application.Run(new New_Dashboard.Employee.Dashboard(183,1,"12/13/2019"));
 
 
-      //    Application.Run(new New_Dashboard.New_Dashboard(1,1));
+            //    Application.Run(new New_Dashboard.New_Dashboard(1,1));
+
+            //Application.Run(new New_Dashboard.NewLogin());
+
+
+                Application.Run(new New_Dashboard.Employee.General_Notification());
 
 
 
-               Application.Run(new New_Dashboard.NewLogin());
+
+
+
+
 
             // Application.Run(new Gen_Forms.Login());
 

@@ -1405,6 +1405,7 @@
             this.GridView_General_Updates.Size = new System.Drawing.Size(673, 213);
             this.GridView_General_Updates.TabIndex = 51;
             this.GridView_General_Updates.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView_General_Updates_CellClick);
+            this.GridView_General_Updates.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView_General_Updates_CellContentClick);
             // 
             // dataGridViewTextBoxColumn21
             // 
@@ -4989,7 +4990,7 @@
             this.lbl_All_report_notfound.AutoSize = true;
             this.lbl_All_report_notfound.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_All_report_notfound.ForeColor = System.Drawing.Color.Red;
-            this.lbl_All_report_notfound.Location = new System.Drawing.Point(658, 643);
+            this.lbl_All_report_notfound.Location = new System.Drawing.Point(658, 645);
             this.lbl_All_report_notfound.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_All_report_notfound.Name = "lbl_All_report_notfound";
             this.lbl_All_report_notfound.Size = new System.Drawing.Size(119, 20);
@@ -5004,7 +5005,7 @@
             this.cr_Rework_AllReportsViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.cr_Rework_AllReportsViewer.Cursor = System.Windows.Forms.Cursors.Default;
             this.cr_Rework_AllReportsViewer.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cr_Rework_AllReportsViewer.Location = new System.Drawing.Point(232, 280);
+            this.cr_Rework_AllReportsViewer.Location = new System.Drawing.Point(232, 282);
             this.cr_Rework_AllReportsViewer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cr_Rework_AllReportsViewer.Name = "cr_Rework_AllReportsViewer";
             this.cr_Rework_AllReportsViewer.ShowGroupTreeButton = false;
@@ -5084,7 +5085,7 @@
             this.ddl_Rework_Task.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_Rework_Task.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_Rework_Task.FormattingEnabled = true;
-            this.ddl_Rework_Task.Location = new System.Drawing.Point(985, 147);
+            this.ddl_Rework_Task.Location = new System.Drawing.Point(985, 149);
             this.ddl_Rework_Task.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ddl_Rework_Task.Name = "ddl_Rework_Task";
             this.ddl_Rework_Task.Size = new System.Drawing.Size(164, 27);
@@ -5095,7 +5096,7 @@
             this.lbl_All_Rework_Task.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_All_Rework_Task.AutoSize = true;
             this.lbl_All_Rework_Task.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_All_Rework_Task.Location = new System.Drawing.Point(889, 157);
+            this.lbl_All_Rework_Task.Location = new System.Drawing.Point(889, 159);
             this.lbl_All_Rework_Task.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_All_Rework_Task.Name = "lbl_All_Rework_Task";
             this.lbl_All_Rework_Task.Size = new System.Drawing.Size(35, 19);
@@ -5132,7 +5133,7 @@
             this.ddl_Rework_Subprocess.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_Rework_Subprocess.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_Rework_Subprocess.FormattingEnabled = true;
-            this.ddl_Rework_Subprocess.Location = new System.Drawing.Point(697, 147);
+            this.ddl_Rework_Subprocess.Location = new System.Drawing.Point(697, 149);
             this.ddl_Rework_Subprocess.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ddl_Rework_Subprocess.Name = "ddl_Rework_Subprocess";
             this.ddl_Rework_Subprocess.Size = new System.Drawing.Size(169, 27);
@@ -5143,7 +5144,7 @@
             this.lbl_All_Rework_Subpro.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_All_Rework_Subpro.AutoSize = true;
             this.lbl_All_Rework_Subpro.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_All_Rework_Subpro.Location = new System.Drawing.Point(582, 150);
+            this.lbl_All_Rework_Subpro.Location = new System.Drawing.Point(582, 152);
             this.lbl_All_Rework_Subpro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_All_Rework_Subpro.Name = "lbl_All_Rework_Subpro";
             this.lbl_All_Rework_Subpro.Size = new System.Drawing.Size(106, 19);
@@ -5156,7 +5157,7 @@
             this.ddl_Rework_client.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_Rework_client.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_Rework_client.FormattingEnabled = true;
-            this.ddl_Rework_client.Location = new System.Drawing.Point(401, 147);
+            this.ddl_Rework_client.Location = new System.Drawing.Point(401, 149);
             this.ddl_Rework_client.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ddl_Rework_client.Name = "ddl_Rework_client";
             this.ddl_Rework_client.Size = new System.Drawing.Size(173, 27);
@@ -5168,7 +5169,7 @@
             this.lbl_All_Rework_client.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_All_Rework_client.AutoSize = true;
             this.lbl_All_Rework_client.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_All_Rework_client.Location = new System.Drawing.Point(310, 151);
+            this.lbl_All_Rework_client.Location = new System.Drawing.Point(310, 153);
             this.lbl_All_Rework_client.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_All_Rework_client.Name = "lbl_All_Rework_client";
             this.lbl_All_Rework_client.Size = new System.Drawing.Size(79, 19);
@@ -5181,7 +5182,7 @@
             this.dtp_Rework_Todate.CustomFormat = "MM/DD/YYYY";
             this.dtp_Rework_Todate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_Rework_Todate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_Rework_Todate.Location = new System.Drawing.Point(832, 111);
+            this.dtp_Rework_Todate.Location = new System.Drawing.Point(832, 113);
             this.dtp_Rework_Todate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dtp_Rework_Todate.Name = "dtp_Rework_Todate";
             this.dtp_Rework_Todate.Size = new System.Drawing.Size(170, 24);
@@ -5194,7 +5195,7 @@
             this.dtp_Rework_Fromdate.CustomFormat = "MM/DD/YYYY";
             this.dtp_Rework_Fromdate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_Rework_Fromdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_Rework_Fromdate.Location = new System.Drawing.Point(570, 112);
+            this.dtp_Rework_Fromdate.Location = new System.Drawing.Point(570, 114);
             this.dtp_Rework_Fromdate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dtp_Rework_Fromdate.Name = "dtp_Rework_Fromdate";
             this.dtp_Rework_Fromdate.Size = new System.Drawing.Size(173, 24);
@@ -5206,7 +5207,7 @@
             this.lbl_AllTodate.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_AllTodate.AutoSize = true;
             this.lbl_AllTodate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_AllTodate.Location = new System.Drawing.Point(763, 113);
+            this.lbl_AllTodate.Location = new System.Drawing.Point(763, 115);
             this.lbl_AllTodate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_AllTodate.Name = "lbl_AllTodate";
             this.lbl_AllTodate.Size = new System.Drawing.Size(55, 19);
@@ -5218,7 +5219,7 @@
             this.lbl_AllFromDate.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_AllFromDate.AutoSize = true;
             this.lbl_AllFromDate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_AllFromDate.Location = new System.Drawing.Point(484, 113);
+            this.lbl_AllFromDate.Location = new System.Drawing.Point(484, 115);
             this.lbl_AllFromDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_AllFromDate.Name = "lbl_AllFromDate";
             this.lbl_AllFromDate.Size = new System.Drawing.Size(69, 19);
@@ -5274,7 +5275,7 @@
             this.lbl_Record_notfound.AutoSize = true;
             this.lbl_Record_notfound.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Record_notfound.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Record_notfound.Location = new System.Drawing.Point(616, 514);
+            this.lbl_Record_notfound.Location = new System.Drawing.Point(616, 516);
             this.lbl_Record_notfound.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Record_notfound.Name = "lbl_Record_notfound";
             this.lbl_Record_notfound.Size = new System.Drawing.Size(243, 20);
@@ -5289,7 +5290,7 @@
             this.cr_Rework_ReportsViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.cr_Rework_ReportsViewer.Cursor = System.Windows.Forms.Cursors.Default;
             this.cr_Rework_ReportsViewer.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cr_Rework_ReportsViewer.Location = new System.Drawing.Point(228, 266);
+            this.cr_Rework_ReportsViewer.Location = new System.Drawing.Point(228, 268);
             this.cr_Rework_ReportsViewer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cr_Rework_ReportsViewer.Name = "cr_Rework_ReportsViewer";
             this.cr_Rework_ReportsViewer.ShowGroupTreeButton = false;
@@ -5322,7 +5323,7 @@
             dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grd_Rework_MyReport.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle38;
             this.grd_Rework_MyReport.ColumnHeadersHeight = 30;
-            this.grd_Rework_MyReport.Location = new System.Drawing.Point(228, 266);
+            this.grd_Rework_MyReport.Location = new System.Drawing.Point(228, 268);
             this.grd_Rework_MyReport.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.grd_Rework_MyReport.Name = "grd_Rework_MyReport";
             this.grd_Rework_MyReport.ReadOnly = true;
@@ -5357,7 +5358,7 @@
             this.ddl_MyTask.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_MyTask.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_MyTask.FormattingEnabled = true;
-            this.ddl_MyTask.Location = new System.Drawing.Point(979, 143);
+            this.ddl_MyTask.Location = new System.Drawing.Point(979, 145);
             this.ddl_MyTask.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ddl_MyTask.Name = "ddl_MyTask";
             this.ddl_MyTask.Size = new System.Drawing.Size(164, 27);
@@ -5426,7 +5427,7 @@
             this.lbl_Rework_Myerrror.AutoSize = true;
             this.lbl_Rework_Myerrror.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Rework_Myerrror.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Rework_Myerrror.Location = new System.Drawing.Point(1022, 514);
+            this.lbl_Rework_Myerrror.Location = new System.Drawing.Point(1022, 516);
             this.lbl_Rework_Myerrror.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Rework_Myerrror.Name = "lbl_Rework_Myerrror";
             this.lbl_Rework_Myerrror.Size = new System.Drawing.Size(240, 20);
@@ -5439,7 +5440,7 @@
             this.lbl_Rework_MyTask.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_Rework_MyTask.AutoSize = true;
             this.lbl_Rework_MyTask.Font = new System.Drawing.Font("Ebrima", 9F);
-            this.lbl_Rework_MyTask.Location = new System.Drawing.Point(894, 151);
+            this.lbl_Rework_MyTask.Location = new System.Drawing.Point(894, 153);
             this.lbl_Rework_MyTask.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Rework_MyTask.Name = "lbl_Rework_MyTask";
             this.lbl_Rework_MyTask.Size = new System.Drawing.Size(35, 19);
@@ -5452,7 +5453,7 @@
             this.ddl_MySubprocess.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_MySubprocess.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_MySubprocess.FormattingEnabled = true;
-            this.ddl_MySubprocess.Location = new System.Drawing.Point(702, 147);
+            this.ddl_MySubprocess.Location = new System.Drawing.Point(702, 149);
             this.ddl_MySubprocess.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ddl_MySubprocess.Name = "ddl_MySubprocess";
             this.ddl_MySubprocess.Size = new System.Drawing.Size(169, 27);
@@ -5464,7 +5465,7 @@
             this.lbl_Rework_Mysubpro.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_Rework_Mysubpro.AutoSize = true;
             this.lbl_Rework_Mysubpro.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Rework_Mysubpro.Location = new System.Drawing.Point(588, 151);
+            this.lbl_Rework_Mysubpro.Location = new System.Drawing.Point(588, 153);
             this.lbl_Rework_Mysubpro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Rework_Mysubpro.Name = "lbl_Rework_Mysubpro";
             this.lbl_Rework_Mysubpro.Size = new System.Drawing.Size(106, 19);
@@ -5489,7 +5490,7 @@
             this.ddl_MyClient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_MyClient.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_MyClient.FormattingEnabled = true;
-            this.ddl_MyClient.Location = new System.Drawing.Point(407, 148);
+            this.ddl_MyClient.Location = new System.Drawing.Point(407, 150);
             this.ddl_MyClient.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ddl_MyClient.Name = "ddl_MyClient";
             this.ddl_MyClient.Size = new System.Drawing.Size(173, 27);
@@ -5512,7 +5513,7 @@
             this.lbl_Rework_Myclient.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_Rework_Myclient.AutoSize = true;
             this.lbl_Rework_Myclient.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Rework_Myclient.Location = new System.Drawing.Point(311, 150);
+            this.lbl_Rework_Myclient.Location = new System.Drawing.Point(311, 152);
             this.lbl_Rework_Myclient.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Rework_Myclient.Name = "lbl_Rework_Myclient";
             this.lbl_Rework_Myclient.Size = new System.Drawing.Size(79, 19);
@@ -5525,7 +5526,7 @@
             this.dtp_MyTodate.CustomFormat = "MM/DD/YYYY";
             this.dtp_MyTodate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_MyTodate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_MyTodate.Location = new System.Drawing.Point(828, 111);
+            this.dtp_MyTodate.Location = new System.Drawing.Point(828, 113);
             this.dtp_MyTodate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dtp_MyTodate.Name = "dtp_MyTodate";
             this.dtp_MyTodate.Size = new System.Drawing.Size(170, 24);
@@ -5538,7 +5539,7 @@
             this.dtp_MyFromdate.CustomFormat = "MM/DD/YYYY";
             this.dtp_MyFromdate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_MyFromdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_MyFromdate.Location = new System.Drawing.Point(563, 111);
+            this.dtp_MyFromdate.Location = new System.Drawing.Point(563, 113);
             this.dtp_MyFromdate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dtp_MyFromdate.Name = "dtp_MyFromdate";
             this.dtp_MyFromdate.Size = new System.Drawing.Size(173, 24);
@@ -5550,7 +5551,7 @@
             this.lbl_Rework_Todate.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_Rework_Todate.AutoSize = true;
             this.lbl_Rework_Todate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Rework_Todate.Location = new System.Drawing.Point(759, 114);
+            this.lbl_Rework_Todate.Location = new System.Drawing.Point(759, 116);
             this.lbl_Rework_Todate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Rework_Todate.Name = "lbl_Rework_Todate";
             this.lbl_Rework_Todate.Size = new System.Drawing.Size(55, 19);
@@ -5562,7 +5563,7 @@
             this.lbl_Rework_Fromdate.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_Rework_Fromdate.AutoSize = true;
             this.lbl_Rework_Fromdate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Rework_Fromdate.Location = new System.Drawing.Point(477, 114);
+            this.lbl_Rework_Fromdate.Location = new System.Drawing.Point(477, 116);
             this.lbl_Rework_Fromdate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Rework_Fromdate.Name = "lbl_Rework_Fromdate";
             this.lbl_Rework_Fromdate.Size = new System.Drawing.Size(69, 19);
@@ -5827,7 +5828,7 @@
             this.lbl_AllSuperqc_Error.AutoSize = true;
             this.lbl_AllSuperqc_Error.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_AllSuperqc_Error.ForeColor = System.Drawing.Color.Red;
-            this.lbl_AllSuperqc_Error.Location = new System.Drawing.Point(620, 673);
+            this.lbl_AllSuperqc_Error.Location = new System.Drawing.Point(620, 675);
             this.lbl_AllSuperqc_Error.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_AllSuperqc_Error.Name = "lbl_AllSuperqc_Error";
             this.lbl_AllSuperqc_Error.Size = new System.Drawing.Size(0, 20);
@@ -5841,7 +5842,7 @@
             this.crv_All_Superqc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crv_All_Superqc.Cursor = System.Windows.Forms.Cursors.Default;
             this.crv_All_Superqc.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.crv_All_Superqc.Location = new System.Drawing.Point(223, 301);
+            this.crv_All_Superqc.Location = new System.Drawing.Point(223, 303);
             this.crv_All_Superqc.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.crv_All_Superqc.Name = "crv_All_Superqc";
             this.crv_All_Superqc.ShowGroupTreeButton = false;
@@ -5854,7 +5855,7 @@
             this.lbl_All_SuperqcRecordnotfound.AutoSize = true;
             this.lbl_All_SuperqcRecordnotfound.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_All_SuperqcRecordnotfound.ForeColor = System.Drawing.Color.Red;
-            this.lbl_All_SuperqcRecordnotfound.Location = new System.Drawing.Point(620, 693);
+            this.lbl_All_SuperqcRecordnotfound.Location = new System.Drawing.Point(620, 695);
             this.lbl_All_SuperqcRecordnotfound.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_All_SuperqcRecordnotfound.Name = "lbl_All_SuperqcRecordnotfound";
             this.lbl_All_SuperqcRecordnotfound.Size = new System.Drawing.Size(243, 20);
@@ -5879,7 +5880,7 @@
             this.ddl_Superqc_Task.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_Superqc_Task.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_Superqc_Task.FormattingEnabled = true;
-            this.ddl_Superqc_Task.Location = new System.Drawing.Point(991, 167);
+            this.ddl_Superqc_Task.Location = new System.Drawing.Point(991, 169);
             this.ddl_Superqc_Task.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ddl_Superqc_Task.Name = "ddl_Superqc_Task";
             this.ddl_Superqc_Task.Size = new System.Drawing.Size(194, 27);
@@ -5945,7 +5946,7 @@
             this.lbl_All_Superqc_Task.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_All_Superqc_Task.AutoSize = true;
             this.lbl_All_Superqc_Task.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_All_Superqc_Task.Location = new System.Drawing.Point(934, 172);
+            this.lbl_All_Superqc_Task.Location = new System.Drawing.Point(934, 174);
             this.lbl_All_Superqc_Task.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_All_Superqc_Task.Name = "lbl_All_Superqc_Task";
             this.lbl_All_Superqc_Task.Size = new System.Drawing.Size(35, 19);
@@ -5958,7 +5959,7 @@
             this.ddl_Superqc_Subprocess.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_Superqc_Subprocess.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_Superqc_Subprocess.FormattingEnabled = true;
-            this.ddl_Superqc_Subprocess.Location = new System.Drawing.Point(717, 170);
+            this.ddl_Superqc_Subprocess.Location = new System.Drawing.Point(717, 172);
             this.ddl_Superqc_Subprocess.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ddl_Superqc_Subprocess.Name = "ddl_Superqc_Subprocess";
             this.ddl_Superqc_Subprocess.Size = new System.Drawing.Size(194, 27);
@@ -5969,7 +5970,7 @@
             this.lbl_All_Superqc_Subpro.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_All_Superqc_Subpro.AutoSize = true;
             this.lbl_All_Superqc_Subpro.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_All_Superqc_Subpro.Location = new System.Drawing.Point(603, 173);
+            this.lbl_All_Superqc_Subpro.Location = new System.Drawing.Point(603, 175);
             this.lbl_All_Superqc_Subpro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_All_Superqc_Subpro.Name = "lbl_All_Superqc_Subpro";
             this.lbl_All_Superqc_Subpro.Size = new System.Drawing.Size(106, 19);
@@ -5982,7 +5983,7 @@
             this.ddl_Superqc_client.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_Superqc_client.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_Superqc_client.FormattingEnabled = true;
-            this.ddl_Superqc_client.Location = new System.Drawing.Point(394, 171);
+            this.ddl_Superqc_client.Location = new System.Drawing.Point(394, 173);
             this.ddl_Superqc_client.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ddl_Superqc_client.Name = "ddl_Superqc_client";
             this.ddl_Superqc_client.Size = new System.Drawing.Size(194, 27);
@@ -5994,7 +5995,7 @@
             this.lbl_All_Superqc_client.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_All_Superqc_client.AutoSize = true;
             this.lbl_All_Superqc_client.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_All_Superqc_client.Location = new System.Drawing.Point(307, 177);
+            this.lbl_All_Superqc_client.Location = new System.Drawing.Point(307, 179);
             this.lbl_All_Superqc_client.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_All_Superqc_client.Name = "lbl_All_Superqc_client";
             this.lbl_All_Superqc_client.Size = new System.Drawing.Size(79, 19);
@@ -6007,7 +6008,7 @@
             this.dtp_All_SuperqcTodate.CustomFormat = "MM/DD/YYYY";
             this.dtp_All_SuperqcTodate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_All_SuperqcTodate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_All_SuperqcTodate.Location = new System.Drawing.Point(831, 131);
+            this.dtp_All_SuperqcTodate.Location = new System.Drawing.Point(831, 133);
             this.dtp_All_SuperqcTodate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dtp_All_SuperqcTodate.Name = "dtp_All_SuperqcTodate";
             this.dtp_All_SuperqcTodate.Size = new System.Drawing.Size(173, 24);
@@ -6020,7 +6021,7 @@
             this.dtp_All_SuperqcFromdate.CustomFormat = "MM/DD/YYYY";
             this.dtp_All_SuperqcFromdate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_All_SuperqcFromdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_All_SuperqcFromdate.Location = new System.Drawing.Point(552, 133);
+            this.dtp_All_SuperqcFromdate.Location = new System.Drawing.Point(552, 135);
             this.dtp_All_SuperqcFromdate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dtp_All_SuperqcFromdate.Name = "dtp_All_SuperqcFromdate";
             this.dtp_All_SuperqcFromdate.Size = new System.Drawing.Size(173, 24);
@@ -6032,7 +6033,7 @@
             this.lbl_All_SuperqcTodate.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_All_SuperqcTodate.AutoSize = true;
             this.lbl_All_SuperqcTodate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_All_SuperqcTodate.Location = new System.Drawing.Point(773, 134);
+            this.lbl_All_SuperqcTodate.Location = new System.Drawing.Point(773, 136);
             this.lbl_All_SuperqcTodate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_All_SuperqcTodate.Name = "lbl_All_SuperqcTodate";
             this.lbl_All_SuperqcTodate.Size = new System.Drawing.Size(55, 19);
@@ -6044,7 +6045,7 @@
             this.lbl_All_SuperqcFromdate.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_All_SuperqcFromdate.AutoSize = true;
             this.lbl_All_SuperqcFromdate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_All_SuperqcFromdate.Location = new System.Drawing.Point(475, 134);
+            this.lbl_All_SuperqcFromdate.Location = new System.Drawing.Point(475, 136);
             this.lbl_All_SuperqcFromdate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_All_SuperqcFromdate.Name = "lbl_All_SuperqcFromdate";
             this.lbl_All_SuperqcFromdate.Size = new System.Drawing.Size(69, 19);
@@ -6124,7 +6125,7 @@
             this.lbl_Superqc_Error.AutoSize = true;
             this.lbl_Superqc_Error.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Superqc_Error.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Superqc_Error.Location = new System.Drawing.Point(693, 474);
+            this.lbl_Superqc_Error.Location = new System.Drawing.Point(693, 476);
             this.lbl_Superqc_Error.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Superqc_Error.Name = "lbl_Superqc_Error";
             this.lbl_Superqc_Error.Size = new System.Drawing.Size(111, 20);
@@ -6139,7 +6140,7 @@
             this.crv_My_Superqc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crv_My_Superqc.Cursor = System.Windows.Forms.Cursors.Default;
             this.crv_My_Superqc.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.crv_My_Superqc.Location = new System.Drawing.Point(222, 289);
+            this.crv_My_Superqc.Location = new System.Drawing.Point(222, 291);
             this.crv_My_Superqc.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.crv_My_Superqc.Name = "crv_My_Superqc";
             this.crv_My_Superqc.ShowGroupTreeButton = false;
@@ -6218,7 +6219,7 @@
             this.lbl_My_Superqc_Task.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.lbl_My_Superqc_Task.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_My_Superqc_Task.FormattingEnabled = true;
-            this.lbl_My_Superqc_Task.Location = new System.Drawing.Point(971, 159);
+            this.lbl_My_Superqc_Task.Location = new System.Drawing.Point(971, 161);
             this.lbl_My_Superqc_Task.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lbl_My_Superqc_Task.Name = "lbl_My_Superqc_Task";
             this.lbl_My_Superqc_Task.Size = new System.Drawing.Size(174, 27);
@@ -6229,7 +6230,7 @@
             this.lbl_Superqc_MyTask.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_Superqc_MyTask.AutoSize = true;
             this.lbl_Superqc_MyTask.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Superqc_MyTask.Location = new System.Drawing.Point(866, 167);
+            this.lbl_Superqc_MyTask.Location = new System.Drawing.Point(866, 169);
             this.lbl_Superqc_MyTask.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Superqc_MyTask.Name = "lbl_Superqc_MyTask";
             this.lbl_Superqc_MyTask.Size = new System.Drawing.Size(35, 19);
@@ -6242,7 +6243,7 @@
             this.ddl_MySuperqc_Subprocess.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_MySuperqc_Subprocess.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_MySuperqc_Subprocess.FormattingEnabled = true;
-            this.ddl_MySuperqc_Subprocess.Location = new System.Drawing.Point(671, 164);
+            this.ddl_MySuperqc_Subprocess.Location = new System.Drawing.Point(671, 166);
             this.ddl_MySuperqc_Subprocess.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ddl_MySuperqc_Subprocess.Name = "ddl_MySuperqc_Subprocess";
             this.ddl_MySuperqc_Subprocess.Size = new System.Drawing.Size(174, 27);
@@ -6253,7 +6254,7 @@
             this.lbl_My_Superqc_Subpro.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_My_Superqc_Subpro.AutoSize = true;
             this.lbl_My_Superqc_Subpro.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_My_Superqc_Subpro.Location = new System.Drawing.Point(562, 166);
+            this.lbl_My_Superqc_Subpro.Location = new System.Drawing.Point(562, 168);
             this.lbl_My_Superqc_Subpro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_My_Superqc_Subpro.Name = "lbl_My_Superqc_Subpro";
             this.lbl_My_Superqc_Subpro.Size = new System.Drawing.Size(106, 19);
@@ -6266,7 +6267,7 @@
             this.ddl_MySuperqc_Client.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_MySuperqc_Client.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_MySuperqc_Client.FormattingEnabled = true;
-            this.ddl_MySuperqc_Client.Location = new System.Drawing.Point(374, 163);
+            this.ddl_MySuperqc_Client.Location = new System.Drawing.Point(374, 165);
             this.ddl_MySuperqc_Client.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ddl_MySuperqc_Client.Name = "ddl_MySuperqc_Client";
             this.ddl_MySuperqc_Client.Size = new System.Drawing.Size(174, 27);
@@ -6278,7 +6279,7 @@
             this.lbl_Superqc_Myclient.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_Superqc_Myclient.AutoSize = true;
             this.lbl_Superqc_Myclient.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Superqc_Myclient.Location = new System.Drawing.Point(290, 167);
+            this.lbl_Superqc_Myclient.Location = new System.Drawing.Point(290, 169);
             this.lbl_Superqc_Myclient.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Superqc_Myclient.Name = "lbl_Superqc_Myclient";
             this.lbl_Superqc_Myclient.Size = new System.Drawing.Size(79, 19);
@@ -6299,7 +6300,7 @@
             dataGridViewCellStyle49.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grd_My_SuperQc_Report.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle49;
             this.grd_My_SuperQc_Report.ColumnHeadersHeight = 30;
-            this.grd_My_SuperQc_Report.Location = new System.Drawing.Point(225, 289);
+            this.grd_My_SuperQc_Report.Location = new System.Drawing.Point(225, 291);
             this.grd_My_SuperQc_Report.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.grd_My_SuperQc_Report.Name = "grd_My_SuperQc_Report";
             this.grd_My_SuperQc_Report.ReadOnly = true;
@@ -6358,7 +6359,7 @@
             this.lbl_Superqc_Myerrror.AutoSize = true;
             this.lbl_Superqc_Myerrror.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Superqc_Myerrror.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Superqc_Myerrror.Location = new System.Drawing.Point(1043, 505);
+            this.lbl_Superqc_Myerrror.Location = new System.Drawing.Point(1043, 507);
             this.lbl_Superqc_Myerrror.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Superqc_Myerrror.Name = "lbl_Superqc_Myerrror";
             this.lbl_Superqc_Myerrror.Size = new System.Drawing.Size(240, 20);
@@ -6372,7 +6373,7 @@
             this.dtp_MySuperqc_To.CustomFormat = "MM/DD/YYYY";
             this.dtp_MySuperqc_To.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_MySuperqc_To.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_MySuperqc_To.Location = new System.Drawing.Point(809, 125);
+            this.dtp_MySuperqc_To.Location = new System.Drawing.Point(809, 127);
             this.dtp_MySuperqc_To.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dtp_MySuperqc_To.Name = "dtp_MySuperqc_To";
             this.dtp_MySuperqc_To.Size = new System.Drawing.Size(173, 24);
@@ -6385,7 +6386,7 @@
             this.dtp_MySuperqcFrom.CustomFormat = "MM/DD/YYYY";
             this.dtp_MySuperqcFrom.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_MySuperqcFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_MySuperqcFrom.Location = new System.Drawing.Point(522, 128);
+            this.dtp_MySuperqcFrom.Location = new System.Drawing.Point(522, 130);
             this.dtp_MySuperqcFrom.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dtp_MySuperqcFrom.Name = "dtp_MySuperqcFrom";
             this.dtp_MySuperqcFrom.Size = new System.Drawing.Size(173, 24);
@@ -6397,7 +6398,7 @@
             this.lbl_My_SuperqcTodate.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_My_SuperqcTodate.AutoSize = true;
             this.lbl_My_SuperqcTodate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_My_SuperqcTodate.Location = new System.Drawing.Point(736, 129);
+            this.lbl_My_SuperqcTodate.Location = new System.Drawing.Point(736, 131);
             this.lbl_My_SuperqcTodate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_My_SuperqcTodate.Name = "lbl_My_SuperqcTodate";
             this.lbl_My_SuperqcTodate.Size = new System.Drawing.Size(55, 19);
@@ -6409,7 +6410,7 @@
             this.lbl_My_SuperqcFromdate.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_My_SuperqcFromdate.AutoSize = true;
             this.lbl_My_SuperqcFromdate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_My_SuperqcFromdate.Location = new System.Drawing.Point(444, 130);
+            this.lbl_My_SuperqcFromdate.Location = new System.Drawing.Point(444, 132);
             this.lbl_My_SuperqcFromdate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_My_SuperqcFromdate.Name = "lbl_My_SuperqcFromdate";
             this.lbl_My_SuperqcFromdate.Size = new System.Drawing.Size(69, 19);
@@ -7163,7 +7164,7 @@
             this.dataGridViewTextBoxColumn18,
             this.Column46,
             this.dataGridViewTextBoxColumn19});
-            this.Grid_Auto_Assigned_Order.Location = new System.Drawing.Point(3, 173);
+            this.Grid_Auto_Assigned_Order.Location = new System.Drawing.Point(3, 175);
             this.Grid_Auto_Assigned_Order.Name = "Grid_Auto_Assigned_Order";
             this.Grid_Auto_Assigned_Order.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle62.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;

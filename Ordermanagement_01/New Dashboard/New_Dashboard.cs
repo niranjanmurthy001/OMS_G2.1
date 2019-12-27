@@ -638,30 +638,9 @@ namespace Ordermanagement_01.New_Dashboard
                 SplashScreenManager.CloseForm(false);
             }
         }
-
-        private void groupControl1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void windowsUIButtonPanel1_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {
             // Window_Ui_Btn_View_List.AppearanceButton.Normal.BackColor =System.Drawing.Color.DarkGray;
-        }
-
-        private void Uncheck_Slected_Item(object sender,DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
-        {
-
-            foreach (WindowsUIButton button in Window_Ui_Btn_View_List.Buttons)
-            {
-                if (button != e.Button) button.Checked = false;
-            }
-
         }
 
         private void Window_Ui_Btn_View_List_ButtonChecked(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
@@ -719,43 +698,34 @@ namespace Ordermanagement_01.New_Dashboard
                     {
                         case "Start":
                             StartProcess(obj_Order_Details_List);
-
-                            Uncheck_Slected_Item(sender,e);
-
-
                             break;
 
                         case "View":
                             SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
                             Order_Entry form_Order_Entry = new Order_Entry(obj_Order_Details_List.Order_Id, User_Id, User_Role_Id.ToString(), "10/05/2019");
                             Invoke(new MethodInvoker(delegate { form_Order_Entry.Show(); }));
-                            Uncheck_Slected_Item(sender, e);
                             SplashScreenManager.CloseForm(false);
                             break;
                         case "Docs":
                             SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
                             Order_Uploads form_Order_Upload = new Order_Uploads("Update", obj_Order_Details_List.Order_Id, User_Id, obj_Order_Details_List.Client_Order_Number, obj_Order_Details_List.Client_Id.ToString(), obj_Order_Details_List.Sub_Client_Id.ToString());
                             Invoke(new MethodInvoker(delegate { form_Order_Upload.Show(); }));
-                            Uncheck_Slected_Item(sender, e);
                             SplashScreenManager.CloseForm(false); break;
                         case "Instructions":
                             SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
                             Order_Instruction Form_Instruction = new Order_Instruction(obj_Order_Details_List);
                             Invoke(new MethodInvoker(delegate { Form_Instruction.Show(); }));
-                            Uncheck_Slected_Item(sender, e);
                             SplashScreenManager.CloseForm(false); break;
 
                         case "Comments":
                             SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
                             CommentCard.Comment_Card Form_Comment = new CommentCard.Comment_Card(obj_Order_Details_List);
                             Invoke(new MethodInvoker(delegate { Form_Comment.Show(); }));
-                            Uncheck_Slected_Item(sender, e);
                             SplashScreenManager.CloseForm(false); break;
                         case "CheckList":
                             SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
                             Order_CheckList Check_list = new Order_CheckList(obj_Order_Details_List);
                             Invoke(new MethodInvoker(delegate { Check_list.Show(); }));
-                            Uncheck_Slected_Item(sender, e);
                             SplashScreenManager.CloseForm(false);
                             break;
                     }

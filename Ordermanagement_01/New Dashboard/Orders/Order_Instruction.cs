@@ -20,7 +20,6 @@ namespace Ordermanagement_01.New_Dashboard.Orders
         public readonly int Order_Id, State_Id, County_Id, Order_Type_Id, Order_Type_Abs_Id,
                             Client_Id, Sub_Client_Id, Work_Type_Id, User_Id, Order_Task_Id, Order_Status_Id;
         public readonly string Client_Order_Number, Form_View_Type;
-
         [DllImport("user32")]
         static extern IntPtr GetSystemMenu(IntPtr hWnd, bool bRevert);
         [DllImport("user32")]
@@ -31,6 +30,7 @@ namespace Ordermanagement_01.New_Dashboard.Orders
         public Order_Instruction(Order_Passing_Params obj_Order_Details_List)
         {
             InitializeComponent();
+            buttonNext.Select();
             Order_Id = obj_Order_Details_List.Order_Id;
             State_Id = obj_Order_Details_List.State_Id;
             County_Id = obj_Order_Details_List.County_Id;
@@ -107,12 +107,12 @@ namespace Ordermanagement_01.New_Dashboard.Orders
                 {
                     var dictionary = new Dictionary<string, object>()
                     {
-                                { "@Trans","INSERT"       },
-                                { "@Order_Id",Order_Id    },
-                                { "@User_Id",User_Id      },
+                                { "@Trans","INSERT"            },
+                                { "@Order_Id",Order_Id         },
+                                { "@User_Id",User_Id           },
                                 { "@Task_Id", Order_Task_Id    },
-                                { "@Work_Type_Id",Work_Type_Id},
-                                { "@Form_State",true    }
+                                { "@Work_Type_Id",Work_Type_Id },
+                                { "@Form_State",true           }
                     };
                     var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
                     using (var httpClient = new HttpClient())
@@ -128,9 +128,9 @@ namespace Ordermanagement_01.New_Dashboard.Orders
                     }
                 }
             }
-            catch
+            catch(Exception ex)
             {
-
+                throw ex;
             }
             finally
             {
@@ -200,10 +200,10 @@ namespace Ordermanagement_01.New_Dashboard.Orders
         {
             try
             {
-
                 var dictionary = new Dictionary<string, object>()
                 {
-                {"@Trans","SELECT_TAX" },{"@State_Id",State_Id}
+                    {"@Trans","SELECT_TAX"},
+                    { "@State_Id",State_Id}
                 };
                 var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
                 using (var httpClient = new HttpClient())
@@ -250,7 +250,7 @@ namespace Ordermanagement_01.New_Dashboard.Orders
                 var dictionary = new Dictionary<string, object>()
                 {
                 {"@Trans","SELECT_INSTRUCTIONS" },
-                {"@Order_ID",Order_Id }
+                {"@Order_ID",Order_Id           }
                 };
                 var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
                 using (var httpClient = new HttpClient())
@@ -287,8 +287,8 @@ namespace Ordermanagement_01.New_Dashboard.Orders
                 richEditControl2.Text = "";
                 var dictionary = new Dictionary<string, object>()
                     {
-                    {"@Trans","SELECT_STATUE"  },
-                    { "@State_Id",State_Id  },
+                    {"@Trans","SELECT_STATUE" },
+                    { "@State_Id",State_Id    },
                     };
                 var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
                 using (var httpClient = new HttpClient())
@@ -321,7 +321,7 @@ namespace Ordermanagement_01.New_Dashboard.Orders
                 var dictionary = new Dictionary<string, object>()
                 {
                      {"@Trans","CHECK_ALL_CLIENT_SUB" },
-                    {"@Client_Id",Client_Id}
+                    {"@Client_Id",Client_Id           }
                 };
                 var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
                 using (var httpClient = new HttpClient())
@@ -344,10 +344,10 @@ namespace Ordermanagement_01.New_Dashboard.Orders
                 }
                 var dictionaryClientInstructions = new Dictionary<string, object>()
                 {
-                   {"@Trans","CHECK_ALL_ORDER_ST_COUNTY" },
-                    {"@Order_Type_ABS_Id",Order_Type_Abs_Id},
-                    {"@State_Id",State_Id},
-                    {"@County_Id",County_Id }
+                   {"@Trans","CHECK_ALL_ORDER_ST_COUNTY"    },
+                    {"@Order_Type_ABS_Id",Order_Type_Abs_Id },
+                    {"@State_Id",State_Id                   },
+                    {"@County_Id",County_Id                 }
                 };
                 var dataClientInstructions = new StringContent(JsonConvert.SerializeObject(dictionaryClientInstructions), Encoding.UTF8, "application/json");
                 using (var httpClient = new HttpClient())
@@ -367,13 +367,12 @@ namespace Ordermanagement_01.New_Dashboard.Orders
                         }
                     }
                 }
-
                 var dictionaryInstructions = new Dictionary<string, object>()
                 {
                     {"@Trans","CHECK_ALL_TRUE_ORDER_ST_COUNTY" },
-                    {"@Order_Type_ABS_Id",Order_Type_Abs_Id},
-                    {"@State_Id",State_Id},
-                    {"@County_Id",County_Id }
+                    {"@Order_Type_ABS_Id",Order_Type_Abs_Id    },
+                    {"@State_Id",State_Id                      },
+                    {"@County_Id",County_Id                    }
                 };
                 var dataInstructions = new StringContent(JsonConvert.SerializeObject(dictionaryInstructions), Encoding.UTF8, "application/json");
                 using (var httpClient = new HttpClient())

@@ -437,23 +437,19 @@ namespace Ordermanagement_01
             {
                 string Ftp_Host_Name = Ftp_Domain_Name;
                 Ftp_Path = Ftp_Host_Name + "/Ftp_Application_Files/OMS/" + mainPath + "";
-
                 string[] folderArray = directoryPath.Split('/');
                 string folderName = "";
                 for (int i = 0; i < folderArray.Length; i++)
                 {
                     if (!string.IsNullOrEmpty(folderArray[i]))
                     {
-
                         try
                         {
                             folderName = string.IsNullOrEmpty(folderName) ? folderArray[i] : folderName + "/" + folderArray[i];
                             FtpWebRequest ftp = (FtpWebRequest)FtpWebRequest.Create("ftp://" + Ftp_Path + "/" + folderName);
                             ftp.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password);
                             ftp.Method = WebRequestMethods.Ftp.MakeDirectory;
-
                             FtpWebResponse CreateForderResponse = (FtpWebResponse)ftp.GetResponse();
-
                             if (CreateForderResponse.StatusCode == FtpStatusCode.PathnameCreated)
                             {
 
@@ -471,14 +467,12 @@ namespace Ordermanagement_01
                 return;
             }
         }
-
         private void CreateDirectoryTitlelogy(string mainPath, string directoryPath)
         {
             try
             {
                 string Ftp_Host_Name = Ftp_Domain_Name;
                 Ftp_Path = Ftp_Host_Name + "/TITLELOGY/" + mainPath + "";
-
                 string[] folderArray = directoryPath.Split('/');
                 string folderName = "";
                 for (int i = 0; i < folderArray.Length; i++)

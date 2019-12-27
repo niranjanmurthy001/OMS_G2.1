@@ -31719,6 +31719,11 @@ namespace Ordermanagement_01
 
         }
 
+        private void GridView_General_Updates_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void AdminDashboard_KeyDown(object sender,System.Windows.Forms. KeyEventArgs e)
         {
             if (((Keyboard.IsKeyDown(Key.RightAlt)) || (Keyboard.IsKeyDown(Key.LeftAlt))) && (Keyboard.IsKeyDown(Key.L)))

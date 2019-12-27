@@ -40,8 +40,6 @@ namespace Ordermanagement_01.New_Dashboard
         private void pictureEditClose_Click(object sender, EventArgs e)
         {
             this.Close();
-
-            // Test
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

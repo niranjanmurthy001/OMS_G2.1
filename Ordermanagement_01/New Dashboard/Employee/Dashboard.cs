@@ -170,6 +170,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                             foreach (Result_Data res in Res_daata)
                             {
                                 link_Order_Count.Text = res.Live_Order_Count;
+                                
                             }
                         }
                         else

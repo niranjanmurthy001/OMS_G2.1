@@ -627,6 +627,7 @@ namespace Ordermanagement_01.Dashboard
             try
             {
                 Employee.Ideal_Timings.isOpen = false;
+                isClosed = true;
                 Close();
             }
             catch (Exception ex)

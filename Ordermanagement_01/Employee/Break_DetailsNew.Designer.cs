@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Break_DetailsNew));
             this.Break_Details = new DevExpress.XtraEditors.GroupControl();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -49,9 +48,9 @@
             this.lookUpEditBreak = new DevExpress.XtraEditors.LookUpEdit();
             this.lbl_Reason = new DevExpress.XtraEditors.LabelControl();
             this.lbl_SelectMode = new DevExpress.XtraEditors.LabelControl();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            this.timer1 = new System.Windows.Forms.Timer();
+            this.timer2 = new System.Windows.Forms.Timer();
             ((System.ComponentModel.ISupportInitialize)(this.Break_Details)).BeginInit();
             this.Break_Details.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();

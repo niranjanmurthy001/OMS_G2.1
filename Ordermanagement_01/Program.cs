@@ -31,13 +31,13 @@ namespace Ordermanagement_01
 
             //    Application.Run(new New_Dashboard.New_Dashboard(1,1));
 
-            //Application.Run(new New_Dashboard.NewLogin());
+            Application.Run(new New_Dashboard.NewLogin());
 
 
-                Application.Run(new New_Dashboard.Employee.General_Notification());
+            //  Application.Run(new New_Dashboard.Employee.General_Notification());
 
 
-
+           // Application.Run(new Dashboard.IdleTrack(33, "2018-02-07",false));
 
 
 

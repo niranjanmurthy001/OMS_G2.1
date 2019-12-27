@@ -28,6 +28,7 @@ namespace Ordermanagement_01.InvoiceRep
         int Order_Type;
         int abstarctor_id, User_Id;
         string Path1;
+        string Merge_Attach_Path = "";
         string Attachment_Name;
         string Directory_Path;
         TableLogOnInfos crtableLogoninfos = new TableLogOnInfos();
@@ -365,7 +366,7 @@ namespace Ordermanagement_01.InvoiceRep
             string outputPdfPath = Temp_Source + "\\" + "Invoicemerge.pdf";// temp Path+File
             TFOut_Put = Temp_Source + "\\" + "Invoicemerge.pdf"; ;
             sourceDocument = new Document();
-            pdfCopyProvider = new PdfCopy(sourceDocument, new FileStream(outputPdfPath, System.IO.FileMode.Create));
+            pdfCopyProvider = new PdfCopy(sourceDocument, new FileStream(outputPdfPath, FileMode.Create));
             //Open the output file
             sourceDocument.Open();
             try
@@ -386,7 +387,19 @@ namespace Ordermanagement_01.InvoiceRep
                 //At the end save the output file
                 sourceDocument.Close();
                 // Uploading this File to Ftp_Server
+                string FileName = "Invoicemerge.pdf";
+                string filePath = Temp_Source + "\\" + FileName;
+                string file = FileName;
+
+                if (Invoice_Attchment_Type_Id == 1)
+                {
+
+                    Merge_Attach_Path = Destination_Path + "/" + file;
+                }
+
                 Upload_Ftp_File_to_serevr("Invoicemerge.pdf");
+
+                
             }
             catch (Exception ex)
             {
@@ -573,9 +586,9 @@ namespace Ordermanagement_01.InvoiceRep
                     outputStream.Write(buffer, 0, readCount);
                     readCount = ftpStream.Read(buffer, 0, bufferSize);
                 }
-                ftpStream.Close();
-                outputStream.Close();
-                response.Close();
+                ftpStream.Dispose();
+                outputStream.Dispose();
+                response.Dispose();
             }
             catch (Exception ex)
             {
@@ -612,9 +625,9 @@ namespace Ordermanagement_01.InvoiceRep
                     outputStream.Write(buffer, 0, readCount);
                     readCount = ftpStream.Read(buffer, 0, bufferSize);
                 }
-                ftpStream.Close();
-                outputStream.Close();
-                response.Close();
+                ftpStream.Dispose();
+                outputStream.Dispose();
+                response.Dispose();
             }
             catch (Exception ex)
             {
@@ -692,7 +705,7 @@ namespace Ordermanagement_01.InvoiceRep
                         try
                         {
                             folderName = string.IsNullOrEmpty(folderName) ? folderArray[i] : folderName + "/" + folderArray[i];
-                            FtpWebRequest ftp = (FtpWebRequest)FtpWebRequest.Create("ftp://" + Ftp_Path + "/" + folderName);
+                            FtpWebRequest ftp = (FtpWebRequest)WebRequest.Create("ftp://" + Ftp_Path + "/" + folderName);
                             ftp.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password);
                             ftp.Method = WebRequestMethods.Ftp.MakeDirectory;
                             FtpWebResponse CreateForderResponse = (FtpWebResponse)ftp.GetResponse();
@@ -723,6 +736,8 @@ namespace Ordermanagement_01.InvoiceRep
                 // getting the file from Temp Path which has created Once order Opend.
                 string filePath = Temp_Source + "\\" + FileName;
                 string file = FileName;
+
+           
                 FtpWebRequest ftpUpLoadFile = (FtpWebRequest)WebRequest.Create(Destination_Path + "/" + file);
                 ftpUpLoadFile.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password);
                 ftpUpLoadFile.KeepAlive = true;
@@ -740,6 +755,7 @@ namespace Ordermanagement_01.InvoiceRep
             {
                 string filePath = Temp_Source;
                 string file = FileName;
+               
                 FtpWebRequest ftpUpLoadFile = (FtpWebRequest)WebRequest.Create(Destination_Path + "/" + file);
                 ftpUpLoadFile.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password);
                 ftpUpLoadFile.KeepAlive = true;
@@ -1138,7 +1154,7 @@ namespace Ordermanagement_01.InvoiceRep
                         if (Invoice_Attchment_Type_Id == 1)
                         {
 
-                            FtpWebRequest request = (FtpWebRequest)WebRequest.Create(Path1);
+                            FtpWebRequest request = (FtpWebRequest)WebRequest.Create(Merge_Attach_Path);
                             request.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password);
                             request.Method = WebRequestMethods.Ftp.DownloadFile;
                             Stream contentStream = request.GetResponse().GetResponseStream();

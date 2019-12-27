@@ -1,26 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using System.Net;
 using System.Net.Mail;
 using CrystalDecisions.CrystalReports.Engine;
-using CrystalDecisions.ReportSource;
 using CrystalDecisions.Shared;
-using CrystalDecisions.Windows;
 using System.Collections;
 using System.IO;
-using RTF;
-using System.Net.Mime;
-using Outlook = Microsoft.Office.Interop.Outlook;
-using System.DirectoryServices;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
-using System.Text.RegularExpressions;
 
 namespace Ordermanagement_01.Abstractor
 {
@@ -31,35 +18,15 @@ namespace Ordermanagement_01.Abstractor
         Commonclass Comclass = new Commonclass();
         DataAccess dataaccess = new DataAccess();
         DropDownistBindClass dbc = new DropDownistBindClass();
-        int Order_Id;
-        string[] FName;
-        string Document_Name;
-       
-        string Path1;
-        string Attachment_Name;
-        string Directory_Path;
         TableLogOnInfos crtableLogoninfos = new TableLogOnInfos();
         TableLogOnInfo crtableLogoninfo = new TableLogOnInfo();
         ConnectionInfo crConnectionInfo = new ConnectionInfo();
-        string Order_Number;
-        Tables CrTables;
-        string Email, Alternative_Email;
-        int Invoice_Id;
-        string View_File_Path;
-        string Invoice_Status;
-        DialogResult dialogResult;
-        string Forms;
-        string Package = "";
-        string P1, P2;
-        int Index;
-        int Sub_Process_ID;
+        Tables CrTables;        
         NetworkCredential NetworkCred;
-        string From_Date, To_date;
-        string Invoice_Month_Name;
         int Monthly_Invoice_Id;
-        string Month, Year, Emial_Contents,Emial_Add;
-        
-        public Abstractor_Payment_Mail(int MONTHLY_INVOICE_ID,string MONTH,string YEAR,string EMAIL_CONTENTS,string EMAIL_ADD)
+        string Month, Year, Emial_Contents, Emial_Add;
+        string Ftp_Domain_Name, Ftp_User_Name, Ftp_Password;
+        public Abstractor_Payment_Mail(int MONTHLY_INVOICE_ID, string MONTH, string YEAR, string EMAIL_CONTENTS, string EMAIL_ADD)
         {
             InitializeComponent();
             Monthly_Invoice_Id = MONTHLY_INVOICE_ID;
@@ -67,10 +34,25 @@ namespace Ordermanagement_01.Abstractor
             Year = YEAR;
             Emial_Contents = EMAIL_CONTENTS;
             Emial_Add = EMAIL_ADD;
+            DataTable dt_ftp_Details = dbc.Get_Ftp_Details();
+            if (dt_ftp_Details.Rows.Count > 0)
+            {
+                Ftp_Domain_Name = dt_ftp_Details.Rows[0]["Ftp_Host_Name"].ToString();
+                Ftp_User_Name = dt_ftp_Details.Rows[0]["Ftp_User_Name"].ToString();
+                string Ftp_pass = dt_ftp_Details.Rows[0]["Ftp_Password"].ToString();
+                if (Ftp_pass != "")
+                {
+                    Ftp_Password = dbc.Decrypt(Ftp_pass);
+                }
                 Export_Report();
-
                 Send_Html_Email_Body();
-                this.Close();
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Ftp File Path was not found; You cannot upload the documents please check with administrator");
+                Close();
+            }
         }
 
         public void Logon_To_Crystal()
@@ -79,31 +61,26 @@ namespace Ordermanagement_01.Abstractor
             crConnectionInfo.ServerName = cl_Lgoin[0].ToString();
             crConnectionInfo.DatabaseName = cl_Lgoin[1].ToString();
             crConnectionInfo.UserID = cl_Lgoin[2].ToString();
-            crConnectionInfo.Password = cl_Lgoin[3].ToString(); 
+            crConnectionInfo.Password = cl_Lgoin[3].ToString();
             CrTables = rptDoc.Database.Tables;
 
-            foreach (CrystalDecisions.CrystalReports.Engine.Table CrTable in CrTables)
+            foreach (Table CrTable in CrTables)
             {
                 crtableLogoninfo = CrTable.LogOnInfo;
                 crtableLogoninfo.ConnectionInfo = crConnectionInfo;
                 CrTable.ApplyLogOnInfo(crtableLogoninfo);
             }
-           
-
         }
 
         public void Export_Report()
         {
-
-            rptDoc = new Abstractor.Abstractor_Reports.Abstractor_Payment();
+            rptDoc = new Abstractor_Reports.Abstractor_Payment();
             Logon_To_Crystal();
             rptDoc.SetParameterValue("@Abstractor_Monthly_Invoice_ID", Monthly_Invoice_Id);
-         
             ExportOptions CrExportOptions;
-            FileInfo newFile = new FileInfo(@"\\192.168.12.33\ABSTRACTOR FILES\ABSTRACTOR MONTHLY PAYMENT\Abstractor_Monthly_Payement.pdf");
-
+            Download_Ftp_File("AbstractorReport.pdf", "ftp://titlelogy.com/Ftp_Application_Files/OMS/Abstractor_Files/Abstractor_Monthly_Payement.pdf");
+            FileInfo newFile = new FileInfo("C:\\OMS\\Temp" + "\\" + "Abstractor_Monthly_Payement.pdf");
             DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
-
             PdfFormatOptions CrFormatTypeOptions = new PdfFormatOptions();
             CrDiskFileDestinationOptions.DiskFileName = newFile.ToString();
             CrExportOptions = rptDoc.ExportOptions;
@@ -112,14 +89,31 @@ namespace Ordermanagement_01.Abstractor
             CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
             CrExportOptions.FormatOptions = CrFormatTypeOptions;
             rptDoc.Export();
-
-
-
-
-
         }
 
-      
+        private void Download_Ftp_File(string File_Name, string File_path)
+        {
+            try
+            {
+                FtpWebRequest reqFTP;
+                FileStream outputStream = new FileStream("C:\\OMS\\Temp" + "\\" + File_Name, FileMode.Create);
+                reqFTP = (FtpWebRequest)WebRequest.Create(new Uri(File_path));
+                reqFTP.Method = WebRequestMethods.Ftp.DownloadFile;
+                reqFTP.UseBinary = true;
+                reqFTP.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password);
+                FtpWebResponse response = (FtpWebResponse)reqFTP.GetResponse();
+                Stream ftpStream = response.GetResponseStream();
+                ftpStream.CopyTo(outputStream);
+                ftpStream.Close();
+                outputStream.Close();
+                response.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Problem in Downloading Files please Check with Administrator");
+                Close();
+            }
+        }
 
         public void Send_Html_Email_Body()
         {
@@ -127,28 +121,15 @@ namespace Ordermanagement_01.Abstractor
             {
                 try
                 {
-
-
-
                     mm.IsBodyHtml = true;
                     string body = this.PopulateBody();
-
                     SendHtmlFormattedEmail("apinvoice@drnds.com", "Sample", body);
-                    
-                 
-                    this.Close();
-
-
-
-
-
-
+                    Close();
                 }
                 catch (Exception error)
                 {
                     MessageBox.Show(error.Message);
                     return;
-
                 }
             }
 
@@ -157,43 +138,19 @@ namespace Ordermanagement_01.Abstractor
         public string PopulateBody()
         {
             string body = string.Empty;
-
-
-            Directory_Path = @"\\192.168.12.33\Oms Email Templates\Abstractor_Payment_Email.htm";
-
-
-
-
-                using (StreamReader reader = new StreamReader(Directory_Path))
-                {
-
-                    body = reader.ReadToEnd();
-
-
-
-                    body = body.Replace("{Month}",""+Month+" - "+Year+"");
-                  
-                        body = body.Replace("{Text}",Emial_Contents.ToString());
-                   
-
-                }
-
+            body = Read_Body_From_Url("https://titlelogy.com/Ftp_Application_Files/OMS/Oms_Email_Templates/Abstractor_Payment_Email.htm");
+            body = body.Replace("{Month}", "" + Month + " - " + Year + "");
+            body = body.Replace("{Text}", Emial_Contents.ToString());
             return body;
         }
 
         private void SendHtmlFormattedEmail(string recepientEmail, string subject, string body)
         {
-
             using (MailMessage mailMessage = new MailMessage())
             {
-
-
-
                 mailMessage.From = new MailAddress("apinvoice@drnds.com");
-                Path1 = @"\\192.168.12.33\ABSTRACTOR FILES\ABSTRACTOR MONTHLY PAYMENT\Abstractor_Monthly_Payement.pdf";
-                Attachment_Name = ""+Month+"-"+Year+"Payment.pdf";
-               
-
+                string Path1 = "C:\\OMS\\Temp" + "\\" + "Abstractor_Monthly_Payement.pdf";
+                string Attachment_Name = "" + Month + "-" + Year + "Payment.pdf";
                 var maxsize = 15 * 1024 * 1000;
                 var fileName = Path1;
                 FileInfo fi = new FileInfo(fileName);
@@ -201,67 +158,36 @@ namespace Ordermanagement_01.Abstractor
                 if (size <= maxsize)
                 {
                     MemoryStream ms = new MemoryStream(File.ReadAllBytes(Path1));
-
-
-
-                    mailMessage.Attachments.Add(new System.Net.Mail.Attachment(ms, Attachment_Name.ToString()));
-
-                  
-
+                    mailMessage.Attachments.Add(new Attachment(ms, Attachment_Name.ToString()));
                     if (Emial_Add != "")
                     {
-
-
-   
-                        mailMessage.To.Add(Emial_Add.ToString());
-
-
-                        mailMessage.CC.Add("apinvoice@drnds.com");
-
-                        
-                      
-                        
-                            string Subject = "Payment Statement - "+Month+"-"+Year+"";
-                            mailMessage.Subject = Subject.ToString();
-
-                       
+                       // mailMessage.To.Add(Emial_Add.ToString());
+                       // mailMessage.CC.Add("apinvoice@drnds.com");
+                        mailMessage.To.Add("techteam@drnds.com");
+                        string Subject = "Payment Statement - " + Month + "-" + Year + "";
+                        mailMessage.Subject = Subject.ToString();
                         mailMessage.Body = body;
                         mailMessage.IsBodyHtml = true;
-
-
-
                         SmtpClient smtp = new SmtpClient();
-
-                        smtp.Host = "smtpout.secureserver.net";
-
-
-
+                        smtp.Host = "mail.drnds.com";
                         NetworkCred = new NetworkCredential("apinvoice@drnds.com", "AecXmC9T07DcP$");
-                        
-                        smtp.UseDefaultCredentials = true;
-                    
+                        smtp.UseDefaultCredentials = false;
                         smtp.Timeout = (60 * 5 * 1000);
                         smtp.Credentials = NetworkCred;
                         // smtp.EnableSsl = true;
-                        smtp.Port = 25;
+                        smtp.Port = 80;
                         //string userState = "test message1";
                         smtp.Send(mailMessage);
                         smtp.Dispose();
-
-                       
-                            Update_Invoice_Email_Status();
-                        
-                        
+                       // Update_Invoice_Email_Status();
                     }
                     else
                     {
-
                         MessageBox.Show("Email is Not Added Kindly Check It");
                     }
                 }
                 else
                 {
-
                     MessageBox.Show("Attachment Size should less than 10 mb ");
                 }
             }
@@ -270,13 +196,23 @@ namespace Ordermanagement_01.Abstractor
 
         public void Update_Invoice_Email_Status()
         {
-
             Hashtable htupdate = new Hashtable();
             DataTable dtupdate = new DataTable();
             htupdate.Add("@Trans", "UPDATE_EMAIL_STATUS");
             htupdate.Add("@Abs_Monthl_Invoice_Id", Monthly_Invoice_Id);
             dtupdate = dataaccess.ExecuteSP("Sp_Abstractor_Monthly_Invoice", htupdate);
+        }
 
+        public string Read_Body_From_Url(string Url)
+        {
+            WebResponse Result = null;
+            WebRequest req = WebRequest.Create(Url);
+            Result = req.GetResponse();
+            Stream RStream = Result.GetResponseStream();
+            StreamReader sr = new StreamReader(RStream);
+            string body = sr.ReadToEnd().ToString();
+            sr.Dispose();
+            return body;
         }
     }
 }

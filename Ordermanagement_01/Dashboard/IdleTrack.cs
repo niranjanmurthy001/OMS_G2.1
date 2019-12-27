@@ -26,8 +26,6 @@ namespace Ordermanagement_01.Dashboard
         private bool isClosed = false;
         private bool isStopped;
         private bool isStarted;
-        bool IsOpen = false;
-        DialogResult dialogResult = new DialogResult();
         private bool isFromDashBoard { get; }
 
         public IdleTrack(int userId, string productionDate, bool isFromDashBoard)
@@ -302,6 +300,59 @@ namespace Ordermanagement_01.Dashboard
             }
 
         }
+
+
+        //            if (Convert.ToInt32(lookUpEditIdleTypes.EditValue) == 0)
+        //            {
+        //                XtraMessageBox.Show("Select Idle option");
+        //                lookUpEditIdleTypes.Focus();
+        //                return;
+        //            }
+        //            if (isFromDashBoard)
+        //            {
+        //                if ((int)lookUpEditIdleTypes.EditValue != 2 && (int)lookUpEditIdleTypes.EditValue != 4 && (int)lookUpEditIdleTypes.EditValue != 5
+        //                    && (int)lookUpEditIdleTypes.EditValue != 6 && (int)lookUpEditIdleTypes.EditValue != 7 && (int)lookUpEditIdleTypes.EditValue != 8 && (int)lookUpEditIdleTypes.EditValue != 11)
+        //                {
+        //                    XtraMessageBox.Show("Idle Mode for this option cannot be selected when orders present in queue");
+        //                    return;
+        //                }
+        //            }
+        //            var htUpdate = new Hashtable();
+        //htUpdate.Add("@Trans", "UPDATE");
+        //            htUpdate.Add("@User_Idel_Time_Id", nonActionId);
+        //            da.ExecuteSP("SP_User_Idle_Timings", htUpdate);
+
+        //            var htInsert = new Hashtable();
+        //htInsert.Add("@Trans", "INSERT");
+        //            htInsert.Add("@User_Id", userId);
+        //            htInsert.Add("@Production_Date", productionDate);
+        //            htInsert.Add("@Idle_Mode_Id", Convert.ToInt32(lookUpEditIdleTypes.EditValue));
+        //            var Id = da.ExecuteSPForScalar("SP_User_Idle_Timings", htInsert);
+        //idleId = Convert.ToInt64(Id);
+
+        //            var htDate = new Hashtable();
+        //htDate.Add("@Trans", "GET_START_END_TIME");
+        //            htDate.Add("@User_Idel_Time_Id", Id);
+        //            DataTable dtDate = da.ExecuteSP("SP_User_Idle_Timings", htDate);
+        //start = Convert.ToDateTime(dtDate.Rows[0]["Start_Time"]);
+
+        //            lblTotalTime.Text = "00";
+        //            lblStartTime.Text = start.ToString("H:mm:ss tt");
+        //            lblEndTime.Text = "00:00:00";
+        //            isStarted = true;
+        //            btnStart.Enabled = false;
+        //            btnExit.Enabled = false;
+        //            lookUpEditIdleTypes.Enabled = false;
+        //            btnStop.Enabled = true;
+
+        //            timer1.Interval = 1000;
+        //            timer1.Enabled = true;
+        //            timer1.Start();
+        //        }
+
+
+
+
         private void btnStop_Click(object sender, EventArgs e)
         {
             Stop();
@@ -569,16 +620,16 @@ namespace Ordermanagement_01.Dashboard
 
 }
 
-
+   
 
         private void Exit()
         {
             try
             {
-                Employee.Ideal_Timings.isOpen = true;
+                Employee.Ideal_Timings.isOpen = false;
                 isClosed = true;
+                Close();
             }
-            
             catch (Exception ex)
             {
                 throw ex;
@@ -586,8 +637,11 @@ namespace Ordermanagement_01.Dashboard
         }
 
         private void btnExit_Click(object sender, EventArgs e)
-        {      
-            Exit();           
+        {
+            //if (XtraMessageBox.Show("Sure want to exit ?", "Confirm", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            //{
+            Exit();
+            //}
         }
     }
 }

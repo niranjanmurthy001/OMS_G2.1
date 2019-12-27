@@ -29,34 +29,34 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions4 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
+            DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions1 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
-            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange49 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
-            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange50 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
-            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange51 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
-            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange52 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
-            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange53 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
-            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange54 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
-            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange55 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
-            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange56 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
-            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange57 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
-            DevExpress.XtraCharts.XYDiagram xyDiagram9 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.Series series13 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView9 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
+            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange1 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
+            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange2 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
+            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange3 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
+            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange4 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
+            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange5 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
+            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange6 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
+            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange7 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
+            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange8 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
+            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange9 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
+            DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView1 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
+            DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions2 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
+            DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions3 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
+            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.PieSeriesLabel pieSeriesLabel1 = new DevExpress.XtraCharts.PieSeriesLabel();
+            DevExpress.XtraCharts.PieSeriesView pieSeriesView1 = new DevExpress.XtraCharts.PieSeriesView();
+            DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions4 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
+            DevExpress.XtraCharts.XYDiagram xyDiagram2 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series3 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView2 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
+            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange10 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
+            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange11 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
+            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange12 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
             DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions5 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
             DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions6 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
-            DevExpress.XtraCharts.Series series14 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.PieSeriesLabel pieSeriesLabel5 = new DevExpress.XtraCharts.PieSeriesLabel();
-            DevExpress.XtraCharts.PieSeriesView pieSeriesView5 = new DevExpress.XtraCharts.PieSeriesView();
-            DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions7 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
-            DevExpress.XtraCharts.XYDiagram xyDiagram10 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.Series series15 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView10 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
-            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange58 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
-            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange59 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
-            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange60 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
-            DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions1 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
-            DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions2 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.groupControlDashboard = new DevExpress.XtraEditors.GroupControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -87,6 +87,7 @@
             this.arcScaleComponent5 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleComponent();
             this.arcScaleNeedleComponent2 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleNeedleComponent();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.btn_notification = new DevExpress.XtraEditors.SimpleButton();
             this.buttonBreak = new DevExpress.XtraEditors.SimpleButton();
             this.buttonIdle = new DevExpress.XtraEditors.SimpleButton();
             this.buttonYesterday = new DevExpress.XtraEditors.SimpleButton();
@@ -130,7 +131,6 @@
             this.arcScaleRangeBarComponent2 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleRangeBarComponent();
             this.circularGauge2 = new DevExpress.XtraGauges.Win.Gauges.Circular.CircularGauge();
             this.arcScaleBackgroundLayerComponent2 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleBackgroundLayerComponent();
-            this.btn_notification = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlDashboard)).BeginInit();
             this.groupControlDashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -143,25 +143,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleRangeBarComponent1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleComponent1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControlEfficiency)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlError)).BeginInit();
             this.groupControlError.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlTimings)).BeginInit();
             this.groupControlTimings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartControlTimings)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlTimings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewTimings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlAccuracy)).BeginInit();
             this.groupControlAccuracy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartControlAccuracy)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularGauge_Accuracy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleBackgroundLayerComponent1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleComponent5)).BeginInit();
@@ -249,9 +249,9 @@
             this.groupControlEfficiency.CaptionImageOptions.Location = DevExpress.Utils.GroupElementLocation.BeforeText;
             this.groupControlEfficiency.Controls.Add(this.gaugeControlEfficiency);
             this.groupControlEfficiency.Controls.Add(this.chartControlEfficiency);
-            buttonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("buttonImageOptions4.Image")));
+            buttonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("buttonImageOptions1.Image")));
             this.groupControlEfficiency.CustomHeaderButtons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("", true, buttonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1)});
+            new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("", true, buttonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1)});
             this.groupControlEfficiency.CustomHeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.BeforeText;
             this.groupControlEfficiency.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControlEfficiency.Location = new System.Drawing.Point(248, 51);
@@ -325,52 +325,52 @@
             this.arcScaleComponent1.MinorTickmark.ShapeOffset = -7F;
             this.arcScaleComponent1.MinorTickmark.ShapeType = DevExpress.XtraGauges.Core.Model.TickmarkShapeType.Circular_Style16_2;
             this.arcScaleComponent1.Name = "scale1";
-            arcScaleRange49.EndValue = 10F;
-            arcScaleRange49.Name = "Range0";
-            arcScaleRange50.EndValue = 20F;
-            arcScaleRange50.Name = "Range1";
-            arcScaleRange51.EndValue = 30F;
-            arcScaleRange51.Name = "Range2";
-            arcScaleRange52.EndValue = 40F;
-            arcScaleRange52.Name = "Range3";
-            arcScaleRange53.EndValue = 50F;
-            arcScaleRange53.Name = "Range4";
-            arcScaleRange54.EndValue = 60F;
-            arcScaleRange54.Name = "Range5";
-            arcScaleRange55.EndValue = 70F;
-            arcScaleRange55.Name = "Range6";
-            arcScaleRange56.EndValue = 80F;
-            arcScaleRange56.Name = "Range7";
-            arcScaleRange57.EndValue = 90F;
-            arcScaleRange57.Name = "Range8";
+            arcScaleRange1.EndValue = 10F;
+            arcScaleRange1.Name = "Range0";
+            arcScaleRange2.EndValue = 20F;
+            arcScaleRange2.Name = "Range1";
+            arcScaleRange3.EndValue = 30F;
+            arcScaleRange3.Name = "Range2";
+            arcScaleRange4.EndValue = 40F;
+            arcScaleRange4.Name = "Range3";
+            arcScaleRange5.EndValue = 50F;
+            arcScaleRange5.Name = "Range4";
+            arcScaleRange6.EndValue = 60F;
+            arcScaleRange6.Name = "Range5";
+            arcScaleRange7.EndValue = 70F;
+            arcScaleRange7.Name = "Range6";
+            arcScaleRange8.EndValue = 80F;
+            arcScaleRange8.Name = "Range7";
+            arcScaleRange9.EndValue = 90F;
+            arcScaleRange9.Name = "Range8";
             this.arcScaleComponent1.Ranges.AddRange(new DevExpress.XtraGauges.Core.Model.IRange[] {
-            arcScaleRange49,
-            arcScaleRange50,
-            arcScaleRange51,
-            arcScaleRange52,
-            arcScaleRange53,
-            arcScaleRange54,
-            arcScaleRange55,
-            arcScaleRange56,
-            arcScaleRange57});
+            arcScaleRange1,
+            arcScaleRange2,
+            arcScaleRange3,
+            arcScaleRange4,
+            arcScaleRange5,
+            arcScaleRange6,
+            arcScaleRange7,
+            arcScaleRange8,
+            arcScaleRange9});
             this.arcScaleComponent1.StartAngle = -270F;
             this.arcScaleComponent1.Value = 50F;
             // 
             // chartControlEfficiency
             // 
             this.chartControlEfficiency.AutoLayout = false;
-            xyDiagram9.AxisX.Label.Angle = -30;
-            xyDiagram9.AxisX.MinorCount = 1;
-            xyDiagram9.AxisX.NumericScaleOptions.AutoGrid = false;
-            xyDiagram9.AxisX.Title.Text = "";
-            xyDiagram9.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram9.AxisY.MinorCount = 1;
-            xyDiagram9.AxisY.VisibleInPanesSerializable = "-1";
-            xyDiagram9.EnableAxisXScrolling = true;
-            xyDiagram9.EnableAxisXZooming = true;
-            xyDiagram9.EnableAxisYScrolling = true;
-            xyDiagram9.EnableAxisYZooming = true;
-            this.chartControlEfficiency.Diagram = xyDiagram9;
+            xyDiagram1.AxisX.Label.Angle = -30;
+            xyDiagram1.AxisX.MinorCount = 1;
+            xyDiagram1.AxisX.NumericScaleOptions.AutoGrid = false;
+            xyDiagram1.AxisX.Title.Text = "";
+            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram1.AxisY.MinorCount = 1;
+            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
+            xyDiagram1.EnableAxisXScrolling = true;
+            xyDiagram1.EnableAxisXZooming = true;
+            xyDiagram1.EnableAxisYScrolling = true;
+            xyDiagram1.EnableAxisYZooming = true;
+            this.chartControlEfficiency.Diagram = xyDiagram1;
             this.chartControlEfficiency.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartControlEfficiency.Legend.AlignmentHorizontal = DevExpress.XtraCharts.LegendAlignmentHorizontal.Left;
             this.chartControlEfficiency.Legend.AlignmentVertical = DevExpress.XtraCharts.LegendAlignmentVertical.TopOutside;
@@ -378,13 +378,13 @@
             this.chartControlEfficiency.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
             this.chartControlEfficiency.Location = new System.Drawing.Point(2, 29);
             this.chartControlEfficiency.Name = "chartControlEfficiency";
-            series13.Name = "Efficiency";
-            sideBySideBarSeriesView9.BarWidth = 0.4D;
-            sideBySideBarSeriesView9.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(32)))), ((int)(((byte)(96)))));
-            sideBySideBarSeriesView9.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(32)))), ((int)(((byte)(96)))));
-            series13.View = sideBySideBarSeriesView9;
+            series1.Name = "Efficiency";
+            sideBySideBarSeriesView1.BarWidth = 0.4D;
+            sideBySideBarSeriesView1.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(32)))), ((int)(((byte)(96)))));
+            sideBySideBarSeriesView1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(32)))), ((int)(((byte)(96)))));
+            series1.View = sideBySideBarSeriesView1;
             this.chartControlEfficiency.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series13};
+        series1};
             this.chartControlEfficiency.Size = new System.Drawing.Size(235, 148);
             this.chartControlEfficiency.TabIndex = 0;
             this.chartControlEfficiency.Click += new System.EventHandler(this.chartControlEfficiency_Click);
@@ -394,9 +394,9 @@
             this.groupControlError.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupControlError.AppearanceCaption.Options.UseFont = true;
             this.groupControlError.Controls.Add(this.linkLabelErrors);
-            buttonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("buttonImageOptions5.Image")));
+            buttonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("buttonImageOptions2.Image")));
             this.groupControlError.CustomHeaderButtons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("", true, buttonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1)});
+            new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("", true, buttonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1)});
             this.groupControlError.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControlError.Location = new System.Drawing.Point(493, 236);
             this.groupControlError.Name = "groupControlError";
@@ -428,9 +428,9 @@
             this.groupControlTimings.AppearanceCaption.Options.UseFont = true;
             this.groupControlTimings.Controls.Add(this.chartControlTimings);
             this.groupControlTimings.Controls.Add(this.gridControlTimings);
-            buttonImageOptions6.Image = ((System.Drawing.Image)(resources.GetObject("buttonImageOptions6.Image")));
+            buttonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("buttonImageOptions3.Image")));
             this.groupControlTimings.CustomHeaderButtons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("", true, buttonImageOptions6, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1)});
+            new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("", true, buttonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1)});
             this.groupControlTimings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControlTimings.Location = new System.Drawing.Point(248, 236);
             this.groupControlTimings.Name = "groupControlTimings";
@@ -455,21 +455,21 @@
             this.chartControlTimings.Padding.Right = 0;
             this.chartControlTimings.Padding.Top = 0;
             this.chartControlTimings.PaletteName = "Concourse";
-            pieSeriesLabel5.BackColor = System.Drawing.Color.Transparent;
-            pieSeriesLabel5.Border.Visibility = DevExpress.Utils.DefaultBoolean.False;
-            pieSeriesLabel5.ColumnIndent = 1;
-            pieSeriesLabel5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            pieSeriesLabel5.LineLength = 3;
-            pieSeriesLabel5.LineVisibility = DevExpress.Utils.DefaultBoolean.True;
-            pieSeriesLabel5.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
-            pieSeriesLabel5.TextPattern = "{A} : {VP:p2}";
-            series14.Label = pieSeriesLabel5;
-            series14.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
-            series14.LegendName = "Default Legend";
-            series14.Name = "Series 1";
-            series14.View = pieSeriesView5;
+            pieSeriesLabel1.BackColor = System.Drawing.Color.Transparent;
+            pieSeriesLabel1.Border.Visibility = DevExpress.Utils.DefaultBoolean.False;
+            pieSeriesLabel1.ColumnIndent = 1;
+            pieSeriesLabel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            pieSeriesLabel1.LineLength = 3;
+            pieSeriesLabel1.LineVisibility = DevExpress.Utils.DefaultBoolean.True;
+            pieSeriesLabel1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            pieSeriesLabel1.TextPattern = "{A} : {VP:p2}";
+            series2.Label = pieSeriesLabel1;
+            series2.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
+            series2.LegendName = "Default Legend";
+            series2.Name = "Series 1";
+            series2.View = pieSeriesView1;
             this.chartControlTimings.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series14};
+        series2};
             this.chartControlTimings.SeriesTemplate.ArgumentDataMember = "100";
             this.chartControlTimings.SeriesTemplate.LegendName = "Default Legend";
             this.chartControlTimings.Size = new System.Drawing.Size(235, 151);
@@ -548,9 +548,9 @@
             this.groupControlAccuracy.AppearanceCaption.Options.UseFont = true;
             this.groupControlAccuracy.Controls.Add(this.chartControlAccuracy);
             this.groupControlAccuracy.Controls.Add(this.gaugeControl_Accuracy);
-            buttonImageOptions7.Image = ((System.Drawing.Image)(resources.GetObject("buttonImageOptions7.Image")));
+            buttonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("buttonImageOptions4.Image")));
             this.groupControlAccuracy.CustomHeaderButtons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("", true, buttonImageOptions7, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1)});
+            new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("", true, buttonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1)});
             this.groupControlAccuracy.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControlAccuracy.Location = new System.Drawing.Point(493, 51);
             this.groupControlAccuracy.Name = "groupControlAccuracy";
@@ -562,18 +562,18 @@
             // chartControlAccuracy
             // 
             this.chartControlAccuracy.AutoLayout = false;
-            xyDiagram10.AxisX.Label.Angle = -30;
-            xyDiagram10.AxisX.MinorCount = 1;
-            xyDiagram10.AxisX.NumericScaleOptions.AutoGrid = false;
-            xyDiagram10.AxisX.Title.Text = "";
-            xyDiagram10.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram10.AxisY.MinorCount = 1;
-            xyDiagram10.AxisY.VisibleInPanesSerializable = "-1";
-            xyDiagram10.EnableAxisXScrolling = true;
-            xyDiagram10.EnableAxisXZooming = true;
-            xyDiagram10.EnableAxisYScrolling = true;
-            xyDiagram10.EnableAxisYZooming = true;
-            this.chartControlAccuracy.Diagram = xyDiagram10;
+            xyDiagram2.AxisX.Label.Angle = -30;
+            xyDiagram2.AxisX.MinorCount = 1;
+            xyDiagram2.AxisX.NumericScaleOptions.AutoGrid = false;
+            xyDiagram2.AxisX.Title.Text = "";
+            xyDiagram2.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram2.AxisY.MinorCount = 1;
+            xyDiagram2.AxisY.VisibleInPanesSerializable = "-1";
+            xyDiagram2.EnableAxisXScrolling = true;
+            xyDiagram2.EnableAxisXZooming = true;
+            xyDiagram2.EnableAxisYScrolling = true;
+            xyDiagram2.EnableAxisYZooming = true;
+            this.chartControlAccuracy.Diagram = xyDiagram2;
             this.chartControlAccuracy.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartControlAccuracy.Legend.AlignmentHorizontal = DevExpress.XtraCharts.LegendAlignmentHorizontal.Left;
             this.chartControlAccuracy.Legend.AlignmentVertical = DevExpress.XtraCharts.LegendAlignmentVertical.TopOutside;
@@ -582,13 +582,13 @@
             this.chartControlAccuracy.Location = new System.Drawing.Point(2, 29);
             this.chartControlAccuracy.Margin = new System.Windows.Forms.Padding(0);
             this.chartControlAccuracy.Name = "chartControlAccuracy";
-            series15.Name = "Accuracy";
-            sideBySideBarSeriesView10.BarWidth = 0.4D;
-            sideBySideBarSeriesView10.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(32)))), ((int)(((byte)(96)))));
-            sideBySideBarSeriesView10.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(32)))), ((int)(((byte)(96)))));
-            series15.View = sideBySideBarSeriesView10;
+            series3.Name = "Accuracy";
+            sideBySideBarSeriesView2.BarWidth = 0.4D;
+            sideBySideBarSeriesView2.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(32)))), ((int)(((byte)(96)))));
+            sideBySideBarSeriesView2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(32)))), ((int)(((byte)(96)))));
+            series3.View = sideBySideBarSeriesView2;
             this.chartControlAccuracy.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series15};
+        series3};
             this.chartControlAccuracy.SeriesTemplate.LegendName = "Default Legend";
             this.chartControlAccuracy.Size = new System.Drawing.Size(235, 148);
             this.chartControlAccuracy.TabIndex = 4;
@@ -649,30 +649,30 @@
             this.arcScaleComponent5.Name = "scale1";
             this.arcScaleComponent5.RadiusX = 85F;
             this.arcScaleComponent5.RadiusY = 85F;
-            arcScaleRange58.AppearanceRange.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#099776");
-            arcScaleRange58.EndThickness = 3F;
-            arcScaleRange58.EndValue = 33F;
-            arcScaleRange58.Name = "Range0";
-            arcScaleRange58.ShapeOffset = 10F;
-            arcScaleRange58.StartThickness = 3F;
-            arcScaleRange59.AppearanceRange.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#CDB866");
-            arcScaleRange59.EndThickness = 3F;
-            arcScaleRange59.EndValue = 66F;
-            arcScaleRange59.Name = "Range1";
-            arcScaleRange59.ShapeOffset = 10F;
-            arcScaleRange59.StartThickness = 3F;
-            arcScaleRange59.StartValue = 33F;
-            arcScaleRange60.AppearanceRange.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#994673");
-            arcScaleRange60.EndThickness = 3F;
-            arcScaleRange60.EndValue = 100F;
-            arcScaleRange60.Name = "Range2";
-            arcScaleRange60.ShapeOffset = 10F;
-            arcScaleRange60.StartThickness = 3F;
-            arcScaleRange60.StartValue = 66F;
+            arcScaleRange10.AppearanceRange.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#099776");
+            arcScaleRange10.EndThickness = 3F;
+            arcScaleRange10.EndValue = 33F;
+            arcScaleRange10.Name = "Range0";
+            arcScaleRange10.ShapeOffset = 10F;
+            arcScaleRange10.StartThickness = 3F;
+            arcScaleRange11.AppearanceRange.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#CDB866");
+            arcScaleRange11.EndThickness = 3F;
+            arcScaleRange11.EndValue = 66F;
+            arcScaleRange11.Name = "Range1";
+            arcScaleRange11.ShapeOffset = 10F;
+            arcScaleRange11.StartThickness = 3F;
+            arcScaleRange11.StartValue = 33F;
+            arcScaleRange12.AppearanceRange.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#994673");
+            arcScaleRange12.EndThickness = 3F;
+            arcScaleRange12.EndValue = 100F;
+            arcScaleRange12.Name = "Range2";
+            arcScaleRange12.ShapeOffset = 10F;
+            arcScaleRange12.StartThickness = 3F;
+            arcScaleRange12.StartValue = 66F;
             this.arcScaleComponent5.Ranges.AddRange(new DevExpress.XtraGauges.Core.Model.IRange[] {
-            arcScaleRange58,
-            arcScaleRange59,
-            arcScaleRange60});
+            arcScaleRange10,
+            arcScaleRange11,
+            arcScaleRange12});
             this.arcScaleComponent5.Shader = new DevExpress.XtraGauges.Core.Drawing.StyleShader("Colors[Style1:#023796;Style2:#023796]");
             this.arcScaleComponent5.StartAngle = -240F;
             this.arcScaleComponent5.Value = 80F;
@@ -703,6 +703,27 @@
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(729, 42);
             this.panelControl2.TabIndex = 5;
+            // 
+            // btn_notification
+            // 
+            this.btn_notification.AllowFocus = false;
+            this.btn_notification.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_notification.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_notification.Appearance.Options.UseFont = true;
+            this.btn_notification.AppearanceHovered.BackColor = System.Drawing.Color.Transparent;
+            this.btn_notification.AppearanceHovered.Options.UseBackColor = true;
+            this.btn_notification.AutoSize = true;
+            this.btn_notification.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btn_notification.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.btn_notification.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_notification.ImageOptions.Image")));
+            this.btn_notification.Location = new System.Drawing.Point(425, 4);
+            this.btn_notification.Name = "btn_notification";
+            this.btn_notification.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.btn_notification.Size = new System.Drawing.Size(106, 30);
+            this.btn_notification.TabIndex = 8;
+            this.btn_notification.Text = "Notification";
+            this.btn_notification.ToolTip = "Notification";
+            this.btn_notification.Click += new System.EventHandler(this.btn_notification_Click);
             // 
             // buttonBreak
             // 
@@ -1116,9 +1137,9 @@
             this.groupControlQueue.AppearanceCaption.Options.UseFont = true;
             this.groupControlQueue.AutoSize = true;
             this.groupControlQueue.Controls.Add(this.link_Order_Count);
-            buttonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("buttonImageOptions1.Image")));
+            buttonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("buttonImageOptions5.Image")));
             this.groupControlQueue.CustomHeaderButtons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("", true, buttonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1)});
+            new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("", true, buttonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1)});
             this.groupControlQueue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControlQueue.Location = new System.Drawing.Point(738, 236);
             this.groupControlQueue.Name = "groupControlQueue";
@@ -1201,9 +1222,9 @@
             this.groupControlAttendance.AppearanceCaption.Options.UseFont = true;
             this.groupControlAttendance.Controls.Add(this.panelControlAttendance);
             this.groupControlAttendance.Controls.Add(this.gridControlAttendance);
-            buttonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("buttonImageOptions2.Image")));
+            buttonImageOptions6.Image = ((System.Drawing.Image)(resources.GetObject("buttonImageOptions6.Image")));
             this.groupControlAttendance.CustomHeaderButtons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("", true, buttonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1)});
+            new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("", true, buttonImageOptions6, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1)});
             this.groupControlAttendance.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControlAttendance.Location = new System.Drawing.Point(738, 51);
             this.groupControlAttendance.Name = "groupControlAttendance";
@@ -1336,27 +1357,6 @@
             this.arcScaleBackgroundLayerComponent2.ShapeType = DevExpress.XtraGauges.Core.Model.BackgroundLayerShapeType.CircularFull_Style21;
             this.arcScaleBackgroundLayerComponent2.ZOrder = 1000;
             // 
-            // btn_notification
-            // 
-            this.btn_notification.AllowFocus = false;
-            this.btn_notification.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_notification.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_notification.Appearance.Options.UseFont = true;
-            this.btn_notification.AppearanceHovered.BackColor = System.Drawing.Color.Transparent;
-            this.btn_notification.AppearanceHovered.Options.UseBackColor = true;
-            this.btn_notification.AutoSize = true;
-            this.btn_notification.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn_notification.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.btn_notification.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_notification.ImageOptions.Image")));
-            this.btn_notification.Location = new System.Drawing.Point(424, 2);
-            this.btn_notification.Name = "btn_notification";
-            this.btn_notification.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.btn_notification.Size = new System.Drawing.Size(106, 37);
-            this.btn_notification.TabIndex = 8;
-            this.btn_notification.Text = "Notification";
-            this.btn_notification.ToolTip = "Notification";
-            this.btn_notification.Click += new System.EventHandler(this.btn_notification_Click);
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1383,25 +1383,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.labelComponentEfficiency)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleRangeBarComponent1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleComponent1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControlEfficiency)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlError)).EndInit();
             this.groupControlError.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControlTimings)).EndInit();
             this.groupControlTimings.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControlTimings)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlTimings)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewTimings)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlAccuracy)).EndInit();
             this.groupControlAccuracy.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControlAccuracy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularGauge_Accuracy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleBackgroundLayerComponent1)).EndInit();

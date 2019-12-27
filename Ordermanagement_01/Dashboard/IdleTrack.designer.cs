@@ -97,7 +97,6 @@
             this.textEditReason.Properties.NullText = "Reason";
             this.textEditReason.Size = new System.Drawing.Size(264, 20);
             this.textEditReason.TabIndex = 2;
-          //  this.textEditReason.EditValueChanged += new System.EventHandler(this.textEditReason_EditValueChanged);
             // 
             // labelControl3
             // 

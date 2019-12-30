@@ -207,6 +207,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                             foreach (Result_Data res in Res_daata)
                             {
                                 link_Order_Count.Text = res.Live_Order_Count;
+                                
                             }
                         }
                         else
@@ -1004,7 +1005,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
             try
             {
                 Enabled = false;
-                Ordermanagement_01.Employee.Break_Details breakDetails = new Ordermanagement_01.Employee.Break_Details(userId, DateTime.Now.ToString("MM/dd/yyyy"), DateTime.Now.ToString("MM/dd/yyyy"), productionDate);
+                Ordermanagement_01.Employee.Break_DetailsNew breakDetails = new Ordermanagement_01.Employee.Break_DetailsNew(userId, DateTime.Now.ToString("MM/dd/yyyy"), DateTime.Now.ToString("MM/dd/yyyy"), productionDate);
                 Invoke(new MethodInvoker(delegate { breakDetails.Show(); }));
             }
             catch (Exception ex)

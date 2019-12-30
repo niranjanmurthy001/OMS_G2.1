@@ -709,16 +709,14 @@
             this.btn_notification.AllowFocus = false;
             this.btn_notification.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_notification.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_notification.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btn_notification.Appearance.Options.UseFont = true;
-            this.btn_notification.Appearance.Options.UseForeColor = true;
             this.btn_notification.AppearanceHovered.BackColor = System.Drawing.Color.Transparent;
             this.btn_notification.AppearanceHovered.Options.UseBackColor = true;
             this.btn_notification.AutoSize = true;
             this.btn_notification.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btn_notification.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.btn_notification.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_notification.ImageOptions.Image")));
-            this.btn_notification.Location = new System.Drawing.Point(413, 4);
+            this.btn_notification.Location = new System.Drawing.Point(425, 4);
             this.btn_notification.Name = "btn_notification";
             this.btn_notification.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.btn_notification.Size = new System.Drawing.Size(106, 30);

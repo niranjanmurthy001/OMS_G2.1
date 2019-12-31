@@ -9,7 +9,6 @@ using Newtonsoft.Json;
 using Ordermanagement_01.Masters;
 using Ordermanagement_01.Models;
 using System.Net;
-using DevExpress.XtraGrid.Views.Grid;
 using System.Drawing;
 using DevExpress.XtraGrid.Views.Layout;
 using DevExpress.XtraGrid.Views.Base;
@@ -18,9 +17,12 @@ namespace Ordermanagement_01.New_Dashboard.Employee
 {
     public partial class General_Notification : DevExpress.XtraEditors.XtraForm
     {
-        public General_Notification()
+        public readonly int  User_Id;
+        string status;
+        public General_Notification(int User_id)
         {
             InitializeComponent();
+            User_Id = User_id;
         }
         private void General_Notification_Load(object sender, EventArgs e)
         {
@@ -33,7 +35,8 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                 SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
                 var dictionary = new Dictionary<string, object>()
                 {
-                {"@Trans","SELECT_GRID" },
+                {"@View_Type","Details" },
+                { "@User_Id",User_Id}
                 };
                 var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
                 using (var httpClient = new HttpClient())
@@ -62,27 +65,55 @@ namespace Ordermanagement_01.New_Dashboard.Employee
             {
                 SplashScreenManager.CloseForm(false);
             }
-        }
-        private void advBandedGridView1_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
+        }    
+        private void layoutView1_CustomDrawCardFieldValue(object sender, RowCellCustomDrawEventArgs e)
         {
-            if (e.Column.FieldName == "Message")
+            LayoutView View = sender as LayoutView;
+            if (e.RowHandle >= 0)
             {
-                string msg = layoutView1.GetRowCellValue(layoutView1.FocusedRowHandle, "Message").ToString();
-                Ordermanagement_01.Employee.Genral_Message_View alertmesgview = new Ordermanagement_01.Employee.Genral_Message_View(null, msg);
-                alertmesgview.Show();
+                status = View.GetRowCellDisplayText(e.RowHandle, View.Columns["Read_Staus"]);
+                if (status == "UnRead")
+                {
+                    e.Appearance.ForeColor = Color.Blue;
+                }
             }
         }
-        private void layoutView1_CustomDrawCardBackground(object sender, DevExpress.XtraGrid.Views.Layout.Events.LayoutViewCustomDrawCardBackgroundEventArgs e)
-        {
-            e.DefaultDraw();
-            LayoutView view = sender as LayoutView;
-            string cliente = view.GetRowCellValue(e.RowHandle, "Message").ToString();
-            Color bgColor = cliente == "S" ? Color.FromArgb(50,Color.Yellow) : Color.FromArgb(50,Color.DeepSkyBlue);
-            Rectangle rect = e.Bounds;
-            rect.Inflate(-1, -1);
-            using (SolidBrush brush = new SolidBrush(bgColor))
-                e.Graphics.FillRectangle(brush, rect);
-            e.Handled = true;
+        private async void layoutView1_Click(object sender, EventArgs e)
+        {            
+           LayoutView View = sender as LayoutView;
+            layoutView1.Appearance.FieldValue.ForeColor = Color.Black;
+            int messageid = Convert.ToInt32(layoutView1.GetRowCellValue(layoutView1.FocusedRowHandle, "Message_Id"));
+            try
+            {
+                SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
+                var dictionary = new Dictionary<string, object>()
+                {
+                    {"@View_Type","Update"},
+                    {"@Message_Id",messageid},
+                    {"@User_Id",User_Id }
+                };
+                var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
+                using (var httpClient = new HttpClient())
+                {
+                    var response = await httpClient.PostAsync(Base_Url.Url + "/NotificationUpdate/Create", data);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        if (response.StatusCode == HttpStatusCode.OK)
+                        {
+                            layoutView1.Appearance.FieldValue.ForeColor = Color.Black;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                SplashScreenManager.CloseForm(false);
+                throw ex;
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm(false);
+            }
         }
     }
 }

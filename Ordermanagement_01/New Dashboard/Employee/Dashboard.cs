@@ -942,8 +942,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
             {
                 btn_notification.ForeColor = Color.FromArgb(0, 0, 255);
                 btn_notification.Text = "Notification" + " " + "(" + value + ")";
-            }
-           
+            }           
         }
         private async void buttonTheme_Click(object sender, EventArgs e)
         {
@@ -1056,7 +1055,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
 
         private void btn_notification_Click(object sender, EventArgs e)
         {
-            Ordermanagement_01.New_Dashboard.Employee.General_Notification note = new General_Notification();
+            Ordermanagement_01.New_Dashboard.Employee.General_Notification note = new General_Notification(userId);
             note.Show();
         }
 

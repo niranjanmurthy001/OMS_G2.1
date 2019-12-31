@@ -39,6 +39,8 @@
             this.layoutViewField_order_by_date = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
             this.Readstatus = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
             this.layoutViewField_layoutViewColumn1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.Message_id = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            this.layoutViewField_layoutViewColumn1_1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
             this.layoutViewCard1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewCard();
             this.repositoryItemMemoEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
@@ -50,6 +52,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_Message)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_order_by_date)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_layoutViewColumn1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_layoutViewColumn1_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).BeginInit();
             this.SuspendLayout();
@@ -91,10 +94,12 @@
             this.layoutView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.LayoutViewColumn[] {
             this.Message,
             this.updatedon,
-            this.Readstatus});
+            this.Readstatus,
+            this.Message_id});
             this.layoutView1.GridControl = this.grid_notification;
             this.layoutView1.HiddenItems.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutViewField_layoutViewColumn1});
+            this.layoutViewField_layoutViewColumn1,
+            this.layoutViewField_layoutViewColumn1_1});
             this.layoutView1.Name = "layoutView1";
             this.layoutView1.OptionsItemText.AlignMode = DevExpress.XtraGrid.Views.Layout.FieldTextAlignMode.AlignGlobal;
             this.layoutView1.OptionsItemText.TextToControlDistance = 8;
@@ -105,7 +110,8 @@
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.updatedon, DevExpress.Data.ColumnSortOrder.Descending),
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.Message, DevExpress.Data.ColumnSortOrder.Descending)});
             this.layoutView1.TemplateCard = this.layoutViewCard1;
-            this.layoutView1.CustomDrawCardBackground += new DevExpress.XtraGrid.Views.Layout.Events.LayoutViewCustomDrawCardBackgroundEventHandler(this.layoutView1_CustomDrawCardBackground);
+            this.layoutView1.CustomDrawCardFieldValue += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.layoutView1_CustomDrawCardFieldValue);
+            this.layoutView1.Click += new System.EventHandler(this.layoutView1_Click);
             // 
             // Message
             // 
@@ -136,7 +142,7 @@
             this.layoutViewField_Message.Location = new System.Drawing.Point(0, 0);
             this.layoutViewField_Message.Name = "layoutViewField_Message";
             this.layoutViewField_Message.Padding = new DevExpress.XtraLayout.Utils.Padding(1, 1, 1, 1);
-            this.layoutViewField_Message.Size = new System.Drawing.Size(599, 42);
+            this.layoutViewField_Message.Size = new System.Drawing.Size(597, 20);
             this.layoutViewField_Message.Spacing = new DevExpress.XtraLayout.Utils.Padding(1, 1, 1, 1);
             this.layoutViewField_Message.TextSize = new System.Drawing.Size(0, 0);
             this.layoutViewField_Message.TextVisible = false;
@@ -169,17 +175,17 @@
             // layoutViewField_order_by_date
             // 
             this.layoutViewField_order_by_date.EditorPreferredWidth = 124;
-            this.layoutViewField_order_by_date.Location = new System.Drawing.Point(0, 42);
+            this.layoutViewField_order_by_date.Location = new System.Drawing.Point(0, 20);
             this.layoutViewField_order_by_date.Name = "layoutViewField_order_by_date";
             this.layoutViewField_order_by_date.Padding = new DevExpress.XtraLayout.Utils.Padding(1, 1, 1, 1);
-            this.layoutViewField_order_by_date.Size = new System.Drawing.Size(599, 24);
+            this.layoutViewField_order_by_date.Size = new System.Drawing.Size(597, 44);
             this.layoutViewField_order_by_date.Spacing = new DevExpress.XtraLayout.Utils.Padding(1, 1, 1, 1);
             this.layoutViewField_order_by_date.TextSize = new System.Drawing.Size(461, 13);
             // 
             // Readstatus
             // 
             this.Readstatus.Caption = "Read Status";
-            this.Readstatus.FieldName = "Read_Status";
+            this.Readstatus.FieldName = "Read_Staus";
             this.Readstatus.LayoutViewField = this.layoutViewField_layoutViewColumn1;
             this.Readstatus.Name = "Readstatus";
             // 
@@ -190,6 +196,21 @@
             this.layoutViewField_layoutViewColumn1.Name = "layoutViewField_layoutViewColumn1";
             this.layoutViewField_layoutViewColumn1.Size = new System.Drawing.Size(595, 45);
             this.layoutViewField_layoutViewColumn1.TextSize = new System.Drawing.Size(461, 20);
+            // 
+            // Message_id
+            // 
+            this.Message_id.Caption = "Message ID";
+            this.Message_id.FieldName = "Gen_Update_ID";
+            this.Message_id.LayoutViewField = this.layoutViewField_layoutViewColumn1_1;
+            this.Message_id.Name = "Message_id";
+            // 
+            // layoutViewField_layoutViewColumn1_1
+            // 
+            this.layoutViewField_layoutViewColumn1_1.EditorPreferredWidth = 10;
+            this.layoutViewField_layoutViewColumn1_1.Location = new System.Drawing.Point(0, 44);
+            this.layoutViewField_layoutViewColumn1_1.Name = "layoutViewField_layoutViewColumn1_1";
+            this.layoutViewField_layoutViewColumn1_1.Size = new System.Drawing.Size(597, 20);
+            this.layoutViewField_layoutViewColumn1_1.TextSize = new System.Drawing.Size(461, 20);
             // 
             // layoutViewCard1
             // 
@@ -233,6 +254,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_Message)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_order_by_date)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_layoutViewColumn1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_layoutViewColumn1_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).EndInit();
             this.ResumeLayout(false);
@@ -249,10 +271,13 @@
         private DevExpress.XtraGrid.Views.Layout.LayoutView layoutView1;
         private DevExpress.XtraGrid.Columns.LayoutViewColumn Message;
         private DevExpress.XtraGrid.Columns.LayoutViewColumn updatedon;
-        private DevExpress.XtraGrid.Columns.LayoutViewColumn Readstatus;
+        private DevExpress.XtraGrid.Columns.LayoutViewColumn Read_Status;
         private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_Message;
         private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_order_by_date;
         private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_layoutViewColumn1;
         private DevExpress.XtraGrid.Views.Layout.LayoutViewCard layoutViewCard1;
+        private DevExpress.XtraGrid.Columns.LayoutViewColumn Readstatus;
+        private DevExpress.XtraGrid.Columns.LayoutViewColumn Message_id;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_layoutViewColumn1_1;
     }
 }

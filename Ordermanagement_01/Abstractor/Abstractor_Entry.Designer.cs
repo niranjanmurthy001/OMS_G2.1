@@ -131,7 +131,7 @@
             this.label1.Size = new System.Drawing.Size(214, 31);
             this.label1.TabIndex = 2;
             this.label1.Text = "ABSTRACTOR PROFILE";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            //this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // ddl_PaymentType
             // 
@@ -527,7 +527,7 @@
             this.tabPage1.Size = new System.Drawing.Size(1254, 560);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Abstractor Details";
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+           // this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // ddl_abstractor_status
             // 
@@ -613,7 +613,7 @@
             this.ddl_SendMode.Name = "ddl_SendMode";
             this.ddl_SendMode.Size = new System.Drawing.Size(120, 28);
             this.ddl_SendMode.TabIndex = 130;
-            this.ddl_SendMode.SelectedIndexChanged += new System.EventHandler(this.ddl_SendMode_SelectedIndexChanged);
+           // this.ddl_SendMode.SelectedIndexChanged += new System.EventHandler(this.ddl_SendMode_SelectedIndexChanged);
             // 
             // label21
             // 

@@ -14,6 +14,8 @@ using System.Net.Http;
 using Newtonsoft.Json;
 using Ordermanagement_01.Models;
 using static Ordermanagement_01.New_Dashboard.New_Dashboard;
+using System.Text.RegularExpressions;
+using DevExpress.XtraSpreadsheet.Model;
 
 namespace Ordermanagement_01.New_Dashboard
 {
@@ -28,6 +30,7 @@ namespace Ordermanagement_01.New_Dashboard
         string _Result_Message;
         string _Password;
         string URL = "";
+        string data;
         Models.Users _User_det = new Models.Users();
 
         private bool IsClicked = false;
@@ -78,7 +81,7 @@ namespace Ordermanagement_01.New_Dashboard
 
                 var serializedUser = JsonConvert.SerializeObject(_User_det);
                 var content = new StringContent(serializedUser, Encoding.UTF8, "application/json");
-                var result = await Client.PostAsync(Base_Url.Url+"/Login/Validate_User", content);
+                var result = await Client.PostAsync(Base_Url.Url + "/Login/Validate_User", content);
 
                 if (result.IsSuccessStatusCode)
                 {
@@ -212,6 +215,38 @@ namespace Ordermanagement_01.New_Dashboard
             }
         }
 
+        private void textEditUsername_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
+           e.Handled = (e.KeyChar == (char)Keys.Space);
+           
+
+
+        }
+        private void textEditPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == (Keys.Control | Keys.C) || e.KeyData == (Keys.Control | Keys.V))
+            {
+                e.SuppressKeyPress = true;
+                e.Handled = true;
+            }
+        }
+
+        private void textEditUsername_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void panelControl1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textEditUsername_TextChanged(object sender, EventArgs e)
+        {         
+            textEditUsername.Text = textEditUsername.Text.Replace(" ", string.Empty);
+
+        }
         private void textEditPassword_EditValueChanged(object sender, EventArgs e)
         {
             TextEdit textEditPassword = sender as TextEdit;
@@ -228,6 +263,7 @@ namespace Ordermanagement_01.New_Dashboard
         {
             SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
             Init();
+
             SplashScreenManager.CloseForm(false);
         }
 
@@ -235,6 +271,8 @@ namespace Ordermanagement_01.New_Dashboard
         {
             lblCopyright.Text = $"© {DateTime.Now.Year} DRN All Rights Reserved.";
         }
+      
+       
     }
 
 

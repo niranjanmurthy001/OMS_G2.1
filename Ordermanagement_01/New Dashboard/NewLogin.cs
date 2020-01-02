@@ -231,17 +231,6 @@ namespace Ordermanagement_01.New_Dashboard
                 e.Handled = true;
             }
         }
-
-        private void textEditUsername_KeyDown(object sender, KeyEventArgs e)
-        {
-
-        }
-
-        private void panelControl1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void textEditUsername_TextChanged(object sender, EventArgs e)
         {         
             textEditUsername.Text = textEditUsername.Text.Replace(" ", string.Empty);

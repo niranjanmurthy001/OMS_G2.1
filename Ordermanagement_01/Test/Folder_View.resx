@@ -117,33 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="buttonRefresh.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAGYktHRAD/AP8A/6C9p5MAAALuSURBVGhD7ZhLb9NAEIBTBErWbqBFcOElXgJOwIXHgQMSEg8J
-        uIXG3k3Eq5XoiZ/AbwAViQtCiD/AQ1QViBMg/gEHKNxovJukpSnHyMysxyFyA2nTTdKg/aRR05nxeNY7
-        nt11ymKxWCwWy3/FvXCD68vjjlBXHa7G4e9tx1NXXBEcQxt5rT8YL51mInjmcKlAwr9IAPIEfemy/pMu
-        qkOMq7eJRFGqjMvPKPB7IWFDeZX1ykcoTH+AsihCIrWmpD46vrzFeGUXuTRAnS4pLt83+ddggGPk0luG
-        c3PbIYE6JTLr8tI5MrXF5cF5R8ivdG0IM3iXTL0kHIKbT4Hc38orm0m5YkZz1S0OD57TIOpMKI9MA8RE
-        uAmSf02D+JUplPaRZYDIyWFI/psehJAvSNsdmCfPYOnQv8Zw/eACzQJI+QSpzcKK5Z1wg3mo20lSGQU6
-        1KdoFtRDUplEv7DT9JRq3ahVbL8Uv2p8lvV2oDHF2PbkO9M3yeTn9sbxjT4glq/shqDLV1I/uEMunXM2
-        3Jjxg/0o6bHgADyYxSi+Go/1Tl7tIO/OgIBxm0vKEt6U3DpEl+ZMIm5SbpLz6kmWTlJMlBKWzp8nnxT1
-        Zk3xcfoaUxntYzDpxViHgmVA7h2D5bg8ebmA5UsuawfLJQ7OitU9pDZEy1LqvHRaAocRCArrgAxdIW+Q
-        1hjYeSB2vLOdNt3lNI4IHtENPpDKKLhIQuyfRkunGVYonaIBhLglJrVBwqFou9JFIPmXehCwn08VSi6p
-        Bwd8gWEAS9FMQJu79CVNpsHB5cqHAUSnMdgCj1yfHyHTitEHGl8+gBhTXXlh24HHwGgWtMxCZ7pIprbo
-        IyWX3+naetb7sY1MvYUJeS2xisKhXk206iK69PTKTtvmSGpwFiiQS3/ICnUYEole7CbBgYH867PKTFrI
-        gxSm/+gW68vHkBh+vEomG4mQEkrvKfPLJ+mydQh+WvSCo1Aql/UhZVA+LVosFovFYlk1qdRvOVMuOKuu
-        8BIAAAAASUVORK5CYII=
-</value>
-  </data>
-  <metadata name="popupMenu1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>20, 11</value>
-  </metadata>
-  <metadata name="defaultLookAndFeel1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>148, 9</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>29</value>
-  </metadata>
 </root>

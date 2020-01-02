@@ -2539,6 +2539,12 @@
     <Compile Include="Test\Api_Call.Designer.cs">
       <DependentUpon>Api_Call.cs</DependentUpon>
     </Compile>
+    <Compile Include="Test\Folder_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test\Folder_View.Designer.cs">
+      <DependentUpon>Folder_View.cs</DependentUpon>
+    </Compile>
     <Compile Include="Test\Form2Dev.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -3981,6 +3987,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Test\Api_Call.resx">
       <DependentUpon>Api_Call.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test\Folder_View.resx">
+      <DependentUpon>Folder_View.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Test\Form2Dev.resx">
       <DependentUpon>Form2Dev.cs</DependentUpon>

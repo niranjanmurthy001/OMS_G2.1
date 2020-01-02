@@ -1821,10 +1821,10 @@
     <Compile Include="OldServerDetails\Order_Uploads_Old.designer.cs">
       <DependentUpon>Order_Uploads_Old.cs</DependentUpon>
     </Compile>
-    <Compile Include="OrderHistory.cs">
+    <Compile Include="New Dashboard\Orders\OrderHistory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OrderHistory.designer.cs">
+    <Compile Include="New Dashboard\Orders\OrderHistory.designer.cs">
       <DependentUpon>OrderHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="Order_Check_List.cs">
@@ -3596,7 +3596,7 @@
     <EmbeddedResource Include="OldServerDetails\Order_Uploads_Old.resx">
       <DependentUpon>Order_Uploads_Old.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OrderHistory.resx">
+    <EmbeddedResource Include="New Dashboard\Orders\OrderHistory.resx">
       <DependentUpon>OrderHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Order_Check_List.resx">

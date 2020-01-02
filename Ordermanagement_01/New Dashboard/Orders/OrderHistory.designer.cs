@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderHistory));
             this.groupControlOrderHistory = new DevExpress.XtraEditors.GroupControl();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -60,6 +61,7 @@
             this.statusChangeby = new DevExpress.XtraGrid.Columns.GridColumn();
             this.reason = new DevExpress.XtraGrid.Columns.GridColumn();
             this.changedDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.groupControlOrderHistory)).BeginInit();
             this.groupControlOrderHistory.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -87,7 +89,7 @@
             this.groupControlOrderHistory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControlOrderHistory.Location = new System.Drawing.Point(0, 0);
             this.groupControlOrderHistory.Name = "groupControlOrderHistory";
-            this.groupControlOrderHistory.Size = new System.Drawing.Size(1238, 479);
+            this.groupControlOrderHistory.Size = new System.Drawing.Size(869, 533);
             this.groupControlOrderHistory.TabIndex = 0;
             this.groupControlOrderHistory.Text = "History List";
             // 
@@ -98,12 +100,12 @@
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panelControl1, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 37);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 33);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 53F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1234, 440);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(865, 498);
             this.tableLayoutPanel1.TabIndex = 19;
             // 
             // panel1
@@ -120,14 +122,15 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1228, 47);
+            this.panel1.Size = new System.Drawing.Size(859, 47);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // lbl_Clientname
             // 
             this.lbl_Clientname.AutoSize = true;
             this.lbl_Clientname.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Clientname.Location = new System.Drawing.Point(117, 16);
+            this.lbl_Clientname.Location = new System.Drawing.Point(117, 15);
             this.lbl_Clientname.Name = "lbl_Clientname";
             this.lbl_Clientname.Size = new System.Drawing.Size(72, 16);
             this.lbl_Clientname.TabIndex = 12;
@@ -148,7 +151,7 @@
             // 
             this.lbl_County.AutoSize = true;
             this.lbl_County.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_County.Location = new System.Drawing.Point(982, 16);
+            this.lbl_County.Location = new System.Drawing.Point(763, 12);
             this.lbl_County.Name = "lbl_County";
             this.lbl_County.Size = new System.Drawing.Size(49, 20);
             this.lbl_County.TabIndex = 15;
@@ -159,7 +162,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            this.label4.Location = new System.Drawing.Point(324, 16);
+            this.label4.Location = new System.Drawing.Point(243, 16);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(134, 16);
             this.label4.TabIndex = 8;
@@ -169,7 +172,7 @@
             // 
             this.lbl_State.AutoSize = true;
             this.lbl_State.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_State.Location = new System.Drawing.Point(751, 16);
+            this.lbl_State.Location = new System.Drawing.Point(586, 15);
             this.lbl_State.Name = "lbl_State";
             this.lbl_State.Size = new System.Drawing.Size(38, 16);
             this.lbl_State.TabIndex = 14;
@@ -180,7 +183,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            this.label5.Location = new System.Drawing.Point(693, 16);
+            this.label5.Location = new System.Drawing.Point(528, 16);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 16);
             this.label5.TabIndex = 9;
@@ -190,7 +193,7 @@
             // 
             this.lbl_Subprocess.AutoSize = true;
             this.lbl_Subprocess.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Subprocess.Location = new System.Drawing.Point(464, 16);
+            this.lbl_Subprocess.Location = new System.Drawing.Point(383, 16);
             this.lbl_Subprocess.Name = "lbl_Subprocess";
             this.lbl_Subprocess.Size = new System.Drawing.Size(74, 16);
             this.lbl_Subprocess.TabIndex = 13;
@@ -201,7 +204,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            this.label6.Location = new System.Drawing.Point(914, 17);
+            this.label6.Location = new System.Drawing.Point(695, 15);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(62, 16);
             this.label6.TabIndex = 10;
@@ -214,7 +217,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(3, 56);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1228, 381);
+            this.panelControl1.Size = new System.Drawing.Size(859, 439);
             this.panelControl1.TabIndex = 1;
             // 
             // splitContainerControl1
@@ -227,22 +230,23 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.groupControl3);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1228, 381);
-            this.splitContainerControl1.SplitterPosition = 274;
+            this.splitContainerControl1.Size = new System.Drawing.Size(859, 439);
+            this.splitContainerControl1.SplitterPosition = 257;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
             // groupControl2
             // 
+            this.groupControl2.Appearance.BackColor = System.Drawing.SystemColors.Control;
+            this.groupControl2.Appearance.Options.UseBackColor = true;
             this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupControl2.AppearanceCaption.Options.UseFont = true;
+            this.groupControl2.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("groupControl2.CaptionImageOptions.Image")));
             this.groupControl2.Controls.Add(this.gridControlOrderHistory);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
-            this.groupControl2.LookAndFeel.SkinName = "Office 2010 Blue";
-            this.groupControl2.LookAndFeel.UseDefaultLookAndFeel = false;
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1228, 274);
+            this.groupControl2.Size = new System.Drawing.Size(859, 257);
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "Order History";
             // 
@@ -252,7 +256,7 @@
             this.gridControlOrderHistory.Location = new System.Drawing.Point(2, 21);
             this.gridControlOrderHistory.MainView = this.gridViewOrderHistory;
             this.gridControlOrderHistory.Name = "gridControlOrderHistory";
-            this.gridControlOrderHistory.Size = new System.Drawing.Size(1224, 251);
+            this.gridControlOrderHistory.Size = new System.Drawing.Size(855, 234);
             this.gridControlOrderHistory.TabIndex = 18;
             this.gridControlOrderHistory.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewOrderHistory});
@@ -336,23 +340,22 @@
             // 
             this.groupControl3.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupControl3.AppearanceCaption.Options.UseFont = true;
+            this.groupControl3.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("groupControl3.CaptionImageOptions.Image")));
             this.groupControl3.Controls.Add(this.gridControlOrderStatusHistory);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(0, 0);
-            this.groupControl3.LookAndFeel.SkinName = "Office 2010 Blue";
-            this.groupControl3.LookAndFeel.UseDefaultLookAndFeel = false;
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(1228, 101);
+            this.groupControl3.Size = new System.Drawing.Size(859, 170);
             this.groupControl3.TabIndex = 1;
             this.groupControl3.Text = "Order Status History";
             // 
             // gridControlOrderStatusHistory
             // 
             this.gridControlOrderStatusHistory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlOrderStatusHistory.Location = new System.Drawing.Point(2, 21);
+            this.gridControlOrderStatusHistory.Location = new System.Drawing.Point(2, 31);
             this.gridControlOrderStatusHistory.MainView = this.gridViewOrderStatusHistory;
             this.gridControlOrderStatusHistory.Name = "gridControlOrderStatusHistory";
-            this.gridControlOrderStatusHistory.Size = new System.Drawing.Size(1224, 78);
+            this.gridControlOrderStatusHistory.Size = new System.Drawing.Size(855, 137);
             this.gridControlOrderStatusHistory.TabIndex = 18;
             this.gridControlOrderStatusHistory.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewOrderStatusHistory});
@@ -414,14 +417,20 @@
             this.changedDate.Visible = true;
             this.changedDate.VisibleIndex = 4;
             // 
+            // defaultLookAndFeel1
+            // 
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Visual Studio 2013 Light";
+            // 
             // OrderHistory
             // 
+            this.Appearance.BackColor = System.Drawing.SystemColors.Control;
+            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1238, 479);
+            this.ClientSize = new System.Drawing.Size(869, 533);
             this.Controls.Add(this.groupControlOrderHistory);
             this.LookAndFeel.SkinName = "Office 2010 Blue";
-            this.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.MinimumSize = new System.Drawing.Size(885, 571);
             this.Name = "OrderHistory";
             this.Text = "Order History";
             this.Load += new System.EventHandler(this.OrderHistory_Load);
@@ -479,6 +488,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn statusChangeby;
         private DevExpress.XtraGrid.Columns.GridColumn reason;
         private DevExpress.XtraGrid.Columns.GridColumn changedDate;
-
+        private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
     }
 }

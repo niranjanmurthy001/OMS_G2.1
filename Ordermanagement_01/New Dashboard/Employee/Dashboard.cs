@@ -20,6 +20,7 @@ using DevExpress.XtraEditors.Controls;
 using static Ordermanagement_01.New_Dashboard.New_Dashboard;
 using System.Runtime.InteropServices;
 using Ordermanagement_01.Properties;
+using Ordermanagement_01.Masters;
 
 namespace Ordermanagement_01.New_Dashboard.Employee
 {
@@ -76,6 +77,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                 BindEfficiencyAsync(productionDate), Load_Order_Count());
                 t.Wait(1000);
                 WindowState = FormWindowState.Maximized;
+                UserCount();
                 Notification_Details();
             }
             catch (Exception ex)
@@ -89,6 +91,78 @@ namespace Ordermanagement_01.New_Dashboard.Employee
             }
 
         }
+        private async void UserCount()
+        {
+
+            try
+            {
+                var dictionary = new Dictionary<string, object>()
+            {
+                {"@Trans","UserCount" },
+                {"@User_Id",userId }
+            };
+                var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
+                using (var httpClient = new HttpClient())
+                {
+                    var response = await httpClient.PostAsync(Base_Url.Url + "/Notification/Count", data);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        if (response.StatusCode == HttpStatusCode.OK)
+                        {
+                            var result = await response.Content.ReadAsStringAsync();
+                            DataTable dt = JsonConvert.DeserializeObject<DataTable>(result);
+                            if (dt != null && dt.Rows.Count > 0)
+                            {
+                                value = Convert.ToInt32(dt.Rows[0][0]);
+                                if (value == 0)
+                                {
+                                    GetData();                                   
+                                }                                
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private async void GetData()
+        {
+            try
+            {
+                SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
+                var dictionary1 = new Dictionary<string, object>()
+                {
+                {"@Trans","User_Details_View" },
+                { "@User_Id",userId}
+                };
+                var data = new StringContent(JsonConvert.SerializeObject(dictionary1), Encoding.UTF8, "application/json");
+                using (var httpClient = new HttpClient())
+                {
+                    var response = await httpClient.PostAsync(Base_Url.Url + "/Notification/Order_Notification", data);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        if (response.StatusCode == HttpStatusCode.OK)
+                        {
+                            var result = await response.Content.ReadAsStringAsync();
+                            DataTable dt = JsonConvert.DeserializeObject<DataTable>(result);                            
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                SplashScreenManager.CloseForm(false);
+                throw ex;
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm(false);
+            }
+        }
 
         private async void Notification_Details()
         {
@@ -100,7 +174,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
             var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
             using (var httpClient = new HttpClient())
             {
-                var response = await httpClient.PostAsync(Base_Url.Url + "/NotificationCount/Count", data);
+                var response = await httpClient.PostAsync(Base_Url.Url + "/Notification/Count", data);
                 if (response.IsSuccessStatusCode)
                 {
                     if (response.StatusCode == HttpStatusCode.OK)
@@ -111,16 +185,16 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                         {
                             value = Convert.ToInt32(dt.Rows[0][0]);
                             if (value > 0)
-                            {                               
+                            {
                                 btn_notification.Image = Resources.red;
                                 btn_notification.ForeColor = Color.Black;
-                                btn_notification.Text = "Notification" + " " + "(" + value + ")";
+                                btn_notification.Text = "Notification" + "(" + value + ")";
                             }
                             else
                             {
                                 btn_notification.Image = Resources.notify;
                                 btn_notification.ForeColor = Color.Black;
-                                btn_notification.Text = "Notification";                                
+                                btn_notification.Text = "Notification";
                             }
                         }
                     }
@@ -932,6 +1006,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
         {
             BindToday();
             Notification_Details();
+            
             if (value==0)
             {
                 btn_notification.Image = Resources.notify;

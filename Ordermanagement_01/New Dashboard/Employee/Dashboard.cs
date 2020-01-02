@@ -190,7 +190,6 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                     else if (userRoleId == 2 || userRoleId == 3 || userRoleId == 4)
                     {
                         list.Add("@Trans", "COUNT_OF_ORDERS_WORK_TYPE_WISE_USER_WISE");
-
                     }
                     list.Add("@User_Id", userId);
                     var serializedUser = JsonConvert.SerializeObject(list);
@@ -199,7 +198,6 @@ namespace Ordermanagement_01.New_Dashboard.Employee
 
                     if (result.IsSuccessStatusCode)
                     {
-
                         var UserJsonString = await result.Content.ReadAsStringAsync();
                         Result_Data[] Res_daata = JsonConvert.DeserializeObject<Result_Data[]>(UserJsonString);
                         if (Res_daata != null)
@@ -207,15 +205,12 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                             foreach (Result_Data res in Res_daata)
                             {
                                 link_Order_Count.Text = res.Live_Order_Count;
-                                
                             }
                         }
                         else
                         {
                             link_Order_Count.Text = "00";
                         }
-
-
                     }
                 }
             }
@@ -933,7 +928,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
         private void buttonRefresh_Click(object sender, EventArgs e)
         {
             BindToday();
-            if(value==0)
+            if (value == 0)
             {
                 btn_notification.Text = "Notification";
                 btn_notification.ForeColor = Color.FromArgb(0, 0, 0);
@@ -942,7 +937,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
             {
                 btn_notification.ForeColor = Color.FromArgb(0, 0, 255);
                 btn_notification.Text = "Notification" + " " + "(" + value + ")";
-            }           
+            }
         }
         private async void buttonTheme_Click(object sender, EventArgs e)
         {

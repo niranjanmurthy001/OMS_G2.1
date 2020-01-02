@@ -215,10 +215,7 @@ namespace Ordermanagement_01.Gen_Forms
             System.Environment.Exit(1);
         }
 
-        private void txt_username_TextChanged(object sender, EventArgs e)
-        {
-           
-        }
+   
 
         private void txt_password_TextChanged(object sender, EventArgs e)
         {

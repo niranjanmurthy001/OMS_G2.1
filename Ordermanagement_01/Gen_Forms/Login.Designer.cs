@@ -70,7 +70,7 @@
             this.txt_Emp_Code.Name = "txt_username";
             this.txt_Emp_Code.Size = new System.Drawing.Size(342, 36);
             this.txt_Emp_Code.TabIndex = 5;
-            this.txt_Emp_Code.TextChanged += new System.EventHandler(this.txt_username_TextChanged);
+            //this.txt_Emp_Code.TextChanged += new System.EventHandler(this.txt_username_TextChanged);
             this.txt_Emp_Code.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_username_KeyDown);
             // 
             // txt_Cancel

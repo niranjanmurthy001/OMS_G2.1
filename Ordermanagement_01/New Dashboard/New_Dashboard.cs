@@ -1430,6 +1430,109 @@ namespace Ordermanagement_01.New_Dashboard
 
         #endregion
 
+        private void gridView1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int Selected_Rows_Count = 0;
+                Selected_Row_List = gridView1.GetSelectedRows().ToList();
+
+                 Selected_Rows_Count = gridView1.SelectedRowsCount;
+
+
+                if (Selected_Rows_Count > 1 || Selected_Rows_Count == 0)
+                {
+
+                    Window_Ui_Btn_View_List.Visible = false;
+                }
+                else
+                {
+
+                    Window_Ui_Btn_View_List.Visible = true;
+                }
+
+                gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            }
+            catch (Exception EX)
+            {
+
+            }
+        }
+
+        private void gridView3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int  Selected_Rows_Count = 0;
+
+                Selected_Row_List = gridView3.GetSelectedRows().ToList();
+
+                 Selected_Rows_Count = gridView3.SelectedRowsCount;
+
+
+                if (Selected_Rows_Count > 1 || Selected_Rows_Count == 0)
+                {
+
+                    Window_Ui_Btn_View_List.Visible = false;
+                }
+                else
+                {
+
+                    Window_Ui_Btn_View_List.Visible = true;
+                }
+
+                gridView3.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            }
+            catch (Exception EX)
+            {
+
+            }
+
+        }
+
+        private void gridView3_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            GridView view = sender as GridView;
+            if (e.Control && e.KeyCode == Keys.C)
+            {
+
+                if (view.GetRowCellValue(view.FocusedRowHandle, view.FocusedColumn) != null && view.GetRowCellValue(view.FocusedRowHandle, view.FocusedColumn).ToString() != string.Empty)
+                {
+
+                    Clipboard.SetText(view.GetRowCellValue(view.FocusedRowHandle, view.FocusedColumn).ToString());
+
+                }
+                else
+                {
+                    XtraMessageBox.Show("Problem while Copying the text");
+                }
+                e.Handled = true;
+            }
+
+        }
+
+        private void gridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            GridView view = sender as GridView;
+            if (e.Control && e.KeyCode == Keys.C)
+            {
+
+                if (view.GetRowCellValue(view.FocusedRowHandle, view.FocusedColumn) != null && view.GetRowCellValue(view.FocusedRowHandle, view.FocusedColumn).ToString() != string.Empty)
+                {
+
+                    Clipboard.SetText(view.GetRowCellValue(view.FocusedRowHandle, view.FocusedColumn).ToString());
+
+                }
+                else
+                {
+                    XtraMessageBox.Show("Problem while Copying the text");
+                }
+                e.Handled = true;
+            }
+
+        }
+
         private void gridView2_KeyDown(object sender, KeyEventArgs e)
         {
 

@@ -19,6 +19,7 @@ using System.Collections;
 using DevExpress.XtraEditors.Controls;
 using static Ordermanagement_01.New_Dashboard.New_Dashboard;
 using System.Runtime.InteropServices;
+using Ordermanagement_01.Properties;
 
 namespace Ordermanagement_01.New_Dashboard.Employee
 {
@@ -110,14 +111,16 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                         {
                             value = Convert.ToInt32(dt.Rows[0][0]);
                             if (value > 0)
-                            {
-                                btn_notification.ForeColor = Color.FromArgb(0, 0, 255);
+                            {                               
+                                btn_notification.Image = Resources.red;
+                                btn_notification.ForeColor = Color.Black;
                                 btn_notification.Text = "Notification" + " " + "(" + value + ")";
                             }
                             else
                             {
-                                btn_notification.Text = "Notification";
-                                btn_notification.ForeColor = Color.FromArgb(0, 0, 0);
+                                btn_notification.Image = Resources.notify;
+                                btn_notification.ForeColor = Color.Black;
+                                btn_notification.Text = "Notification";                                
                             }
                         }
                     }
@@ -204,7 +207,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                         {
                             foreach (Result_Data res in Res_daata)
                             {
-                                link_Order_Count.Text = res.Live_Order_Count;
+                                link_Order_Count.Text = res.Live_Order_Count;                                
                             }
                         }
                         else
@@ -928,16 +931,19 @@ namespace Ordermanagement_01.New_Dashboard.Employee
         private void buttonRefresh_Click(object sender, EventArgs e)
         {
             BindToday();
-            if (value == 0)
+            Notification_Details();
+            if (value==0)
             {
+                btn_notification.Image = Resources.notify;
                 btn_notification.Text = "Notification";
                 btn_notification.ForeColor = Color.FromArgb(0, 0, 0);
             }
             else
             {
+                btn_notification.Image = Resources.red;
                 btn_notification.ForeColor = Color.FromArgb(0, 0, 255);
                 btn_notification.Text = "Notification" + " " + "(" + value + ")";
-            }
+            }           
         }
         private async void buttonTheme_Click(object sender, EventArgs e)
         {

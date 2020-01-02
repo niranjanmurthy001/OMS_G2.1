@@ -713,7 +713,7 @@
             this.btn_notification.AppearanceHovered.Options.UseBackColor = true;
             this.btn_notification.AutoWidthInLayoutControl = true;
             this.btn_notification.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn_notification.Location = new System.Drawing.Point(408, 3);
+            this.btn_notification.Location = new System.Drawing.Point(403, 7);
             this.btn_notification.Name = "btn_notification";
             this.btn_notification.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.btn_notification.Size = new System.Drawing.Size(120, 38);
@@ -734,7 +734,7 @@
             this.buttonBreak.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.buttonBreak.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.buttonBreak.ImageOptions.Image = global::Ordermanagement_01.Properties.Resources.ic_time_span;
-            this.buttonBreak.Location = new System.Drawing.Point(535, 1);
+            this.buttonBreak.Location = new System.Drawing.Point(530, 3);
             this.buttonBreak.Name = "buttonBreak";
             this.buttonBreak.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.buttonBreak.Size = new System.Drawing.Size(78, 38);

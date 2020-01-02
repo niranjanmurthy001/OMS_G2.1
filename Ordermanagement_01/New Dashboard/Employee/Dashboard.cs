@@ -26,11 +26,15 @@ namespace Ordermanagement_01.New_Dashboard.Employee
 {
     public partial class Dashboard : XtraForm
     {
-        int value;
+        private int value;
+        private int operationId;
         private readonly int userId, userRoleId;
         private string productionDate;
         private readonly DataAccess dataaccess;
         private int Day, Hour, Current_Holiday, Previous_Holiday, Prv_day;
+        private System.Threading.Timer timer;
+        private int mCounter;
+        private int timeDifference;
         [DllImport("user32")]
         static extern IntPtr GetSystemMenu(IntPtr hWnd, bool bRevert);
         [DllImport("user32")]
@@ -79,6 +83,11 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                 WindowState = FormWindowState.Maximized;
                 UserCount();
                 Notification_Details();
+                timer = new System.Threading.Timer(a =>
+                {
+                    IdleTimeUpdate();
+                    UpdateLoginDate();
+                }, null, TimeSpan.FromMinutes(1), TimeSpan.FromMinutes(1));
             }
             catch (Exception ex)
             {
@@ -126,41 +135,6 @@ namespace Ordermanagement_01.New_Dashboard.Employee
             catch (Exception ex)
             {
                 throw ex;
-            }
-        }
-
-        private async void GetData()
-        {
-            try
-            {
-                SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
-                var dictionary1 = new Dictionary<string, object>()
-                {
-                {"@Trans","User_Details_View" },
-                { "@User_Id",userId}
-                };
-                var data = new StringContent(JsonConvert.SerializeObject(dictionary1), Encoding.UTF8, "application/json");
-                using (var httpClient = new HttpClient())
-                {
-                    var response = await httpClient.PostAsync(Base_Url.Url + "/Notification/Order_Notification", data);
-                    if (response.IsSuccessStatusCode)
-                    {
-                        if (response.StatusCode == HttpStatusCode.OK)
-                        {
-                            var result = await response.Content.ReadAsStringAsync();
-                            DataTable dt = JsonConvert.DeserializeObject<DataTable>(result);                            
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                SplashScreenManager.CloseForm(false);
-                throw ex;
-            }
-            finally
-            {
-                SplashScreenManager.CloseForm(false);
             }
         }
 
@@ -281,12 +255,12 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                         {
                             foreach (Result_Data res in Res_daata)
                             {
-                                link_Order_Count.Text = res.Live_Order_Count;                                
+                                link_Order_Count.Text = res.Live_Order_Count;
                             }
                         }
                         else
                         {
-                            link_Order_Count.Text = "00";
+                            link_Order_Count.Text = "0";
                         }
                     }
                 }
@@ -801,7 +775,8 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                                 Role = string.Empty,
                                 Reporting = string.Empty,
                                 Shift = string.Empty,
-                                Theme = string.Empty
+                                Theme = string.Empty,
+                                OperationId = string.Empty
                             });
                             labelControlName.Text = user.EmployeeName ?? string.Empty;
                             labelControlEmpCode.Text = user.Code ?? string.Empty;
@@ -809,6 +784,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                             labelControlRole.Text = user.Role ?? string.Empty;
                             labelControlReporting.Text = user.Reporting ?? string.Empty;
                             labelControlShift.Text = user.Shift ?? string.Empty;
+                            operationId = Convert.ToInt32(user.OperationId);
                             if (!string.IsNullOrEmpty(user.Theme))
                             {
                                 lookUpEditSkins.EditValue = Convert.ToInt32(user.Theme);
@@ -1006,7 +982,6 @@ namespace Ordermanagement_01.New_Dashboard.Employee
         {
             BindToday();
             Notification_Details();
-            
             if (value==0)
             {
                 btn_notification.Image = Resources.notify;
@@ -1018,7 +993,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                 btn_notification.Image = Resources.red;
                 btn_notification.ForeColor = Color.FromArgb(0, 0, 255);
                 btn_notification.Text = "Notification" + " " + "(" + value + ")";
-            }           
+            }
         }
         private async void buttonTheme_Click(object sender, EventArgs e)
         {

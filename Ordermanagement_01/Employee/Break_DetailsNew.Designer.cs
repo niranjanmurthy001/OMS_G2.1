@@ -73,7 +73,7 @@
             this.Break_Details.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Break_Details.Location = new System.Drawing.Point(0, 0);
             this.Break_Details.Name = "Break_Details";
-            this.Break_Details.Size = new System.Drawing.Size(719, 375);
+            this.Break_Details.Size = new System.Drawing.Size(724, 337);
             this.Break_Details.TabIndex = 0;
             this.Break_Details.Text = "Break Details";
             // 
@@ -89,11 +89,12 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.61736F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 71.38264F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(715, 352);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(720, 314);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panelControl1
             // 
+            this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl1.Controls.Add(this.lblTotalTimer);
             this.panelControl1.Controls.Add(this.lblTotalTime);
             this.panelControl1.Controls.Add(this.lbl_TotalTime);
@@ -105,7 +106,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(3, 3);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(709, 94);
+            this.panelControl1.Size = new System.Drawing.Size(714, 83);
             this.panelControl1.TabIndex = 0;
             // 
             // lblTotalTimer
@@ -206,6 +207,7 @@
             // 
             // panelControl2
             // 
+            this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl2.Controls.Add(this.btnExit);
             this.panelControl2.Controls.Add(this.btnStop);
             this.panelControl2.Controls.Add(this.btnStart);
@@ -214,9 +216,9 @@
             this.panelControl2.Controls.Add(this.lbl_Reason);
             this.panelControl2.Controls.Add(this.lbl_SelectMode);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(3, 103);
+            this.panelControl2.Location = new System.Drawing.Point(3, 92);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(709, 246);
+            this.panelControl2.Size = new System.Drawing.Size(714, 219);
             this.panelControl2.TabIndex = 1;
             // 
             // btnExit
@@ -329,12 +331,13 @@
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(719, 375);
+            this.ClientSize = new System.Drawing.Size(724, 337);
             this.Controls.Add(this.Break_Details);
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(719, 375);
+            this.MinimumSize = new System.Drawing.Size(703, 337);
             this.Name = "Break_DetailsNew";
             this.Text = "Break_DetailsNew";
             this.Load += new System.EventHandler(this.Break_DetailsNew_Load);

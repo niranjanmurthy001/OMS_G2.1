@@ -32,28 +32,29 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.grid_notification = new DevExpress.XtraGrid.GridControl();
             this.layoutView1 = new DevExpress.XtraGrid.Views.Layout.LayoutView();
-            this.layoutViewColumn1 = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
-            this.layoutViewColumn2 = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            this.Message = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
-            this.repositoryItemMemoEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
-            this.advBandedGridView1 = new DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView();
-            this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.Message = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.order_by_date = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.layoutViewCard1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewCard();
             this.layoutViewField_Message = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.updatedon = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
             this.layoutViewField_order_by_date = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.Readstatus = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            this.layoutViewField_layoutViewColumn1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.Message_id = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            this.layoutViewField_layoutViewColumn1_1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.layoutViewCard1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewCard();
+            this.repositoryItemMemoEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid_notification)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.advBandedGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_Message)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_order_by_date)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_layoutViewColumn1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_layoutViewColumn1_1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -82,163 +83,155 @@
             this.grid_notification.Size = new System.Drawing.Size(695, 488);
             this.grid_notification.TabIndex = 0;
             this.grid_notification.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.layoutView1,
-            this.advBandedGridView1});
+            this.layoutView1});
             // 
             // layoutView1
             // 
-            this.layoutView1.CardMinSize = new System.Drawing.Size(689, 119);
+            this.layoutView1.Appearance.FieldCaption.Options.UseTextOptions = true;
+            this.layoutView1.Appearance.FieldCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.layoutView1.CardMinSize = new System.Drawing.Size(497, 68);
+            this.layoutView1.CardVertInterval = 3;
             this.layoutView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.LayoutViewColumn[] {
-            this.layoutViewColumn1,
-            this.layoutViewColumn2});
+            this.Message,
+            this.updatedon,
+            this.Readstatus,
+            this.Message_id});
             this.layoutView1.GridControl = this.grid_notification;
+            this.layoutView1.HiddenItems.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutViewField_layoutViewColumn1,
+            this.layoutViewField_layoutViewColumn1_1});
             this.layoutView1.Name = "layoutView1";
             this.layoutView1.OptionsItemText.AlignMode = DevExpress.XtraGrid.Views.Layout.FieldTextAlignMode.AlignGlobal;
             this.layoutView1.OptionsItemText.TextToControlDistance = 8;
+            this.layoutView1.OptionsView.CardArrangeRule = DevExpress.XtraGrid.Views.Layout.LayoutCardArrangeRule.AllowPartialCards;
+            this.layoutView1.OptionsView.ShowCardCaption = false;
+            this.layoutView1.OptionsView.ViewMode = DevExpress.XtraGrid.Views.Layout.LayoutViewMode.Column;
             this.layoutView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.layoutViewColumn2, DevExpress.Data.ColumnSortOrder.Descending),
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.layoutViewColumn1, DevExpress.Data.ColumnSortOrder.Descending)});
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.updatedon, DevExpress.Data.ColumnSortOrder.Descending),
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.Message, DevExpress.Data.ColumnSortOrder.Descending)});
             this.layoutView1.TemplateCard = this.layoutViewCard1;
+            this.layoutView1.CustomDrawCardFieldValue += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.layoutView1_CustomDrawCardFieldValue);
+            this.layoutView1.Click += new System.EventHandler(this.layoutView1_Click);
             // 
-            // layoutViewColumn1
+            // Message
             // 
-            this.layoutViewColumn1.AppearanceCell.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold);
-            this.layoutViewColumn1.AppearanceCell.ForeColor = System.Drawing.Color.Blue;
-            this.layoutViewColumn1.AppearanceCell.Options.UseFont = true;
-            this.layoutViewColumn1.AppearanceCell.Options.UseForeColor = true;
-            this.layoutViewColumn1.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.layoutViewColumn1.AppearanceHeader.ForeColor = System.Drawing.Color.Black;
-            this.layoutViewColumn1.AppearanceHeader.Options.UseFont = true;
-            this.layoutViewColumn1.AppearanceHeader.Options.UseForeColor = true;
-            this.layoutViewColumn1.Caption = "Message";
-            this.layoutViewColumn1.FieldName = "Message";
-            this.layoutViewColumn1.LayoutViewField = this.layoutViewField_Message;
-            this.layoutViewColumn1.Name = "layoutViewColumn1";
-            this.layoutViewColumn1.OptionsColumn.AllowEdit = false;
-            this.layoutViewColumn1.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutViewColumn1.Width = 542;
-            // 
-            // layoutViewColumn2
-            // 
-            this.layoutViewColumn2.AppearanceCell.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold);
-            this.layoutViewColumn2.AppearanceCell.ForeColor = System.Drawing.Color.Blue;
-            this.layoutViewColumn2.AppearanceCell.Options.UseFont = true;
-            this.layoutViewColumn2.AppearanceCell.Options.UseForeColor = true;
-            this.layoutViewColumn2.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.layoutViewColumn2.AppearanceHeader.ForeColor = System.Drawing.Color.Black;
-            this.layoutViewColumn2.AppearanceHeader.Options.UseFont = true;
-            this.layoutViewColumn2.AppearanceHeader.Options.UseForeColor = true;
-            this.layoutViewColumn2.Caption = "Order By Date";
-            this.layoutViewColumn2.FieldName = "Modified_Date";
-            this.layoutViewColumn2.LayoutViewField = this.layoutViewField_order_by_date;
-            this.layoutViewColumn2.Name = "layoutViewColumn2";
-            this.layoutViewColumn2.OptionsColumn.AllowEdit = false;
-            this.layoutViewColumn2.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutViewColumn2.Width = 589;
+            this.Message.AppearanceCell.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Message.AppearanceCell.ForeColor = System.Drawing.Color.Black;
+            this.Message.AppearanceCell.Options.UseFont = true;
+            this.Message.AppearanceCell.Options.UseForeColor = true;
+            this.Message.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.Message.AppearanceHeader.ForeColor = System.Drawing.Color.Black;
+            this.Message.AppearanceHeader.Options.UseFont = true;
+            this.Message.AppearanceHeader.Options.UseForeColor = true;
+            this.Message.Caption = "Message";
+            this.Message.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.Message.FieldName = "Message";
+            this.Message.LayoutViewField = this.layoutViewField_Message;
+            this.Message.Name = "Message";
+            this.Message.OptionsColumn.AllowEdit = false;
+            this.Message.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
+            this.Message.Width = 542;
             // 
             // repositoryItemMemoEdit1
             // 
             this.repositoryItemMemoEdit1.Name = "repositoryItemMemoEdit1";
             // 
-            // repositoryItemMemoEdit2
+            // layoutViewField_Message
             // 
-            this.repositoryItemMemoEdit2.Name = "repositoryItemMemoEdit2";
+            this.layoutViewField_Message.EditorPreferredWidth = 593;
+            this.layoutViewField_Message.Location = new System.Drawing.Point(0, 0);
+            this.layoutViewField_Message.Name = "layoutViewField_Message";
+            this.layoutViewField_Message.Padding = new DevExpress.XtraLayout.Utils.Padding(1, 1, 1, 1);
+            this.layoutViewField_Message.Size = new System.Drawing.Size(597, 20);
+            this.layoutViewField_Message.Spacing = new DevExpress.XtraLayout.Utils.Padding(1, 1, 1, 1);
+            this.layoutViewField_Message.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutViewField_Message.TextVisible = false;
             // 
-            // advBandedGridView1
+            // updatedon
             // 
-            this.advBandedGridView1.Bands.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
-            this.gridBand1});
-            this.advBandedGridView1.Columns.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn[] {
-            this.Message,
-            this.order_by_date});
-            this.advBandedGridView1.GridControl = this.grid_notification;
-            this.advBandedGridView1.Name = "advBandedGridView1";
-            this.advBandedGridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.order_by_date, DevExpress.Data.ColumnSortOrder.Descending),
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.Message, DevExpress.Data.ColumnSortOrder.Descending)});
-            this.advBandedGridView1.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.advBandedGridView1_RowCellClick);
+            this.updatedon.AppearanceCell.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold);
+            this.updatedon.AppearanceCell.ForeColor = System.Drawing.Color.Black;
+            this.updatedon.AppearanceCell.Options.UseFont = true;
+            this.updatedon.AppearanceCell.Options.UseForeColor = true;
+            this.updatedon.AppearanceCell.Options.UseTextOptions = true;
+            this.updatedon.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.updatedon.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.updatedon.AppearanceHeader.ForeColor = System.Drawing.Color.Black;
+            this.updatedon.AppearanceHeader.Options.UseFont = true;
+            this.updatedon.AppearanceHeader.Options.UseForeColor = true;
+            this.updatedon.AppearanceHeader.Options.UseTextOptions = true;
+            this.updatedon.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.updatedon.Caption = "                                                                                 " +
+    "                                                    Updated On";
+            this.updatedon.CustomizationCaption = "Updated On";
+            this.updatedon.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.updatedon.FieldName = "Modified_Date";
+            this.updatedon.LayoutViewField = this.layoutViewField_order_by_date;
+            this.updatedon.Name = "updatedon";
+            this.updatedon.OptionsColumn.AllowEdit = false;
+            this.updatedon.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
+            this.updatedon.Width = 589;
             // 
-            // gridBand1
+            // layoutViewField_order_by_date
             // 
-            this.gridBand1.Caption = "gridBand1";
-            this.gridBand1.Columns.Add(this.Message);
-            this.gridBand1.Columns.Add(this.order_by_date);
-            this.gridBand1.Name = "gridBand1";
-            this.gridBand1.OptionsBand.ShowCaption = false;
-            this.gridBand1.VisibleIndex = 0;
-            this.gridBand1.Width = 1131;
+            this.layoutViewField_order_by_date.EditorPreferredWidth = 124;
+            this.layoutViewField_order_by_date.Location = new System.Drawing.Point(0, 20);
+            this.layoutViewField_order_by_date.Name = "layoutViewField_order_by_date";
+            this.layoutViewField_order_by_date.Padding = new DevExpress.XtraLayout.Utils.Padding(1, 1, 1, 1);
+            this.layoutViewField_order_by_date.Size = new System.Drawing.Size(597, 44);
+            this.layoutViewField_order_by_date.Spacing = new DevExpress.XtraLayout.Utils.Padding(1, 1, 1, 1);
+            this.layoutViewField_order_by_date.TextSize = new System.Drawing.Size(461, 13);
             // 
-            // Message
+            // Readstatus
             // 
-            this.Message.AppearanceCell.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Message.AppearanceCell.ForeColor = System.Drawing.Color.Blue;
-            this.Message.AppearanceCell.Options.UseFont = true;
-            this.Message.AppearanceCell.Options.UseForeColor = true;
-            this.Message.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Message.AppearanceHeader.ForeColor = System.Drawing.Color.Black;
-            this.Message.AppearanceHeader.Options.UseFont = true;
-            this.Message.AppearanceHeader.Options.UseForeColor = true;
-            this.Message.Caption = "Message";
-            this.Message.FieldName = "Message";
-            this.Message.Name = "Message";
-            this.Message.OptionsColumn.AllowEdit = false;
-            this.Message.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
-            this.Message.Visible = true;
-            this.Message.Width = 542;
+            this.Readstatus.Caption = "Read Status";
+            this.Readstatus.FieldName = "Read_Staus";
+            this.Readstatus.LayoutViewField = this.layoutViewField_layoutViewColumn1;
+            this.Readstatus.Name = "Readstatus";
             // 
-            // order_by_date
+            // layoutViewField_layoutViewColumn1
             // 
-            this.order_by_date.AppearanceCell.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.order_by_date.AppearanceCell.ForeColor = System.Drawing.Color.Blue;
-            this.order_by_date.AppearanceCell.Options.UseFont = true;
-            this.order_by_date.AppearanceCell.Options.UseForeColor = true;
-            this.order_by_date.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.order_by_date.AppearanceHeader.ForeColor = System.Drawing.Color.Black;
-            this.order_by_date.AppearanceHeader.Options.UseFont = true;
-            this.order_by_date.AppearanceHeader.Options.UseForeColor = true;
-            this.order_by_date.Caption = "Order By Date";
-            this.order_by_date.FieldName = "Modified_Date";
-            this.order_by_date.Name = "order_by_date";
-            this.order_by_date.OptionsColumn.AllowEdit = false;
-            this.order_by_date.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
-            this.order_by_date.Visible = true;
-            this.order_by_date.Width = 589;
+            this.layoutViewField_layoutViewColumn1.EditorPreferredWidth = 10;
+            this.layoutViewField_layoutViewColumn1.Location = new System.Drawing.Point(0, 0);
+            this.layoutViewField_layoutViewColumn1.Name = "layoutViewField_layoutViewColumn1";
+            this.layoutViewField_layoutViewColumn1.Size = new System.Drawing.Size(595, 45);
+            this.layoutViewField_layoutViewColumn1.TextSize = new System.Drawing.Size(461, 20);
             // 
-            // defaultLookAndFeel1
+            // Message_id
             // 
-            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013";
+            this.Message_id.Caption = "Message ID";
+            this.Message_id.FieldName = "Gen_Update_ID";
+            this.Message_id.LayoutViewField = this.layoutViewField_layoutViewColumn1_1;
+            this.Message_id.Name = "Message_id";
+            // 
+            // layoutViewField_layoutViewColumn1_1
+            // 
+            this.layoutViewField_layoutViewColumn1_1.EditorPreferredWidth = 10;
+            this.layoutViewField_layoutViewColumn1_1.Location = new System.Drawing.Point(0, 44);
+            this.layoutViewField_layoutViewColumn1_1.Name = "layoutViewField_layoutViewColumn1_1";
+            this.layoutViewField_layoutViewColumn1_1.Size = new System.Drawing.Size(597, 20);
+            this.layoutViewField_layoutViewColumn1_1.TextSize = new System.Drawing.Size(461, 20);
             // 
             // layoutViewCard1
             // 
             this.layoutViewCard1.CustomizationFormText = "TemplateCard";
+            this.layoutViewCard1.GroupBordersVisible = false;
             this.layoutViewCard1.HeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
             this.layoutViewCard1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutViewField_Message,
             this.layoutViewField_order_by_date});
             this.layoutViewCard1.Name = "layoutViewCard1";
             this.layoutViewCard1.OptionsItemText.TextToControlDistance = 8;
-            this.layoutViewCard1.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
+            this.layoutViewCard1.Padding = new DevExpress.XtraLayout.Utils.Padding(1, 1, 1, 1);
             this.layoutViewCard1.Text = "TemplateCard";
             // 
-            // layoutViewField_Message
+            // repositoryItemMemoEdit2
             // 
-            this.layoutViewField_Message.EditorPreferredWidth = 677;
-            this.layoutViewField_Message.Location = new System.Drawing.Point(0, 0);
-            this.layoutViewField_Message.Name = "layoutViewField_Message";
-            this.layoutViewField_Message.Size = new System.Drawing.Size(683, 47);
-            this.layoutViewField_Message.Spacing = new DevExpress.XtraLayout.Utils.Padding(1, 1, 1, 1);
-            this.layoutViewField_Message.TextLocation = DevExpress.Utils.Locations.Bottom;
-            this.layoutViewField_Message.TextSize = new System.Drawing.Size(73, 13);
+            this.repositoryItemMemoEdit2.Name = "repositoryItemMemoEdit2";
             // 
-            // layoutViewField_order_by_date
+            // defaultLookAndFeel1
             // 
-            this.layoutViewField_order_by_date.EditorPreferredWidth = 677;
-            this.layoutViewField_order_by_date.Location = new System.Drawing.Point(0, 47);
-            this.layoutViewField_order_by_date.Name = "layoutViewField_order_by_date";
-            this.layoutViewField_order_by_date.Size = new System.Drawing.Size(683, 47);
-            this.layoutViewField_order_by_date.Spacing = new DevExpress.XtraLayout.Utils.Padding(1, 1, 1, 1);
-            this.layoutViewField_order_by_date.TextLocation = DevExpress.Utils.Locations.Bottom;
-            this.layoutViewField_order_by_date.TextSize = new System.Drawing.Size(73, 13);
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013";
             // 
             // General_Notification
             // 
@@ -248,7 +241,6 @@
             this.ClientSize = new System.Drawing.Size(699, 511);
             this.Controls.Add(this.groupControl1);
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MaximumSize = new System.Drawing.Size(715, 1080);
             this.MinimumSize = new System.Drawing.Size(715, 549);
             this.Name = "General_Notification";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -259,11 +251,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.grid_notification)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.advBandedGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_Message)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_order_by_date)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_layoutViewColumn1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_layoutViewColumn1_1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -272,18 +265,19 @@
 
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraGrid.GridControl grid_notification;
-        private DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView advBandedGridView1;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn Message;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn order_by_date;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand1;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit2;
         private DevExpress.XtraGrid.Views.Layout.LayoutView layoutView1;
-        private DevExpress.XtraGrid.Columns.LayoutViewColumn layoutViewColumn1;
-        private DevExpress.XtraGrid.Columns.LayoutViewColumn layoutViewColumn2;
+        private DevExpress.XtraGrid.Columns.LayoutViewColumn Message;
+        private DevExpress.XtraGrid.Columns.LayoutViewColumn updatedon;
+        private DevExpress.XtraGrid.Columns.LayoutViewColumn Read_Status;
         private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_Message;
         private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_order_by_date;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_layoutViewColumn1;
         private DevExpress.XtraGrid.Views.Layout.LayoutViewCard layoutViewCard1;
+        private DevExpress.XtraGrid.Columns.LayoutViewColumn Readstatus;
+        private DevExpress.XtraGrid.Columns.LayoutViewColumn Message_id;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_layoutViewColumn1_1;
     }
 }

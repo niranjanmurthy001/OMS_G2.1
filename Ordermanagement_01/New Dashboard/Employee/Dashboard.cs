@@ -24,6 +24,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
 {
     public partial class Dashboard : XtraForm
     {
+        int value;
         private readonly int userId, userRoleId;
         private string productionDate;
         private readonly DataAccess dataaccess;
@@ -74,6 +75,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                 BindEfficiencyAsync(productionDate), Load_Order_Count());
                 t.Wait(1000);
                 WindowState = FormWindowState.Maximized;
+                Notification_Details();
             }
             catch (Exception ex)
             {
@@ -87,6 +89,41 @@ namespace Ordermanagement_01.New_Dashboard.Employee
 
         }
 
+        private async void Notification_Details()
+        {
+            var dictionary = new Dictionary<string, object>()
+            {
+                {"@View_Type","Count" },
+                {"@User_Id",userId }
+            };
+            var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
+            using (var httpClient = new HttpClient())
+            {
+                var response = await httpClient.PostAsync(Base_Url.Url + "/NotificationCount/Count", data);
+                if (response.IsSuccessStatusCode)
+                {
+                    if (response.StatusCode == HttpStatusCode.OK)
+                    {
+                        var result = await response.Content.ReadAsStringAsync();
+                        DataTable dt = JsonConvert.DeserializeObject<DataTable>(result);
+                        if (dt != null && dt.Rows.Count > 0)
+                        {
+                            value = Convert.ToInt32(dt.Rows[0][0]);
+                            if (value > 0)
+                            {
+                                btn_notification.ForeColor = Color.FromArgb(0, 0, 255);
+                                btn_notification.Text = "Notification" + " " + "(" + value + ")";
+                            }
+                            else
+                            {
+                                btn_notification.Text = "Notification";
+                                btn_notification.ForeColor = Color.FromArgb(0, 0, 0);
+                            }
+                        }
+                    }
+                }
+            }
+        }
         private void Daily_User_Login()
         {
             Hashtable htget_Hour = new Hashtable();
@@ -170,6 +207,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                             foreach (Result_Data res in Res_daata)
                             {
                                 link_Order_Count.Text = res.Live_Order_Count;
+                                
                             }
                         }
                         else
@@ -895,6 +933,16 @@ namespace Ordermanagement_01.New_Dashboard.Employee
         private void buttonRefresh_Click(object sender, EventArgs e)
         {
             BindToday();
+            if(value==0)
+            {
+                btn_notification.Text = "Notification";
+                btn_notification.ForeColor = Color.FromArgb(0, 0, 0);
+            }
+            else
+            {
+                btn_notification.ForeColor = Color.FromArgb(0, 0, 255);
+                btn_notification.Text = "Notification" + " " + "(" + value + ")";
+            }           
         }
         private async void buttonTheme_Click(object sender, EventArgs e)
         {
@@ -956,7 +1004,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
             try
             {
                 Enabled = false;
-                Ordermanagement_01.Employee.Break_Details breakDetails = new Ordermanagement_01.Employee.Break_Details(userId, DateTime.Now.ToString("MM/dd/yyyy"), DateTime.Now.ToString("MM/dd/yyyy"), productionDate);
+                Ordermanagement_01.Employee.Break_DetailsNew breakDetails = new Ordermanagement_01.Employee.Break_DetailsNew(userId, DateTime.Now.ToString("MM/dd/yyyy"), DateTime.Now.ToString("MM/dd/yyyy"), productionDate);
                 Invoke(new MethodInvoker(delegate { breakDetails.Show(); }));
             }
             catch (Exception ex)
@@ -1007,7 +1055,8 @@ namespace Ordermanagement_01.New_Dashboard.Employee
 
         private void btn_notification_Click(object sender, EventArgs e)
         {
-
+            Ordermanagement_01.New_Dashboard.Employee.General_Notification note = new General_Notification(userId);
+            note.Show();
         }
 
         private void link_Order_Count_Click(object sender, EventArgs e)

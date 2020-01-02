@@ -640,7 +640,6 @@
             this.Tile_Item_Live.AppearanceItem.Selected.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
             this.Tile_Item_Live.AppearanceItem.Selected.Options.UseBorderColor = true;
             this.Tile_Item_Live.ContentAnimation = DevExpress.XtraEditors.TileItemContentAnimationType.ScrollDown;
-            this.Tile_Item_Live.CurrentFrameIndex = 1;
             tileItemElement1.AnimateTransition = DevExpress.Utils.DefaultBoolean.True;
             tileItemElement1.Appearance.Hovered.Font = new System.Drawing.Font("Segoe UI", 27.75F);
             tileItemElement1.Appearance.Hovered.Options.UseFont = true;
@@ -908,14 +907,13 @@
             // 
             // Tile_Item_Rework
             // 
-            this.Tile_Item_Rework.CurrentFrameIndex = 1;
             tileItemElement10.Appearance.Normal.ForeColor = System.Drawing.Color.Black;
             tileItemElement10.Appearance.Normal.Options.UseForeColor = true;
             tileItemElement10.Image = global::Ordermanagement_01.Properties.Resources.Icon_Rework_40;
             tileItemElement10.ImageLocation = new System.Drawing.Point(0, -15);
             tileItemElement10.Text = "";
             tileItemElement11.Appearance.Normal.BackColor = System.Drawing.Color.Transparent;
-            tileItemElement11.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 27.75F);
+            tileItemElement11.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             tileItemElement11.Appearance.Normal.ForeColor = System.Drawing.Color.Black;
             tileItemElement11.Appearance.Normal.Options.UseBackColor = true;
             tileItemElement11.Appearance.Normal.Options.UseFont = true;
@@ -1005,7 +1003,6 @@
             // 
             // Tile_Item_SuperQc
             // 
-            this.Tile_Item_SuperQc.CurrentFrameIndex = 1;
             tileItemElement19.Image = global::Ordermanagement_01.Properties.Resources.Icon_Superqc_40;
             tileItemElement19.ImageLocation = new System.Drawing.Point(0, -15);
             tileItemElement19.Text = "";
@@ -1077,20 +1074,25 @@
             // 
             // Tile_Item_Test
             // 
-            this.Tile_Item_Test.CurrentFrameIndex = 1;
+            tileItemElement28.Appearance.Normal.ForeColor = System.Drawing.Color.Black;
+            tileItemElement28.Appearance.Normal.Options.UseForeColor = true;
             tileItemElement28.Image = global::Ordermanagement_01.Properties.Resources.Icon_test_40;
             tileItemElement28.ImageLocation = new System.Drawing.Point(0, -15);
             tileItemElement28.Text = "";
             tileItemElement29.Appearance.Hovered.Font = new System.Drawing.Font("Segoe UI", 27.75F);
             tileItemElement29.Appearance.Hovered.Options.UseFont = true;
             tileItemElement29.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 27.75F);
+            tileItemElement29.Appearance.Normal.ForeColor = System.Drawing.Color.Black;
             tileItemElement29.Appearance.Normal.Options.UseFont = true;
+            tileItemElement29.Appearance.Normal.Options.UseForeColor = true;
             tileItemElement29.Text = "0";
             tileItemElement29.TextLocation = new System.Drawing.Point(-15, -5);
             tileItemElement30.Appearance.Hovered.Font = new System.Drawing.Font("Segoe UI", 11F);
             tileItemElement30.Appearance.Hovered.Options.UseFont = true;
             tileItemElement30.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 11F);
+            tileItemElement30.Appearance.Normal.ForeColor = System.Drawing.Color.Black;
             tileItemElement30.Appearance.Normal.Options.UseFont = true;
+            tileItemElement30.Appearance.Normal.Options.UseForeColor = true;
             tileItemElement30.Text = "Test";
             tileItemElement30.TextLocation = new System.Drawing.Point(4, 4);
             this.Tile_Item_Test.Elements.Add(tileItemElement28);
@@ -2821,8 +2823,6 @@
             this.gridView1.OptionsFind.AlwaysVisible = true;
             this.gridView1.OptionsImageLoad.AnimationType = DevExpress.Utils.ImageContentAnimationType.Slide;
             this.gridView1.OptionsSelection.InvertSelection = true;
-            this.gridView1.OptionsSelection.MultiSelect = true;
-            this.gridView1.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             this.gridView1.OptionsView.BestFitMode = DevExpress.XtraGrid.Views.Grid.GridBestFitMode.Full;
             this.gridView1.OptionsView.ColumnAutoWidth = false;
             this.gridView1.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
@@ -2830,6 +2830,7 @@
             this.gridView1.OptionsView.ShowVerticalLines = DevExpress.Utils.DefaultBoolean.True;
             this.gridView1.PaintStyleName = "Skin";
             this.gridView1.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gridView1_SelectionChanged);
+            this.gridView1.Click += new System.EventHandler(this.gridView1_Click);
             // 
             // gridColumn2
             // 
@@ -2841,7 +2842,7 @@
             this.gridColumn2.FieldName = "Serial_No";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.VisibleIndex = 0;
             this.gridColumn2.Width = 60;
             // 
             // gridColumn5
@@ -2854,7 +2855,7 @@
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 2;
+            this.gridColumn5.VisibleIndex = 1;
             this.gridColumn5.Width = 80;
             // 
             // gridColumn6
@@ -2867,7 +2868,7 @@
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.OptionsColumn.AllowEdit = false;
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 3;
+            this.gridColumn6.VisibleIndex = 2;
             this.gridColumn6.Width = 95;
             // 
             // gridColumn7
@@ -2880,7 +2881,7 @@
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.OptionsColumn.ReadOnly = true;
             this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 4;
+            this.gridColumn7.VisibleIndex = 3;
             this.gridColumn7.Width = 122;
             // 
             // repositoryItemHyperLinkEdit1
@@ -2896,7 +2897,7 @@
             this.gridColumn8.FieldName = "Address";
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 5;
+            this.gridColumn8.VisibleIndex = 4;
             this.gridColumn8.Width = 170;
             // 
             // gridColumn24
@@ -2908,7 +2909,7 @@
             this.gridColumn24.Name = "gridColumn24";
             this.gridColumn24.OptionsColumn.AllowFocus = false;
             this.gridColumn24.Visible = true;
-            this.gridColumn24.VisibleIndex = 6;
+            this.gridColumn24.VisibleIndex = 5;
             this.gridColumn24.Width = 135;
             // 
             // gridColumn25
@@ -2919,7 +2920,7 @@
             this.gridColumn25.Name = "gridColumn25";
             this.gridColumn25.OptionsColumn.AllowFocus = false;
             this.gridColumn25.Visible = true;
-            this.gridColumn25.VisibleIndex = 7;
+            this.gridColumn25.VisibleIndex = 6;
             this.gridColumn25.Width = 135;
             // 
             // gridColumn26
@@ -2930,7 +2931,7 @@
             this.gridColumn26.FieldName = "State";
             this.gridColumn26.Name = "gridColumn26";
             this.gridColumn26.Visible = true;
-            this.gridColumn26.VisibleIndex = 8;
+            this.gridColumn26.VisibleIndex = 7;
             this.gridColumn26.Width = 100;
             // 
             // gridColumn27
@@ -2941,7 +2942,7 @@
             this.gridColumn27.FieldName = "County";
             this.gridColumn27.Name = "gridColumn27";
             this.gridColumn27.Visible = true;
-            this.gridColumn27.VisibleIndex = 9;
+            this.gridColumn27.VisibleIndex = 8;
             this.gridColumn27.Width = 120;
             // 
             // gridColumn28
@@ -2965,7 +2966,7 @@
             this.gridColumn29.Name = "gridColumn29";
             this.gridColumn29.OptionsColumn.AllowEdit = false;
             this.gridColumn29.Visible = true;
-            this.gridColumn29.VisibleIndex = 10;
+            this.gridColumn29.VisibleIndex = 9;
             this.gridColumn29.Width = 135;
             // 
             // gridColumn30
@@ -2977,7 +2978,7 @@
             this.gridColumn30.Name = "gridColumn30";
             this.gridColumn30.OptionsColumn.AllowFocus = false;
             this.gridColumn30.Visible = true;
-            this.gridColumn30.VisibleIndex = 11;
+            this.gridColumn30.VisibleIndex = 10;
             this.gridColumn30.Width = 100;
             // 
             // gridColumn31
@@ -2990,7 +2991,7 @@
             this.gridColumn31.Name = "gridColumn31";
             this.gridColumn31.OptionsColumn.AllowEdit = false;
             this.gridColumn31.Visible = true;
-            this.gridColumn31.VisibleIndex = 12;
+            this.gridColumn31.VisibleIndex = 11;
             this.gridColumn31.Width = 135;
             // 
             // repositoryItemButtonEdit1
@@ -3012,7 +3013,7 @@
             this.gridColumn32.Name = "gridColumn32";
             this.gridColumn32.OptionsColumn.AllowEdit = false;
             this.gridColumn32.Visible = true;
-            this.gridColumn32.VisibleIndex = 13;
+            this.gridColumn32.VisibleIndex = 12;
             this.gridColumn32.Width = 100;
             // 
             // gridColumn33
@@ -3024,7 +3025,7 @@
             this.gridColumn33.Name = "gridColumn33";
             this.gridColumn33.OptionsColumn.AllowEdit = false;
             this.gridColumn33.Visible = true;
-            this.gridColumn33.VisibleIndex = 14;
+            this.gridColumn33.VisibleIndex = 13;
             this.gridColumn33.Width = 100;
             // 
             // gridColumn34
@@ -3036,7 +3037,7 @@
             this.gridColumn34.Name = "gridColumn34";
             this.gridColumn34.OptionsColumn.AllowEdit = false;
             this.gridColumn34.Visible = true;
-            this.gridColumn34.VisibleIndex = 15;
+            this.gridColumn34.VisibleIndex = 14;
             this.gridColumn34.Width = 100;
             // 
             // gridColumn35
@@ -3160,8 +3161,6 @@
             this.gridView3.OptionsFind.AlwaysVisible = true;
             this.gridView3.OptionsImageLoad.AnimationType = DevExpress.Utils.ImageContentAnimationType.Slide;
             this.gridView3.OptionsSelection.InvertSelection = true;
-            this.gridView3.OptionsSelection.MultiSelect = true;
-            this.gridView3.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             this.gridView3.OptionsView.BestFitMode = DevExpress.XtraGrid.Views.Grid.GridBestFitMode.Full;
             this.gridView3.OptionsView.ColumnAutoWidth = false;
             this.gridView3.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
@@ -3169,6 +3168,7 @@
             this.gridView3.OptionsView.ShowVerticalLines = DevExpress.Utils.DefaultBoolean.True;
             this.gridView3.PaintStyleName = "Skin";
             this.gridView3.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gridView3_SelectionChanged);
+            this.gridView3.Click += new System.EventHandler(this.gridView3_Click);
             // 
             // gridColumn46
             // 
@@ -3180,7 +3180,7 @@
             this.gridColumn46.FieldName = "Serial_No";
             this.gridColumn46.Name = "gridColumn46";
             this.gridColumn46.Visible = true;
-            this.gridColumn46.VisibleIndex = 1;
+            this.gridColumn46.VisibleIndex = 0;
             this.gridColumn46.Width = 60;
             // 
             // gridColumn47
@@ -3193,7 +3193,7 @@
             this.gridColumn47.Name = "gridColumn47";
             this.gridColumn47.OptionsColumn.AllowEdit = false;
             this.gridColumn47.Visible = true;
-            this.gridColumn47.VisibleIndex = 2;
+            this.gridColumn47.VisibleIndex = 1;
             this.gridColumn47.Width = 80;
             // 
             // gridColumn48
@@ -3206,7 +3206,7 @@
             this.gridColumn48.Name = "gridColumn48";
             this.gridColumn48.OptionsColumn.AllowEdit = false;
             this.gridColumn48.Visible = true;
-            this.gridColumn48.VisibleIndex = 3;
+            this.gridColumn48.VisibleIndex = 2;
             this.gridColumn48.Width = 95;
             // 
             // gridColumn49
@@ -3219,7 +3219,7 @@
             this.gridColumn49.Name = "gridColumn49";
             this.gridColumn49.OptionsColumn.ReadOnly = true;
             this.gridColumn49.Visible = true;
-            this.gridColumn49.VisibleIndex = 4;
+            this.gridColumn49.VisibleIndex = 3;
             this.gridColumn49.Width = 122;
             // 
             // repositoryItemHyperLinkEdit3
@@ -3235,7 +3235,7 @@
             this.gridColumn50.FieldName = "Address";
             this.gridColumn50.Name = "gridColumn50";
             this.gridColumn50.Visible = true;
-            this.gridColumn50.VisibleIndex = 5;
+            this.gridColumn50.VisibleIndex = 4;
             this.gridColumn50.Width = 170;
             // 
             // gridColumn51
@@ -3247,7 +3247,7 @@
             this.gridColumn51.Name = "gridColumn51";
             this.gridColumn51.OptionsColumn.AllowFocus = false;
             this.gridColumn51.Visible = true;
-            this.gridColumn51.VisibleIndex = 6;
+            this.gridColumn51.VisibleIndex = 5;
             this.gridColumn51.Width = 135;
             // 
             // gridColumn52
@@ -3258,7 +3258,7 @@
             this.gridColumn52.Name = "gridColumn52";
             this.gridColumn52.OptionsColumn.AllowFocus = false;
             this.gridColumn52.Visible = true;
-            this.gridColumn52.VisibleIndex = 7;
+            this.gridColumn52.VisibleIndex = 6;
             this.gridColumn52.Width = 135;
             // 
             // gridColumn53
@@ -3269,7 +3269,7 @@
             this.gridColumn53.FieldName = "State";
             this.gridColumn53.Name = "gridColumn53";
             this.gridColumn53.Visible = true;
-            this.gridColumn53.VisibleIndex = 8;
+            this.gridColumn53.VisibleIndex = 7;
             this.gridColumn53.Width = 100;
             // 
             // gridColumn54
@@ -3280,7 +3280,7 @@
             this.gridColumn54.FieldName = "County";
             this.gridColumn54.Name = "gridColumn54";
             this.gridColumn54.Visible = true;
-            this.gridColumn54.VisibleIndex = 9;
+            this.gridColumn54.VisibleIndex = 8;
             this.gridColumn54.Width = 120;
             // 
             // gridColumn55
@@ -3304,7 +3304,7 @@
             this.gridColumn56.Name = "gridColumn56";
             this.gridColumn56.OptionsColumn.AllowEdit = false;
             this.gridColumn56.Visible = true;
-            this.gridColumn56.VisibleIndex = 10;
+            this.gridColumn56.VisibleIndex = 9;
             this.gridColumn56.Width = 135;
             // 
             // gridColumn57
@@ -3316,7 +3316,7 @@
             this.gridColumn57.Name = "gridColumn57";
             this.gridColumn57.OptionsColumn.AllowFocus = false;
             this.gridColumn57.Visible = true;
-            this.gridColumn57.VisibleIndex = 11;
+            this.gridColumn57.VisibleIndex = 10;
             this.gridColumn57.Width = 100;
             // 
             // gridColumn58
@@ -3329,7 +3329,7 @@
             this.gridColumn58.Name = "gridColumn58";
             this.gridColumn58.OptionsColumn.AllowEdit = false;
             this.gridColumn58.Visible = true;
-            this.gridColumn58.VisibleIndex = 12;
+            this.gridColumn58.VisibleIndex = 11;
             this.gridColumn58.Width = 135;
             // 
             // repositoryItemButtonEdit2
@@ -3351,7 +3351,7 @@
             this.gridColumn59.Name = "gridColumn59";
             this.gridColumn59.OptionsColumn.AllowEdit = false;
             this.gridColumn59.Visible = true;
-            this.gridColumn59.VisibleIndex = 13;
+            this.gridColumn59.VisibleIndex = 12;
             this.gridColumn59.Width = 100;
             // 
             // gridColumn60
@@ -3363,7 +3363,7 @@
             this.gridColumn60.Name = "gridColumn60";
             this.gridColumn60.OptionsColumn.AllowEdit = false;
             this.gridColumn60.Visible = true;
-            this.gridColumn60.VisibleIndex = 14;
+            this.gridColumn60.VisibleIndex = 13;
             this.gridColumn60.Width = 100;
             // 
             // gridColumn61
@@ -3375,7 +3375,7 @@
             this.gridColumn61.Name = "gridColumn61";
             this.gridColumn61.OptionsColumn.AllowEdit = false;
             this.gridColumn61.Visible = true;
-            this.gridColumn61.VisibleIndex = 15;
+            this.gridColumn61.VisibleIndex = 14;
             this.gridColumn61.Width = 100;
             // 
             // gridColumn62

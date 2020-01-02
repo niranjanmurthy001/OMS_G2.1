@@ -179,7 +179,7 @@
             this.Name = "Send_Email";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Send_Email";
-            this.Load += new System.EventHandler(this.Send_Email_Load);
+            //this.Load += new System.EventHandler(this.Send_Email_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -4376,6 +4376,8 @@
     <None Include="Resources\view %282%29.png" />
     <None Include="Resources\start-up.png" />
     <None Include="Resources\start-up1.png" />
+    <None Include="Resources\notify.png" />
+    <None Include="Resources\red.png" />
     <Content Include="Resources\windowsUIButtonImageOptions1.Image.png" />
     <None Include="Resources\windowsUIButtonImageOptions1.Image1.png" />
     <Content Include="Resources\windowsUIButtonImageOptions2.Image.png" />

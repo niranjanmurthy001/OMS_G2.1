@@ -87,7 +87,7 @@
             this.groupControlOrderHistory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControlOrderHistory.Location = new System.Drawing.Point(0, 0);
             this.groupControlOrderHistory.Name = "groupControlOrderHistory";
-            this.groupControlOrderHistory.Size = new System.Drawing.Size(1238, 479);
+            this.groupControlOrderHistory.Size = new System.Drawing.Size(923, 479);
             this.groupControlOrderHistory.TabIndex = 0;
             this.groupControlOrderHistory.Text = "History List";
             // 
@@ -103,7 +103,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 53F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1234, 440);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(919, 440);
             this.tableLayoutPanel1.TabIndex = 19;
             // 
             // panel1
@@ -120,7 +120,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1228, 47);
+            this.panel1.Size = new System.Drawing.Size(913, 47);
             this.panel1.TabIndex = 0;
             // 
             // lbl_Clientname
@@ -214,7 +214,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(3, 56);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1228, 381);
+            this.panelControl1.Size = new System.Drawing.Size(913, 381);
             this.panelControl1.TabIndex = 1;
             // 
             // splitContainerControl1
@@ -227,7 +227,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.groupControl3);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1228, 381);
+            this.splitContainerControl1.Size = new System.Drawing.Size(913, 381);
             this.splitContainerControl1.SplitterPosition = 274;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -242,7 +242,7 @@
             this.groupControl2.LookAndFeel.SkinName = "Office 2010 Blue";
             this.groupControl2.LookAndFeel.UseDefaultLookAndFeel = false;
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1228, 274);
+            this.groupControl2.Size = new System.Drawing.Size(913, 274);
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "Order History";
             // 
@@ -252,7 +252,7 @@
             this.gridControlOrderHistory.Location = new System.Drawing.Point(2, 21);
             this.gridControlOrderHistory.MainView = this.gridViewOrderHistory;
             this.gridControlOrderHistory.Name = "gridControlOrderHistory";
-            this.gridControlOrderHistory.Size = new System.Drawing.Size(1224, 251);
+            this.gridControlOrderHistory.Size = new System.Drawing.Size(909, 251);
             this.gridControlOrderHistory.TabIndex = 18;
             this.gridControlOrderHistory.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewOrderHistory});
@@ -342,7 +342,7 @@
             this.groupControl3.LookAndFeel.SkinName = "Office 2010 Blue";
             this.groupControl3.LookAndFeel.UseDefaultLookAndFeel = false;
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(1228, 101);
+            this.groupControl3.Size = new System.Drawing.Size(913, 101);
             this.groupControl3.TabIndex = 1;
             this.groupControl3.Text = "Order Status History";
             // 
@@ -352,7 +352,7 @@
             this.gridControlOrderStatusHistory.Location = new System.Drawing.Point(2, 21);
             this.gridControlOrderStatusHistory.MainView = this.gridViewOrderStatusHistory;
             this.gridControlOrderStatusHistory.Name = "gridControlOrderStatusHistory";
-            this.gridControlOrderStatusHistory.Size = new System.Drawing.Size(1224, 78);
+            this.gridControlOrderStatusHistory.Size = new System.Drawing.Size(909, 78);
             this.gridControlOrderStatusHistory.TabIndex = 18;
             this.gridControlOrderStatusHistory.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewOrderStatusHistory});
@@ -418,7 +418,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1238, 479);
+            this.ClientSize = new System.Drawing.Size(923, 479);
             this.Controls.Add(this.groupControlOrderHistory);
             this.LookAndFeel.SkinName = "Office 2010 Blue";
             this.LookAndFeel.UseDefaultLookAndFeel = false;

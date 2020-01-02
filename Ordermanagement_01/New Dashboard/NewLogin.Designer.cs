@@ -69,7 +69,6 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(385, 503);
             this.panelControl1.TabIndex = 1;
-         //   this.panelControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl1_Paint);
             // 
             // lblCopyright
             // 
@@ -193,6 +192,8 @@
             this.textEditUsername.Size = new System.Drawing.Size(300, 40);
             this.textEditUsername.TabIndex = 1;
             this.textEditUsername.TextChanged += new System.EventHandler(this.textEditUsername_TextChanged);
+            this.textEditUsername.Click += new System.EventHandler(this.textEditUsername_Click);
+        //    this.textEditUsername.Enter += new System.EventHandler(this.textEditUsername_Enter);
          //   this.textEditUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textEditUsername_KeyDown);
             this.textEditUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textEditUsername_KeyPress);
             // 

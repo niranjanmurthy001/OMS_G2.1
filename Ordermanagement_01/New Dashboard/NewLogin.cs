@@ -218,7 +218,7 @@ namespace Ordermanagement_01.New_Dashboard
         private void textEditUsername_KeyPress(object sender, KeyPressEventArgs e)
         {
            e.Handled = (e.KeyChar == (char)Keys.Space);
-        //  textEditUsername.Text = textEditUsername.Text.Replace(" ", string.Empty);
+        // textEditUsername.Text = textEditUsername.Text.Replace(" ", string.Empty);
         }
         private void textEditPassword_KeyDown(object sender, KeyEventArgs e)
         {
@@ -230,7 +230,7 @@ namespace Ordermanagement_01.New_Dashboard
         }
         private void textEditUsername_TextChanged(object sender, EventArgs e)
         {         
-          // textEditUsername.Text = textEditUsername.Text.Replace(" ", string.Empty);
+          textEditUsername.Text = textEditUsername.Text.Replace(" ", string.Empty);
 
         }   
         private void textEditPassword_EditValueChanged(object sender, EventArgs e)
@@ -245,10 +245,9 @@ namespace Ordermanagement_01.New_Dashboard
                 btnViewPassword.Visible = false;
             }
         }
-
         private void textEditUsername_Click(object sender, EventArgs e)
         {
-            textEditUsername.Text = textEditUsername.Text.Replace(" ", string.Empty);
+           // textEditUsername.Text = textEditUsername.Text.Replace(" ", string.Empty);
         }
         private void Login_Load(object sender, EventArgs e)
         {

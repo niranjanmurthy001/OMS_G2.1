@@ -1490,6 +1490,49 @@ namespace Ordermanagement_01.New_Dashboard
 
         }
 
+        private void gridView3_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            GridView view = sender as GridView;
+            if (e.Control && e.KeyCode == Keys.C)
+            {
+
+                if (view.GetRowCellValue(view.FocusedRowHandle, view.FocusedColumn) != null && view.GetRowCellValue(view.FocusedRowHandle, view.FocusedColumn).ToString() != string.Empty)
+                {
+
+                    Clipboard.SetText(view.GetRowCellValue(view.FocusedRowHandle, view.FocusedColumn).ToString());
+
+                }
+                else
+                {
+                    XtraMessageBox.Show("Problem while Copying the text");
+                }
+                e.Handled = true;
+            }
+
+        }
+
+        private void gridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            GridView view = sender as GridView;
+            if (e.Control && e.KeyCode == Keys.C)
+            {
+
+                if (view.GetRowCellValue(view.FocusedRowHandle, view.FocusedColumn) != null && view.GetRowCellValue(view.FocusedRowHandle, view.FocusedColumn).ToString() != string.Empty)
+                {
+
+                    Clipboard.SetText(view.GetRowCellValue(view.FocusedRowHandle, view.FocusedColumn).ToString());
+
+                }
+                else
+                {
+                    XtraMessageBox.Show("Problem while Copying the text");
+                }
+                e.Handled = true;
+            }
+
+        }
+
         private void gridView2_KeyDown(object sender, KeyEventArgs e)
         {
 

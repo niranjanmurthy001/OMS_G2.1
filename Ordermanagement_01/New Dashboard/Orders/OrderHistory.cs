@@ -93,7 +93,6 @@ namespace Ordermanagement_01
                 SplashScreenManager.CloseForm(false);
             }
         }
-
         private async void BindGridHistory()
         {
             try

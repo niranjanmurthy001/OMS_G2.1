@@ -91,7 +91,7 @@
             this.groupControlOrderHistory.Name = "groupControlOrderHistory";
             this.groupControlOrderHistory.Size = new System.Drawing.Size(962, 533);
             this.groupControlOrderHistory.TabIndex = 0;
-            this.groupControlOrderHistory.Text = "History List";
+            this.groupControlOrderHistory.Text = "Orders List";
             // 
             // tableLayoutPanel1
             // 
@@ -100,12 +100,12 @@
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panelControl1, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 55);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 37);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(958, 476);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(958, 494);
             this.tableLayoutPanel1.TabIndex = 19;
             // 
             // panel1
@@ -123,7 +123,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(952, 41);
+            this.panel1.Size = new System.Drawing.Size(952, 38);
             this.panel1.TabIndex = 0;
             // 
             // btn_Export
@@ -132,10 +132,11 @@
             this.btn_Export.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btn_Export.Appearance.Options.UseFont = true;
             this.btn_Export.Appearance.Options.UseForeColor = true;
-            this.btn_Export.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btn_Export.Location = new System.Drawing.Point(848, 5);
+            this.btn_Export.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.btn_Export.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_Export.Location = new System.Drawing.Point(855, 0);
             this.btn_Export.Name = "btn_Export";
-            this.btn_Export.Size = new System.Drawing.Size(97, 33);
+            this.btn_Export.Size = new System.Drawing.Size(97, 38);
             this.btn_Export.TabIndex = 16;
             this.btn_Export.Text = "Export";
             this.btn_Export.Click += new System.EventHandler(this.btn_Export_Click);
@@ -144,7 +145,7 @@
             // 
             this.lbl_Clientname.AutoSize = true;
             this.lbl_Clientname.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Clientname.Location = new System.Drawing.Point(117, 15);
+            this.lbl_Clientname.Location = new System.Drawing.Point(117, 12);
             this.lbl_Clientname.Name = "lbl_Clientname";
             this.lbl_Clientname.Size = new System.Drawing.Size(72, 16);
             this.lbl_Clientname.TabIndex = 12;
@@ -155,7 +156,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(16, 16);
+            this.label3.Location = new System.Drawing.Point(16, 12);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 16);
             this.label3.TabIndex = 7;
@@ -165,7 +166,7 @@
             // 
             this.lbl_County.AutoSize = true;
             this.lbl_County.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_County.Location = new System.Drawing.Point(746, 13);
+            this.lbl_County.Location = new System.Drawing.Point(745, 12);
             this.lbl_County.Name = "lbl_County";
             this.lbl_County.Size = new System.Drawing.Size(49, 20);
             this.lbl_County.TabIndex = 15;
@@ -176,7 +177,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(224, 16);
+            this.label4.Location = new System.Drawing.Point(224, 12);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(134, 16);
             this.label4.TabIndex = 8;
@@ -186,7 +187,7 @@
             // 
             this.lbl_State.AutoSize = true;
             this.lbl_State.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_State.Location = new System.Drawing.Point(570, 16);
+            this.lbl_State.Location = new System.Drawing.Point(568, 12);
             this.lbl_State.Name = "lbl_State";
             this.lbl_State.Size = new System.Drawing.Size(38, 16);
             this.lbl_State.TabIndex = 14;
@@ -197,7 +198,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(499, 16);
+            this.label5.Location = new System.Drawing.Point(497, 12);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 16);
             this.label5.TabIndex = 9;
@@ -207,7 +208,7 @@
             // 
             this.lbl_Subprocess.AutoSize = true;
             this.lbl_Subprocess.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Subprocess.Location = new System.Drawing.Point(364, 16);
+            this.lbl_Subprocess.Location = new System.Drawing.Point(364, 12);
             this.lbl_Subprocess.Name = "lbl_Subprocess";
             this.lbl_Subprocess.Size = new System.Drawing.Size(74, 16);
             this.lbl_Subprocess.TabIndex = 13;
@@ -218,7 +219,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(669, 16);
+            this.label6.Location = new System.Drawing.Point(667, 12);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(62, 16);
             this.label6.TabIndex = 10;
@@ -229,9 +230,9 @@
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl1.Controls.Add(this.splitContainerControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(3, 50);
+            this.panelControl1.Location = new System.Drawing.Point(3, 47);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(952, 423);
+            this.panelControl1.Size = new System.Drawing.Size(952, 444);
             this.panelControl1.TabIndex = 1;
             // 
             // splitContainerControl1
@@ -244,7 +245,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.groupControl3);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(952, 423);
+            this.splitContainerControl1.Size = new System.Drawing.Size(952, 444);
             this.splitContainerControl1.SplitterPosition = 272;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -289,6 +290,8 @@
             this.gridViewOrderHistory.IndicatorWidth = 30;
             this.gridViewOrderHistory.Name = "gridViewOrderHistory";
             this.gridViewOrderHistory.OptionsBehavior.Editable = false;
+            this.gridViewOrderHistory.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.date, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridViewOrderHistory.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridViewOrderHistory_CustomDrawRowIndicator);
             // 
             // Assignee
@@ -359,17 +362,17 @@
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(0, 0);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(952, 146);
+            this.groupControl3.Size = new System.Drawing.Size(952, 167);
             this.groupControl3.TabIndex = 1;
             this.groupControl3.Text = "Order Status History";
             // 
             // gridControlOrderStatusHistory
             // 
             this.gridControlOrderStatusHistory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlOrderStatusHistory.Location = new System.Drawing.Point(2, 47);
+            this.gridControlOrderStatusHistory.Location = new System.Drawing.Point(2, 37);
             this.gridControlOrderStatusHistory.MainView = this.gridViewOrderStatusHistory;
             this.gridControlOrderStatusHistory.Name = "gridControlOrderStatusHistory";
-            this.gridControlOrderStatusHistory.Size = new System.Drawing.Size(948, 97);
+            this.gridControlOrderStatusHistory.Size = new System.Drawing.Size(948, 128);
             this.gridControlOrderStatusHistory.TabIndex = 18;
             this.gridControlOrderStatusHistory.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewOrderStatusHistory});

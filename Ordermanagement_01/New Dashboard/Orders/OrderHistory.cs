@@ -165,7 +165,7 @@ namespace Ordermanagement_01
                 {
                     LinkOrderhistory,LinkOrderStatusHistory
                 });
-                string ReportName = "Efficiency Summary";
+                string ReportName = "Order History";
                 string folderPath = "C:\\Temp\\";
                 string Path1 = folderPath + DateTime.Now.ToString("dd-MM-yyyy-hh-mm-ss") + "-" + ReportName + ".xlsx";
                 compositeLink.CreatePageForEachLink();

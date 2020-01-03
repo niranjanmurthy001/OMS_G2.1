@@ -99,49 +99,62 @@ namespace Ordermanagement_01.New_Dashboard.Employee
             {
                 SplashScreenManager.CloseForm(false);
             }
-
         }
 
         private async void Notification_Details()
         {
-            var dictionary = new Dictionary<string, object>()
+            try
+            {
+                var dictionary = new Dictionary<string, object>()
             {
                 {"@View_Type","Count" },
                 {"@User_Id",userId }
             };
-            var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
-            using (var httpClient = new HttpClient())
-            {
-                var response = await httpClient.PostAsync(Base_Url.Url + "/Notification/Count", data);
-                if (response.IsSuccessStatusCode)
+                var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
+                using (var httpClient = new HttpClient())
                 {
-                    if (response.StatusCode == HttpStatusCode.OK)
+                    var response = await httpClient.PostAsync(Base_Url.Url + "/Notification/Count", data);
+                    if (response.IsSuccessStatusCode)
                     {
-                        var result = await response.Content.ReadAsStringAsync();
-                        DataTable dt = JsonConvert.DeserializeObject<DataTable>(result);
-                        if (dt != null && dt.Rows.Count > 0)
+                        if (response.StatusCode == HttpStatusCode.OK)
                         {
-                            value = Convert.ToInt32(dt.Rows[0][0]);
-                            if (value > 0)
+                            var result = await response.Content.ReadAsStringAsync();
+                            DataTable dt = JsonConvert.DeserializeObject<DataTable>(result);
+                            if (dt != null && dt.Rows.Count > 0)
                             {
-                                btn_notification.Image = Resources.red;
-                                btn_notification.ForeColor = Color.Black;
-                                btn_notification.Text = "Notification" + "(" + value + ")";
-                            }
-                            else
-                            {
-                                btn_notification.Image = Resources.notify;
-                                btn_notification.ForeColor = Color.Black;
-                                btn_notification.Text = "Notification";
+                                value = Convert.ToInt32(dt.Rows[0][0]);
+                                if (value > 0)
+                                {
+                                    btn_notification.Image = Resources.red;
+                                    btn_notification.ForeColor = Color.Black;
+                                    btn_notification.Text = "Notification" + "(" + value + ")";
+                                }
+                                else
+                                {
+                                    btn_notification.Image = Resources.notify;
+                                    btn_notification.ForeColor = Color.Black;
+                                    btn_notification.Text = "Notification";
+                                }
                             }
                         }
                     }
                 }
             }
+            catch(Exception ex)
+            {
+                
+                SplashScreenManager.CloseForm(false);
+                throw ex;
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm(false);
+            }
         }
 
         private async void UserCount()
         {
+
             try
             {
                 var dictionary = new Dictionary<string, object>()
@@ -165,10 +178,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                                 if (value == 0)
                                 {
                                     GetData();
-                                    btn_notification.Image = Resources.notify;
-                                    btn_notification.ForeColor = Color.Black;
-                                    btn_notification.Text = "Notification";
-                                }                             
+                                }
                             }
                         }
                     }
@@ -213,7 +223,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
             {
                 SplashScreenManager.CloseForm(false);
             }
-        }      
+        }
 
         private async void IdleTimeUpdate()
         {

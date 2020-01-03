@@ -80,39 +80,45 @@ namespace Ordermanagement_01.New_Dashboard.Employee
             }
         }
         private async void layoutView1_Click(object sender, EventArgs e)
-        {                      
+        {
+            string Readstatus = (layoutView1.GetRowCellValue(layoutView1.FocusedRowHandle, "Read_Staus")).ToString();
             int messageid = Convert.ToInt32(layoutView1.GetRowCellValue(layoutView1.FocusedRowHandle, "Message_Id"));
-            try
+            if (Readstatus == "UnRead")
             {
-                SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
-                var dictionary = new Dictionary<string, object>()
+                try
                 {
+                    SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
+                    var dictionary = new Dictionary<string, object>()
+                    {
                     {"@Trans","Insert"},
                     {"@Message_Id",messageid},
                     {"@User_Id",User_Id }
-                };
-                var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
-                using (var httpClient = new HttpClient())
-                {
-                    var response = await httpClient.PostAsync(Base_Url.Url + "/Notification/Create", data);
-                    if (response.IsSuccessStatusCode)
+                    };
+                    var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
+                    using (var httpClient = new HttpClient())
                     {
-                        if (response.StatusCode == HttpStatusCode.OK)
-                        {                            
-                            layoutView1.Appearance.FieldValue.ForeColor = Color.Black;
+                        var response = await httpClient.PostAsync(Base_Url.Url + "/Notification/Create", data);
+                        if (response.IsSuccessStatusCode)
+                        {
+                            if (response.StatusCode == HttpStatusCode.OK)
+                            {
+                                layoutView1.Appearance.FieldValue.ForeColor = Color.Black;
+                            }
                         }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                SplashScreenManager.CloseForm(false);
-                throw ex;
-            }
-            finally
-            {
-                SplashScreenManager.CloseForm(false);
-            }
+
+
+                catch (Exception ex)
+                {
+                    SplashScreenManager.CloseForm(false);
+                    throw ex;
+                }
+                finally
+                {
+                    SplashScreenManager.CloseForm(false);
+                }
+            }          
         }
     }
 }

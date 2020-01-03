@@ -145,7 +145,7 @@
             // 
             this.lbl_Clientname.AutoSize = true;
             this.lbl_Clientname.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Clientname.Location = new System.Drawing.Point(117, 12);
+            this.lbl_Clientname.Location = new System.Drawing.Point(105, 12);
             this.lbl_Clientname.Name = "lbl_Clientname";
             this.lbl_Clientname.Size = new System.Drawing.Size(72, 16);
             this.lbl_Clientname.TabIndex = 12;
@@ -166,7 +166,7 @@
             // 
             this.lbl_County.AutoSize = true;
             this.lbl_County.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_County.Location = new System.Drawing.Point(745, 12);
+            this.lbl_County.Location = new System.Drawing.Point(725, 11);
             this.lbl_County.Name = "lbl_County";
             this.lbl_County.Size = new System.Drawing.Size(49, 20);
             this.lbl_County.TabIndex = 15;
@@ -187,7 +187,7 @@
             // 
             this.lbl_State.AutoSize = true;
             this.lbl_State.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_State.Location = new System.Drawing.Point(568, 12);
+            this.lbl_State.Location = new System.Drawing.Point(545, 12);
             this.lbl_State.Name = "lbl_State";
             this.lbl_State.Size = new System.Drawing.Size(38, 16);
             this.lbl_State.TabIndex = 14;
@@ -208,7 +208,7 @@
             // 
             this.lbl_Subprocess.AutoSize = true;
             this.lbl_Subprocess.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Subprocess.Location = new System.Drawing.Point(364, 12);
+            this.lbl_Subprocess.Location = new System.Drawing.Point(354, 12);
             this.lbl_Subprocess.Name = "lbl_Subprocess";
             this.lbl_Subprocess.Size = new System.Drawing.Size(74, 16);
             this.lbl_Subprocess.TabIndex = 13;

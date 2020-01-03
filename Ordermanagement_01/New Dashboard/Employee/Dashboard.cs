@@ -82,12 +82,11 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                 t.Wait(1000);
                 WindowState = FormWindowState.Maximized;
                 UserCount();
-
-                timer = new System.Threading.Timer(a =>
+                timer = new System.Threading.Timer(async a =>
                 {
-                    IdleTimeUpdate();
-                    UpdateLoginDate();
-                }, null, TimeSpan.FromMinutes(1), TimeSpan.FromMinutes(1));
+                    await IdleTimeUpdateAsync();
+                    await UpdateLoginDateAsync();
+                }, null, TimeSpan.FromSeconds(1), TimeSpan.FromMinutes(1));
             }
             catch (Exception ex)
             {
@@ -99,7 +98,6 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                 SplashScreenManager.CloseForm(false);
             }
         }
-
         private async void Notification_Details()
         {
             var dictionary = new Dictionary<string, object>()
@@ -137,7 +135,6 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                 }
             }
         }
-
         private async void UserCount()
         {
             try
@@ -166,11 +163,11 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                                     btn_notification.Image = Resources.notify;
                                     btn_notification.ForeColor = Color.Black;
                                     btn_notification.Text = "Notification";
-                                }   
+                                }
                                 else
                                 {
                                     Notification_Details();
-                                }                           
+                                }
                             }
                         }
                     }
@@ -181,7 +178,6 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                 throw ex;
             }
         }
-
         private async void GetData()
         {
             try
@@ -216,87 +212,53 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                 SplashScreenManager.CloseForm(false);
             }
         }
-
-        private async void IdleTimeUpdate()
+        /// <summary>
+        /// Calculate idle hours for users
+        /// </summary>
+        /// <returns></returns>
+        #region Idle Hours
+        private async Task IdleTimeUpdateAsync()
         {
             try
             {
                 if (Application.OpenForms["Break_DetailsNew"] == null)
                 {
-                    using (var Client = new HttpClient())
+                    dynamic count = await GetCountAsync();
+                    if (count.LiveOrders == "0" && count.ReworkOrders == "0" && count.SuperQcOrders == "0")
                     {
-                        Dictionary<string, object> dictionary = new Dictionary<string, object>();
-                        if (userRoleId == 1 || userRoleId == 5 || userRoleId == 6)
+                        if (operationId != 3)
                         {
-                            dictionary.Add("@Trans", "COUNT_OF_ORDERS_WORK_TYPE_WISE_ALL_USER_WISE");
-                        }
-                        else if (userRoleId == 2 || userRoleId == 3 || userRoleId == 4)
-                        {
-                            dictionary.Add("@Trans", "COUNT_OF_ORDERS_WORK_TYPE_WISE_USER_WISE");
-                        }
-                        dictionary.Add("@User_Id", userId);
-                        var serializedUser = JsonConvert.SerializeObject(dictionary);
-                        var content = new StringContent(serializedUser, Encoding.UTF8, "application/json");
-                        var result = await Client.PostAsync(Base_Url.Url + "/User/OrdersCount", content);
-                        if (result.IsSuccessStatusCode)
-                        {
-                            var data = await result.Content.ReadAsStringAsync();
-                            var count = JsonConvert.DeserializeAnonymousType(data, new
-                            {
-                                LiveOrders = string.Empty,
-                                ReworkOrders = string.Empty,
-                                SuperQcOrders = string.Empty
-                            });
-                            if (count.LiveOrders == "0" && count.ReworkOrders == "0" && count.SuperQcOrders == "0")
-                            {
-                                if (operationId != 3)
-                                {
-                                    if (Application.OpenForms["IdleTrack"] != null) return;
-                                    Ordermanagement_01.Dashboard.IdleTrack idle = new Ordermanagement_01.Dashboard.IdleTrack(userId, productionDate, false);
-                                    Invoke(new MethodInvoker(delegate { idle.Show(); }));
-                                }
-                                else
-                                {
-                                    await IdleTimeTracker();
-                                }
-                            }
-                            else
-                            {
-                                if (operationId != 3)
-                                {
-                                    if (Application.OpenForms["IdleTrack"] != null)
-                                    {
-                                        if (mCounter == 0)
-                                        {
-                                            mCounter = 1;
-                                            if (MessageBox.Show("You have orders in queue, exit the idle mode", "Message", MessageBoxButtons.OK) == DialogResult.OK)
-                                            {
-                                                mCounter = 0;
-                                            }
-                                            return;
-                                        }
-                                        else
-                                        {
-                                            return;
-                                        }
-                                    }
-                                }
-                                await IdleTimeTracker();
-                            }
+                            if (Application.OpenForms["IdleTrack"] != null) return;
+                            Ordermanagement_01.Dashboard.IdleTrack idle = new Ordermanagement_01.Dashboard.IdleTrack(userId, productionDate, false);
+                            Invoke(new MethodInvoker(delegate { idle.Show(); }));
                         }
                         else
                         {
-                            if (operationId != 3)
+                            await IdleTimeTrackerAsync();
+                        }
+                    }
+                    else
+                    {
+                        if (operationId != 3)
+                        {
+                            if (Application.OpenForms["IdleTrack"] != null)
                             {
-                                if (Application.OpenForms["IdleTrack"] != null) return;
-                                Ordermanagement_01.Dashboard.IdleTrack idle = new Ordermanagement_01.Dashboard.IdleTrack(userId, productionDate, false);
-                                Invoke(new MethodInvoker(delegate { idle.Show(); }));
-                            }
-                            else
-                            {
-                                await IdleTimeTracker();
+                                if (mCounter == 0)
+                                {
+                                    mCounter = 1;
+                                    if (MessageBox.Show("You have orders in queue, exit the idle mode", "Message", MessageBoxButtons.OK) == DialogResult.OK)
+                                    {
+                                        mCounter = 0;
+                                    }
+                                    return;
+                                }
+                                else
+                                {
+                                    return;
+                                }
                             }
                         }
+                        await IdleTimeTrackerAsync();
                     }
                 }
             }
@@ -305,7 +267,78 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                 XtraMessageBox.Show("Something went wrong");
             }
         }
-        private async Task IdleTimeTracker()
+        private async Task<dynamic> GetCountAsync()
+        {
+            try
+            {
+                using (var Client = new HttpClient())
+                {
+                    Dictionary<string, object> dictionary = new Dictionary<string, object>();
+                    if (userRoleId == 1 || userRoleId == 5 || userRoleId == 6)
+                    {
+                        dictionary.Add("@Trans", "COUNT_OF_ORDERS_WORK_TYPE_WISE_ALL_USER_WISE");
+                    }
+                    else if (userRoleId == 2 || userRoleId == 3 || userRoleId == 4)
+                    {
+                        dictionary.Add("@Trans", "COUNT_OF_ORDERS_WORK_TYPE_WISE_USER_WISE");
+                    }
+                    dictionary.Add("@User_Id", userId);
+                    var serializedUser = JsonConvert.SerializeObject(dictionary);
+                    var content = new StringContent(serializedUser, Encoding.UTF8, "application/json");
+                    var result = await Client.PostAsync(Base_Url.Url + "/User/OrdersCount", content);
+                    if (result.IsSuccessStatusCode)
+                    {
+                        var data = await result.Content.ReadAsStringAsync();
+                        var count = JsonConvert.DeserializeAnonymousType(data, new
+                        {
+                            LiveOrders = string.Empty,
+                            ReworkOrders = string.Empty,
+                            SuperQcOrders = string.Empty
+                        });
+                        return count;
+                    }
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        private async Task IdleTimeTrackerAsync()
+        {
+            try
+            {
+                DataTable dtDiffTime = await GetTimeDifferenceAsync();
+                if (dtDiffTime != null && dtDiffTime.Rows.Count > 0)
+                {
+                    timeDifference = Convert.ToInt32(dtDiffTime.Rows[0]["Diff_Time"].ToString());
+                    if (timeDifference >= 0 && timeDifference <= 1)
+                    {
+                        DataTable dtMaxIdleId = await GetMaxIdleTimeIdAsync();
+                        int maxIdleTimeId;
+                        if (dtMaxIdleId != null && dtMaxIdleId.Rows.Count > 0)
+                        {
+                            maxIdleTimeId = int.Parse(dtMaxIdleId.Rows[0]["User_Idel_Time_Id"].ToString());
+                            await UpdateIdleTimeAsync(maxIdleTimeId);
+                        }
+                    }
+                    else
+                    {
+                        await InsertIdleTimeAsync();
+                    }
+                }
+                else
+                {
+                    await InsertIdleTimeAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        private async Task<DataTable> GetTimeDifferenceAsync()
         {
             try
             {
@@ -323,39 +356,9 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                     {
                         var diffTimeResultData = await diffTimeResult.Content.ReadAsStringAsync();
                         DataTable dtDiffTime = JsonConvert.DeserializeObject<DataTable>(diffTimeResultData);
-                        if (dtDiffTime != null && dtDiffTime.Rows.Count > 0)
-                        {
-                            timeDifference = Convert.ToInt32(dtDiffTime.Rows[0]["Diff_Time"].ToString());
-                            if (timeDifference >= 0 && timeDifference <= 1)
-                            {
-                                using (var clientMaxIdleId = new HttpClient())
-                                {
-                                    int maxIdleTimeId;
-                                    var dictionarMaxIdleId = new Dictionary<string, object>() {
-                                    {"@Trans", "GET_MAX_IDEAL_TIME_ID" },
-                                    {"@User_Id", userId },
-                                    { "@Production_Date", productionDate }
-                                };
-                                    var contentIdleTimeId = new StringContent(JsonConvert.SerializeObject(dictionarMaxIdleId), Encoding.UTF8, "application/json");
-                                    var resultIdleTimeId = await clientMaxIdleId.PostAsync(Base_Url.Url + "/User/GetMaxIdleTimeId", contentIdleTimeId);
-                                    DataTable dtMaxIdleId = JsonConvert.DeserializeObject<DataTable>(await resultIdleTimeId.Content.ReadAsStringAsync());
-                                    if (dtMaxIdleId != null && dtMaxIdleId.Rows.Count > 0)
-                                    {
-                                        maxIdleTimeId = int.Parse(dtMaxIdleId.Rows[0]["User_Idel_Time_Id"].ToString());
-                                        UpdateIdleTime(maxIdleTimeId);
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                InsertIdleTime();
-                            }
-                        }
-                        else
-                        {
-                            InsertIdleTime();
-                        }
+                        return dtDiffTime;
                     }
+                    return null;
                 }
             }
             catch (Exception ex)
@@ -363,23 +366,26 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                 throw ex;
             }
         }
-        private async void UpdateIdleTime(int maxIdleTimeId)
+        private async Task<DataTable> GetMaxIdleTimeIdAsync()
         {
             try
             {
-                using (var client = new HttpClient())
+                using (var clientMaxIdleId = new HttpClient())
                 {
-                    var dictionary = new Dictionary<string, object>(){
-                    {"@Trans", "UPDTAE_IDEAL_TIME" },
-                    { "@User_Idel_Time_Id", maxIdleTimeId }
-                };
-                    var data = JsonConvert.SerializeObject(dictionary);
-                    var content = new StringContent(data, Encoding.UTF8, "application/json");
-                    var diffTimeResult = await client.PostAsync(Base_Url.Url + "/User/UpdateIdleTime", content);
-                    if (diffTimeResult.IsSuccessStatusCode)
+                    var dictionarMaxIdleId = new Dictionary<string, object>() {
+                       {"@Trans", "GET_MAX_IDEAL_TIME_ID" },
+                       {"@User_Id", userId },
+                       { "@Production_Date", productionDate }
+                    };
+                    var contentIdleTimeId = new StringContent(JsonConvert.SerializeObject(dictionarMaxIdleId), Encoding.UTF8, "application/json");
+                    var resultIdleTimeId = await clientMaxIdleId.PostAsync(Base_Url.Url + "/User/GetMaxIdleTimeId", contentIdleTimeId);
+                    if (resultIdleTimeId.IsSuccessStatusCode)
                     {
-
+                        var result = await resultIdleTimeId.Content.ReadAsStringAsync();
+                        DataTable dtMaxIdleId = JsonConvert.DeserializeObject<DataTable>(result);
+                        return dtMaxIdleId;
                     }
+                    return null;
                 }
             }
             catch (Exception ex)
@@ -387,17 +393,17 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                 throw ex;
             }
         }
-        private async void InsertIdleTime()
+        private async Task InsertIdleTimeAsync()
         {
             try
             {
                 using (var client = new HttpClient())
                 {
                     var dictionary = new Dictionary<string, object>(){
-                    {"@Trans", "INSERT" },
-                    {"@User_Id", userId },
-                    {"@Production_Date", productionDate }
-                };
+                        {"@Trans", "INSERT" },
+                        {"@User_Id", userId },
+                        {"@Production_Date", productionDate }
+                    };
                     var data = JsonConvert.SerializeObject(dictionary);
                     var content = new StringContent(data, Encoding.UTF8, "application/json");
                     var diffTimeResult = await client.PostAsync(Base_Url.Url + "/User/InsertIdleTime", content);
@@ -412,16 +418,40 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                 throw ex;
             }
         }
-        private async void UpdateLoginDate()
+        private async Task UpdateIdleTimeAsync(int maxIdleTimeId)
         {
             try
             {
                 using (var client = new HttpClient())
                 {
                     var dictionary = new Dictionary<string, object>(){
-                    {"@Trans", "UPDATE_LAST_LOGIN_DATE" },
-                    { "@User_id", userId }
-                };
+                        {"@Trans", "UPDTAE_IDEAL_TIME" },
+                        { "@User_Idel_Time_Id", maxIdleTimeId }
+                    };
+                    var data = JsonConvert.SerializeObject(dictionary);
+                    var content = new StringContent(data, Encoding.UTF8, "application/json");
+                    var diffTimeResult = await client.PostAsync(Base_Url.Url + "/User/UpdateIdleTime", content);
+                    if (diffTimeResult.IsSuccessStatusCode)
+                    {
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        private async Task UpdateLoginDateAsync()
+        {
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    var dictionary = new Dictionary<string, object>(){
+                        {"@Trans", "UPDATE_LAST_LOGIN_DATE" },
+                        { "@User_id", userId }
+                    };
                     var data = JsonConvert.SerializeObject(dictionary);
                     var content = new StringContent(data, Encoding.UTF8, "application/json");
                     var diffTimeResult = await client.PostAsync(Base_Url.Url + "/User/UpdateLoginDate", content);
@@ -436,7 +466,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                 XtraMessageBox.Show("something went wrong " + ex.Message);
             }
         }
-       
+        # endregion  
         private void Daily_User_Login()
         {
             Hashtable htget_Hour = new Hashtable();

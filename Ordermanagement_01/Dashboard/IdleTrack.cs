@@ -75,6 +75,8 @@ namespace Ordermanagement_01.Dashboard
                             timer2.Enabled = false;
                             if (!isFromDashBoard)
                             {
+
+                                SplashScreenManager.CloseForm(false);
                                 XtraMessageBox.Show("No Orders Were Allocated Click Ok to Continue with Idle Work");
                             }
                             else
@@ -89,8 +91,7 @@ namespace Ordermanagement_01.Dashboard
 
 
             catch (Exception ex)
-            {
-                
+            {               
                 throw ex;
             }
             finally
@@ -98,24 +99,18 @@ namespace Ordermanagement_01.Dashboard
                 SplashScreenManager.CloseForm(false);
             }
         }
-
-        
-
-
         private async void BindIdleTypes()
         {
             try
             {
-                lookUpEditIdleTypes.Properties.DataSource = null;
-                SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
-
+                lookUpEditIdleTypes.Properties.DataSource = null;        
                 if (isFromDashBoard)
                 {
+                    SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
                     var dictionary = new Dictionary<string, object>();
                     {
                         dictionary.Add("@Trans", "BIND_IDLE_TYPES_DASHBOARD");
                     }
-
                     var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
                     using (var httpClient = new HttpClient())
                     {
@@ -219,6 +214,7 @@ namespace Ordermanagement_01.Dashboard
                             return;
                         }
                     }
+                    
                     var dictionary = new Dictionary<string, object>();
                     {
                         dictionary.Add("@Trans", "UPDATE");
@@ -431,6 +427,10 @@ namespace Ordermanagement_01.Dashboard
             {
         
                 throw e;
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm(false);
             }
         }
 

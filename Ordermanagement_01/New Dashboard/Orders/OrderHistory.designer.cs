@@ -100,12 +100,12 @@
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panelControl1, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 37);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 39);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(958, 494);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(958, 492);
             this.tableLayoutPanel1.TabIndex = 19;
             // 
             // panel1
@@ -232,7 +232,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(3, 47);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(952, 444);
+            this.panelControl1.Size = new System.Drawing.Size(952, 442);
             this.panelControl1.TabIndex = 1;
             // 
             // splitContainerControl1
@@ -245,7 +245,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.groupControl3);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(952, 444);
+            this.splitContainerControl1.Size = new System.Drawing.Size(952, 442);
             this.splitContainerControl1.SplitterPosition = 272;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -362,7 +362,7 @@
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(0, 0);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(952, 167);
+            this.groupControl3.Size = new System.Drawing.Size(952, 165);
             this.groupControl3.TabIndex = 1;
             this.groupControl3.Text = "Order Status History";
             // 
@@ -372,7 +372,7 @@
             this.gridControlOrderStatusHistory.Location = new System.Drawing.Point(2, 37);
             this.gridControlOrderStatusHistory.MainView = this.gridViewOrderStatusHistory;
             this.gridControlOrderStatusHistory.Name = "gridControlOrderStatusHistory";
-            this.gridControlOrderStatusHistory.Size = new System.Drawing.Size(948, 128);
+            this.gridControlOrderStatusHistory.Size = new System.Drawing.Size(948, 126);
             this.gridControlOrderStatusHistory.TabIndex = 18;
             this.gridControlOrderStatusHistory.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewOrderStatusHistory});

@@ -91,7 +91,7 @@
             this.groupControlOrderHistory.Name = "groupControlOrderHistory";
             this.groupControlOrderHistory.Size = new System.Drawing.Size(962, 533);
             this.groupControlOrderHistory.TabIndex = 0;
-            this.groupControlOrderHistory.Text = "Orders List";
+            this.groupControlOrderHistory.Text = "Orders History List";
             // 
             // tableLayoutPanel1
             // 
@@ -166,7 +166,7 @@
             // 
             this.lbl_County.AutoSize = true;
             this.lbl_County.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_County.Location = new System.Drawing.Point(725, 11);
+            this.lbl_County.Location = new System.Drawing.Point(773, 12);
             this.lbl_County.Name = "lbl_County";
             this.lbl_County.Size = new System.Drawing.Size(49, 20);
             this.lbl_County.TabIndex = 15;
@@ -177,7 +177,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(224, 12);
+            this.label4.Location = new System.Drawing.Point(203, 12);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(134, 16);
             this.label4.TabIndex = 8;
@@ -187,7 +187,7 @@
             // 
             this.lbl_State.AutoSize = true;
             this.lbl_State.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_State.Location = new System.Drawing.Point(545, 12);
+            this.lbl_State.Location = new System.Drawing.Point(604, 12);
             this.lbl_State.Name = "lbl_State";
             this.lbl_State.Size = new System.Drawing.Size(38, 16);
             this.lbl_State.TabIndex = 14;
@@ -198,7 +198,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(497, 12);
+            this.label5.Location = new System.Drawing.Point(557, 12);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 16);
             this.label5.TabIndex = 9;
@@ -208,7 +208,7 @@
             // 
             this.lbl_Subprocess.AutoSize = true;
             this.lbl_Subprocess.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Subprocess.Location = new System.Drawing.Point(354, 12);
+            this.lbl_Subprocess.Location = new System.Drawing.Point(333, 12);
             this.lbl_Subprocess.Name = "lbl_Subprocess";
             this.lbl_Subprocess.Size = new System.Drawing.Size(74, 16);
             this.lbl_Subprocess.TabIndex = 13;
@@ -219,7 +219,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(667, 12);
+            this.label6.Location = new System.Drawing.Point(718, 12);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(62, 16);
             this.label6.TabIndex = 10;

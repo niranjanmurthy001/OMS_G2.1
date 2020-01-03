@@ -523,6 +523,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
         {
             try
             {
+                link_Order_Count.Text = "0";
                 using (var Client = new HttpClient())
                 {
                     Dictionary<string, object> list = new Dictionary<string, object>();
@@ -549,11 +550,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                             {
                                 link_Order_Count.Text = res.Live_Order_Count;
                             }
-                        }
-                        else
-                        {
-                            link_Order_Count.Text = "0";
-                        }
+                        }                        
                     }
                 }
             }

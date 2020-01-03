@@ -1396,8 +1396,10 @@ namespace Ordermanagement_01.New_Dashboard.Employee
 
         private void btn_notification_Click(object sender, EventArgs e)
         {
+
             Ordermanagement_01.New_Dashboard.Employee.General_Notification note = new General_Notification(userId);
             note.Show();
+
         }
 
         private void link_Order_Count_Click(object sender, EventArgs e)

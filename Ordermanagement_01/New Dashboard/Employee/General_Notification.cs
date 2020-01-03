@@ -65,8 +65,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
             {
                 SplashScreenManager.CloseForm(false);
             }
-        }
-
+        }   
         private void layoutView1_CustomDrawCardFieldValue(object sender, RowCellCustomDrawEventArgs e)
         {
             LayoutView View = sender as LayoutView;
@@ -102,13 +101,11 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                         {
                             if (response.StatusCode == HttpStatusCode.OK)
                             {
-                                layoutView1.Appearance.FieldValue.ForeColor = Color.Black;
+                                General_Notification_Load(sender, e);
                             }
                         }
                     }
                 }
-
-
                 catch (Exception ex)
                 {
                     SplashScreenManager.CloseForm(false);

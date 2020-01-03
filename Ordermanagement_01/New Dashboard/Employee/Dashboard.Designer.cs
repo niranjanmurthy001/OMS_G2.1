@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions1 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange1 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
@@ -130,7 +129,7 @@
             this.arcScaleRangeBarComponent2 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleRangeBarComponent();
             this.circularGauge2 = new DevExpress.XtraGauges.Win.Gauges.Circular.CircularGauge();
             this.arcScaleBackgroundLayerComponent2 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleBackgroundLayerComponent();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlDashboard)).BeginInit();
             this.groupControlDashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -715,10 +714,10 @@
             this.btn_notification.AutoSize = true;
             this.btn_notification.AutoWidthInLayoutControl = true;
             this.btn_notification.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn_notification.Location = new System.Drawing.Point(405, 10);
+            this.btn_notification.Location = new System.Drawing.Point(405, 2);
             this.btn_notification.Name = "btn_notification";
             this.btn_notification.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.btn_notification.Size = new System.Drawing.Size(79, 24);
+            this.btn_notification.Size = new System.Drawing.Size(79, 37);
             this.btn_notification.TabIndex = 8;
             this.btn_notification.Text = "Notification";
             this.btn_notification.ToolTip = "Notification";

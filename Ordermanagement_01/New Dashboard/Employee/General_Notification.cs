@@ -12,6 +12,9 @@ using System.Net;
 using System.Drawing;
 using DevExpress.XtraGrid.Views.Layout;
 using DevExpress.XtraGrid.Views.Base;
+using DevExpress.XtraPrinting;
+using DevExpress.XtraPrintingLinks;
+using System.IO;
 
 namespace Ordermanagement_01.New_Dashboard.Employee
 {
@@ -116,6 +119,72 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                     SplashScreenManager.CloseForm(false);
                 }
             }          
+        }
+
+        private void btn_Export_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true,false);
+                if(layoutView1.DataSource==null)
+                {
+                    SplashScreenManager.CloseForm(false);
+                    XtraMessageBox.Show("Data Not Found,Can't Export");
+                    return;
+                }
+                PrintingSystem ps = new PrintingSystem();
+                ps.SetCommandVisibility(new PrintingSystemCommand[] {
+                    PrintingSystemCommand.ExportCsv, PrintingSystemCommand.ExportTxt, PrintingSystemCommand.ExportXlsx,
+                    PrintingSystemCommand.ExportDocx, PrintingSystemCommand.ExportXls, PrintingSystemCommand.Open
+                }, CommandVisibility.All);
+                ps.XlSheetCreated += PrintingSystem_XlSheetCreated;
+                CompositeLink cl = new CompositeLink(ps);
+
+                PrintableComponentLink linknotification = new PrintableComponentLink();
+                linknotification.Component = grid_notification;
+                linknotification.PaperName = "General Notification";
+                cl.Links.AddRange(new object[] { linknotification });
+                cl.CreatePageForEachLink();
+                string filePath = @"C:\General Notification\";
+                string fileName = filePath + "Gereral Notification All-" + DateTime.Now.ToString("dd-MM-yyyy-hh-mm-ss") + ".xlsx";
+                SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
+                if (!Directory.Exists(filePath))
+                {
+                    Directory.CreateDirectory(filePath);
+                    Export(cl, fileName);
+                }
+                else
+                {
+                    Export(cl, fileName);
+                }
+            }
+            catch (Exception ex)
+            {
+                SplashScreenManager.CloseForm(false);
+                throw ex;
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm(false);
+            }
+        }
+        void PrintingSystem_XlSheetCreated(object sender, XlSheetCreatedEventArgs e)
+        {
+            if (e.Index == 0)
+            {
+                e.SheetName = "General Notification";
+            }            
+        }
+        private static void Export(CompositeLink cl, string fileName)
+        {
+            cl.ExportToXlsx(fileName, new XlsxExportOptions()
+            {
+                ExportMode = XlsxExportMode.SingleFilePageByPage,
+                ExportHyperlinks = false,
+                TextExportMode = TextExportMode.Value,
+                IgnoreErrors = XlIgnoreErrors.NumberStoredAsText
+            });
+            System.Diagnostics.Process.Start(fileName);
         }
     }
 }

@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.btn_Export = new DevExpress.XtraEditors.SimpleButton();
             this.grid_notification = new DevExpress.XtraGrid.GridControl();
             this.layoutView1 = new DevExpress.XtraGrid.Views.Layout.LayoutView();
             this.Message = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
@@ -63,13 +64,26 @@
             this.groupControl1.AppearanceCaption.ForeColor = System.Drawing.Color.Black;
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
             this.groupControl1.AppearanceCaption.Options.UseForeColor = true;
+            this.groupControl1.Controls.Add(this.btn_Export);
             this.groupControl1.Controls.Add(this.grid_notification);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(733, 511);
+            this.groupControl1.Size = new System.Drawing.Size(737, 511);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "General Notification";
+            // 
+            // btn_Export
+            // 
+            this.btn_Export.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Export.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Export.Appearance.Options.UseFont = true;
+            this.btn_Export.Location = new System.Drawing.Point(623, 24);
+            this.btn_Export.Name = "btn_Export";
+            this.btn_Export.Size = new System.Drawing.Size(75, 27);
+            this.btn_Export.TabIndex = 1;
+            this.btn_Export.Text = "Export";
+            this.btn_Export.Click += new System.EventHandler(this.btn_Export_Click);
             // 
             // grid_notification
             // 
@@ -80,7 +94,7 @@
             this.grid_notification.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMemoEdit1,
             this.repositoryItemMemoEdit2});
-            this.grid_notification.Size = new System.Drawing.Size(729, 488);
+            this.grid_notification.Size = new System.Drawing.Size(733, 488);
             this.grid_notification.TabIndex = 0;
             this.grid_notification.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.layoutView1});
@@ -239,7 +253,7 @@
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(733, 511);
+            this.ClientSize = new System.Drawing.Size(737, 511);
             this.Controls.Add(this.groupControl1);
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MinimumSize = new System.Drawing.Size(715, 549);
@@ -280,5 +294,6 @@
         private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_layoutViewColumn1;
         private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_layoutViewColumn1_1;
         private DevExpress.XtraGrid.Views.Layout.LayoutViewCard layoutViewCard1;
+        private DevExpress.XtraEditors.SimpleButton btn_Export;
     }
 }

@@ -14,7 +14,7 @@ using Ordermanagement_01.Models;
 
 namespace Ordermanagement_01.New_Dashboard.Orders
 {
-    public partial class Order_CheckList : DevExpress.XtraEditors.XtraForm
+    public partial class Order_CheckList : XtraForm
     {
         ReportDocument RD = new ReportDocument();
         Commonclass Comclass = new Commonclass();
@@ -66,8 +66,7 @@ namespace Ordermanagement_01.New_Dashboard.Orders
         }
         private void Order_CheckList_Load(object sender, EventArgs e)
         {
-            SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
-           // CR_Report(Order_Id, Order_Task);
+            SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
             RD = new Reports.CrystalReport.Order_CheckList();
             if (Order_Task == 2)
             {
@@ -97,12 +96,13 @@ namespace Ordermanagement_01.New_Dashboard.Orders
             {
                 radioGroup1.SelectedIndex = 6;
             }
+            radioGroup1_SelectedIndexChanged(sender, e);
             SplashScreenManager.CloseForm(false);
         }
         private async void CR_Report(int Order_Id, int Status_ID)
         {
             int chk_count = 0;
-            System.Data.DataTable dt = new System.Data.DataTable();
+            DataTable dt = new DataTable();
             try
             {
                 SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
@@ -192,7 +192,7 @@ namespace Ordermanagement_01.New_Dashboard.Orders
             crConnectionInfo.UserID = cl_Lgoin[2].ToString();
             crConnectionInfo.Password = cl_Lgoin[3].ToString();
             CrTables = RD.Database.Tables;
-            foreach (CrystalDecisions.CrystalReports.Engine.Table CrTable in CrTables)
+            foreach (Table CrTable in CrTables)
             {
                 crtableLogoninfo = CrTable.LogOnInfo;
                 crtableLogoninfo.ConnectionInfo = crConnectionInfo;

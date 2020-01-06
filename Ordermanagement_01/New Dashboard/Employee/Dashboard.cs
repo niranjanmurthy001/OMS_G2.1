@@ -84,7 +84,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                 UserCount();
                 timer = new System.Threading.Timer(async a =>
                 {
-                    await IdleTimeUpdateAsync();
+                    await IdleProductionTimeUpdateAsync();
                     await UpdateLoginDateAsync();
                 }, null, TimeSpan.FromSeconds(1), TimeSpan.FromMinutes(1));
             }
@@ -217,7 +217,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
         /// </summary>
         /// <returns></returns>
         #region Idle Hours
-        private async Task IdleTimeUpdateAsync()
+        private async Task IdleProductionTimeUpdateAsync()
         {
             try
             {
@@ -258,7 +258,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                                 }
                             }
                         }
-                        await IdleTimeTrackerAsync();
+                        await ProductionTimeTrackerAsync();
                     }
                 }
             }
@@ -266,7 +266,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
             {
                 XtraMessageBox.Show("Something went wrong");
             }
-        }
+        }        
         private async Task<dynamic> GetCountAsync()
         {
             try
@@ -309,7 +309,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
         {
             try
             {
-                DataTable dtDiffTime = await GetTimeDifferenceAsync();
+                DataTable dtDiffTime = await GetIdleTimeDifferenceAsync();
                 if (dtDiffTime != null && dtDiffTime.Rows.Count > 0)
                 {
                     timeDifference = Convert.ToInt32(dtDiffTime.Rows[0]["Diff_Time"].ToString());
@@ -337,8 +337,8 @@ namespace Ordermanagement_01.New_Dashboard.Employee
             {
                 throw ex;
             }
-        }
-        private async Task<DataTable> GetTimeDifferenceAsync()
+        }        
+        private async Task<DataTable> GetIdleTimeDifferenceAsync()
         {
             try
             {
@@ -365,7 +365,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
             {
                 throw ex;
             }
-        }
+        }        
         private async Task<DataTable> GetMaxIdleTimeIdAsync()
         {
             try
@@ -466,7 +466,146 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                 XtraMessageBox.Show("something went wrong " + ex.Message);
             }
         }
-        # endregion  
+        #endregion
+        #region Production Hours
+        private async Task ProductionTimeTrackerAsync()
+        {
+            try
+            {
+                DataTable dtProdDiffTime = await GetProductionTimeDifferenceAsync();
+                if (dtProdDiffTime != null && dtProdDiffTime.Rows.Count > 0)
+                {
+                    timeDifference = Convert.ToInt32(dtProdDiffTime.Rows[0]["Diff_Time"].ToString());
+                    if (timeDifference >= 0 && timeDifference <= 1)
+                    {
+                        DataTable dtMaxProdId = await GetMaxProductionTimeIdAsync();
+                        int maxProdTimeId;
+                        if (dtMaxProdId != null && dtMaxProdId.Rows.Count > 0)
+                        {
+                            maxProdTimeId = int.Parse(dtMaxProdId.Rows[0]["Production_Time_Id"].ToString());
+                            await UpdateProductionTimeAsync(maxProdTimeId);
+                        }
+                    }
+                    else
+                    {
+                        await InsertProductionTimeAsync();
+                    }
+                }
+                else
+                {
+                    await InsertProductionTimeAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        private async Task<DataTable> GetProductionTimeDifferenceAsync()
+        {
+            try
+            {
+                using (var clientDiffTime = new HttpClient())
+                {
+                    var dictionaryDiffTime = new Dictionary<string, object>() {
+                    {"@Trans", "GET_DIFFERNCE_TIME" },
+                    {"@User_Id", userId },
+                    { "@Production_Date", productionDate }
+                };
+                    var diffTimeData = JsonConvert.SerializeObject(dictionaryDiffTime);
+                    var diffTimecontent = new StringContent(diffTimeData, Encoding.UTF8, "application/json");
+                    var diffTimeResult = await clientDiffTime.PostAsync(Base_Url.Url + "/User/ProductionTimeDifference", diffTimecontent);
+                    if (diffTimeResult.IsSuccessStatusCode)
+                    {
+                        var diffTimeResultData = await diffTimeResult.Content.ReadAsStringAsync();
+                        DataTable dtDiffTime = JsonConvert.DeserializeObject<DataTable>(diffTimeResultData);
+                        return dtDiffTime;
+                    }
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        private async Task<DataTable> GetMaxProductionTimeIdAsync()
+        {
+            try
+            {
+                using (var clientMaxProdId = new HttpClient())
+                {
+                    var dictionarMaxIdleId = new Dictionary<string, object>() {
+                       {"@Trans", "GET_MAX_PRODUCTION_TIME_ID" },
+                       {"@User_Id", userId },
+                       { "@Production_Date", productionDate }
+                    };
+                    var contentProdTimeId = new StringContent(JsonConvert.SerializeObject(dictionarMaxIdleId), Encoding.UTF8, "application/json");
+                    var resultProdTimeId = await clientMaxProdId.PostAsync(Base_Url.Url + "/User/GetMaxProductionTimeId", contentProdTimeId);
+                    if (resultProdTimeId.IsSuccessStatusCode)
+                    {
+                        var result = await resultProdTimeId.Content.ReadAsStringAsync();
+                        DataTable dtMaxProdId = JsonConvert.DeserializeObject<DataTable>(result);
+                        return dtMaxProdId;
+                    }
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        private async Task InsertProductionTimeAsync()
+        {
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    var dictionary = new Dictionary<string, object>(){
+                        {"@Trans", "INSERT" },
+                        {"@User_Id", userId },
+                        {"@Production_Date", productionDate }
+                    };
+                    var data = JsonConvert.SerializeObject(dictionary);
+                    var content = new StringContent(data, Encoding.UTF8, "application/json");
+                    var diffTimeResult = await client.PostAsync(Base_Url.Url + "/User/InsertProductionTime", content);
+                    if (diffTimeResult.IsSuccessStatusCode)
+                    {
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        private async Task UpdateProductionTimeAsync(int maxProdTimeId)
+        {
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    var dictionary = new Dictionary<string, object>(){
+                        {"@Trans", "UPDTAE_PRODUCTION_TIME" },
+                        { "@Production_Time_Id", maxProdTimeId }
+                    };
+                    var data = JsonConvert.SerializeObject(dictionary);
+                    var content = new StringContent(data, Encoding.UTF8, "application/json");
+                    var diffTimeResult = await client.PostAsync(Base_Url.Url + "/User/UpdateProductionTime", content);
+                    if (diffTimeResult.IsSuccessStatusCode)
+                    {
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion
         private void Daily_User_Login()
         {
             Hashtable htget_Hour = new Hashtable();
@@ -550,7 +689,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                             {
                                 link_Order_Count.Text = res.Live_Order_Count;
                             }
-                        }                        
+                        }
                     }
                 }
             }

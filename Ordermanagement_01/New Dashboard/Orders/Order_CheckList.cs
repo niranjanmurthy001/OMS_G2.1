@@ -67,7 +67,7 @@ namespace Ordermanagement_01.New_Dashboard.Orders
         private void Order_CheckList_Load(object sender, EventArgs e)
         {
             SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
-            CR_Report(Order_Id, Order_Task);
+           // CR_Report(Order_Id, Order_Task);
             RD = new Reports.CrystalReport.Order_CheckList();
             if (Order_Task == 2)
             {

@@ -960,6 +960,8 @@
             this.pivotGridField5.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
             this.pivotGridField5.AreaIndex = 0;
             this.pivotGridField5.Caption = "Date";
+            this.pivotGridField5.CellFormat.FormatString = "\"MM/dd/yyyy\"";
+            this.pivotGridField5.CellFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.pivotGridField5.FieldName = "Date";
             this.pivotGridField5.Name = "pivotGridField5";
             this.pivotGridField5.Width = 154;
@@ -1781,6 +1783,8 @@
             this.pivotGridField64.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea;
             this.pivotGridField64.AreaIndex = 0;
             this.pivotGridField64.Caption = "Order Production Date";
+            this.pivotGridField64.CellFormat.FormatString = "\"MM/dd/YYYY\"";
+            this.pivotGridField64.CellFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.pivotGridField64.FieldName = "Order_Production_Date";
             this.pivotGridField64.Name = "pivotGridField64";
             this.pivotGridField64.Options.AllowDrag = DevExpress.Utils.DefaultBoolean.False;
@@ -1852,6 +1856,8 @@
             this.pivotGridField35.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea;
             this.pivotGridField35.AreaIndex = 0;
             this.pivotGridField35.Caption = "Order Production Date";
+            this.pivotGridField35.CellFormat.FormatString = "\"MM/dd/YYYY\"";
+            this.pivotGridField35.CellFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.pivotGridField35.FieldName = "Order_Production_Date";
             this.pivotGridField35.Name = "pivotGridField35";
             this.pivotGridField35.Visible = false;
@@ -2453,6 +2459,8 @@
             this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn1.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.gridColumn1.Caption = "Date";
+            this.gridColumn1.DisplayFormat.FormatString = "\"MM/dd/YYYY\"";
+            this.gridColumn1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn1.FieldName = "Date";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowEdit = false;

@@ -7172,20 +7172,14 @@ namespace Ordermanagement_01
         {
             if (tabPane1.SelectedPageIndex == 1)
             {
-
                 string D3 = DateTime.Now.ToString("MM/dd/yyyy");
                 dateEdit1_Current_Date_Top_Eff.Text = D3;
-
-
             }
         }
-
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
         }
-
-
         //private void pivotGridControl2_CustomExportFieldValue(object sender, CustomExportFieldValueEventArgs e)
         //{
         //    if (e.Field.FieldName == "No_Of_Orders")

@@ -10901,6 +10901,13 @@ namespace Ordermanagement_01
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            txt_My_From_Date.Value = DateTime.Now;
+            txt_My_To_date.Value = DateTime.Now;
+            dtp_Employee_From_Date.Value = DateTime.Now;
+            dtp_Employee_To_Date.Value = DateTime.Now;
+            txt_First_date.Value = DateTime.Now;
+            txt_Second_Date.Value = DateTime.Now;
+            dateTimePicker1.Value = DateTime.Now;
             //// clsLoader.startProgress();
             //load_Progressbar.Start_progres();
             //if (tabControl1.SelectedIndex == 2 || tabControl1.SelectedIndex == 5)
@@ -10921,7 +10928,7 @@ namespace Ordermanagement_01
             //    {
             //        dbc.Bind_UserClient_Number_rpt(ddl_Client_name, userid);
             //    }
-            //    txt_My_From_Date.Value = DateTime.Now;
+            //txt_My_From_Date.Value = DateTime.Now;
             //    txt_My_To_date.Value = DateTime.Now;
             //    dtp_Employee_From_Date.Value = DateTime.Now;
             //    dtp_Employee_To_Date.Value = DateTime.Now;
@@ -10971,10 +10978,6 @@ namespace Ordermanagement_01
                     dbc.Bind_UserClient_Number_rpt(ddl_Client_name, userid);
 
                 }
-
-
-
-
                 dbc.Bind_Team_Members(ddl_My_Username, userid);
 
                 dbc.BindOrderStatusRpt(ddl_My_Task);
@@ -10989,11 +10992,6 @@ namespace Ordermanagement_01
                     Grd_OrderTime.Focus();
                 }
             }
-
-
-
-
-
         }
 
         private void ddl_My_Sub_Client_SelectedIndexChanged(object sender, EventArgs e)
@@ -14632,12 +14630,6 @@ namespace Ordermanagement_01
             }
             //clsLoader.stopProgress();
         }
-
-        private void tabControl3_TabIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void AddParent()
         {
 
@@ -18217,6 +18209,9 @@ namespace Ordermanagement_01
 
         private void tabControl3_SelectedIndexChanged(object sender, EventArgs e)
         {
+            dtp_From_date.Value = DateTime.Now;
+            dtp_To_Date.Value = DateTime.Now;
+
             if (tabControl3.SelectedIndex == 2)
             {
                 AddParent();
@@ -22355,6 +22350,12 @@ namespace Ordermanagement_01
 
         private void tabControl4_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+            dtp_Rework.Value = DateTime.Now;
+          dtp_Rework_Fromdate.Value = DateTime.Now;
+           dtp_Rework_Todate.Value = DateTime.Now;
+           dtp_MyTodate.Value = DateTime.Now;
+           dtp_MyFromdate.Value = DateTime.Now;       
             if (tabControl4.SelectedIndex == 1)
             {
                 if (User_Role_Id == "1")
@@ -22397,6 +22398,7 @@ namespace Ordermanagement_01
 
                 ddl_MyClient_SelectedIndexChanged(sender, e);
             }
+
         }
 
         private void First_All_report_Rework_Design()
@@ -25186,6 +25188,11 @@ namespace Ordermanagement_01
 
         private void tabControl5_SelectedIndexChanged(object sender, EventArgs e)
         {
+            dtp_Superqc.Value = DateTime.Now;
+          dtp_MySuperqc_To.Value = DateTime.Now;
+           dtp_MySuperqcFrom.Value = DateTime.Now;
+            dtp_All_SuperqcFromdate.Value = DateTime.Now;
+          dtp_All_SuperqcTodate.Value = DateTime.Now;
             if (tabControl5.SelectedIndex == 1)
             {
                 if (User_Role_Id == "1")
@@ -31724,6 +31731,12 @@ namespace Ordermanagement_01
 
         }
 
+        private void tabControl2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txt_Fromdate.Value = DateTime.Now;
+            txt_Todate.Value = DateTime.Now;
+        }
+
         private void AdminDashboard_KeyDown(object sender,System.Windows.Forms. KeyEventArgs e)
         {
             if (((Keyboard.IsKeyDown(Key.RightAlt)) || (Keyboard.IsKeyDown(Key.LeftAlt))) && (Keyboard.IsKeyDown(Key.L)))
@@ -33098,10 +33111,12 @@ namespace Ordermanagement_01
 
         private void tabControl2_SelectedIndexChanged(object sender, EventArgs e)
         {
+               txt_Fromdate.Value = DateTime.Now;
+               txt_Todate.Value = DateTime.Now;
+            txt_Employee_From_Date.Value = DateTime.Now;
+            txt_Employee_Todate.Value = DateTime.Now;
 
+                        
         }
-
-
-
     }
 }

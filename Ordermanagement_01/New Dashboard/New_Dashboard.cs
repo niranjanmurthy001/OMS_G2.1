@@ -729,6 +729,11 @@ namespace Ordermanagement_01.New_Dashboard
                             SplashScreenManager.CloseForm(false);
                             break;
                     }
+
+                    foreach (WindowsUIButton button in Window_Ui_Btn_View_List.Buttons)
+                    {
+                                button.Checked = false;
+                    }
                 }
                 else
                 {

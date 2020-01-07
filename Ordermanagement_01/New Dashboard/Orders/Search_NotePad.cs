@@ -202,7 +202,7 @@ namespace Ordermanagement_01.Employee
                 try
                 {
                     SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
-                    var dictionary = new Dictionary<string, object>()
+                    var dictionary1 = new Dictionary<string, object>()
                                        {
                                             {  "@Trans", "CHECK_BY_ORDER_USER_ID_TASK_ID" },
                                             { "@Order_Task", Order_Task },
@@ -210,16 +210,16 @@ namespace Ordermanagement_01.Employee
                                             { "@User_Id", User_Id },
                                             { "@Work_Type_Id", Work_Type_Id }
                                         };
-                    var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
+                    var data = new StringContent(JsonConvert.SerializeObject(dictionary1), Encoding.UTF8, "application/json");
                     using (var httpClient = new HttpClient())
                     {
-                        var response = await httpClient.PostAsync(Base_Url.Url + "/SearchNotePad/Bind", data);
-                        if (response.IsSuccessStatusCode)
+                        var response1 = await httpClient.PostAsync(Base_Url.Url + "/SearchNotePad/Bind", data);
+                        if (response1.IsSuccessStatusCode)
                         {
-                            if (response.StatusCode == HttpStatusCode.OK)
+                            if (response1.StatusCode == HttpStatusCode.OK)
                             {
-                                var result = await response.Content.ReadAsStringAsync();
-                                DataTable dtcheck_Note1 = JsonConvert.DeserializeObject<DataTable>(result);
+                                var result1 = await response1.Content.ReadAsStringAsync();
+                                DataTable dtcheck_Note1 = JsonConvert.DeserializeObject<DataTable>(result1);
                                 int Check_Count = 0;
                                 if (dtcheck_Note1.Rows.Count > 0)
                                 {
@@ -279,13 +279,13 @@ namespace Ordermanagement_01.Employee
                                         var data3 = new StringContent(JsonConvert.SerializeObject(dictionary3), Encoding.UTF8, "application/json");
                                         using (var httpClient2 = new HttpClient())
                                         {
-                                            var response2 = await httpClient2.PostAsync(Base_Url.Url + "/SearchNotePad/Get", data3);
-                                            if (response2.IsSuccessStatusCode)
+                                            var response3 = await httpClient2.PostAsync(Base_Url.Url + "/SearchNotePad/Get", data3);
+                                            if (response3.IsSuccessStatusCode)
                                             {
-                                                if (response2.StatusCode == HttpStatusCode.OK)
+                                                if (response3.StatusCode == HttpStatusCode.OK)
                                                 {
-                                                    var result2 = await response.Content.ReadAsStringAsync();
-                                                    DataTable dtupdate1 = JsonConvert.DeserializeObject<DataTable>(result2);
+                                                    var res = await response3.Content.ReadAsStringAsync();
+                                                    DataTable dtupdate1 = JsonConvert.DeserializeObject<DataTable>(res);
                                                     if (dtupdate1.Rows.Count > 0)
                                                     {
                                                         txt_rich_Note_Details.Text = dtupdate1.Rows[0]["Notes"].ToString();
@@ -333,8 +333,8 @@ namespace Ordermanagement_01.Employee
                         {
                             if (response2.StatusCode == HttpStatusCode.OK)
                             {
-                                var result2 = await response2.Content.ReadAsStringAsync();
-                                DataTable dtupdate1 = JsonConvert.DeserializeObject<DataTable>(result2);
+                                var result3 = await response2.Content.ReadAsStringAsync();
+                                DataTable dtupdate1 = JsonConvert.DeserializeObject<DataTable>(result3);
 
                                 if (dtupdate1.Rows.Count > 0)
                                 {
@@ -378,40 +378,44 @@ namespace Ordermanagement_01.Employee
                             if (dt_Select_Order_Details.Rows.Count > 0)
                             {
                                 StringBuilder bs = new StringBuilder();
-                                bs.AppendLine("ORDER NO #                                          :" + " " + "    " + dt_Select_Order_Details.Rows[0]["Client_Order_Number"].ToString() + "");
-                                bs.AppendLine("" + "" + Environment.NewLine);
-                                bs.AppendLine("ADDRESS                                               :" + " " + "    " + dt_Select_Order_Details.Rows[0]["Address"].ToString() + "");
-                                bs.AppendLine("" + "" + Environment.NewLine);
-                                bs.AppendLine("STATE                                                   :" + " " + "    " + dt_Select_Order_Details.Rows[0]["State"].ToString() + "");
-                                bs.AppendLine("" + "" + Environment.NewLine);
-                                bs.AppendLine("COUNTY                                                :" + " " + "    " + dt_Select_Order_Details.Rows[0]["County"].ToString() + "");
-                                bs.AppendLine("" + "" + Environment.NewLine);
-                                bs.AppendLine("APN                                                      :" + " " + "    " + dt_Select_Order_Details.Rows[0]["APN"].ToString() + "");
-                                bs.AppendLine("" + "" + Environment.NewLine);
-                                bs.AppendLine("BORROWER NAME                                   :" + " " + "    " + dt_Select_Order_Details.Rows[0]["Borrower_Name"].ToString() + "");
-                                bs.AppendLine("" + "" + Environment.NewLine);
-                                bs.AppendLine("EFFECTIVE DATE                                    :" + " " + "    ");
-                                bs.AppendLine("" + "" + Environment.NewLine);
-                                bs.AppendLine("NAMES RUN                                           :" + "    " + "");
-                                bs.AppendLine("" + "" + Environment.NewLine);
-                                bs.AppendLine("LEGAL REFERENCE                                  :" + " " + "    " + "" + Environment.NewLine);
-                                bs.AppendLine("" + "" + Environment.NewLine);
-                                bs.AppendLine("DATA DEPTH                                          :" + " " + "    " + "" + Environment.NewLine);
-                                bs.AppendLine("" + "" + Environment.NewLine);
-                                bs.AppendLine("OPEN ITEMS                                          :" + "    " + Environment.NewLine);
-                                bs.AppendLine("" + "" + Environment.NewLine);
-                                bs.AppendLine("DEEDS                                                  :" + "    " + Environment.NewLine);
-                                bs.AppendLine("" + "" + Environment.NewLine);
-                                bs.AppendLine("MORTGAGES                                          :" + "    " + Environment.NewLine);
-                                bs.AppendLine("" + "" + Environment.NewLine);
-                                bs.AppendLine("JUDGEMENTS/LIENS                               :" + "    " + Environment.NewLine);
-                                bs.AppendLine("" + "" + Environment.NewLine);
-                                bs.AppendLine("ADDITIONAL DOCUMENTS                       :" + "    " + Environment.NewLine);
-                                bs.AppendLine("" + "" + Environment.NewLine);
-                                bs.AppendLine("CLOSED ITEMS                                      :" + "    " + Environment.NewLine);
-                                bs.AppendLine("" + "" + Environment.NewLine);
-                                bs.AppendLine("GENERAL COMMENTS                              :" + "    " + Environment.NewLine);
-                                bs.AppendLine("CLIENT INSTRUCTIONS/REQUIREMENTS    :" + "    " + Environment.NewLine);
+
+                                bs.Append("ORDER NO #").Append("\t").Append("\t").Append(":").Append(" ").Append(dt_Select_Order_Details.Rows[0]["Client_Order_Number"].ToString().Trim()).AppendLine();
+                                bs.Append("ADDRESS #").Append("\t").Append("\t").Append(":").Append(" ").Append(dt_Select_Order_Details.Rows[0]["Address"].ToString().Trim()).AppendLine();                                
+                                bs.Append("STATE #").Append("\t").Append("\t").Append(":").Append(" ").Append(dt_Select_Order_Details.Rows[0]["State"].ToString().Trim()).AppendLine();                                
+                                bs.Append("COUNTY #").Append("\t").Append("\t").Append(":").Append(" ").Append(dt_Select_Order_Details.Rows[0]["County"].ToString().Trim()).AppendLine();                                
+                                bs.Append("APN #    ").Append("\t").Append("\t").Append(":").Append(" ").Append(dt_Select_Order_Details.Rows[0]["APN"].ToString().Trim()).AppendLine();                                
+                                bs.Append("BORROWER NAME #").Append("\t").Append(":").Append(" ").Append(dt_Select_Order_Details.Rows[0]["Borrower_Name"].ToString().Trim()).AppendLine();
+                                bs.AppendLine();
+                                bs.Append("EFFECTIVE DATE #").Append("\t").Append(":").Append(" ").AppendLine();
+                                bs.AppendLine();
+                                bs.Append("NAMES RUN #      ").Append("\t").Append(":").Append(" ").AppendLine();
+                                bs.AppendLine();
+                                bs.Append("LEGAL REFERENCE #").Append("\t").Append(":").Append(" ").AppendLine();
+                                bs.AppendLine();
+                                bs.Append("DATA DEPTH #     ").Append("\t").Append(":").Append(" ").AppendLine();
+                                bs.AppendLine();
+                                bs.Append("OPEN ITEMS #     ").Append("\t").Append(":").Append(" ").AppendLine();
+                                bs.AppendLine();
+                                bs.Append("DEEDS #").Append("\t").Append("\t").Append(":").Append(" ").AppendLine();
+                                bs.AppendLine();
+                                bs.Append("MORTGAGES #").Append("\t").Append("\t").Append(":").Append(" ").AppendLine();
+                                bs.AppendLine();
+
+                                bs.Append("JUDGEMENTS/LIENS #").Append("\t").Append(":").Append(" ").AppendLine();
+                                bs.AppendLine();
+                                //bs.AppendLine("JUDGEMENTS/LIENS     :" + " " +" "+ Environment.NewLine);
+                                bs.Append("ADDITIONAL DOCUMENTS #").Append("\t").Append(":").Append(" ").AppendLine();
+                                bs.AppendLine();
+                                //bs.AppendLine("ADDITIONAL DOCUMENTS :" + " " +" "+ Environment.NewLine);
+                                bs.Append("CLOSED ITEMS #").Append("\t").Append("\t").Append(":").Append(" ").AppendLine();
+                                bs.AppendLine();
+                                //bs.AppendLine("CLOSED ITEMS         :" + " " +" "+ Environment.NewLine);
+                                //bs.Append("GENERAL COMMENTS #").Append("\t").Append(":").Append(" ").AppendLine();
+                                bs.Append("GENERAL COMMENTS #   ").Append("\t").Append(":").Append(" ").AppendLine();
+                                bs.AppendLine();
+                                //bs.AppendLine("GENERAL COMMENTS     :" + " " +" "+ Environment.NewLine);
+                                bs.Append("CLIENT INSTRUCTIONS/REQUIREMENTS  #").Append(" ").Append(":").Append(" ").AppendLine();
+                                //bs.AppendLine("CLIENT INSTRUCTIONS/REQUIREMENTS :" + " " +" "+ Environment.NewLine);
                                 txt_rich_Note_Details.Text = bs.ToString();
                             }
                             else

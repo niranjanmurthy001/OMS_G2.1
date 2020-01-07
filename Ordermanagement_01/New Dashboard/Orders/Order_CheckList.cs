@@ -12,6 +12,7 @@ using System.Net;
 using CrystalDecisions.Shared;
 using Ordermanagement_01.Models;
 
+
 namespace Ordermanagement_01.New_Dashboard.Orders
 {
     public partial class Order_CheckList : XtraForm
@@ -67,6 +68,7 @@ namespace Ordermanagement_01.New_Dashboard.Orders
         private void Order_CheckList_Load(object sender, EventArgs e)
         {
             SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
+            Load_Sample_Report_For_Faster();
             RD = new Reports.CrystalReport.Order_CheckList();
             if (Order_Task == 2)
             {
@@ -182,6 +184,12 @@ namespace Ordermanagement_01.New_Dashboard.Orders
             {
                 SplashScreenManager.CloseForm(false);
             }
+        }
+        private void Load_Sample_Report_For_Faster()
+        {
+            RD = new Reports.CrystalReport.Order_CheckList();
+            Logon_Cr();
+            crystalReportViewer1.ReportSource = RD;
         }
         private void Logon_Cr()
         {

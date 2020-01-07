@@ -1035,18 +1035,21 @@ namespace Ordermanagement_01
                 btn.HeaderText = "Open";
                 btn.Text = "Open";
                 btn.Name = "btn";
+                btn.UseColumnTextForButtonValue = true;
                 Grd_Document_upload.Columns[13].Width = 100;
 
                 Grd_Document_upload.Columns.Add(btnEdit);
                 btnEdit.HeaderText = "Edit";
                 btnEdit.Text = "Edit";
                 btnEdit.Name = "btnEdit";
+                btnEdit.UseColumnTextForButtonValue = true;
                 Grd_Document_upload.Columns[14].Width = 100;
 
                 Grd_Document_upload.Columns.Add(btnDelete);
                 btnDelete.HeaderText = "Delete";
                 btnDelete.Text = "Delete";
                 btnDelete.Name = "btnDelete";
+                btnDelete.UseColumnTextForButtonValue = true;
                 Grd_Document_upload.Columns[15].Width = 100;
 
 

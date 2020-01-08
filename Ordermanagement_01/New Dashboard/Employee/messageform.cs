@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using DevExpress.XtraSplashScreen;
+using Ordermanagement_01.Masters;
 using DevExpress.XtraEditors;
 
 namespace Ordermanagement_01.New_Dashboard.Employee
 {
-    public partial class messageform : DevExpress.XtraEditors.XtraForm
+    public partial class messageform : XtraForm
     {
         string _message;
         public messageform(string message)
@@ -19,10 +13,11 @@ namespace Ordermanagement_01.New_Dashboard.Employee
             InitializeComponent();
             _message = message;
         }
-
         private void messageform_Load(object sender, EventArgs e)
         {
+            SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
             memomessage.Text = _message;
-        }      
+            SplashScreenManager.CloseForm(false);
+        }
     }
 }

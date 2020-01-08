@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grd_Services = new System.Windows.Forms.DataGridView();
             this.MenuStrip = new System.Windows.Forms.MenuStrip();
             this.MastersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,6 +78,10 @@
             this.lbl_product_Type = new System.Windows.Forms.Label();
             this.ddl_Product_Type = new System.Windows.Forms.ComboBox();
             this.txt_Abstractor_Name = new System.Windows.Forms.TextBox();
+            this.lbl_County = new System.Windows.Forms.Label();
+            this.ddl_State = new System.Windows.Forms.ComboBox();
+            this.ddl_County = new System.Windows.Forms.ComboBox();
+            this.btn_Clear = new System.Windows.Forms.Button();
             this.SNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -90,10 +95,6 @@
             this.Column3 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.lbl_County = new System.Windows.Forms.Label();
-            this.ddl_State = new System.Windows.Forms.ComboBox();
-            this.ddl_County = new System.Windows.Forms.ComboBox();
-            this.btn_Clear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grd_Services)).BeginInit();
             this.MenuStrip.SuspendLayout();
             this.ToolStrip1.SuspendLayout();
@@ -107,14 +108,14 @@
             this.grd_Services.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grd_Services.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.grd_Services.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grd_Services.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_Services.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.grd_Services.ColumnHeadersHeight = 30;
             this.grd_Services.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SNO,
@@ -130,34 +131,34 @@
             this.Column3,
             this.Column9,
             this.Column2});
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Ebrima", 9.75F);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grd_Services.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Ebrima", 9.75F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grd_Services.DefaultCellStyle = dataGridViewCellStyle3;
             this.grd_Services.Location = new System.Drawing.Point(9, 155);
             this.grd_Services.Name = "grd_Services";
             this.grd_Services.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grd_Services.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_Services.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.grd_Services.RowHeadersVisible = false;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grd_Services.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_Services.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.grd_Services.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.grd_Services.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.SystemColors.Control;
             this.grd_Services.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -619,91 +620,6 @@
             this.txt_Abstractor_Name.TabIndex = 217;
             this.txt_Abstractor_Name.TextChanged += new System.EventHandler(this.txt_Abstractor_Name_TextChanged);
             // 
-            // SNO
-            // 
-            this.SNO.FillWeight = 46.73793F;
-            this.SNO.HeaderText = "S. No";
-            this.SNO.Name = "SNO";
-            this.SNO.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column7
-            // 
-            this.Column7.FillWeight = 210.3286F;
-            this.Column7.HeaderText = "ABSTRACTOR NAME";
-            this.Column7.Name = "Column7";
-            this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "Cost";
-            this.Column12.Name = "Column12";
-            // 
-            // Column10
-            // 
-            this.Column10.FillWeight = 104.3659F;
-            this.Column10.HeaderText = "CONTACT NAME";
-            this.Column10.Name = "Column10";
-            // 
-            // Column4
-            // 
-            this.Column4.FillWeight = 108.4341F;
-            this.Column4.HeaderText = "GENDER";
-            this.Column4.Name = "Column4";
-            // 
-            // Column1
-            // 
-            this.Column1.FillWeight = 130.7354F;
-            this.Column1.HeaderText = "PHONE NO";
-            this.Column1.Name = "Column1";
-            // 
-            // Column5
-            // 
-            this.Column5.FillWeight = 74.39529F;
-            this.Column5.HeaderText = "EMAIL";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.FillWeight = 97.42069F;
-            this.Column6.HeaderText = "FAX NO";
-            this.Column6.Name = "Column6";
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "CREATED DATE";
-            this.Column11.Name = "Column11";
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Abstractor_Id";
-            this.Column8.Name = "Column8";
-            this.Column8.Visible = false;
-            // 
-            // Column3
-            // 
-            this.Column3.FillWeight = 126.9036F;
-            this.Column3.HeaderText = "STATE COUNTY DETAIL";
-            this.Column3.Name = "Column3";
-            this.Column3.Text = "View/Edit";
-            // 
-            // Column9
-            // 
-            this.Column9.FillWeight = 60.9203F;
-            this.Column9.HeaderText = "PAYMENT DETAIL";
-            this.Column9.Name = "Column9";
-            this.Column9.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column9.Text = "View/Edit";
-            // 
-            // Column2
-            // 
-            this.Column2.FillWeight = 39.75846F;
-            this.Column2.HeaderText = "DELETE";
-            this.Column2.Name = "Column2";
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
             // lbl_County
             // 
             this.lbl_County.AutoSize = true;
@@ -761,6 +677,94 @@
             this.btn_Clear.UseVisualStyleBackColor = true;
             this.btn_Clear.Visible = false;
             this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click);
+            // 
+            // SNO
+            // 
+            this.SNO.FillWeight = 46.73793F;
+            this.SNO.HeaderText = "S. No";
+            this.SNO.Name = "SNO";
+            this.SNO.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Column7
+            // 
+            this.Column7.FillWeight = 210.3286F;
+            this.Column7.HeaderText = "ABSTRACTOR NAME";
+            this.Column7.Name = "Column7";
+            this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "Cost";
+            this.Column12.Name = "Column12";
+            // 
+            // Column10
+            // 
+            this.Column10.FillWeight = 104.3659F;
+            this.Column10.HeaderText = "CONTACT NAME";
+            this.Column10.Name = "Column10";
+            // 
+            // Column4
+            // 
+            this.Column4.FillWeight = 108.4341F;
+            this.Column4.HeaderText = "GENDER";
+            this.Column4.Name = "Column4";
+            // 
+            // Column1
+            // 
+            this.Column1.FillWeight = 130.7354F;
+            this.Column1.HeaderText = "PHONE NO";
+            this.Column1.Name = "Column1";
+            // 
+            // Column5
+            // 
+            this.Column5.FillWeight = 74.39529F;
+            this.Column5.HeaderText = "EMAIL";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.FillWeight = 97.42069F;
+            this.Column6.HeaderText = "FAX NO";
+            this.Column6.Name = "Column6";
+            // 
+            // Column11
+            // 
+            dataGridViewCellStyle2.Format = "MM/dd/yyyy";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Column11.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column11.HeaderText = "CREATED DATE";
+            this.Column11.Name = "Column11";
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Abstractor_Id";
+            this.Column8.Name = "Column8";
+            this.Column8.Visible = false;
+            // 
+            // Column3
+            // 
+            this.Column3.FillWeight = 126.9036F;
+            this.Column3.HeaderText = "STATE COUNTY DETAIL";
+            this.Column3.Name = "Column3";
+            this.Column3.Text = "View/Edit";
+            // 
+            // Column9
+            // 
+            this.Column9.FillWeight = 60.9203F;
+            this.Column9.HeaderText = "PAYMENT DETAIL";
+            this.Column9.Name = "Column9";
+            this.Column9.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column9.Text = "View/Edit";
+            // 
+            // Column2
+            // 
+            this.Column2.FillWeight = 39.75846F;
+            this.Column2.HeaderText = "DELETE";
+            this.Column2.Name = "Column2";
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Abstractor_View
             // 
@@ -846,6 +850,10 @@
         private System.Windows.Forms.Label lbl_product_Type;
         private System.Windows.Forms.ComboBox ddl_Product_Type;
         private System.Windows.Forms.TextBox txt_Abstractor_Name;
+        private System.Windows.Forms.Label lbl_County;
+        private System.Windows.Forms.ComboBox ddl_State;
+        private System.Windows.Forms.ComboBox ddl_County;
+        private System.Windows.Forms.Button btn_Clear;
         private System.Windows.Forms.DataGridViewTextBoxColumn SNO;
         private System.Windows.Forms.DataGridViewButtonColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
@@ -859,9 +867,5 @@
         private System.Windows.Forms.DataGridViewButtonColumn Column3;
         private System.Windows.Forms.DataGridViewButtonColumn Column9;
         private System.Windows.Forms.DataGridViewButtonColumn Column2;
-        private System.Windows.Forms.Label lbl_County;
-        private System.Windows.Forms.ComboBox ddl_State;
-        private System.Windows.Forms.ComboBox ddl_County;
-        private System.Windows.Forms.Button btn_Clear;
     }
 }

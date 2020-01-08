@@ -29,19 +29,20 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label25 = new System.Windows.Forms.Label();
             this.Tab_Control = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -60,30 +61,6 @@
             this.btn_Refresh = new System.Windows.Forms.Button();
             this.rbtn_Invoice_Sended = new System.Windows.Forms.RadioButton();
             this.grd_order = new System.Windows.Forms.DataGridView();
-            this.Column20 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.SNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Order_Number = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Client_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sub_ProcessName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Order_Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.STATECOUNTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CGI_Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Additional_Fees = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Column22 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stateid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_New_Invoice = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.rbtn_Invoice_NotSended = new System.Windows.Forms.RadioButton();
@@ -165,6 +142,30 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Column20 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.SNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Order_Number = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Client_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sub_ProcessName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Order_Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STATECOUNTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CGI_Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Additional_Fees = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Column22 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stateid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tab_Control.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -449,14 +450,14 @@
             this.Column6,
             this.Column8,
             this.stateid});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.MediumBlue;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grd_order.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.MediumBlue;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grd_order.DefaultCellStyle = dataGridViewCellStyle4;
             this.grd_order.Location = new System.Drawing.Point(6, 101);
             this.grd_order.Name = "grd_order";
             this.grd_order.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -464,183 +465,6 @@
             this.grd_order.Size = new System.Drawing.Size(1288, 388);
             this.grd_order.TabIndex = 191;
             this.grd_order.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_order_CellClick);
-            // 
-            // Column20
-            // 
-            this.Column20.FillWeight = 302.5341F;
-            this.Column20.HeaderText = "Chk";
-            this.Column20.Name = "Column20";
-            this.Column20.Width = 223;
-            // 
-            // SNo
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.SNo.DefaultCellStyle = dataGridViewCellStyle2;
-            this.SNo.FillWeight = 79.82497F;
-            this.SNo.HeaderText = "S. No";
-            this.SNo.Name = "SNo";
-            this.SNo.ReadOnly = true;
-            this.SNo.Width = 59;
-            // 
-            // Order_Number
-            // 
-            this.Order_Number.FillWeight = 134.2747F;
-            this.Order_Number.HeaderText = "ORDER NUMBER";
-            this.Order_Number.Name = "Order_Number";
-            this.Order_Number.ReadOnly = true;
-            this.Order_Number.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Order_Number.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Order_Number.Width = 99;
-            // 
-            // Column4
-            // 
-            this.Column4.FillWeight = 87.36401F;
-            this.Column4.HeaderText = "INVOICE";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 64;
-            // 
-            // Client_Name
-            // 
-            this.Client_Name.FillWeight = 53.59796F;
-            this.Client_Name.HeaderText = "CLIENT";
-            this.Client_Name.Name = "Client_Name";
-            this.Client_Name.ReadOnly = true;
-            this.Client_Name.Width = 39;
-            // 
-            // Sub_ProcessName
-            // 
-            this.Sub_ProcessName.FillWeight = 109.1479F;
-            this.Sub_ProcessName.HeaderText = "SUB CLIENT";
-            this.Sub_ProcessName.Name = "Sub_ProcessName";
-            this.Sub_ProcessName.ReadOnly = true;
-            this.Sub_ProcessName.Width = 80;
-            // 
-            // Order_Type
-            // 
-            this.Order_Type.FillWeight = 113.8334F;
-            this.Order_Type.HeaderText = "ORDER TYPE";
-            this.Order_Type.Name = "Order_Type";
-            this.Order_Type.ReadOnly = true;
-            this.Order_Type.Width = 83;
-            // 
-            // STATECOUNTY
-            // 
-            this.STATECOUNTY.FillWeight = 128.6095F;
-            this.STATECOUNTY.HeaderText = "STATE & COUNTY";
-            this.STATECOUNTY.Name = "STATECOUNTY";
-            this.STATECOUNTY.ReadOnly = true;
-            this.STATECOUNTY.Width = 95;
-            // 
-            // Date
-            // 
-            this.Date.FillWeight = 115.8661F;
-            this.Date.HeaderText = "RECEIVED DATE";
-            this.Date.Name = "Date";
-            this.Date.Width = 85;
-            // 
-            // Column1
-            // 
-            this.Column1.FillWeight = 87.36401F;
-            this.Column1.HeaderText = "SEARCH COST";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 64;
-            // 
-            // Column2
-            // 
-            this.Column2.FillWeight = 87.36401F;
-            this.Column2.HeaderText = "COPY COST";
-            this.Column2.Name = "Column2";
-            // 
-            // CGI_Amount
-            // 
-            this.CGI_Amount.HeaderText = "CJ and Tideland Fee";
-            this.CGI_Amount.Name = "CGI_Amount";
-            // 
-            // Additional_Fees
-            // 
-            this.Additional_Fees.HeaderText = "Additional_Fees";
-            this.Additional_Fees.Name = "Additional_Fees";
-            // 
-            // Column3
-            // 
-            this.Column3.FillWeight = 87.36401F;
-            this.Column3.HeaderText = "TOTAL";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 65;
-            // 
-            // Column7
-            // 
-            this.Column7.FillWeight = 87.36401F;
-            this.Column7.HeaderText = "INVOICE_DATE";
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 200;
-            // 
-            // Column13
-            // 
-            this.Column13.FillWeight = 53.59796F;
-            this.Column13.HeaderText = "VIEW";
-            this.Column13.Image = global::Ordermanagement_01.Properties.Resources.Preview;
-            this.Column13.Name = "Column13";
-            this.Column13.ToolTipText = "View";
-            this.Column13.Width = 39;
-            // 
-            // Column9
-            // 
-            this.Column9.FillWeight = 87.36401F;
-            this.Column9.HeaderText = "PDF";
-            this.Column9.Image = global::Ordermanagement_01.Properties.Resources.PDF;
-            this.Column9.Name = "Column9";
-            this.Column9.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column9.Width = 64;
-            // 
-            // Column5
-            // 
-            this.Column5.FillWeight = 87.36401F;
-            this.Column5.HeaderText = "EMAIL";
-            this.Column5.Image = global::Ordermanagement_01.Properties.Resources.Email;
-            this.Column5.Name = "Column5";
-            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column5.Width = 65;
-            // 
-            // Column22
-            // 
-            this.Column22.HeaderText = "DELETE";
-            this.Column22.Image = global::Ordermanagement_01.Properties.Resources.Delete;
-            this.Column22.Name = "Column22";
-            this.Column22.Width = 65;
-            // 
-            // Column15
-            // 
-            this.Column15.HeaderText = "Order_Id";
-            this.Column15.Name = "Column15";
-            this.Column15.Visible = false;
-            // 
-            // Column21
-            // 
-            this.Column21.HeaderText = "Client_Id";
-            this.Column21.Name = "Column21";
-            this.Column21.Visible = false;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Sub_ProcessId";
-            this.Column6.Name = "Column6";
-            this.Column6.Visible = false;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Invoice_Id";
-            this.Column8.Name = "Column8";
-            this.Column8.Visible = false;
-            // 
-            // stateid
-            // 
-            this.stateid.HeaderText = "State_Id";
-            this.stateid.Name = "stateid";
-            this.stateid.Visible = false;
             // 
             // btn_New_Invoice
             // 
@@ -844,14 +668,14 @@
             this.grid_Monthly_Invoice.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.grid_Monthly_Invoice.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.grid_Monthly_Invoice.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid_Monthly_Invoice.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid_Monthly_Invoice.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.grid_Monthly_Invoice.ColumnHeadersHeight = 55;
             this.grid_Monthly_Invoice.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -872,14 +696,14 @@
             this.Column12,
             this.Column14,
             this.Column19});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.MediumBlue;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grid_Monthly_Invoice.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.MediumBlue;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grid_Monthly_Invoice.DefaultCellStyle = dataGridViewCellStyle7;
             this.grid_Monthly_Invoice.Location = new System.Drawing.Point(0, 94);
             this.grid_Monthly_Invoice.Name = "grid_Monthly_Invoice";
             this.grid_Monthly_Invoice.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -890,9 +714,9 @@
             // 
             // dataGridViewTextBoxColumn1
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewTextBoxColumn1.FillWeight = 91.37055F;
             this.dataGridViewTextBoxColumn1.HeaderText = "S. No";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
@@ -1416,14 +1240,14 @@
             this.Grid_Invoice_Details.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Grid_Invoice_Details.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.Grid_Invoice_Details.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_Invoice_Details.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_Invoice_Details.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.Grid_Invoice_Details.ColumnHeadersHeight = 30;
             this.Grid_Invoice_Details.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn7,
@@ -1439,14 +1263,14 @@
             this.Grid_Invoice_Details.Location = new System.Drawing.Point(3, 63);
             this.Grid_Invoice_Details.Name = "Grid_Invoice_Details";
             this.Grid_Invoice_Details.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_Invoice_Details.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_Invoice_Details.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.Grid_Invoice_Details.RowHeadersVisible = false;
             this.Grid_Invoice_Details.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.Grid_Invoice_Details.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.SystemColors.Control;
@@ -1462,16 +1286,16 @@
             // 
             // dataGridViewTextBoxColumn7
             // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewTextBoxColumn7.FillWeight = 49.91911F;
             this.dataGridViewTextBoxColumn7.HeaderText = "S. No";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
             // dataGridViewLinkColumn1
             // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewLinkColumn1.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewLinkColumn1.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewLinkColumn1.FillWeight = 171.4261F;
             this.dataGridViewLinkColumn1.HeaderText = "ORDER#";
             this.dataGridViewLinkColumn1.Name = "dataGridViewLinkColumn1";
@@ -1480,16 +1304,16 @@
             // 
             // dataGridViewTextBoxColumn8
             // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridViewTextBoxColumn8.FillWeight = 141.6343F;
             this.dataGridViewTextBoxColumn8.HeaderText = "SEARCH COST";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             // 
             // dataGridViewTextBoxColumn5
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridViewTextBoxColumn5.FillWeight = 97.54155F;
             this.dataGridViewTextBoxColumn5.HeaderText = "COPY COST";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
@@ -1504,16 +1328,16 @@
             // 
             // dataGridViewTextBoxColumn9
             // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle13;
             this.dataGridViewTextBoxColumn9.FillWeight = 97.54155F;
             this.dataGridViewTextBoxColumn9.HeaderText = "TOTAL";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             // 
             // dataGridViewTextBoxColumn13
             // 
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn13.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn13.DefaultCellStyle = dataGridViewCellStyle14;
             this.dataGridViewTextBoxColumn13.FillWeight = 97.54155F;
             this.dataGridViewTextBoxColumn13.HeaderText = "INV.DATE";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
@@ -1568,6 +1392,186 @@
             this.dataGridViewImageColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewImageColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewImageColumn3.Width = 79;
+            // 
+            // Column20
+            // 
+            this.Column20.FillWeight = 302.5341F;
+            this.Column20.HeaderText = "Chk";
+            this.Column20.Name = "Column20";
+            this.Column20.Width = 223;
+            // 
+            // SNo
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.SNo.DefaultCellStyle = dataGridViewCellStyle2;
+            this.SNo.FillWeight = 79.82497F;
+            this.SNo.HeaderText = "S. No";
+            this.SNo.Name = "SNo";
+            this.SNo.ReadOnly = true;
+            this.SNo.Width = 59;
+            // 
+            // Order_Number
+            // 
+            this.Order_Number.FillWeight = 134.2747F;
+            this.Order_Number.HeaderText = "ORDER NUMBER";
+            this.Order_Number.Name = "Order_Number";
+            this.Order_Number.ReadOnly = true;
+            this.Order_Number.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Order_Number.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Order_Number.Width = 99;
+            // 
+            // Column4
+            // 
+            this.Column4.FillWeight = 87.36401F;
+            this.Column4.HeaderText = "INVOICE";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 64;
+            // 
+            // Client_Name
+            // 
+            this.Client_Name.FillWeight = 53.59796F;
+            this.Client_Name.HeaderText = "CLIENT";
+            this.Client_Name.Name = "Client_Name";
+            this.Client_Name.ReadOnly = true;
+            this.Client_Name.Width = 39;
+            // 
+            // Sub_ProcessName
+            // 
+            this.Sub_ProcessName.FillWeight = 109.1479F;
+            this.Sub_ProcessName.HeaderText = "SUB CLIENT";
+            this.Sub_ProcessName.Name = "Sub_ProcessName";
+            this.Sub_ProcessName.ReadOnly = true;
+            this.Sub_ProcessName.Width = 80;
+            // 
+            // Order_Type
+            // 
+            this.Order_Type.FillWeight = 113.8334F;
+            this.Order_Type.HeaderText = "ORDER TYPE";
+            this.Order_Type.Name = "Order_Type";
+            this.Order_Type.ReadOnly = true;
+            this.Order_Type.Width = 83;
+            // 
+            // STATECOUNTY
+            // 
+            this.STATECOUNTY.FillWeight = 128.6095F;
+            this.STATECOUNTY.HeaderText = "STATE & COUNTY";
+            this.STATECOUNTY.Name = "STATECOUNTY";
+            this.STATECOUNTY.ReadOnly = true;
+            this.STATECOUNTY.Width = 95;
+            // 
+            // Date
+            // 
+            dataGridViewCellStyle3.Format = "MM/dd/yyyy";
+            dataGridViewCellStyle3.NullValue = null;
+            this.Date.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Date.FillWeight = 115.8661F;
+            this.Date.HeaderText = "RECEIVED DATE";
+            this.Date.Name = "Date";
+            this.Date.Width = 85;
+            // 
+            // Column1
+            // 
+            this.Column1.FillWeight = 87.36401F;
+            this.Column1.HeaderText = "SEARCH COST";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 64;
+            // 
+            // Column2
+            // 
+            this.Column2.FillWeight = 87.36401F;
+            this.Column2.HeaderText = "COPY COST";
+            this.Column2.Name = "Column2";
+            // 
+            // CGI_Amount
+            // 
+            this.CGI_Amount.HeaderText = "CJ and Tideland Fee";
+            this.CGI_Amount.Name = "CGI_Amount";
+            // 
+            // Additional_Fees
+            // 
+            this.Additional_Fees.HeaderText = "Additional_Fees";
+            this.Additional_Fees.Name = "Additional_Fees";
+            // 
+            // Column3
+            // 
+            this.Column3.FillWeight = 87.36401F;
+            this.Column3.HeaderText = "TOTAL";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 65;
+            // 
+            // Column7
+            // 
+            this.Column7.FillWeight = 87.36401F;
+            this.Column7.HeaderText = "INVOICE_DATE";
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 200;
+            // 
+            // Column13
+            // 
+            this.Column13.FillWeight = 53.59796F;
+            this.Column13.HeaderText = "VIEW";
+            this.Column13.Image = global::Ordermanagement_01.Properties.Resources.Preview;
+            this.Column13.Name = "Column13";
+            this.Column13.ToolTipText = "View";
+            this.Column13.Width = 39;
+            // 
+            // Column9
+            // 
+            this.Column9.FillWeight = 87.36401F;
+            this.Column9.HeaderText = "PDF";
+            this.Column9.Image = global::Ordermanagement_01.Properties.Resources.PDF;
+            this.Column9.Name = "Column9";
+            this.Column9.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column9.Width = 64;
+            // 
+            // Column5
+            // 
+            this.Column5.FillWeight = 87.36401F;
+            this.Column5.HeaderText = "EMAIL";
+            this.Column5.Image = global::Ordermanagement_01.Properties.Resources.Email;
+            this.Column5.Name = "Column5";
+            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column5.Width = 65;
+            // 
+            // Column22
+            // 
+            this.Column22.HeaderText = "DELETE";
+            this.Column22.Image = global::Ordermanagement_01.Properties.Resources.Delete;
+            this.Column22.Name = "Column22";
+            this.Column22.Width = 65;
+            // 
+            // Column15
+            // 
+            this.Column15.HeaderText = "Order_Id";
+            this.Column15.Name = "Column15";
+            this.Column15.Visible = false;
+            // 
+            // Column21
+            // 
+            this.Column21.HeaderText = "Client_Id";
+            this.Column21.Name = "Column21";
+            this.Column21.Visible = false;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Sub_ProcessId";
+            this.Column6.Name = "Column6";
+            this.Column6.Visible = false;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Invoice_Id";
+            this.Column8.Name = "Column8";
+            this.Column8.Visible = false;
+            // 
+            // stateid
+            // 
+            this.stateid.HeaderText = "State_Id";
+            this.stateid.Name = "stateid";
+            this.stateid.Visible = false;
             // 
             // Invoice_Orders_List
             // 
@@ -1681,6 +1685,29 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.DataGridView Grid_Invoice_Details;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewLinkColumn dataGridViewLinkColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ComboBox ddlSubProcess;
+        private System.Windows.Forms.DateTimePicker txt_To_date;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DateTimePicker txt_From_date;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbl_Enter_Order;
+        private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox ddlClient;
+        private System.Windows.Forms.Button btnExport;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column20;
         private System.Windows.Forms.DataGridViewTextBoxColumn SNo;
         private System.Windows.Forms.DataGridViewButtonColumn Order_Number;
@@ -1705,28 +1732,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn stateid;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.DataGridView Grid_Invoice_Details;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewLinkColumn dataGridViewLinkColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox ddlSubProcess;
-        private System.Windows.Forms.DateTimePicker txt_To_date;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker txt_From_date;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lbl_Enter_Order;
-        private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox ddlClient;
-        private System.Windows.Forms.Button btnExport;
     }
 }

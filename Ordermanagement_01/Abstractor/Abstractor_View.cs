@@ -91,13 +91,14 @@ namespace Ordermanagement_01.Abstractor
                     grd_Services.Rows[i].Cells[5].Value = temptable.Rows[i]["Phone_No"].ToString();
                     grd_Services.Rows[i].Cells[6].Value = temptable.Rows[i]["Email"].ToString();
                     grd_Services.Rows[i].Cells[7].Value = temptable.Rows[i]["Fax_No"].ToString();
-                    grd_Services.Rows[i].Cells[8].Value = temptable.Rows[i]["Instered_Date"].ToString();
+                    grd_Services.Rows[i].Cells[8].Value = temptable.Rows[i]["Instered_Date"];
                     grd_Services.Rows[i].Cells[9].Value = temptable.Rows[i]["Abstractor_Id"].ToString();
                     grd_Services.Rows[i].Cells[10].Value = "View/Edit";
                     grd_Services.Rows[i].Cells[11].Value = "View/Edit";
                     grd_Services.Rows[i].Cells[12].Value = "DELETE";
                 }
                 grd_Services.Columns[2].Visible = false;
+                grd_Services.Columns[8].DefaultCellStyle.Format = "MM/dd/yyyy";
             }
             else
             {
@@ -385,7 +386,7 @@ namespace Ordermanagement_01.Abstractor
                         grd_Services.Rows[i].Cells[5].Value = temptable.Rows[i]["Phone_No"].ToString();
                         grd_Services.Rows[i].Cells[6].Value = temptable.Rows[i]["Email"].ToString();
                         grd_Services.Rows[i].Cells[7].Value = temptable.Rows[i]["Fax_No"].ToString();
-                        grd_Services.Rows[i].Cells[8].Value = temptable.Rows[i]["Instered_Date"].ToString();
+                        grd_Services.Rows[i].Cells[8].Value = temptable.Rows[i]["Instered_Date"];
                         grd_Services.Rows[i].Cells[9].Value = temptable.Rows[i]["Abstractor_Id"].ToString();
                         grd_Services.Rows[i].Cells[10].Value = "View/Edit";
                         grd_Services.Rows[i].Cells[11].Value = "View/Edit";
@@ -393,6 +394,7 @@ namespace Ordermanagement_01.Abstractor
                         
                     }
                     grd_Services.Columns[2].Visible = false;
+                    grd_Services.Columns[8].DefaultCellStyle.Format = "MM/dd/yyyy";
                 }
                 lbl_Total_Orders.Text = dt.Rows.Count.ToString();
                 lblRecordsStatus.Text = (currentpageindex + 1) + " / " + (int)Math.Ceiling(Convert.ToDecimal(dt.Rows.Count) / pagesize);
@@ -872,14 +874,15 @@ namespace Ordermanagement_01.Abstractor
                             grd_Services.Rows[i].Cells[5].Value = temptable.Rows[i]["Phone_No"].ToString();
                             grd_Services.Rows[i].Cells[6].Value = temptable.Rows[i]["Email"].ToString();
                             grd_Services.Rows[i].Cells[7].Value = temptable.Rows[i]["Fax_No"].ToString();
-                            grd_Services.Rows[i].Cells[8].Value = temptable.Rows[i]["Instered_Date"].ToString();
+                            grd_Services.Rows[i].Cells[8].Value = temptable.Rows[i]["Instered_Date"];
                             grd_Services.Rows[i].Cells[9].Value = temptable.Rows[i]["Abstractor_Id"].ToString();
                             grd_Services.Rows[i].Cells[10].Value = "View/Edit";
                             grd_Services.Rows[i].Cells[11].Value = "View/Edit";
                             grd_Services.Rows[i].Cells[12].Value = "DELETE";
-                        
+                            
                         }
                         grd_Services.Columns[2].Visible = false;
+                        grd_Services.Columns[8].DefaultCellStyle.Format = "MM/dd/yyyy";
                     }
                     else
                     {
@@ -936,7 +939,7 @@ namespace Ordermanagement_01.Abstractor
                             grd_Services.Rows[i].Cells[5].Value = temptable.Rows[i]["Phone_No"].ToString();
                             grd_Services.Rows[i].Cells[6].Value = temptable.Rows[i]["Email"].ToString();
                             grd_Services.Rows[i].Cells[7].Value = temptable.Rows[i]["Fax_No"].ToString();
-                            grd_Services.Rows[i].Cells[8].Value = temptable.Rows[i]["Instered_Date"].ToString();
+                            grd_Services.Rows[i].Cells[8].Value = temptable.Rows[i]["Instered_Date"];
                             grd_Services.Rows[i].Cells[9].Value = temptable.Rows[i]["Abstractor_Id"].ToString();
                             grd_Services.Rows[i].Cells[10].Value = "View/Edit";
                             grd_Services.Rows[i].Cells[11].Value = "View/Edit";
@@ -944,6 +947,7 @@ namespace Ordermanagement_01.Abstractor
                         
                         }
                         grd_Services.Columns[2].Visible = false;
+                        grd_Services.Columns[8].DefaultCellStyle.Format = "MM/dd/yyyy";
                     }
                     else
                     {
@@ -1005,13 +1009,14 @@ namespace Ordermanagement_01.Abstractor
                             grd_Services.Rows[i].Cells[5].Value = temptable.Rows[i]["Phone_No"].ToString();
                             grd_Services.Rows[i].Cells[6].Value = temptable.Rows[i]["Email"].ToString();
                             grd_Services.Rows[i].Cells[7].Value = temptable.Rows[i]["Fax_No"].ToString();
-                            grd_Services.Rows[i].Cells[8].Value = temptable.Rows[i]["Instered_Date"].ToString();
+                            grd_Services.Rows[i].Cells[8].Value = temptable.Rows[i]["Instered_Date"];
                             grd_Services.Rows[i].Cells[9].Value = temptable.Rows[i]["Abstractor_Id"].ToString();
                             grd_Services.Rows[i].Cells[10].Value = "View/Edit";
                             grd_Services.Rows[i].Cells[11].Value = "View/Edit";
                             grd_Services.Rows[i].Cells[12].Value = "DELETE";
                         }
                         grd_Services.Columns[2].Visible = true;
+                        grd_Services.Columns[8].DefaultCellStyle.Format = "MM/dd/yyyy";
                     }
                     else
                     {

@@ -730,7 +730,6 @@
             // 
             // Column11
             // 
-            dataGridViewCellStyle2.Format = "MM/dd/yyyy";
             dataGridViewCellStyle2.NullValue = null;
             this.Column11.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column11.HeaderText = "CREATED DATE";

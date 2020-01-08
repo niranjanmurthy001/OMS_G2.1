@@ -78,9 +78,9 @@
             this.btn_Export.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Export.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Export.Appearance.Options.UseFont = true;
-            this.btn_Export.Location = new System.Drawing.Point(623, 24);
+            this.btn_Export.Location = new System.Drawing.Point(643, 24);
             this.btn_Export.Name = "btn_Export";
-            this.btn_Export.Size = new System.Drawing.Size(75, 27);
+            this.btn_Export.Size = new System.Drawing.Size(75, 26);
             this.btn_Export.TabIndex = 1;
             this.btn_Export.Text = "Export";
             this.btn_Export.Click += new System.EventHandler(this.btn_Export_Click);
@@ -103,7 +103,9 @@
             // 
             this.layoutView1.Appearance.FieldCaption.Options.UseTextOptions = true;
             this.layoutView1.Appearance.FieldCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.layoutView1.CardMinSize = new System.Drawing.Size(706, 52);
+            this.layoutView1.CardHorzInterval = 0;
+            this.layoutView1.CardMinSize = new System.Drawing.Size(710, 48);
+            this.layoutView1.CardVertInterval = 4;
             this.layoutView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.LayoutViewColumn[] {
             this.Message,
             this.updatedon,
@@ -205,30 +207,30 @@
             this.layoutViewCard1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutViewField_Message,
             this.layoutViewField_order_by_date});
-            this.layoutViewCard1.Name = "layoutViewCard1";
+            this.layoutViewCard1.Name = "layoutViewTemplateCard";
             this.layoutViewCard1.OptionsItemText.TextToControlDistance = 0;
             this.layoutViewCard1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutViewCard1.Text = "TemplateCard";
             // 
             // layoutViewField_Message
             // 
-            this.layoutViewField_Message.EditorPreferredWidth = 700;
+            this.layoutViewField_Message.EditorPreferredWidth = 706;
             this.layoutViewField_Message.Location = new System.Drawing.Point(0, 0);
             this.layoutViewField_Message.Name = "layoutViewField_Message";
             this.layoutViewField_Message.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutViewField_Message.Size = new System.Drawing.Size(706, 26);
-            this.layoutViewField_Message.Spacing = new DevExpress.XtraLayout.Utils.Padding(3, 3, 3, 3);
+            this.layoutViewField_Message.Size = new System.Drawing.Size(710, 24);
+            this.layoutViewField_Message.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
             this.layoutViewField_Message.TextSize = new System.Drawing.Size(0, 0);
             this.layoutViewField_Message.TextVisible = false;
             // 
             // layoutViewField_order_by_date
             // 
-            this.layoutViewField_order_by_date.EditorPreferredWidth = 173;
-            this.layoutViewField_order_by_date.Location = new System.Drawing.Point(0, 26);
+            this.layoutViewField_order_by_date.EditorPreferredWidth = 179;
+            this.layoutViewField_order_by_date.Location = new System.Drawing.Point(0, 24);
             this.layoutViewField_order_by_date.Name = "layoutViewField_order_by_date";
             this.layoutViewField_order_by_date.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutViewField_order_by_date.Size = new System.Drawing.Size(706, 26);
-            this.layoutViewField_order_by_date.Spacing = new DevExpress.XtraLayout.Utils.Padding(3, 3, 3, 3);
+            this.layoutViewField_order_by_date.Size = new System.Drawing.Size(710, 24);
+            this.layoutViewField_order_by_date.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
             this.layoutViewField_order_by_date.TextSize = new System.Drawing.Size(527, 13);
             // 
             // layoutViewField_layoutViewColumn1
@@ -237,8 +239,8 @@
             this.layoutViewField_layoutViewColumn1.Location = new System.Drawing.Point(0, 0);
             this.layoutViewField_layoutViewColumn1.Name = "layoutViewField_layoutViewColumn1";
             this.layoutViewField_layoutViewColumn1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutViewField_layoutViewColumn1.Size = new System.Drawing.Size(701, 68);
-            this.layoutViewField_layoutViewColumn1.Spacing = new DevExpress.XtraLayout.Utils.Padding(3, 3, 3, 3);
+            this.layoutViewField_layoutViewColumn1.Size = new System.Drawing.Size(710, 48);
+            this.layoutViewField_layoutViewColumn1.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
             this.layoutViewField_layoutViewColumn1.TextSize = new System.Drawing.Size(461, 20);
             // 
             // layoutViewField_layoutViewColumn1_1
@@ -247,8 +249,8 @@
             this.layoutViewField_layoutViewColumn1_1.Location = new System.Drawing.Point(0, 0);
             this.layoutViewField_layoutViewColumn1_1.Name = "layoutViewField_layoutViewColumn1_1";
             this.layoutViewField_layoutViewColumn1_1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutViewField_layoutViewColumn1_1.Size = new System.Drawing.Size(701, 68);
-            this.layoutViewField_layoutViewColumn1_1.Spacing = new DevExpress.XtraLayout.Utils.Padding(3, 3, 3, 3);
+            this.layoutViewField_layoutViewColumn1_1.Size = new System.Drawing.Size(710, 48);
+            this.layoutViewField_layoutViewColumn1_1.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
             this.layoutViewField_layoutViewColumn1_1.TextSize = new System.Drawing.Size(461, 20);
             // 
             // General_Notification

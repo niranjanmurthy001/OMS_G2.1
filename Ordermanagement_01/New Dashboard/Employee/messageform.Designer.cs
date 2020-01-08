@@ -52,8 +52,11 @@
             this.memomessage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.memomessage.Location = new System.Drawing.Point(2, 21);
             this.memomessage.Name = "memomessage";
+            this.memomessage.Properties.AllowFocused = false;
+            this.memomessage.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.memomessage.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.memomessage.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.memomessage.Properties.Appearance.Options.UseBackColor = true;
             this.memomessage.Properties.Appearance.Options.UseFont = true;
             this.memomessage.Properties.Appearance.Options.UseForeColor = true;
             this.memomessage.Size = new System.Drawing.Size(574, 491);
@@ -67,7 +70,6 @@
             this.ClientSize = new System.Drawing.Size(578, 514);
             this.Controls.Add(this.Message_Form);
             this.Cursor = System.Windows.Forms.Cursors.Default;
-            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
             this.MaximumSize = new System.Drawing.Size(594, 1080);
             this.MinimumSize = new System.Drawing.Size(594, 552);
             this.Name = "messageform";

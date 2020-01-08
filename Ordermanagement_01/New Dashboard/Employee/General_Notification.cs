@@ -18,7 +18,7 @@ using System.IO;
 
 namespace Ordermanagement_01.New_Dashboard.Employee
 {
-    public partial class General_Notification : DevExpress.XtraEditors.XtraForm
+    public partial class General_Notification : XtraForm
     {
         public readonly int User_Id;
         string status;
@@ -68,7 +68,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
             {
                 SplashScreenManager.CloseForm(false);
             }
-        }   
+        }
         private void layoutView1_CustomDrawCardFieldValue(object sender, RowCellCustomDrawEventArgs e)
         {
             LayoutView View = sender as LayoutView;
@@ -85,6 +85,10 @@ namespace Ordermanagement_01.New_Dashboard.Employee
         {
             string Readstatus = (layoutView1.GetRowCellValue(layoutView1.FocusedRowHandle, "Read_Staus")).ToString();
             int messageid = Convert.ToInt32(layoutView1.GetRowCellValue(layoutView1.FocusedRowHandle, "Message_Id"));
+            string message= (layoutView1.GetRowCellValue(layoutView1.FocusedRowHandle, "Message")).ToString();
+            //XtraMessageBox.Show(message);  
+            messageform form = new messageform(message);
+            form.ShowDialog();          
             if (Readstatus == "UnRead")
             {
                 try
@@ -139,7 +143,6 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                 }, CommandVisibility.All);
                 ps.XlSheetCreated += PrintingSystem_XlSheetCreated;
                 CompositeLink cl = new CompositeLink(ps);
-
                 PrintableComponentLink linknotification = new PrintableComponentLink();
                 linknotification.Component = grid_notification;
                 linknotification.PaperName = "General Notification";

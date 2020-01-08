@@ -125,6 +125,7 @@ namespace Ordermanagement_01
                     grd_Targetorder.Columns[4].HeaderText = "SUBMITTED DATE";
                     grd_Targetorder.Columns[4].DataPropertyName = "Date";
                     grd_Targetorder.Columns[4].Width = 120;
+                    grd_Targetorder.Columns[4].DefaultCellStyle.Format = "MM/dd/yyyy";
 
 
                     grd_Targetorder.Columns[5].Name = "OrderType";

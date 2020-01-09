@@ -63,7 +63,9 @@ namespace Ordermanagement_01.CommentCard
                     }
                     else
                     {
+                        SplashScreenManager.CloseForm(false);
                         XtraMessageBox.Show("Comments Not Found");
+                       
                         this.Close();
                     }
                 }

@@ -15,7 +15,10 @@ using DevExpress.XtraEditors.Controls;
 using Ordermanagement_01.Reports;
 using DevExpress.XtraGrid.Columns;
 using System.Collections;
-
+using DevExpress.Utils;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
+using Ordermanagement_01.CommentCard;
+using Ordermanagement_01.Models;
 
 namespace Ordermanagement_01
 {
@@ -46,6 +49,46 @@ namespace Ordermanagement_01
         int Sub_Process_ID, Order_Status_Id, Client_Id, Order_Type_Abs_Id, ClientId, Sub_Process_Id, Order_Task_Id, Order_Satatus_Id;
         int Emp_Job_role_Id, Emp_Sal_Cat_Id, Eff_Client_Id, Eff_Order_Type_Abs_Id, Eff_Order_Task_Id, Eff_Order_Source_Type_Id, Eff_State_Id, Eff_County_Id, Eff_Sub_Process_Id;
         string Clint, userroleid, Operation, Operation_Count, From_date, To_Date, Path1, errormessage = "", error_status = "", error_value = "", vendor_validation_msg = "", Order_Number;
+        int Work_Type_Id = 1;
+        private void gridView2_MouseEnter(object sender, EventArgs e)
+        {
+
+            //var columnIndex = gridView2.FocusedColumn.VisibleIndex;
+
+            //if (columnIndex == 17)
+            //{
+            //    System.Data.DataRow row = gridView2.GetDataRow(gridView2.FocusedRowHandle);
+            //    int Order_ID = int.Parse(row["Order_Id"].ToString());
+            //    MessageBox.Show(columnIndex.ToString());
+            //}
+
+        }
+
+        private void gridView2_MouseUp(object sender, MouseEventArgs e)
+        {
+
+            DXMouseEventArgs ea = e as DXMouseEventArgs;
+            GridView view = sender as GridView;
+            GridHitInfo info = view.CalcHitInfo(ea.Location);
+            if (info.InRow || info.InRowCell)
+            {
+                string caption = info.Column.Caption;
+
+                if (caption == "Comments")
+                {                    
+                    Order_Passing_Params obj_Order_Details_List = new Order_Passing_Params();
+
+                    System.Data.DataRow row = gridView2.GetDataRow(gridView2.FocusedRowHandle);
+                    int Order_ID = int.Parse(row["Order_Id"].ToString());
+                    obj_Order_Details_List.Order_Id = Order_ID;
+                    obj_Order_Details_List.Work_Type_Id = Work_Type_Id;
+                    Comment_Card cmd = new Comment_Card(obj_Order_Details_List);
+
+                    cmd.Show();
+                }
+
+            }
+        }
 
         private void gridView2_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
         {
@@ -116,7 +159,7 @@ namespace Ordermanagement_01
                 if (dt.Rows.Count > 0)
                 {
                     grd_Targetorder.DataSource = dt;
-
+                 
                     if (User_Role_Id == "1")
                     {
 
@@ -472,6 +515,7 @@ namespace Ordermanagement_01
                 Ordermanagement_01.Order_Entry orderentry = new Ordermanagement_01.Order_Entry(Order_ID, User_id, User_Role_Id, Production_Date);
                 orderentry.Show();
             }
+
             else if (columnIndex == 21)
             {
 

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbl_Header = new System.Windows.Forms.Label();
             this.txt_Order_Number = new System.Windows.Forms.TextBox();
             this.grd_Admin_orders = new System.Windows.Forms.DataGridView();
@@ -152,6 +153,9 @@
             // 
             // Column6
             // 
+            dataGridViewCellStyle2.Format = "MM/dd/yyyy";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column6.FillWeight = 86.96323F;
             this.Column6.HeaderText = "ASSIGNED DATE";
             this.Column6.Name = "Column6";

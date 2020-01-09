@@ -29,18 +29,19 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ddl_Client_Name = new System.Windows.Forms.ComboBox();
             this.ddl_Client_SubProcess = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,30 +49,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lbl_allocated_user = new System.Windows.Forms.Label();
             this.grd_order_Allocated = new System.Windows.Forms.DataGridView();
-            this.Chk_Allocate = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.SNo_allocate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Client_Name_All = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ordertype = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.user1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Userid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column40 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TargetCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_Allocate = new System.Windows.Forms.Button();
             this.lbl_count_order = new System.Windows.Forms.Label();
             this.btn_Reallocate = new System.Windows.Forms.Button();
@@ -126,29 +103,6 @@
             this.btn_Refresh = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
             this.grd_order = new System.Windows.Forms.DataGridView();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.ddlBranch = new System.Windows.Forms.ComboBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Grid_User_Count = new System.Windows.Forms.DataGridView();
-            this.Column38 = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.Branch_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.Grd_Users_Order_Count = new System.Windows.Forms.DataGridView();
-            this.Column25 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Column24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Chk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.SNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Client_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -176,6 +130,53 @@
             this.Column39 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Target_Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tax_Task = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ddlBranch = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Grid_User_Count = new System.Windows.Forms.DataGridView();
+            this.Column38 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Branch_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.Grd_Users_Order_Count = new System.Windows.Forms.DataGridView();
+            this.Column25 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Column24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Chk_Allocate = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.SNo_allocate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Client_Name_All = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ordertype = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.user1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Userid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column40 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TargetCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grd_order_Allocated)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Export)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -342,168 +343,6 @@
             this.grd_order_Allocated.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_order_Allocated_CellClick);
             this.grd_order_Allocated.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_order_Allocated_CellContentClick);
             this.grd_order_Allocated.MouseDown += new System.Windows.Forms.MouseEventHandler(this.grd_order_Allocated_MouseDown);
-            // 
-            // Chk_Allocate
-            // 
-            this.Chk_Allocate.FillWeight = 40F;
-            this.Chk_Allocate.HeaderText = "Chk";
-            this.Chk_Allocate.Name = "Chk_Allocate";
-            this.Chk_Allocate.Width = 40;
-            // 
-            // SNo_allocate
-            // 
-            this.SNo_allocate.FillWeight = 70F;
-            this.SNo_allocate.HeaderText = "Sl.No";
-            this.SNo_allocate.Name = "SNo_allocate";
-            this.SNo_allocate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.SNo_allocate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.SNo_allocate.Width = 70;
-            // 
-            // Client_Name_All
-            // 
-            this.Client_Name_All.FillWeight = 150F;
-            this.Client_Name_All.HeaderText = "CLIENT";
-            this.Client_Name_All.Name = "Client_Name_All";
-            this.Client_Name_All.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Client_Name_All.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Client_Name_All.Width = 150;
-            // 
-            // Column1
-            // 
-            this.Column1.FillWeight = 140F;
-            this.Column1.HeaderText = "SUB CLIENT";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 140;
-            // 
-            // Column2
-            // 
-            this.Column2.FillWeight = 92.51269F;
-            this.Column2.HeaderText = "ORDER NUMBER";
-            this.Column2.Name = "Column2";
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column2.Width = 124;
-            // 
-            // Column3
-            // 
-            this.Column3.FillWeight = 145F;
-            this.Column3.HeaderText = "STATE & COUNTY";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 145;
-            // 
-            // ordertype
-            // 
-            this.ordertype.HeaderText = "ORDER TYPE";
-            this.ordertype.Name = "ordertype";
-            this.ordertype.Visible = false;
-            // 
-            // Column4
-            // 
-            this.Column4.FillWeight = 92.51269F;
-            this.Column4.HeaderText = "RECEIVED DATE";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 124;
-            // 
-            // orderid
-            // 
-            this.orderid.HeaderText = "orderid";
-            this.orderid.Name = "orderid";
-            this.orderid.Visible = false;
-            // 
-            // user1
-            // 
-            this.user1.FillWeight = 92.51269F;
-            this.user1.HeaderText = "USER";
-            this.user1.Name = "user1";
-            this.user1.Width = 124;
-            // 
-            // Column6
-            // 
-            this.Column6.FillWeight = 92.51269F;
-            this.Column6.HeaderText = "TASK";
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 124;
-            // 
-            // Userid
-            // 
-            this.Userid.HeaderText = "Column8";
-            this.Userid.Name = "Userid";
-            this.Userid.Visible = false;
-            // 
-            // Status_Id
-            // 
-            this.Status_Id.HeaderText = "Status_Id";
-            this.Status_Id.Name = "Status_Id";
-            this.Status_Id.Visible = false;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Countyid";
-            this.Column5.Name = "Column5";
-            this.Column5.Visible = false;
-            // 
-            // Column18
-            // 
-            this.Column18.HeaderText = "Client_Number";
-            this.Column18.Name = "Column18";
-            this.Column18.Visible = false;
-            // 
-            // Column19
-            // 
-            this.Column19.FillWeight = 120F;
-            this.Column19.HeaderText = "STATUS";
-            this.Column19.Name = "Column19";
-            this.Column19.Width = 120;
-            // 
-            // Column20
-            // 
-            this.Column20.FillWeight = 150F;
-            this.Column20.HeaderText = "ASSIGN DATE";
-            this.Column20.Name = "Column20";
-            this.Column20.Width = 150;
-            // 
-            // Column21
-            // 
-            this.Column21.HeaderText = "Subprocess_Number";
-            this.Column21.Name = "Column21";
-            this.Column21.Visible = false;
-            // 
-            // Column37
-            // 
-            this.Column37.HeaderText = "State_Id";
-            this.Column37.Name = "Column37";
-            this.Column37.Visible = false;
-            // 
-            // Column34
-            // 
-            this.Column34.HeaderText = "Client_Id";
-            this.Column34.Name = "Column34";
-            this.Column34.Visible = false;
-            // 
-            // Column35
-            // 
-            this.Column35.HeaderText = "Sub_Process_Id";
-            this.Column35.Name = "Column35";
-            this.Column35.Visible = false;
-            // 
-            // Column36
-            // 
-            this.Column36.HeaderText = "Order_Type_Abs_Id";
-            this.Column36.Name = "Column36";
-            this.Column36.Visible = false;
-            // 
-            // Column40
-            // 
-            this.Column40.HeaderText = "Category_Type_Id";
-            this.Column40.Name = "Column40";
-            this.Column40.Visible = false;
-            // 
-            // TargetCategory
-            // 
-            this.TargetCategory.HeaderText = "TARGET CATEGORY";
-            this.TargetCategory.Name = "TargetCategory";
-            this.TargetCategory.ReadOnly = true;
-            this.TargetCategory.Width = 140;
             // 
             // btn_Allocate
             // 
@@ -1241,14 +1080,14 @@
             this.grd_order.AllowUserToAddRows = false;
             this.grd_order.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.grd_order.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grd_order.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_order.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.grd_order.ColumnHeadersHeight = 34;
             this.grd_order.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Chk,
@@ -1301,296 +1140,6 @@
             this.grd_order.MouseDown += new System.Windows.Forms.MouseEventHandler(this.grd_order_MouseDown);
             this.grd_order.MouseEnter += new System.EventHandler(this.grd_order_MouseEnter);
             this.grd_order.MouseMove += new System.Windows.Forms.MouseEventHandler(this.grd_order_MouseMove);
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.tableLayoutPanel4);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(3, 3);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(280, 402);
-            this.panel9.TabIndex = 1;
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
-            this.tableLayoutPanel4.ColumnCount = 1;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Controls.Add(this.panel13, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.panel15, 0, 1);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 2;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(280, 402);
-            this.tableLayoutPanel4.TabIndex = 0;
-            // 
-            // panel13
-            // 
-            this.panel13.Controls.Add(this.label1);
-            this.panel13.Controls.Add(this.ddlBranch);
-            this.panel13.Controls.Add(this.groupBox1);
-            this.panel13.Controls.Add(this.txt_UserName);
-            this.panel13.Location = new System.Drawing.Point(3, 3);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(274, 144);
-            this.panel13.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.SystemColors.Control;
-            this.label1.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label1.Location = new System.Drawing.Point(3, 6);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 21);
-            this.label1.TabIndex = 148;
-            this.label1.Text = "Branch :";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // ddlBranch
-            // 
-            this.ddlBranch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ddlBranch.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ddlBranch.FormattingEnabled = true;
-            this.ddlBranch.Location = new System.Drawing.Point(66, 4);
-            this.ddlBranch.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.ddlBranch.Name = "ddlBranch";
-            this.ddlBranch.Size = new System.Drawing.Size(194, 28);
-            this.ddlBranch.TabIndex = 147;
-            this.ddlBranch.SelectedIndexChanged += new System.EventHandler(this.ddlBranch_SelectedIndexChanged);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.Grid_User_Count);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(0, 32);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(268, 82);
-            this.groupBox1.TabIndex = 146;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Users Details";
-            // 
-            // Grid_User_Count
-            // 
-            this.Grid_User_Count.AllowUserToAddRows = false;
-            this.Grid_User_Count.AllowUserToDeleteRows = false;
-            this.Grid_User_Count.BackgroundColor = System.Drawing.Color.White;
-            this.Grid_User_Count.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_User_Count.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.Grid_User_Count.ColumnHeadersHeight = 34;
-            this.Grid_User_Count.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column38,
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.Branch_ID});
-            this.Grid_User_Count.GridColor = System.Drawing.Color.White;
-            this.Grid_User_Count.Location = new System.Drawing.Point(0, 13);
-            this.Grid_User_Count.Name = "Grid_User_Count";
-            this.Grid_User_Count.ReadOnly = true;
-            this.Grid_User_Count.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.Grid_User_Count.RowHeadersVisible = false;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Grid_User_Count.RowsDefaultCellStyle = dataGridViewCellStyle9;
-            this.Grid_User_Count.RowTemplate.Height = 35;
-            this.Grid_User_Count.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.Grid_User_Count.Size = new System.Drawing.Size(268, 67);
-            this.Grid_User_Count.TabIndex = 3;
-            this.Grid_User_Count.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_User_Count_CellClick);
-            // 
-            // Column38
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column38.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Column38.HeaderText = "TOT";
-            this.Column38.Name = "Column38";
-            this.Column38.ReadOnly = true;
-            this.Column38.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column38.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column38.Width = 65;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Online";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn1.Width = 65;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Orders";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn4.Width = 65;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridViewTextBoxColumn5.HeaderText = "No Orders";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn5.Width = 65;
-            // 
-            // Branch_ID
-            // 
-            this.Branch_ID.HeaderText = "Branch";
-            this.Branch_ID.Name = "Branch_ID";
-            this.Branch_ID.ReadOnly = true;
-            this.Branch_ID.Visible = false;
-            // 
-            // panel15
-            // 
-            this.panel15.Controls.Add(this.Grd_Users_Order_Count);
-            this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel15.Location = new System.Drawing.Point(3, 153);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(274, 246);
-            this.panel15.TabIndex = 2;
-            // 
-            // Grd_Users_Order_Count
-            // 
-            this.Grd_Users_Order_Count.AllowUserToAddRows = false;
-            this.Grd_Users_Order_Count.AllowUserToDeleteRows = false;
-            this.Grd_Users_Order_Count.BackgroundColor = System.Drawing.Color.White;
-            this.Grd_Users_Order_Count.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.Grd_Users_Order_Count.ColumnHeadersHeight = 34;
-            this.Grd_Users_Order_Count.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column25,
-            this.Column24,
-            this.Column29,
-            this.Column27,
-            this.Column28,
-            this.Column26,
-            this.Column31,
-            this.Column30});
-            this.Grd_Users_Order_Count.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Grd_Users_Order_Count.GridColor = System.Drawing.Color.White;
-            this.Grd_Users_Order_Count.Location = new System.Drawing.Point(0, 0);
-            this.Grd_Users_Order_Count.Name = "Grd_Users_Order_Count";
-            this.Grd_Users_Order_Count.ReadOnly = true;
-            this.Grd_Users_Order_Count.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.Grd_Users_Order_Count.RowHeadersVisible = false;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Grd_Users_Order_Count.RowsDefaultCellStyle = dataGridViewCellStyle13;
-            this.Grd_Users_Order_Count.RowTemplate.Height = 35;
-            this.Grd_Users_Order_Count.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.Grd_Users_Order_Count.Size = new System.Drawing.Size(274, 246);
-            this.Grd_Users_Order_Count.TabIndex = 2;
-            this.Grd_Users_Order_Count.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grd_Users_Order_Count_CellClick);
-            this.Grd_Users_Order_Count.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Grd_Users_Order_Count_KeyDown);
-            // 
-            // Column25
-            // 
-            this.Column25.HeaderText = "";
-            this.Column25.Image = global::Ordermanagement_01.Properties.Resources.Users;
-            this.Column25.Name = "Column25";
-            this.Column25.ReadOnly = true;
-            this.Column25.Width = 35;
-            // 
-            // Column24
-            // 
-            this.Column24.HeaderText = "User Name";
-            this.Column24.Name = "Column24";
-            this.Column24.ReadOnly = true;
-            this.Column24.Width = 95;
-            // 
-            // Column29
-            // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(188)))), ((int)(((byte)(212)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
-            this.Column29.DefaultCellStyle = dataGridViewCellStyle10;
-            this.Column29.HeaderText = "Orders";
-            this.Column29.Name = "Column29";
-            this.Column29.ReadOnly = true;
-            this.Column29.Width = 50;
-            // 
-            // Column27
-            // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(220)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column27.DefaultCellStyle = dataGridViewCellStyle11;
-            this.Column27.HeaderText = "AP";
-            this.Column27.Name = "Column27";
-            this.Column27.ReadOnly = true;
-            this.Column27.Width = 40;
-            // 
-            // Column28
-            // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column28.DefaultCellStyle = dataGridViewCellStyle12;
-            this.Column28.HeaderText = "EFF";
-            this.Column28.Name = "Column28";
-            this.Column28.ReadOnly = true;
-            this.Column28.Width = 40;
-            // 
-            // Column26
-            // 
-            this.Column26.HeaderText = "User_Id";
-            this.Column26.Name = "Column26";
-            this.Column26.ReadOnly = true;
-            this.Column26.Visible = false;
-            // 
-            // Column31
-            // 
-            this.Column31.HeaderText = "Job_Role_Id";
-            this.Column31.Name = "Column31";
-            this.Column31.ReadOnly = true;
-            this.Column31.Visible = false;
-            // 
-            // Column30
-            // 
-            this.Column30.HeaderText = "Salary";
-            this.Column30.Name = "Column30";
-            this.Column30.ReadOnly = true;
-            this.Column30.Visible = false;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "Column25";
-            this.dataGridViewImageColumn1.Image = global::Ordermanagement_01.Properties.Resources.Users;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 30;
             // 
             // Chk
             // 
@@ -1662,9 +1211,9 @@
             // 
             // Date
             // 
-            dataGridViewCellStyle3.Format = "MM/dd/yyyy";
-            dataGridViewCellStyle3.NullValue = null;
-            this.Date.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Format = "MM/dd/yyyy";
+            dataGridViewCellStyle4.NullValue = null;
+            this.Date.DefaultCellStyle = dataGridViewCellStyle4;
             this.Date.HeaderText = "RECEIVED DATE";
             this.Date.Name = "Date";
             this.Date.Width = 110;
@@ -1772,6 +1321,461 @@
             this.Tax_Task.Name = "Tax_Task";
             this.Tax_Task.ReadOnly = true;
             this.Tax_Task.Visible = false;
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.tableLayoutPanel4);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel9.Location = new System.Drawing.Point(3, 3);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(280, 402);
+            this.panel9.TabIndex = 1;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Controls.Add(this.panel13, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.panel15, 0, 1);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 2;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(280, 402);
+            this.tableLayoutPanel4.TabIndex = 0;
+            // 
+            // panel13
+            // 
+            this.panel13.Controls.Add(this.label1);
+            this.panel13.Controls.Add(this.ddlBranch);
+            this.panel13.Controls.Add(this.groupBox1);
+            this.panel13.Controls.Add(this.txt_UserName);
+            this.panel13.Location = new System.Drawing.Point(3, 3);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(274, 144);
+            this.panel13.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
+            this.label1.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label1.Location = new System.Drawing.Point(3, 6);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 21);
+            this.label1.TabIndex = 148;
+            this.label1.Text = "Branch :";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // ddlBranch
+            // 
+            this.ddlBranch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ddlBranch.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ddlBranch.FormattingEnabled = true;
+            this.ddlBranch.Location = new System.Drawing.Point(66, 4);
+            this.ddlBranch.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.ddlBranch.Name = "ddlBranch";
+            this.ddlBranch.Size = new System.Drawing.Size(194, 28);
+            this.ddlBranch.TabIndex = 147;
+            this.ddlBranch.SelectedIndexChanged += new System.EventHandler(this.ddlBranch_SelectedIndexChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.Grid_User_Count);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(0, 32);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(268, 82);
+            this.groupBox1.TabIndex = 146;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Users Details";
+            // 
+            // Grid_User_Count
+            // 
+            this.Grid_User_Count.AllowUserToAddRows = false;
+            this.Grid_User_Count.AllowUserToDeleteRows = false;
+            this.Grid_User_Count.BackgroundColor = System.Drawing.Color.White;
+            this.Grid_User_Count.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_User_Count.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.Grid_User_Count.ColumnHeadersHeight = 34;
+            this.Grid_User_Count.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column38,
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.Branch_ID});
+            this.Grid_User_Count.GridColor = System.Drawing.Color.White;
+            this.Grid_User_Count.Location = new System.Drawing.Point(0, 13);
+            this.Grid_User_Count.Name = "Grid_User_Count";
+            this.Grid_User_Count.ReadOnly = true;
+            this.Grid_User_Count.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.Grid_User_Count.RowHeadersVisible = false;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Grid_User_Count.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.Grid_User_Count.RowTemplate.Height = 35;
+            this.Grid_User_Count.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.Grid_User_Count.Size = new System.Drawing.Size(268, 67);
+            this.Grid_User_Count.TabIndex = 3;
+            this.Grid_User_Count.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_User_Count_CellClick);
+            // 
+            // Column38
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column38.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Column38.HeaderText = "TOT";
+            this.Column38.Name = "Column38";
+            this.Column38.ReadOnly = true;
+            this.Column38.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column38.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column38.Width = 65;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Online";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn1.Width = 65;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Orders";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn4.Width = 65;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle9;
+            this.dataGridViewTextBoxColumn5.HeaderText = "No Orders";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn5.Width = 65;
+            // 
+            // Branch_ID
+            // 
+            this.Branch_ID.HeaderText = "Branch";
+            this.Branch_ID.Name = "Branch_ID";
+            this.Branch_ID.ReadOnly = true;
+            this.Branch_ID.Visible = false;
+            // 
+            // panel15
+            // 
+            this.panel15.Controls.Add(this.Grd_Users_Order_Count);
+            this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel15.Location = new System.Drawing.Point(3, 153);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(274, 246);
+            this.panel15.TabIndex = 2;
+            // 
+            // Grd_Users_Order_Count
+            // 
+            this.Grd_Users_Order_Count.AllowUserToAddRows = false;
+            this.Grd_Users_Order_Count.AllowUserToDeleteRows = false;
+            this.Grd_Users_Order_Count.BackgroundColor = System.Drawing.Color.White;
+            this.Grd_Users_Order_Count.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.Grd_Users_Order_Count.ColumnHeadersHeight = 34;
+            this.Grd_Users_Order_Count.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column25,
+            this.Column24,
+            this.Column29,
+            this.Column27,
+            this.Column28,
+            this.Column26,
+            this.Column31,
+            this.Column30});
+            this.Grd_Users_Order_Count.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Grd_Users_Order_Count.GridColor = System.Drawing.Color.White;
+            this.Grd_Users_Order_Count.Location = new System.Drawing.Point(0, 0);
+            this.Grd_Users_Order_Count.Name = "Grd_Users_Order_Count";
+            this.Grd_Users_Order_Count.ReadOnly = true;
+            this.Grd_Users_Order_Count.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.Grd_Users_Order_Count.RowHeadersVisible = false;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Grd_Users_Order_Count.RowsDefaultCellStyle = dataGridViewCellStyle14;
+            this.Grd_Users_Order_Count.RowTemplate.Height = 35;
+            this.Grd_Users_Order_Count.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.Grd_Users_Order_Count.Size = new System.Drawing.Size(274, 246);
+            this.Grd_Users_Order_Count.TabIndex = 2;
+            this.Grd_Users_Order_Count.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grd_Users_Order_Count_CellClick);
+            this.Grd_Users_Order_Count.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Grd_Users_Order_Count_KeyDown);
+            // 
+            // Column25
+            // 
+            this.Column25.HeaderText = "";
+            this.Column25.Image = global::Ordermanagement_01.Properties.Resources.Users;
+            this.Column25.Name = "Column25";
+            this.Column25.ReadOnly = true;
+            this.Column25.Width = 35;
+            // 
+            // Column24
+            // 
+            this.Column24.HeaderText = "User Name";
+            this.Column24.Name = "Column24";
+            this.Column24.ReadOnly = true;
+            this.Column24.Width = 95;
+            // 
+            // Column29
+            // 
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(188)))), ((int)(((byte)(212)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            this.Column29.DefaultCellStyle = dataGridViewCellStyle11;
+            this.Column29.HeaderText = "Orders";
+            this.Column29.Name = "Column29";
+            this.Column29.ReadOnly = true;
+            this.Column29.Width = 50;
+            // 
+            // Column27
+            // 
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(220)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Column27.DefaultCellStyle = dataGridViewCellStyle12;
+            this.Column27.HeaderText = "AP";
+            this.Column27.Name = "Column27";
+            this.Column27.ReadOnly = true;
+            this.Column27.Width = 40;
+            // 
+            // Column28
+            // 
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Column28.DefaultCellStyle = dataGridViewCellStyle13;
+            this.Column28.HeaderText = "EFF";
+            this.Column28.Name = "Column28";
+            this.Column28.ReadOnly = true;
+            this.Column28.Width = 40;
+            // 
+            // Column26
+            // 
+            this.Column26.HeaderText = "User_Id";
+            this.Column26.Name = "Column26";
+            this.Column26.ReadOnly = true;
+            this.Column26.Visible = false;
+            // 
+            // Column31
+            // 
+            this.Column31.HeaderText = "Job_Role_Id";
+            this.Column31.Name = "Column31";
+            this.Column31.ReadOnly = true;
+            this.Column31.Visible = false;
+            // 
+            // Column30
+            // 
+            this.Column30.HeaderText = "Salary";
+            this.Column30.Name = "Column30";
+            this.Column30.ReadOnly = true;
+            this.Column30.Visible = false;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "Column25";
+            this.dataGridViewImageColumn1.Image = global::Ordermanagement_01.Properties.Resources.Users;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 30;
+            // 
+            // Chk_Allocate
+            // 
+            this.Chk_Allocate.FillWeight = 40F;
+            this.Chk_Allocate.HeaderText = "Chk";
+            this.Chk_Allocate.Name = "Chk_Allocate";
+            this.Chk_Allocate.Width = 40;
+            // 
+            // SNo_allocate
+            // 
+            this.SNo_allocate.FillWeight = 70F;
+            this.SNo_allocate.HeaderText = "Sl.No";
+            this.SNo_allocate.Name = "SNo_allocate";
+            this.SNo_allocate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.SNo_allocate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.SNo_allocate.Width = 70;
+            // 
+            // Client_Name_All
+            // 
+            this.Client_Name_All.FillWeight = 150F;
+            this.Client_Name_All.HeaderText = "CLIENT";
+            this.Client_Name_All.Name = "Client_Name_All";
+            this.Client_Name_All.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Client_Name_All.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Client_Name_All.Width = 150;
+            // 
+            // Column1
+            // 
+            this.Column1.FillWeight = 140F;
+            this.Column1.HeaderText = "SUB CLIENT";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 140;
+            // 
+            // Column2
+            // 
+            this.Column2.FillWeight = 92.51269F;
+            this.Column2.HeaderText = "ORDER NUMBER";
+            this.Column2.Name = "Column2";
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column2.Width = 124;
+            // 
+            // Column3
+            // 
+            this.Column3.FillWeight = 145F;
+            this.Column3.HeaderText = "STATE & COUNTY";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 145;
+            // 
+            // ordertype
+            // 
+            this.ordertype.HeaderText = "ORDER TYPE";
+            this.ordertype.Name = "ordertype";
+            this.ordertype.Visible = false;
+            // 
+            // Column4
+            // 
+            this.Column4.FillWeight = 92.51269F;
+            this.Column4.HeaderText = "RECEIVED DATE";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 124;
+            // 
+            // orderid
+            // 
+            this.orderid.HeaderText = "orderid";
+            this.orderid.Name = "orderid";
+            this.orderid.Visible = false;
+            // 
+            // user1
+            // 
+            this.user1.FillWeight = 92.51269F;
+            this.user1.HeaderText = "USER";
+            this.user1.Name = "user1";
+            this.user1.Width = 124;
+            // 
+            // Column6
+            // 
+            this.Column6.FillWeight = 92.51269F;
+            this.Column6.HeaderText = "TASK";
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 124;
+            // 
+            // Userid
+            // 
+            this.Userid.HeaderText = "Column8";
+            this.Userid.Name = "Userid";
+            this.Userid.Visible = false;
+            // 
+            // Status_Id
+            // 
+            this.Status_Id.HeaderText = "Status_Id";
+            this.Status_Id.Name = "Status_Id";
+            this.Status_Id.Visible = false;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Countyid";
+            this.Column5.Name = "Column5";
+            this.Column5.Visible = false;
+            // 
+            // Column18
+            // 
+            this.Column18.HeaderText = "Client_Number";
+            this.Column18.Name = "Column18";
+            this.Column18.Visible = false;
+            // 
+            // Column19
+            // 
+            this.Column19.FillWeight = 120F;
+            this.Column19.HeaderText = "STATUS";
+            this.Column19.Name = "Column19";
+            this.Column19.Width = 120;
+            // 
+            // Column20
+            // 
+            dataGridViewCellStyle2.Format = "MM/dd/yyyy";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Column20.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column20.FillWeight = 150F;
+            this.Column20.HeaderText = "ASSIGN DATE";
+            this.Column20.Name = "Column20";
+            this.Column20.Width = 150;
+            // 
+            // Column21
+            // 
+            this.Column21.HeaderText = "Subprocess_Number";
+            this.Column21.Name = "Column21";
+            this.Column21.Visible = false;
+            // 
+            // Column37
+            // 
+            this.Column37.HeaderText = "State_Id";
+            this.Column37.Name = "Column37";
+            this.Column37.Visible = false;
+            // 
+            // Column34
+            // 
+            this.Column34.HeaderText = "Client_Id";
+            this.Column34.Name = "Column34";
+            this.Column34.Visible = false;
+            // 
+            // Column35
+            // 
+            this.Column35.HeaderText = "Sub_Process_Id";
+            this.Column35.Name = "Column35";
+            this.Column35.Visible = false;
+            // 
+            // Column36
+            // 
+            this.Column36.HeaderText = "Order_Type_Abs_Id";
+            this.Column36.Name = "Column36";
+            this.Column36.Visible = false;
+            // 
+            // Column40
+            // 
+            this.Column40.HeaderText = "Category_Type_Id";
+            this.Column40.Name = "Column40";
+            this.Column40.Visible = false;
+            // 
+            // TargetCategory
+            // 
+            this.TargetCategory.HeaderText = "TARGET CATEGORY";
+            this.TargetCategory.Name = "TargetCategory";
+            this.TargetCategory.ReadOnly = true;
+            this.TargetCategory.Width = 140;
             // 
             // Order_Allocate
             // 
@@ -1904,30 +1908,6 @@
         private System.Windows.Forms.DataGridViewLinkColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewLinkColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Branch_ID;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Chk_Allocate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SNo_allocate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Client_Name_All;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewButtonColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ordertype;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orderid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn user1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Userid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status_Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column20;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column21;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column37;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column34;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column35;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column36;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column40;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TargetCategory;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Chk;
@@ -1957,5 +1937,29 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column39;
         private System.Windows.Forms.DataGridViewTextBoxColumn Target_Category;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tax_Task;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Chk_Allocate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SNo_allocate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Client_Name_All;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewButtonColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ordertype;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn user1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Userid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status_Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column20;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column21;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column37;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column34;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column35;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column36;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column40;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TargetCategory;
     }
 }

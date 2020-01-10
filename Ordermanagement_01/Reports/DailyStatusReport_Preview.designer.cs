@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager2 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, null, true, true);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DailyStatusReport_Preview));
             DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
@@ -42,9 +43,9 @@
             this.repositoryItemHyperLinkEdit11 = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.repositoryItemHyperLinkEdit7 = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.repositoryItemHyperLinkEdit8 = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
-            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.Default_Look_Confirmation = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            this.Default_Look_Confirmation = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.pivotGridField19 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.pivotGridField24 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.pivotGridField30 = new DevExpress.XtraPivotGrid.PivotGridField();
@@ -431,10 +432,10 @@
             this.btn_Submit = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.checkedLstBxCntrl_Branch_Wise = new DevExpress.XtraEditors.CheckedListBoxControl();
-            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager();
+            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.pivotGridField69 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.pivotGridField36 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit13)).BeginInit();
@@ -662,7 +663,6 @@
             // repositoryItemHyperLinkEdit11
             // 
             this.repositoryItemHyperLinkEdit11.AutoHeight = false;
-            this.repositoryItemHyperLinkEdit11.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.repositoryItemHyperLinkEdit11.Name = "repositoryItemHyperLinkEdit11";
             // 
             // repositoryItemHyperLinkEdit7
@@ -684,7 +684,7 @@
             // Default_Look_Confirmation
             // 
             this.Default_Look_Confirmation.EnableBonusSkins = true;
-            this.Default_Look_Confirmation.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.Default_Look_Confirmation.LookAndFeel.SkinName = "Office 2013";
             // 
             // pivotGridField19
             // 
@@ -964,6 +964,7 @@
             this.pivotGridField5.CellFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.pivotGridField5.FieldName = "Date";
             this.pivotGridField5.Name = "pivotGridField5";
+            this.pivotGridField5.ValueFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.pivotGridField5.Width = 154;
             // 
             // tabNavigationPage7
@@ -1594,7 +1595,6 @@
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(368, 38);
             this.panel20.TabIndex = 0;
-           // this.panel20.Paint += new System.Windows.Forms.PaintEventHandler(this.panel20_Paint);
             // 
             // label1
             // 

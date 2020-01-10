@@ -411,7 +411,7 @@
             this.linkLabelErrors.ForeColor = System.Drawing.Color.ForestGreen;
             this.linkLabelErrors.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.linkLabelErrors.LinkColor = System.Drawing.Color.ForestGreen;
-            this.linkLabelErrors.Location = new System.Drawing.Point(79, 76);
+            this.linkLabelErrors.Location = new System.Drawing.Point(79, 73);
             this.linkLabelErrors.Name = "linkLabelErrors";
             this.linkLabelErrors.Size = new System.Drawing.Size(83, 53);
             this.linkLabelErrors.TabIndex = 31;
@@ -1154,7 +1154,7 @@
             this.link_Order_Count.ForeColor = System.Drawing.Color.ForestGreen;
             this.link_Order_Count.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.link_Order_Count.LinkColor = System.Drawing.Color.ForestGreen;
-            this.link_Order_Count.Location = new System.Drawing.Point(87, 76);
+            this.link_Order_Count.Location = new System.Drawing.Point(87, 74);
             this.link_Order_Count.Name = "link_Order_Count";
             this.link_Order_Count.Size = new System.Drawing.Size(83, 53);
             this.link_Order_Count.TabIndex = 30;

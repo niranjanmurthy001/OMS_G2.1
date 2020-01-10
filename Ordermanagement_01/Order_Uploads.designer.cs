@@ -569,7 +569,6 @@
             this.Grd_Document_upload.Size = new System.Drawing.Size(1153, 570);
             this.Grd_Document_upload.TabIndex = 2;
             this.Grd_Document_upload.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grd_Document_upload_CellClick);
-            this.Grd_Document_upload.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grd_Document_upload_CellContentClick);
             this.Grd_Document_upload.DragDrop += new System.Windows.Forms.DragEventHandler(this.Grd_Document_upload_DragDrop);
             this.Grd_Document_upload.DragEnter += new System.Windows.Forms.DragEventHandler(this.Grd_Document_upload_DragEnter);
             // 

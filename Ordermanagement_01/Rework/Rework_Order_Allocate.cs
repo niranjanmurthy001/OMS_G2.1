@@ -99,6 +99,7 @@ namespace Ordermanagement_01
 
         private void Completed_Order_Allocate_Load(object sender, EventArgs e)
         {
+         
             reader = new SpeechSynthesizer();
             dbc.BindUserName_Allocate(ddl_UserName);
             dbc.BindOrderStatus(ddl_Order_Status_Reallocate);
@@ -174,6 +175,11 @@ namespace Ordermanagement_01
             }
 
 
+        }
+
+        private void dataGridView1_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         protected void Gridview_Bind_All_Orders()

@@ -82,6 +82,7 @@
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.gridSplitContainer1 = new DevExpress.XtraGrid.GridSplitContainer();
             this.simpleSeparator1 = new DevExpress.XtraLayout.SimpleSeparator();
+            this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlEfficiency)).BeginInit();
             this.groupControlEfficiency.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
@@ -115,6 +116,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1)).BeginInit();
             this.gridSplitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControlEfficiency
@@ -326,7 +329,8 @@
             this.gridControlEfficiencyDetails.MainView = this.gridViewEfficiencyDetails;
             this.gridControlEfficiencyDetails.Name = "gridControlEfficiencyDetails";
             this.gridControlEfficiencyDetails.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemHyperLinkEdit1});
+            this.repositoryItemHyperLinkEdit1,
+            this.repositoryItemDateEdit1});
             this.gridControlEfficiencyDetails.Size = new System.Drawing.Size(932, 157);
             this.gridControlEfficiencyDetails.TabIndex = 3;
             this.gridControlEfficiencyDetails.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -409,7 +413,12 @@
             // Production_Date
             // 
             this.Production_Date.Caption = "Production Date";
+            this.Production_Date.ColumnEdit = this.repositoryItemDateEdit1;
+            this.Production_Date.DisplayFormat.FormatString = "\"MM/dd/yyyy\"";
+            this.Production_Date.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.Production_Date.FieldName = "Order_Production_Date";
+            this.Production_Date.GroupFormat.FormatString = "\"MM/dd/yyyy\"";
+            this.Production_Date.GroupFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.Production_Date.Name = "Production_Date";
             this.Production_Date.Visible = true;
             this.Production_Date.VisibleIndex = 3;
@@ -692,6 +701,18 @@
             this.simpleSeparator1.Name = "simpleSeparator1";
             this.simpleSeparator1.Size = new System.Drawing.Size(1167, 6);
             // 
+            // repositoryItemDateEdit1
+            // 
+            this.repositoryItemDateEdit1.AutoHeight = false;
+            this.repositoryItemDateEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.EditFormat.FormatString = "\"MM/dd/yyyy\"";
+            this.repositoryItemDateEdit1.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.repositoryItemDateEdit1.Mask.UseMaskAsDisplayFormat = true;
+            this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
+            // 
             // Efficiency_Summary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -738,6 +759,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1)).EndInit();
             this.gridSplitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -791,5 +814,6 @@
         private DevExpress.XtraEditors.SimpleButton btnExport;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
     }
 }

@@ -7695,6 +7695,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(941, 579);
             this.Controls.Add(this.groupControl1);
+            this.MinimumSize = new System.Drawing.Size(957, 617);
             this.Name = "New_Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.New_Dashboard_Load);

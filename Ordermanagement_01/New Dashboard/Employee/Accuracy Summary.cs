@@ -291,6 +291,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                 SplashScreenManager.CloseForm(false);
             }
         }
+
         private async Task BindAcccuracyDetailsAsync()
         {
             try

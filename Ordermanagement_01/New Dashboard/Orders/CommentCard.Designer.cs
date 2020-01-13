@@ -262,6 +262,7 @@
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaximumSize = new System.Drawing.Size(668, 1080);
             this.MinimumSize = new System.Drawing.Size(668, 450);
+           
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Comment_Card";
             this.Load += new System.EventHandler(this.Comment_Card_Load);

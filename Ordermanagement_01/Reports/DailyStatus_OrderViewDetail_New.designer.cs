@@ -71,9 +71,12 @@
             this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn63 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.comments = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemHyperLinkEdit5 = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -169,7 +172,6 @@
             this.repositoryItemPopupContainerEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit();
             this.repositoryItemPopupContainerEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.gridColumn63 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -186,6 +188,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grd_Targetorder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -239,7 +242,7 @@
             this.gridColumn31.Name = "gridColumn31";
             this.gridColumn31.OptionsColumn.FixedWidth = true;
             this.gridColumn31.Visible = true;
-            this.gridColumn31.VisibleIndex = 25;
+            this.gridColumn31.VisibleIndex = 26;
             this.gridColumn31.Width = 50;
             // 
             // repositoryItemHyperLinkEdit1
@@ -525,7 +528,8 @@
             this.repositoryItemLookUpEdit1,
             this.repositoryItemHyperLinkEdit1,
             this.repositoryItemHyperLinkEdit2,
-            this.repositoryItemLookUpEdit2});
+            this.repositoryItemLookUpEdit2,
+            this.repositoryItemHyperLinkEdit5});
             this.grd_Targetorder.Size = new System.Drawing.Size(1136, 262);
             this.grd_Targetorder.TabIndex = 1;
             this.grd_Targetorder.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -556,6 +560,7 @@
             this.gridColumn23,
             this.gridColumn24,
             this.gridColumn25,
+            this.comments,
             this.gridColumn30,
             this.gridColumn2,
             this.gridColumn28,
@@ -618,6 +623,8 @@
             this.gridView2.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gridView2_SelectionChanged);
             this.gridView2.EndGrouping += new System.EventHandler(this.gridView2_EndGrouping);
             this.gridView2.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.gridView2_CustomColumnDisplayText);
+            this.gridView2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.gridView2_MouseUp);
+            this.gridView2.MouseEnter += new System.EventHandler(this.gridView2_MouseEnter);
             // 
             // gridColumn53
             // 
@@ -892,6 +899,15 @@
             this.gridColumn22.VisibleIndex = 12;
             this.gridColumn22.Width = 50;
             // 
+            // gridColumn63
+            // 
+            this.gridColumn63.Caption = "Abbreviation";
+            this.gridColumn63.FieldName = "Abbreviation";
+            this.gridColumn63.Name = "gridColumn63";
+            this.gridColumn63.OptionsColumn.FixedWidth = true;
+            this.gridColumn63.Visible = true;
+            this.gridColumn63.VisibleIndex = 13;
+            // 
             // gridColumn23
             // 
             this.gridColumn23.AppearanceHeader.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -951,6 +967,27 @@
             this.gridColumn25.VisibleIndex = 16;
             this.gridColumn25.Width = 60;
             // 
+            // comments
+            // 
+            this.comments.AppearanceCell.ForeColor = System.Drawing.Color.Blue;
+            this.comments.AppearanceCell.Options.UseFont = true;
+            this.comments.AppearanceCell.Options.UseForeColor = true;
+            this.comments.Caption = "Comments";
+            this.comments.ColumnEdit = this.repositoryItemHyperLinkEdit5;
+            this.comments.Name = "comments";
+            this.comments.OptionsColumn.AllowEdit = false;
+            this.comments.OptionsColumn.FixedWidth = true;
+            this.comments.Visible = true;
+            this.comments.VisibleIndex = 17;
+            // 
+            // repositoryItemHyperLinkEdit5
+            // 
+            this.repositoryItemHyperLinkEdit5.Appearance.Options.UseTextOptions = true;
+            this.repositoryItemHyperLinkEdit5.AutoHeight = false;
+            this.repositoryItemHyperLinkEdit5.Caption = "View";
+            this.repositoryItemHyperLinkEdit5.Name = "repositoryItemHyperLinkEdit5";
+            this.repositoryItemHyperLinkEdit5.NullText = "View";
+            // 
             // gridColumn30
             // 
             this.gridColumn30.AppearanceHeader.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -1001,7 +1038,7 @@
             this.gridColumn28.OptionsColumn.FixedWidth = true;
             this.gridColumn28.OptionsColumn.ReadOnly = true;
             this.gridColumn28.Visible = true;
-            this.gridColumn28.VisibleIndex = 17;
+            this.gridColumn28.VisibleIndex = 18;
             this.gridColumn28.Width = 80;
             // 
             // gridColumn3
@@ -1067,7 +1104,7 @@
             this.gridColumn54.MinWidth = 100;
             this.gridColumn54.Name = "gridColumn54";
             this.gridColumn54.Visible = true;
-            this.gridColumn54.VisibleIndex = 18;
+            this.gridColumn54.VisibleIndex = 19;
             this.gridColumn54.Width = 100;
             // 
             // gridColumn55
@@ -1077,7 +1114,7 @@
             this.gridColumn55.MinWidth = 90;
             this.gridColumn55.Name = "gridColumn55";
             this.gridColumn55.Visible = true;
-            this.gridColumn55.VisibleIndex = 19;
+            this.gridColumn55.VisibleIndex = 20;
             this.gridColumn55.Width = 90;
             // 
             // gridColumn56
@@ -1087,7 +1124,7 @@
             this.gridColumn56.MinWidth = 90;
             this.gridColumn56.Name = "gridColumn56";
             this.gridColumn56.Visible = true;
-            this.gridColumn56.VisibleIndex = 20;
+            this.gridColumn56.VisibleIndex = 21;
             this.gridColumn56.Width = 90;
             // 
             // gridColumn57
@@ -1097,7 +1134,7 @@
             this.gridColumn57.MinWidth = 100;
             this.gridColumn57.Name = "gridColumn57";
             this.gridColumn57.Visible = true;
-            this.gridColumn57.VisibleIndex = 21;
+            this.gridColumn57.VisibleIndex = 22;
             this.gridColumn57.Width = 100;
             // 
             // gridColumn58
@@ -1107,7 +1144,7 @@
             this.gridColumn58.MinWidth = 100;
             this.gridColumn58.Name = "gridColumn58";
             this.gridColumn58.Visible = true;
-            this.gridColumn58.VisibleIndex = 22;
+            this.gridColumn58.VisibleIndex = 23;
             this.gridColumn58.Width = 100;
             // 
             // gridColumn59
@@ -1117,7 +1154,7 @@
             this.gridColumn59.MinWidth = 70;
             this.gridColumn59.Name = "gridColumn59";
             this.gridColumn59.Visible = true;
-            this.gridColumn59.VisibleIndex = 23;
+            this.gridColumn59.VisibleIndex = 24;
             this.gridColumn59.Width = 70;
             // 
             // gridColumn32
@@ -1142,7 +1179,7 @@
             this.gridColumn61.MinWidth = 100;
             this.gridColumn61.Name = "gridColumn61";
             this.gridColumn61.Visible = true;
-            this.gridColumn61.VisibleIndex = 24;
+            this.gridColumn61.VisibleIndex = 25;
             this.gridColumn61.Width = 100;
             // 
             // gridColumn62
@@ -2071,16 +2108,7 @@
             // 
             // defaultLookAndFeel1
             // 
-            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2010 Blue";
-            // 
-            // gridColumn63
-            // 
-            this.gridColumn63.Caption = "Abbreviation";
-            this.gridColumn63.FieldName = "Abbreviation";
-            this.gridColumn63.Name = "gridColumn63";
-            this.gridColumn63.OptionsColumn.FixedWidth = true;
-            this.gridColumn63.Visible = true;
-            this.gridColumn63.VisibleIndex = 13;
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013";
             // 
             // DailyStatus_OrderViewDetail_New
             // 
@@ -2111,6 +2139,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grd_Targetorder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
@@ -2279,5 +2308,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn62;
         private DevExpress.XtraPivotGrid.PivotGridField pivotGridField22;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn63;
+        private DevExpress.XtraGrid.Columns.GridColumn comments;
+        private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit repositoryItemHyperLinkEdit5;
     }
 }

@@ -3573,7 +3573,6 @@
     <EmbeddedResource Include="New Dashboard\Orders\CommentCard.resx">
       <DependentUpon>CommentCard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="New Dashboard\Orders\Comment_Card.resx" />
     <EmbeddedResource Include="New Dashboard\Orders\Order_CheckList.resx">
       <DependentUpon>Order_CheckList.cs</DependentUpon>
     </EmbeddedResource>

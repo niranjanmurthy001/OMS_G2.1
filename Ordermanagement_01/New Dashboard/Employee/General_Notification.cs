@@ -80,51 +80,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                     e.Appearance.ForeColor = Color.Blue;                  
                 }
             }
-        }
-        private async void layoutView1_Click(object sender, EventArgs e)
-        {
-            string Readstatus = (layoutView1.GetRowCellValue(layoutView1.FocusedRowHandle, "Read_Staus")).ToString();
-            int messageid = Convert.ToInt32(layoutView1.GetRowCellValue(layoutView1.FocusedRowHandle, "Message_Id"));
-            string message= (layoutView1.GetRowCellValue(layoutView1.FocusedRowHandle, "Message")).ToString();
-            //XtraMessageBox.Show(message);  
-            messageform form = new messageform(message);
-            form.ShowDialog();          
-            if (Readstatus == "UnRead")
-            {
-                try
-                {
-                    SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
-                    var dictionary = new Dictionary<string, object>()
-                    {
-                    {"@Trans","Insert"},
-                    {"@Message_Id",messageid},
-                    {"@User_Id",User_Id }
-                    };
-                    var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
-                    using (var httpClient = new HttpClient())
-                    {
-                        var response = await httpClient.PostAsync(Base_Url.Url + "/Notification/Create", data);
-                        if (response.IsSuccessStatusCode)
-                        {
-                            if (response.StatusCode == HttpStatusCode.OK)
-                            {
-                                General_Notification_Load(sender, e);
-                            }
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    SplashScreenManager.CloseForm(false);
-                    throw ex;
-                }
-                finally
-                {
-                    SplashScreenManager.CloseForm(false);
-                }
-            }          
-        }
-
+        }     
         private void btn_Export_Click(object sender, EventArgs e)
         {
             try
@@ -188,6 +144,48 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                 IgnoreErrors = XlIgnoreErrors.NumberStoredAsText
             });
             System.Diagnostics.Process.Start(fileName);
+        }
+        private async void layoutView1_FieldValueClick(object sender, DevExpress.XtraGrid.Views.Layout.Events.FieldValueClickEventArgs e)
+        {
+            string Readstatus = (layoutView1.GetRowCellValue(layoutView1.FocusedRowHandle, "Read_Staus")).ToString();
+            int messageid = Convert.ToInt32(layoutView1.GetRowCellValue(layoutView1.FocusedRowHandle, "Message_Id"));
+            string message = (layoutView1.GetRowCellValue(layoutView1.FocusedRowHandle, "Message")).ToString();
+            messageform form = new messageform(message);
+            form.ShowDialog();
+            if (Readstatus == "UnRead")
+            {
+                try
+                {
+                    SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
+                    var dictionary = new Dictionary<string, object>()
+                    {
+                    {"@Trans","Insert"},
+                    {"@Message_Id",messageid},
+                    {"@User_Id",User_Id }
+                    };
+                    var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
+                    using (var httpClient = new HttpClient())
+                    {
+                        var response = await httpClient.PostAsync(Base_Url.Url + "/Notification/Create", data);
+                        if (response.IsSuccessStatusCode)
+                        {
+                            if (response.StatusCode == HttpStatusCode.OK)
+                            {
+                                General_Notification_Load(sender, e);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    SplashScreenManager.CloseForm(false);
+                    throw ex;
+                }
+                finally
+                {
+                    SplashScreenManager.CloseForm(false);
+                }
+            }
         }
     }
 }

@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Order_Entry));
             this.Grid_Comments = new System.Windows.Forms.DataGridView();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList();
             this.grp_OrderEntry = new System.Windows.Forms.GroupBox();
+            this.labelDelinquent = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.label41 = new System.Windows.Forms.Label();
             this.ddlCategoryType = new System.Windows.Forms.ComboBox();
@@ -171,7 +171,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.labelDelinquent = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_Comments)).BeginInit();
             this.grp_OrderEntry.SuspendLayout();
             this.pnl_butns.SuspendLayout();
@@ -189,38 +188,38 @@
             this.Grid_Comments.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Grid_Comments.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.Grid_Comments.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_Comments.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_Comments.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.Grid_Comments.ColumnHeadersHeight = 30;
             this.Grid_Comments.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column7,
             this.Column8});
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Grid_Comments.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Grid_Comments.DefaultCellStyle = dataGridViewCellStyle2;
             this.Grid_Comments.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Grid_Comments.Location = new System.Drawing.Point(0, 0);
             this.Grid_Comments.Name = "Grid_Comments";
             this.Grid_Comments.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_Comments.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_Comments.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.Grid_Comments.RowHeadersVisible = false;
             this.Grid_Comments.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.Grid_Comments.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.SystemColors.Control;
@@ -353,6 +352,18 @@
             this.grp_OrderEntry.TabStop = false;
             this.grp_OrderEntry.Text = "ORDER ENTRY DETAILS";
             this.grp_OrderEntry.Enter += new System.EventHandler(this.grp_OrderEntry_Enter);
+            // 
+            // labelDelinquent
+            // 
+            this.labelDelinquent.AutoSize = true;
+            this.labelDelinquent.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDelinquent.ForeColor = System.Drawing.Color.Red;
+            this.labelDelinquent.Location = new System.Drawing.Point(1144, 22);
+            this.labelDelinquent.Name = "labelDelinquent";
+            this.labelDelinquent.Size = new System.Drawing.Size(116, 24);
+            this.labelDelinquent.TabIndex = 237;
+            this.labelDelinquent.Text = "Tax Delinquent";
+            this.labelDelinquent.Visible = false;
             // 
             // button2
             // 
@@ -886,7 +897,7 @@
             this.txt_Order_Prior_Date.Name = "txt_Order_Prior_Date";
             this.txt_Order_Prior_Date.Size = new System.Drawing.Size(232, 25);
             this.txt_Order_Prior_Date.TabIndex = 197;
-            this.txt_Order_Prior_Date.Value = new System.DateTime(2014, 12, 3, 22, 15, 48, 0);
+            this.txt_Order_Prior_Date.Value = new System.DateTime(2019, 2, 3, 22, 15, 0, 0);
             this.txt_Order_Prior_Date.ValueChanged += new System.EventHandler(this.txt_Order_Prior_Date_ValueChanged);
             // 
             // label25
@@ -1979,18 +1990,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1259, 509);
             this.panel1.TabIndex = 0;
-            // 
-            // labelDelinquent
-            // 
-            this.labelDelinquent.AutoSize = true;
-            this.labelDelinquent.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDelinquent.ForeColor = System.Drawing.Color.Red;
-            this.labelDelinquent.Location = new System.Drawing.Point(1144, 22);
-            this.labelDelinquent.Name = "labelDelinquent";
-            this.labelDelinquent.Size = new System.Drawing.Size(116, 24);
-            this.labelDelinquent.TabIndex = 237;
-            this.labelDelinquent.Text = "Tax Delinquent";
-            this.labelDelinquent.Visible = false;
             // 
             // Order_Entry
             // 

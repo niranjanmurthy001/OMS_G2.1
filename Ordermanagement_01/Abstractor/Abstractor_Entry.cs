@@ -816,7 +816,7 @@ namespace Ordermanagement_01.Abstractor
             {
                 Upload_Direcory = "" + ABSTRACT_ID + "/W9copy";
                 string Ftp_Host_Name = Ftp_Domain_Name;
-                Ftp_Path = Ftp_Host_Name + "/OMS/Abstractor_Documents";
+                Ftp_Path = Ftp_Host_Name + "/Ftp_Application_Files/OMS/Abstractor_Documents";
                 string[] folderArray = Upload_Direcory.Split('/');
                 string folderName = "";
                 for (int i = 0; i < folderArray.Length; i++)

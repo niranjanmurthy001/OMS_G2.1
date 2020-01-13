@@ -113,6 +113,7 @@ namespace Ordermanagement_01.Abstractor
                 {
                     ddl_abstractor_status.SelectedIndex = 2;
                 }
+                txtReason.Text = dtselect.Rows[0]["Reason"].ToString();
                 Hashtable htcost = new Hashtable();
                 DataTable dtcost = new DataTable();
                 htcost.Add("@Trans", "SELECT_ABSTRACTOR_WISE");
@@ -141,6 +142,12 @@ namespace Ordermanagement_01.Abstractor
             {
                 MessageBox.Show("Please Enter Abstractor Name");
                 txt_Abstractor_Name.Focus();
+                return false;
+            }
+            if (ddl_abstractor_status.Text == "Disable" && string.IsNullOrEmpty(txtReason.Text.Trim()))
+            {
+                MessageBox.Show("Please Enter Reason");
+                txtReason.Focus();
                 return false;
             }
             return true;
@@ -249,182 +256,186 @@ namespace Ordermanagement_01.Abstractor
         }
         private void btn_Save_Click(object sender, EventArgs e)
         {
-
-            if (validate() != false && btn_Save.Text == "Add New Abstractor")
+            if (validate())
             {
-                Hashtable htorder = new Hashtable();
-                DataTable dtorder = new DataTable();
-                bool abstractor_status = true;
-                if (rbtn_Regional.Checked == true)
+                if (btn_Save.Text == "Add New Abstractor")
                 {
-                    Region_Type = "1";
-                }
-                else if (rbtn_Multiple_State.Checked == true)
-                {
-                    Region_Type = "2";
-                }
-                else if (rbtn_nation_Wide.Checked == true)
-                {
-                    Region_Type = "3";
-                }
-                else
-                {
-                    Region_Type = "0";
-                }
-                if (ddl_gender.Text != "")
-                {
-                    Gender = ddl_gender.SelectedItem.ToString();
-                }
-                else
-                {
-                    Gender = "";
-                }
-                if (ddl_Employee_Type.Text != "")
-                {
-                    Employee_Type = ddl_Employee_Type.SelectedItem.ToString();
-                }
-                else
-                {
-                    Employee_Type = "";
-                }
-                if (ddl_PaymentType.Text != "")
-                {
-                    PaymentType = ddl_PaymentType.SelectedItem.ToString();
-                }
-                else
-                {
-                    PaymentType = "";
-                }
-                if (ddl_abstractor_status.Text == "Enable")
-                {
-                    abstractor_status = true;
-                }
-                else if (ddl_abstractor_status.Text == "Disable")
-                {
-                    abstractor_status = false;
-                }
+                    Hashtable htorder = new Hashtable();
+                    DataTable dtorder = new DataTable();
+                    bool abstractor_status = true;
+                    if (rbtn_Regional.Checked == true)
+                    {
+                        Region_Type = "1";
+                    }
+                    else if (rbtn_Multiple_State.Checked == true)
+                    {
+                        Region_Type = "2";
+                    }
+                    else if (rbtn_nation_Wide.Checked == true)
+                    {
+                        Region_Type = "3";
+                    }
+                    else
+                    {
+                        Region_Type = "0";
+                    }
+                    if (ddl_gender.Text != "")
+                    {
+                        Gender = ddl_gender.SelectedItem.ToString();
+                    }
+                    else
+                    {
+                        Gender = "";
+                    }
+                    if (ddl_Employee_Type.Text != "")
+                    {
+                        Employee_Type = ddl_Employee_Type.SelectedItem.ToString();
+                    }
+                    else
+                    {
+                        Employee_Type = "";
+                    }
+                    if (ddl_PaymentType.Text != "")
+                    {
+                        PaymentType = ddl_PaymentType.SelectedItem.ToString();
+                    }
+                    else
+                    {
+                        PaymentType = "";
+                    }
+                    if (ddl_abstractor_status.Text == "Enable")
+                    {
+                        abstractor_status = true;
+                    }
+                    else if (ddl_abstractor_status.Text == "Disable")
+                    {
+                        abstractor_status = false;
+                    }
 
-                DateTime date = new DateTime();
-                date = DateTime.Now;
-                string dateeval = date.ToString("dd/MM/yyyy");
-                htorder.Add("@Trans", "INSERT");
-                htorder.Add("@Name", txt_Abstractor_Name.Text);
-                htorder.Add("@Contact_Name", txt_Contact_Name.Text);
-                htorder.Add("@State", 0);
-                htorder.Add("@County", 0);
-                htorder.Add("@Phone_No", txt_Phone_No.Text);
-                htorder.Add("@Alternative_Phone_No", txt_Alternative_Phone_No.Text);
-                htorder.Add("@Gender", Gender);
-                htorder.Add("@Zip_Code", txt_ZipCode.Text);
-                htorder.Add("@Email", txt_Email.Text.ToString());
-                htorder.Add("@Alternative_Email", txt_alternative_Email.Text.ToString());
-                htorder.Add("@Fax_No", txt_Fax_No.Text.ToString());
-                htorder.Add("@Alternative_Fax", txt_alternative_Fax_no.Text.ToString());
-                htorder.Add("@Address", txt_Address.Text.ToString());
-                htorder.Add("@Send_Mode", ddl_SendMode.Text.ToString());
-                htorder.Add("@Employee_Type", Employee_Type.ToString());
-                // htorder.Add("@Search_Type", Search_type);
-                htorder.Add("@Payment_Type", PaymentType.ToString());
-                htorder.Add("@Bank_Name", txt_Bank_Name.Text);
-                htorder.Add("@Account_No", txt_Account_No.Text);
-                htorder.Add("@Bank_Address", txt_Bank_Address.Text);
-                htorder.Add("@Region_Type", int.Parse(Region_Type.ToString()));
-                htorder.Add("@Status", "True");
-                htorder.Add("@Inserted_By", userid);
-                htorder.Add("@Instered_Date", date);
-                htorder.Add("@Routing_No", txt_Routing_Number.Text);
-                htorder.Add("@Abstractor_Status", abstractor_status);
-                object id = dataaccess.ExecuteSPForScalar("Sp_Abstractor_Detail", htorder);
-                MessageBox.Show("New Abstractor Added Sucessfully");
-                btn_Cancel_Click(sender, e);
-            }
-            else if (validate() != false && btn_Save.Text == "Update Abstractor")
-            {
-                Hashtable htorder = new Hashtable();
-                DataTable dtorder = new DataTable();
-                bool abstractor_status = true;
-                if (ddl_gender.Text != "")
-                {
-                    Gender = ddl_gender.SelectedItem.ToString();
+                    DateTime date = new DateTime();
+                    date = DateTime.Now;
+                    string dateeval = date.ToString("dd/MM/yyyy");
+                    htorder.Add("@Trans", "INSERT");
+                    htorder.Add("@Name", txt_Abstractor_Name.Text);
+                    htorder.Add("@Contact_Name", txt_Contact_Name.Text);
+                    htorder.Add("@State", 0);
+                    htorder.Add("@County", 0);
+                    htorder.Add("@Phone_No", txt_Phone_No.Text);
+                    htorder.Add("@Alternative_Phone_No", txt_Alternative_Phone_No.Text);
+                    htorder.Add("@Gender", Gender);
+                    htorder.Add("@Zip_Code", txt_ZipCode.Text);
+                    htorder.Add("@Email", txt_Email.Text.ToString());
+                    htorder.Add("@Alternative_Email", txt_alternative_Email.Text.ToString());
+                    htorder.Add("@Fax_No", txt_Fax_No.Text.ToString());
+                    htorder.Add("@Alternative_Fax", txt_alternative_Fax_no.Text.ToString());
+                    htorder.Add("@Address", txt_Address.Text.ToString());
+                    htorder.Add("@Send_Mode", ddl_SendMode.Text.ToString());
+                    htorder.Add("@Employee_Type", Employee_Type.ToString());
+                    // htorder.Add("@Search_Type", Search_type);
+                    htorder.Add("@Payment_Type", PaymentType.ToString());
+                    htorder.Add("@Bank_Name", txt_Bank_Name.Text);
+                    htorder.Add("@Account_No", txt_Account_No.Text);
+                    htorder.Add("@Bank_Address", txt_Bank_Address.Text);
+                    htorder.Add("@Region_Type", int.Parse(Region_Type.ToString()));
+                    htorder.Add("@Status", "True");
+                    htorder.Add("@Inserted_By", userid);
+                    htorder.Add("@Instered_Date", date);
+                    htorder.Add("@Routing_No", txt_Routing_Number.Text);
+                    htorder.Add("@Abstractor_Status", abstractor_status);
+                    htorder.Add("@Reason", txtReason.Text.Trim());
+                    object id = dataaccess.ExecuteSPForScalar("Sp_Abstractor_Detail", htorder);
+                    MessageBox.Show("New Abstractor Added Sucessfully");
+                    btn_Cancel_Click(sender, e);
                 }
-                else
+                if (btn_Save.Text == "Update Abstractor")
                 {
-                    Gender = "";
-                }
+                    Hashtable htorder = new Hashtable();
+                    DataTable dtorder = new DataTable();
+                    bool abstractor_status = true;
+                    if (ddl_gender.Text != "")
+                    {
+                        Gender = ddl_gender.SelectedItem.ToString();
+                    }
+                    else
+                    {
+                        Gender = "";
+                    }
 
-                if (ddl_Employee_Type.Text != "")
-                {
-                    Employee_Type = ddl_Employee_Type.SelectedItem.ToString();
+                    if (ddl_Employee_Type.Text != "")
+                    {
+                        Employee_Type = ddl_Employee_Type.SelectedItem.ToString();
+                    }
+                    else
+                    {
+                        Employee_Type = "";
+                    }
+                    if (ddl_PaymentType.Text != "")
+                    {
+                        PaymentType = ddl_PaymentType.SelectedItem.ToString();
+                    }
+                    else
+                    {
+                        PaymentType = "";
+                    }
+                    if (rbtn_Regional.Checked == true)
+                    {
+                        Region_Type = "1";
+                    }
+                    else if (rbtn_Multiple_State.Checked == true)
+                    {
+                        Region_Type = "2";
+                    }
+                    else if (rbtn_nation_Wide.Checked == true)
+                    {
+                        Region_Type = "3";
+                    }
+                    else
+                    {
+                        Region_Type = "0";
+                    }
+                    if (ddl_abstractor_status.Text == "Enable")
+                    {
+                        abstractor_status = true;
+                    }
+                    else if (ddl_abstractor_status.Text == "Disable")
+                    {
+                        abstractor_status = false;
+                    }
+                    DateTime date = new DateTime();
+                    date = DateTime.Now;
+                    string dateeval = date.ToString("dd/MM/yyyy");
+                    htorder.Add("@Trans", "UPDATE");
+                    htorder.Add("@Abstractor_Id", ABSTRACT_ID);
+                    htorder.Add("@Name", txt_Abstractor_Name.Text);
+                    htorder.Add("@Contact_Name", txt_Contact_Name.Text);
+                    htorder.Add("@State", 0);
+                    htorder.Add("@County", 0);
+                    htorder.Add("@Gender", Gender);
+                    htorder.Add("@Zip_Code", txt_ZipCode.Text);
+                    htorder.Add("@Phone_No", txt_Phone_No.Text);
+                    htorder.Add("@Alternative_Phone_No", txt_Alternative_Phone_No.Text);
+                    htorder.Add("@Email", txt_Email.Text.ToString());
+                    htorder.Add("@Alternative_Email", txt_alternative_Email.Text.ToString());
+                    htorder.Add("@Fax_No", txt_Fax_No.Text.ToString());
+                    htorder.Add("@Alternative_Fax", txt_alternative_Fax_no.Text.ToString());
+                    htorder.Add("@Address", txt_Address.Text.ToString());
+                    htorder.Add("@Send_Mode", ddl_SendMode.Text.ToString());
+                    htorder.Add("@Employee_Type", Employee_Type.ToString());
+                    // htorder.Add("@Search_Type", Search_type);
+                    htorder.Add("@Payment_Type", PaymentType.ToString());
+                    htorder.Add("@Bank_Name", txt_Bank_Name.Text);
+                    htorder.Add("@Account_No", txt_Account_No.Text);
+                    htorder.Add("@Bank_Address", txt_Bank_Address.Text);
+                    htorder.Add("@Region_Type", int.Parse(Region_Type.ToString()));
+                    htorder.Add("@Status", "True");
+                    htorder.Add("@Inserted_By", userid);
+                    htorder.Add("@Instered_Date", date);
+                    htorder.Add("@Routing_No", txt_Routing_Number.Text);
+                    htorder.Add("@Abstractor_Status", abstractor_status);
+                    htorder.Add("@Reason", txtReason.Text.Trim());
+                    dtorder = dataaccess.ExecuteSP("Sp_Abstractor_Detail", htorder);
+                    MessageBox.Show("New Abstractor Updated Sucessfully");
                 }
-                else
-                {
-                    Employee_Type = "";
-                }
-                if (ddl_PaymentType.Text != "")
-                {
-                    PaymentType = ddl_PaymentType.SelectedItem.ToString();
-                }
-                else
-                {
-                    PaymentType = "";
-                }
-                if (rbtn_Regional.Checked == true)
-                {
-                    Region_Type = "1";
-                }
-                else if (rbtn_Multiple_State.Checked == true)
-                {
-                    Region_Type = "2";
-                }
-                else if (rbtn_nation_Wide.Checked == true)
-                {
-                    Region_Type = "3";
-                }
-                else
-                {
-                    Region_Type = "0";
-                }
-                if (ddl_abstractor_status.Text == "Enable")
-                {
-                    abstractor_status = true;
-                }
-                else if (ddl_abstractor_status.Text == "Disable")
-                {
-                    abstractor_status = false;
-                }
-                DateTime date = new DateTime();
-                date = DateTime.Now;
-                string dateeval = date.ToString("dd/MM/yyyy");
-                htorder.Add("@Trans", "UPDATE");
-                htorder.Add("@Abstractor_Id", ABSTRACT_ID);
-                htorder.Add("@Name", txt_Abstractor_Name.Text);
-                htorder.Add("@Contact_Name", txt_Contact_Name.Text);
-                htorder.Add("@State", 0);
-                htorder.Add("@County", 0);
-                htorder.Add("@Gender", Gender);
-                htorder.Add("@Zip_Code", txt_ZipCode.Text);
-                htorder.Add("@Phone_No", txt_Phone_No.Text);
-                htorder.Add("@Alternative_Phone_No", txt_Alternative_Phone_No.Text);
-                htorder.Add("@Email", txt_Email.Text.ToString());
-                htorder.Add("@Alternative_Email", txt_alternative_Email.Text.ToString());
-                htorder.Add("@Fax_No", txt_Fax_No.Text.ToString());
-                htorder.Add("@Alternative_Fax", txt_alternative_Fax_no.Text.ToString());
-                htorder.Add("@Address", txt_Address.Text.ToString());
-                htorder.Add("@Send_Mode", ddl_SendMode.Text.ToString());
-                htorder.Add("@Employee_Type", Employee_Type.ToString());
-                // htorder.Add("@Search_Type", Search_type);
-                htorder.Add("@Payment_Type", PaymentType.ToString());
-                htorder.Add("@Bank_Name", txt_Bank_Name.Text);
-                htorder.Add("@Account_No", txt_Account_No.Text);
-                htorder.Add("@Bank_Address", txt_Bank_Address.Text);
-                htorder.Add("@Region_Type", int.Parse(Region_Type.ToString()));
-                htorder.Add("@Status", "True");
-                htorder.Add("@Inserted_By", userid);
-                htorder.Add("@Instered_Date", date);
-                htorder.Add("@Routing_No", txt_Routing_Number.Text);
-                htorder.Add("@Abstractor_Status", abstractor_status);
-                dtorder = dataaccess.ExecuteSP("Sp_Abstractor_Detail", htorder);
-                MessageBox.Show("New Abstractor Updated Sucessfully");
             }
         }
         private void btn_Cancel_Click(object sender, EventArgs e)
@@ -449,6 +460,8 @@ namespace Ordermanagement_01.Abstractor
             txt_alternative_Email.Text = "";
             txt_Contact_Name.Text = "";
             btn_Save.Text = "Add New Abstractor";
+            ddl_abstractor_status.SelectedIndex = 0;
+            txtReason.Text = "";
         }
         private void gridstate_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -1145,6 +1158,23 @@ namespace Ordermanagement_01.Abstractor
                 btn_Eno_Upload.Focus();
             }
         }
+
+        private void ddl_abstractor_status_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddl_abstractor_status.SelectedIndex > 0)
+            {
+                if (ddl_abstractor_status.Text == "Disable")
+                {
+                    txtReason.Enabled = true;
+                }
+                if (ddl_abstractor_status.Text == "Enable")
+                {
+                    txtReason.Text = string.Empty;
+                    txtReason.Enabled = false;
+                }
+            }
+        }
+
         private void btn_Eno_Upload_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)

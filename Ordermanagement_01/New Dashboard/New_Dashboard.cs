@@ -1169,7 +1169,7 @@ namespace Ordermanagement_01.New_Dashboard
             }
             catch (Exception ex)
             {
-                SplashScreenManager.CloseForm(false);
+
             }
             finally
             {
@@ -1207,7 +1207,7 @@ namespace Ordermanagement_01.New_Dashboard
             }
             catch (Exception EX)
             {
-                SplashScreenManager.CloseForm(false);
+
             }
 
         }
@@ -1234,7 +1234,7 @@ namespace Ordermanagement_01.New_Dashboard
             }
             catch (Exception EX)
             {
-                SplashScreenManager.CloseForm(false);
+
             }
         }
 

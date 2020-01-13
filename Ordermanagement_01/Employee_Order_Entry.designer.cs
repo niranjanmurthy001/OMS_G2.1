@@ -74,12 +74,7 @@
             this.lbl_Task_Type = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_Emp_Alert = new System.Windows.Forms.Button();
-            this.btn_Tax_due_dates = new System.Windows.Forms.Button();
-            this.btn_Employee_Order_Info = new System.Windows.Forms.Button();
-            this.Btn_Instruction = new System.Windows.Forms.Button();
             this.btn_templete = new System.Windows.Forms.Button();
-            this.btn_Judgement_Period = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -223,8 +218,8 @@
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 260F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 269F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1264, 742);
             this.tableLayoutPanel3.TabIndex = 14;
@@ -264,9 +259,9 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.groupBox1.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold);
-            this.groupBox1.Location = new System.Drawing.Point(3, 53);
+            this.groupBox1.Location = new System.Drawing.Point(3, 44);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1258, 254);
+            this.groupBox1.Size = new System.Drawing.Size(1258, 263);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ORDER DETAILS";
@@ -616,16 +611,11 @@
             this.panel2.Controls.Add(this.lbl_Task_Type);
             this.panel2.Controls.Add(this.label35);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.btn_Emp_Alert);
-            this.panel2.Controls.Add(this.btn_Tax_due_dates);
-            this.panel2.Controls.Add(this.btn_Employee_Order_Info);
-            this.panel2.Controls.Add(this.Btn_Instruction);
             this.panel2.Controls.Add(this.btn_templete);
-            this.panel2.Controls.Add(this.btn_Judgement_Period);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1258, 44);
+            this.panel2.Size = new System.Drawing.Size(1258, 35);
             this.panel2.TabIndex = 3;
             // 
             // lbl_Task_Type
@@ -659,95 +649,21 @@
             this.label1.Text = "ORDER TASK TYPE:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // btn_Emp_Alert
-            // 
-            this.btn_Emp_Alert.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Emp_Alert.BackgroundImage")));
-            this.btn_Emp_Alert.FlatAppearance.BorderSize = 0;
-            this.btn_Emp_Alert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Emp_Alert.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btn_Emp_Alert.ForeColor = System.Drawing.Color.White;
-            this.btn_Emp_Alert.Location = new System.Drawing.Point(1136, 6);
-            this.btn_Emp_Alert.Name = "btn_Emp_Alert";
-            this.btn_Emp_Alert.Size = new System.Drawing.Size(116, 32);
-            this.btn_Emp_Alert.TabIndex = 12;
-            this.btn_Emp_Alert.Text = "Alert Notes";
-            this.btn_Emp_Alert.UseVisualStyleBackColor = true;
-            this.btn_Emp_Alert.Click += new System.EventHandler(this.btn_Emp_Alert_Click);
-            // 
-            // btn_Tax_due_dates
-            // 
-            this.btn_Tax_due_dates.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Tax_due_dates.BackgroundImage")));
-            this.btn_Tax_due_dates.FlatAppearance.BorderSize = 0;
-            this.btn_Tax_due_dates.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Tax_due_dates.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btn_Tax_due_dates.ForeColor = System.Drawing.Color.White;
-            this.btn_Tax_due_dates.Location = new System.Drawing.Point(832, 6);
-            this.btn_Tax_due_dates.Name = "btn_Tax_due_dates";
-            this.btn_Tax_due_dates.Size = new System.Drawing.Size(161, 32);
-            this.btn_Tax_due_dates.TabIndex = 10;
-            this.btn_Tax_due_dates.Text = "Tax Office Due Dates";
-            this.btn_Tax_due_dates.UseVisualStyleBackColor = true;
-            this.btn_Tax_due_dates.Click += new System.EventHandler(this.btn_Tax_due_dates_Click);
-            // 
-            // btn_Employee_Order_Info
-            // 
-            this.btn_Employee_Order_Info.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Employee_Order_Info.BackgroundImage")));
-            this.btn_Employee_Order_Info.FlatAppearance.BorderSize = 0;
-            this.btn_Employee_Order_Info.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Employee_Order_Info.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btn_Employee_Order_Info.ForeColor = System.Drawing.Color.White;
-            this.btn_Employee_Order_Info.Location = new System.Drawing.Point(1008, 6);
-            this.btn_Employee_Order_Info.Name = "btn_Employee_Order_Info";
-            this.btn_Employee_Order_Info.Size = new System.Drawing.Size(116, 32);
-            this.btn_Employee_Order_Info.TabIndex = 11;
-            this.btn_Employee_Order_Info.Text = "Order Notes";
-            this.btn_Employee_Order_Info.UseVisualStyleBackColor = true;
-            this.btn_Employee_Order_Info.Click += new System.EventHandler(this.btn_Employee_Order_Info_Click);
-            // 
-            // Btn_Instruction
-            // 
-            this.Btn_Instruction.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Btn_Instruction.BackgroundImage")));
-            this.Btn_Instruction.FlatAppearance.BorderSize = 0;
-            this.Btn_Instruction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Instruction.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold);
-            this.Btn_Instruction.ForeColor = System.Drawing.Color.White;
-            this.Btn_Instruction.Location = new System.Drawing.Point(367, 6);
-            this.Btn_Instruction.Name = "Btn_Instruction";
-            this.Btn_Instruction.Size = new System.Drawing.Size(101, 32);
-            this.Btn_Instruction.TabIndex = 3;
-            this.Btn_Instruction.Text = "Instruction";
-            this.Btn_Instruction.UseVisualStyleBackColor = true;
-            this.Btn_Instruction.Click += new System.EventHandler(this.Btn_Instruction_Click);
-            // 
             // btn_templete
             // 
             this.btn_templete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_templete.BackgroundImage")));
+            this.btn_templete.Dock = System.Windows.Forms.DockStyle.Right;
             this.btn_templete.FlatAppearance.BorderSize = 0;
             this.btn_templete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_templete.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold);
             this.btn_templete.ForeColor = System.Drawing.Color.White;
-            this.btn_templete.Location = new System.Drawing.Point(479, 6);
+            this.btn_templete.Location = new System.Drawing.Point(1154, 0);
             this.btn_templete.Name = "btn_templete";
-            this.btn_templete.Size = new System.Drawing.Size(104, 32);
+            this.btn_templete.Size = new System.Drawing.Size(104, 35);
             this.btn_templete.TabIndex = 4;
             this.btn_templete.Text = "Templete";
             this.btn_templete.UseVisualStyleBackColor = true;
             this.btn_templete.Click += new System.EventHandler(this.btn_templete_Click);
-            // 
-            // btn_Judgement_Period
-            // 
-            this.btn_Judgement_Period.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Judgement_Period.BackgroundImage")));
-            this.btn_Judgement_Period.FlatAppearance.BorderSize = 0;
-            this.btn_Judgement_Period.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Judgement_Period.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btn_Judgement_Period.ForeColor = System.Drawing.Color.White;
-            this.btn_Judgement_Period.Location = new System.Drawing.Point(596, 6);
-            this.btn_Judgement_Period.Name = "btn_Judgement_Period";
-            this.btn_Judgement_Period.Size = new System.Drawing.Size(227, 32);
-            this.btn_Judgement_Period.TabIndex = 9;
-            this.btn_Judgement_Period.Text = "Judgment Statutes Limitations";
-            this.btn_Judgement_Period.UseVisualStyleBackColor = true;
-            this.btn_Judgement_Period.Click += new System.EventHandler(this.btn_Judgement_Period_Click);
             // 
             // panel9
             // 
@@ -1984,12 +1900,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btn_Emp_Alert;
-        private System.Windows.Forms.Button btn_Tax_due_dates;
-        private System.Windows.Forms.Button btn_Employee_Order_Info;
-        private System.Windows.Forms.Button Btn_Instruction;
         private System.Windows.Forms.Button btn_templete;
-        private System.Windows.Forms.Button btn_Judgement_Period;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btn_OrderSearhcerNotes;

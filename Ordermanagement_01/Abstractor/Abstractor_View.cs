@@ -34,12 +34,12 @@ namespace Ordermanagement_01.Abstractor
         System.Data.DataTable dtselect = new System.Data.DataTable();
         System.Data.DataTable dt = new System.Data.DataTable();
         System.Data.DataTable dtstate = new System.Data.DataTable();
-        System.Data.DataTable dtcounty = new System.Data.DataTable(); 
+        System.Data.DataTable dtcounty = new System.Data.DataTable();
         static int currentpageindex = 0;
         int pagesize = 15;
-       
+
         DialogResult dialogResult;
-        public Abstractor_View(int User_Id,string Role_id)
+        public Abstractor_View(int User_Id, string Role_id)
         {
             InitializeComponent();
             userid = User_Id;
@@ -58,7 +58,7 @@ namespace Ordermanagement_01.Abstractor
         {
 
             Hashtable htselect = new System.Collections.Hashtable();
-            
+
             htselect.Add("@Trans", "SELECT");
             dtselect = dataaccess.ExecuteSP("Sp_Abstractor_Detail", htselect);
 
@@ -96,6 +96,15 @@ namespace Ordermanagement_01.Abstractor
                     grd_Services.Rows[i].Cells[10].Value = "View/Edit";
                     grd_Services.Rows[i].Cells[11].Value = "View/Edit";
                     grd_Services.Rows[i].Cells[12].Value = "DELETE";
+                    grd_Services.Rows[i].Cells[13].Value = temptable.Rows[i]["Abstractor_Status"];
+
+                    if (!string.IsNullOrEmpty(grd_Services.Rows[i].Cells[13].Value.ToString()))
+                    {
+                        if (!Convert.ToBoolean(grd_Services.Rows[i].Cells[13].Value))
+                        {
+                            grd_Services.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                        }
+                    }
                 }
                 grd_Services.Columns[2].Visible = false;
                 grd_Services.Columns[8].DefaultCellStyle.Format = "MM/dd/yyyy";
@@ -135,7 +144,7 @@ namespace Ordermanagement_01.Abstractor
 
         private void btn_Reallocate_Click(object sender, EventArgs e)
         {
-            
+
         }
 
 
@@ -182,22 +191,22 @@ namespace Ordermanagement_01.Abstractor
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btn_ImportOrders_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btn_ImpAbsCostTat_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void MastersToolStripMenuItem_Click(object sender, EventArgs e)
@@ -218,13 +227,13 @@ namespace Ordermanagement_01.Abstractor
 
         private void ToolStripButton11_Click(object sender, EventArgs e)
         {
-            Ordermanagement_01.Abstractor.Assign_Abstract_Orders Abs_view = new Ordermanagement_01.Abstractor.Assign_Abstract_Orders(userid,User_Role,0);
+            Ordermanagement_01.Abstractor.Assign_Abstract_Orders Abs_view = new Ordermanagement_01.Abstractor.Assign_Abstract_Orders(userid, User_Role, 0);
             Abs_view.Show();
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            Ordermanagement_01.Abstractor.Import_Absractor_Cost_TAT Imp_Abs_CostTAT = new Ordermanagement_01.Abstractor.Import_Absractor_Cost_TAT(userid,"");
+            Ordermanagement_01.Abstractor.Import_Absractor_Cost_TAT Imp_Abs_CostTAT = new Ordermanagement_01.Abstractor.Import_Absractor_Cost_TAT(userid, "");
             Imp_Abs_CostTAT.Show();
         }
 
@@ -247,13 +256,13 @@ namespace Ordermanagement_01.Abstractor
             grd_Services.EnableHeadersVisualStyles = false;
             cbo_colmn.SelectedIndex = 0;
             dbc.BindState(ddl_State);
-      
+
             dbc.BindAbstractor_Order_Serarh_Type(ddl_Product_Type);
         }
 
         private void ToolStripButton10_MouseEnter(object sender, EventArgs e)
         {
-           Color toolover = System.Drawing.ColorTranslator.FromHtml("#70BAC5");
+            Color toolover = System.Drawing.ColorTranslator.FromHtml("#70BAC5");
             ToolStripButton10.BackColor = toolover;
         }
 
@@ -261,7 +270,7 @@ namespace Ordermanagement_01.Abstractor
         {
             Color toolleave = System.Drawing.ColorTranslator.FromHtml("#6CABB4");
             ToolStripButton10.BackColor = toolleave;
-            
+
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -278,13 +287,13 @@ namespace Ordermanagement_01.Abstractor
 
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
-            Ordermanagement_01.Abstractor.Import_Absractor_Cost_TAT Imp_Abs_CostTAT = new Ordermanagement_01.Abstractor.Import_Absractor_Cost_TAT(userid,"");
+            Ordermanagement_01.Abstractor.Import_Absractor_Cost_TAT Imp_Abs_CostTAT = new Ordermanagement_01.Abstractor.Import_Absractor_Cost_TAT(userid, "");
             Imp_Abs_CostTAT.Show();
         }
 
         private void importCostTATToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Ordermanagement_01.Abstractor.Import_Absractor_Cost_TAT Imp_Abs_CostTAT = new Ordermanagement_01.Abstractor.Import_Absractor_Cost_TAT(userid,"");
+            Ordermanagement_01.Abstractor.Import_Absractor_Cost_TAT Imp_Abs_CostTAT = new Ordermanagement_01.Abstractor.Import_Absractor_Cost_TAT(userid, "");
             Imp_Abs_CostTAT.Show();
         }
 
@@ -346,7 +355,7 @@ namespace Ordermanagement_01.Abstractor
                 }
                 else if (cbo_colmn.SelectedIndex == 5)
                 {
-                   // dtsearch.RowFilter = "County like '%" + search.ToString() + "%' ";
+                    // dtsearch.RowFilter = "County like '%" + search.ToString() + "%' ";
 
 
                 }
@@ -391,7 +400,14 @@ namespace Ordermanagement_01.Abstractor
                         grd_Services.Rows[i].Cells[10].Value = "View/Edit";
                         grd_Services.Rows[i].Cells[11].Value = "View/Edit";
                         grd_Services.Rows[i].Cells[12].Value = "DELETE";
-                        
+                        grd_Services.Rows[i].Cells[13].Value = temptable.Rows[i]["Abstractor_Status"];
+                        if (!string.IsNullOrEmpty(grd_Services.Rows[i].Cells[13].Value.ToString()))
+                        {
+                            if (!Convert.ToBoolean(grd_Services.Rows[i].Cells[13].Value))
+                            {
+                                grd_Services.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                            }
+                        }
                     }
                     grd_Services.Columns[2].Visible = false;
                     grd_Services.Columns[8].DefaultCellStyle.Format = "MM/dd/yyyy";
@@ -631,7 +647,7 @@ namespace Ordermanagement_01.Abstractor
 
 
 
-           
+
 
             this.Cursor = currentCursor;
         }
@@ -657,7 +673,7 @@ namespace Ordermanagement_01.Abstractor
                     currentpageindex = (int)Math.Ceiling(Convert.ToDecimal(dt.Rows.Count) / pagesize) - 1;
                     Bind_Filter_Data();
                 }
-              
+
             }
             else
             {
@@ -668,7 +684,7 @@ namespace Ordermanagement_01.Abstractor
             btnPrevious.Enabled = true;
             btnNext.Enabled = false;
             btnLast.Enabled = false;
-            
+
             this.Cursor = currentCursor;
         }
 
@@ -678,7 +694,7 @@ namespace Ordermanagement_01.Abstractor
             this.Cursor = Cursors.WaitCursor;
             // splitContainer1.Enabled = false;
             currentpageindex--;
-            
+
             if (currentpageindex == 0)
             {
                 btnPrevious.Enabled = false;
@@ -762,14 +778,14 @@ namespace Ordermanagement_01.Abstractor
                 txt_Abstractor_Name.Visible = false;
                 btn_Search_statecounty.Visible = true;
                 btn_Clear.Visible = true;
-             
-               
+
+
 
             }
             else if (cbo_colmn.SelectedIndex == 5)
             {
                 btn_Search_statecounty.Visible = true;
-              
+
                 lbl_State.Text = "State";
                 lbl_State.Visible = true;
                 ddl_State.Visible = true;
@@ -780,9 +796,9 @@ namespace Ordermanagement_01.Abstractor
                 txt_Abstractor_Name.Visible = false;
                 btn_Search_statecounty.Visible = true;
                 btn_Clear.Visible = true;
-             
+
             }
-            else if (cbo_colmn.SelectedIndex ==6)
+            else if (cbo_colmn.SelectedIndex == 6)
             {
                 btn_Search_statecounty.Visible = true;
                 lbl_State.Text = "State";
@@ -797,7 +813,7 @@ namespace Ordermanagement_01.Abstractor
                 txt_Abstractor_Name.Visible = false;
                 btn_Search_statecounty.Visible = true;
                 btn_Clear.Visible = true;
-             
+
             }
             else
             {
@@ -806,7 +822,7 @@ namespace Ordermanagement_01.Abstractor
                 lbl_State.Text = "Search";
                 lbl_State.Visible = true;
 
-               
+
                 ddl_State.Visible = false;
                 lbl_County.Visible = false;
                 ddl_County.Visible = false;
@@ -814,8 +830,8 @@ namespace Ordermanagement_01.Abstractor
                 ddl_Product_Type.Visible = false;
                 btn_Search_statecounty.Visible = false;
                 btn_Clear.Visible = false;
-             
-             
+
+
                 txt_Abstractor_Name.Visible = true;
             }
         }
@@ -839,7 +855,7 @@ namespace Ordermanagement_01.Abstractor
             if (cbo_colmn.SelectedIndex == 4)
             {
                 Hashtable htstate = new Hashtable();
-                
+
                 htstate.Add("@Trans", "SELECT_SEARCH_BY_STATE");
                 htstate.Add("@State_name", ddl_State.Text);
                 dtstate = dataaccess.ExecuteSP("Sp_Abstractor_Detail", htstate);
@@ -879,7 +895,14 @@ namespace Ordermanagement_01.Abstractor
                             grd_Services.Rows[i].Cells[10].Value = "View/Edit";
                             grd_Services.Rows[i].Cells[11].Value = "View/Edit";
                             grd_Services.Rows[i].Cells[12].Value = "DELETE";
-                            
+                            grd_Services.Rows[i].Cells[13].Value = temptable.Rows[i]["Abstractor_Status"];
+                            if (!string.IsNullOrEmpty(grd_Services.Rows[i].Cells[13].Value.ToString()))
+                            {
+                                if (!Convert.ToBoolean(grd_Services.Rows[i].Cells[13].Value))
+                                {
+                                    grd_Services.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                                }
+                            }
                         }
                         grd_Services.Columns[2].Visible = false;
                         grd_Services.Columns[8].DefaultCellStyle.Format = "MM/dd/yyyy";
@@ -888,7 +911,7 @@ namespace Ordermanagement_01.Abstractor
                     {
                         grd_Services.Visible = true;
                         grd_Services.Rows.Clear();
-                       // grd_Services.DataSource = dtstate;
+                        // grd_Services.DataSource = dtstate;
                     }
                     lbl_Total_Orders.Text = dtstate.Rows.Count.ToString();
                     lblRecordsStatus.Text = (currentpageindex + 1) + " / " + (int)Math.Ceiling(Convert.ToDecimal(dtstate.Rows.Count) / pagesize);
@@ -898,7 +921,7 @@ namespace Ordermanagement_01.Abstractor
             else if (cbo_colmn.SelectedIndex == 5)
             {
                 Hashtable htcounty = new Hashtable();
-                
+
                 htcounty.Add("@Trans", "SELECT_SEARCH_BY_COUNTY");
                 htcounty.Add("@State_name", ddl_State.Text);
                 htcounty.Add("@County_name", ddl_County.Text);
@@ -928,7 +951,7 @@ namespace Ordermanagement_01.Abstractor
                             grd_Services.Rows.Add();
                             grd_Services.Rows[i].Cells[0].Value = i + 1;
                             //grd_Services.Rows[i].Cells[0].Value = i + 1;
-                          
+
 
 
                             grd_Services.Rows[i].Cells[0].Value = i + 1;
@@ -944,7 +967,14 @@ namespace Ordermanagement_01.Abstractor
                             grd_Services.Rows[i].Cells[10].Value = "View/Edit";
                             grd_Services.Rows[i].Cells[11].Value = "View/Edit";
                             grd_Services.Rows[i].Cells[12].Value = "DELETE";
-                        
+                            grd_Services.Rows[i].Cells[13].Value = temptable.Rows[i]["Abstractor_Status"];
+                            if (!string.IsNullOrEmpty(grd_Services.Rows[i].Cells[13].Value.ToString()))
+                            {
+                                if (!Convert.ToBoolean(grd_Services.Rows[i].Cells[13].Value))
+                                {
+                                    grd_Services.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                                }
+                            }
                         }
                         grd_Services.Columns[2].Visible = false;
                         grd_Services.Columns[8].DefaultCellStyle.Format = "MM/dd/yyyy";
@@ -960,7 +990,7 @@ namespace Ordermanagement_01.Abstractor
                 }
             }
 
-                //county and Order Type
+            //county and Order Type
 
             else if (cbo_colmn.SelectedIndex == 6)
             {
@@ -1014,6 +1044,14 @@ namespace Ordermanagement_01.Abstractor
                             grd_Services.Rows[i].Cells[10].Value = "View/Edit";
                             grd_Services.Rows[i].Cells[11].Value = "View/Edit";
                             grd_Services.Rows[i].Cells[12].Value = "DELETE";
+                            grd_Services.Rows[i].Cells[13].Value = temptable.Rows[i]["Abstractor_Status"];
+                            if (!string.IsNullOrEmpty(grd_Services.Rows[i].Cells[13].Value.ToString()))
+                            {
+                                if (!Convert.ToBoolean(grd_Services.Rows[i].Cells[13].Value))
+                                {
+                                    grd_Services.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                                }
+                            }
                         }
                         grd_Services.Columns[2].Visible = true;
                         grd_Services.Columns[8].DefaultCellStyle.Format = "MM/dd/yyyy";
@@ -1022,7 +1060,7 @@ namespace Ordermanagement_01.Abstractor
                     {
                         grd_Services.Visible = true;
                         grd_Services.Rows.Clear();
-                       // grd_Services.DataSource = dtcounty;
+                        // grd_Services.DataSource = dtcounty;
                     }
                     lbl_Total_Orders.Text = dtcounty.Rows.Count.ToString();
                     lblRecordsStatus.Text = (currentpageindex + 1) + " / " + (int)Math.Ceiling(Convert.ToDecimal(dtcounty.Rows.Count) / pagesize);
@@ -1045,7 +1083,7 @@ namespace Ordermanagement_01.Abstractor
 
             lbl_State.Text = "Search";
             lbl_State.Visible = true;
-            
+
 
             ddl_State.Visible = false;
             lbl_County.Visible = false;

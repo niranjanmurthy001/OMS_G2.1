@@ -21,6 +21,8 @@ using static Ordermanagement_01.New_Dashboard.New_Dashboard;
 using System.Runtime.InteropServices;
 using Ordermanagement_01.Properties;
 using Ordermanagement_01.Masters;
+using System.Data.SqlClient;
+using System.IO;
 
 namespace Ordermanagement_01.New_Dashboard.Employee
 {
@@ -43,6 +45,10 @@ namespace Ordermanagement_01.New_Dashboard.Employee
         const int MF_BYCOMMAND = 0;
         const int MF_DISABLED = 2;
         const int SC_CLOSE = 0xF060;
+        private DataSet ds;
+        private byte[] bimage;
+        private int i;
+
         /// <summary>
         /// Employee Dashboard
         /// </summary>
@@ -1181,6 +1187,8 @@ namespace Ordermanagement_01.New_Dashboard.Employee
         {
             try
             {
+                DataTable dtuser = new DataTable();
+                pictureEditProfile.Image = null;
                 labelControlName.Text = string.Empty;
                 labelControlEmpCode.Text = string.Empty;
                 labelControlBranch.Text = string.Empty;
@@ -1197,6 +1205,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                             var data = await response.Content.ReadAsStringAsync();
                             var user = JsonConvert.DeserializeAnonymousType(data, new
                             {
+                               EmployeeImage = string.Empty,
                                 EmployeeName = string.Empty,
                                 Code = string.Empty,
                                 Branch = string.Empty,
@@ -1206,6 +1215,14 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                                 Theme = string.Empty,
                                 OperationId = string.Empty
                             });
+                            if (pictureEditProfile.Image == null)
+                            {
+                               byte[] bimage = Convert.FromBase64String(user.EmployeeImage); 
+                                MemoryStream ms = new MemoryStream(bimage, 0, bimage.Length);
+                                ms.Write(bimage, 0, bimage.Length);
+
+                                pictureEditProfile.Image = GetDataToImage((Byte[])bimage);
+                            }                           
                             labelControlName.Text = user.EmployeeName ?? string.Empty;
                             labelControlEmpCode.Text = user.Code ?? string.Empty;
                             labelControlBranch.Text = user.Branch ?? string.Empty;
@@ -1223,6 +1240,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                             }
                         }
                     }
+
                 }
             }
             catch (Exception e)
@@ -1230,6 +1248,21 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                 throw e;
             }
         }
+
+        private Image GetDataToImage(byte[] bimage)
+        {
+            try
+            {
+                ImageConverter imgConverter = new ImageConverter();
+                return imgConverter.ConvertFrom(bimage) as Image;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Image not uploaded");
+                return null;
+            }
+        }
+
         private async void buttonEditProfile_Click(object sender, EventArgs e)
         {
             ChangePassword password = new ChangePassword();
@@ -1540,7 +1573,6 @@ namespace Ordermanagement_01.New_Dashboard.Employee
             note.Show();
 
         }
-
         private void link_Order_Count_Click(object sender, EventArgs e)
         {
             try

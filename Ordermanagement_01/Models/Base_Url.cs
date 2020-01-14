@@ -15,8 +15,8 @@ namespace Ordermanagement_01.Models
         private static readonly string URI;
         static Base_Url()
         {
-            //  URI = "http://localhost:28537/Api";
-          URI = "https://titlelogy.com/title_Production_Api_demo/Api";
+             URI = "http://localhost:28537/Api";
+         // URI = "https://titlelogy.com/title_Production_Api_demo/Api";
         }
         public static string Url => URI;
     }

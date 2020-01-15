@@ -74,6 +74,11 @@ namespace Ordermanagement_01
                             string Comments = vie.Row["Order_Comments"].ToString();
                             if (Comments != "")
                             {
+                                string Order_Number= vie.Row["Client_Order_Number"].ToString();
+
+
+                                bs.Append(Order_Number);
+                                bs.AppendLine();
                                 string s = (bs.Append(Comments.ToString().TrimStart('@')).AppendLine()).ToString();
                                 string str = s.ToString();
                                 string _str = str.Replace("@", Environment.NewLine).ToString();

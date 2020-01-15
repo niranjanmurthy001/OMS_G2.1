@@ -31,7 +31,7 @@ namespace Ordermanagement_01
 
             //    Application.Run(new New_Dashboard.New_Dashboard(1,1));
 
-         //  Application.Run(new New_Dashboard.NewLogin());
+          // Application.Run(new New_Dashboard.NewLogin());
 
            // Application.Run(new Test.Api_Call());
 
@@ -69,7 +69,7 @@ namespace Ordermanagement_01
 
 
 
-            // Application.Run(new Ordermanagement_01.DailyStatusReport_Preview(1, "1", "03/07/2019"));  // 16/18/22/23/24/25/28//29  -jan-2019
+             Application.Run(new Ordermanagement_01.DailyStatusReport_Preview(1, "1", "03/07/2019"));  // 16/18/22/23/24/25/28//29  -jan-2019
 
             //Application.Run(new Ordermanagement_01.DailyStatus_OrderViewDetail_New(1, "1", "02/20/2019"));  // 16/18/22/23/24/25/28//29  -jan-2019
 
@@ -122,7 +122,7 @@ namespace Ordermanagement_01
 
             // Application.Run(new Ordermanagement_01.Employee_View(2, "Search", 71, "2", "Live", 1));
 
-           Application.Run(new Ordermanagement_01.Employee.Error_Dashboard(4, 1, "05/01/2018"));
+           //Application.Run(new Ordermanagement_01.Employee.Error_Dashboard(4, 1, "05/01/2018"));
 
             //   Application.Run(new Ordermanagement_01.User_Create(1,1,"smashdot"));
 

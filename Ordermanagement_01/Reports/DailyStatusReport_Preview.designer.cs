@@ -66,6 +66,8 @@
             this.pivotGridField3 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.pivotGridField4 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.pivotGridField5 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.repositoryItemDateEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.tabNavigationPage7 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.panel12 = new System.Windows.Forms.Panel();
@@ -455,6 +457,10 @@
             this.panel27.SuspendLayout();
             this.panel28.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pivotGridControlDailyWise)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
             this.tabNavigationPage7.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -913,6 +919,9 @@
             this.pivotGridControlDailyWise.OptionsPrint.PrintRowHeaders = DevExpress.Utils.DefaultBoolean.True;
             this.pivotGridControlDailyWise.OptionsPrint.UsePrintAppearance = true;
             this.pivotGridControlDailyWise.OptionsSelection.EnableAppearanceFocusedCell = true;
+            this.pivotGridControlDailyWise.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemDateEdit1,
+            this.repositoryItemDateEdit2});
             this.pivotGridControlDailyWise.Size = new System.Drawing.Size(1303, 405);
             this.pivotGridControlDailyWise.TabIndex = 5;
             this.pivotGridControlDailyWise.CellClick += new DevExpress.XtraPivotGrid.PivotCellEventHandler(this.pivotGridControl1_CellClick);
@@ -961,10 +970,38 @@
             this.pivotGridField5.Caption = "Date";
             this.pivotGridField5.CellFormat.FormatString = "\"MM/dd/yyyy\"";
             this.pivotGridField5.CellFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.pivotGridField5.FieldEdit = this.repositoryItemDateEdit2;
             this.pivotGridField5.FieldName = "Date";
             this.pivotGridField5.Name = "pivotGridField5";
-            this.pivotGridField5.ValueFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.pivotGridField5.ValueFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.pivotGridField5.Width = 154;
+            // 
+            // repositoryItemDateEdit2
+            // 
+            this.repositoryItemDateEdit2.AutoHeight = false;
+            this.repositoryItemDateEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit2.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit2.DisplayFormat.FormatString = "\"MM/dd/yyyy\"";
+            this.repositoryItemDateEdit2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.repositoryItemDateEdit2.EditFormat.FormatString = "\"MM/dd/yyyy\"";
+            this.repositoryItemDateEdit2.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.repositoryItemDateEdit2.Name = "repositoryItemDateEdit2";
+            // 
+            // repositoryItemDateEdit1
+            // 
+            this.repositoryItemDateEdit1.AutoHeight = false;
+            this.repositoryItemDateEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.DisplayFormat.FormatString = "\"MM/dd/yyyy\"";
+            this.repositoryItemDateEdit1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.repositoryItemDateEdit1.EditFormat.FormatString = "\"MM/dd/yyyy\"";
+            this.repositoryItemDateEdit1.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.repositoryItemDateEdit1.Mask.EditMask = "\"MM/dd/yyyy\"";
+            this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
             // 
             // tabNavigationPage7
             // 
@@ -5673,6 +5710,10 @@
             this.panel27.ResumeLayout(false);
             this.panel28.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pivotGridControlDailyWise)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
             this.tabNavigationPage7.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
@@ -6262,5 +6303,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView7;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView9;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView10;
+        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit2;
     }
 }

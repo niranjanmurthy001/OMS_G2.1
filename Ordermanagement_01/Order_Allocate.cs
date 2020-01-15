@@ -220,9 +220,10 @@ namespace Ordermanagement_01
 
                 //dtexport = dtexp;
             }
+          
             grd_order.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.SkyBlue;
-            grd_order.EnableHeadersVisualStyles = false;
-
+           
+            grd_order.EnableHeadersVisualStyles = false;          
             grd_order.Columns[0].Width = 35;
             grd_order.Columns[1].Width = 50;
             grd_order.Columns[2].Width = 110;
@@ -230,8 +231,8 @@ namespace Ordermanagement_01
             grd_order.Columns[4].Width = 195;
             grd_order.Columns[5].Width = 160;
             grd_order.Columns[6].Width = 125;
-            grd_order.Columns[7].Width = 120;
-
+            grd_order.Columns[7].Width = 120;         
+          //  grd_order.Columns["Date"].DefaultCellStyle.Format = "MM/dd/yyyy";
 
             System.Data.DataTable temptable = dtAllocate;
 
@@ -259,7 +260,8 @@ namespace Ordermanagement_01
                     grd_order.Rows[i].Cells[6].Value = temptable.Rows[i]["Order_Type"].ToString();
                     grd_order.Rows[i].Cells[7].Value = temptable.Rows[i]["STATECOUNTY"].ToString();
                     grd_order.Rows[i].Cells[8].Value = temptable.Rows[i]["County_Type"].ToString();
-                    grd_order.Rows[i].Cells[9].Value = temptable.Rows[i]["Date"].ToString();
+                    grd_order.Rows[i].Cells[9].Value = Convert.ToDateTime(temptable.Rows[i]["Date"].ToString());
+                   //grd_order.Rows[i].Cells[9].Value = Convert.ToDateTime().ToString("MM/dd/yyyy");
                     grd_order.Rows[i].Cells[10].Value = temptable.Rows[i]["Order_ID"].ToString();
                     grd_order.Rows[i].Cells[11].Value = 0;//Not requried its from titlelogy 
                     grd_order.Rows[i].Cells[12].Value = temptable.Rows[i]["Order_Status"].ToString();
@@ -596,7 +598,7 @@ namespace Ordermanagement_01
                         grd_order_Allocated.Rows[i].Cells[4].Value = dtuser.Rows[i]["Order_Number"].ToString();
                         grd_order_Allocated.Rows[i].Cells[5].Value = dtuser.Rows[i]["STATECOUNTY"].ToString();
                         grd_order_Allocated.Rows[i].Cells[6].Value = dtuser.Rows[i]["Order_Type"].ToString();
-                        grd_order_Allocated.Rows[i].Cells[7].Value = dtuser.Rows[i]["Date"].ToString();
+                        grd_order_Allocated.Rows[i].Cells[7].Value = Convert.ToDateTime(dtuser.Rows[i]["Date"].ToString());
                         grd_order_Allocated.Rows[i].Cells[8].Value = dtuser.Rows[i]["Order_ID"].ToString();
                         grd_order_Allocated.Rows[i].Cells[9].Value = dtuser.Rows[i]["User_Name"].ToString();
                         grd_order_Allocated.Rows[i].Cells[10].Value = dtuser.Rows[i]["Task"].ToString();
@@ -607,7 +609,7 @@ namespace Ordermanagement_01
                         grd_order_Allocated.Rows[i].Cells[14].Value = dtuser.Rows[i]["Client_Number"].ToString();
                         grd_order_Allocated.Rows[i].Cells[17].Value = dtuser.Rows[i]["Subprocess_Number"].ToString();
                         grd_order_Allocated.Rows[i].Cells[15].Value = dtuser.Rows[i]["Progress_Status"].ToString();
-                        grd_order_Allocated.Rows[i].Cells[16].Value = dtuser.Rows[i]["Inserted_date"].ToString();
+                        grd_order_Allocated.Rows[i].Cells[16].Value = Convert.ToDateTime(dtuser.Rows[i]["Inserted_date"].ToString());
                         grd_order_Allocated.Rows[i].Cells[18].Value = dtuser.Rows[i]["State"].ToString();
                         grd_order_Allocated.Rows[i].Cells[19].Value = dtuser.Rows[i]["Client_Id"].ToString();
                         grd_order_Allocated.Rows[i].Cells[20].Value = dtuser.Rows[i]["Sub_ProcessId"].ToString();

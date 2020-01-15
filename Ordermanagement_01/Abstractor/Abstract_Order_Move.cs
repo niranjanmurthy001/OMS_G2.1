@@ -33,6 +33,7 @@ namespace Ordermanagement_01.Abstractor
         int abstractor_Id;
         string Email;
         string Operation;
+
         public Abstract_Order_Move(int USER_ID, string ROLE_ID,string OPERATION)
         {
             InitializeComponent();
@@ -58,7 +59,7 @@ namespace Ordermanagement_01.Abstractor
         }
         private void Geridview_Bind_Abstractor_Orders()
         {
-
+           
 
             Hashtable htuser = new Hashtable();
             DataTable dtuser = new System.Data.DataTable();
@@ -87,6 +88,8 @@ namespace Ordermanagement_01.Abstractor
             grd_order.Columns[5].Width = 132;
             grd_order.Columns[6].Width = 149;
             grd_order.Columns[7].Width = 134;
+            //  grd_order.Columns["Date"].DefaultCellStyle.Format = "MM/dd/yyyy";
+            grd_order.Columns["Date"].DefaultCellStyle.Format = "MM/dd/yyyy";
             grd_order.Columns[8].Width = 0;
             grd_order.Columns[9].Width = 0;
             grd_order.Columns[10].Width = 0;
@@ -122,7 +125,7 @@ namespace Ordermanagement_01.Abstractor
                     }
                     grd_order.Rows[i].Cells[5].Value = dtuser.Rows[i]["Order_Type"].ToString();
                     grd_order.Rows[i].Cells[6].Value = dtuser.Rows[i]["STATECOUNTY"].ToString();
-                    grd_order.Rows[i].Cells[7].Value = dtuser.Rows[i]["Date"].ToString();
+                    grd_order.Rows[i].Cells[7].Value = Convert.ToDateTime(dtuser.Rows[i]["Date"].ToString());
                     grd_order.Rows[i].Cells[8].Value = dtuser.Rows[i]["Order_Progress_ID"].ToString();
                     grd_order.Rows[i].Cells[9].Value = dtuser.Rows[i]["Order_Status"].ToString();
                     grd_order.Rows[i].Cells[10].Value = dtuser.Rows[i]["Order_ID"].ToString();

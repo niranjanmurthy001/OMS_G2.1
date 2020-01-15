@@ -130,6 +130,8 @@ namespace Ordermanagement_01
         int Pass_Max_Time_Id;
         Thread t;
         int Tax_Completed_Count = 0;
+
+        Order_Passing_Params obj_Order_Details_List = new Order_Passing_Params();
         public Employee_Order_Entry(string SESSIONORDERNO, int Orderid, int User_id, string Role_id, string OrderProcess, string SESSSIONORDERTYPE, int SESSIONORDERTASK, int WORK_TYPE_ID, int MAX_TIMING_ID, int TAX_COMPLETED)
         {
             Chk = 0;
@@ -9461,6 +9463,27 @@ namespace Ordermanagement_01
             }
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string State_ID = State_Id.ToString();
+            obj_Order_Details_List = new Order_Passing_Params()
+            {
+                Client_Id = Client_id,
+                Sub_Client_Id = Sub_ProcessId,
+                Order_Id = Order_Id,
+                Order_Task_Id = Convert.ToInt32(SESSION_ORDER_TASK),
+                Order_Type_Id = Order_Type_Id,
+                Work_Type_Id = Work_Type_Id,
+                Order_Type_Abs_Id = Order_Type_ABS_id,
+                User_Id = userid,
+                County_Id = County_Id,
+                State_Id = State_Id,
+                Form_View_Type = "View",
+            };
+            New_Dashboard.Orders.Order_Instruction emp = new Order_Instruction(obj_Order_Details_List);
+            emp.Show();
+        }
+
         private void btn_templete_Click(object sender, EventArgs e)
         {
 
@@ -9780,7 +9803,7 @@ namespace Ordermanagement_01
             //btn_Judgement_Period_Click(sender, e);
             //Emp_Alert();
             //btn_Employee_Order_Info_Click(sender, e);
-            Order_Passing_Params obj_Order_Details_List = new Order_Passing_Params()
+           obj_Order_Details_List = new Order_Passing_Params()
             {
                 Client_Id = Client_id,
                 Sub_Client_Id = Sub_ProcessId,

@@ -1134,15 +1134,15 @@ namespace Ordermanagement_01.InvoiceRep
                     if (Forms == "Monthly_Invoice")
                     {
 
+                        ms = new MemoryStream(File.ReadAllBytes(Path1));
+                      //  FtpWebRequest request = (FtpWebRequest)WebRequest.Create(Path1);
+                        //request.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password);
+                      //  request.Method = WebRequestMethods.Ftp.DownloadFile;
+                       // Stream contentStream = request.GetResponse().GetResponseStream();
+                      //  Attachment attachment = new Attachment(contentStream, Attachment_Name.ToString());
+                      //  mailMessage.Attachments.Add(attachment);
 
-                        FtpWebRequest request = (FtpWebRequest)WebRequest.Create(Path1);
-                        request.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password);
-                        request.Method = WebRequestMethods.Ftp.DownloadFile;
-                        Stream contentStream = request.GetResponse().GetResponseStream();
-                        Attachment attachment = new Attachment(contentStream, Attachment_Name.ToString());
-                        mailMessage.Attachments.Add(attachment);
-
-                      //  mailMessage.Attachments.Add(new Attachment(ms, Attachment_Name.ToString()));
+                       mailMessage.Attachments.Add(new Attachment(ms, Attachment_Name.ToString()));
 
 
 
@@ -1303,7 +1303,7 @@ namespace Ordermanagement_01.InvoiceRep
                             if (Client_Id == 11)
                             {
                                 smtp.Host = "smtpout.secureserver.net";
-                                NetworkCred = new NetworkCredential("accounts@abstractshop.com", "Shopgratman221");
+                                NetworkCred = new NetworkCredential("accounts@abstractshop.com", "Gratmanshop221");
                                 smtp.Port = 3535;
                                 smtp.UseDefaultCredentials = true;
                             }
@@ -1344,7 +1344,7 @@ namespace Ordermanagement_01.InvoiceRep
         {
             FtpWebRequest request = (FtpWebRequest)FtpWebRequest.Create(new Uri(Ftp_File_Path));
             request.Proxy = null;
-            request.Credentials = new NetworkCredential(@"clone\ftpuser", "Qwerty@12345");
+            request.Credentials = new NetworkCredential(Ftp_User_Name, Ftp_Password);
             request.Method = WebRequestMethods.Ftp.GetFileSize;
             FtpWebResponse response = (FtpWebResponse)request.GetResponse();
             long size = response.ContentLength;

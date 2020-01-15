@@ -43,12 +43,12 @@
             DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView1 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
             DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions2 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions3 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
             DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.PieSeriesLabel pieSeriesLabel1 = new DevExpress.XtraCharts.PieSeriesLabel();
             DevExpress.XtraCharts.PieSeriesView pieSeriesView1 = new DevExpress.XtraCharts.PieSeriesView();
             DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions4 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             DevExpress.XtraCharts.XYDiagram xyDiagram2 = new DevExpress.XtraCharts.XYDiagram();
             DevExpress.XtraCharts.Series series3 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView2 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
@@ -393,7 +393,6 @@
             this.groupControlError.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupControlError.AppearanceCaption.Options.UseFont = true;
             this.groupControlError.Controls.Add(this.linkLabelErrors);
-            buttonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("buttonImageOptions2.Image")));
             this.groupControlError.CustomHeaderButtons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
             new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("", true, buttonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1)});
             this.groupControlError.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -427,7 +426,6 @@
             this.groupControlTimings.AppearanceCaption.Options.UseFont = true;
             this.groupControlTimings.Controls.Add(this.chartControlTimings);
             this.groupControlTimings.Controls.Add(this.gridControlTimings);
-            buttonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("buttonImageOptions3.Image")));
             this.groupControlTimings.CustomHeaderButtons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
             new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("", true, buttonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1)});
             this.groupControlTimings.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -446,7 +444,7 @@
             this.chartControlTimings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartControlTimings.Legend.Name = "Default Legend";
             this.chartControlTimings.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
-            this.chartControlTimings.Location = new System.Drawing.Point(2, 29);
+            this.chartControlTimings.Location = new System.Drawing.Point(2, 22);
             this.chartControlTimings.Margin = new System.Windows.Forms.Padding(0);
             this.chartControlTimings.Name = "chartControlTimings";
             this.chartControlTimings.Padding.Bottom = 0;
@@ -471,17 +469,17 @@
         series2};
             this.chartControlTimings.SeriesTemplate.ArgumentDataMember = "100";
             this.chartControlTimings.SeriesTemplate.LegendName = "Default Legend";
-            this.chartControlTimings.Size = new System.Drawing.Size(235, 151);
+            this.chartControlTimings.Size = new System.Drawing.Size(235, 158);
             this.chartControlTimings.TabIndex = 3;
             this.chartControlTimings.Click += new System.EventHandler(this.chartControlTimings_Click);
             // 
             // gridControlTimings
             // 
             this.gridControlTimings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlTimings.Location = new System.Drawing.Point(2, 29);
+            this.gridControlTimings.Location = new System.Drawing.Point(2, 22);
             this.gridControlTimings.MainView = this.gridViewTimings;
             this.gridControlTimings.Name = "gridControlTimings";
-            this.gridControlTimings.Size = new System.Drawing.Size(235, 151);
+            this.gridControlTimings.Size = new System.Drawing.Size(235, 158);
             this.gridControlTimings.TabIndex = 4;
             this.gridControlTimings.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewTimings});
@@ -1119,6 +1117,7 @@
             this.pictureEditProfile.Cursor = System.Windows.Forms.Cursors.Default;
             this.pictureEditProfile.EditValue = ((object)(resources.GetObject("pictureEditProfile.EditValue")));
             this.pictureEditProfile.Location = new System.Drawing.Point(20, 13);
+            this.pictureEditProfile.MaximumSize = new System.Drawing.Size(114, 97);
             this.pictureEditProfile.Name = "pictureEditProfile";
             this.pictureEditProfile.Properties.AllowFocused = false;
             this.pictureEditProfile.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -1129,8 +1128,12 @@
             this.pictureEditProfile.Properties.Name = "pictureEdit1";
             this.pictureEditProfile.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEditProfile.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.pictureEditProfile.Size = new System.Drawing.Size(103, 96);
+            this.pictureEditProfile.Size = new System.Drawing.Size(114, 97);
             this.pictureEditProfile.TabIndex = 10;
+            this.pictureEditProfile.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureEditProfile_Paint);
+            this.pictureEditProfile.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureEditProfile_MouseDown);
+            this.pictureEditProfile.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureEditProfile_MouseMove);
+            this.pictureEditProfile.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureEditProfile_MouseUp);
             // 
             // groupControlQueue
             // 
@@ -1364,6 +1367,7 @@
             this.ClientSize = new System.Drawing.Size(984, 482);
             this.Controls.Add(this.groupControlDashboard);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.LookAndFeel.SkinName = "Office 2016 Colorful";
             this.MinimumSize = new System.Drawing.Size(1000, 520);
             this.Name = "Dashboard";

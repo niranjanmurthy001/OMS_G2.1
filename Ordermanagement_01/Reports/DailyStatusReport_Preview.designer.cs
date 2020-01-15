@@ -963,6 +963,7 @@
             this.pivotGridField5.CellFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.pivotGridField5.FieldName = "Date";
             this.pivotGridField5.Name = "pivotGridField5";
+            this.pivotGridField5.ValueFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.pivotGridField5.Width = 154;
             // 
             // tabNavigationPage7

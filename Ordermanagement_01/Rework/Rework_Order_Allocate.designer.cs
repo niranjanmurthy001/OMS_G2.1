@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.TreeView1 = new System.Windows.Forms.TreeView();
             this.btn_Export = new System.Windows.Forms.Button();
@@ -43,6 +43,21 @@
             this.txt_Fromdate = new System.Windows.Forms.DateTimePicker();
             this.txt_To_Date = new System.Windows.Forms.DateTimePicker();
             this.grd_order = new System.Windows.Forms.DataGridView();
+            this.Chk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.SNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Client_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sub_ProcessName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Order_Number = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Order_Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STATECOUNTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Order_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Grd_Export = new System.Windows.Forms.DataGridView();
             this.btn_Allocate = new System.Windows.Forms.Button();
             this.lbl_allocated_user = new System.Windows.Forms.Label();
@@ -105,21 +120,6 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.Chk_All_grd_Clients = new System.Windows.Forms.CheckBox();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.Chk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.SNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Client_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sub_ProcessName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Order_Number = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Order_Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.STATECOUNTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Order_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grd_order)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Export)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_order_Allocated)).BeginInit();
@@ -331,6 +331,121 @@
             this.grd_order.TabIndex = 8;
             this.grd_order.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_order_CellClick);
             this.grd_order.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_order_CellContentClick);
+    //        this.grd_order.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grd_order_ColumnHeaderMouseClick);
+            // 
+            // Chk
+            // 
+            this.Chk.FillWeight = 38F;
+            this.Chk.HeaderText = "Chk";
+            this.Chk.Name = "Chk";
+            this.Chk.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Chk.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Chk.Width = 51;
+            // 
+            // SNo
+            // 
+            this.SNo.FillWeight = 40F;
+            this.SNo.HeaderText = "S. No";
+            this.SNo.Name = "SNo";
+            this.SNo.ReadOnly = true;
+            this.SNo.Width = 54;
+            // 
+            // Client_Name
+            // 
+            this.Client_Name.HeaderText = "CLIENT";
+            this.Client_Name.Name = "Client_Name";
+            this.Client_Name.ReadOnly = true;
+            this.Client_Name.Width = 136;
+            // 
+            // Sub_ProcessName
+            // 
+            this.Sub_ProcessName.HeaderText = "SUB CLIENT";
+            this.Sub_ProcessName.Name = "Sub_ProcessName";
+            this.Sub_ProcessName.ReadOnly = true;
+            this.Sub_ProcessName.Width = 135;
+            // 
+            // Order_Number
+            // 
+            this.Order_Number.HeaderText = "ORDER NUMBER";
+            this.Order_Number.Name = "Order_Number";
+            this.Order_Number.ReadOnly = true;
+            this.Order_Number.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Order_Number.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Order_Number.Width = 135;
+            // 
+            // Order_Type
+            // 
+            this.Order_Type.FillWeight = 120F;
+            this.Order_Type.HeaderText = "ORDER TYPE";
+            this.Order_Type.Name = "Order_Type";
+            this.Order_Type.ReadOnly = true;
+            this.Order_Type.Width = 162;
+            // 
+            // STATECOUNTY
+            // 
+            this.STATECOUNTY.FillWeight = 120F;
+            this.STATECOUNTY.HeaderText = "STATE & COUNTY";
+            this.STATECOUNTY.Name = "STATECOUNTY";
+            this.STATECOUNTY.ReadOnly = true;
+            this.STATECOUNTY.Width = 162;
+            // 
+            // Column11
+            // 
+            this.Column11.FillWeight = 77.19006F;
+            this.Column11.HeaderText = "COUNTY TYPE";
+            this.Column11.Name = "Column11";
+            this.Column11.Width = 105;
+            // 
+            // Date
+            // 
+            dataGridViewCellStyle2.Format = "MM/dd/yyyy";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Date.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Date.HeaderText = "RECEIVED DATE";
+            this.Date.Name = "Date";
+            this.Date.Width = 135;
+            // 
+            // Order_ID
+            // 
+            this.Order_ID.HeaderText = "Order_ID";
+            this.Order_ID.Name = "Order_ID";
+            this.Order_ID.Visible = false;
+            this.Order_ID.Width = 77;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Column7";
+            this.Column7.Name = "Column7";
+            this.Column7.Visible = false;
+            this.Column7.Width = 76;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Column8";
+            this.Column8.Name = "Column8";
+            this.Column8.Visible = false;
+            this.Column8.Width = 76;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Column9";
+            this.Column9.Name = "Column9";
+            this.Column9.Visible = false;
+            this.Column9.Width = 76;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Column10";
+            this.Column10.Name = "Column10";
+            this.Column10.Visible = false;
+            this.Column10.Width = 82;
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "State";
+            this.Column12.Name = "Column12";
+            this.Column12.Visible = false;
+            this.Column12.Width = 59;
             // 
             // Grd_Export
             // 
@@ -1082,120 +1197,6 @@
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(1118, 266);
             this.panel12.TabIndex = 3;
-            // 
-            // Chk
-            // 
-            this.Chk.FillWeight = 38F;
-            this.Chk.HeaderText = "Chk";
-            this.Chk.Name = "Chk";
-            this.Chk.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Chk.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Chk.Width = 51;
-            // 
-            // SNo
-            // 
-            this.SNo.FillWeight = 40F;
-            this.SNo.HeaderText = "S. No";
-            this.SNo.Name = "SNo";
-            this.SNo.ReadOnly = true;
-            this.SNo.Width = 54;
-            // 
-            // Client_Name
-            // 
-            this.Client_Name.HeaderText = "CLIENT";
-            this.Client_Name.Name = "Client_Name";
-            this.Client_Name.ReadOnly = true;
-            this.Client_Name.Width = 136;
-            // 
-            // Sub_ProcessName
-            // 
-            this.Sub_ProcessName.HeaderText = "SUB CLIENT";
-            this.Sub_ProcessName.Name = "Sub_ProcessName";
-            this.Sub_ProcessName.ReadOnly = true;
-            this.Sub_ProcessName.Width = 135;
-            // 
-            // Order_Number
-            // 
-            this.Order_Number.HeaderText = "ORDER NUMBER";
-            this.Order_Number.Name = "Order_Number";
-            this.Order_Number.ReadOnly = true;
-            this.Order_Number.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Order_Number.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Order_Number.Width = 135;
-            // 
-            // Order_Type
-            // 
-            this.Order_Type.FillWeight = 120F;
-            this.Order_Type.HeaderText = "ORDER TYPE";
-            this.Order_Type.Name = "Order_Type";
-            this.Order_Type.ReadOnly = true;
-            this.Order_Type.Width = 162;
-            // 
-            // STATECOUNTY
-            // 
-            this.STATECOUNTY.FillWeight = 120F;
-            this.STATECOUNTY.HeaderText = "STATE & COUNTY";
-            this.STATECOUNTY.Name = "STATECOUNTY";
-            this.STATECOUNTY.ReadOnly = true;
-            this.STATECOUNTY.Width = 162;
-            // 
-            // Column11
-            // 
-            this.Column11.FillWeight = 77.19006F;
-            this.Column11.HeaderText = "COUNTY TYPE";
-            this.Column11.Name = "Column11";
-            this.Column11.Width = 105;
-            // 
-            // Date
-            // 
-            dataGridViewCellStyle2.Format = "MM/dd/yyyy";
-            dataGridViewCellStyle2.NullValue = null;
-            this.Date.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Date.HeaderText = "RECEIVED DATE";
-            this.Date.Name = "Date";
-            this.Date.Width = 135;
-            // 
-            // Order_ID
-            // 
-            this.Order_ID.HeaderText = "Order_ID";
-            this.Order_ID.Name = "Order_ID";
-            this.Order_ID.Visible = false;
-            this.Order_ID.Width = 77;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Column7";
-            this.Column7.Name = "Column7";
-            this.Column7.Visible = false;
-            this.Column7.Width = 76;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Column8";
-            this.Column8.Name = "Column8";
-            this.Column8.Visible = false;
-            this.Column8.Width = 76;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Column9";
-            this.Column9.Name = "Column9";
-            this.Column9.Visible = false;
-            this.Column9.Width = 76;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Column10";
-            this.Column10.Name = "Column10";
-            this.Column10.Visible = false;
-            this.Column10.Width = 82;
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "State";
-            this.Column12.Name = "Column12";
-            this.Column12.Visible = false;
-            this.Column12.Width = 59;
             // 
             // Rework_Order_Allocate
             // 

@@ -28,6 +28,7 @@ using Ordermanagement_01.Models;
 using DevExpress.XtraBars.Docking2010;
 using Ordermanagement_01.New_Dashboard.Orders;
 using Ordermanagement_01.Masters;
+using System.Net;
 
 namespace Ordermanagement_01.New_Dashboard
 {
@@ -101,6 +102,13 @@ namespace Ordermanagement_01.New_Dashboard
                         }
                     }
                 }
+            }
+            catch (HttpRequestException webex)
+            {
+
+                XtraMessageBox.Show("Please check Interent connection with Adminstrator");
+                XtraMessageBox.Show(webex.InnerException.ToString());
+
             }
             catch (Exception ex)
             {
@@ -196,6 +204,15 @@ namespace Ordermanagement_01.New_Dashboard
             //}
         }
 
+
+        private void Load_Socket_Details()
+        {
+
+            System.Net.ServicePointManager.Expect100Continue = false;
+            ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+
+        }
 
         //private void tileItem1_ItemClick(object sender, TileItemEventArgs e)
         //{
@@ -484,7 +501,7 @@ namespace Ordermanagement_01.New_Dashboard
             {
 
                 SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
-
+                Load_Socket_Details();
                 Bind_Order_Detilas_Task_Wise(Tile_Search.Id,Work_Type_Id);
 
             }
@@ -504,6 +521,7 @@ namespace Ordermanagement_01.New_Dashboard
             try
             {
                 SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
+                Load_Socket_Details();
                 Bind_Order_Detilas_Task_Wise(Tile_Search_Qc.Id,Work_Type_Id);
             }
             catch (Exception ex)
@@ -522,6 +540,7 @@ namespace Ordermanagement_01.New_Dashboard
             try
             {
                 SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
+                Load_Socket_Details();
                 Bind_Order_Detilas_Task_Wise(Tile_Typing.Id,Work_Type_Id);
 
             }
@@ -541,6 +560,7 @@ namespace Ordermanagement_01.New_Dashboard
             try
             {
                 SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
+                Load_Socket_Details();
                 Bind_Order_Detilas_Task_Wise(Tile_Typing_Qc.Id,Work_Type_Id);
             }
             catch (Exception ex)
@@ -558,6 +578,7 @@ namespace Ordermanagement_01.New_Dashboard
             try
             {
                 SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
+                Load_Socket_Details();
                 Bind_Order_Detilas_Task_Wise(Tile_Final_Qc.Id,Work_Type_Id);
             }
             catch (Exception ex)
@@ -576,6 +597,7 @@ namespace Ordermanagement_01.New_Dashboard
             try
             {
                 SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
+                Load_Socket_Details();
                 Bind_Order_Detilas_Task_Wise(Tile_Exception.Id,Work_Type_Id);
 
             }
@@ -1169,7 +1191,7 @@ namespace Ordermanagement_01.New_Dashboard
             }
             catch (Exception ex)
             {
-
+                SplashScreenManager.CloseForm(false);
             }
             finally
             {
@@ -1207,7 +1229,7 @@ namespace Ordermanagement_01.New_Dashboard
             }
             catch (Exception EX)
             {
-
+                SplashScreenManager.CloseForm(false);
             }
 
         }
@@ -1234,7 +1256,7 @@ namespace Ordermanagement_01.New_Dashboard
             }
             catch (Exception EX)
             {
-
+                SplashScreenManager.CloseForm(false);
             }
         }
 

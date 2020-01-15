@@ -136,31 +136,7 @@
     <value>True</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btn_Emp_Alert.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAHgAAAAsCAYAAACue3wzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAB8SURBVHhe7dExEQAgDAAxJOEJZVVafOR+iIKc+2bjKhhXMK5gXMG4gnEF4wrGFYwrGFcwrmBc
-        wbiCcQXjCsYVjCsYVzCuYFzBuIJxBeMKxhWMKxhXMK5gXMG4gnEF4wrGFYwrGFcwrmBcwbiCcQXjCsYV
-        jCsYVzCuYNrsB22WXoSUSiioAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="btn_Tax_due_dates.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAHgAAAAsCAYAAACue3wzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAB8SURBVHhe7dExEQAgDAAxJOEJZVVafOR+iIKc+2bjKhhXMK5gXMG4gnEF4wrGFYwrGFcwrmBc
-        wbiCcQXjCsYVjCsYVzCuYFzBuIJxBeMKxhWMKxhXMK5gXMG4gnEF4wrGFYwrGFcwrmBcwbiCcQXjCsYV
-        jCsYVzCuYNrsB22WXoSUSiioAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="btn_Employee_Order_Info.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAHgAAAAsCAYAAACue3wzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAB8SURBVHhe7dExEQAgDAAxJOEJZVVafOR+iIKc+2bjKhhXMK5gXMG4gnEF4wrGFYwrGFcwrmBc
-        wbiCcQXjCsYVjCsYVzCuYFzBuIJxBeMKxhWMKxhXMK5gXMG4gnEF4wrGFYwrGFcwrmBcwbiCcQXjCsYV
-        jCsYVzCuYNrsB22WXoSUSiioAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="Btn_Instruction.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="BtnInstruction.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAHgAAAAsCAYAAACue3wzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAB8SURBVHhe7dExEQAgDAAxJOEJZVVafOR+iIKc+2bjKhhXMK5gXMG4gnEF4wrGFYwrGFcwrmBc
@@ -169,14 +145,6 @@
 </value>
   </data>
   <data name="btn_templete.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAHgAAAAsCAYAAACue3wzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAB8SURBVHhe7dExEQAgDAAxJOEJZVVafOR+iIKc+2bjKhhXMK5gXMG4gnEF4wrGFYwrGFcwrmBc
-        wbiCcQXjCsYVjCsYVzCuYFzBuIJxBeMKxhWMKxhXMK5gXMG4gnEF4wrGFYwrGFcwrmBcwbiCcQXjCsYV
-        jCsYVzCuYNrsB22WXoSUSiioAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="btn_Judgement_Period.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAHgAAAAsCAYAAACue3wzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAB8SURBVHhe7dExEQAgDAAxJOEJZVVafOR+iIKc+2bjKhhXMK5gXMG4gnEF4wrGFYwrGFcwrmBc

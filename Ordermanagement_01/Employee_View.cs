@@ -305,7 +305,7 @@ namespace Ordermanagement_01
                     grd_Admin_orders.Rows[i].Cells[7].Value = dtuser.Rows[i]["Order_Type"].ToString();
                     grd_Admin_orders.Rows[i].Cells[8].Value = dtuser.Rows[i]["Order_Source_Type_Name"].ToString();
                     grd_Admin_orders.Rows[i].Cells[9].Value = dtuser.Rows[i]["User_Name"].ToString();
-                    grd_Admin_orders.Rows[i].Cells[10].Value = dtuser.Rows[i]["Date"].ToString();
+                    grd_Admin_orders.Rows[i].Cells[10].Value = Convert.ToDateTime(dtuser.Rows[i]["Date"].ToString());
                     grd_Admin_orders.Rows[i].Cells[11].Value = dtuser.Rows[i]["Progress_Status"].ToString();
                     grd_Admin_orders.Rows[i].Cells[12].Value = dtuser.Rows[i]["Order_ID"].ToString();
                     grd_Admin_orders.Rows[i].Cells[15].Value = dtuser.Rows[i]["Order_Status"].ToString();
@@ -489,7 +489,7 @@ namespace Ordermanagement_01
                     grd_Admin_orders.Rows[i].Cells[7].Value = dtuser.Rows[i]["Order_Type"].ToString();
                     grd_Admin_orders.Rows[i].Cells[8].Value = dtuser.Rows[i]["Order_Source_Type_Name"].ToString();
                     grd_Admin_orders.Rows[i].Cells[9].Value = dtuser.Rows[i]["User_Name"].ToString();
-                    grd_Admin_orders.Rows[i].Cells[10].Value = dtuser.Rows[i]["Date"].ToString();
+                    grd_Admin_orders.Rows[i].Cells[10].Value =Convert.ToDateTime( dtuser.Rows[i]["Date"].ToString());
                     grd_Admin_orders.Rows[i].Cells[11].Value = dtuser.Rows[i]["Progress_Status"].ToString();
                     grd_Admin_orders.Rows[i].Cells[12].Value = dtuser.Rows[i]["Order_ID"].ToString();
                     grd_Admin_orders.Rows[i].Cells[15].Value = dtuser.Rows[i]["Order_Status"].ToString();
@@ -1089,7 +1089,7 @@ namespace Ordermanagement_01
                         grd_Admin_orders.Rows[i].Cells[7].Value = dt.Rows[i]["Order_Type"].ToString();
                         grd_Admin_orders.Rows[i].Cells[8].Value = dtuser.Rows[i]["Order_Source_Type_Name"].ToString();
                         grd_Admin_orders.Rows[i].Cells[9].Value = dt.Rows[i]["User_Name"].ToString();
-                        grd_Admin_orders.Rows[i].Cells[10].Value = dt.Rows[i]["Date"].ToString();
+                        grd_Admin_orders.Rows[i].Cells[10].Value =Convert.ToDateTime( dt.Rows[i]["Date"].ToString());
                         grd_Admin_orders.Rows[i].Cells[11].Value = dt.Rows[i]["Progress_Status"].ToString();
                         grd_Admin_orders.Rows[i].Cells[12].Value = dt.Rows[i]["Order_ID"].ToString();
                         grd_Admin_orders.Rows[i].Cells[15].Value = dt.Rows[i]["Order_Status"].ToString();
@@ -1261,7 +1261,7 @@ namespace Ordermanagement_01
                             grd_Admin_orders.Rows[i].Cells[7].Value = dt.Rows[i]["Order_Type"].ToString();
                             grd_Admin_orders.Rows[i].Cells[8].Value = dt.Rows[i]["Order_Source_Type_Name"].ToString();
                             grd_Admin_orders.Rows[i].Cells[9].Value = dt.Rows[i]["User_Name"].ToString();
-                            grd_Admin_orders.Rows[i].Cells[10].Value = dt.Rows[i]["Date"].ToString();
+                            grd_Admin_orders.Rows[i].Cells[10].Value = Convert.ToDateTime(dt.Rows[i]["Date"].ToString());
                             grd_Admin_orders.Rows[i].Cells[11].Value = dt.Rows[i]["Progress_Status"].ToString();
                             grd_Admin_orders.Rows[i].Cells[12].Value = dt.Rows[i]["Order_ID"].ToString();
                             grd_Admin_orders.Rows[i].Cells[15].Value = dt.Rows[i]["Order_Status"].ToString();

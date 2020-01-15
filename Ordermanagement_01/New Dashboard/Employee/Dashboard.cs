@@ -25,6 +25,8 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Drawing.Drawing2D;
 using Ordermanagement_01.New_Dashboard.Employee;
+using System.Windows.Input;
+using DocumentFormat.OpenXml.Office2013.PowerPoint.Roaming;
 
 namespace Ordermanagement_01.New_Dashboard.Employee
 {
@@ -50,9 +52,10 @@ namespace Ordermanagement_01.New_Dashboard.Employee
         private DataSet ds;
         private byte[] bimage;
          public  int i;
-         public Image _originalImage;
-        public bool _selecting;
-        Rectangle _selection;
+
+
+      public string Password;
+
         /// <summary>
         /// Employee Dashboard
         /// </summary>
@@ -66,6 +69,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
             this.userRoleId = userRoleId;
             dataaccess = new DataAccess();
             InitializeComponent();
+           // KeyDown += new System.Windows.Forms.KeyEventHandler(Dashboard_KeyDown);
         }
         private void Dashboard_Load(object sender, EventArgs e)
         {
@@ -92,6 +96,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                 t.Wait(1000);
                 WindowState = FormWindowState.Maximized;
                 UserCount();
+                this.KeyPreview = true;
                 timer = new System.Threading.Timer(async a =>
                 {
                     await IdleProductionTimeUpdateAsync();
@@ -1640,58 +1645,28 @@ namespace Ordermanagement_01.New_Dashboard.Employee
 
         }
 
-        private void pictureEditProfile_MouseDown(object sender, MouseEventArgs e)
+        private void Dashboard_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
         {
-         
-            //if (e.Button == MouseButtons.Left)
-            //{
-            //    _selecting = true;
-            //    _selection = new Rectangle(new Point(e.X, e.Y), new Size());
-            //}
-        }
+            try
+            {
+                if(e.Alt && e.KeyCode == Keys.L)
+                {
+                    FormCollection collection = System.Windows.Forms.Application.OpenForms;
+                    foreach (Form form in collection)
+                    {
+                        form.Invoke(new MethodInvoker(delegate { form.Hide(); }));
+                    }
+                    Ordermanagement_01.New_Dashboard.LockScreen lk = new Ordermanagement_01.New_Dashboard.LockScreen(labelControlName.Text, Password, "profile.png");
 
-        private void pictureEditProfile_MouseMove(object sender, MouseEventArgs e)
-        {
-            //if (_selecting)
-            //{
-            //    _selection.Width = e.X - _selection.X;
-            //    _selection.Height = e.Y - _selection.Y;
+                    lk.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
-            //    // Redraw the picturebox:
-            //   pictureEditProfile.Refresh();
-            //}
-        }
-
-        private void pictureEditProfile_Paint(object sender, PaintEventArgs e)
-        {
-            //if (_selecting)
-            //{
-            //    // Draw a rectangle displaying the current selection
-            //    Pen pen = Pens.GreenYellow;
-            //    e.Graphics.DrawRectangle(pen, _selection);
-            //}
-
-        }
-
-        private void pictureEditProfile_MouseUp(object sender, MouseEventArgs e)
-        {
-       //     if (e.Button == MouseButtons.Left &&
-       //_selecting &&
-       //_selection.Size != new Size())
-       //     {
-       //         // Create cropped image:
-       //         //Image img = pictureEditProfile.Image.(_selection);
-       //         Image img = pictureEditProfile.Image.
-
-       //         // Fit image to the picturebox:
-       //         pictureEditProfile.Image = Convert.ToBase64CharArray(img.Fittopicturebox(pictureEditProfile));
-
-       //         _selecting = false;
-       //     }
-       //     else
-       //         _selecting = false;
-        }
-
+        }     
         private void link_Order_Count_Click(object sender, EventArgs e)
         {
             try

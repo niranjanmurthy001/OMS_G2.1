@@ -2670,6 +2670,15 @@ namespace Ordermanagement_01
                     Column_Value_Type = hi.CellInfo.ColumnValueType.ToString();
 
                     //1
+                    Hashtable ht_Temp_Comment_Details = new Hashtable();
+                    System.Data.DataTable dt_Temp_Comment_details = new System.Data.DataTable();
+
+                    ht_Temp_Comment_Details.Clear();
+                    ht_Temp_Comment_Details.Add("@Trans", "CREATE_TEMP_COMMENT_TABLE");
+                    dt_Temp_Comment_details = dataaccess.ExecuteSP("Sp_Daily_Status_Report", ht_Temp_Comment_Details);
+
+
+
                     if (Row_Value_Type == "Value" && Column_Value_Type == "Value")
                     {
                         // MessageBox.Show("Each Cell WIse");

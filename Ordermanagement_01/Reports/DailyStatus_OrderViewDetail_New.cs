@@ -56,68 +56,39 @@ namespace Ordermanagement_01
         int Emp_Job_role_Id, Emp_Sal_Cat_Id, Eff_Client_Id, Eff_Order_Type_Abs_Id, Eff_Order_Task_Id, Eff_Order_Source_Type_Id, Eff_State_Id, Eff_County_Id, Eff_Sub_Process_Id;
         string Clint, userroleid, Operation, Operation_Count, From_date, To_Date, Path1, errormessage = "", error_status = "", error_value = "", vendor_validation_msg = "", Order_Number;
               
-        private async void gridView2_MouseMove(object sender, MouseEventArgs e)
-        {
-            DXMouseEventArgs ea = e as DXMouseEventArgs;
+        private void gridView2_MouseMove(object sender, MouseEventArgs e)
+        {           
             GridView view = sender as GridView;
-            GridHitInfo info = view.CalcHitInfo(ea.Location);
-            if (info.InRow || info.InRowCell)
+            GridHitInfo info = gridView2.CalcHitInfo(e.Location);
+            if(info.InRowCell==true)
             {
                 string caption = info.Column.Caption;
-                string field = info.Column.FieldName;
-                if (field == "" && caption == "Comments")
                 {
-                    Order_Passing_Params obj_Order_Details_List = new Order_Passing_Params();                    
-                    DataRow row = gridView2.GetDataRow(gridView2.FocusedRowHandle);
-                    Order_ID = int.Parse(row["Order_Id"].ToString());
-                    obj_Order_Details_List.Order_Id = Order_ID;
-                    obj_Order_Details_List.Work_Type_Id = Work_Type_Id;
-                    try
+                    if (caption == "Comments")
                     {
-                        SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
-                        var dictionary = new Dictionary<string, object>()
-                            {
-                            {"@Trans","SELECT" },
-                            {"@Order_Id",Order_ID },
-                            {"@Work_Type",Work_Type_Id}
-                            };
-                        var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
-                        using (var httpClient = new HttpClient())
+                       // DataRow row = (view.GetRow(3) as DataRowView).Row;  
+                       DataRowView vie= gridView2.GetRow(info.RowHandle) as DataRowView;
+                        StringBuilder bs = new StringBuilder();
+                        if (vie.Row["Order_Comments"] != null)
                         {
-                            var response = await httpClient.PostAsync(Base_Url.Url + "/Comment/Ordercomment", data);
-                            if (response.IsSuccessStatusCode)
+                            string Comments = vie.Row["Order_Comments"].ToString();
+                            if (Comments != "")
                             {
-                                if (response.StatusCode == HttpStatusCode.OK)
-                                {
-                                    var result = await response.Content.ReadAsStringAsync();
-                                    DataTable dtc = JsonConvert.DeserializeObject<DataTable>(result);
-                                    if (dtc != null && dtc.Rows.Count > 0)
-                                    {
-                                        DataView dv = new DataView(dtc);
-                                        DataTable dt = dv.ToTable(true, "Comment");
-                                        StringBuilder bs = new StringBuilder();
-                                        int a = dt.Rows.Count;
-                                        for (int i = 0; i < a; i++)
-                                        {
-                                            string s = (bs.Append(dt.Rows[i]["Comment"].ToString().Trim()).AppendLine()).ToString();
-                                            toolTipController1.ShowHint(s);
-                                        }
-                                    }
-                                }
+                                string s = (bs.Append(Comments.ToString().TrimStart('@')).AppendLine()).ToString();
+                                string str = s.ToString();
+                                string _str = str.Replace("@", Environment.NewLine).ToString();
+                                toolTipController1.ShowHint(_str);
+                            }
+                            else
+                            {
+                                string message = "No Comments";
+                                toolTipController1.ShowHint(message);
                             }
                         }
-                    }                    
-                    catch (Exception ex)
-                    {
-                        SplashScreenManager.CloseForm(false);
-                        XtraMessageBox.Show("Something went wrong,please contact admin");
                     }
-                    finally
-                    {
-                        SplashScreenManager.CloseForm(false);                        
-                    }                                     
                 }
             }
+            
         }
         private void gridView2_MouseUp(object sender, MouseEventArgs e)
         {

@@ -662,7 +662,6 @@
             // repositoryItemHyperLinkEdit11
             // 
             this.repositoryItemHyperLinkEdit11.AutoHeight = false;
-            this.repositoryItemHyperLinkEdit11.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.repositoryItemHyperLinkEdit11.Name = "repositoryItemHyperLinkEdit11";
             // 
             // repositoryItemHyperLinkEdit7
@@ -684,7 +683,7 @@
             // Default_Look_Confirmation
             // 
             this.Default_Look_Confirmation.EnableBonusSkins = true;
-            this.Default_Look_Confirmation.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.Default_Look_Confirmation.LookAndFeel.SkinName = "Office 2013";
             // 
             // pivotGridField19
             // 
@@ -1594,7 +1593,6 @@
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(368, 38);
             this.panel20.TabIndex = 0;
-           // this.panel20.Paint += new System.Windows.Forms.PaintEventHandler(this.panel20_Paint);
             // 
             // label1
             // 

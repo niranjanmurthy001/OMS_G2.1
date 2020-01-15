@@ -590,12 +590,12 @@ namespace Ordermanagement_01.Employee
                 bs.AppendLine("Sample");
                 if (Directory.Exists(@"C:\OMS\Temp\Notes\" + Order_Id))
                 {
-                    src = @"C:\OMS\Temp\Notes\" + Order_Id + @"\Notes-" + User_Id + ".pxt";
+                    src = @"C:\OMS\Temp\Notes\" + Order_Id + @"\Notes-" + User_Id + ".txt";
                 }
                 else
                 {
                     Directory.CreateDirectory(@"C:\OMS\Temp\Notes\" + Order_Id);
-                    src = @"C:\OMS\Temp\Notes\" + Order_Id + @"\Notes-" + User_Id + ".pxt";
+                    src = @"C:\OMS\Temp\Notes\" + Order_Id + @"\Notes-" + User_Id + ".txt";
                 }
                 FileStream fs = new FileStream(src, FileMode.Append, FileAccess.Write, FileShare.Write);
                 fs.Flush();

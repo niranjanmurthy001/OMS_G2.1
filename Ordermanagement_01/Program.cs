@@ -31,9 +31,9 @@ namespace Ordermanagement_01
 
             //    Application.Run(new New_Dashboard.New_Dashboard(1,1));
 
-          // Application.Run(new New_Dashboard.NewLogin());
+           Application.Run(new New_Dashboard.NewLogin());
 
-            Application.Run(new Test.Folder_View());
+           // Application.Run(new Test.Api_Call());
 
             // Application.Run(new New_Dashboard.Employee.General_Notification());
 

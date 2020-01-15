@@ -1094,10 +1094,6 @@
             // 
             this.Save_Dailog.FileOk += new System.ComponentModel.CancelEventHandler(this.CommonSaveFileDialog_FileOk);
             // 
-            // folderBrowserDialog1
-            // 
-            this.folderBrowserDialog1.HelpRequest += new System.EventHandler(this.folderBrowserDialog1_HelpRequest);
-            // 
             // Order_Uploads
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

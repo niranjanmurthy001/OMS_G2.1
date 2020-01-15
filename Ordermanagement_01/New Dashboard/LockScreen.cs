@@ -235,6 +235,11 @@ namespace Ordermanagement_01.New_Dashboard
             }
         }
 
+        private void panelControl1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
 
 
         //private void LockScreen_KeyDown_1(object sender, System.Windows.Forms.KeyEventArgs e)

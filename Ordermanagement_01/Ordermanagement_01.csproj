@@ -4338,6 +4338,8 @@
     <None Include="Resources\dashboard_1_32.png" />
     <None Include="Resources\dashboard_1_64.png" />
     <None Include="Resources\comment.png" />
+    <None Include="Resources\comment %284%29.png" />
+    <None Include="Resources\comment %283%29.png" />
     <Content Include="Resources\DRN-Logo.png" />
     <None Include="Resources\Final_Qc_32.png" />
     <None Include="Resources\Exception_32.png" />

@@ -196,6 +196,9 @@
   <data name="buttonEditProfile.ImageOptions.Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\buttonEditProfile.ImageOptions.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Typing_Qc_1_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Typing_Qc_1_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="stick_figure_working_laptop_desk_sm_wm" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\stick_figure_working_laptop_desk_sm_wm.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -331,9 +334,6 @@
   <data name="048-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\048-1281.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="my_saved_searches_folder" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\my_saved_searches_folder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="1421797544_new1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1421797544_new1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -370,8 +370,8 @@
   <data name="YellowBoxbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\YellowBoxbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="stop" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\stop.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="fall_asleep_at_computer_PA_sm_wm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fall_asleep_at_computer_PA_sm_wm.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -424,14 +424,17 @@
   <data name="checklist" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\checklist.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="New_Add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\New_Add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="comment (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\comment (4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="download-database" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\download-database.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Not_Processing" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Not_Processing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="download" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\download.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Judge_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Judge_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -468,6 +471,9 @@
   </data>
   <data name="Icon_test_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icon_test_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icon-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icon-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -508,8 +514,8 @@
   <data name="31-481" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\31-481.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="New_Add" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\New_Add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="stop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stop.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pictureEdit11.EditValue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pictureEdit11.EditValue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -604,8 +610,8 @@
   <data name="stick_figure_load_boxes_sm_wm" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\stick_figure_load_boxes_sm_wm.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Exception_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Exception_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="notify" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\notify.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Typing_321" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Typing_321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -649,8 +655,8 @@
   <data name="Delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="instructions (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\instructions (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Exception_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Exception_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="SmallRedbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SmallRedbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -670,8 +676,8 @@
   <data name="GreenRoundbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GreenRoundbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fall_asleep_at_computer_PA_sm_wm" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fall_asleep_at_computer_PA_sm_wm.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="my_saved_searches_folder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\my_saved_searches_folder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icon_Rework_40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icon_Rework_40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -691,8 +697,8 @@
   <data name="diamond_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\diamond_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="moon_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\moon_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="instructions (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\instructions (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="background-gradient" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background-gradient.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -705,6 +711,9 @@
   </data>
   <data name="YellowRoundbutton1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\YellowRoundbutton1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="play" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\play.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="dashboard_1_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dashboard_1_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -727,14 +736,14 @@
   <data name="web_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\web_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="play" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\play.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="download" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\download.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pictureEdit9.EditValue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pictureEdit9.EditValue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Typing_Qc_1_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Typing_Qc_1_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="moon_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\moon_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="star" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\star1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -745,10 +754,7 @@
   <data name="Progress_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Progress_32.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="notify" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\notify.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="red" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="comment (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\comment (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

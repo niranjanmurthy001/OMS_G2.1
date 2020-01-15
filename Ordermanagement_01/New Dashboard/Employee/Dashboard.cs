@@ -23,10 +23,14 @@ using Ordermanagement_01.Properties;
 using Ordermanagement_01.Masters;
 using System.Data.SqlClient;
 using System.IO;
+using System.Drawing.Drawing2D;
+using Ordermanagement_01.New_Dashboard.Employee;
+using System.Windows.Input;
+using DocumentFormat.OpenXml.Office2013.PowerPoint.Roaming;
 
 namespace Ordermanagement_01.New_Dashboard.Employee
 {
-    public partial class Dashboard : XtraForm
+    public  partial class Dashboard : XtraForm
     {
         private int value;
         private int operationId;
@@ -47,7 +51,10 @@ namespace Ordermanagement_01.New_Dashboard.Employee
         const int SC_CLOSE = 0xF060;
         private DataSet ds;
         private byte[] bimage;
-        private int i;
+         public  int i;
+
+
+      public string Password;
 
         /// <summary>
         /// Employee Dashboard
@@ -62,6 +69,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
             this.userRoleId = userRoleId;
             dataaccess = new DataAccess();
             InitializeComponent();
+           // KeyDown += new System.Windows.Forms.KeyEventHandler(Dashboard_KeyDown);
         }
         private void Dashboard_Load(object sender, EventArgs e)
         {
@@ -88,11 +96,13 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                 t.Wait(1000);
                 WindowState = FormWindowState.Maximized;
                 UserCount();
+                this.KeyPreview = true;
                 timer = new System.Threading.Timer(async a =>
                 {
                     await IdleProductionTimeUpdateAsync();
                     await UpdateLoginDateAsync();
                 }, null, TimeSpan.FromSeconds(1), TimeSpan.FromMinutes(1));
+                //_originalImage = pictureEditProfile.Image.Clone() as Image;
             }
             catch (Exception ex)
             {
@@ -1217,12 +1227,12 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                             });
                             if (pictureEditProfile.Image == null)
                             {
-                               byte[] bimage = Convert.FromBase64String(user.EmployeeImage); 
+                                byte[] bimage = Convert.FromBase64String(user.EmployeeImage);
                                 MemoryStream ms = new MemoryStream(bimage, 0, bimage.Length);
                                 ms.Write(bimage, 0, bimage.Length);
-
                                 pictureEditProfile.Image = GetDataToImage((Byte[])bimage);
-                            }                           
+                            }
+                                          
                             labelControlName.Text = user.EmployeeName ?? string.Empty;
                             labelControlEmpCode.Text = user.Code ?? string.Empty;
                             labelControlBranch.Text = user.Branch ?? string.Empty;
@@ -1255,13 +1265,74 @@ namespace Ordermanagement_01.New_Dashboard.Employee
             {
                 ImageConverter imgConverter = new ImageConverter();
                 return imgConverter.ConvertFrom(bimage) as Image;
-            }
+            }   
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Image not uploaded");
-                return null;
+               return pictureEditProfile.Image = Resources.pictureEditProfile_EditValue;
+               //MessageBox.Show(ex.Message, "Image not uploaded");                                            
             }
         }
+        //public static Image Crop(this Image image, Rectangle selection)
+        //{
+        //    Bitmap bmp = image as Bitmap;
+
+        //    // Check if it is a bitmap:
+        //    if (bmp == null)
+        //        throw new ArgumentException("No valid bitmap");
+
+        //    // Crop the image:
+        //    Bitmap cropBmp = bmp.Clone(selection, bmp.PixelFormat);
+
+        //    // Release the resources:
+        //    image.Dispose();
+
+        //    return cropBmp;
+        //}
+        //public static Image FittoPictureBox(this Image image, PictureEdit picBox)
+        //{
+        //    Bitmap bmp = null;
+        //    Graphics g;
+
+        //    // Scale:
+        //    double scaleY = (double)image.Width / picBox.Width;
+        //    double scaleX = (double)image.Height / picBox.Height;
+        //    double scale = scaleY < scaleX ? scaleX : scaleY;
+
+        //    // Create new bitmap:
+        //    bmp = new Bitmap(
+        //        (int)((double)image.Width / scale),
+        //        (int)((double)image.Height / scale));
+
+        //    // Set resolution of the new image:
+        //    bmp.SetResolution(
+        //        image.HorizontalResolution,
+        //        image.VerticalResolution);
+   
+        //    // Create graphics:
+        //    g = Graphics.FromImage(bmp);
+
+        //    // Set interpolation mode:
+        //    g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+
+        //    // Draw the new image:
+        //    g.DrawImage(
+        //        image,
+        //        new Rectangle(            // Destination
+        //            0, 0,
+        //            bmp.Width, bmp.Height),
+        //        new Rectangle(            // Source
+        //            0, 0,
+        //            image.Width, image.Height),
+        //        GraphicsUnit.Pixel);
+
+        //    // Release the resources of the graphics:
+        //    g.Dispose();
+
+        //    // Release the resources of the origin image:
+        //    image.Dispose();
+
+        //    return bmp;
+        //}
 
         private async void buttonEditProfile_Click(object sender, EventArgs e)
         {
@@ -1573,6 +1644,29 @@ namespace Ordermanagement_01.New_Dashboard.Employee
             note.Show();
 
         }
+
+        private void Dashboard_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
+        {
+            try
+            {
+                if(e.Alt && e.KeyCode == Keys.L)
+                {
+                    FormCollection collection = System.Windows.Forms.Application.OpenForms;
+                    foreach (Form form in collection)
+                    {
+                        form.Invoke(new MethodInvoker(delegate { form.Hide(); }));
+                    }
+                    Ordermanagement_01.New_Dashboard.LockScreen lk = new Ordermanagement_01.New_Dashboard.LockScreen(labelControlName.Text, Password, "profile.png");
+
+                    lk.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }     
         private void link_Order_Count_Click(object sender, EventArgs e)
         {
             try

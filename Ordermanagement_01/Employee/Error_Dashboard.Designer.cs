@@ -74,7 +74,6 @@
             this.lbl_Sub_New_Error_Header = new System.Windows.Forms.Label();
             this.panel19 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
-            this.pnl_New_Error_Reporting_To = new System.Windows.Forms.Panel();
             this.ddlErrorFrom = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btn_Export_New_Errors = new System.Windows.Forms.Button();
@@ -82,9 +81,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.ddl_New_Error_Reporting_User_Name = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel20 = new System.Windows.Forms.Panel();
             this.btn_My_Errors = new System.Windows.Forms.Button();
-            this.btn_All_User_Errors = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tbl_Layout_Accept_New_Error = new System.Windows.Forms.TableLayoutPanel();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -139,17 +136,16 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.lbl_Dispute_Error_Header = new System.Windows.Forms.Label();
-            this.panel15 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
+            this.lbl_Dispute_Error_Header = new System.Windows.Forms.Label();
             this.ddl_Dispute_Reporting_Username = new System.Windows.Forms.ComboBox();
+            this.ddlDisputeErrorFrom = new System.Windows.Forms.ComboBox();
+            this.lbl_Dispute_Reporting_To = new System.Windows.Forms.Label();
+            this.lbl_Dispute_ErrorOnUser = new System.Windows.Forms.Label();
+            this.ddl_Dispute_ErrorOnUser = new System.Windows.Forms.ComboBox();
             this.btn_Dispute_Export = new System.Windows.Forms.Button();
             this.btn_All_Dispute = new System.Windows.Forms.Button();
             this.btn_My_Dispute = new System.Windows.Forms.Button();
-            this.ddl_Dispute_ErrorOnUser = new System.Windows.Forms.ComboBox();
-            this.lbl_Dispute_Reporting_To = new System.Windows.Forms.Label();
-            this.lbl_Dispute_ErrorOnUser = new System.Windows.Forms.Label();
-            this.ddlDisputeErrorFrom = new System.Windows.Forms.ComboBox();
             this.pnl_Dispute_Dates = new System.Windows.Forms.Panel();
             this.btn_Dispute_Vew = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -198,6 +194,19 @@
             this.ddl_Error_Report_ErrorOnUser = new System.Windows.Forms.ComboBox();
             this.lbl_Error_User_Name = new System.Windows.Forms.Label();
             this.ddl_Errors_Reporting_User_Name = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_Error_Analysis_Report = new System.Windows.Forms.Button();
+            this.btn_Refresh = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnl_New_Error_Reporting_To = new System.Windows.Forms.Panel();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.btn_All_User_Errors = new System.Windows.Forms.Button();
+            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel18 = new System.Windows.Forms.Panel();
             this.btn_All_Error_Report = new System.Windows.Forms.Button();
             this.btn_All_Employee_Report = new System.Windows.Forms.Button();
@@ -207,10 +216,6 @@
             this.label37 = new System.Windows.Forms.Label();
             this.txt_Accepted_Second_Date = new System.Windows.Forms.DateTimePicker();
             this.txt_Accepted_First_date = new System.Windows.Forms.DateTimePicker();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_Error_Analysis_Report = new System.Windows.Forms.Button();
-            this.btn_Refresh = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -225,8 +230,6 @@
             this.panel5.SuspendLayout();
             this.panel19.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
-            this.pnl_New_Error_Reporting_To.SuspendLayout();
-            this.panel20.SuspendLayout();
             this.panel4.SuspendLayout();
             this.tbl_Layout_Accept_New_Error.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -244,7 +247,6 @@
             this.panel12.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             this.panel14.SuspendLayout();
-            this.panel15.SuspendLayout();
             this.pnl_Dispute_Dates.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
@@ -253,8 +255,15 @@
             this.panel9.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
             this.panel17.SuspendLayout();
-            this.panel18.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.flowLayoutPanel3.SuspendLayout();
+            this.flowLayoutPanel4.SuspendLayout();
+            this.pnl_New_Error_Reporting_To.SuspendLayout();
+            this.panel21.SuspendLayout();
+            this.flowLayoutPanel5.SuspendLayout();
+            this.panel15.SuspendLayout();
+            this.flowLayoutPanel6.SuspendLayout();
+            this.panel18.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -270,7 +279,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1366, 580);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(957, 666);
             this.tableLayoutPanel1.TabIndex = 85;
             // 
             // panel2
@@ -279,7 +288,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 45);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1360, 532);
+            this.panel2.Size = new System.Drawing.Size(951, 618);
             this.panel2.TabIndex = 1;
             // 
             // tabControl1
@@ -290,9 +299,10 @@
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.MinimumSize = new System.Drawing.Size(961, 618);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1360, 532);
+            this.tabControl1.Size = new System.Drawing.Size(961, 618);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -303,7 +313,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 27);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1355, 501);
+            this.tabPage1.Size = new System.Drawing.Size(953, 587);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "New Errors";
             // 
@@ -319,7 +329,7 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 140F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1349, 495);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(947, 581);
             this.tableLayoutPanel2.TabIndex = 84;
             // 
             // panel3
@@ -328,7 +338,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1343, 349);
+            this.panel3.Size = new System.Drawing.Size(941, 435);
             this.panel3.TabIndex = 0;
             // 
             // tableLayoutPanel3
@@ -341,18 +351,18 @@
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 88F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 105F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1343, 349);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(941, 435);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // panel6
             // 
             this.panel6.Controls.Add(this.Grd_New_Errors);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(3, 91);
+            this.panel6.Location = new System.Drawing.Point(3, 108);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1337, 255);
+            this.panel6.Size = new System.Drawing.Size(935, 324);
             this.panel6.TabIndex = 1;
             // 
             // Grd_New_Errors
@@ -401,7 +411,7 @@
             this.Grd_New_Errors.RowHeadersVisible = false;
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.Grd_New_Errors.RowsDefaultCellStyle = dataGridViewCellStyle12;
-            this.Grd_New_Errors.Size = new System.Drawing.Size(1337, 255);
+            this.Grd_New_Errors.Size = new System.Drawing.Size(935, 324);
             this.Grd_New_Errors.TabIndex = 83;
             this.Grd_New_Errors.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grd_New_Errors_CellClick);
             // 
@@ -565,7 +575,7 @@
             this.pnl_User_Role.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_User_Role.Location = new System.Drawing.Point(3, 3);
             this.pnl_User_Role.Name = "pnl_User_Role";
-            this.pnl_User_Role.Size = new System.Drawing.Size(1337, 82);
+            this.pnl_User_Role.Size = new System.Drawing.Size(935, 99);
             this.pnl_User_Role.TabIndex = 0;
             // 
             // tableLayoutPanel4
@@ -581,16 +591,17 @@
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.83562F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 56.16438F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1337, 82);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(935, 99);
             this.tableLayoutPanel4.TabIndex = 190;
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.lbl_Sub_New_Error_Header);
+            this.panel5.Controls.Add(this.btn_Export_New_Errors);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(3, 3);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1331, 29);
+            this.panel5.Size = new System.Drawing.Size(929, 37);
             this.panel5.TabIndex = 0;
             // 
             // lbl_Sub_New_Error_Header
@@ -598,7 +609,7 @@
             this.lbl_Sub_New_Error_Header.AutoSize = true;
             this.lbl_Sub_New_Error_Header.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Sub_New_Error_Header.ForeColor = System.Drawing.Color.Navy;
-            this.lbl_Sub_New_Error_Header.Location = new System.Drawing.Point(565, 2);
+            this.lbl_Sub_New_Error_Header.Location = new System.Drawing.Point(487, 9);
             this.lbl_Sub_New_Error_Header.Name = "lbl_Sub_New_Error_Header";
             this.lbl_Sub_New_Error_Header.Size = new System.Drawing.Size(52, 18);
             this.lbl_Sub_New_Error_Header.TabIndex = 189;
@@ -608,59 +619,45 @@
             // 
             this.panel19.Controls.Add(this.tableLayoutPanel10);
             this.panel19.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel19.Location = new System.Drawing.Point(3, 38);
+            this.panel19.Location = new System.Drawing.Point(3, 46);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(1331, 41);
+            this.panel19.Size = new System.Drawing.Size(929, 50);
             this.panel19.TabIndex = 1;
             // 
             // tableLayoutPanel10
             // 
             this.tableLayoutPanel10.ColumnCount = 2;
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 295F));
-            this.tableLayoutPanel10.Controls.Add(this.pnl_New_Error_Reporting_To, 0, 0);
-            this.tableLayoutPanel10.Controls.Add(this.panel20, 1, 0);
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 220F));
+            this.tableLayoutPanel10.Controls.Add(this.flowLayoutPanel3, 1, 0);
+            this.tableLayoutPanel10.Controls.Add(this.flowLayoutPanel4, 0, 0);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel10.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 1;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(1331, 41);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(929, 50);
             this.tableLayoutPanel10.TabIndex = 0;
-            // 
-            // pnl_New_Error_Reporting_To
-            // 
-            this.pnl_New_Error_Reporting_To.Controls.Add(this.ddlErrorFrom);
-            this.pnl_New_Error_Reporting_To.Controls.Add(this.label5);
-            this.pnl_New_Error_Reporting_To.Controls.Add(this.btn_Export_New_Errors);
-            this.pnl_New_Error_Reporting_To.Controls.Add(this.ddl_NewErrors_Error_On_User);
-            this.pnl_New_Error_Reporting_To.Controls.Add(this.label3);
-            this.pnl_New_Error_Reporting_To.Controls.Add(this.ddl_New_Error_Reporting_User_Name);
-            this.pnl_New_Error_Reporting_To.Controls.Add(this.label2);
-            this.pnl_New_Error_Reporting_To.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_New_Error_Reporting_To.Location = new System.Drawing.Point(3, 3);
-            this.pnl_New_Error_Reporting_To.Name = "pnl_New_Error_Reporting_To";
-            this.pnl_New_Error_Reporting_To.Size = new System.Drawing.Size(1030, 35);
-            this.pnl_New_Error_Reporting_To.TabIndex = 188;
-            this.pnl_New_Error_Reporting_To.Visible = false;
             // 
             // ddlErrorFrom
             // 
+            this.ddlErrorFrom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ddlErrorFrom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlErrorFrom.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddlErrorFrom.FormattingEnabled = true;
-            this.ddlErrorFrom.Location = new System.Drawing.Point(708, 2);
+            this.ddlErrorFrom.Location = new System.Drawing.Point(590, 4);
             this.ddlErrorFrom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ddlErrorFrom.Name = "ddlErrorFrom";
-            this.ddlErrorFrom.Size = new System.Drawing.Size(201, 28);
+            this.ddlErrorFrom.Size = new System.Drawing.Size(106, 28);
             this.ddlErrorFrom.TabIndex = 191;
             this.ddlErrorFrom.SelectionChangeCommitted += new System.EventHandler(this.ddlErrorFrom_SelectionChangeCommitted);
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(624, 5);
+            this.label5.Location = new System.Drawing.Point(506, 8);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 20);
@@ -670,12 +667,13 @@
             // btn_Export_New_Errors
             // 
             this.btn_Export_New_Errors.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.btn_Export_New_Errors.Dock = System.Windows.Forms.DockStyle.Right;
             this.btn_Export_New_Errors.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Export_New_Errors.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Export_New_Errors.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Export_New_Errors.Location = new System.Drawing.Point(916, 3);
+            this.btn_Export_New_Errors.Location = new System.Drawing.Point(846, 0);
             this.btn_Export_New_Errors.Name = "btn_Export_New_Errors";
-            this.btn_Export_New_Errors.Size = new System.Drawing.Size(91, 32);
+            this.btn_Export_New_Errors.Size = new System.Drawing.Size(83, 37);
             this.btn_Export_New_Errors.TabIndex = 185;
             this.btn_Export_New_Errors.Text = "Export";
             this.btn_Export_New_Errors.UseVisualStyleBackColor = false;
@@ -683,21 +681,27 @@
             // 
             // ddl_NewErrors_Error_On_User
             // 
+            this.ddl_NewErrors_Error_On_User.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ddl_NewErrors_Error_On_User.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_NewErrors_Error_On_User.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_NewErrors_Error_On_User.FormattingEnabled = true;
-            this.ddl_NewErrors_Error_On_User.Location = new System.Drawing.Point(415, 3);
+            this.ddl_NewErrors_Error_On_User.Location = new System.Drawing.Point(357, 5);
             this.ddl_NewErrors_Error_On_User.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ddl_NewErrors_Error_On_User.Name = "ddl_NewErrors_Error_On_User";
-            this.ddl_NewErrors_Error_On_User.Size = new System.Drawing.Size(201, 28);
+            this.ddl_NewErrors_Error_On_User.Size = new System.Drawing.Size(149, 28);
             this.ddl_NewErrors_Error_On_User.TabIndex = 189;
             this.ddl_NewErrors_Error_On_User.SelectionChangeCommitted += new System.EventHandler(this.ddl_NewErrors_Error_On_User_SelectionChangeCommitted);
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(309, 5);
+            this.label3.Location = new System.Drawing.Point(262, 8);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 20);
@@ -706,39 +710,38 @@
             // 
             // ddl_New_Error_Reporting_User_Name
             // 
+            this.ddl_New_Error_Reporting_User_Name.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ddl_New_Error_Reporting_User_Name.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_New_Error_Reporting_User_Name.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_New_Error_Reporting_User_Name.FormattingEnabled = true;
-            this.ddl_New_Error_Reporting_User_Name.Location = new System.Drawing.Point(100, 2);
+            this.ddl_New_Error_Reporting_User_Name.Location = new System.Drawing.Point(94, 5);
             this.ddl_New_Error_Reporting_User_Name.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ddl_New_Error_Reporting_User_Name.Name = "ddl_New_Error_Reporting_User_Name";
-            this.ddl_New_Error_Reporting_User_Name.Size = new System.Drawing.Size(201, 28);
+            this.ddl_New_Error_Reporting_User_Name.Size = new System.Drawing.Size(162, 28);
             this.ddl_New_Error_Reporting_User_Name.TabIndex = 187;
             this.ddl_New_Error_Reporting_User_Name.SelectionChangeCommitted += new System.EventHandler(this.ddl_New_Error_Reporting_User_Name_SelectionChangeCommitted);
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 5);
+            this.label2.Location = new System.Drawing.Point(4, 8);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 20);
             this.label2.TabIndex = 186;
             this.label2.Text = "Reporting To :";
             // 
-            // panel20
-            // 
-            this.panel20.Controls.Add(this.btn_My_Errors);
-            this.panel20.Controls.Add(this.btn_All_User_Errors);
-            this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel20.Location = new System.Drawing.Point(1039, 3);
-            this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(289, 35);
-            this.panel20.TabIndex = 189;
-            // 
             // btn_My_Errors
             // 
+            this.btn_My_Errors.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_My_Errors.BackColor = System.Drawing.Color.Transparent;
             this.btn_My_Errors.BackgroundImage = global::Ordermanagement_01.Properties.Resources.blueboxbutton;
             this.btn_My_Errors.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -746,38 +749,22 @@
             this.btn_My_Errors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_My_Errors.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_My_Errors.ForeColor = System.Drawing.Color.White;
-            this.btn_My_Errors.Location = new System.Drawing.Point(2, 2);
+            this.btn_My_Errors.Location = new System.Drawing.Point(2, 4);
             this.btn_My_Errors.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btn_My_Errors.Name = "btn_My_Errors";
-            this.btn_My_Errors.Size = new System.Drawing.Size(134, 32);
+            this.btn_My_Errors.Size = new System.Drawing.Size(96, 31);
             this.btn_My_Errors.TabIndex = 178;
             this.btn_My_Errors.Text = "My Errors";
             this.btn_My_Errors.UseVisualStyleBackColor = false;
             this.btn_My_Errors.Click += new System.EventHandler(this.btn_My_Errors_Click);
             // 
-            // btn_All_User_Errors
-            // 
-            this.btn_All_User_Errors.BackColor = System.Drawing.Color.Transparent;
-            this.btn_All_User_Errors.BackgroundImage = global::Ordermanagement_01.Properties.Resources.Redboxbutton;
-            this.btn_All_User_Errors.FlatAppearance.BorderSize = 0;
-            this.btn_All_User_Errors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_All_User_Errors.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_All_User_Errors.ForeColor = System.Drawing.Color.White;
-            this.btn_All_User_Errors.Location = new System.Drawing.Point(141, 2);
-            this.btn_All_User_Errors.Name = "btn_All_User_Errors";
-            this.btn_All_User_Errors.Size = new System.Drawing.Size(134, 32);
-            this.btn_All_User_Errors.TabIndex = 179;
-            this.btn_All_User_Errors.Text = "All User Errors";
-            this.btn_All_User_Errors.UseVisualStyleBackColor = false;
-            this.btn_All_User_Errors.Click += new System.EventHandler(this.btn_All_User_Errors_Click);
-            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.tbl_Layout_Accept_New_Error);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(3, 358);
+            this.panel4.Location = new System.Drawing.Point(3, 444);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1343, 134);
+            this.panel4.Size = new System.Drawing.Size(941, 134);
             this.panel4.TabIndex = 1;
             // 
             // tbl_Layout_Accept_New_Error
@@ -792,7 +779,7 @@
             this.tbl_Layout_Accept_New_Error.RowCount = 2;
             this.tbl_Layout_Accept_New_Error.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 90F));
             this.tbl_Layout_Accept_New_Error.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tbl_Layout_Accept_New_Error.Size = new System.Drawing.Size(1343, 134);
+            this.tbl_Layout_Accept_New_Error.Size = new System.Drawing.Size(941, 134);
             this.tbl_Layout_Accept_New_Error.TabIndex = 0;
             // 
             // panel8
@@ -801,7 +788,7 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(3, 93);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1337, 38);
+            this.panel8.Size = new System.Drawing.Size(935, 38);
             this.panel8.TabIndex = 1;
             // 
             // flowLayoutPanel1
@@ -812,7 +799,7 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1337, 38);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(935, 38);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // btn_New_Error_Reject
@@ -822,7 +809,7 @@
             this.btn_New_Error_Reject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_New_Error_Reject.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_New_Error_Reject.ForeColor = System.Drawing.Color.White;
-            this.btn_New_Error_Reject.Location = new System.Drawing.Point(1249, 3);
+            this.btn_New_Error_Reject.Location = new System.Drawing.Point(847, 3);
             this.btn_New_Error_Reject.Name = "btn_New_Error_Reject";
             this.btn_New_Error_Reject.Size = new System.Drawing.Size(85, 32);
             this.btn_New_Error_Reject.TabIndex = 86;
@@ -837,7 +824,7 @@
             this.btn_New_Error_Accept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_New_Error_Accept.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_New_Error_Accept.ForeColor = System.Drawing.Color.White;
-            this.btn_New_Error_Accept.Location = new System.Drawing.Point(1161, 3);
+            this.btn_New_Error_Accept.Location = new System.Drawing.Point(759, 3);
             this.btn_New_Error_Accept.Name = "btn_New_Error_Accept";
             this.btn_New_Error_Accept.Size = new System.Drawing.Size(82, 32);
             this.btn_New_Error_Accept.TabIndex = 85;
@@ -852,7 +839,7 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(3, 3);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1337, 84);
+            this.panel7.Size = new System.Drawing.Size(935, 84);
             this.panel7.TabIndex = 0;
             // 
             // label27
@@ -874,7 +861,7 @@
             this.txt_User_New_Error_Comments.Location = new System.Drawing.Point(0, 22);
             this.txt_User_New_Error_Comments.Multiline = true;
             this.txt_User_New_Error_Comments.Name = "txt_User_New_Error_Comments";
-            this.txt_User_New_Error_Comments.Size = new System.Drawing.Size(1337, 62);
+            this.txt_User_New_Error_Comments.Size = new System.Drawing.Size(935, 62);
             this.txt_User_New_Error_Comments.TabIndex = 83;
             // 
             // tabPage3
@@ -883,7 +870,7 @@
             this.tabPage3.Controls.Add(this.tableLayoutPanel6);
             this.tabPage3.Location = new System.Drawing.Point(4, 27);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1352, 501);
+            this.tabPage3.Size = new System.Drawing.Size(953, 587);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Dispute";
             // 
@@ -900,7 +887,7 @@
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 94F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(1352, 501);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(953, 587);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
             // panel11
@@ -909,7 +896,7 @@
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel11.Location = new System.Drawing.Point(3, 97);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(1346, 401);
+            this.panel11.Size = new System.Drawing.Size(947, 487);
             this.panel11.TabIndex = 1;
             // 
             // tableLayoutPanel7
@@ -925,7 +912,7 @@
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 130F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(1346, 401);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(947, 487);
             this.tableLayoutPanel7.TabIndex = 0;
             // 
             // tbl_Layout_Dispute_Accept
@@ -936,13 +923,13 @@
             this.tbl_Layout_Dispute_Accept.Controls.Add(this.panel13, 0, 0);
             this.tbl_Layout_Dispute_Accept.Controls.Add(this.flowLayoutPanel2, 0, 1);
             this.tbl_Layout_Dispute_Accept.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbl_Layout_Dispute_Accept.Location = new System.Drawing.Point(3, 274);
+            this.tbl_Layout_Dispute_Accept.Location = new System.Drawing.Point(3, 360);
             this.tbl_Layout_Dispute_Accept.Name = "tbl_Layout_Dispute_Accept";
             this.tbl_Layout_Dispute_Accept.RowCount = 2;
             this.tbl_Layout_Dispute_Accept.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tbl_Layout_Dispute_Accept.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
             this.tbl_Layout_Dispute_Accept.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tbl_Layout_Dispute_Accept.Size = new System.Drawing.Size(1340, 124);
+            this.tbl_Layout_Dispute_Accept.Size = new System.Drawing.Size(941, 124);
             this.tbl_Layout_Dispute_Accept.TabIndex = 85;
             // 
             // panel13
@@ -952,7 +939,7 @@
             this.panel13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel13.Location = new System.Drawing.Point(3, 3);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(1334, 73);
+            this.panel13.Size = new System.Drawing.Size(935, 73);
             this.panel13.TabIndex = 1;
             // 
             // label4
@@ -974,7 +961,7 @@
             this.txt_Manager_Reject_Comments.Location = new System.Drawing.Point(0, 23);
             this.txt_Manager_Reject_Comments.Multiline = true;
             this.txt_Manager_Reject_Comments.Name = "txt_Manager_Reject_Comments";
-            this.txt_Manager_Reject_Comments.Size = new System.Drawing.Size(1334, 50);
+            this.txt_Manager_Reject_Comments.Size = new System.Drawing.Size(935, 50);
             this.txt_Manager_Reject_Comments.TabIndex = 83;
             // 
             // flowLayoutPanel2
@@ -985,7 +972,7 @@
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 82);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(1334, 39);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(935, 39);
             this.flowLayoutPanel2.TabIndex = 2;
             // 
             // btn_Dispute
@@ -995,7 +982,7 @@
             this.btn_Dispute.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Dispute.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Dispute.ForeColor = System.Drawing.Color.White;
-            this.btn_Dispute.Location = new System.Drawing.Point(1246, 3);
+            this.btn_Dispute.Location = new System.Drawing.Point(847, 3);
             this.btn_Dispute.Name = "btn_Dispute";
             this.btn_Dispute.Size = new System.Drawing.Size(85, 32);
             this.btn_Dispute.TabIndex = 88;
@@ -1010,7 +997,7 @@
             this.btn_Approve.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Approve.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Approve.ForeColor = System.Drawing.Color.White;
-            this.btn_Approve.Location = new System.Drawing.Point(1158, 3);
+            this.btn_Approve.Location = new System.Drawing.Point(759, 3);
             this.btn_Approve.Name = "btn_Approve";
             this.btn_Approve.Size = new System.Drawing.Size(82, 32);
             this.btn_Approve.TabIndex = 87;
@@ -1024,7 +1011,7 @@
             this.panel16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel16.Location = new System.Drawing.Point(3, 3);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(1340, 265);
+            this.panel16.Size = new System.Drawing.Size(941, 351);
             this.panel16.TabIndex = 86;
             // 
             // Grid_Disputed_Errors
@@ -1079,7 +1066,7 @@
             this.Grid_Disputed_Errors.RowHeadersVisible = false;
             dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.Grid_Disputed_Errors.RowsDefaultCellStyle = dataGridViewCellStyle14;
-            this.Grid_Disputed_Errors.Size = new System.Drawing.Size(1340, 265);
+            this.Grid_Disputed_Errors.Size = new System.Drawing.Size(941, 351);
             this.Grid_Disputed_Errors.TabIndex = 85;
             this.Grid_Disputed_Errors.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_Disputed_Errors_CellClick);
             // 
@@ -1272,7 +1259,7 @@
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel12.Location = new System.Drawing.Point(3, 3);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(1346, 88);
+            this.panel12.Size = new System.Drawing.Size(947, 88);
             this.panel12.TabIndex = 0;
             // 
             // tableLayoutPanel8
@@ -1281,30 +1268,41 @@
             this.tableLayoutPanel8.ColumnCount = 1;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 86.07116F));
             this.tableLayoutPanel8.Controls.Add(this.panel14, 0, 0);
-            this.tableLayoutPanel8.Controls.Add(this.panel15, 0, 1);
+            this.tableLayoutPanel8.Controls.Add(this.flowLayoutPanel5, 0, 1);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel8.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 2;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.86364F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.13636F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(1346, 88);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(947, 88);
             this.tableLayoutPanel8.TabIndex = 190;
             // 
             // panel14
             // 
+            this.panel14.Controls.Add(this.lbl_Dispute_Reporting_To);
             this.panel14.Controls.Add(this.label6);
             this.panel14.Controls.Add(this.lbl_Dispute_Error_Header);
             this.panel14.Controls.Add(this.ddl_Dispute_Reporting_Username);
             this.panel14.Controls.Add(this.ddlDisputeErrorFrom);
-            this.panel14.Controls.Add(this.lbl_Dispute_Reporting_To);
             this.panel14.Controls.Add(this.lbl_Dispute_ErrorOnUser);
             this.panel14.Controls.Add(this.ddl_Dispute_ErrorOnUser);
             this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel14.Location = new System.Drawing.Point(3, 3);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(1340, 36);
+            this.panel14.Size = new System.Drawing.Size(941, 37);
             this.panel14.TabIndex = 0;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(731, 8);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 20);
+            this.label6.TabIndex = 192;
+            this.label6.Text = "Error From:";
             // 
             // lbl_Dispute_Error_Header
             // 
@@ -1317,40 +1315,64 @@
             this.lbl_Dispute_Error_Header.TabIndex = 190;
             this.lbl_Dispute_Error_Header.Text = "label3";
             // 
-            // panel15
-            // 
-            this.panel15.Controls.Add(this.btn_Dispute_Export);
-            this.panel15.Controls.Add(this.btn_All_Dispute);
-            this.panel15.Controls.Add(this.btn_My_Dispute);
-            this.panel15.Controls.Add(this.pnl_Dispute_Dates);
-            this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel15.Location = new System.Drawing.Point(3, 45);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(1340, 40);
-            this.panel15.TabIndex = 1;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(836, 7);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 20);
-            this.label6.TabIndex = 192;
-            this.label6.Text = "Error From:";
-            // 
             // ddl_Dispute_Reporting_Username
             // 
             this.ddl_Dispute_Reporting_Username.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_Dispute_Reporting_Username.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_Dispute_Reporting_Username.FormattingEnabled = true;
-            this.ddl_Dispute_Reporting_Username.Location = new System.Drawing.Point(333, 4);
+            this.ddl_Dispute_Reporting_Username.Location = new System.Drawing.Point(286, 4);
             this.ddl_Dispute_Reporting_Username.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ddl_Dispute_Reporting_Username.Name = "ddl_Dispute_Reporting_Username";
-            this.ddl_Dispute_Reporting_Username.Size = new System.Drawing.Size(203, 28);
+            this.ddl_Dispute_Reporting_Username.Size = new System.Drawing.Size(169, 28);
             this.ddl_Dispute_Reporting_Username.TabIndex = 183;
             this.ddl_Dispute_Reporting_Username.SelectionChangeCommitted += new System.EventHandler(this.ddl_Dispute_Reporting_Username_SelectionChangeCommitted);
+            // 
+            // ddlDisputeErrorFrom
+            // 
+            this.ddlDisputeErrorFrom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ddlDisputeErrorFrom.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ddlDisputeErrorFrom.FormattingEnabled = true;
+            this.ddlDisputeErrorFrom.Location = new System.Drawing.Point(810, 4);
+            this.ddlDisputeErrorFrom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ddlDisputeErrorFrom.Name = "ddlDisputeErrorFrom";
+            this.ddlDisputeErrorFrom.Size = new System.Drawing.Size(129, 28);
+            this.ddlDisputeErrorFrom.TabIndex = 193;
+            this.ddlDisputeErrorFrom.SelectionChangeCommitted += new System.EventHandler(this.ddlDisputeErrorFrom_SelectionChangeCommitted);
+            // 
+            // lbl_Dispute_Reporting_To
+            // 
+            this.lbl_Dispute_Reporting_To.AutoSize = true;
+            this.lbl_Dispute_Reporting_To.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Dispute_Reporting_To.Location = new System.Drawing.Point(186, 8);
+            this.lbl_Dispute_Reporting_To.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_Dispute_Reporting_To.Name = "lbl_Dispute_Reporting_To";
+            this.lbl_Dispute_Reporting_To.Size = new System.Drawing.Size(93, 20);
+            this.lbl_Dispute_Reporting_To.TabIndex = 182;
+            this.lbl_Dispute_Reporting_To.Text = "Reporting To :";
+            // 
+            // lbl_Dispute_ErrorOnUser
+            // 
+            this.lbl_Dispute_ErrorOnUser.AutoSize = true;
+            this.lbl_Dispute_ErrorOnUser.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Dispute_ErrorOnUser.Location = new System.Drawing.Point(459, 8);
+            this.lbl_Dispute_ErrorOnUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_Dispute_ErrorOnUser.Name = "lbl_Dispute_ErrorOnUser";
+            this.lbl_Dispute_ErrorOnUser.Size = new System.Drawing.Size(98, 20);
+            this.lbl_Dispute_ErrorOnUser.TabIndex = 188;
+            this.lbl_Dispute_ErrorOnUser.Text = "Error On User :";
+            // 
+            // ddl_Dispute_ErrorOnUser
+            // 
+            this.ddl_Dispute_ErrorOnUser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ddl_Dispute_ErrorOnUser.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ddl_Dispute_ErrorOnUser.FormattingEnabled = true;
+            this.ddl_Dispute_ErrorOnUser.Location = new System.Drawing.Point(557, 4);
+            this.ddl_Dispute_ErrorOnUser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ddl_Dispute_ErrorOnUser.Name = "ddl_Dispute_ErrorOnUser";
+            this.ddl_Dispute_ErrorOnUser.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.ddl_Dispute_ErrorOnUser.Size = new System.Drawing.Size(174, 28);
+            this.ddl_Dispute_ErrorOnUser.TabIndex = 189;
+            this.ddl_Dispute_ErrorOnUser.SelectionChangeCommitted += new System.EventHandler(this.ddl_Dispute_ErrorOnUser_SelectionChangeCommitted);
             // 
             // btn_Dispute_Export
             // 
@@ -1358,9 +1380,9 @@
             this.btn_Dispute_Export.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Dispute_Export.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Dispute_Export.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Dispute_Export.Location = new System.Drawing.Point(885, 11);
+            this.btn_Dispute_Export.Location = new System.Drawing.Point(604, 5);
             this.btn_Dispute_Export.Name = "btn_Dispute_Export";
-            this.btn_Dispute_Export.Size = new System.Drawing.Size(77, 25);
+            this.btn_Dispute_Export.Size = new System.Drawing.Size(77, 28);
             this.btn_Dispute_Export.TabIndex = 89;
             this.btn_Dispute_Export.Text = "Export";
             this.btn_Dispute_Export.UseVisualStyleBackColor = false;
@@ -1374,9 +1396,9 @@
             this.btn_All_Dispute.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_All_Dispute.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_All_Dispute.ForeColor = System.Drawing.Color.White;
-            this.btn_All_Dispute.Location = new System.Drawing.Point(1224, 4);
+            this.btn_All_Dispute.Location = new System.Drawing.Point(824, 3);
             this.btn_All_Dispute.Name = "btn_All_Dispute";
-            this.btn_All_Dispute.Size = new System.Drawing.Size(113, 32);
+            this.btn_All_Dispute.Size = new System.Drawing.Size(110, 29);
             this.btn_All_Dispute.TabIndex = 181;
             this.btn_All_Dispute.Text = "All Dispute";
             this.btn_All_Dispute.UseVisualStyleBackColor = false;
@@ -1391,61 +1413,14 @@
             this.btn_My_Dispute.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_My_Dispute.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_My_Dispute.ForeColor = System.Drawing.Color.White;
-            this.btn_My_Dispute.Location = new System.Drawing.Point(1104, 4);
+            this.btn_My_Dispute.Location = new System.Drawing.Point(704, 4);
             this.btn_My_Dispute.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btn_My_Dispute.Name = "btn_My_Dispute";
-            this.btn_My_Dispute.Size = new System.Drawing.Size(115, 32);
+            this.btn_My_Dispute.Size = new System.Drawing.Size(115, 29);
             this.btn_My_Dispute.TabIndex = 180;
             this.btn_My_Dispute.Text = "My Dispute";
             this.btn_My_Dispute.UseVisualStyleBackColor = false;
             this.btn_My_Dispute.Click += new System.EventHandler(this.btn_My_Dispute_Click);
-            // 
-            // ddl_Dispute_ErrorOnUser
-            // 
-            this.ddl_Dispute_ErrorOnUser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ddl_Dispute_ErrorOnUser.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ddl_Dispute_ErrorOnUser.FormattingEnabled = true;
-            this.ddl_Dispute_ErrorOnUser.Location = new System.Drawing.Point(650, 4);
-            this.ddl_Dispute_ErrorOnUser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ddl_Dispute_ErrorOnUser.Name = "ddl_Dispute_ErrorOnUser";
-            this.ddl_Dispute_ErrorOnUser.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.ddl_Dispute_ErrorOnUser.Size = new System.Drawing.Size(178, 28);
-            this.ddl_Dispute_ErrorOnUser.TabIndex = 189;
-            this.ddl_Dispute_ErrorOnUser.SelectionChangeCommitted += new System.EventHandler(this.ddl_Dispute_ErrorOnUser_SelectionChangeCommitted);
-            // 
-            // lbl_Dispute_Reporting_To
-            // 
-            this.lbl_Dispute_Reporting_To.AutoSize = true;
-            this.lbl_Dispute_Reporting_To.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Dispute_Reporting_To.Location = new System.Drawing.Point(232, 7);
-            this.lbl_Dispute_Reporting_To.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_Dispute_Reporting_To.Name = "lbl_Dispute_Reporting_To";
-            this.lbl_Dispute_Reporting_To.Size = new System.Drawing.Size(93, 20);
-            this.lbl_Dispute_Reporting_To.TabIndex = 182;
-            this.lbl_Dispute_Reporting_To.Text = "Reporting To :";
-            // 
-            // lbl_Dispute_ErrorOnUser
-            // 
-            this.lbl_Dispute_ErrorOnUser.AutoSize = true;
-            this.lbl_Dispute_ErrorOnUser.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Dispute_ErrorOnUser.Location = new System.Drawing.Point(544, 7);
-            this.lbl_Dispute_ErrorOnUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_Dispute_ErrorOnUser.Name = "lbl_Dispute_ErrorOnUser";
-            this.lbl_Dispute_ErrorOnUser.Size = new System.Drawing.Size(98, 20);
-            this.lbl_Dispute_ErrorOnUser.TabIndex = 188;
-            this.lbl_Dispute_ErrorOnUser.Text = "Error On User :";
-            // 
-            // ddlDisputeErrorFrom
-            // 
-            this.ddlDisputeErrorFrom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ddlDisputeErrorFrom.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ddlDisputeErrorFrom.FormattingEnabled = true;
-            this.ddlDisputeErrorFrom.Location = new System.Drawing.Point(920, 4);
-            this.ddlDisputeErrorFrom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ddlDisputeErrorFrom.Name = "ddlDisputeErrorFrom";
-            this.ddlDisputeErrorFrom.Size = new System.Drawing.Size(188, 28);
-            this.ddlDisputeErrorFrom.TabIndex = 193;
-            this.ddlDisputeErrorFrom.SelectionChangeCommitted += new System.EventHandler(this.ddlDisputeErrorFrom_SelectionChangeCommitted);
             // 
             // pnl_Dispute_Dates
             // 
@@ -1454,7 +1429,7 @@
             this.pnl_Dispute_Dates.Controls.Add(this.txt_Dispute_To_Date);
             this.pnl_Dispute_Dates.Controls.Add(this.label9);
             this.pnl_Dispute_Dates.Controls.Add(this.txt_Dispute_From_Date);
-            this.pnl_Dispute_Dates.Location = new System.Drawing.Point(408, 6);
+            this.pnl_Dispute_Dates.Location = new System.Drawing.Point(130, 2);
             this.pnl_Dispute_Dates.Name = "pnl_Dispute_Dates";
             this.pnl_Dispute_Dates.Size = new System.Drawing.Size(471, 33);
             this.pnl_Dispute_Dates.TabIndex = 184;
@@ -1466,9 +1441,9 @@
             this.btn_Dispute_Vew.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Dispute_Vew.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Dispute_Vew.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Dispute_Vew.Location = new System.Drawing.Point(379, 5);
+            this.btn_Dispute_Vew.Location = new System.Drawing.Point(391, 2);
             this.btn_Dispute_Vew.Name = "btn_Dispute_Vew";
-            this.btn_Dispute_Vew.Size = new System.Drawing.Size(80, 25);
+            this.btn_Dispute_Vew.Size = new System.Drawing.Size(77, 28);
             this.btn_Dispute_Vew.TabIndex = 92;
             this.btn_Dispute_Vew.Text = "Submit";
             this.btn_Dispute_Vew.UseVisualStyleBackColor = false;
@@ -1523,7 +1498,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 27);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1355, 501);
+            this.tabPage2.Size = new System.Drawing.Size(953, 587);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Errors Report";
             // 
@@ -1540,7 +1515,7 @@
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 95F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1349, 495);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(947, 581);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // panel10
@@ -1549,7 +1524,7 @@
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel10.Location = new System.Drawing.Point(3, 98);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(1343, 394);
+            this.panel10.Size = new System.Drawing.Size(941, 480);
             this.panel10.TabIndex = 1;
             // 
             // Grid_Error
@@ -1603,7 +1578,7 @@
             this.Grid_Error.RowHeadersVisible = false;
             dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.Grid_Error.RowsDefaultCellStyle = dataGridViewCellStyle16;
-            this.Grid_Error.Size = new System.Drawing.Size(1343, 394);
+            this.Grid_Error.Size = new System.Drawing.Size(941, 480);
             this.Grid_Error.TabIndex = 86;
             this.Grid_Error.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_Error_CellClick);
             // 
@@ -1787,7 +1762,7 @@
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(3, 3);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(1343, 89);
+            this.panel9.Size = new System.Drawing.Size(941, 89);
             this.panel9.TabIndex = 0;
             // 
             // tableLayoutPanel9
@@ -1796,14 +1771,14 @@
             this.tableLayoutPanel9.ColumnCount = 1;
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel9.Controls.Add(this.panel17, 0, 0);
-            this.tableLayoutPanel9.Controls.Add(this.panel18, 0, 1);
+            this.tableLayoutPanel9.Controls.Add(this.flowLayoutPanel6, 0, 1);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel9.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 2;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.4382F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.5618F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(1343, 89);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(941, 89);
             this.tableLayoutPanel9.TabIndex = 194;
             // 
             // panel17
@@ -1815,10 +1790,9 @@
             this.panel17.Controls.Add(this.ddl_Error_Report_ErrorOnUser);
             this.panel17.Controls.Add(this.lbl_Error_User_Name);
             this.panel17.Controls.Add(this.ddl_Errors_Reporting_User_Name);
-            this.panel17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel17.Location = new System.Drawing.Point(3, 3);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(1337, 37);
+            this.panel17.Size = new System.Drawing.Size(903, 37);
             this.panel17.TabIndex = 0;
             // 
             // ddlReportsErrorFrom
@@ -1826,10 +1800,10 @@
             this.ddlReportsErrorFrom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlReportsErrorFrom.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddlReportsErrorFrom.FormattingEnabled = true;
-            this.ddlReportsErrorFrom.Location = new System.Drawing.Point(906, 4);
+            this.ddlReportsErrorFrom.Location = new System.Drawing.Point(781, 2);
             this.ddlReportsErrorFrom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ddlReportsErrorFrom.Name = "ddlReportsErrorFrom";
-            this.ddlReportsErrorFrom.Size = new System.Drawing.Size(201, 28);
+            this.ddlReportsErrorFrom.Size = new System.Drawing.Size(118, 28);
             this.ddlReportsErrorFrom.TabIndex = 195;
             this.ddlReportsErrorFrom.SelectionChangeCommitted += new System.EventHandler(this.ddlReportsErrorFrom_SelectionChangeCommitted);
             // 
@@ -1837,7 +1811,7 @@
             // 
             this.lblErrorFrom.AutoSize = true;
             this.lblErrorFrom.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErrorFrom.Location = new System.Drawing.Point(822, 7);
+            this.lblErrorFrom.Location = new System.Drawing.Point(706, 5);
             this.lblErrorFrom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblErrorFrom.Name = "lblErrorFrom";
             this.lblErrorFrom.Size = new System.Drawing.Size(76, 20);
@@ -1848,7 +1822,7 @@
             // 
             this.lbl_Error_Reporting_To.AutoSize = true;
             this.lbl_Error_Reporting_To.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Error_Reporting_To.Location = new System.Drawing.Point(214, 7);
+            this.lbl_Error_Reporting_To.Location = new System.Drawing.Point(144, 5);
             this.lbl_Error_Reporting_To.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Error_Reporting_To.Name = "lbl_Error_Reporting_To";
             this.lbl_Error_Reporting_To.Size = new System.Drawing.Size(93, 20);
@@ -1871,10 +1845,10 @@
             this.ddl_Error_Report_ErrorOnUser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_Error_Report_ErrorOnUser.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_Error_Report_ErrorOnUser.FormattingEnabled = true;
-            this.ddl_Error_Report_ErrorOnUser.Location = new System.Drawing.Point(621, 4);
+            this.ddl_Error_Report_ErrorOnUser.Location = new System.Drawing.Point(520, 2);
             this.ddl_Error_Report_ErrorOnUser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ddl_Error_Report_ErrorOnUser.Name = "ddl_Error_Report_ErrorOnUser";
-            this.ddl_Error_Report_ErrorOnUser.Size = new System.Drawing.Size(193, 28);
+            this.ddl_Error_Report_ErrorOnUser.Size = new System.Drawing.Size(178, 28);
             this.ddl_Error_Report_ErrorOnUser.TabIndex = 193;
             this.ddl_Error_Report_ErrorOnUser.SelectionChangeCommitted += new System.EventHandler(this.ddl_Error_Report_ErrorOnUser_SelectionChangeCommitted);
             // 
@@ -1882,7 +1856,7 @@
             // 
             this.lbl_Error_User_Name.AutoSize = true;
             this.lbl_Error_User_Name.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Error_User_Name.Location = new System.Drawing.Point(515, 7);
+            this.lbl_Error_User_Name.Location = new System.Drawing.Point(414, 5);
             this.lbl_Error_User_Name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Error_User_Name.Name = "lbl_Error_User_Name";
             this.lbl_Error_User_Name.Size = new System.Drawing.Size(98, 20);
@@ -1894,132 +1868,12 @@
             this.ddl_Errors_Reporting_User_Name.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_Errors_Reporting_User_Name.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_Errors_Reporting_User_Name.FormattingEnabled = true;
-            this.ddl_Errors_Reporting_User_Name.Location = new System.Drawing.Point(315, 4);
+            this.ddl_Errors_Reporting_User_Name.Location = new System.Drawing.Point(245, 2);
             this.ddl_Errors_Reporting_User_Name.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ddl_Errors_Reporting_User_Name.Name = "ddl_Errors_Reporting_User_Name";
-            this.ddl_Errors_Reporting_User_Name.Size = new System.Drawing.Size(192, 28);
+            this.ddl_Errors_Reporting_User_Name.Size = new System.Drawing.Size(161, 28);
             this.ddl_Errors_Reporting_User_Name.TabIndex = 189;
             this.ddl_Errors_Reporting_User_Name.SelectionChangeCommitted += new System.EventHandler(this.ddl_Errors_Reporting_User_Name_SelectionChangeCommitted);
-            // 
-            // panel18
-            // 
-            this.panel18.Controls.Add(this.btn_All_Error_Report);
-            this.panel18.Controls.Add(this.btn_All_Employee_Report);
-            this.panel18.Controls.Add(this.btn_Accepted_Error_Submit);
-            this.panel18.Controls.Add(this.btn_My_Error_Report);
-            this.panel18.Controls.Add(this.label36);
-            this.panel18.Controls.Add(this.label37);
-            this.panel18.Controls.Add(this.txt_Accepted_Second_Date);
-            this.panel18.Controls.Add(this.txt_Accepted_First_date);
-            this.panel18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel18.Location = new System.Drawing.Point(3, 46);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(1337, 40);
-            this.panel18.TabIndex = 1;
-            // 
-            // btn_All_Error_Report
-            // 
-            this.btn_All_Error_Report.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btn_All_Error_Report.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_All_Error_Report.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_All_Error_Report.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_All_Error_Report.Location = new System.Drawing.Point(826, 9);
-            this.btn_All_Error_Report.Name = "btn_All_Error_Report";
-            this.btn_All_Error_Report.Size = new System.Drawing.Size(81, 25);
-            this.btn_All_Error_Report.TabIndex = 89;
-            this.btn_All_Error_Report.Text = "Export";
-            this.btn_All_Error_Report.UseVisualStyleBackColor = false;
-            this.btn_All_Error_Report.Click += new System.EventHandler(this.btn_All_Error_Report_Click);
-            // 
-            // btn_All_Employee_Report
-            // 
-            this.btn_All_Employee_Report.BackColor = System.Drawing.Color.Transparent;
-            this.btn_All_Employee_Report.BackgroundImage = global::Ordermanagement_01.Properties.Resources.Redboxbutton;
-            this.btn_All_Employee_Report.FlatAppearance.BorderSize = 0;
-            this.btn_All_Employee_Report.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_All_Employee_Report.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_All_Employee_Report.ForeColor = System.Drawing.Color.White;
-            this.btn_All_Employee_Report.Location = new System.Drawing.Point(1178, 5);
-            this.btn_All_Employee_Report.Name = "btn_All_Employee_Report";
-            this.btn_All_Employee_Report.Size = new System.Drawing.Size(144, 30);
-            this.btn_All_Employee_Report.TabIndex = 191;
-            this.btn_All_Employee_Report.Text = "All Error Reports";
-            this.btn_All_Employee_Report.UseVisualStyleBackColor = false;
-            this.btn_All_Employee_Report.Click += new System.EventHandler(this.btn_All_Employee_Report_Click);
-            // 
-            // btn_Accepted_Error_Submit
-            // 
-            this.btn_Accepted_Error_Submit.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btn_Accepted_Error_Submit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Accepted_Error_Submit.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Accepted_Error_Submit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Accepted_Error_Submit.Location = new System.Drawing.Point(748, 9);
-            this.btn_Accepted_Error_Submit.Name = "btn_Accepted_Error_Submit";
-            this.btn_Accepted_Error_Submit.Size = new System.Drawing.Size(72, 25);
-            this.btn_Accepted_Error_Submit.TabIndex = 88;
-            this.btn_Accepted_Error_Submit.Text = "Submit";
-            this.btn_Accepted_Error_Submit.UseVisualStyleBackColor = false;
-            this.btn_Accepted_Error_Submit.Click += new System.EventHandler(this.btn_Accepted_Error_Submit_Click);
-            // 
-            // btn_My_Error_Report
-            // 
-            this.btn_My_Error_Report.BackColor = System.Drawing.Color.Transparent;
-            this.btn_My_Error_Report.BackgroundImage = global::Ordermanagement_01.Properties.Resources.blueboxbutton;
-            this.btn_My_Error_Report.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_My_Error_Report.FlatAppearance.BorderSize = 0;
-            this.btn_My_Error_Report.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_My_Error_Report.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_My_Error_Report.ForeColor = System.Drawing.Color.White;
-            this.btn_My_Error_Report.Location = new System.Drawing.Point(1041, 5);
-            this.btn_My_Error_Report.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btn_My_Error_Report.Name = "btn_My_Error_Report";
-            this.btn_My_Error_Report.Size = new System.Drawing.Size(133, 30);
-            this.btn_My_Error_Report.TabIndex = 190;
-            this.btn_My_Error_Report.Text = "My Error Report";
-            this.btn_My_Error_Report.UseVisualStyleBackColor = false;
-            this.btn_My_Error_Report.Click += new System.EventHandler(this.btn_My_Error_Report_Click);
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(373, 11);
-            this.label36.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(77, 20);
-            this.label36.TabIndex = 85;
-            this.label36.Text = "From Date :";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(569, 11);
-            this.label37.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(62, 20);
-            this.label37.TabIndex = 87;
-            this.label37.Text = "To Date :";
-            // 
-            // txt_Accepted_Second_Date
-            // 
-            this.txt_Accepted_Second_Date.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Accepted_Second_Date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txt_Accepted_Second_Date.Location = new System.Drawing.Point(637, 8);
-            this.txt_Accepted_Second_Date.Name = "txt_Accepted_Second_Date";
-            this.txt_Accepted_Second_Date.Size = new System.Drawing.Size(105, 25);
-            this.txt_Accepted_Second_Date.TabIndex = 86;
-            this.txt_Accepted_Second_Date.Value = new System.DateTime(2015, 1, 13, 20, 59, 0, 0);
-            // 
-            // txt_Accepted_First_date
-            // 
-            this.txt_Accepted_First_date.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Accepted_First_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txt_Accepted_First_date.Location = new System.Drawing.Point(457, 8);
-            this.txt_Accepted_First_date.Name = "txt_Accepted_First_date";
-            this.txt_Accepted_First_date.Size = new System.Drawing.Size(105, 25);
-            this.txt_Accepted_First_date.TabIndex = 84;
-            this.txt_Accepted_First_date.Value = new System.DateTime(2015, 1, 13, 20, 59, 0, 0);
             // 
             // panel1
             // 
@@ -2029,7 +1883,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1360, 36);
+            this.panel1.Size = new System.Drawing.Size(951, 36);
             this.panel1.TabIndex = 0;
             // 
             // btn_Error_Analysis_Report
@@ -2037,14 +1891,15 @@
             this.btn_Error_Analysis_Report.BackColor = System.Drawing.Color.Transparent;
             this.btn_Error_Analysis_Report.BackgroundImage = global::Ordermanagement_01.Properties.Resources.blueboxbutton;
             this.btn_Error_Analysis_Report.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Error_Analysis_Report.Dock = System.Windows.Forms.DockStyle.Right;
             this.btn_Error_Analysis_Report.FlatAppearance.BorderSize = 0;
             this.btn_Error_Analysis_Report.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Error_Analysis_Report.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Error_Analysis_Report.ForeColor = System.Drawing.Color.White;
-            this.btn_Error_Analysis_Report.Location = new System.Drawing.Point(1163, 1);
+            this.btn_Error_Analysis_Report.Location = new System.Drawing.Point(767, 0);
             this.btn_Error_Analysis_Report.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btn_Error_Analysis_Report.Name = "btn_Error_Analysis_Report";
-            this.btn_Error_Analysis_Report.Size = new System.Drawing.Size(184, 32);
+            this.btn_Error_Analysis_Report.Size = new System.Drawing.Size(184, 36);
             this.btn_Error_Analysis_Report.TabIndex = 179;
             this.btn_Error_Analysis_Report.Text = "Error Analysis Report";
             this.btn_Error_Analysis_Report.UseVisualStyleBackColor = false;
@@ -2070,19 +1925,231 @@
             // 
             this.label1.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Navy;
-            this.label1.Location = new System.Drawing.Point(526, -4);
+            this.label1.Location = new System.Drawing.Point(329, -3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(298, 37);
             this.label1.TabIndex = 84;
             this.label1.Text = "EMPLOYEE ERROR DASHBOARD";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.Controls.Add(this.panel21);
+            this.flowLayoutPanel3.Controls.Add(this.panel20);
+            this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(712, 3);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(214, 44);
+            this.flowLayoutPanel3.TabIndex = 0;
+            this.flowLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel3_Paint);
+            // 
+            // flowLayoutPanel4
+            // 
+            this.flowLayoutPanel4.Controls.Add(this.pnl_New_Error_Reporting_To);
+            this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(703, 44);
+            this.flowLayoutPanel4.TabIndex = 84;
+            // 
+            // pnl_New_Error_Reporting_To
+            // 
+            this.pnl_New_Error_Reporting_To.Controls.Add(this.ddlErrorFrom);
+            this.pnl_New_Error_Reporting_To.Controls.Add(this.label5);
+            this.pnl_New_Error_Reporting_To.Controls.Add(this.ddl_NewErrors_Error_On_User);
+            this.pnl_New_Error_Reporting_To.Controls.Add(this.label3);
+            this.pnl_New_Error_Reporting_To.Controls.Add(this.ddl_New_Error_Reporting_User_Name);
+            this.pnl_New_Error_Reporting_To.Controls.Add(this.label2);
+            this.pnl_New_Error_Reporting_To.Location = new System.Drawing.Point(3, 3);
+            this.pnl_New_Error_Reporting_To.Name = "pnl_New_Error_Reporting_To";
+            this.pnl_New_Error_Reporting_To.Size = new System.Drawing.Size(700, 38);
+            this.pnl_New_Error_Reporting_To.TabIndex = 189;
+            this.pnl_New_Error_Reporting_To.Visible = false;
+            // 
+            // panel20
+            // 
+            this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel20.Location = new System.Drawing.Point(3, 47);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(247, 0);
+            this.panel20.TabIndex = 191;
+            // 
+            // panel21
+            // 
+            this.panel21.Controls.Add(this.btn_My_Errors);
+            this.panel21.Controls.Add(this.btn_All_User_Errors);
+            this.panel21.Location = new System.Drawing.Point(3, 3);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(209, 38);
+            this.panel21.TabIndex = 192;
+            // 
+            // btn_All_User_Errors
+            // 
+            this.btn_All_User_Errors.BackColor = System.Drawing.Color.Transparent;
+            this.btn_All_User_Errors.BackgroundImage = global::Ordermanagement_01.Properties.Resources.Redboxbutton;
+            this.btn_All_User_Errors.FlatAppearance.BorderSize = 0;
+            this.btn_All_User_Errors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_All_User_Errors.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_All_User_Errors.ForeColor = System.Drawing.Color.White;
+            this.btn_All_User_Errors.Location = new System.Drawing.Point(103, 4);
+            this.btn_All_User_Errors.Name = "btn_All_User_Errors";
+            this.btn_All_User_Errors.Size = new System.Drawing.Size(103, 30);
+            this.btn_All_User_Errors.TabIndex = 179;
+            this.btn_All_User_Errors.Text = "All User Errors";
+            this.btn_All_User_Errors.UseVisualStyleBackColor = false;
+            this.btn_All_User_Errors.Click += new System.EventHandler(this.btn_All_User_Errors_Click);
+            // 
+            // flowLayoutPanel5
+            // 
+            this.flowLayoutPanel5.Controls.Add(this.panel15);
+            this.flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 46);
+            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(941, 39);
+            this.flowLayoutPanel5.TabIndex = 1;
+            // 
+            // panel15
+            // 
+            this.panel15.Controls.Add(this.pnl_Dispute_Dates);
+            this.panel15.Controls.Add(this.btn_All_Dispute);
+            this.panel15.Controls.Add(this.btn_My_Dispute);
+            this.panel15.Controls.Add(this.btn_Dispute_Export);
+            this.panel15.Location = new System.Drawing.Point(3, 3);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(937, 36);
+            this.panel15.TabIndex = 0;
+            // 
+            // flowLayoutPanel6
+            // 
+            this.flowLayoutPanel6.Controls.Add(this.panel18);
+            this.flowLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(3, 46);
+            this.flowLayoutPanel6.Name = "flowLayoutPanel6";
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(935, 40);
+            this.flowLayoutPanel6.TabIndex = 1;
+            // 
+            // panel18
+            // 
+            this.panel18.Controls.Add(this.btn_All_Error_Report);
+            this.panel18.Controls.Add(this.btn_All_Employee_Report);
+            this.panel18.Controls.Add(this.btn_Accepted_Error_Submit);
+            this.panel18.Controls.Add(this.btn_My_Error_Report);
+            this.panel18.Controls.Add(this.label36);
+            this.panel18.Controls.Add(this.label37);
+            this.panel18.Controls.Add(this.txt_Accepted_Second_Date);
+            this.panel18.Controls.Add(this.txt_Accepted_First_date);
+            this.panel18.Location = new System.Drawing.Point(3, 3);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(899, 37);
+            this.panel18.TabIndex = 2;
+            // 
+            // btn_All_Error_Report
+            // 
+            this.btn_All_Error_Report.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.btn_All_Error_Report.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_All_Error_Report.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_All_Error_Report.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_All_Error_Report.Location = new System.Drawing.Point(642, 9);
+            this.btn_All_Error_Report.Name = "btn_All_Error_Report";
+            this.btn_All_Error_Report.Size = new System.Drawing.Size(81, 25);
+            this.btn_All_Error_Report.TabIndex = 89;
+            this.btn_All_Error_Report.Text = "Export";
+            this.btn_All_Error_Report.UseVisualStyleBackColor = false;
+            // 
+            // btn_All_Employee_Report
+            // 
+            this.btn_All_Employee_Report.BackColor = System.Drawing.Color.Transparent;
+            this.btn_All_Employee_Report.BackgroundImage = global::Ordermanagement_01.Properties.Resources.Redboxbutton;
+            this.btn_All_Employee_Report.FlatAppearance.BorderSize = 0;
+            this.btn_All_Employee_Report.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_All_Employee_Report.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_All_Employee_Report.ForeColor = System.Drawing.Color.White;
+            this.btn_All_Employee_Report.Location = new System.Drawing.Point(1178, 5);
+            this.btn_All_Employee_Report.Name = "btn_All_Employee_Report";
+            this.btn_All_Employee_Report.Size = new System.Drawing.Size(144, 30);
+            this.btn_All_Employee_Report.TabIndex = 191;
+            this.btn_All_Employee_Report.Text = "All Error Reports";
+            this.btn_All_Employee_Report.UseVisualStyleBackColor = false;
+            // 
+            // btn_Accepted_Error_Submit
+            // 
+            this.btn_Accepted_Error_Submit.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.btn_Accepted_Error_Submit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Accepted_Error_Submit.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Accepted_Error_Submit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_Accepted_Error_Submit.Location = new System.Drawing.Point(564, 9);
+            this.btn_Accepted_Error_Submit.Name = "btn_Accepted_Error_Submit";
+            this.btn_Accepted_Error_Submit.Size = new System.Drawing.Size(72, 25);
+            this.btn_Accepted_Error_Submit.TabIndex = 88;
+            this.btn_Accepted_Error_Submit.Text = "Submit";
+            this.btn_Accepted_Error_Submit.UseVisualStyleBackColor = false;
+            // 
+            // btn_My_Error_Report
+            // 
+            this.btn_My_Error_Report.BackColor = System.Drawing.Color.Transparent;
+            this.btn_My_Error_Report.BackgroundImage = global::Ordermanagement_01.Properties.Resources.blueboxbutton;
+            this.btn_My_Error_Report.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_My_Error_Report.FlatAppearance.BorderSize = 0;
+            this.btn_My_Error_Report.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_My_Error_Report.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_My_Error_Report.ForeColor = System.Drawing.Color.White;
+            this.btn_My_Error_Report.Location = new System.Drawing.Point(1041, 5);
+            this.btn_My_Error_Report.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btn_My_Error_Report.Name = "btn_My_Error_Report";
+            this.btn_My_Error_Report.Size = new System.Drawing.Size(133, 30);
+            this.btn_My_Error_Report.TabIndex = 190;
+            this.btn_My_Error_Report.Text = "My Error Report";
+            this.btn_My_Error_Report.UseVisualStyleBackColor = false;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Location = new System.Drawing.Point(168, 11);
+            this.label36.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(77, 20);
+            this.label36.TabIndex = 85;
+            this.label36.Text = "From Date :";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.Location = new System.Drawing.Point(370, 11);
+            this.label37.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(62, 20);
+            this.label37.TabIndex = 87;
+            this.label37.Text = "To Date :";
+            // 
+            // txt_Accepted_Second_Date
+            // 
+            this.txt_Accepted_Second_Date.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Accepted_Second_Date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txt_Accepted_Second_Date.Location = new System.Drawing.Point(439, 7);
+            this.txt_Accepted_Second_Date.Name = "txt_Accepted_Second_Date";
+            this.txt_Accepted_Second_Date.Size = new System.Drawing.Size(105, 25);
+            this.txt_Accepted_Second_Date.TabIndex = 86;
+            this.txt_Accepted_Second_Date.Value = new System.DateTime(2015, 1, 13, 20, 59, 0, 0);
+            // 
+            // txt_Accepted_First_date
+            // 
+            this.txt_Accepted_First_date.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Accepted_First_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txt_Accepted_First_date.Location = new System.Drawing.Point(242, 9);
+            this.txt_Accepted_First_date.Name = "txt_Accepted_First_date";
+            this.txt_Accepted_First_date.Size = new System.Drawing.Size(105, 25);
+            this.txt_Accepted_First_date.TabIndex = 84;
+            this.txt_Accepted_First_date.Value = new System.DateTime(2015, 1, 13, 20, 59, 0, 0);
+            // 
             // Error_Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1366, 580);
+            this.ClientSize = new System.Drawing.Size(957, 666);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.MinimumSize = new System.Drawing.Size(973, 704);
             this.Name = "Error_Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Error_Dashboard";
@@ -2102,9 +2169,6 @@
             this.panel5.PerformLayout();
             this.panel19.ResumeLayout(false);
             this.tableLayoutPanel10.ResumeLayout(false);
-            this.pnl_New_Error_Reporting_To.ResumeLayout(false);
-            this.pnl_New_Error_Reporting_To.PerformLayout();
-            this.panel20.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.tbl_Layout_Accept_New_Error.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
@@ -2125,7 +2189,6 @@
             this.tableLayoutPanel8.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
-            this.panel15.ResumeLayout(false);
             this.pnl_Dispute_Dates.ResumeLayout(false);
             this.pnl_Dispute_Dates.PerformLayout();
             this.tabPage2.ResumeLayout(false);
@@ -2136,9 +2199,17 @@
             this.tableLayoutPanel9.ResumeLayout(false);
             this.panel17.ResumeLayout(false);
             this.panel17.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.flowLayoutPanel3.ResumeLayout(false);
+            this.flowLayoutPanel4.ResumeLayout(false);
+            this.pnl_New_Error_Reporting_To.ResumeLayout(false);
+            this.pnl_New_Error_Reporting_To.PerformLayout();
+            this.panel21.ResumeLayout(false);
+            this.flowLayoutPanel5.ResumeLayout(false);
+            this.panel15.ResumeLayout(false);
+            this.flowLayoutPanel6.ResumeLayout(false);
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2172,12 +2243,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Button btn_All_Error_Report;
-        private System.Windows.Forms.Button btn_Accepted_Error_Submit;
-        private System.Windows.Forms.Label label37;
-        internal System.Windows.Forms.DateTimePicker txt_Accepted_Second_Date;
-        private System.Windows.Forms.Label label36;
-        internal System.Windows.Forms.DateTimePicker txt_Accepted_First_date;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel12;
@@ -2191,7 +2256,6 @@
         private System.Windows.Forms.Button btn_Dispute;
         private System.Windows.Forms.Button btn_Approve;
         private System.Windows.Forms.Button btn_My_Errors;
-        internal System.Windows.Forms.Button btn_All_User_Errors;
         private System.Windows.Forms.Panel panel16;
         internal System.Windows.Forms.Button btn_All_Dispute;
         private System.Windows.Forms.Button btn_My_Dispute;
@@ -2200,7 +2264,6 @@
         private System.Windows.Forms.ComboBox ddl_New_Error_Reporting_User_Name;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_Export_New_Errors;
-        private System.Windows.Forms.Panel pnl_New_Error_Reporting_To;
         private System.Windows.Forms.Panel pnl_Dispute_Dates;
         private System.Windows.Forms.Label label8;
         internal System.Windows.Forms.DateTimePicker txt_Dispute_To_Date;
@@ -2211,8 +2274,6 @@
         private System.Windows.Forms.ComboBox ddl_Errors_Reporting_User_Name;
         private System.Windows.Forms.Label lbl_Error_Reporting_To;
         private System.Windows.Forms.DataGridView Grid_Error;
-        internal System.Windows.Forms.Button btn_All_Employee_Report;
-        private System.Windows.Forms.Button btn_My_Error_Report;
         private System.Windows.Forms.Label lbl_Sub_New_Error_Header;
         private System.Windows.Forms.ComboBox ddl_NewErrors_Error_On_User;
         private System.Windows.Forms.Label label3;
@@ -2225,14 +2286,11 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Label lbl_Dispute_Error_Header;
-        private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
         private System.Windows.Forms.Panel panel17;
-        private System.Windows.Forms.Panel panel18;
         private System.Windows.Forms.Label lbl_Error_Reprt_Header;
         private System.Windows.Forms.Panel panel19;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
-        private System.Windows.Forms.Panel panel20;
         private System.Windows.Forms.Button btn_Error_Analysis_Report;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn SNo;
@@ -2320,5 +2378,23 @@
         private System.Windows.Forms.ComboBox ddlDisputeErrorFrom;
         private System.Windows.Forms.ComboBox ddlReportsErrorFrom;
         private System.Windows.Forms.Label lblErrorFrom;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
+        private System.Windows.Forms.Panel pnl_New_Error_Reporting_To;
+        private System.Windows.Forms.Panel panel21;
+        internal System.Windows.Forms.Button btn_All_User_Errors;
+        private System.Windows.Forms.Panel panel20;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
+        private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.Button btn_All_Error_Report;
+        internal System.Windows.Forms.Button btn_All_Employee_Report;
+        private System.Windows.Forms.Button btn_Accepted_Error_Submit;
+        private System.Windows.Forms.Button btn_My_Error_Report;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label37;
+        internal System.Windows.Forms.DateTimePicker txt_Accepted_Second_Date;
+        internal System.Windows.Forms.DateTimePicker txt_Accepted_First_date;
     }
 }

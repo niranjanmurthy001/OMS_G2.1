@@ -3414,6 +3414,12 @@ namespace Ordermanagement_01.Employee
                 btn_Refresh_Click(sender, e);
             }
         }
+
+        private void flowLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void btn_Error_Analysis_Report_Click(object sender, EventArgs e)
         {
             Chart.Chart_Filter ch_report = new Chart.Chart_Filter(User_Id, User_Role, Production_Date);

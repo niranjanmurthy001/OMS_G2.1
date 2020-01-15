@@ -19,6 +19,11 @@ using DevExpress.Utils;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using Ordermanagement_01.CommentCard;
 using Ordermanagement_01.Models;
+using Ordermanagement_01.Masters;
+using System.Net.Http;
+using Newtonsoft.Json;
+using System.Net;
+using System.Text;
 
 namespace Ordermanagement_01
 {
@@ -39,9 +44,10 @@ namespace Ordermanagement_01
         string Production_Date; string date;
         DataTable dt_Section;
         Hashtable httargetorder = new Hashtable();
-        System.Data.DataTable dttargetorder = new System.Data.DataTable();
-        System.Data.DataTable dt_Order_Details = new System.Data.DataTable();
+        DataTable dttargetorder = new DataTable();
+        DataTable dt_Order_Details = new DataTable();
         int Order_Id_value;
+        int Work_Type_Id = 1;
         int Differnce_Time, Order_ID, User_id, External_Client_Order_Id, External_Client_Order_Task_Id, Check_External_Production, Max_Time_Id;
         int Userid_value = 0, OrderStatusId = 0, Order_StatusId_Value = 0, Selected_Row_Count, Order_StatusId = 0, User_id_value = 0;
         string User_Name_value, Order_Status_Value;
@@ -49,24 +55,43 @@ namespace Ordermanagement_01
         int Sub_Process_ID, Order_Status_Id, Client_Id, Order_Type_Abs_Id, ClientId, Sub_Process_Id, Order_Task_Id, Order_Satatus_Id;
         int Emp_Job_role_Id, Emp_Sal_Cat_Id, Eff_Client_Id, Eff_Order_Type_Abs_Id, Eff_Order_Task_Id, Eff_Order_Source_Type_Id, Eff_State_Id, Eff_County_Id, Eff_Sub_Process_Id;
         string Clint, userroleid, Operation, Operation_Count, From_date, To_Date, Path1, errormessage = "", error_status = "", error_value = "", vendor_validation_msg = "", Order_Number;
-        int Work_Type_Id = 1;
-        private void gridView2_MouseEnter(object sender, EventArgs e)
-        {
-
-            //var columnIndex = gridView2.FocusedColumn.VisibleIndex;
-
-            //if (columnIndex == 17)
-            //{
-            //    System.Data.DataRow row = gridView2.GetDataRow(gridView2.FocusedRowHandle);
-            //    int Order_ID = int.Parse(row["Order_Id"].ToString());
-            //    MessageBox.Show(columnIndex.ToString());
-            //}
-
+              
+        private void gridView2_MouseMove(object sender, MouseEventArgs e)
+        {           
+            GridView view = sender as GridView;
+            GridHitInfo info = gridView2.CalcHitInfo(e.Location);
+            if(info.InRowCell==true)
+            {
+                string caption = info.Column.Caption;
+                {
+                    if (caption == "Comments")
+                    {
+                       // DataRow row = (view.GetRow(3) as DataRowView).Row;  
+                       DataRowView vie= gridView2.GetRow(info.RowHandle) as DataRowView;
+                        StringBuilder bs = new StringBuilder();
+                        if (vie.Row["Order_Comments"] != null)
+                        {
+                            string Comments = vie.Row["Order_Comments"].ToString();
+                            if (Comments != "")
+                            {
+                                string s = (bs.Append(Comments.ToString().TrimStart('@')).AppendLine()).ToString();
+                                string str = s.ToString();
+                                string _str = str.Replace("@", Environment.NewLine).ToString();
+                                toolTipController1.ShowHint(_str);
+                            }
+                            else
+                            {
+                                string message = "No Comments";
+                                toolTipController1.ShowHint(message);
+                            }
+                        }
+                    }
+                }
+            }
+            
         }
-
         private void gridView2_MouseUp(object sender, MouseEventArgs e)
         {
-
             DXMouseEventArgs ea = e as DXMouseEventArgs;
             GridView view = sender as GridView;
             GridHitInfo info = view.CalcHitInfo(ea.Location);
@@ -83,24 +108,18 @@ namespace Ordermanagement_01
                     obj_Order_Details_List.Order_Id = Order_ID;
                     obj_Order_Details_List.Work_Type_Id = Work_Type_Id;
                     Comment_Card cmd = new Comment_Card(obj_Order_Details_List);
-
                     cmd.Show();
                 }
-
             }
-        }
-
+        }     
         private void gridView2_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
         {
             if (e.RowHandle >= 0)
                 e.Info.DisplayText = (e.RowHandle + 1).ToString();
         }
-
         int Order_Status;
         string Client_Number, Tab_Type_Name = "";
-
         decimal Emp_Sal, Emp_cat_Value, Emp_Eff_Allocated_Order_Count, Eff_Order_User_Effecncy;
-
         public DailyStatus_OrderViewDetail_New(DataTable dtt, string USER_ROLE_ID, int USER_ID, string PRODUCTION_DATE, string Client_Num, int Order_Status_Id, string OPERATION, string FROM_DATE, string TO_DATE, string Date, string Tab_Name, string headerText)
         {
             InitializeComponent();
@@ -188,7 +207,6 @@ namespace Ordermanagement_01
                 }
             }
         }
-
         DataTable CreatePivotTable()
         {
             Random rnd = new Random();
@@ -198,8 +216,6 @@ namespace Ordermanagement_01
 
             return dt;
         }
-
-
         private void DailyStatus_OrderViewDetail_New_Load(object sender, EventArgs e)
         {
             SplashScreenManager.ShowForm(this, typeof(Ordermanagement_01.Masters.WaitForm1), true, true, false);
@@ -227,8 +243,6 @@ namespace Ordermanagement_01
             }
 
         }
-
-
         protected void Get_Client_Wise_Production_Count_Orders_To_GridviewBind()
         {
 
@@ -300,7 +314,6 @@ namespace Ordermanagement_01
                 //grd_Targetorder.DataSource = null;
             }
         }
-
         public void SetupLookup()
         {
             //DevExpress.XtraEditors.Controls.LookUpColumnInfo col1;
@@ -335,7 +348,6 @@ namespace Ordermanagement_01
             lookUpEdit1.Properties.Columns.Add(col);
 
         }
-
         public void Bind_Order_Status_For_Reallocate()
         {
             Hashtable ht_OrderStatus = new Hashtable();
@@ -364,7 +376,6 @@ namespace Ordermanagement_01
             lookUpEdit2.Properties.Columns.Add(col_1);
 
         }
-
         private void btnExport_Click(object sender, EventArgs e)
         {
             //  load_Progressbar.Start_progres();
@@ -377,7 +388,6 @@ namespace Ordermanagement_01
                 XtraMessageBox.Show("No Records were found to export", "Message", MessageBoxButtons.OK);
             }            
         }
-
         void PrintingSystem_XlSheetCreated(object sender, XlSheetCreatedEventArgs e)
         {
             if (e.Index == 0)
@@ -389,7 +399,6 @@ namespace Ordermanagement_01
                 e.SheetName = "Custom-OrderView-Details";
             }
         }
-
         private void Export_ReportData()
         {
             pivotGridControl1.OptionsView.ShowFilterHeaders = false;
@@ -486,7 +495,6 @@ namespace Ordermanagement_01
             //}
 
         }
-
         //private void grd_Targetorder_Click(object sender, EventArgs e)
         //{
         //    var columnIndex = gridView9.FocusedColumn.VisibleIndex;
@@ -502,7 +510,6 @@ namespace Ordermanagement_01
 
 
         //}
-
         private void gridView2_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
         {
             var columnIndex = gridView2.FocusedColumn.VisibleIndex;
@@ -584,8 +591,6 @@ namespace Ordermanagement_01
             }
 
         }
-
-
         private void gridView2_CustomSummaryCalculate(object sender, DevExpress.Data.CustomSummaryEventArgs e)
         {
             //Initialization.
@@ -599,26 +604,21 @@ namespace Ordermanagement_01
                 e.TotalValue = String.Format("{0} of {1}", gridView2.SelectedRowsCount, gridView2.RowCount);
             label4.Text = e.TotalValue.ToString();
         }
-
         struct GroupRowHash
         {
             public object GroupValue;
             public int GroupRowHandle;
         };
-
         Dictionary<int, Dictionary<GroupRowHash, int>> commonCache = new Dictionary<int, Dictionary<GroupRowHash, int>>();
-
+        public Rectangle TheRequiredArea { get; private set; }
         private void gridView2_CustomColumnDisplayText(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs e)
         {
             if (e.GroupRowHandle != GridControl.InvalidRowHandle)
             {
                 GridView view = sender as GridView;
                 e.DisplayText += string.Format("[{0}/{1}]", GetcheckedChildRowsCount(e, view, GetCheckedChildRowsCache(e)), GetFullChildRowsCount(view, e.GroupRowHandle));
-
-
             }
         }
-
         private Dictionary<GroupRowHash, int> GetCheckedChildRowsCache(DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs e)
         {
             Dictionary<GroupRowHash, int> checkedChildRowsCache;
@@ -631,7 +631,6 @@ namespace Ordermanagement_01
             }
             return checkedChildRowsCache;
         }
-
         private int GetcheckedChildRowsCount(DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs e, GridView view, Dictionary<GroupRowHash, int> checkedChildRowsCache)
         {
             int checkedChildRowsCount;
@@ -646,7 +645,6 @@ namespace Ordermanagement_01
                 checkedChildRowsCount = checkedChildRowsCache[key];
             return checkedChildRowsCount;
         }
-
         private int GetFullChildRowsCount(GridView view, int groupRowHandle)
         {
             int childRowCount = view.GetChildRowCount(groupRowHandle);
@@ -662,7 +660,6 @@ namespace Ordermanagement_01
             }
             return childGroupRowCount;
         }
-
         private int CalcCheckedRowsCount(GridView view, int groupRowHandle, int childRowsCount)
         {
             int nextChildHandle;
@@ -678,8 +675,6 @@ namespace Ordermanagement_01
             }
             return checkedChildCount;
         }
-
-
         private void ClearCache()
         {
             commonCache.Clear();
@@ -701,12 +696,10 @@ namespace Ordermanagement_01
 
 
         }
-
         private void gridView2_EndGrouping(object sender, EventArgs e)
         {
             ClearCache();
         }
-
         private void pivotGridControl1_CellClick(object sender, PivotCellEventArgs e)
         {
             //SplashScreenManager.ShowForm(this, typeof(Ordermanagement_01.Masters.WaitForm1), true, true, false);
@@ -776,9 +769,6 @@ namespace Ordermanagement_01
             //}
 
         }
-
-
-
         DataTable GetDataTable(GridView view)
         {
             DataTable dt_1 = new DataTable();
@@ -792,8 +782,7 @@ namespace Ordermanagement_01
                 dt_1.Rows.Add(rowValues);
             }
             return dt_1;
-        }
-
+        }    
         private PopupContainerControl CreatePopupControl()
         {
             PopupContainerControl result = new PopupContainerControl();
@@ -805,7 +794,6 @@ namespace Ordermanagement_01
             result.Controls.Add(ddc);
             return result;
         }
-
         private void repositoryItemPopupContainerEdit1_QueryPopUp(object sender, CancelEventArgs e)
         {
             PopupContainerEdit editor = (PopupContainerEdit)sender;
@@ -814,7 +802,6 @@ namespace Ordermanagement_01
             ddc.DataSource = pivotGridControl1.Cells.GetFocusedCellInfo().CreateDrillDownDataSource();
 
         }
-
         private void repositoryItemPopupContainerEdit1_CloseUp(object sender, CloseUpEventArgs e)
         {
             PopupContainerEdit editor = (PopupContainerEdit)sender;
@@ -826,7 +813,6 @@ namespace Ordermanagement_01
                 ddc.DataSource = null;
             }
         }
-
         private void gridView5_RowCellClick(object sender, RowCellClickEventArgs e)
         {
             var columnIndex = gridView5.FocusedColumn.VisibleIndex;
@@ -844,7 +830,6 @@ namespace Ordermanagement_01
             }
 
         }
-
         private void btnExport_New_Click(object sender, EventArgs e)
         {
 
@@ -862,8 +847,6 @@ namespace Ordermanagement_01
 
 
         }
-
-
         private void gridView5_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
             if (e.Column.Caption == "SI.NO")
@@ -879,7 +862,6 @@ namespace Ordermanagement_01
                 }
             }
         }
-
         // -------------------10-apr-2019
         private void Get_Effecncy_Category()
         {
@@ -921,7 +903,6 @@ namespace Ordermanagement_01
             }
 
         }
-
         private void Get_Employee_Details()
         {
 
@@ -963,7 +944,6 @@ namespace Ordermanagement_01
             }
 
         }
-
         private void Get_Order_Source_Type_For_Effeciency()
         {
 
@@ -1274,8 +1254,6 @@ namespace Ordermanagement_01
                 }
             }
         }
-
-
         private bool Validate()
         {
             object obj = lookUpEdit1.EditValue;
@@ -1971,7 +1949,6 @@ namespace Ordermanagement_01
 
 
         }
-
         //private void btn_Reallocate_Submit_Click(object sender, EventArgs e)
         //{
         //    // int a=0;
@@ -2600,7 +2577,6 @@ namespace Ordermanagement_01
 
             label4.Text = gridView2.SelectedRowsCount.ToString();
         }
-
         private void btn_Clear_Click(object sender, EventArgs e)
         {
 
@@ -2617,7 +2593,6 @@ namespace Ordermanagement_01
                 DevExpress.XtraEditors.XtraMessageBox.Show(defaultLookAndFeel1.LookAndFeel, this, "Something Went Wrong Please Check .", "Warning", MessageBoxButtons.OK);
             }
         }
-
         private void btn_Deallocate_Click(object sender, EventArgs e)
         {
 
@@ -3205,9 +3180,5 @@ namespace Ordermanagement_01
 
 
         }
-
-
-
-
     }
 }

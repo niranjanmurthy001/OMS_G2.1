@@ -169,6 +169,7 @@
             this.ddl_Order_Source = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.BtnInstruction = new System.Windows.Forms.Button();
             this.tableLayoutPanel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_Comments)).BeginInit();
@@ -608,6 +609,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.BtnInstruction);
             this.panel2.Controls.Add(this.lbl_Task_Type);
             this.panel2.Controls.Add(this.label35);
             this.panel2.Controls.Add(this.label1);
@@ -1813,6 +1815,21 @@
             this.label14.TabIndex = 20;
             this.label14.Text = "Effective Date :";
             // 
+            // BtnInstruction
+            // 
+            this.BtnInstruction.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnInstruction.BackgroundImage")));
+            this.BtnInstruction.FlatAppearance.BorderSize = 0;
+            this.BtnInstruction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnInstruction.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold);
+            this.BtnInstruction.ForeColor = System.Drawing.Color.White;
+            this.BtnInstruction.Location = new System.Drawing.Point(1018, -3);
+            this.BtnInstruction.Name = "BtnInstruction";
+            this.BtnInstruction.Size = new System.Drawing.Size(130, 38);
+            this.BtnInstruction.TabIndex = 75;
+            this.BtnInstruction.Text = "Order Instruction";
+            this.BtnInstruction.UseVisualStyleBackColor = true;
+            this.BtnInstruction.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Employee_Order_Entry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1995,5 +2012,6 @@
         private System.Windows.Forms.TextBox txt_Tax_Comments;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Button btn_TypingEntry;
+        private System.Windows.Forms.Button BtnInstruction;
     }
 }

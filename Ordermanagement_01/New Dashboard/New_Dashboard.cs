@@ -1308,7 +1308,7 @@ namespace Ordermanagement_01.New_Dashboard
             else if (Tile_Item_SuperQc.Checked == true)
             {
 
-                SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
+                SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
                 Check_Item_Status("SuperQc");
 
                 lbl_Order_Header.Text = "Super Qc Orders Queue";
@@ -1320,7 +1320,7 @@ namespace Ordermanagement_01.New_Dashboard
             }
             else if (Tile_Item_Test.Checked == true)
             {
-                SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
+                SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
                 Check_Item_Status("Test");
                 lbl_Order_Header.Text = "Test Orders Queue";
                 Work_Type_Id = 4;

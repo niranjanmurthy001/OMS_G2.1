@@ -31737,6 +31737,12 @@ namespace Ordermanagement_01
             txt_Todate.Value = DateTime.Now;
         }
 
+        private void emailSettingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Ordermanagement_01.New_Dashboard.Settings.EmailSettings emailSetting = new New_Dashboard.Settings.EmailSettings();
+            emailSetting.Show();
+        }
+
         private void AdminDashboard_KeyDown(object sender,System.Windows.Forms. KeyEventArgs e)
         {
             if (((Keyboard.IsKeyDown(Key.RightAlt)) || (Keyboard.IsKeyDown(Key.LeftAlt))) && (Keyboard.IsKeyDown(Key.L)))

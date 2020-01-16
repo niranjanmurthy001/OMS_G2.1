@@ -11899,6 +11899,11 @@ namespace Ordermanagement_01.Chart
             }
         }
 
+        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void chk_All_State_Click(object sender, EventArgs e)
         {
             //Necessary to end the edit mode of the Cell.

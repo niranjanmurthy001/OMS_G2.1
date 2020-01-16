@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -72,16 +72,22 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lbl_Sub_New_Error_Header = new System.Windows.Forms.Label();
+            this.btn_Export_New_Errors = new System.Windows.Forms.Button();
             this.panel19 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.btn_My_Errors = new System.Windows.Forms.Button();
+            this.btn_All_User_Errors = new System.Windows.Forms.Button();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnl_New_Error_Reporting_To = new System.Windows.Forms.Panel();
             this.ddlErrorFrom = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.btn_Export_New_Errors = new System.Windows.Forms.Button();
             this.ddl_NewErrors_Error_On_User = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.ddl_New_Error_Reporting_User_Name = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btn_My_Errors = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tbl_Layout_Accept_New_Error = new System.Windows.Forms.TableLayoutPanel();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -136,22 +142,24 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.panel14 = new System.Windows.Forms.Panel();
+            this.lbl_Dispute_Reporting_To = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lbl_Dispute_Error_Header = new System.Windows.Forms.Label();
             this.ddl_Dispute_Reporting_Username = new System.Windows.Forms.ComboBox();
             this.ddlDisputeErrorFrom = new System.Windows.Forms.ComboBox();
-            this.lbl_Dispute_Reporting_To = new System.Windows.Forms.Label();
             this.lbl_Dispute_ErrorOnUser = new System.Windows.Forms.Label();
             this.ddl_Dispute_ErrorOnUser = new System.Windows.Forms.ComboBox();
-            this.btn_Dispute_Export = new System.Windows.Forms.Button();
-            this.btn_All_Dispute = new System.Windows.Forms.Button();
-            this.btn_My_Dispute = new System.Windows.Forms.Button();
+            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel15 = new System.Windows.Forms.Panel();
             this.pnl_Dispute_Dates = new System.Windows.Forms.Panel();
             this.btn_Dispute_Vew = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txt_Dispute_To_Date = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.txt_Dispute_From_Date = new System.Windows.Forms.DateTimePicker();
+            this.btn_All_Dispute = new System.Windows.Forms.Button();
+            this.btn_My_Dispute = new System.Windows.Forms.Button();
+            this.btn_Dispute_Export = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.panel10 = new System.Windows.Forms.Panel();
@@ -194,18 +202,6 @@
             this.ddl_Error_Report_ErrorOnUser = new System.Windows.Forms.ComboBox();
             this.lbl_Error_User_Name = new System.Windows.Forms.Label();
             this.ddl_Errors_Reporting_User_Name = new System.Windows.Forms.ComboBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_Error_Analysis_Report = new System.Windows.Forms.Button();
-            this.btn_Refresh = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
-            this.pnl_New_Error_Reporting_To = new System.Windows.Forms.Panel();
-            this.panel20 = new System.Windows.Forms.Panel();
-            this.panel21 = new System.Windows.Forms.Panel();
-            this.btn_All_User_Errors = new System.Windows.Forms.Button();
-            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel15 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel18 = new System.Windows.Forms.Panel();
             this.btn_All_Error_Report = new System.Windows.Forms.Button();
@@ -216,6 +212,10 @@
             this.label37 = new System.Windows.Forms.Label();
             this.txt_Accepted_Second_Date = new System.Windows.Forms.DateTimePicker();
             this.txt_Accepted_First_date = new System.Windows.Forms.DateTimePicker();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_Error_Analysis_Report = new System.Windows.Forms.Button();
+            this.btn_Refresh = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -230,6 +230,10 @@
             this.panel5.SuspendLayout();
             this.panel19.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
+            this.flowLayoutPanel3.SuspendLayout();
+            this.panel21.SuspendLayout();
+            this.flowLayoutPanel4.SuspendLayout();
+            this.pnl_New_Error_Reporting_To.SuspendLayout();
             this.panel4.SuspendLayout();
             this.tbl_Layout_Accept_New_Error.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -247,6 +251,8 @@
             this.panel12.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             this.panel14.SuspendLayout();
+            this.flowLayoutPanel5.SuspendLayout();
+            this.panel15.SuspendLayout();
             this.pnl_Dispute_Dates.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
@@ -255,15 +261,9 @@
             this.panel9.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
             this.panel17.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.flowLayoutPanel3.SuspendLayout();
-            this.flowLayoutPanel4.SuspendLayout();
-            this.pnl_New_Error_Reporting_To.SuspendLayout();
-            this.panel21.SuspendLayout();
-            this.flowLayoutPanel5.SuspendLayout();
-            this.panel15.SuspendLayout();
             this.flowLayoutPanel6.SuspendLayout();
             this.panel18.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -371,14 +371,14 @@
             this.Grd_New_Errors.AllowUserToAddRows = false;
             this.Grd_New_Errors.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.Grd_New_Errors.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grd_New_Errors.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grd_New_Errors.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.Grd_New_Errors.ColumnHeadersHeight = 29;
             this.Grd_New_Errors.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column9,
@@ -409,8 +409,8 @@
             this.Grd_New_Errors.Name = "Grd_New_Errors";
             this.Grd_New_Errors.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.Grd_New_Errors.RowHeadersVisible = false;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Grd_New_Errors.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Grd_New_Errors.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.Grd_New_Errors.Size = new System.Drawing.Size(935, 324);
             this.Grd_New_Errors.TabIndex = 83;
             this.Grd_New_Errors.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grd_New_Errors_CellClick);
@@ -503,9 +503,9 @@
             // 
             // Error_Entered_On_User_Branch_Name
             // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Error_Entered_On_User_Branch_Name.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Error_Entered_On_User_Branch_Name.DefaultCellStyle = dataGridViewCellStyle2;
             this.Error_Entered_On_User_Branch_Name.HeaderText = "Branch Name Error On User";
             this.Error_Entered_On_User_Branch_Name.Name = "Error_Entered_On_User_Branch_Name";
             this.Error_Entered_On_User_Branch_Name.Width = 180;
@@ -530,9 +530,9 @@
             // 
             // Column6
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column6.HeaderText = "Error Entered From Task";
             this.Column6.Name = "Column6";
             this.Column6.Visible = false;
@@ -615,6 +615,21 @@
             this.lbl_Sub_New_Error_Header.TabIndex = 189;
             this.lbl_Sub_New_Error_Header.Text = "label3";
             // 
+            // btn_Export_New_Errors
+            // 
+            this.btn_Export_New_Errors.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.btn_Export_New_Errors.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_Export_New_Errors.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Export_New_Errors.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Export_New_Errors.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_Export_New_Errors.Location = new System.Drawing.Point(846, 0);
+            this.btn_Export_New_Errors.Name = "btn_Export_New_Errors";
+            this.btn_Export_New_Errors.Size = new System.Drawing.Size(83, 37);
+            this.btn_Export_New_Errors.TabIndex = 185;
+            this.btn_Export_New_Errors.Text = "Export";
+            this.btn_Export_New_Errors.UseVisualStyleBackColor = false;
+            this.btn_Export_New_Errors.Click += new System.EventHandler(this.btn_Export_New_Errors_Click);
+            // 
             // panel19
             // 
             this.panel19.Controls.Add(this.tableLayoutPanel10);
@@ -638,6 +653,94 @@
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel10.Size = new System.Drawing.Size(929, 50);
             this.tableLayoutPanel10.TabIndex = 0;
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.Controls.Add(this.panel21);
+            this.flowLayoutPanel3.Controls.Add(this.panel20);
+            this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(712, 3);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(214, 44);
+            this.flowLayoutPanel3.TabIndex = 0;
+            this.flowLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel3_Paint);
+            // 
+            // panel21
+            // 
+            this.panel21.Controls.Add(this.btn_My_Errors);
+            this.panel21.Controls.Add(this.btn_All_User_Errors);
+            this.panel21.Location = new System.Drawing.Point(3, 3);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(209, 38);
+            this.panel21.TabIndex = 192;
+            // 
+            // btn_My_Errors
+            // 
+            this.btn_My_Errors.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_My_Errors.BackColor = System.Drawing.Color.Transparent;
+            this.btn_My_Errors.BackgroundImage = global::Ordermanagement_01.Properties.Resources.blueboxbutton;
+            this.btn_My_Errors.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_My_Errors.FlatAppearance.BorderSize = 0;
+            this.btn_My_Errors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_My_Errors.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_My_Errors.ForeColor = System.Drawing.Color.White;
+            this.btn_My_Errors.Location = new System.Drawing.Point(2, 4);
+            this.btn_My_Errors.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btn_My_Errors.Name = "btn_My_Errors";
+            this.btn_My_Errors.Size = new System.Drawing.Size(96, 31);
+            this.btn_My_Errors.TabIndex = 178;
+            this.btn_My_Errors.Text = "My Errors";
+            this.btn_My_Errors.UseVisualStyleBackColor = false;
+            this.btn_My_Errors.Click += new System.EventHandler(this.btn_My_Errors_Click);
+            // 
+            // btn_All_User_Errors
+            // 
+            this.btn_All_User_Errors.BackColor = System.Drawing.Color.Transparent;
+            this.btn_All_User_Errors.BackgroundImage = global::Ordermanagement_01.Properties.Resources.Redboxbutton;
+            this.btn_All_User_Errors.FlatAppearance.BorderSize = 0;
+            this.btn_All_User_Errors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_All_User_Errors.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_All_User_Errors.ForeColor = System.Drawing.Color.White;
+            this.btn_All_User_Errors.Location = new System.Drawing.Point(103, 4);
+            this.btn_All_User_Errors.Name = "btn_All_User_Errors";
+            this.btn_All_User_Errors.Size = new System.Drawing.Size(103, 30);
+            this.btn_All_User_Errors.TabIndex = 179;
+            this.btn_All_User_Errors.Text = "All User Errors";
+            this.btn_All_User_Errors.UseVisualStyleBackColor = false;
+            this.btn_All_User_Errors.Click += new System.EventHandler(this.btn_All_User_Errors_Click);
+            // 
+            // panel20
+            // 
+            this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel20.Location = new System.Drawing.Point(3, 47);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(247, 0);
+            this.panel20.TabIndex = 191;
+            // 
+            // flowLayoutPanel4
+            // 
+            this.flowLayoutPanel4.Controls.Add(this.pnl_New_Error_Reporting_To);
+            this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(703, 44);
+            this.flowLayoutPanel4.TabIndex = 84;
+            // 
+            // pnl_New_Error_Reporting_To
+            // 
+            this.pnl_New_Error_Reporting_To.Controls.Add(this.ddlErrorFrom);
+            this.pnl_New_Error_Reporting_To.Controls.Add(this.label5);
+            this.pnl_New_Error_Reporting_To.Controls.Add(this.ddl_NewErrors_Error_On_User);
+            this.pnl_New_Error_Reporting_To.Controls.Add(this.label3);
+            this.pnl_New_Error_Reporting_To.Controls.Add(this.ddl_New_Error_Reporting_User_Name);
+            this.pnl_New_Error_Reporting_To.Controls.Add(this.label2);
+            this.pnl_New_Error_Reporting_To.Location = new System.Drawing.Point(3, 3);
+            this.pnl_New_Error_Reporting_To.Name = "pnl_New_Error_Reporting_To";
+            this.pnl_New_Error_Reporting_To.Size = new System.Drawing.Size(700, 38);
+            this.pnl_New_Error_Reporting_To.TabIndex = 189;
+            this.pnl_New_Error_Reporting_To.Visible = false;
             // 
             // ddlErrorFrom
             // 
@@ -663,21 +766,6 @@
             this.label5.Size = new System.Drawing.Size(76, 20);
             this.label5.TabIndex = 190;
             this.label5.Text = "Error From:";
-            // 
-            // btn_Export_New_Errors
-            // 
-            this.btn_Export_New_Errors.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btn_Export_New_Errors.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_Export_New_Errors.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Export_New_Errors.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Export_New_Errors.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Export_New_Errors.Location = new System.Drawing.Point(846, 0);
-            this.btn_Export_New_Errors.Name = "btn_Export_New_Errors";
-            this.btn_Export_New_Errors.Size = new System.Drawing.Size(83, 37);
-            this.btn_Export_New_Errors.TabIndex = 185;
-            this.btn_Export_New_Errors.Text = "Export";
-            this.btn_Export_New_Errors.UseVisualStyleBackColor = false;
-            this.btn_Export_New_Errors.Click += new System.EventHandler(this.btn_Export_New_Errors_Click);
             // 
             // ddl_NewErrors_Error_On_User
             // 
@@ -736,27 +824,6 @@
             this.label2.Size = new System.Drawing.Size(93, 20);
             this.label2.TabIndex = 186;
             this.label2.Text = "Reporting To :";
-            // 
-            // btn_My_Errors
-            // 
-            this.btn_My_Errors.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_My_Errors.BackColor = System.Drawing.Color.Transparent;
-            this.btn_My_Errors.BackgroundImage = global::Ordermanagement_01.Properties.Resources.blueboxbutton;
-            this.btn_My_Errors.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_My_Errors.FlatAppearance.BorderSize = 0;
-            this.btn_My_Errors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_My_Errors.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_My_Errors.ForeColor = System.Drawing.Color.White;
-            this.btn_My_Errors.Location = new System.Drawing.Point(2, 4);
-            this.btn_My_Errors.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btn_My_Errors.Name = "btn_My_Errors";
-            this.btn_My_Errors.Size = new System.Drawing.Size(96, 31);
-            this.btn_My_Errors.TabIndex = 178;
-            this.btn_My_Errors.Text = "My Errors";
-            this.btn_My_Errors.UseVisualStyleBackColor = false;
-            this.btn_My_Errors.Click += new System.EventHandler(this.btn_My_Errors_Click);
             // 
             // panel4
             // 
@@ -1020,14 +1087,14 @@
             this.Grid_Disputed_Errors.AllowUserToAddRows = false;
             this.Grid_Disputed_Errors.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.Grid_Disputed_Errors.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_Disputed_Errors.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_Disputed_Errors.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.Grid_Disputed_Errors.ColumnHeadersHeight = 29;
             this.Grid_Disputed_Errors.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column19,
@@ -1064,8 +1131,8 @@
             this.Grid_Disputed_Errors.Name = "Grid_Disputed_Errors";
             this.Grid_Disputed_Errors.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.Grid_Disputed_Errors.RowHeadersVisible = false;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Grid_Disputed_Errors.RowsDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Grid_Disputed_Errors.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.Grid_Disputed_Errors.Size = new System.Drawing.Size(941, 351);
             this.Grid_Disputed_Errors.TabIndex = 85;
             this.Grid_Disputed_Errors.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_Disputed_Errors_CellClick);
@@ -1293,6 +1360,17 @@
             this.panel14.Size = new System.Drawing.Size(941, 37);
             this.panel14.TabIndex = 0;
             // 
+            // lbl_Dispute_Reporting_To
+            // 
+            this.lbl_Dispute_Reporting_To.AutoSize = true;
+            this.lbl_Dispute_Reporting_To.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Dispute_Reporting_To.Location = new System.Drawing.Point(186, 8);
+            this.lbl_Dispute_Reporting_To.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_Dispute_Reporting_To.Name = "lbl_Dispute_Reporting_To";
+            this.lbl_Dispute_Reporting_To.Size = new System.Drawing.Size(93, 20);
+            this.lbl_Dispute_Reporting_To.TabIndex = 182;
+            this.lbl_Dispute_Reporting_To.Text = "Reporting To :";
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -1339,17 +1417,6 @@
             this.ddlDisputeErrorFrom.TabIndex = 193;
             this.ddlDisputeErrorFrom.SelectionChangeCommitted += new System.EventHandler(this.ddlDisputeErrorFrom_SelectionChangeCommitted);
             // 
-            // lbl_Dispute_Reporting_To
-            // 
-            this.lbl_Dispute_Reporting_To.AutoSize = true;
-            this.lbl_Dispute_Reporting_To.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Dispute_Reporting_To.Location = new System.Drawing.Point(186, 8);
-            this.lbl_Dispute_Reporting_To.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_Dispute_Reporting_To.Name = "lbl_Dispute_Reporting_To";
-            this.lbl_Dispute_Reporting_To.Size = new System.Drawing.Size(93, 20);
-            this.lbl_Dispute_Reporting_To.TabIndex = 182;
-            this.lbl_Dispute_Reporting_To.Text = "Reporting To :";
-            // 
             // lbl_Dispute_ErrorOnUser
             // 
             this.lbl_Dispute_ErrorOnUser.AutoSize = true;
@@ -1374,53 +1441,25 @@
             this.ddl_Dispute_ErrorOnUser.TabIndex = 189;
             this.ddl_Dispute_ErrorOnUser.SelectionChangeCommitted += new System.EventHandler(this.ddl_Dispute_ErrorOnUser_SelectionChangeCommitted);
             // 
-            // btn_Dispute_Export
+            // flowLayoutPanel5
             // 
-            this.btn_Dispute_Export.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btn_Dispute_Export.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Dispute_Export.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Dispute_Export.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Dispute_Export.Location = new System.Drawing.Point(604, 5);
-            this.btn_Dispute_Export.Name = "btn_Dispute_Export";
-            this.btn_Dispute_Export.Size = new System.Drawing.Size(77, 28);
-            this.btn_Dispute_Export.TabIndex = 89;
-            this.btn_Dispute_Export.Text = "Export";
-            this.btn_Dispute_Export.UseVisualStyleBackColor = false;
-            this.btn_Dispute_Export.Click += new System.EventHandler(this.btn_Dispute_Export_Click);
+            this.flowLayoutPanel5.Controls.Add(this.panel15);
+            this.flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 46);
+            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(941, 39);
+            this.flowLayoutPanel5.TabIndex = 1;
             // 
-            // btn_All_Dispute
+            // panel15
             // 
-            this.btn_All_Dispute.BackColor = System.Drawing.Color.Transparent;
-            this.btn_All_Dispute.BackgroundImage = global::Ordermanagement_01.Properties.Resources.Redboxbutton;
-            this.btn_All_Dispute.FlatAppearance.BorderSize = 0;
-            this.btn_All_Dispute.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_All_Dispute.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_All_Dispute.ForeColor = System.Drawing.Color.White;
-            this.btn_All_Dispute.Location = new System.Drawing.Point(824, 3);
-            this.btn_All_Dispute.Name = "btn_All_Dispute";
-            this.btn_All_Dispute.Size = new System.Drawing.Size(110, 29);
-            this.btn_All_Dispute.TabIndex = 181;
-            this.btn_All_Dispute.Text = "All Dispute";
-            this.btn_All_Dispute.UseVisualStyleBackColor = false;
-            this.btn_All_Dispute.Click += new System.EventHandler(this.btn_All_Dispute_Click);
-            // 
-            // btn_My_Dispute
-            // 
-            this.btn_My_Dispute.BackColor = System.Drawing.Color.Transparent;
-            this.btn_My_Dispute.BackgroundImage = global::Ordermanagement_01.Properties.Resources.blueboxbutton;
-            this.btn_My_Dispute.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_My_Dispute.FlatAppearance.BorderSize = 0;
-            this.btn_My_Dispute.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_My_Dispute.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_My_Dispute.ForeColor = System.Drawing.Color.White;
-            this.btn_My_Dispute.Location = new System.Drawing.Point(704, 4);
-            this.btn_My_Dispute.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btn_My_Dispute.Name = "btn_My_Dispute";
-            this.btn_My_Dispute.Size = new System.Drawing.Size(115, 29);
-            this.btn_My_Dispute.TabIndex = 180;
-            this.btn_My_Dispute.Text = "My Dispute";
-            this.btn_My_Dispute.UseVisualStyleBackColor = false;
-            this.btn_My_Dispute.Click += new System.EventHandler(this.btn_My_Dispute_Click);
+            this.panel15.Controls.Add(this.pnl_Dispute_Dates);
+            this.panel15.Controls.Add(this.btn_All_Dispute);
+            this.panel15.Controls.Add(this.btn_My_Dispute);
+            this.panel15.Controls.Add(this.btn_Dispute_Export);
+            this.panel15.Location = new System.Drawing.Point(3, 3);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(937, 36);
+            this.panel15.TabIndex = 0;
             // 
             // pnl_Dispute_Dates
             // 
@@ -1491,6 +1530,54 @@
             this.txt_Dispute_From_Date.TabIndex = 88;
             this.txt_Dispute_From_Date.Value = new System.DateTime(2015, 1, 13, 20, 59, 6, 0);
             // 
+            // btn_All_Dispute
+            // 
+            this.btn_All_Dispute.BackColor = System.Drawing.Color.Transparent;
+            this.btn_All_Dispute.BackgroundImage = global::Ordermanagement_01.Properties.Resources.Redboxbutton;
+            this.btn_All_Dispute.FlatAppearance.BorderSize = 0;
+            this.btn_All_Dispute.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_All_Dispute.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_All_Dispute.ForeColor = System.Drawing.Color.White;
+            this.btn_All_Dispute.Location = new System.Drawing.Point(824, 3);
+            this.btn_All_Dispute.Name = "btn_All_Dispute";
+            this.btn_All_Dispute.Size = new System.Drawing.Size(110, 29);
+            this.btn_All_Dispute.TabIndex = 181;
+            this.btn_All_Dispute.Text = "All Dispute";
+            this.btn_All_Dispute.UseVisualStyleBackColor = false;
+            this.btn_All_Dispute.Click += new System.EventHandler(this.btn_All_Dispute_Click);
+            // 
+            // btn_My_Dispute
+            // 
+            this.btn_My_Dispute.BackColor = System.Drawing.Color.Transparent;
+            this.btn_My_Dispute.BackgroundImage = global::Ordermanagement_01.Properties.Resources.blueboxbutton;
+            this.btn_My_Dispute.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_My_Dispute.FlatAppearance.BorderSize = 0;
+            this.btn_My_Dispute.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_My_Dispute.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_My_Dispute.ForeColor = System.Drawing.Color.White;
+            this.btn_My_Dispute.Location = new System.Drawing.Point(704, 4);
+            this.btn_My_Dispute.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btn_My_Dispute.Name = "btn_My_Dispute";
+            this.btn_My_Dispute.Size = new System.Drawing.Size(115, 29);
+            this.btn_My_Dispute.TabIndex = 180;
+            this.btn_My_Dispute.Text = "My Dispute";
+            this.btn_My_Dispute.UseVisualStyleBackColor = false;
+            this.btn_My_Dispute.Click += new System.EventHandler(this.btn_My_Dispute_Click);
+            // 
+            // btn_Dispute_Export
+            // 
+            this.btn_Dispute_Export.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.btn_Dispute_Export.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Dispute_Export.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Dispute_Export.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_Dispute_Export.Location = new System.Drawing.Point(604, 5);
+            this.btn_Dispute_Export.Name = "btn_Dispute_Export";
+            this.btn_Dispute_Export.Size = new System.Drawing.Size(77, 28);
+            this.btn_Dispute_Export.TabIndex = 89;
+            this.btn_Dispute_Export.Text = "Export";
+            this.btn_Dispute_Export.UseVisualStyleBackColor = false;
+            this.btn_Dispute_Export.Click += new System.EventHandler(this.btn_Dispute_Export_Click);
+            // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
@@ -1533,14 +1620,14 @@
             this.Grid_Error.AllowUserToAddRows = false;
             this.Grid_Error.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.Grid_Error.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_Error.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_Error.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.Grid_Error.ColumnHeadersHeight = 29;
             this.Grid_Error.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -1576,8 +1663,8 @@
             this.Grid_Error.Name = "Grid_Error";
             this.Grid_Error.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.Grid_Error.RowHeadersVisible = false;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Grid_Error.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Grid_Error.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.Grid_Error.Size = new System.Drawing.Size(941, 480);
             this.Grid_Error.TabIndex = 86;
             this.Grid_Error.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_Error_CellClick);
@@ -1875,150 +1962,6 @@
             this.ddl_Errors_Reporting_User_Name.TabIndex = 189;
             this.ddl_Errors_Reporting_User_Name.SelectionChangeCommitted += new System.EventHandler(this.ddl_Errors_Reporting_User_Name_SelectionChangeCommitted);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btn_Error_Analysis_Report);
-            this.panel1.Controls.Add(this.btn_Refresh);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(951, 36);
-            this.panel1.TabIndex = 0;
-            // 
-            // btn_Error_Analysis_Report
-            // 
-            this.btn_Error_Analysis_Report.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Error_Analysis_Report.BackgroundImage = global::Ordermanagement_01.Properties.Resources.blueboxbutton;
-            this.btn_Error_Analysis_Report.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_Error_Analysis_Report.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_Error_Analysis_Report.FlatAppearance.BorderSize = 0;
-            this.btn_Error_Analysis_Report.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Error_Analysis_Report.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Error_Analysis_Report.ForeColor = System.Drawing.Color.White;
-            this.btn_Error_Analysis_Report.Location = new System.Drawing.Point(767, 0);
-            this.btn_Error_Analysis_Report.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btn_Error_Analysis_Report.Name = "btn_Error_Analysis_Report";
-            this.btn_Error_Analysis_Report.Size = new System.Drawing.Size(184, 36);
-            this.btn_Error_Analysis_Report.TabIndex = 179;
-            this.btn_Error_Analysis_Report.Text = "Error Analysis Report";
-            this.btn_Error_Analysis_Report.UseVisualStyleBackColor = false;
-            this.btn_Error_Analysis_Report.Visible = false;
-            this.btn_Error_Analysis_Report.Click += new System.EventHandler(this.btn_Error_Analysis_Report_Click);
-            // 
-            // btn_Refresh
-            // 
-            this.btn_Refresh.BackColor = System.Drawing.Color.White;
-            this.btn_Refresh.BackgroundImage = global::Ordermanagement_01.Properties.Resources.refresh1;
-            this.btn_Refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Refresh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Refresh.ForeColor = System.Drawing.Color.SeaShell;
-            this.btn_Refresh.Location = new System.Drawing.Point(3, 1);
-            this.btn_Refresh.Name = "btn_Refresh";
-            this.btn_Refresh.Size = new System.Drawing.Size(35, 34);
-            this.btn_Refresh.TabIndex = 147;
-            this.btn_Refresh.UseVisualStyleBackColor = false;
-            this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Navy;
-            this.label1.Location = new System.Drawing.Point(329, -3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(298, 37);
-            this.label1.TabIndex = 84;
-            this.label1.Text = "EMPLOYEE ERROR DASHBOARD";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // flowLayoutPanel3
-            // 
-            this.flowLayoutPanel3.Controls.Add(this.panel21);
-            this.flowLayoutPanel3.Controls.Add(this.panel20);
-            this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(712, 3);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(214, 44);
-            this.flowLayoutPanel3.TabIndex = 0;
-            this.flowLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel3_Paint);
-            // 
-            // flowLayoutPanel4
-            // 
-            this.flowLayoutPanel4.Controls.Add(this.pnl_New_Error_Reporting_To);
-            this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(703, 44);
-            this.flowLayoutPanel4.TabIndex = 84;
-            // 
-            // pnl_New_Error_Reporting_To
-            // 
-            this.pnl_New_Error_Reporting_To.Controls.Add(this.ddlErrorFrom);
-            this.pnl_New_Error_Reporting_To.Controls.Add(this.label5);
-            this.pnl_New_Error_Reporting_To.Controls.Add(this.ddl_NewErrors_Error_On_User);
-            this.pnl_New_Error_Reporting_To.Controls.Add(this.label3);
-            this.pnl_New_Error_Reporting_To.Controls.Add(this.ddl_New_Error_Reporting_User_Name);
-            this.pnl_New_Error_Reporting_To.Controls.Add(this.label2);
-            this.pnl_New_Error_Reporting_To.Location = new System.Drawing.Point(3, 3);
-            this.pnl_New_Error_Reporting_To.Name = "pnl_New_Error_Reporting_To";
-            this.pnl_New_Error_Reporting_To.Size = new System.Drawing.Size(700, 38);
-            this.pnl_New_Error_Reporting_To.TabIndex = 189;
-            this.pnl_New_Error_Reporting_To.Visible = false;
-            // 
-            // panel20
-            // 
-            this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel20.Location = new System.Drawing.Point(3, 47);
-            this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(247, 0);
-            this.panel20.TabIndex = 191;
-            // 
-            // panel21
-            // 
-            this.panel21.Controls.Add(this.btn_My_Errors);
-            this.panel21.Controls.Add(this.btn_All_User_Errors);
-            this.panel21.Location = new System.Drawing.Point(3, 3);
-            this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(209, 38);
-            this.panel21.TabIndex = 192;
-            // 
-            // btn_All_User_Errors
-            // 
-            this.btn_All_User_Errors.BackColor = System.Drawing.Color.Transparent;
-            this.btn_All_User_Errors.BackgroundImage = global::Ordermanagement_01.Properties.Resources.Redboxbutton;
-            this.btn_All_User_Errors.FlatAppearance.BorderSize = 0;
-            this.btn_All_User_Errors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_All_User_Errors.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_All_User_Errors.ForeColor = System.Drawing.Color.White;
-            this.btn_All_User_Errors.Location = new System.Drawing.Point(103, 4);
-            this.btn_All_User_Errors.Name = "btn_All_User_Errors";
-            this.btn_All_User_Errors.Size = new System.Drawing.Size(103, 30);
-            this.btn_All_User_Errors.TabIndex = 179;
-            this.btn_All_User_Errors.Text = "All User Errors";
-            this.btn_All_User_Errors.UseVisualStyleBackColor = false;
-            this.btn_All_User_Errors.Click += new System.EventHandler(this.btn_All_User_Errors_Click);
-            // 
-            // flowLayoutPanel5
-            // 
-            this.flowLayoutPanel5.Controls.Add(this.panel15);
-            this.flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 46);
-            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(941, 39);
-            this.flowLayoutPanel5.TabIndex = 1;
-            // 
-            // panel15
-            // 
-            this.panel15.Controls.Add(this.pnl_Dispute_Dates);
-            this.panel15.Controls.Add(this.btn_All_Dispute);
-            this.panel15.Controls.Add(this.btn_My_Dispute);
-            this.panel15.Controls.Add(this.btn_Dispute_Export);
-            this.panel15.Location = new System.Drawing.Point(3, 3);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(937, 36);
-            this.panel15.TabIndex = 0;
-            // 
             // flowLayoutPanel6
             // 
             this.flowLayoutPanel6.Controls.Add(this.panel18);
@@ -2143,6 +2086,63 @@
             this.txt_Accepted_First_date.TabIndex = 84;
             this.txt_Accepted_First_date.Value = new System.DateTime(2015, 1, 13, 20, 59, 0, 0);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btn_Error_Analysis_Report);
+            this.panel1.Controls.Add(this.btn_Refresh);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(951, 36);
+            this.panel1.TabIndex = 0;
+            // 
+            // btn_Error_Analysis_Report
+            // 
+            this.btn_Error_Analysis_Report.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Error_Analysis_Report.BackgroundImage = global::Ordermanagement_01.Properties.Resources.blueboxbutton;
+            this.btn_Error_Analysis_Report.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Error_Analysis_Report.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_Error_Analysis_Report.FlatAppearance.BorderSize = 0;
+            this.btn_Error_Analysis_Report.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Error_Analysis_Report.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Error_Analysis_Report.ForeColor = System.Drawing.Color.White;
+            this.btn_Error_Analysis_Report.Location = new System.Drawing.Point(767, 0);
+            this.btn_Error_Analysis_Report.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btn_Error_Analysis_Report.Name = "btn_Error_Analysis_Report";
+            this.btn_Error_Analysis_Report.Size = new System.Drawing.Size(184, 36);
+            this.btn_Error_Analysis_Report.TabIndex = 179;
+            this.btn_Error_Analysis_Report.Text = "Error Analysis Report";
+            this.btn_Error_Analysis_Report.UseVisualStyleBackColor = false;
+            this.btn_Error_Analysis_Report.Visible = false;
+            this.btn_Error_Analysis_Report.Click += new System.EventHandler(this.btn_Error_Analysis_Report_Click);
+            // 
+            // btn_Refresh
+            // 
+            this.btn_Refresh.BackColor = System.Drawing.Color.White;
+            this.btn_Refresh.BackgroundImage = global::Ordermanagement_01.Properties.Resources.refresh1;
+            this.btn_Refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Refresh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Refresh.ForeColor = System.Drawing.Color.SeaShell;
+            this.btn_Refresh.Location = new System.Drawing.Point(3, 1);
+            this.btn_Refresh.Name = "btn_Refresh";
+            this.btn_Refresh.Size = new System.Drawing.Size(35, 34);
+            this.btn_Refresh.TabIndex = 147;
+            this.btn_Refresh.UseVisualStyleBackColor = false;
+            this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Navy;
+            this.label1.Location = new System.Drawing.Point(329, -3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(298, 37);
+            this.label1.TabIndex = 84;
+            this.label1.Text = "EMPLOYEE ERROR DASHBOARD";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Error_Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2169,6 +2169,11 @@
             this.panel5.PerformLayout();
             this.panel19.ResumeLayout(false);
             this.tableLayoutPanel10.ResumeLayout(false);
+            this.flowLayoutPanel3.ResumeLayout(false);
+            this.panel21.ResumeLayout(false);
+            this.flowLayoutPanel4.ResumeLayout(false);
+            this.pnl_New_Error_Reporting_To.ResumeLayout(false);
+            this.pnl_New_Error_Reporting_To.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.tbl_Layout_Accept_New_Error.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
@@ -2189,6 +2194,8 @@
             this.tableLayoutPanel8.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
+            this.flowLayoutPanel5.ResumeLayout(false);
+            this.panel15.ResumeLayout(false);
             this.pnl_Dispute_Dates.ResumeLayout(false);
             this.pnl_Dispute_Dates.PerformLayout();
             this.tabPage2.ResumeLayout(false);
@@ -2199,17 +2206,10 @@
             this.tableLayoutPanel9.ResumeLayout(false);
             this.panel17.ResumeLayout(false);
             this.panel17.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.flowLayoutPanel3.ResumeLayout(false);
-            this.flowLayoutPanel4.ResumeLayout(false);
-            this.pnl_New_Error_Reporting_To.ResumeLayout(false);
-            this.pnl_New_Error_Reporting_To.PerformLayout();
-            this.panel21.ResumeLayout(false);
-            this.flowLayoutPanel5.ResumeLayout(false);
-            this.panel15.ResumeLayout(false);
             this.flowLayoutPanel6.ResumeLayout(false);
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

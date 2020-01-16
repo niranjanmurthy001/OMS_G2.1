@@ -76,6 +76,7 @@
             this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.comments = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemHyperLinkEdit5 = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
+            this.gridColumn64 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -174,7 +175,6 @@
             this.repositoryItemPopupContainerEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit();
             this.repositoryItemPopupContainerEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
-            this.gridColumn64 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -997,6 +997,15 @@
             this.repositoryItemHyperLinkEdit5.Name = "repositoryItemHyperLinkEdit5";
             this.repositoryItemHyperLinkEdit5.NullText = "View";
             // 
+            // gridColumn64
+            // 
+            this.gridColumn64.Caption = "Order_Comments";
+            this.gridColumn64.FieldName = "Comments";
+            this.gridColumn64.MaxWidth = 65;
+            this.gridColumn64.MinWidth = 45;
+            this.gridColumn64.Name = "gridColumn64";
+            this.gridColumn64.Width = 45;
+            // 
             // gridColumn30
             // 
             this.gridColumn30.AppearanceHeader.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -1290,6 +1299,8 @@
             // 
             this.toolTipController1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolTipController1.Appearance.Options.UseFont = true;
+            this.toolTipController1.AppearanceTitle.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolTipController1.AppearanceTitle.Options.UseFont = true;
             this.toolTipController1.KeepWhileHovered = true;
             // 
             // groupControl3
@@ -2135,15 +2146,6 @@
             // defaultLookAndFeel1
             // 
             this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013";
-            // 
-            // gridColumn64
-            // 
-            this.gridColumn64.Caption = "Order_Comments";
-            this.gridColumn64.FieldName = "Comments";
-            this.gridColumn64.MaxWidth = 65;
-            this.gridColumn64.MinWidth = 45;
-            this.gridColumn64.Name = "gridColumn64";
-            this.gridColumn64.Width = 45;
             // 
             // DailyStatus_OrderViewDetail_New
             // 

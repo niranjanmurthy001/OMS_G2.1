@@ -20,9 +20,6 @@ using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using Ordermanagement_01.CommentCard;
 using Ordermanagement_01.Models;
 using Ordermanagement_01.Masters;
-using System.Net.Http;
-using Newtonsoft.Json;
-using System.Net;
 using System.Text;
 
 namespace Ordermanagement_01
@@ -66,7 +63,6 @@ namespace Ordermanagement_01
                 {
                     if (caption == "Comments")
                     {
-                       // DataRow row = (view.GetRow(3) as DataRowView).Row;  
                        DataRowView vie= gridView2.GetRow(info.RowHandle) as DataRowView;
                         StringBuilder bs = new StringBuilder();
                         if (vie.Row["Order_Comments"] != null)
@@ -74,9 +70,13 @@ namespace Ordermanagement_01
                             string Comments = vie.Row["Order_Comments"].ToString();
                             if (Comments != "")
                             {
+                                string Order_Number = vie.Row["Client_Order_Number"].ToString();
+                                bs.Append(Order_Number.ToString());  
+                                bs.AppendLine();
+                                bs.AppendLine();                               
                                 string s = (bs.Append(Comments.ToString().TrimStart('@')).AppendLine()).ToString();
                                 string str = s.ToString();
-                                string _str = str.Replace("@", Environment.NewLine).ToString();
+                                string _str = str.Replace("@", Environment.NewLine+Environment.NewLine).ToString();
                                 toolTipController1.ShowHint(_str);
                             }
                             else
@@ -87,8 +87,7 @@ namespace Ordermanagement_01
                         }
                     }
                 }
-            }
-            
+            }            
         }
         private void gridView2_MouseUp(object sender, MouseEventArgs e)
         {
@@ -218,7 +217,7 @@ namespace Ordermanagement_01
         }
         private void DailyStatus_OrderViewDetail_New_Load(object sender, EventArgs e)
         {
-            SplashScreenManager.ShowForm(this, typeof(Ordermanagement_01.Masters.WaitForm1), true, true, false);
+            SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
             try
             {
                 SetupLookup();
@@ -408,7 +407,7 @@ namespace Ordermanagement_01
             gridView2.OptionsView.ShowFooter = false;
             gridView2.Columns.ColumnByFieldName("Client_Order_Number").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.None;            
             gridView2.VisibleColumns[0].OptionsColumn.Printable = DevExpress.Utils.DefaultBoolean.False;
-            SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
+            SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
             try
             {
 
@@ -1353,7 +1352,7 @@ namespace Ordermanagement_01
             {
                 if (DevExpress.XtraEditors.XtraMessageBox.Show(defaultLookAndFeel1.LookAndFeel, "Are You Sure to Submit?", "Confirmation", MessageBoxButtons.YesNo) != DialogResult.No)
                 {
-                    SplashScreenManager.ShowForm(this, typeof(Ordermanagement_01.Masters.WaitForm1), true, true, false);
+                    SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
                     try
                     {
                         try

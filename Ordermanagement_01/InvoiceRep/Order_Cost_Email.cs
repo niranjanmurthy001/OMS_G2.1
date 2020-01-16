@@ -1,26 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Net;
 using System.Net.Mail;
-using CrystalDecisions.CrystalReports.Engine;
-using CrystalDecisions.ReportSource;
-using CrystalDecisions.Shared;
-using CrystalDecisions.Windows;
 using System.Collections;
 using System.IO;
-using RTF;
-using System.Net.Mime;
-using Outlook = Microsoft.Office.Interop.Outlook;
-using System.DirectoryServices;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
-using System.Text.RegularExpressions;
 
 namespace Ordermanagement_01.InvoiceRep
 {
@@ -93,20 +78,10 @@ namespace Ordermanagement_01.InvoiceRep
             {
                 try
                 {
-
-
-
-
-
                     mm.IsBodyHtml = true;
-
-
-
                     string body = this.PopulateBody();
                     SendHtmlFormattedEmail("netco@drnds.com", "Sample", body);
-
                     this.Close();
-
                 }
                 catch (Exception error)
                 {
@@ -121,10 +96,6 @@ namespace Ordermanagement_01.InvoiceRep
         public string PopulateBody()
         {
             string body = string.Empty;
-
-
-
-
             Hashtable htorder = new Hashtable();
             DataTable dtorder = new DataTable();
             htorder.Add("@Trans", "GET_ORDER_COST_DETAILS_FOR_EMAIL");
@@ -133,13 +104,9 @@ namespace Ordermanagement_01.InvoiceRep
             if (dtorder.Rows.Count > 0)
             {
 
-
             }
-
             string Title = dtorder.Rows[0]["Order_Type"].ToString();
             string Comments = dtorder.Rows[0]["Comments"].ToString();
-
-
             // using (StreamReader reader = new StreamReader(Directory_Path))
             // {
 
@@ -150,6 +117,10 @@ namespace Ordermanagement_01.InvoiceRep
             if (Comments != "")
             {
                 body = body.Replace("{Comments}", "Comments:" + Comments.ToString() + "");
+            }
+            else
+            {
+                body = body.Replace("{Comments}", string.Empty);
             }
 
             return body;
@@ -168,6 +139,28 @@ namespace Ordermanagement_01.InvoiceRep
             sr.Dispose();
             string body = Page_Source_Code.ToString();
             return body;
+        }
+        private void Download_Ftp_File(string File_Name, string File_path)
+        {
+            try
+            {
+                FtpWebRequest reqFTP;
+                FileStream outputStream = new FileStream("C:\\OMS\\Temp" + "\\" + File_Name, FileMode.Create);
+                reqFTP = (FtpWebRequest)WebRequest.Create(new Uri(File_path));
+                reqFTP.Method = WebRequestMethods.Ftp.DownloadFile;
+                reqFTP.UseBinary = true;
+                reqFTP.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password);
+                FtpWebResponse response = (FtpWebResponse)reqFTP.GetResponse();
+                Stream ftpStream = response.GetResponseStream();
+                ftpStream.CopyTo(outputStream);
+                ftpStream.Close();
+                outputStream.Close();
+                response.Close();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         private void SendHtmlFormattedEmail(string recepientEmail, string subject, string body)
         {
@@ -189,21 +182,27 @@ namespace Ordermanagement_01.InvoiceRep
                     string Source_Path = dtsearch.Rows[0]["New_Document_Path"].ToString();
 
                     //  Path1 = Source_Path;
-                    FtpWebRequest reqFTP = (FtpWebRequest)WebRequest.Create(new Uri(Source_Path));
-                    reqFTP.Method = WebRequestMethods.Ftp.DownloadFile;
-                    reqFTP.UseBinary = true;
-                    reqFTP.Credentials = new NetworkCredential(Ftp_User_Name, Ftp_Password);
-                    FtpWebResponse response = (FtpWebResponse)reqFTP.GetResponse();
-                    Stream ftpStream = response.GetResponseStream();
-
+                    //FtpWebRequest reqFTP = (FtpWebRequest)WebRequest.Create(new Uri(Source_Path));
+                    //reqFTP.Method = WebRequestMethods.Ftp.DownloadFile;
+                    //reqFTP.UseBinary = true;
+                    //reqFTP.Credentials = new NetworkCredential(Ftp_User_Name, Ftp_Password);
+                    //FtpWebResponse response = (FtpWebResponse)reqFTP.GetResponse();
+                    //Stream ftpStream = response.GetResponseStream();
+                    string Folder_Path = "C:\\OMS\\Temp\\";
+                    if (!Directory.Exists(Folder_Path))
+                    {
+                        Directory.CreateDirectory(Folder_Path);
+                    }
+                    Download_Ftp_File(Order_Number.ToString() + ".pdf", Source_Path);
                     var maxsize = 20 * 1024 * 1000;
                     //var fileName = Path1;
                     //FileInfo fi = new FileInfo(fileName);
                     var size = Ftp_File_Size(Source_Path);
                     if (size <= maxsize)
                     {
+                        MemoryStream ms = new MemoryStream(File.ReadAllBytes(Folder_Path + Order_Number.ToString() + ".pdf"));
                         Attachment_Name = Order_Number.ToString() + ".pdf";
-                        mailMessage.Attachments.Add(new Attachment(ftpStream, Attachment_Name.ToString()));
+                        mailMessage.Attachments.Add(new Attachment(ms, Attachment_Name.ToString()));
                         Hashtable htdate = new Hashtable();
                         DataTable dtdate = new DataTable();
                         htdate.Add("@Trans", "SELECT_CLIENT_EMAIL");
@@ -261,7 +260,7 @@ namespace Ordermanagement_01.InvoiceRep
 
                             smtp.Host = "smtpout.secureserver.net";
 
-                            NetworkCredential NetworkCred = new NetworkCredential("netco@drnds.com", "Capitalcity2020$");
+                            NetworkCredential NetworkCred = new NetworkCredential("netco@drnds.com", "P2DGo5fi-c");
                             smtp.UseDefaultCredentials = true;
                             // smtp.Timeout = Math.Max(attachments.Sum(Function(Item) (DirectCast(Item, MailAttachment).Size / 1024)), 100) * 1000
                             smtp.Timeout = (60 * 5 * 1000);

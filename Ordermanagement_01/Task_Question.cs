@@ -44,6 +44,7 @@ namespace Ordermanagement_01
         string Client_Name;
         string Sub_Client;
         int Question_No = 0, Question_ID = 0, Order_Id, Status_ID, User_Id,Last_Question=0,z=0;
+        int order_task;
 
         public Task_Question(int OrderId, int StatusId, int UserId, string OrderNo, string Client, string Subclient)
         {
@@ -1847,7 +1848,7 @@ namespace Ordermanagement_01
 
         private void btn_Skip_Click(object sender, System.EventArgs e)
         {
-            Ordermanagement_01.Task_Conformation Taskconfomation = new Ordermanagement_01.Task_Conformation();
+            Ordermanagement_01.Task_Conformation Taskconfomation = new Ordermanagement_01.Task_Conformation(User_Id, Order_Id, order_task, Status_ID);
             Taskconfomation.ShowDialog();
             this.Close();
         }

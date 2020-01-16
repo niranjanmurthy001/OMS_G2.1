@@ -33,6 +33,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txt_Username = new System.Windows.Forms.TextBox();
             this.txt_Password = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txt_Comment = new System.Windows.Forms.TextBox();
+            this.lbl_comment = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_validate
@@ -41,10 +44,10 @@
             this.btn_validate.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btn_validate.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold);
             this.btn_validate.ForeColor = System.Drawing.Color.Black;
-            this.btn_validate.Location = new System.Drawing.Point(101, 162);
+            this.btn_validate.Location = new System.Drawing.Point(105, 218);
             this.btn_validate.Name = "btn_validate";
             this.btn_validate.Size = new System.Drawing.Size(84, 32);
-            this.btn_validate.TabIndex = 3;
+            this.btn_validate.TabIndex = 4;
             this.btn_validate.Text = "SUBMIT";
             this.btn_validate.UseVisualStyleBackColor = false;
             this.btn_validate.Click += new System.EventHandler(this.button1_Click);
@@ -91,12 +94,41 @@
             this.txt_Password.TabIndex = 2;
             this.txt_Password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Password_KeyDown);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(27, 152);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 24);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "COMMENT :";
+            // 
+            // txt_Comment
+            // 
+            this.txt_Comment.Location = new System.Drawing.Point(151, 152);
+            this.txt_Comment.Multiline = true;
+            this.txt_Comment.Name = "txt_Comment";
+            this.txt_Comment.Size = new System.Drawing.Size(120, 45);
+            this.txt_Comment.TabIndex = 3;
+            // 
+            // lbl_comment
+            // 
+            this.lbl_comment.AutoSize = true;
+            this.lbl_comment.Location = new System.Drawing.Point(158, 184);
+            this.lbl_comment.Name = "lbl_comment";
+            this.lbl_comment.Size = new System.Drawing.Size(0, 13);
+            this.lbl_comment.TabIndex = 6;
+            // 
             // Task_Conformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(309, 262);
+            this.ClientSize = new System.Drawing.Size(320, 273);
             this.ControlBox = false;
+            this.Controls.Add(this.lbl_comment);
+            this.Controls.Add(this.txt_Comment);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_Password);
             this.Controls.Add(this.txt_Username);
             this.Controls.Add(this.label2);
@@ -118,5 +150,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_Username;
         private System.Windows.Forms.TextBox txt_Password;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txt_Comment;
+        private System.Windows.Forms.Label lbl_comment;
     }
 }

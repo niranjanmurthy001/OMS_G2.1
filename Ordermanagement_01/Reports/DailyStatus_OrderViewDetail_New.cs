@@ -52,7 +52,25 @@ namespace Ordermanagement_01
         int Sub_Process_ID, Order_Status_Id, Client_Id, Order_Type_Abs_Id, ClientId, Sub_Process_Id, Order_Task_Id, Order_Satatus_Id;
         int Emp_Job_role_Id, Emp_Sal_Cat_Id, Eff_Client_Id, Eff_Order_Type_Abs_Id, Eff_Order_Task_Id, Eff_Order_Source_Type_Id, Eff_State_Id, Eff_County_Id, Eff_Sub_Process_Id;
         string Clint, userroleid, Operation, Operation_Count, From_date, To_Date, Path1, errormessage = "", error_status = "", error_value = "", vendor_validation_msg = "", Order_Number;
-              
+
+        private void gridView2_RowCellStyle(object sender, RowCellStyleEventArgs e)
+        {
+            GridView CurrentView = sender as GridView;
+            if (e.Column.FieldName == "Comments")
+            {
+                string Value = CurrentView.GetRowCellValue(e.RowHandle,"View").ToString();
+
+                if (Value !="")
+                {
+                    e.Appearance.BackColor = System.Drawing.Color.LightYellow;
+                }
+                else 
+                {
+                    e.Appearance.BackColor = System.Drawing.Color.White;
+                }               
+            }
+        }
+
         private void gridView2_MouseMove(object sender, MouseEventArgs e)
         {           
             GridView view = sender as GridView;
@@ -71,9 +89,9 @@ namespace Ordermanagement_01
                             if (Comments != "")
                             {
                                 string Order_Number = vie.Row["Client_Order_Number"].ToString();
-                                bs.Append(Order_Number.ToString());  
+                                bs.Append(Order_Number.ToString());
                                 bs.AppendLine();
-                                bs.AppendLine();                               
+                                bs.AppendLine();
                                 string s = (bs.Append(Comments.ToString().TrimStart('@')).AppendLine()).ToString();
                                 string str = s.ToString();
                                 string _str = str.Replace("@", Environment.NewLine+Environment.NewLine).ToString();
@@ -692,8 +710,6 @@ namespace Ordermanagement_01
 
                 }
             }
-
-
         }
         private void gridView2_EndGrouping(object sender, EventArgs e)
         {

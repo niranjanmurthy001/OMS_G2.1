@@ -130,6 +130,8 @@ namespace Ordermanagement_01
         int Pass_Max_Time_Id;
         Thread t;
         int Tax_Completed_Count = 0;
+        int Order_Task;
+        int Order_Status_Id;
 
         Order_Passing_Params obj_Order_Details_List = new Order_Passing_Params();
         public Employee_Order_Entry(string SESSIONORDERNO, int Orderid, int User_id, string Role_id, string OrderProcess, string SESSSIONORDERTYPE, int SESSIONORDERTASK, int WORK_TYPE_ID, int MAX_TIMING_ID, int TAX_COMPLETED)
@@ -2209,7 +2211,7 @@ namespace Ordermanagement_01
                             this.Enabled = false;
 
 
-                            Ordermanagement_01.Task_Conformation Taskconfomation = new Ordermanagement_01.Task_Conformation();
+                            Ordermanagement_01.Task_Conformation Taskconfomation = new Ordermanagement_01.Task_Conformation(userid, Order_Id, Order_Task, Order_Status_Id);
                             Taskconfomation.ShowDialog();
                             Chk = 1;
                             ddl_order_Task.Visible = false;
@@ -3378,8 +3380,9 @@ namespace Ordermanagement_01
                         {
                             //employee order entry form enabled false
                             this.Enabled = false;
-
-                            Ordermanagement_01.Task_Conformation Taskconfomation = new Ordermanagement_01.Task_Conformation();
+                             Order_Task = int.Parse(SESSION_ORDER_TASK.ToString().ToString());
+                             Order_Status_Id = Convert.ToInt32(ddl_order_Staus.SelectedValue);
+                            Ordermanagement_01.Task_Conformation Taskconfomation = new Ordermanagement_01.Task_Conformation(userid,Order_Id, Order_Task, Order_Status_Id);
                             Taskconfomation.ShowDialog();
                             Chk = 1;
                             ddl_order_Task.Visible = false;
@@ -3994,7 +3997,7 @@ namespace Ordermanagement_01
                             this.Enabled = false;
 
 
-                            Ordermanagement_01.Task_Conformation Taskconfomation = new Ordermanagement_01.Task_Conformation();
+                            Ordermanagement_01.Task_Conformation Taskconfomation = new Ordermanagement_01.Task_Conformation(userid, Order_Id, Order_Task, Order_Status_Id);
                             Taskconfomation.ShowDialog();
                             Chk = 1;
                             ddl_order_Task.Visible = false;
@@ -4428,7 +4431,7 @@ namespace Ordermanagement_01
                             //employee order entry form enabled false
                             this.Enabled = false;
 
-                            Ordermanagement_01.Task_Conformation Taskconfomation = new Ordermanagement_01.Task_Conformation();
+                            Ordermanagement_01.Task_Conformation Taskconfomation = new Ordermanagement_01.Task_Conformation(userid, Order_Id, Order_Task, Order_Status_Id);
                             Taskconfomation.ShowDialog();
                             Chk = 1;
                             ddl_order_Task.Visible = false;
@@ -4896,7 +4899,7 @@ namespace Ordermanagement_01
                             this.Enabled = false;
 
 
-                            Ordermanagement_01.Task_Conformation Taskconfomation = new Ordermanagement_01.Task_Conformation();
+                            Ordermanagement_01.Task_Conformation Taskconfomation = new Ordermanagement_01.Task_Conformation(userid, Order_Id, Order_Task, Order_Status_Id);
                             Taskconfomation.ShowDialog();
                             Chk = 1;
                             ddl_order_Task.Visible = false;
@@ -5277,7 +5280,7 @@ namespace Ordermanagement_01
                                 //employee order entry form enabled false
                                 this.Enabled = false;
 
-                                Ordermanagement_01.Task_Conformation Taskconfomation = new Ordermanagement_01.Task_Conformation();
+                                Ordermanagement_01.Task_Conformation Taskconfomation = new Ordermanagement_01.Task_Conformation(userid, Order_Id, Order_Task, Order_Status_Id);
                                 Taskconfomation.ShowDialog();
                                 Chk = 1;
                                 ddl_order_Task.Visible = false;

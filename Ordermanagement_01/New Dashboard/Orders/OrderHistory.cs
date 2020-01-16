@@ -49,7 +49,9 @@ namespace Ordermanagement_01
             DataTable datatable = new DataTable();
             BindGridHistory();
             BindStatusHistory();
-   
+            BindStatusPermissionHistory();
+
+
             if (roleId == 2)
             {
                 splitContainerControl1.Panel2.Visible = false;
@@ -79,6 +81,44 @@ namespace Ordermanagement_01
                             if (dt.Rows.Count > 0)
                             {
                                 gridControlOrderStatusHistory.DataSource = dt;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm(false);
+            }
+        }
+        private async void BindStatusPermissionHistory()
+        {
+            try
+            {
+                SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
+                var dictionary = new Dictionary<string, object>()
+                {
+                    { "@Trans", "SELECT" },
+                    { "@Order_Id", orderId }
+                };
+
+                var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
+                using (var httpClient = new HttpClient())
+                {
+                    var response1 = await httpClient.PostAsync(Base_Url.Url + "/OrderHistory/BindOrderStatusPermission", data);
+                    if (response1.IsSuccessStatusCode)
+                    {
+                        if (response1.StatusCode == HttpStatusCode.OK)
+                        {
+                            var result1 = await response1.Content.ReadAsStringAsync();
+                            DataTable dt = JsonConvert.DeserializeObject<DataTable>(result1);
+                            if (dt.Rows.Count > 0)
+                            {
+                                gridControlOrderStatusPermissionHistory.DataSource = dt;
                             }
                         }
                     }

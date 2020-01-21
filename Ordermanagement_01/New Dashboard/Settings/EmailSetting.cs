@@ -287,7 +287,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
         private void btn_testconnection_Click(object sender, EventArgs e)
         {      
 
-            XtraMessageBox.Show("  " + txt_name.Text + "Account Testing Finished");
+            XtraMessageBox.Show( txt_name.Text + "  " + "Account Testing Finished");
         }
         private void txt_name_Properties_Leave(object sender, EventArgs e)
         {
@@ -334,7 +334,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
             }
             else
             {
-                XtraMessageBox.Show("Incoming Server Details Is Having less than 3....And please enter 3 Digit Incoming port" );
+                XtraMessageBox.Show("Incoming Server Details Is Having less than 3....And please enter a Valid 3 Digit Incoming port No" );
                 txt_Incoming_server.Focus();
 
             }
@@ -346,7 +346,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
             Regex RegExForOutgoingServer = new Regex("^[0-9]{3}$");
             if (txt_Outgoing_server.Text == "")
             {
-                XtraMessageBox.Show("Enter Incoming Server details");
+                XtraMessageBox.Show("Enter OutGoing Server details");
                 txt_Outgoing_server.Focus();
                 return;
             }
@@ -356,7 +356,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
             }
             else
             {
-                XtraMessageBox.Show("Outgoing Server Details Is Having less than 3.....And please enter 3 Digit Outgoing port");
+                XtraMessageBox.Show("Outgoing Server Details Is Having less than 3.....And please enter a Valid 3 Digit Outgoing port No");
                 txt_Outgoing_server.Focus();
             }
         }
@@ -366,7 +366,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
             Regex RegExForIsPort = new Regex("^[0-9]{3}$");
             if (txt_IS.Text == "")
             {
-                XtraMessageBox.Show("Enter Incoming Server details");
+                XtraMessageBox.Show("Enter Incoming Server Port details");
                 txt_IS.Focus();
                 return;
             }
@@ -376,7 +376,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
             }
             else
             {
-                XtraMessageBox.Show("Incoming Server Is Having less than 3....And please enter 3 Digit Incoming port");
+                XtraMessageBox.Show("Incoming Server Port Is Having less than 3....And please enter a Valid 3 Digit Incoming port No");
                 txt_IS.Focus();
             }
         }
@@ -385,7 +385,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
             Regex RegExForOsPort= new Regex("^[0-9]{3}$");
             if (txt_OS.Text == "")
             {
-                XtraMessageBox.Show("Enter Incoming Server details");
+                XtraMessageBox.Show("Enter OutGoing Server Port details");
                 txt_OS.Focus();
                 return;
             }
@@ -395,7 +395,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
             }
             else
             {
-                XtraMessageBox.Show("Outgoing port Is HAving less than 3.....And please enter a 3 Digit Outgoing port");
+                XtraMessageBox.Show("Outgoing port Is Having less than 3.....And please enter a Valid 3 Digit Outgoing port No");
                 txt_OS.Focus();
             }
         }
@@ -414,7 +414,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
             }
             else
             {
-                XtraMessageBox.Show("Password Should Be Having  Alphanumeric & OneSpecialCharacter.");
+                XtraMessageBox.Show("Password Should Be Having  Alpha-numeric & OneSpecialCharacter.");
                 txt_password.Focus();
             }
         }

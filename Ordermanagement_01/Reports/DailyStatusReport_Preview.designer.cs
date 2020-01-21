@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager2 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, null, true, true);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DailyStatusReport_Preview));
             DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
@@ -43,9 +42,9 @@
             this.repositoryItemHyperLinkEdit11 = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.repositoryItemHyperLinkEdit7 = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.repositoryItemHyperLinkEdit8 = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
-            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.Default_Look_Confirmation = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.Default_Look_Confirmation = new DevExpress.LookAndFeel.DefaultLookAndFeel();
             this.pivotGridField19 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.pivotGridField24 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.pivotGridField30 = new DevExpress.XtraPivotGrid.PivotGridField();
@@ -434,10 +433,10 @@
             this.btn_Submit = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.checkedLstBxCntrl_Branch_Wise = new DevExpress.XtraEditors.CheckedListBoxControl();
-            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
+            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager();
             this.pivotGridField69 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.pivotGridField36 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit13)).BeginInit();
@@ -969,12 +968,14 @@
             this.pivotGridField5.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
             this.pivotGridField5.AreaIndex = 0;
             this.pivotGridField5.Caption = "Date";
-            this.pivotGridField5.CellFormat.FormatString = "\"MM/dd/yyyy\"";
+            this.pivotGridField5.CellFormat.FormatString = "d";
             this.pivotGridField5.CellFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.pivotGridField5.FieldEdit = this.repositoryItemDateEdit2;
             this.pivotGridField5.FieldName = "Date";
             this.pivotGridField5.Name = "pivotGridField5";
-            this.pivotGridField5.ValueFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.pivotGridField5.SortMode = DevExpress.XtraPivotGrid.PivotSortMode.Value;
+            this.pivotGridField5.ValueFormat.FormatString = "d";
+            this.pivotGridField5.ValueFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.pivotGridField5.Width = 154;
             // 
             // repositoryItemDateEdit2
@@ -984,10 +985,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemDateEdit2.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemDateEdit2.DisplayFormat.FormatString = "\"MM/dd/yyyy\"";
-            this.repositoryItemDateEdit2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.repositoryItemDateEdit2.EditFormat.FormatString = "\"MM/dd/yyyy\"";
-            this.repositoryItemDateEdit2.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.repositoryItemDateEdit2.Name = "repositoryItemDateEdit2";
             // 
             // repositoryItemDateEdit1

@@ -1224,15 +1224,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                                 Shift = string.Empty,
                                 Theme = string.Empty,
                                 OperationId = string.Empty
-                            });
-                            if (pictureEditProfile.Image == null)
-                            {
-                                byte[] bimage = Convert.FromBase64String(user.EmployeeImage);
-                                MemoryStream ms = new MemoryStream(bimage, 0, bimage.Length);
-                                ms.Write(bimage, 0, bimage.Length);
-                                pictureEditProfile.Image = GetDataToImage((Byte[])bimage);
-                            }
-                                          
+                            });                                                                     
                             labelControlName.Text = user.EmployeeName ?? string.Empty;
                             labelControlEmpCode.Text = user.Code ?? string.Empty;
                             labelControlBranch.Text = user.Branch ?? string.Empty;
@@ -1247,6 +1239,16 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                             else
                             {
                                 lookUpEditSkins.EditValue = 0;
+                            }
+                            if (pictureEditProfile.Image == null && !string.IsNullOrEmpty(user.EmployeeImage))
+                            {
+                                byte[] bimage = Convert.FromBase64String(user.EmployeeImage);
+                                MemoryStream ms = new MemoryStream(bimage, 0, bimage.Length);
+                                ms.Write(bimage, 0, bimage.Length);
+                                pictureEditProfile.Image = GetDataToImage((byte[])bimage);
+                            }
+                            else {
+                                pictureEditProfile.Image = Resources.pictureEditProfile_EditValue;
                             }
                         }
                     }
@@ -1268,8 +1270,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
             }   
             catch (Exception ex)
             {
-               return pictureEditProfile.Image = Resources.pictureEditProfile_EditValue;
-               //MessageBox.Show(ex.Message, "Image not uploaded");                                            
+               return Resources.pictureEditProfile_EditValue;
             }
         }
         //public static Image Crop(this Image image, Rectangle selection)

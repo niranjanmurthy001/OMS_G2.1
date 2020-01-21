@@ -1745,11 +1745,11 @@
     <Compile Include="New Dashboard\LockScreen.Designer.cs">
       <DependentUpon>LockScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="New Dashboard\Settings\EmailSettings.cs">
+    <Compile Include="New Dashboard\Settings\EmailSetting.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="New Dashboard\Settings\EmailSettings.Designer.cs">
-      <DependentUpon>EmailSettings.cs</DependentUpon>
+    <Compile Include="New Dashboard\Settings\EmailSetting.Designer.cs">
+      <DependentUpon>EmailSetting.cs</DependentUpon>
     </Compile>
     <Compile Include="New Dashboard\My_Dashboard.cs">
       <SubType>Form</SubType>
@@ -3575,8 +3575,8 @@
     <EmbeddedResource Include="New Dashboard\LockScreen.resx">
       <DependentUpon>LockScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="New Dashboard\Settings\EmailSettings.resx">
-      <DependentUpon>EmailSettings.cs</DependentUpon>
+    <EmbeddedResource Include="New Dashboard\Settings\EmailSetting.resx">
+      <DependentUpon>EmailSetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="New Dashboard\My_Dashboard.resx">
       <DependentUpon>My_Dashboard.cs</DependentUpon>

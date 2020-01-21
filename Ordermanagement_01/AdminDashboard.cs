@@ -31739,8 +31739,9 @@ namespace Ordermanagement_01
 
         private void emailSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Ordermanagement_01.New_Dashboard.Settings.EmailSettings emailSetting = new New_Dashboard.Settings.EmailSettings();
-            emailSetting.Show();
+            //Ordermanagement_01.New_Dashboard.Settings.EmailSettings emailSetting = new New_Dashboard.Settings.EmailSettings();
+            Ordermanagement_01.New_Dashboard.Settings.EmailSetting emailsettings = new New_Dashboard.Settings.EmailSetting();
+            emailsettings.Show();
         }
 
         private void AdminDashboard_KeyDown(object sender,System.Windows.Forms. KeyEventArgs e)

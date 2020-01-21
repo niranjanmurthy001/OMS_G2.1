@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderHistory));
             this.groupControlOrderHistory = new DevExpress.XtraEditors.GroupControl();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -54,7 +53,6 @@
             this.workType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.stage = new DevExpress.XtraGrid.Columns.GridColumn();
             this.date = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.gridControlOrderStatusHistory = new DevExpress.XtraGrid.GridControl();
@@ -69,10 +67,11 @@
             this.gridViewOrderStatusPermissionHistory = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlOrderHistory)).BeginInit();
             this.groupControlOrderHistory.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -370,10 +369,6 @@
             this.date.Visible = true;
             this.date.VisibleIndex = 6;
             // 
-            // defaultLookAndFeel1
-            // 
-            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013";
-            // 
             // splitContainerControl2
             // 
             this.splitContainerControl2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -385,7 +380,7 @@
             this.splitContainerControl2.Panel2.Controls.Add(this.groupControl1);
             this.splitContainerControl2.Panel2.Text = "Panel2";
             this.splitContainerControl2.Size = new System.Drawing.Size(1059, 396);
-            this.splitContainerControl2.SplitterPosition = 184;
+            this.splitContainerControl2.SplitterPosition = 181;
             this.splitContainerControl2.TabIndex = 0;
             this.splitContainerControl2.Text = "splitContainerControl2";
             // 
@@ -398,7 +393,7 @@
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(0, 0);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(1059, 184);
+            this.groupControl3.Size = new System.Drawing.Size(1059, 181);
             this.groupControl3.TabIndex = 3;
             this.groupControl3.Text = "Order Status History";
             // 
@@ -408,7 +403,7 @@
             this.gridControlOrderStatusHistory.Location = new System.Drawing.Point(2, 31);
             this.gridControlOrderStatusHistory.MainView = this.gridViewOrderStatusHistory;
             this.gridControlOrderStatusHistory.Name = "gridControlOrderStatusHistory";
-            this.gridControlOrderStatusHistory.Size = new System.Drawing.Size(1055, 151);
+            this.gridControlOrderStatusHistory.Size = new System.Drawing.Size(1055, 148);
             this.gridControlOrderStatusHistory.TabIndex = 19;
             this.gridControlOrderStatusHistory.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewOrderStatusHistory});
@@ -477,7 +472,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1059, 200);
+            this.groupControl1.Size = new System.Drawing.Size(1059, 203);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Order Status Permission History";
             // 
@@ -487,7 +482,7 @@
             this.gridControlOrderStatusPermissionHistory.Location = new System.Drawing.Point(2, 21);
             this.gridControlOrderStatusPermissionHistory.MainView = this.gridViewOrderStatusPermissionHistory;
             this.gridControlOrderStatusPermissionHistory.Name = "gridControlOrderStatusPermissionHistory";
-            this.gridControlOrderStatusPermissionHistory.Size = new System.Drawing.Size(1055, 177);
+            this.gridControlOrderStatusPermissionHistory.Size = new System.Drawing.Size(1055, 180);
             this.gridControlOrderStatusPermissionHistory.TabIndex = 20;
             this.gridControlOrderStatusPermissionHistory.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewOrderStatusPermissionHistory});
@@ -522,10 +517,18 @@
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
             // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Processing By";
+            this.gridColumn3.FieldName = "Processing_User_Id";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
+            // 
             // gridColumn4
             // 
             this.gridColumn4.Caption = "Permission By";
-            this.gridColumn4.FieldName = "Employee_Name";
+            this.gridColumn4.FieldName = "Pemitted_Used_Id";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
@@ -533,7 +536,7 @@
             // gridColumn5
             // 
             this.gridColumn5.Caption = "Reason";
-            this.gridColumn5.FieldName = "Reason";
+            this.gridColumn5.FieldName = "Comment";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 4;
@@ -543,18 +546,15 @@
             this.gridColumn6.Caption = "Status Changed On";
             this.gridColumn6.DisplayFormat.FormatString = "d";
             this.gridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.gridColumn6.FieldName = "Date";
+            this.gridColumn6.FieldName = "Inserted_Date";
             this.gridColumn6.FilterMode = DevExpress.XtraGrid.ColumnFilterMode.DisplayText;
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 5;
             // 
-            // gridColumn3
+            // defaultLookAndFeel1
             // 
-            this.gridColumn3.Caption = "Processing By";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013";
             // 
             // OrderHistory
             // 

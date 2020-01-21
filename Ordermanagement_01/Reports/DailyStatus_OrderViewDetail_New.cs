@@ -29,8 +29,6 @@ namespace Ordermanagement_01
         Commonclass Comclass = new Commonclass();
         DataAccess dataaccess = new DataAccess();
         DropDownistBindClass dbc = new DropDownistBindClass();
-
-
         DataTable dt_Order_Status = new DataTable();
         //System.Data.DataRow row ;
         string User_Role_Id;
@@ -54,20 +52,23 @@ namespace Ordermanagement_01
         string Clint, userroleid, Operation, Operation_Count, From_date, To_Date, Path1, errormessage = "", error_status = "", error_value = "", vendor_validation_msg = "", Order_Number;
 
         private void gridView2_RowCellStyle(object sender, RowCellStyleEventArgs e)
-        {
-            GridView CurrentView = sender as GridView;
-            if (e.Column.FieldName == "Comments")
+        {           
+            string caption = e.Column.Caption;
+            if (caption == "Comments")
             {
-                string Value = CurrentView.GetRowCellValue(e.RowHandle,"View").ToString();
-
-                if (Value !="")
+                DataRowView view = gridView2.GetRow(e.RowHandle) as DataRowView;
+                if (view.Row["Order_Comments"] != null)
                 {
-                    e.Appearance.BackColor = System.Drawing.Color.LightYellow;
+                    string Comments = view.Row["Order_Comments"].ToString();
+                    if (Comments !="")
+                    {
+                        e.Appearance.BackColor = Color.Orange;
+                    }
+                    else
+                    {
+                        e.Appearance.BackColor = Color.Yellow;
+                    }
                 }
-                else 
-                {
-                    e.Appearance.BackColor = System.Drawing.Color.White;
-                }               
             }
         }
 
@@ -115,11 +116,9 @@ namespace Ordermanagement_01
             if (info.InRow || info.InRowCell)
             {
                 string caption = info.Column.Caption;
-
                 if (caption == "Comments")
                 {                    
                     Order_Passing_Params obj_Order_Details_List = new Order_Passing_Params();
-
                     System.Data.DataRow row = gridView2.GetDataRow(gridView2.FocusedRowHandle);
                     int Order_ID = int.Parse(row["Order_Id"].ToString());
                     obj_Order_Details_List.Order_Id = Order_ID;
@@ -618,7 +617,7 @@ namespace Ordermanagement_01
             { }
             //Finalization.
             if (e.SummaryProcess == DevExpress.Data.CustomSummaryProcess.Finalize)
-                e.TotalValue = String.Format("{0} of {1}", gridView2.SelectedRowsCount, gridView2.RowCount);
+                e.TotalValue = string.Format("{0} of {1}", gridView2.SelectedRowsCount, gridView2.RowCount);
             label4.Text = e.TotalValue.ToString();
         }
         struct GroupRowHash

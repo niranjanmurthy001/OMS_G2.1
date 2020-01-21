@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Text;
-using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using System.Collections;
 using Newtonsoft.Json;
 using Ordermanagement_01.Models;
 using System.Net.Http;
@@ -19,7 +15,7 @@ using DevExpress.XtraPrintingLinks;
 
 namespace Ordermanagement_01
 {
-    public partial class OrderHistory : DevExpress.XtraEditors.XtraForm
+    public partial class OrderHistory : XtraForm
     {
         private readonly int userId, orderId,roleId;
         private readonly string orderNumber, client, subProcess, state, county;        
@@ -105,7 +101,6 @@ namespace Ordermanagement_01
                     { "@Trans", "SELECT" },
                     { "@Order_Id", orderId }
                 };
-
                 var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
                 using (var httpClient = new HttpClient())
                 {

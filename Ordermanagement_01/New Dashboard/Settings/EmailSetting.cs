@@ -311,39 +311,47 @@ namespace Ordermanagement_01.New_Dashboard.Settings
 
         private void SendHtmlFormattedEmail()
         {
-            using (MailMessage mailMessage = new MailMessage())
+            try
             {
-                mailMessage.From = new MailAddress(txt_Email_address.Text.ToString());
-
-                if (txt_Email_address.Text != "")
+                using (MailMessage mailMessage = new MailMessage())
                 {
-                    mailMessage.To.Add("niranjanmurthy@drnds.com");
+                    mailMessage.From = new MailAddress(txt_Email_address.Text.ToString());
 
-                    string Subject = " " + txt_User_Name.Text + " " + "Account Testing Is Fininshed";
-                    mailMessage.Subject = Subject.ToString();
+                    if (txt_Email_address.Text != "")
+                    {
+                        mailMessage.To.Add("niranjanmurthy@drnds.com");
 
-                    StringBuilder sb = new StringBuilder();
-                    sb.Append("Subject: " + Subject.ToString() + "" + Environment.NewLine);
+                        string Subject = " " + txt_User_Name.Text + " " + "Email Tested Successfully";
+                        mailMessage.Subject = Subject.ToString();
 
-                    SmtpClient smtp = new SmtpClient();
+                        StringBuilder sb = new StringBuilder();
+                        sb.Append("Subject: " + Subject.ToString() + "" + Environment.NewLine);
 
-                    smtp.Host = txt_Outgoing_server.Text;
+                        SmtpClient smtp = new SmtpClient();
 
-                    //NetworkCredential NetworkCred = new NetworkCredential("netco@drnds.com", "P2DGo5fi-c");
-                    NetworkCredential NetworkCred = new NetworkCredential(txt_Email_address.Text, txt_password.Text);
-                    smtp.UseDefaultCredentials = true;
-                    // smtp.Timeout = Math.Max(attachments.Sum(Function(Item) (DirectCast(Item, MailAttachment).Size / 1024)), 100) * 1000
-                    smtp.Timeout = (60 * 5 * 1000);
-                    smtp.Credentials = NetworkCred;
-                    //smtp.EnableSsl = true;
-                    smtp.Port = Convert.ToInt32(txt_OS.Text);
-                    smtp.Send(mailMessage);
-                    smtp.Dispose();
+                        smtp.Host = txt_Outgoing_server.Text;
+
+                        //NetworkCredential NetworkCred = new NetworkCredential("netco@drnds.com", "P2DGo5fi-c");
+                        NetworkCredential NetworkCred = new NetworkCredential(txt_Email_address.Text, txt_password.Text);
+                        smtp.UseDefaultCredentials = true;
+                        // smtp.Timeout = Math.Max(attachments.Sum(Function(Item) (DirectCast(Item, MailAttachment).Size / 1024)), 100) * 1000
+                        smtp.Timeout = (60 * 5 * 1000);
+                        smtp.Credentials = NetworkCred;
+                        //smtp.EnableSsl = true;
+                        smtp.Port = Convert.ToInt32(txt_OS.Text);
+                        smtp.Send(mailMessage);
+                        smtp.Dispose();
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("Email is Not Added Kindly Check It");
+                    }
                 }
-                else
-                {
-                    XtraMessageBox.Show("Email is Not Added Kindly Check It");
-                }
+            }
+            catch(Exception e)
+            {
+                XtraMessageBox.Show(e.Message.ToString());
+                return;
             }
            
         }

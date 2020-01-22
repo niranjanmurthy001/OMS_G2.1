@@ -104,12 +104,12 @@ namespace Ordermanagement_01
                 var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
                 using (var httpClient = new HttpClient())
                 {
-                    var response1 = await httpClient.PostAsync(Base_Url.Url + "/OrderHistory/BindOrderStatusPermission", data);
-                    if (response1.IsSuccessStatusCode)
+                    var response2 = await httpClient.PostAsync(Base_Url.Url + "/OrderHistory/BindOrderStatusPermission", data);
+                    if (response2.IsSuccessStatusCode)
                     {
-                        if (response1.StatusCode == HttpStatusCode.OK)
+                        if (response2.StatusCode == HttpStatusCode.OK)
                         {
-                            var result1 = await response1.Content.ReadAsStringAsync();
+                            var result1 = await response2.Content.ReadAsStringAsync();
                             DataTable dt = JsonConvert.DeserializeObject<DataTable>(result1);
                             if (dt.Rows.Count > 0)
                             {

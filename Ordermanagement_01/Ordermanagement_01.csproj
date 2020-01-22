@@ -231,6 +231,7 @@
     </Reference>
     <Reference Include="DevExpress.RichEdit.v17.2.Core, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Sparkline.v17.2.Core, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.SpellChecker.v17.2.Core, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Spreadsheet.v17.2.Core, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -289,6 +290,8 @@
     <Reference Include="DevExpress.XtraRichEdit.v17.2.Extensions, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraScheduler.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraScheduler.v17.2.Core, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v17.2.Extensions, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraSpellChecker.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraSpreadsheet.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Program Files (x86)\DevExpress 17.2\Components\Bin\Framework\DevExpress.XtraSpreadsheet.v17.2.dll</HintPath>
@@ -1745,6 +1748,12 @@
     <Compile Include="New Dashboard\LockScreen.Designer.cs">
       <DependentUpon>LockScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="New Dashboard\Settings\Client_Process.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New Dashboard\Settings\Client_Process.Designer.cs">
+      <DependentUpon>Client_Process.cs</DependentUpon>
+    </Compile>
     <Compile Include="New Dashboard\Settings\EmailSetting.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1798,6 +1807,18 @@
     </Compile>
     <Compile Include="New Dashboard\Sample.Designer.cs">
       <DependentUpon>Sample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="New Dashboard\Settings\OrderEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New Dashboard\Settings\OrderEntry.Designer.cs">
+      <DependentUpon>OrderEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="New Dashboard\Settings\ProjectSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New Dashboard\Settings\ProjectSelection.Designer.cs">
+      <DependentUpon>ProjectSelection.cs</DependentUpon>
     </Compile>
     <Compile Include="New Dashboard\XtraForm2.cs">
       <SubType>Form</SubType>
@@ -3575,6 +3596,9 @@
     <EmbeddedResource Include="New Dashboard\LockScreen.resx">
       <DependentUpon>LockScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="New Dashboard\Settings\Client_Process.resx">
+      <DependentUpon>Client_Process.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="New Dashboard\Settings\EmailSetting.resx">
       <DependentUpon>EmailSetting.cs</DependentUpon>
     </EmbeddedResource>
@@ -3599,6 +3623,12 @@
     <EmbeddedResource Include="New Dashboard\Orders\Search_NotePad.resx" />
     <EmbeddedResource Include="New Dashboard\Sample.resx">
       <DependentUpon>Sample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New Dashboard\Settings\OrderEntry.resx">
+      <DependentUpon>OrderEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New Dashboard\Settings\ProjectSelection.resx">
+      <DependentUpon>ProjectSelection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="New Dashboard\XtraForm2.resx">
       <DependentUpon>XtraForm2.cs</DependentUpon>

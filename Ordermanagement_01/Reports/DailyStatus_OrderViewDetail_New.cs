@@ -63,10 +63,11 @@ namespace Ordermanagement_01
                     if (Comments !="")
                     {
                         e.Appearance.BackColor = Color.Orange;
+                        e.Appearance.ForeColor = Color.Black;
                     }
                     else
                     {
-                        e.Appearance.BackColor = Color.Yellow;
+                        e.Appearance.BackColor = Color.FromArgb(217,217,217);
                     }
                 }
             }

@@ -521,7 +521,7 @@
             // gridColumn3
             // 
             this.gridColumn3.Caption = "Processing By";
-            this.gridColumn3.FieldName = "Processing_User_Id";
+            this.gridColumn3.FieldName = "Processing_User";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
@@ -529,7 +529,7 @@
             // gridColumn4
             // 
             this.gridColumn4.Caption = "Permission By";
-            this.gridColumn4.FieldName = "Pemitted_Used_Id";
+            this.gridColumn4.FieldName = "Pemitted_Used";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;

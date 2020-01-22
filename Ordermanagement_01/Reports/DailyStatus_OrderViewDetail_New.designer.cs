@@ -980,7 +980,7 @@
             // 
             // comments
             // 
-            this.comments.AppearanceCell.ForeColor = System.Drawing.Color.Blue;
+            this.comments.AppearanceCell.ForeColor = System.Drawing.Color.Black;
             this.comments.AppearanceCell.Options.UseFont = true;
             this.comments.AppearanceCell.Options.UseForeColor = true;
             this.comments.Caption = "Comments";
@@ -993,6 +993,8 @@
             // 
             // repositoryItemHyperLinkEdit5
             // 
+            this.repositoryItemHyperLinkEdit5.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.repositoryItemHyperLinkEdit5.Appearance.Options.UseForeColor = true;
             this.repositoryItemHyperLinkEdit5.Appearance.Options.UseTextOptions = true;
             this.repositoryItemHyperLinkEdit5.AutoHeight = false;
             this.repositoryItemHyperLinkEdit5.Caption = "View";

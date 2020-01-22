@@ -6,6 +6,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -31,7 +33,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
             txt_IS.Enabled = true;
             txt_OS.Enabled = true;
             this.ActiveControl = txt_name;
-            
+
         }
         private void grid_Email_Address_list()
         {
@@ -65,7 +67,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
                 txt_Email_address.Focus();
                 return false;
             }
-          else if (txt_Incoming_server.Text == "")
+            else if (txt_Incoming_server.Text == "")
             {
                 XtraMessageBox.Show("Enter Incoming Server details");
                 txt_Incoming_server.Focus();
@@ -112,7 +114,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
             else if (((txt_OS.Text != "" && (Convert.ToInt32(txt_OS.Text.Length) > 3) || txt_OS.Text == "")))
             {
 
-               XtraMessageBox.Show("Outgoing port must be less than 3.....And please enter Outgoing port");
+                XtraMessageBox.Show("Outgoing port must be less than 3.....And please enter Outgoing port");
                 txt_OS.Focus();
                 return false;
             }
@@ -197,7 +199,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
                     grid_Email_Address_list();
                     Clear();
                 }
-           }
+            }
         }
 
         private void gridView1_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
@@ -224,8 +226,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
             }
             catch (Exception ex)
             {
-                XtraMessageBox.Show("Ex");
-             
+                XtraMessageBox.Show(ex.ToString());
             }
         }
         public void Clear()
@@ -285,18 +286,76 @@ namespace Ordermanagement_01.New_Dashboard.Settings
         }
 
         private void btn_testconnection_Click(object sender, EventArgs e)
-        {      
-
-            XtraMessageBox.Show( txt_name.Text + "  " + "Account Testing Finished");
+        {
+            testEmailadrdress();
+            XtraMessageBox.Show( "Email Has Been Sent");
         }
+        private void testEmailadrdress()
+        {
+            using (MailMessage mm = new MailMessage())
+            {
+                try
+                {
+
+                    SendHtmlFormattedEmail();
+                }
+                catch (Exception error)
+                {
+                    XtraMessageBox.Show(error.Message);
+                    return;
+
+                }
+            }
+
+        }
+
+        private void SendHtmlFormattedEmail()
+        {
+            using (MailMessage mailMessage = new MailMessage())
+            {
+                mailMessage.From = new MailAddress(txt_Email_address.Text.ToString());
+
+                if (txt_Email_address.Text != "")
+                {
+                    mailMessage.To.Add("niranjanmurthy@drnds.com");
+
+                    string Subject = " " + txt_User_Name.Text + " " + "Account Testing Is Fininshed";
+                    mailMessage.Subject = Subject.ToString();
+
+                    StringBuilder sb = new StringBuilder();
+                    sb.Append("Subject: " + Subject.ToString() + "" + Environment.NewLine);
+
+                    SmtpClient smtp = new SmtpClient();
+
+                    smtp.Host = txt_Outgoing_server.Text;
+
+                    //NetworkCredential NetworkCred = new NetworkCredential("netco@drnds.com", "P2DGo5fi-c");
+                    NetworkCredential NetworkCred = new NetworkCredential(txt_Email_address.Text, txt_password.Text);
+                    smtp.UseDefaultCredentials = true;
+                    // smtp.Timeout = Math.Max(attachments.Sum(Function(Item) (DirectCast(Item, MailAttachment).Size / 1024)), 100) * 1000
+                    smtp.Timeout = (60 * 5 * 1000);
+                    smtp.Credentials = NetworkCred;
+                    //smtp.EnableSsl = true;
+                    smtp.Port = Convert.ToInt32(txt_OS.Text);
+                    smtp.Send(mailMessage);
+                    smtp.Dispose();
+                }
+                else
+                {
+                    XtraMessageBox.Show("Email is Not Added Kindly Check It");
+                }
+            }
+           
+        }
+    
         private void txt_name_Properties_Leave(object sender, EventArgs e)
         {
-            if (txt_name.Text == "")
-            {
-                XtraMessageBox.Show("Enter Your_Name");
-                txt_yourname.Focus();
+            //if (txt_name.Text == "")
+            //{
+            //    XtraMessageBox.Show("Enter Your_Name");
+            //    txt_yourname.Focus();
                
-            }
+            //}
         }
         private void txt_Email_address_Properties_Leave(object sender, EventArgs e)
         {
@@ -321,102 +380,102 @@ namespace Ordermanagement_01.New_Dashboard.Settings
 
         private void txt_Incoming_server_Properties_Leave(object sender, EventArgs e)
            {
-            Regex RegExForIncomingServer = new Regex("^[0-9]{3}$");
-            if (txt_Incoming_server.Text == "")
-            {
-                XtraMessageBox.Show("Enter Incoming Server details");
-                txt_Incoming_server.Focus();
-                return;
-            }
-            else if (RegExForIncomingServer.IsMatch(txt_Incoming_server.Text))
-            {
+            //Regex RegExForIncomingServer = new Regex("^[0-9]{3}$");
+            //if (txt_Incoming_server.Text == "")
+            //{
+            //    XtraMessageBox.Show("Enter Incoming Server details");
+            //    txt_Incoming_server.Focus();
+            //    return;
+            //}
+            //else if (RegExForIncomingServer.IsMatch(txt_Incoming_server.Text))
+            //{
 
-            }
-            else
-            {
-                XtraMessageBox.Show("Incoming Server Details Is Having less than 3....And please enter a Valid 3 Digit Incoming port No" );
-                txt_Incoming_server.Focus();
+            //}
+            //else
+            //{
+            //    XtraMessageBox.Show("Incoming Server Details Is Having less than 3....And please enter a Valid 3 Digit Incoming port No" );
+            //    txt_Incoming_server.Focus();
 
-            }
+            //}
         
         }
 
         private void txt_Outgoing_server_Properties_Leave(object sender, EventArgs e)
         {
-            Regex RegExForOutgoingServer = new Regex("^[0-9]{3}$");
-            if (txt_Outgoing_server.Text == "")
-            {
-                XtraMessageBox.Show("Enter OutGoing Server details");
-                txt_Outgoing_server.Focus();
-                return;
-            }
-            else if (RegExForOutgoingServer.IsMatch(txt_Outgoing_server.Text))
-            {
+            //Regex RegExForOutgoingServer = new Regex("^[0-9]{3}$");
+            //if (txt_Outgoing_server.Text == "")
+            //{
+            //    XtraMessageBox.Show("Enter OutGoing Server details");
+            //    txt_Outgoing_server.Focus();
+            //    return;
+            //}
+            //else if (RegExForOutgoingServer.IsMatch(txt_Outgoing_server.Text))
+            //{
 
-            }
-            else
-            {
-                XtraMessageBox.Show("Outgoing Server Details Is Having less than 3.....And please enter a Valid 3 Digit Outgoing port No");
-                txt_Outgoing_server.Focus();
-            }
+            //}
+            //else
+            //{
+            //    XtraMessageBox.Show("Outgoing Server Details Is Having less than 3.....And please enter a Valid 3 Digit Outgoing port No");
+            //    txt_Outgoing_server.Focus();
+            //}
         }
 
         private void txt_IS_Properties_Leave(object sender, EventArgs e)
             {
-            Regex RegExForIsPort = new Regex("^[0-9]{3}$");
+            //Regex RegExForIsPort = new Regex("^[0-9]$");
             if (txt_IS.Text == "")
             {
                 XtraMessageBox.Show("Enter Incoming Server Port details");
                 txt_IS.Focus();
                 return;
             }
-            else if (RegExForIsPort.IsMatch(txt_IS.Text))
-            {
+            //else if (RegExForIsPort.IsMatch(txt_IS.Text))
+            //{
 
-            }
-            else
-            {
-                XtraMessageBox.Show("Incoming Server Port Is Having less than 3....And please enter a Valid 3 Digit Incoming port No");
-                txt_IS.Focus();
-            }
+            //}
+            //else
+            //{
+            //    XtraMessageBox.Show("Incoming Server Port Is Having less than 3....And please enter a Valid Incoming port No");
+            //    txt_IS.Focus();
+            //}
         }
         private void txt_OS_Properties_Leave(object sender, EventArgs e)
         {
-            Regex RegExForOsPort= new Regex("^[0-9]{3}$");
+            //Regex RegExForOsPort= new Regex("^[0-9]$");
             if (txt_OS.Text == "")
             {
                 XtraMessageBox.Show("Enter OutGoing Server Port details");
                 txt_OS.Focus();
                 return;
             }
-            else if (RegExForOsPort.IsMatch(txt_OS.Text))
-            {
+            //else if (RegExForOsPort.IsMatch(txt_OS.Text))
+            //{
 
-            }
-            else
-            {
-                XtraMessageBox.Show("Outgoing port Is Having less than 3.....And please enter a Valid 3 Digit Outgoing port No");
-                txt_OS.Focus();
-            }
+            ////}
+            //else
+            //{
+            //    XtraMessageBox.Show("Outgoing port Is Having less than 3.....And please enter a Valid Outgoing port No");
+            //    txt_OS.Focus();
+            //}
         }
 
         private void txt_password_Properties_Leave(object sender, EventArgs e)
             {
-            Regex RegExForPassword = new Regex("^.*(?=.{8,})(?=.*\\d)(?=.*[a-z])(?=.*[!*@#$%^&+=]).*$");
+            ////Regex RegExForPassword = new Regex("^.*(?=.{8,})(?=.*\\d)(?=.*[a-z])(?=.*[!*@#$%^&+=]).*$");
             if (txt_password.Text == "")
             {
                 XtraMessageBox.Show("Enter Password");
                 txt_password.Focus();
             }
-            if (RegExForPassword.IsMatch(txt_password.Text))
-            {
+            //if (RegExForPassword.IsMatch(txt_password.Text))
+            //{
 
-            }
-            else
-            {
-                XtraMessageBox.Show("Password Should Be Having  Alpha-numeric & OneSpecialCharacter.");
-                txt_password.Focus();
-            }
+            //}
+            //else
+            //{
+            //    XtraMessageBox.Show("Password Should Be Having  Alpha-numeric & OneSpecialCharacter.");
+            //    txt_password.Focus();
+            //}
         }
 
         private void txt_User_Name_Leave(object sender, EventArgs e)
@@ -427,6 +486,47 @@ namespace Ordermanagement_01.New_Dashboard.Settings
                 txt_User_Name.Focus();
                 
             }
+        }
+
+        private void txt_User_Name_TextChanged(object sender, EventArgs e)
+        {
+            txt_User_Name.Text = txt_Email_address.Text.ToString();
+        }
+
+        private void txt_Email_address_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           e.Handled = (e.KeyChar == (char)Keys.Space); 
+        }
+
+        private void txt_Incoming_server_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            e.Handled = (e.KeyChar == (char)Keys.Space);
+        }
+
+        private void txt_Outgoing_server_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = (e.KeyChar == (char)Keys.Space);
+        }
+
+        private void txt_IS_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = (e.KeyChar == (char)Keys.Space);
+        }
+
+        private void txt_OS_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = (e.KeyChar == (char)Keys.Space);
+        }
+
+        private void txt_Email_address_Leave(object sender, EventArgs e)
+        {
+            txt_User_Name.Text = txt_Email_address.Text;
+        }
+
+        private void txt_User_Name_Enter(object sender, EventArgs e)
+        {
+            txt_User_Name.Text = txt_Email_address.Text;
         }
     }
 }

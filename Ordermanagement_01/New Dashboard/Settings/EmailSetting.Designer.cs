@@ -109,7 +109,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.48218F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.51782F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(662, 525);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(662, 526);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // panelControl1
@@ -179,7 +179,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.labelControl3);
             this.splitContainer1.Panel2.Controls.Add(this.labelControl2);
             this.splitContainer1.Panel2.Controls.Add(this.labelControl1);
-            this.splitContainer1.Size = new System.Drawing.Size(656, 464);
+            this.splitContainer1.Size = new System.Drawing.Size(656, 465);
             this.splitContainer1.SplitterDistance = 156;
             this.splitContainer1.TabIndex = 3;
             // 
@@ -189,7 +189,7 @@
             this.gridControl1_Email_Address.Location = new System.Drawing.Point(0, 0);
             this.gridControl1_Email_Address.MainView = this.gridView1;
             this.gridControl1_Email_Address.Name = "gridControl1_Email_Address";
-            this.gridControl1_Email_Address.Size = new System.Drawing.Size(152, 460);
+            this.gridControl1_Email_Address.Size = new System.Drawing.Size(152, 461);
             this.gridControl1_Email_Address.TabIndex = 0;
             this.gridControl1_Email_Address.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -291,6 +291,7 @@
             this.txt_OS.Properties.Leave += new System.EventHandler(this.txt_OS_Properties_Leave);
             this.txt_OS.Size = new System.Drawing.Size(160, 20);
             this.txt_OS.TabIndex = 7;
+            this.txt_OS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_OS_KeyPress);
             // 
             // txt_IS
             // 
@@ -303,13 +304,14 @@
             this.txt_IS.Properties.Leave += new System.EventHandler(this.txt_IS_Properties_Leave);
             this.txt_IS.Size = new System.Drawing.Size(160, 20);
             this.txt_IS.TabIndex = 6;
+            this.txt_IS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_IS_KeyPress);
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.panel1);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 415);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 416);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(492, 45);
             this.flowLayoutPanel1.TabIndex = 41;
@@ -367,8 +369,11 @@
             // 
             this.txt_User_Name.Location = new System.Drawing.Point(220, 359);
             this.txt_User_Name.Name = "txt_User_Name";
+            this.txt_User_Name.Properties.ReadOnly = true;
             this.txt_User_Name.Size = new System.Drawing.Size(160, 20);
             this.txt_User_Name.TabIndex = 8;
+            this.txt_User_Name.TextChanged += new System.EventHandler(this.txt_User_Name_TextChanged);
+            this.txt_User_Name.Enter += new System.EventHandler(this.txt_User_Name_Enter);
             this.txt_User_Name.Leave += new System.EventHandler(this.txt_User_Name_Leave);
             // 
             // txt_password
@@ -385,23 +390,19 @@
             // 
             this.txt_Outgoing_server.Location = new System.Drawing.Point(220, 178);
             this.txt_Outgoing_server.Name = "txt_Outgoing_server";
-            this.txt_Outgoing_server.Properties.Mask.EditMask = "n0";
-            this.txt_Outgoing_server.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txt_Outgoing_server.Properties.MaxLength = 3;
             this.txt_Outgoing_server.Properties.Leave += new System.EventHandler(this.txt_Outgoing_server_Properties_Leave);
             this.txt_Outgoing_server.Size = new System.Drawing.Size(160, 20);
             this.txt_Outgoing_server.TabIndex = 4;
+            this.txt_Outgoing_server.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Outgoing_server_KeyPress);
             // 
             // txt_Incoming_server
             // 
             this.txt_Incoming_server.Location = new System.Drawing.Point(220, 143);
             this.txt_Incoming_server.Name = "txt_Incoming_server";
-            this.txt_Incoming_server.Properties.Mask.EditMask = "n0";
-            this.txt_Incoming_server.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txt_Incoming_server.Properties.MaxLength = 3;
             this.txt_Incoming_server.Properties.Leave += new System.EventHandler(this.txt_Incoming_server_Properties_Leave);
             this.txt_Incoming_server.Size = new System.Drawing.Size(160, 20);
             this.txt_Incoming_server.TabIndex = 3;
+            this.txt_Incoming_server.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Incoming_server_KeyPress);
             // 
             // txt_Email_address
             // 
@@ -411,6 +412,8 @@
             this.txt_Email_address.Properties.Leave += new System.EventHandler(this.txt_Email_address_Properties_Leave);
             this.txt_Email_address.Size = new System.Drawing.Size(160, 20);
             this.txt_Email_address.TabIndex = 2;
+            this.txt_Email_address.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Email_address_KeyPress);
+            this.txt_Email_address.Leave += new System.EventHandler(this.txt_Email_address_Leave);
             // 
             // labelControl12
             // 
@@ -538,11 +541,11 @@
             this.labelControl2.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Appearance.Options.UseForeColor = true;
-            this.labelControl2.Location = new System.Drawing.Point(28, 53);
+            this.labelControl2.Location = new System.Drawing.Point(28, 49);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(61, 13);
+            this.labelControl2.Size = new System.Drawing.Size(75, 13);
             this.labelControl2.TabIndex = 22;
-            this.labelControl2.Text = "Your Name :";
+            this.labelControl2.Text = "Display Name :";
             // 
             // labelControl1
             // 
@@ -564,7 +567,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(662, 525);
+            this.ClientSize = new System.Drawing.Size(662, 526);
             this.Controls.Add(this.tableLayoutPanel1);
             this.MinimumSize = new System.Drawing.Size(678, 563);
             this.Name = "EmailSetting";

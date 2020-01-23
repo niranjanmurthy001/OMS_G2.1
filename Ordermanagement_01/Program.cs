@@ -38,7 +38,7 @@ namespace Ordermanagement_01
 
           // Application.Run(new New_Dashboard.Settings.EmailSetting());
 
-         //  Application.Run(new New_Dashboard.Settings.Client_Process());
+           //Application.Run(new New_Dashboard.Settings.Client_Process());
 
 
 

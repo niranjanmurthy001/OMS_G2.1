@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -51,7 +50,9 @@
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_Submit = new DevExpress.XtraEditors.SimpleButton();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
@@ -116,6 +117,9 @@
             // 
             // gridView1
             // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
@@ -133,12 +137,12 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 61F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 98F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 123F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 107F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 11F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.14741F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5498F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.71713F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.11155F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.31474F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.960159F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(679, 502);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -148,7 +152,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(3, 3);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(673, 56);
+            this.panelControl1.Size = new System.Drawing.Size(673, 60);
             this.panelControl1.TabIndex = 0;
             // 
             // labelControl1
@@ -169,9 +173,9 @@
             this.panelControl2.Controls.Add(this.ddl_Client_Names);
             this.panelControl2.Controls.Add(this.labelControl2);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(3, 65);
+            this.panelControl2.Location = new System.Drawing.Point(3, 69);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(673, 55);
+            this.panelControl2.Size = new System.Drawing.Size(673, 57);
             this.panelControl2.TabIndex = 1;
             // 
             // ddl_Client_Names
@@ -201,9 +205,9 @@
             this.panelControl3.Controls.Add(this.checkedListBoxControl1);
             this.panelControl3.Controls.Add(this.labelControl3);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl3.Location = new System.Drawing.Point(3, 126);
+            this.panelControl3.Location = new System.Drawing.Point(3, 132);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(673, 92);
+            this.panelControl3.Size = new System.Drawing.Size(673, 98);
             this.panelControl3.TabIndex = 2;
             // 
             // checkedListBoxControl1
@@ -221,7 +225,7 @@
             new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null, "Others")});
             this.checkedListBoxControl1.Location = new System.Drawing.Point(273, 0);
             this.checkedListBoxControl1.Name = "checkedListBoxControl1";
-            this.checkedListBoxControl1.Size = new System.Drawing.Size(176, 92);
+            this.checkedListBoxControl1.Size = new System.Drawing.Size(176, 98);
             this.checkedListBoxControl1.TabIndex = 2;
             // 
             // labelControl3
@@ -242,9 +246,9 @@
             this.panelControl4.Controls.Add(this.labelControl4);
             this.panelControl4.Controls.Add(this.checkedListBoxControl2);
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl4.Location = new System.Drawing.Point(3, 224);
+            this.panelControl4.Location = new System.Drawing.Point(3, 236);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(673, 117);
+            this.panelControl4.Size = new System.Drawing.Size(673, 105);
             this.panelControl4.TabIndex = 3;
             // 
             // labelControl4
@@ -276,7 +280,7 @@
             new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null, "Others")});
             this.checkedListBoxControl2.Location = new System.Drawing.Point(273, 0);
             this.checkedListBoxControl2.Name = "checkedListBoxControl2";
-            this.checkedListBoxControl2.Size = new System.Drawing.Size(176, 117);
+            this.checkedListBoxControl2.Size = new System.Drawing.Size(176, 105);
             this.checkedListBoxControl2.TabIndex = 2;
             // 
             // panelControl5
@@ -356,13 +360,26 @@
             // 
             this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013";
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Client";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Sub Client";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            // 
             // Client_Process
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(910, 525);
             this.Controls.Add(this.groupControl1);
-            this.MaximumSize = new System.Drawing.Size(1080, 563);
             this.MinimumSize = new System.Drawing.Size(926, 563);
             this.Name = "Client_Process";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -425,5 +442,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
         private System.Windows.Forms.ComboBox ddl_Client_Names;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
     }
 }

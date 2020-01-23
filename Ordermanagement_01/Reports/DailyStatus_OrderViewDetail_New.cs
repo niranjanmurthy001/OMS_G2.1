@@ -85,18 +85,32 @@ namespace Ordermanagement_01
                     {
                        DataRowView vie= gridView2.GetRow(info.RowHandle) as DataRowView;
                         StringBuilder bs = new StringBuilder();
-                        if (vie.Row["Order_Comments"] != null)
+                        if (vie.Row["Order_Comments"] != null || vie.Row["Status_Comments"]!=null || vie.Row["Permission_Comments"]!=null)
                         {
                             string Comments = vie.Row["Order_Comments"].ToString();
-                            if (Comments != "")
+                            string StatusComments = vie.Row["Status_Comments"].ToString();
+                            string PermissionComments = vie.Row["Permission_Comments"].ToString();
+                            if (Comments != ""  || StatusComments !="" || PermissionComments != "")
                             {
+                                
                                 string Order_Number = vie.Row["Client_Order_Number"].ToString();
-                                bs.Append(Order_Number.ToString());
-                                bs.AppendLine();
-                                bs.AppendLine();
-                                string s = (bs.Append(Comments.ToString().TrimStart('@')).AppendLine()).ToString();
-                                string str = s.ToString();
-                                string _str = str.Replace("@", Environment.NewLine+Environment.NewLine).ToString();
+                                bs.Append(Order_Number.ToString());                                
+                                bs.AppendLine();    
+                                if(StatusComments !="")
+                                {
+                                    bs.AppendLine();
+                                    bs.Append(StatusComments.ToString());
+                                    bs.AppendLine();
+                                }                          
+                                if(PermissionComments !="")
+                                {
+                                    bs.AppendLine();
+                                    bs.Append(PermissionComments.ToString());
+                                    bs.AppendLine();
+                                }
+                                bs.AppendLine();                   
+                                (bs.Append(Comments.ToString().TrimStart('@')).AppendLine()).ToString();                               
+                                string _str = bs.Replace("@", Environment.NewLine+Environment.NewLine).ToString();
                                 toolTipController1.ShowHint(_str);
                             }
                             else
@@ -164,23 +178,86 @@ namespace Ordermanagement_01
 
             pivotGridControl1.DataSource = dt;
 
+         
+
             repositoryItemPopupContainerEdit1.QueryPopUp += repositoryItemPopupContainerEdit1_QueryPopUp;
             repositoryItemPopupContainerEdit1.CloseUp += repositoryItemPopupContainerEdit1_CloseUp;
             repositoryItemPopupContainerEdit1.PopupControl = CreatePopupControl();
 
-            if (Tab_Type_Name == "Shift Wise")
+           
+                if (Tab_Type_Name == "Shift Wise")
             {
                 panel7.Visible = true;
                 panel2.Visible = true;
+                if (dt.Rows.Count > 0)
+                {
+                    grd_Targetorder.DataSource = dt;
+                }
+
+                if (User_Role_Id == "1")
+                {
+
+                    gridColumn14.Visible = false;
+                    gridColumn15.Visible = false;
+
+                    gridColumn37.Visible = true;
+                    gridColumn38.Visible = true;
+
+                    gridView2.Columns["Client_Number"].Visible = true;
+                    gridView2.Columns["Subprocess_Number"].Visible = true;
+
+                }
+                else
+                {
+                    gridColumn14.Visible = false;
+                    gridColumn15.Visible = false;
+
+                    gridColumn37.Visible = true;
+                    gridColumn38.Visible = true;
+
+                    gridView2.Columns["Client_Number"].Visible = true;
+                    gridView2.Columns["Subprocess_Number"].Visible = true;
+
+                }
             }
             if (Tab_Type_Name == "Daily Wise" || Tab_Type_Name == "Open Order Wise" || Tab_Type_Name == "Pending Order Wise")
             {
                 panel7.Visible = true;
                 panel2.Visible = true;
-                Get_Client_Wise_Production_Count_Orders_To_GridviewBind();
+                if (dt.Rows.Count > 0)
+                {
+                    grd_Targetorder.DataSource = dt;
+                }
+                if (User_Role_Id == "1")
+                {
+
+                    gridColumn14.Visible = false;
+                    gridColumn15.Visible = false;
+
+                    gridColumn37.Visible = true;
+                    gridColumn38.Visible = true;
+
+                    gridView2.Columns["Client_Number"].Visible = true;
+                    gridView2.Columns["Subprocess_Number"].Visible = true;
+
+                }
+                else
+                {
+                    gridColumn14.Visible = false;
+                    gridColumn15.Visible = false;
+
+                    gridColumn37.Visible = true;
+                    gridColumn38.Visible = true;
+
+                    gridView2.Columns["Client_Number"].Visible = true;
+                    gridView2.Columns["Subprocess_Number"].Visible = true;
+
+                }
+                //Get_Client_Wise_Production_Count_Orders_To_GridviewBind();
             }
             else
             {
+               
 
                 if (Tab_Type_Name == "Shift Wise")
                 {
@@ -194,8 +271,11 @@ namespace Ordermanagement_01
                 }
                 if (dt.Rows.Count > 0)
                 {
-                    grd_Targetorder.DataSource = dt;
-                 
+           
+                        grd_Targetorder.DataSource = dt;
+                    
+
+
                     if (User_Role_Id == "1")
                     {
 

@@ -3070,7 +3070,7 @@ namespace Ordermanagement_01
                             ht_get_Aging_Pending_griddetails.Add("@Client_Number", Aging_Client_Number);
                             ht_get_Aging_Pending_griddetails.Add("@Order_Status", Aging_Order_Status);
                             ht_get_Aging_Pending_griddetails.Add("@date", Aging_Date);
-                            dt_get_Aging_Pending_griddetails = dataaccess.ExecuteSP("Sp_Daily_Status_Report", ht_get_Aging_Pending_griddetails);
+                            dt_get_Aging_Pending_griddetails = dataaccess.ExecuteSP("Sp_Daily_Status_Report_Pending", ht_get_Aging_Pending_griddetails);
 
                             // DailyStatus_OrderViewDetail_New dailystatus_Aging_pending = new DailyStatus_OrderViewDetail_New(dt_get_Aging_Pending_griddetails, userroleid, User_id, Production_date);
 
@@ -3129,7 +3129,7 @@ namespace Ordermanagement_01
                             ht_get_Aging_Pending_grid.Add("@Client_Number", Aging_Client_Number);
                             ht_get_Aging_Pending_grid.Add("@Order_Status", Aging_Order_Status);
                             //ht_get_Aging_Pending_grid.Add("@date", Aging_Date);
-                            dt_get_Aging_Pending_grid = dataaccess.ExecuteSP("Sp_Daily_Status_Report", ht_get_Aging_Pending_grid);
+                            dt_get_Aging_Pending_grid = dataaccess.ExecuteSP("Sp_Daily_Status_Report_Pending", ht_get_Aging_Pending_grid);
 
 
                             //DailyStatus_OrderViewDetail_New dailystatus_Aging_pending = new DailyStatus_OrderViewDetail_New(dt_get_Aging_Pending_grid, userroleid, User_id, Production_date, dt_get_Aging_Pending_grid.Rows[0]["Client_Number"].ToString(), int.Parse(dt_get_Aging_Pending_grid.Rows[0]["Subprocess_Id"].ToString()), "", dateEdit_From_date.Text, dateEdit_To_Date.Text,"");
@@ -3176,7 +3176,7 @@ namespace Ordermanagement_01
 
                             ht_get_Aging_Pending.Add("@Trans", "AGENT_PENDING_ORDER_ALL_CLIENT_STATUS_WISE");
                             ht_get_Aging_Pending.Add("@Order_Status", Aging_Order_Status);
-                            dt_get_Aging_Pending = dataaccess.ExecuteSP("Sp_Daily_Status_Report", ht_get_Aging_Pending);
+                            dt_get_Aging_Pending = dataaccess.ExecuteSP("Sp_Daily_Status_Report_Pending", ht_get_Aging_Pending);
 
                             //DailyStatus_OrderViewDetail_New dailystatus_Aging_pending = new DailyStatus_OrderViewDetail_New(dt_get_Aging_Pending, userroleid, User_id, Production_date, dt_get_Aging_Pending.Rows[0]["Client_Number"].ToString(), int.Parse(dt_get_Aging_Pending.Rows[0]["Subprocess_Id"].ToString()), "", dateEdit_From_date.Text, dateEdit_To_Date.Text,"");
 
@@ -3233,7 +3233,7 @@ namespace Ordermanagement_01
                             ht_Aging_Pending_Details.Add("@Trans", "AGENT_PENDING_ORDER_CLIENT_DATE_WISE");
                             ht_Aging_Pending_Details.Add("@Client_Number", Aging_Client_Number);
                             ht_Aging_Pending_Details.Add("@date", Aging_Date);
-                            dt_Aging_Pending_Details = dataaccess.ExecuteSP("Sp_Daily_Status_Report", ht_Aging_Pending_Details);
+                            dt_Aging_Pending_Details = dataaccess.ExecuteSP("Sp_Daily_Status_Report_Pending", ht_Aging_Pending_Details);
 
                             HeaderText = $"{Tab_Name} - {Aging_Client_Number} - All Orders on {Aging_Date}";
 
@@ -3273,7 +3273,7 @@ namespace Ordermanagement_01
 
                             ht_AgingPending.Add("@Trans", "AGENT_PENDING_ORDER_CLIENT_AND_ALL_STATUS_WISE");
                             ht_AgingPending.Add("@Client_Number", Aging_Client_Number);
-                            dt_AgingPending = dataaccess.ExecuteSP("Sp_Daily_Status_Report", ht_AgingPending);
+                            dt_AgingPending = dataaccess.ExecuteSP("Sp_Daily_Status_Report_Pending", ht_AgingPending);
 
 
                             //  DailyStatus_OrderViewDetail_New dailystatus_Aging_pending = new DailyStatus_OrderViewDetail_New(dt_AgingPending, userroleid, User_id, Production_date, dt_AgingPending.Rows[0]["Client_Number"].ToString(), int.Parse(dt_AgingPending.Rows[0]["Subprocess_Id"].ToString()), "", dateEdit_From_date.Text, dateEdit_To_Date.Text,"");
@@ -3375,7 +3375,7 @@ namespace Ordermanagement_01
                             ht_AgingPending_detail.Add("@Trans", "AGING_PENDING_ORDER_DATE_WISE");
                             ht_AgingPending_detail.Add("@Fromdate", dateEdit_From_date.Text);
                             ht_AgingPending_detail.Add("@Todate", dateEdit_To_Date.Text);
-                            dt_AgingPending_detail = dataaccess.ExecuteSP("Sp_Daily_Status_Report", ht_AgingPending_detail);
+                            dt_AgingPending_detail = dataaccess.ExecuteSP("Sp_Daily_Status_Report_Pending", ht_AgingPending_detail);
 
 
                             //DailyStatus_OrderViewDetail_New dailystatus_Aging_pending = new DailyStatus_OrderViewDetail_New(dt_AgingPending_detail, userroleid, User_id, Production_date, dt_AgingPending_detail.Rows[0]["Client_Number"].ToString(), int.Parse(dt_AgingPending_detail.Rows[0]["Subprocess_Id"].ToString()), "", dateEdit_From_date.Text, dateEdit_To_Date.Text,"");
@@ -3696,7 +3696,7 @@ namespace Ordermanagement_01
                         if (V_Data != "" && V_Data != "0")
                         {
                             Hashtable ht_get_Shiftdetails = new Hashtable();
-                            System.Data.DataTable dt_get_Shiftdetails = new System.Data.DataTable();
+                            System.Data.DataTable dt_get_Shiftdetails = new DataTable();
                             ht_get_Shiftdetails.Clear();
                             dt_get_Shiftdetails.Clear();
 

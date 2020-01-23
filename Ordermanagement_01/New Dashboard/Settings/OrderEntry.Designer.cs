@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.textEdit30 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit29 = new DevExpress.XtraEditors.TextEdit();
@@ -171,7 +170,7 @@
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit30.Properties)).BeginInit();
@@ -247,9 +246,9 @@
             this.panelControl3.Controls.Add(this.labelControl54);
             this.panelControl3.Controls.Add(this.labelControl55);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl3.Location = new System.Drawing.Point(415, 3);
+            this.panelControl3.Location = new System.Drawing.Point(409, 3);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(406, 512);
+            this.panelControl3.Size = new System.Drawing.Size(400, 467);
             this.panelControl3.TabIndex = 1;
             // 
             // textEdit30
@@ -468,8 +467,8 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 473F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1238, 518);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 518F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1220, 473);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // panelControl2
@@ -489,7 +488,7 @@
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(3, 3);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(406, 512);
+            this.panelControl2.Size = new System.Drawing.Size(400, 467);
             this.panelControl2.TabIndex = 0;
             // 
             // comboBox24
@@ -623,9 +622,9 @@
             this.panelControl4.Controls.Add(this.labelControl60);
             this.panelControl4.Controls.Add(this.labelControl61);
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl4.Location = new System.Drawing.Point(827, 3);
+            this.panelControl4.Location = new System.Drawing.Point(815, 3);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(408, 512);
+            this.panelControl4.Size = new System.Drawing.Size(402, 467);
             this.panelControl4.TabIndex = 2;
             // 
             // textEdit28
@@ -955,7 +954,7 @@
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(3, 3);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(303, 512);
+            this.groupControl3.Size = new System.Drawing.Size(299, 467);
             this.groupControl3.TabIndex = 0;
             this.groupControl3.Text = "Lerata Group";
             // 
@@ -1220,7 +1219,7 @@
             this.tab_taxorders.Caption = "Tax Orders";
             this.tab_taxorders.Controls.Add(this.tableLayoutPanel2);
             this.tab_taxorders.Name = "tab_taxorders";
-            this.tab_taxorders.Size = new System.Drawing.Size(1238, 518);
+            this.tab_taxorders.Size = new System.Drawing.Size(1220, 473);
             // 
             // tableLayoutPanel2
             // 
@@ -1238,7 +1237,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1238, 518);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1220, 473);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // groupControl4
@@ -1270,9 +1269,9 @@
             this.groupControl4.Controls.Add(this.labelControl19);
             this.groupControl4.Controls.Add(this.labelControl18);
             this.groupControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl4.Location = new System.Drawing.Point(312, 3);
+            this.groupControl4.Location = new System.Drawing.Point(308, 3);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(303, 512);
+            this.groupControl4.Size = new System.Drawing.Size(299, 467);
             this.groupControl4.TabIndex = 1;
             this.groupControl4.Text = "Tax Group";
             // 
@@ -1461,9 +1460,9 @@
             this.groupControl5.Controls.Add(this.labelControl32);
             this.groupControl5.Controls.Add(this.labelControl31);
             this.groupControl5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl5.Location = new System.Drawing.Point(621, 3);
+            this.groupControl5.Location = new System.Drawing.Point(613, 3);
             this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(303, 512);
+            this.groupControl5.Size = new System.Drawing.Size(299, 467);
             this.groupControl5.TabIndex = 2;
             this.groupControl5.Text = "Code Group";
             // 
@@ -1578,9 +1577,9 @@
             // groupControl6
             // 
             this.groupControl6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl6.Location = new System.Drawing.Point(930, 3);
+            this.groupControl6.Location = new System.Drawing.Point(918, 3);
             this.groupControl6.Name = "groupControl6";
-            this.groupControl6.Size = new System.Drawing.Size(305, 512);
+            this.groupControl6.Size = new System.Drawing.Size(299, 467);
             this.groupControl6.TabIndex = 3;
             this.groupControl6.Text = "Others";
             // 
@@ -1591,7 +1590,7 @@
             this.tab_titleorders.Caption = "Title Orders";
             this.tab_titleorders.Controls.Add(this.tableLayoutPanel3);
             this.tab_titleorders.Name = "tab_titleorders";
-            this.tab_titleorders.Size = new System.Drawing.Size(1238, 518);
+            this.tab_titleorders.Size = new System.Drawing.Size(1220, 473);
             // 
             // tab_hoaorders
             // 
@@ -1647,7 +1646,7 @@
             this.tab_hoaorders,
             this.tab_otherorders});
             this.tabPane1.RegularSize = new System.Drawing.Size(1238, 518);
-            this.tabPane1.SelectedPage = this.tab_titleorders;
+            this.tabPane1.SelectedPage = this.tab_welcome;
             this.tabPane1.Size = new System.Drawing.Size(1238, 518);
             this.tabPane1.TabIndex = 0;
             this.tabPane1.Text = "tabPane1";

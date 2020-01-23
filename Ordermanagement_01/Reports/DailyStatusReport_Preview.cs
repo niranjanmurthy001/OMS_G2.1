@@ -217,7 +217,7 @@ namespace Ordermanagement_01
             try
             {
                 Hashtable ht_Admin_User_Clients = new Hashtable();
-                System.Data.DataTable dt_Admin_User_Clients = new System.Data.DataTable();
+                DataTable dt_Admin_User_Clients = new DataTable();
 
                 ht_Admin_User_Clients.Add("@Trans", "GET_ADMIN_USER_CLIENTS");
                 ht_Admin_User_Clients.Add("@Log_In_Userid", User_id);
@@ -280,7 +280,7 @@ namespace Ordermanagement_01
         public void BindLookUpEdit_ShiftWise_Manager()
         {
             Hashtable ht_Shiftwise = new Hashtable();
-            System.Data.DataTable dt_Shiftwise = new System.Data.DataTable();
+            DataTable dt_Shiftwise = new DataTable();
 
             lookUpEdit_Branch.Properties.DataSource = null;
 
@@ -390,7 +390,7 @@ namespace Ordermanagement_01
         public void BindLookUpEdit_AgingPreview_OpenOrders_Manager()
         {
             Hashtable ht_AgingOPen = new Hashtable();
-            System.Data.DataTable dt_AgingOPen = new System.Data.DataTable();
+            DataTable dt_AgingOPen = new DataTable();
 
             lookUpEdit_AgingPreview_Open_Orders.Properties.DataSource = null;
 
@@ -416,7 +416,7 @@ namespace Ordermanagement_01
         public void BindLookUpEdit_AgingPreview_Pending_Orders_Manager()
         {
             Hashtable ht_AgingPending = new Hashtable();
-            System.Data.DataTable dt_AgingPending = new System.Data.DataTable();
+            DataTable dt_AgingPending = new DataTable();
 
             lookUpEdit_Aging_Pending_Orders_Manager.Properties.DataSource = null;
 
@@ -622,7 +622,7 @@ namespace Ordermanagement_01
             catch (Exception ex)
             {
 
-                DevExpress.XtraEditors.XtraMessageBox.Show(Default_Look_Confirmation.LookAndFeel, this, "Something Went Wrong Please Check with Administrator.", "Warning", MessageBoxButtons.OK);
+                XtraMessageBox.Show(Default_Look_Confirmation.LookAndFeel, this, "Something Went Wrong Please Check with Administrator.", "Warning", MessageBoxButtons.OK);
             }
 
         }
@@ -796,7 +796,7 @@ namespace Ordermanagement_01
                 {
 
                     Hashtable ht_Shift_hosur = new Hashtable();
-                    System.Data.DataTable dt_Shift_hosur = new System.Data.DataTable();
+                    DataTable dt_Shift_hosur = new DataTable();
 
                     ht_Shift_hosur.Add("@Trans", "SHIFT_FROM_AND_TO_DATE_AND_BRANCH_WISE");
                     ht_Shift_hosur.Add("@Fromdate", dateEdit_From_date.Text);
@@ -1066,7 +1066,7 @@ namespace Ordermanagement_01
             if (dateEdit_From_date.Text != "" && dateEdit_To_Date.Text != "")
             {
                 Hashtable ht_get_Mangerwise = new Hashtable();
-                System.Data.DataTable dt_get_Mangerwise = new System.Data.DataTable();
+                DataTable dt_get_Mangerwise = new DataTable();
 
                 ht_get_Mangerwise.Add("@Trans", "PRODUCT_TYPE_MANAGER_WISE");
                 ht_get_Mangerwise.Add("@Reporting_To_Id_2", Userid_value);
@@ -1090,7 +1090,7 @@ namespace Ordermanagement_01
             if (dateEdit_From_date.Text != "" && dateEdit_To_Date.Text != "")
             {
                 Hashtable ht_get_Supervisorwise = new Hashtable();
-                System.Data.DataTable dt_get_Supervisorwise = new System.Data.DataTable();
+                DataTable dt_get_Supervisorwise = new DataTable();
 
                 ht_get_Supervisorwise.Add("@Trans", "PRODUCT_TYPE_SUPERVISOR_WISE");
                 ht_get_Supervisorwise.Add("@Reporting_To_Id_1", Supervisor_User_Id);
@@ -1113,7 +1113,7 @@ namespace Ordermanagement_01
             if (dateEdit_From_date.Text != "" && dateEdit_To_Date.Text != "")
             {
                 Hashtable ht_get_ShiftType_wise = new Hashtable();
-                System.Data.DataTable dt_get_ShiftType_wise = new System.Data.DataTable();
+                DataTable dt_get_ShiftType_wise = new DataTable();
 
                 ht_get_ShiftType_wise.Add("@Trans", "PRODUCT_TYPE_SHIFTTYPE_WISE");
                 ht_get_ShiftType_wise.Add("@Shift_Type_Id", Shift_Type_Id);
@@ -1135,7 +1135,7 @@ namespace Ordermanagement_01
             if (dateEdit_From_date.Text != "" && dateEdit_To_Date.Text != "")
             {
                 Hashtable ht_Superviosr_Shift_Wise = new Hashtable();
-                System.Data.DataTable dt_Superviosr_Shift_Wise = new System.Data.DataTable();
+                DataTable dt_Superviosr_Shift_Wise = new DataTable();
 
                 ht_Superviosr_Shift_Wise.Add("@Trans", "PRODUCT_TYPE_SUPERVIOSR_SHIFT_WISE");
                 ht_Superviosr_Shift_Wise.Add("@Reporting_To_Id_1", Supervisor_User_Id);
@@ -1160,7 +1160,7 @@ namespace Ordermanagement_01
             if (dateEdit_From_date.Text != "" && dateEdit_To_Date.Text != "")
             {
                 Hashtable ht_Manager_Shift = new Hashtable();
-                System.Data.DataTable dt_Manager_Shift = new System.Data.DataTable();
+                DataTable dt_Manager_Shift = new DataTable();
 
                 ht_Manager_Shift.Add("@Trans", "PRODUCT_TYPE_MANAGER_SHIFT_WISE");
                 ht_Manager_Shift.Add("@Reporting_To_Id_2", Userid_value);
@@ -1183,7 +1183,7 @@ namespace Ordermanagement_01
             if (dateEdit_From_date.Text != "" && dateEdit_To_Date.Text != "")
             {
                 Hashtable ht_Manager_Superviosr_Wise = new Hashtable();
-                System.Data.DataTable dt_Manager_Superviosr_Wise = new System.Data.DataTable();
+                DataTable dt_Manager_Superviosr_Wise = new DataTable();
 
                 ht_Manager_Superviosr_Wise.Add("@Trans", "PRODUCT_TYPE_MANAGER_SUPERVIOSR_WISE");
                 ht_Manager_Superviosr_Wise.Add("@Reporting_To_Id_2", Userid_value);
@@ -1207,7 +1207,7 @@ namespace Ordermanagement_01
             {
 
                 Hashtable ht_Mang_Superv_Shift = new Hashtable();
-                System.Data.DataTable dt_Mang_Superv_Shift = new System.Data.DataTable();
+                DataTable dt_Mang_Superv_Shift = new DataTable();
 
                 ht_Mang_Superv_Shift.Add("@Trans", "PRODUCT_TYPE_MANAGER_SUPERVIOSR_SHIFT_WISE");
                 ht_Mang_Superv_Shift.Add("@Reporting_To_Id_2", Userid_value);
@@ -1270,7 +1270,7 @@ namespace Ordermanagement_01
 
         private void btn_Aging_Preview_Open_Ordes_Sumbit_Click(object sender, EventArgs e)
         {
-            SplashScreenManager.ShowForm(this, typeof(Ordermanagement_01.Masters.WaitForm1), true, true, false);
+            SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
             try
             {
                 My_Clients = "";
@@ -1311,7 +1311,7 @@ namespace Ordermanagement_01
             if (dateEdit_From_date.Text != "" && dateEdit_To_Date.Text != "")
             {
                 Hashtable ht_get_AginOpenOrders = new Hashtable();
-                System.Data.DataTable dt_get_AginOpenOrders = new System.Data.DataTable();
+                DataTable dt_get_AginOpenOrders = new DataTable();
 
                 ht_get_AginOpenOrders.Add("@Trans", "AGING_PREVIEW_OPEN_ORDER_DATE_WISE");
                 ht_get_AginOpenOrders.Add("@Fromdate", dateEdit_From_date.Text);
@@ -1387,7 +1387,7 @@ namespace Ordermanagement_01
             //load_Progressbar.Start_progres();
             StringBuilder sb = new StringBuilder();
             Hashtable ht_Admin_User_Clients = new Hashtable();
-            System.Data.DataTable dt_Admin_User_Clients = new System.Data.DataTable();
+            DataTable dt_Admin_User_Clients = new DataTable();
 
             ht_Admin_User_Clients.Add("@Trans", "GET_ADMIN_USER_CLIENTS");
             ht_Admin_User_Clients.Add("@Log_In_Userid", Aging_User_id_value);
@@ -1415,7 +1415,7 @@ namespace Ordermanagement_01
             if (dateEdit_From_date.Text != "" && dateEdit_To_Date.Text != "")
             {
                 Hashtable ht_get_Aging_OPendOrders_Manager = new Hashtable();
-                System.Data.DataTable dt_get_Aging_OPendOrders_Manager = new System.Data.DataTable();
+                DataTable dt_get_Aging_OPendOrders_Manager = new DataTable();
 
                 //ht_get_Aging_OPendOrders_Manager.Add("@Trans", "AGING_PREVIEW_OPEN_ORDER_MANAGER_WISE");
                 ht_get_Aging_OPendOrders_Manager.Add("@Trans", "GET_AGING_OPEN_ORDER_MANAGER_WISE_GRID_DETAILS");
@@ -1454,7 +1454,7 @@ namespace Ordermanagement_01
 
         private void btn_Aging_Preview_Pending_Ordes_Sumbit_Click(object sender, EventArgs e)
         {
-            SplashScreenManager.ShowForm(this, typeof(Ordermanagement_01.Masters.WaitForm1), true, true, false);
+            SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
             try
             {
                 AgingUser_id_value = 0;
@@ -1493,7 +1493,7 @@ namespace Ordermanagement_01
             if (dateEdit_From_date.Text != "" && dateEdit_To_Date.Text != "")
             {
                 Hashtable ht_get_AginOpenOrders = new Hashtable();
-                System.Data.DataTable dt_get_AginOpenOrders = new System.Data.DataTable();
+                DataTable dt_get_AginOpenOrders = new DataTable();
 
                 ht_get_AginOpenOrders.Add("@Trans", "AGING_PREVIEW_PENDING_ORDER_DATE_WISE");
                 ht_get_AginOpenOrders.Add("@Fromdate", dateEdit_From_date.Text);
@@ -1571,7 +1571,7 @@ namespace Ordermanagement_01
             //  load_Progressbar.Start_progres();
             StringBuilder sb_aging = new StringBuilder();
             Hashtable ht_AdminUserClients = new Hashtable();
-            System.Data.DataTable dt_AdminUserClients = new System.Data.DataTable();
+            DataTable dt_AdminUserClients = new DataTable();
 
             ht_AdminUserClients.Add("@Trans", "GET_ADMIN_USER_CLIENTS");
             ht_AdminUserClients.Add("@Log_In_Userid", AgingUser_id_value);
@@ -1595,7 +1595,7 @@ namespace Ordermanagement_01
 
 
             Hashtable ht_get_Aging_OPendOrders_Manager = new Hashtable();
-            System.Data.DataTable dt_get_Aging_OPendOrders_Manager = new System.Data.DataTable();
+            DataTable dt_get_Aging_OPendOrders_Manager = new DataTable();
 
             ht_get_Aging_OPendOrders_Manager.Add("@Trans", "AGING_PREVIEW_PENDING_ORDER_MANAGER_WISE");
             ht_get_Aging_OPendOrders_Manager.Add("@Fromdate", dateEdit_From_date.Text);
@@ -1974,7 +1974,7 @@ namespace Ordermanagement_01
 
         private void pivotGridControl1_CellClick(object sender, PivotCellEventArgs e)
         {
-            SplashScreenManager.ShowForm(this, typeof(Ordermanagement_01.Masters.WaitForm1), true, true, false);
+            SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
             try
             {
                 DateTime date;
@@ -2085,7 +2085,7 @@ namespace Ordermanagement_01
                     if (V_Data != "" && V_Data != "0")
                     {
                         Hashtable ht_get_grid = new Hashtable();
-                        System.Data.DataTable dt_get_grid = new System.Data.DataTable();
+                        DataTable dt_get_grid = new DataTable();
                         ht_get_grid.Clear();
                         dt_get_grid.Clear();
                         if (Column_Name == "Received")
@@ -2126,7 +2126,7 @@ namespace Ordermanagement_01
                     if (V_Data != "" && V_Data != "0")
                     {
                         Hashtable ht_get_grid = new Hashtable();
-                        System.Data.DataTable dt_get_grid = new System.Data.DataTable();
+                        DataTable dt_get_grid = new DataTable();
                         ht_get_grid.Clear();
                         dt_get_grid.Clear();
                         if (Column_Name == "Received")
@@ -2166,7 +2166,7 @@ namespace Ordermanagement_01
                     if (V_Data != "" && V_Data != "0")
                     {
                         Hashtable ht_get_grid = new Hashtable();
-                        System.Data.DataTable dt_get_grid = new System.Data.DataTable();
+                        DataTable dt_get_grid = new DataTable();
                         ht_get_grid.Clear();
                         dt_get_grid.Clear();
                         if (Column_Name == "Received")
@@ -2211,7 +2211,7 @@ namespace Ordermanagement_01
                     if (V_Data != "" && V_Data != "0")
                     {
                         Hashtable ht_get_grid = new Hashtable();
-                        System.Data.DataTable dt_get_grid = new System.Data.DataTable();
+                        DataTable dt_get_grid = new DataTable();
                         ht_get_grid.Clear();
                         dt_get_grid.Clear();
                         if (Column_Name == "Received")
@@ -2269,7 +2269,7 @@ namespace Ordermanagement_01
         private void pivotGridControl3_CellClick(object sender, PivotCellEventArgs e)
         {
             // load_Progressbar.Start_progres();
-            SplashScreenManager.ShowForm(this, typeof(Ordermanagement_01.Masters.WaitForm1), true, true, false);
+            SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
             try
             {
                 string Tab_Name = "";
@@ -2317,7 +2317,7 @@ namespace Ordermanagement_01
                         Order_Status = val_order_Status.ToString();
                         Date = val_Cda.ToString();
 
-                        System.Data.DataTable dt_Get_Details = new System.Data.DataTable();
+                        DataTable dt_Get_Details = new DataTable();
                         dt_Get_Details = dbc.dt_Get_Details_For_Order_Status_Report(OrderType_Abbrevation, Order_Status);
 
                         if (dt_Get_Details.Rows.Count > 0)
@@ -2329,7 +2329,7 @@ namespace Ordermanagement_01
                         if (V_Data != "" && V_Data != "0")
                         {
                             Hashtable ht_get_details = new Hashtable();
-                            System.Data.DataTable dt_get_details = new System.Data.DataTable();
+                            DataTable dt_get_details = new DataTable();
                             ht_get_details.Clear();
                             dt_get_details.Clear();
                             ht_get_details.Add("@Trans", "ORDER_VIEW_PRODUT_WISE_TASK_WISE_DETAILS");
@@ -2370,7 +2370,7 @@ namespace Ordermanagement_01
                         Order_Status = val_order_Status.ToString();
                         Date = val_Cda.ToString();
 
-                        System.Data.DataTable dt_Get_Details = new System.Data.DataTable();
+                        DataTable dt_Get_Details = new DataTable();
                         dt_Get_Details.Clear();
                         dt_Get_Details = dbc.dt_Get_Details_For_Order_Status_Report(OrderType_Abbrevation, Order_Status);
 
@@ -2385,7 +2385,7 @@ namespace Ordermanagement_01
                         {
 
                             Hashtable ht_get_details = new Hashtable();
-                            System.Data.DataTable dt_get_details = new System.Data.DataTable();
+                            DataTable dt_get_details = new DataTable();
                             ht_get_details.Clear();
                             dt_get_details.Clear();
                             //ht_get_grid_details.Add("@Trans", "GET_GRID_PRODUCT_TYPE_DETAILS"); 
@@ -2431,7 +2431,7 @@ namespace Ordermanagement_01
                         Date = val_Cda.ToString();
 
 
-                        System.Data.DataTable dt_Get_Details = new System.Data.DataTable();
+                        DataTable dt_Get_Details = new DataTable();
                         dt_Get_Details.Clear();
                         dt_Get_Details = dbc.dt_Get_Details_For_Order_Status_Report("", val_order_Status);
 
@@ -2445,7 +2445,7 @@ namespace Ordermanagement_01
                         {
 
                             Hashtable ht_get_details = new Hashtable();
-                            System.Data.DataTable dt_get_details = new System.Data.DataTable();
+                            DataTable dt_get_details = new DataTable();
                             ht_get_details.Clear();
                             dt_get_details.Clear();
 
@@ -2482,7 +2482,7 @@ namespace Ordermanagement_01
                         //Order_Status = val_order_Status.ToString();
                         //Date = val_Cda.ToString();
 
-                        System.Data.DataTable dt_Get_Details = new System.Data.DataTable();
+                        DataTable dt_Get_Details = new DataTable();
                         dt_Get_Details.Clear();
                         dt_Get_Details = dbc.dt_Get_Details_For_Order_Status_Report("", val_order_Status);
 
@@ -2494,7 +2494,7 @@ namespace Ordermanagement_01
                         {
 
                             Hashtable ht_get_details = new Hashtable();
-                            System.Data.DataTable dt_get_details = new System.Data.DataTable();
+                            DataTable dt_get_details = new DataTable();
                             ht_get_details.Clear();
                             dt_get_details.Clear();
 
@@ -2526,7 +2526,7 @@ namespace Ordermanagement_01
                         {
 
                             Hashtable ht_get_details = new Hashtable();
-                            System.Data.DataTable dt_get_details = new System.Data.DataTable();
+                            DataTable dt_get_details = new DataTable();
                             ht_get_details.Clear();
                             dt_get_details.Clear();
                             ht_get_details.Add("@Trans", "ORDER_VIEW_PRODUT_ALL_DATE_WISE");
@@ -2561,7 +2561,7 @@ namespace Ordermanagement_01
                         {
 
                             Hashtable ht_get_details = new Hashtable();
-                            System.Data.DataTable dt_get_details = new System.Data.DataTable();
+                            DataTable dt_get_details = new DataTable();
                             ht_get_details.Clear();
                             dt_get_details.Clear();
                             ht_get_details.Add("@Trans", "ORDER_VIEW_PRODUCT_TYPE_DATE_WISE");
@@ -2671,7 +2671,7 @@ namespace Ordermanagement_01
 
                     //1
                     Hashtable ht_Temp_Comment_Details = new Hashtable();
-                    System.Data.DataTable dt_Temp_Comment_details = new System.Data.DataTable();
+                    DataTable dt_Temp_Comment_details = new DataTable();
 
                     ht_Temp_Comment_Details.Clear();
                     ht_Temp_Comment_Details.Add("@Trans", "CREATE_TEMP_COMMENT_TABLE");
@@ -2707,7 +2707,7 @@ namespace Ordermanagement_01
                         Date = value_Cda.ToString();
 
 
-                        System.Data.DataTable dt_Get_Details = new System.Data.DataTable();
+                        DataTable dt_Get_Details = new DataTable();
                         dt_Get_Details.Clear();
                         dt_Get_Details = dbc.dt_Get_Details_For_Order_Status_Report("", val_Order_Status);
 
@@ -2719,7 +2719,7 @@ namespace Ordermanagement_01
                         if (V_Data != "" && V_Data != "0")
                         {
                             Hashtable ht_getgrid_details = new Hashtable();
-                            System.Data.DataTable dt_getgrid_details = new System.Data.DataTable();
+                            DataTable dt_getgrid_details = new DataTable();
                             ht_getgrid_details.Clear();
                             ht_getgrid_details.Clear();
                            
@@ -2765,7 +2765,7 @@ namespace Ordermanagement_01
                         V_Data = e.GetFieldValue(pivotGridField20).ToString().Trim();
                         Client_Number = value_ClientNumber.ToString();
 
-                        System.Data.DataTable dt_Get_Details = new System.Data.DataTable();
+                        DataTable dt_Get_Details = new DataTable();
                         dt_Get_Details.Clear();
                         dt_Get_Details = dbc.dt_Get_Details_For_Order_Status_Report("", val_Order_Status);
 
@@ -2777,7 +2777,7 @@ namespace Ordermanagement_01
                         if (V_Data != "" && V_Data != "0")
                         {
                             Hashtable ht_getgriddetails = new Hashtable();
-                            System.Data.DataTable dt_getgriddetails = new System.Data.DataTable();
+                            DataTable dt_getgriddetails = new DataTable();
                             ht_getgriddetails.Clear();
                             dt_getgriddetails.Clear();
                             ht_getgriddetails.Add("@Trans", "AGENT_OPEN_ORDER_CLIENT_AND_ORDER_STATUS_WISE");
@@ -2811,7 +2811,7 @@ namespace Ordermanagement_01
                             val_Order_Status = value_2;
                         }
                         V_Data = e.GetFieldValue(pivotGridField20).ToString().Trim();
-                        System.Data.DataTable dt_Get_Details = new System.Data.DataTable();
+                        DataTable dt_Get_Details = new DataTable();
                         dt_Get_Details.Clear();
                         dt_Get_Details = dbc.dt_Get_Details_For_Order_Status_Report("", val_Order_Status);
 
@@ -2823,7 +2823,7 @@ namespace Ordermanagement_01
                         if (V_Data != "" && V_Data != "0")
                         {
                             Hashtable ht_grid_details = new Hashtable();
-                            System.Data.DataTable dt_grid_details = new System.Data.DataTable();
+                            DataTable dt_grid_details = new DataTable();
                             ht_grid_details.Clear();
                             dt_grid_details.Clear();
                             ht_grid_details.Add("@Trans", "AGENT_OPEN_ORDER_ALL_CLIENT_AND_ORDER_STATUS_WISE");
@@ -2874,7 +2874,7 @@ namespace Ordermanagement_01
                         if (V_Data != "" && V_Data != "0")
                         {
                             Hashtable ht_get_Client_DateWise = new Hashtable();
-                            System.Data.DataTable dt_get_Client_DateWise = new System.Data.DataTable();
+                            DataTable dt_get_Client_DateWise = new DataTable();
                             ht_get_Client_DateWise.Clear();
                             dt_get_Client_DateWise.Clear();
                             ht_get_Client_DateWise.Add("@Trans", "AGENT_OPEN_ORDER_CLIENT_AND_DATE_WISE");
@@ -2916,7 +2916,7 @@ namespace Ordermanagement_01
                         if (V_Data != "" && V_Data != "0")
                         {
                             Hashtable ht_get_Date_All_Task_Wise = new Hashtable();
-                            System.Data.DataTable dt_get_Date_All_Task_Wise = new System.Data.DataTable();
+                            DataTable dt_get_Date_All_Task_Wise = new DataTable();
                             ht_get_Date_All_Task_Wise.Clear();
                             dt_get_Date_All_Task_Wise.Clear();
                             ht_get_Date_All_Task_Wise.Add("@Trans", "AGENT_OPEN_ORDER_CLIENT_AND_ALL_TASK_WISE");
@@ -2951,7 +2951,7 @@ namespace Ordermanagement_01
                         if (V_Data != "" && V_Data != "0")
                         {
                             Hashtable ht_AgingPending_detail = new Hashtable();
-                            System.Data.DataTable dt_AgingPending_detail = new System.Data.DataTable();
+                            DataTable dt_AgingPending_detail = new DataTable();
 
                             ht_AgingPending_detail.Clear();
                             dt_AgingPending_detail.Clear();
@@ -3045,7 +3045,7 @@ namespace Ordermanagement_01
                             value_Order_Status_1 = value_4;
                         }
 
-                        System.Data.DataTable dt_Get_Details = new System.Data.DataTable();
+                        DataTable dt_Get_Details = new DataTable();
 
                         dt_Get_Details = dbc.dt_Get_Details_For_Order_Status_Report("", value_Order_Status_1);
                         string Order_Status = "";
@@ -3062,7 +3062,7 @@ namespace Ordermanagement_01
                         if (V_Data != "" && V_Data != "0")
                         {
                             Hashtable ht_get_Aging_Pending_griddetails = new Hashtable();
-                            System.Data.DataTable dt_get_Aging_Pending_griddetails = new System.Data.DataTable();
+                            DataTable dt_get_Aging_Pending_griddetails = new DataTable();
                             ht_get_Aging_Pending_griddetails.Clear();
                             dt_get_Aging_Pending_griddetails.Clear();
 
@@ -3104,7 +3104,7 @@ namespace Ordermanagement_01
                             value_Order_Status_1 = value_4;
                         }
 
-                        System.Data.DataTable dt_Get_Details = new System.Data.DataTable();
+                        DataTable dt_Get_Details = new DataTable();
 
                         dt_Get_Details = dbc.dt_Get_Details_For_Order_Status_Report("", value_Order_Status_1);
                         string Order_Status = "";
@@ -3120,7 +3120,7 @@ namespace Ordermanagement_01
                         if (V_Data != "" && V_Data != "0")
                         {
                             Hashtable ht_get_Aging_Pending_grid = new Hashtable();
-                            System.Data.DataTable dt_get_Aging_Pending_grid = new System.Data.DataTable();
+                            DataTable dt_get_Aging_Pending_grid = new DataTable();
 
                             ht_get_Aging_Pending_grid.Clear();
                             dt_get_Aging_Pending_grid.Clear();
@@ -3155,7 +3155,7 @@ namespace Ordermanagement_01
                             value_Order_Status_1 = value_4;
                         }
                         V_Data = e.GetFieldValue(pivotGridField25).ToString().Trim();
-                        System.Data.DataTable dt_Get_Details = new System.Data.DataTable();
+                        DataTable dt_Get_Details = new DataTable();
 
                         dt_Get_Details = dbc.dt_Get_Details_For_Order_Status_Report("", value_Order_Status_1);
                         string Order_Status = "";
@@ -3169,7 +3169,7 @@ namespace Ordermanagement_01
                         if (V_Data != "" && V_Data != "0")
                         {
                             Hashtable ht_get_Aging_Pending = new Hashtable();
-                            System.Data.DataTable dt_get_Aging_Pending = new System.Data.DataTable();
+                            DataTable dt_get_Aging_Pending = new DataTable();
 
                             ht_get_Aging_Pending.Clear();
                             dt_get_Aging_Pending.Clear();
@@ -3208,7 +3208,7 @@ namespace Ordermanagement_01
                             V_Data = e.GetFieldValue(pivotGridField25).ToString().Trim();
                         }
 
-                        System.Data.DataTable dt_Get_Details = new System.Data.DataTable();
+                        DataTable dt_Get_Details = new DataTable();
 
                         dt_Get_Details = dbc.dt_Get_Details_For_Order_Status_Report("", value_Order_Status_1);
                         string Order_Status = "";
@@ -3225,7 +3225,7 @@ namespace Ordermanagement_01
                         if (V_Data != "" && V_Data != "0")
                         {
                             Hashtable ht_Aging_Pending_Details = new Hashtable();
-                            System.Data.DataTable dt_Aging_Pending_Details = new System.Data.DataTable();
+                            DataTable dt_Aging_Pending_Details = new DataTable();
 
                             ht_Aging_Pending_Details.Clear();
                             dt_Aging_Pending_Details.Clear();
@@ -3266,7 +3266,7 @@ namespace Ordermanagement_01
                         if (V_Data != "" && V_Data != "0")
                         {
                             Hashtable ht_AgingPending = new Hashtable();
-                            System.Data.DataTable dt_AgingPending = new System.Data.DataTable();
+                            DataTable dt_AgingPending = new DataTable();
 
                             ht_AgingPending.Clear();
                             dt_AgingPending.Clear();
@@ -3364,7 +3364,7 @@ namespace Ordermanagement_01
                         if (V_Data != "" && V_Data != "0")
                         {
                             Hashtable ht_AgingPending_detail = new Hashtable();
-                            System.Data.DataTable dt_AgingPending_detail = new System.Data.DataTable();
+                            DataTable dt_AgingPending_detail = new DataTable();
 
                             ht_AgingPending_detail.Clear();
                             dt_AgingPending_detail.Clear();
@@ -3484,9 +3484,8 @@ namespace Ordermanagement_01
                             {
                                 val_Emp_Job_Role = null;
                             }
-
                         }
-                        System.Data.DataTable dt_Get_Details = new System.Data.DataTable();
+                        DataTable dt_Get_Details = new DataTable();
                         dt_Get_Details.Clear();
                         dt_Get_Details = dbc.dt_Get_Details_For_Order_Status_Report("", val_order_Status);
                         if (dt_Get_Details.Rows.Count > 0)
@@ -3503,7 +3502,7 @@ namespace Ordermanagement_01
                         {
                             Emp_Job_Role = val_Emp_Job_Role.ToString();
                             Hashtable ht_get_Shiftdetails = new Hashtable();
-                            System.Data.DataTable dt_get_Shiftdetails = new System.Data.DataTable();
+                            DataTable dt_get_Shiftdetails = new DataTable();
                             ht_get_Shiftdetails.Clear();
                             dt_get_Shiftdetails.Clear();
 
@@ -3579,7 +3578,7 @@ namespace Ordermanagement_01
                             Val_Branch_Name = value_4;
                         }
 
-                        System.Data.DataTable dt_Get_Details = new System.Data.DataTable();
+                        DataTable dt_Get_Details = new DataTable();
                         dt_Get_Details.Clear();
                         dt_Get_Details = dbc.dt_Get_Details_For_Order_Status_Report("", val_order_Status);
                         if (dt_Get_Details.Rows.Count > 0)
@@ -3595,10 +3594,9 @@ namespace Ordermanagement_01
                         if (V_Data != "" && V_Data != "0")
                         {
                             Hashtable ht_get_Shiftdetails = new Hashtable();
-                            System.Data.DataTable dt_get_Shiftdetails = new System.Data.DataTable();
+                            DataTable dt_get_Shiftdetails = new DataTable();
                             ht_get_Shiftdetails.Clear();
                             dt_get_Shiftdetails.Clear();
-
                             ht_get_Shiftdetails.Add("@Trans", "SHIFT_WISE_BY_ORDER_DETIALS_VIEW_SHIFT_WISE_SINGLE_DAY");
                             ht_get_Shiftdetails.Add("@Order_Status", Order_Status);
                             ht_get_Shiftdetails.Add("@date", Date);
@@ -3680,7 +3678,7 @@ namespace Ordermanagement_01
                         //    Val_Branch_Name = value_4;
                         //}
 
-                        System.Data.DataTable dt_Get_Details = new System.Data.DataTable();
+                        DataTable dt_Get_Details = new DataTable();
                         dt_Get_Details.Clear();
                         dt_Get_Details = dbc.dt_Get_Details_For_Order_Status_Report("", val_order_Status);
                         if (dt_Get_Details.Rows.Count > 0)
@@ -3696,7 +3694,7 @@ namespace Ordermanagement_01
                         if (V_Data != "" && V_Data != "0")
                         {
                             Hashtable ht_get_Shiftdetails = new Hashtable();
-                            System.Data.DataTable dt_get_Shiftdetails = new DataTable();
+                            DataTable dt_get_Shiftdetails = new DataTable();
                             ht_get_Shiftdetails.Clear();
                             dt_get_Shiftdetails.Clear();
 
@@ -3734,7 +3732,7 @@ namespace Ordermanagement_01
                         if (V_Data != "" && V_Data != "0")
                         {
                             Hashtable ht_get_Shift_Current_date_wise = new Hashtable();
-                            System.Data.DataTable dt_get_Shift_Current_date_wise = new System.Data.DataTable();
+                            DataTable dt_get_Shift_Current_date_wise = new DataTable();
                             ht_get_Shift_Current_date_wise.Clear();
                             dt_get_Shift_Current_date_wise.Clear();
 
@@ -3784,7 +3782,7 @@ namespace Ordermanagement_01
                         if (V_Data != "" && V_Data != "0")
                         {
                             Hashtable ht_get_Shift_Current_date_wise = new Hashtable();
-                            System.Data.DataTable dt_get_Shift_Current_date_wise = new System.Data.DataTable();
+                            DataTable dt_get_Shift_Current_date_wise = new DataTable();
                             ht_get_Shift_Current_date_wise.Clear();
                             dt_get_Shift_Current_date_wise.Clear();
 
@@ -3845,7 +3843,7 @@ namespace Ordermanagement_01
                         if (V_Data != "" && V_Data != "0")
                         {
                             Hashtable ht_getdetail = new Hashtable();
-                            System.Data.DataTable dt_getdetail = new System.Data.DataTable();
+                            DataTable dt_getdetail = new DataTable();
                             //ht_get.Clear();
                             //dt_get.Clear();
 
@@ -3971,7 +3969,7 @@ namespace Ordermanagement_01
                             }
 
                         }
-                        System.Data.DataTable dt_Get_Details = new System.Data.DataTable();
+                        DataTable dt_Get_Details = new DataTable();
                         dt_Get_Details.Clear();
                         dt_Get_Details = dbc.dt_Get_Details_For_Order_Status_Report("", val_order_Status);
                         if (dt_Get_Details.Rows.Count > 0)
@@ -3986,7 +3984,7 @@ namespace Ordermanagement_01
                         if (V_Data != "" && V_Data != "0")
                         {
                             Hashtable ht_get_Shift1 = new Hashtable();
-                            System.Data.DataTable dt_get_Shift1 = new System.Data.DataTable();
+                            DataTable dt_get_Shift1 = new DataTable();
                             ht_get_Shift1.Clear();
                             dt_get_Shift1.Clear();
 
@@ -4048,7 +4046,7 @@ namespace Ordermanagement_01
                         if (V_Data != "" && V_Data != "0")
                         {
                             Hashtable ht_get_Shift2 = new Hashtable();
-                            System.Data.DataTable dt_get_Shift2 = new System.Data.DataTable();
+                            DataTable dt_get_Shift2 = new DataTable();
                             ht_get_Shift2.Clear();
                             dt_get_Shift2.Clear();
 
@@ -4091,7 +4089,7 @@ namespace Ordermanagement_01
                             val_Shift_Type_Name = value_3;
                         }
 
-                        System.Data.DataTable dt_Get_Details = new System.Data.DataTable();
+                        DataTable dt_Get_Details = new DataTable();
                         dt_Get_Details.Clear();
                         dt_Get_Details = dbc.dt_Get_Details_For_Order_Status_Report("", val_order_Status);
                         if (dt_Get_Details.Rows.Count > 0)
@@ -4105,7 +4103,7 @@ namespace Ordermanagement_01
                         if (V_Data != "" && V_Data != "0")
                         {
                             Hashtable ht_get_Shift3 = new Hashtable();
-                            System.Data.DataTable dt_get_Shift3 = new System.Data.DataTable();
+                            DataTable dt_get_Shift3 = new DataTable();
                             ht_get_Shift3.Clear();
                             dt_get_Shift3.Clear();
 
@@ -4151,7 +4149,7 @@ namespace Ordermanagement_01
                         if (V_Data != "" && V_Data != "0")
                         {
                             Hashtable ht_get_Shift4 = new Hashtable();
-                            System.Data.DataTable dt_get_Shift4 = new System.Data.DataTable();
+                            DataTable dt_get_Shift4 = new DataTable();
                             ht_get_Shift4.Clear();
                             dt_get_Shift4.Clear();
 
@@ -4190,7 +4188,7 @@ namespace Ordermanagement_01
                             val_order_Status = value2;
                         }
                         Date = val_Cda.ToString();
-                        System.Data.DataTable dt_Get_Details = new System.Data.DataTable();
+                        DataTable dt_Get_Details = new DataTable();
                         dt_Get_Details.Clear();
                         dt_Get_Details = dbc.dt_Get_Details_For_Order_Status_Report("", val_order_Status);
                         if (dt_Get_Details.Rows.Count > 0)
@@ -4201,7 +4199,7 @@ namespace Ordermanagement_01
                         if (V_Data != "" && V_Data != "0")
                         {
                             Hashtable ht_get_Shift5 = new Hashtable();
-                            System.Data.DataTable dt_get_Shift5 = new System.Data.DataTable();
+                            DataTable dt_get_Shift5 = new DataTable();
                             ht_get_Shift5.Clear();
                             dt_get_Shift5.Clear();
 
@@ -4259,7 +4257,7 @@ namespace Ordermanagement_01
                         if (V_Data != "" && V_Data != "0")
                         {
                             Hashtable ht_get_Shift6 = new Hashtable();
-                            System.Data.DataTable dt_get_Shift6 = new System.Data.DataTable();
+                            DataTable dt_get_Shift6 = new DataTable();
                             ht_get_Shift6.Clear();
                             dt_get_Shift6.Clear();
 
@@ -4291,7 +4289,7 @@ namespace Ordermanagement_01
                         if (V_Data != "" && V_Data != "0")
                         {
                             Hashtable ht_get_Shift7 = new Hashtable();
-                            System.Data.DataTable dt_get_Shift7 = new System.Data.DataTable();
+                            DataTable dt_get_Shift7 = new DataTable();
                             ht_get_Shift7.Clear();
                             dt_get_Shift7.Clear();
 
@@ -4328,7 +4326,7 @@ namespace Ordermanagement_01
                         if (V_Data != "" && V_Data != "0")
                         {
                             Hashtable ht_get_Shift8 = new Hashtable();
-                            System.Data.DataTable dt_get_Shift8 = new System.Data.DataTable();
+                            DataTable dt_get_Shift8 = new DataTable();
                             ht_get_Shift8.Clear();
                             dt_get_Shift8.Clear();
                             ht_get_Shift8.Add("@Trans", "SHIFT_ALL_DATE_AND_ALL_ORDER_STATUS_WISE");
@@ -4406,7 +4404,7 @@ namespace Ordermanagement_01
                         if (V_Data != "" && V_Data != "0")
                         {
                             Hashtable ht_get_Shift9 = new Hashtable();
-                            System.Data.DataTable dt_get_Shift9 = new System.Data.DataTable();
+                            DataTable dt_get_Shift9 = new DataTable();
                             ht_get_Shift9.Clear();
                             dt_get_Shift9.Clear();
 
@@ -4634,7 +4632,7 @@ namespace Ordermanagement_01
                     if (V_Data != "" && V_Data != "0")
                     {
                         Hashtable ht_get_grid = new Hashtable();
-                        System.Data.DataTable dt_get_grid = new System.Data.DataTable();
+                        DataTable dt_get_grid = new DataTable();
                         ht_get_grid.Clear();
                         dt_get_grid.Clear();
                         ht_get_grid.Add("@Trans", "GET_USER_ID");
@@ -4642,7 +4640,7 @@ namespace Ordermanagement_01
                         dt_get_grid = dataaccess.ExecuteSP("Sp_Daily_Status_Top_Efficiency_Calculation", ht_get_grid);
 
                         Hashtable htinsert = new Hashtable();
-                        System.Data.DataTable dtinsert = new System.Data.DataTable();
+                        DataTable dtinsert = new DataTable();
 
                         // new july/19/2019
                         if (dateEdit1_Current_Date_Top_Eff.Text != "" && dateEdit_From_date.Text == "" && dateEdit_To_Date.Text == "")
@@ -4692,7 +4690,7 @@ namespace Ordermanagement_01
 
         private void btn_Submit_Top_Eff_Click(object sender, EventArgs e)
         {
-            SplashScreenManager.ShowForm(this, typeof(Ordermanagement_01.Masters.WaitForm1), true, true, false);
+            SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
             try
             {
                 // dateEdit_From_date.Text = ""; dateEdit_To_Date.Text = "";
@@ -5401,7 +5399,7 @@ namespace Ordermanagement_01
                 string Production_Date_1 = row["Date"].ToString();
 
                 Hashtable htgetShift = new Hashtable();
-                System.Data.DataTable dtgetShift = new System.Data.DataTable();
+                DataTable dtgetShift = new DataTable();
 
                 if (Branch_Id == 0 && Shift_Type_Id == 0 && Check_Branch_All == "Checked" && Check_Banglore == "Checked" && Check_Hosur == "Checked")
                 {
@@ -5459,7 +5457,7 @@ namespace Ordermanagement_01
                 //string date=dt_Capacity_Utilization.Rows[0]["Date"].ToString();
 
                 Hashtable ht_get_singale_date_wise = new Hashtable();
-                System.Data.DataTable dt_get_singale_date_wise = new System.Data.DataTable();
+                DataTable dt_get_singale_date_wise = new DataTable();
 
                 ht_get_singale_date_wise.Clear();
                 dt_get_singale_date_wise.Clear();
@@ -5488,7 +5486,7 @@ namespace Ordermanagement_01
                 if (columnIndex == 1)
                 {
                     chartControl1.DataSource = dt_Capacity_Utilization;
-                    chartControl1.Series[0].ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
+                    chartControl1.Series[0].ArgumentScaleType = ScaleType.Qualitative;
                     chartControl1.Series["Cap_Utilization"].ArgumentDataMember = "Date";
                     chartControl1.Series["Cap_Utilization"].ValueDataMembers[0] = "Cap_Utilization";
 
@@ -5505,7 +5503,7 @@ namespace Ordermanagement_01
                     chartControl1.Series["Cap_Utilization"].ArgumentDataMember = "Date";
                     chartControl1.Series["Cap_Utilization"].ValueDataMembers[0] = "Prod_Cap_Utilization";
 
-                    Ordermanagement_01.Reports.View_Summary view = new Ordermanagement_01.Reports.View_Summary(dtgetShift, dt_get_singale_date_wise, Branch_Id, Shift_Type_Id);
+                    Ordermanagement_01.Reports.View_Summary view = new Reports.View_Summary(dtgetShift, dt_get_singale_date_wise, Branch_Id, Shift_Type_Id);
                     view.Show();
                 }
 
@@ -5534,7 +5532,7 @@ namespace Ordermanagement_01
         {
 
 
-            SplashScreenManager.ShowForm(this, typeof(Ordermanagement_01.Masters.WaitForm1), true, true, false);
+            SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
             try
             {
                 Export_Top_Efficiency_Grid();
@@ -6037,7 +6035,7 @@ namespace Ordermanagement_01
 
         private void btn_Aging_PendingOrders_Export_Click(object sender, EventArgs e)
         {
-            SplashScreenManager.ShowForm(this, typeof(Ordermanagement_01.Masters.WaitForm1), true, true, false);
+            SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
 
             try
             {
@@ -6528,7 +6526,7 @@ namespace Ordermanagement_01
 
 
                         Hashtable ht_get_jobrole_wise = new Hashtable();
-                        System.Data.DataTable dt_get_jobrole_wise = new System.Data.DataTable();
+                        DataTable dt_get_jobrole_wise = new DataTable();
 
                         ht_get_jobrole_wise.Add("@Trans", "EMP_JOB_ROLE_WISE_DETAIL");
                         ht_get_jobrole_wise.Add("@date", date);
@@ -6537,7 +6535,7 @@ namespace Ordermanagement_01
                         ht_get_jobrole_wise.Add("@Branch_Name", Baranch_Name);
                         dt_get_jobrole_wise = dataaccess.ExecuteSP("Sp_Daily_Status_Capcity_Utilization", ht_get_jobrole_wise);
 
-                        Ordermanagement_01.Reports.User_Details_View view_1 = new Ordermanagement_01.Reports.User_Details_View(dt_get_jobrole_wise);
+                        Reports.User_Details_View view_1 = new Reports.User_Details_View(dt_get_jobrole_wise);
                         view_1.Show();
 
                     }
@@ -6701,11 +6699,11 @@ namespace Ordermanagement_01
                 d1 = d1.AddDays(-1);
                 Hashtable ht_Score1 = new Hashtable();
 
-                System.Data.DataTable dt_Score1 = new System.Data.DataTable();
+                DataTable dt_Score1 = new DataTable();
                 dt_Score1.Clear();
 
                 Hashtable ht_Get_User_Orders = new Hashtable();
-                System.Data.DataTable dt_Get_User_Orders = new System.Data.DataTable();
+                DataTable dt_Get_User_Orders = new DataTable();
 
                 if (userRoleId == 2)
                 {
@@ -6724,8 +6722,8 @@ namespace Ordermanagement_01
 
                 Hashtable ht_Score = new Hashtable();
 
-                System.Data.DataTable dt_Score = new System.Data.DataTable();
-                System.Data.DataTable dt_Score2 = new System.Data.DataTable();
+                DataTable dt_Score = new DataTable();
+                DataTable dt_Score2 = new DataTable();
                 dt_Score2.Clear();
 
 
@@ -6741,7 +6739,7 @@ namespace Ordermanagement_01
                     // Insert to temp table data
                     Hashtable ht_Temp_Score = new Hashtable();
 
-                    System.Data.DataTable dt_Temp_Score = new System.Data.DataTable();
+                    DataTable dt_Temp_Score = new DataTable();
                     ht_Temp_Score.Add("@Trans", "INSERT_EFF_TO_TEMP");
                     dt_Temp_Score = dataaccess.ExecuteSP("Sp_Score_Board", ht_Temp_Score);
 
@@ -6759,7 +6757,7 @@ namespace Ordermanagement_01
                 dt_Score2 = dataaccess.ExecuteSP("Sp_Score_Board", ht_Score);
 
                 Hashtable htget_Avg_Total_eff = new Hashtable();
-                System.Data.DataTable dtget_Avg_Total_Eff = new System.Data.DataTable();
+                DataTable dtget_Avg_Total_Eff = new DataTable();
 
                 if (userRoleId == 2)
                 {
@@ -6782,7 +6780,7 @@ namespace Ordermanagement_01
                 htget_Avg_Total_eff.Add("@User_Id", User_id);
                 dtget_Avg_Total_Eff = dataaccess.ExecuteSP("Sp_Score_Board", htget_Avg_Total_eff);
 
-                System.Data.DataTable dt_Final_Score1 = new System.Data.DataTable();
+                DataTable dt_Final_Score1 = new DataTable();
 
                 var collection = from t1 in dt_Score2.AsEnumerable()
                                  join t2 in dtget_Avg_Total_Eff.AsEnumerable()
@@ -6831,7 +6829,7 @@ namespace Ordermanagement_01
                                      D30 = t1["30"],
                                      D31 = t1["31"],
                                  };
-                System.Data.DataTable result = new System.Data.DataTable("Final_Data");
+                DataTable result = new DataTable("Final_Data");
                 result.Columns.Add("User_Id", typeof(string));
                 result.Columns.Add("User_Name", typeof(string));
                 result.Columns.Add("Branch_Name", typeof(string));
@@ -6843,9 +6841,9 @@ namespace Ordermanagement_01
                 result.Columns.Add("Reporting_To_2", typeof(string));
                 result.Columns.Add("Avg_Eff", typeof(int));
 
-                System.Data.DataTable dt_Final_Score = new System.Data.DataTable();
+                DataTable dt_Final_Score = new DataTable();
                 Hashtable htgetfirst_Last_Dates = new Hashtable();
-                System.Data.DataTable dtgetfirst_last_Dates = new System.Data.DataTable();
+                DataTable dtgetfirst_last_Dates = new DataTable();
 
                 htgetfirst_Last_Dates.Add("@Trans", "GET_FIRST_LAST_DATE");
                 htgetfirst_Last_Dates.Add("@Month", int.Parse(lookUpEditMonth.EditValue.ToString()));
@@ -6854,7 +6852,7 @@ namespace Ordermanagement_01
 
                 Hashtable htdatecolumn = new Hashtable();
 
-                System.Data.DataTable dtdatecolumn = new System.Data.DataTable();
+                DataTable dtdatecolumn = new DataTable();
                 htdatecolumn.Add("@Trans", "GET_DATES");
                 htdatecolumn.Add("@date_from1", dtgetfirst_last_Dates.Rows[0]["First_Date"].ToString());
                 htdatecolumn.Add("@date_to1", dtgetfirst_last_Dates.Rows[0]["Last_Date"].ToString());
@@ -6980,7 +6978,7 @@ namespace Ordermanagement_01
         {
             if (gridViewScoreBoard.RowCount > 0)
             {
-                SplashScreenManager.ShowForm(this, typeof(Ordermanagement_01.Masters.WaitForm1), true, true, false);
+                SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
                 DataTable dtRows = GetDataTable(gridViewScoreBoard);
                 dtRows.Columns.Remove("User_Id");
                 try
@@ -7209,7 +7207,7 @@ namespace Ordermanagement_01
         public void Bind_Shift_Type_Master()
         {
             Hashtable ht_shift = new Hashtable();
-            System.Data.DataTable dt_shift = new System.Data.DataTable();
+            DataTable dt_shift = new DataTable();
 
 
 
@@ -7347,7 +7345,7 @@ namespace Ordermanagement_01
 
         private void pivotGridControl9_CellClick(object sender, PivotCellEventArgs e)
         {
-            SplashScreenManager.ShowForm(this, typeof(Ordermanagement_01.Masters.WaitForm1), true, true, false);
+            SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
             try
             {
                 string Tab_Name = "";
@@ -7472,7 +7470,7 @@ namespace Ordermanagement_01
                     if (Row_Value_Type == "Value" && Column_Value_Type == "Value")
                     {
 
-                        System.Data.DataTable dt_Get_Details = new System.Data.DataTable();
+                        DataTable dt_Get_Details = new DataTable();
                         dt_Get_Details.Clear();
                         dt_Get_Details = dbc.dt_Get_Details_For_Order_Status_Report("", val_order_Status);
                         if (dt_Get_Details.Rows.Count > 0)
@@ -7488,7 +7486,7 @@ namespace Ordermanagement_01
                         {
                             Emp_Job_Role = val_Emp_Job_Role.ToString();
                             Hashtable ht_get_Shiftdetails = new Hashtable();
-                            System.Data.DataTable dt_get_Shiftdetails = new System.Data.DataTable();
+                            DataTable dt_get_Shiftdetails = new DataTable();
                             ht_get_Shiftdetails.Clear();
                             dt_get_Shiftdetails.Clear();
 
@@ -7519,7 +7517,7 @@ namespace Ordermanagement_01
                     {
 
 
-                        System.Data.DataTable dt_Get_Details = new System.Data.DataTable();
+                        DataTable dt_Get_Details = new DataTable();
                         dt_Get_Details.Clear();
                         dt_Get_Details = dbc.dt_Get_Details_For_Order_Status_Report("", val_order_Status);
                         if (dt_Get_Details.Rows.Count > 0)
@@ -7535,7 +7533,7 @@ namespace Ordermanagement_01
                         if (V_Data != "" && V_Data != "0")
                         {
                             Hashtable ht_get_Shiftdetails = new Hashtable();
-                            System.Data.DataTable dt_get_Shiftdetails = new System.Data.DataTable();
+                            DataTable dt_get_Shiftdetails = new DataTable();
                             ht_get_Shiftdetails.Clear();
                             dt_get_Shiftdetails.Clear();
 
@@ -7587,7 +7585,7 @@ namespace Ordermanagement_01
                     //3
                     if (Row_Value_Type == "GrandTotal" && Column_Value_Type == "Value")//All Shift and Task Wise  
                     {
-                        System.Data.DataTable dt_Get_Details = new System.Data.DataTable();
+                        DataTable dt_Get_Details = new DataTable();
                         dt_Get_Details.Clear();
                         dt_Get_Details = dbc.dt_Get_Details_For_Order_Status_Report("", val_order_Status);
                         if (dt_Get_Details.Rows.Count > 0)
@@ -7601,7 +7599,7 @@ namespace Ordermanagement_01
                         if (V_Data != "" && V_Data != "0")
                         {
                             Hashtable ht_get_Shiftdetails = new Hashtable();
-                            System.Data.DataTable dt_get_Shiftdetails = new System.Data.DataTable();
+                            DataTable dt_get_Shiftdetails = new DataTable();
                             ht_get_Shiftdetails.Clear();
                             dt_get_Shiftdetails.Clear();
                             // new 11-july-2019
@@ -7660,7 +7658,7 @@ namespace Ordermanagement_01
                         if (V_Data != "" && V_Data != "0")
                         {
                             Hashtable ht_get_Shift_Current_date_wise = new Hashtable();
-                            System.Data.DataTable dt_get_Shift_Current_date_wise = new System.Data.DataTable();
+                            DataTable dt_get_Shift_Current_date_wise = new DataTable();
                             ht_get_Shift_Current_date_wise.Clear();
                             dt_get_Shift_Current_date_wise.Clear();
 
@@ -7737,7 +7735,7 @@ namespace Ordermanagement_01
                         if (V_Data != "" && V_Data != "0")
                         {
                             Hashtable ht_get_Shift_Current_date_wise = new Hashtable();
-                            System.Data.DataTable dt_get_Shift_Current_date_wise = new System.Data.DataTable();
+                            DataTable dt_get_Shift_Current_date_wise = new DataTable();
                             ht_get_Shift_Current_date_wise.Clear();
                             dt_get_Shift_Current_date_wise.Clear();
 
@@ -7813,7 +7811,7 @@ namespace Ordermanagement_01
                         if (V_Data != "" && V_Data != "0")
                         {
                             Hashtable ht_getdetail = new Hashtable();
-                            System.Data.DataTable dt_getdetail = new System.Data.DataTable();
+                            DataTable dt_getdetail = new DataTable();
                             //ht_get.Clear();
                             //dt_get.Clear();
                             string s_Date1 = "";
@@ -7881,7 +7879,7 @@ namespace Ordermanagement_01
                     if (V_Data != "" && V_Data != "0")
                     {
                         Hashtable ht_getdetail = new Hashtable();
-                        System.Data.DataTable dt_getdetail = new System.Data.DataTable();
+                        DataTable dt_getdetail = new DataTable();
 
                         ht_getdetail.Add("@Trans", "CURRENT_DATE_AND_SHIFT_TYPE_AND_EMP_JOB_ROLE_WISE");
                         ht_getdetail.Add("@date", dateEditShiftWiseCurrent.Text);
@@ -7910,7 +7908,7 @@ namespace Ordermanagement_01
                     if (V_Data != "" && V_Data != "0")
                     {
                         Hashtable ht_get_Shift_Current_date_wise = new Hashtable();
-                        System.Data.DataTable dt_get_Shift_Current_date_wise = new System.Data.DataTable();
+                        DataTable dt_get_Shift_Current_date_wise = new DataTable();
                         ht_get_Shift_Current_date_wise.Clear();
                         dt_get_Shift_Current_date_wise.Clear();
 
@@ -8162,7 +8160,7 @@ namespace Ordermanagement_01
 
                 Hashtable ht_All_Clients = new Hashtable();
 
-                System.Data.DataTable dt_All_Clients = new System.Data.DataTable();
+                DataTable dt_All_Clients = new DataTable();
                 dt_All_Clients.Clear();
                 if (userRoleId != 2)
                 {
@@ -8254,7 +8252,7 @@ namespace Ordermanagement_01
                     DateTime seldate = Convert.ToDateTime(dateEditAllClientToDate.Text, usDtfi);
 
                     Hashtable ht_Status1 = new Hashtable();
-                    DataTable dt_Status1 = new System.Data.DataTable();
+                    DataTable dt_Status1 = new DataTable();
 
                     if (userRoleId == 1)
                     {
@@ -8370,7 +8368,7 @@ namespace Ordermanagement_01
         private void simple_Button_Refresh_Click(object sender, EventArgs e)
         {
 
-            SplashScreenManager.ShowForm(this, typeof(Ordermanagement_01.Masters.WaitForm1), true, true, false);
+            SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
 
             try
             {
@@ -8455,7 +8453,7 @@ namespace Ordermanagement_01
         private void simple_Button_Exprt_Click(object sender, EventArgs e)
         {
 
-            SplashScreenManager.ShowForm(this, typeof(Ordermanagement_01.Masters.WaitForm1), true, true, false);
+            SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
 
             gridViewAllClientEmpProduction.Columns.ColumnByFieldName("Client_Order_Number").ColumnEdit = null;
             try
@@ -8532,7 +8530,7 @@ namespace Ordermanagement_01
 
         private void simple_Button_Expt_Click(object sender, EventArgs e)
         {
-            SplashScreenManager.ShowForm(this, typeof(Ordermanagement_01.Masters.WaitForm1), true, true, false);
+            SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
 
             gridViewMyClientEmpProduction.Columns.ColumnByFieldName("Client_Order_Number").ColumnEdit = null;
             try
@@ -8586,7 +8584,7 @@ namespace Ordermanagement_01
 
         private void simpleButton_Submit_Click(object sender, EventArgs e)
         {
-            SplashScreenManager.ShowForm(this, typeof(Ordermanagement_01.Masters.WaitForm1), true, true, false);
+            SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
             try
             {
                 if (Convert.ToInt32(lookUpEditMyClientName.EditValue) != 0 && Convert.ToInt32(lookUpEditMyClientName.EditValue) > 0)
@@ -8607,7 +8605,7 @@ namespace Ordermanagement_01
                 //Inserting Comment Values to Temp table
                 Hashtable htcomment = new Hashtable();
                 htcomment.Add("@Trans", "INSERT");
-                System.Data.DataTable dtcomment = new System.Data.DataTable();
+                DataTable dtcomment = new DataTable();
                 dtcomment = dataaccess.ExecuteSP("Sp_Temp_User_Order_Comments", htcomment);
 
                 DateTime Fromdate = Convert.ToDateTime(dateEditMyClientsFromDate.Text.ToString());
@@ -8621,7 +8619,7 @@ namespace Ordermanagement_01
 
 
                 Hashtable ht_Status = new Hashtable();
-                System.Data.DataTable dt_Status = new System.Data.DataTable();
+                DataTable dt_Status = new DataTable();
 
                 if (userRoleId == 1)
                 {
@@ -8644,7 +8642,7 @@ namespace Ordermanagement_01
 
                 Hashtable ht_All_Clients = new Hashtable();
 
-                System.Data.DataTable dt_All_Clients = new System.Data.DataTable();
+                DataTable dt_All_Clients = new DataTable();
 
                 if (userRoleId != 2)
                 {
@@ -8700,7 +8698,7 @@ namespace Ordermanagement_01
 
         private void simpleButton_Export_Click(object sender, EventArgs e)
         {
-            SplashScreenManager.ShowForm(this, typeof(Ordermanagement_01.Masters.WaitForm1), true, true, false);
+            SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
             try
             {
                 DataSet dsexport = new DataSet();
@@ -8728,7 +8726,7 @@ namespace Ordermanagement_01
                 DateTime seldate = Convert.ToDateTime(dateEditMyClientsToDate.Text, usDtfi);
 
                 Hashtable ht_Status1 = new Hashtable();
-                System.Data.DataTable dt_Status1 = new System.Data.DataTable();
+                DataTable dt_Status1 = new DataTable();
 
                 if (userRoleId == 1)
                 {

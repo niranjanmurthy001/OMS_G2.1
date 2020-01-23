@@ -108,9 +108,12 @@ namespace Ordermanagement_01
                                     bs.Append(PermissionComments.ToString());
                                     bs.AppendLine();
                                 }
-                                bs.AppendLine();                   
-                                (bs.Append(Comments.ToString().TrimStart('@')).AppendLine()).ToString();                               
-                                string _str = bs.Replace("@", Environment.NewLine+Environment.NewLine).ToString();
+                                if(Comments !="")
+                                {
+                                    bs.AppendLine();
+                                    (bs.Append(Comments.ToString().TrimStart('@')).AppendLine()).ToString();
+                                }
+                                string _str = bs.Replace("@", Environment.NewLine + Environment.NewLine).ToString();
                                 toolTipController1.ShowHint(_str);
                             }
                             else
@@ -134,7 +137,7 @@ namespace Ordermanagement_01
                 if (caption == "Comments")
                 {                    
                     Order_Passing_Params obj_Order_Details_List = new Order_Passing_Params();
-                    System.Data.DataRow row = gridView2.GetDataRow(gridView2.FocusedRowHandle);
+                    DataRow row = gridView2.GetDataRow(gridView2.FocusedRowHandle);
                     int Order_ID = int.Parse(row["Order_Id"].ToString());
                     obj_Order_Details_List.Order_Id = Order_ID;
                     obj_Order_Details_List.Work_Type_Id = Work_Type_Id;
@@ -964,7 +967,7 @@ namespace Ordermanagement_01
             {
 
                 Hashtable htget_Category = new Hashtable();
-                System.Data.DataTable dtget_Category = new System.Data.DataTable();
+                DataTable dtget_Category = new DataTable();
                 if (Emp_Job_role_Id == 1)
                 {
                     htget_Category.Add("@Trans", "GET_CATEGORY_ID_FOR_SEARCHER");
@@ -1052,7 +1055,7 @@ namespace Ordermanagement_01
             if (Eff_Order_Task_Id == 2 || Eff_Order_Task_Id == 3)
             {
                 Hashtable htcheckplant_Technical = new Hashtable();
-                System.Data.DataTable dtcheckplant_Technical = new System.Data.DataTable();
+                DataTable dtcheckplant_Technical = new DataTable();
                 htcheckplant_Technical.Add("@Trans", "GET_ORDER_SOURCE_TYPE_ID");
                 htcheckplant_Technical.Add("@State_Id", Eff_State_Id);
                 htcheckplant_Technical.Add("@County", Eff_County_Id);
@@ -1071,7 +1074,7 @@ namespace Ordermanagement_01
                 {
                     //Get the Allocated Count in the Efffecincy Matrix
                     Hashtable htget_Effecicy_Value = new Hashtable();
-                    System.Data.DataTable dtget_Effeciency_Value = new System.Data.DataTable();
+                    DataTable dtget_Effeciency_Value = new DataTable();
 
                     htget_Effecicy_Value.Add("@Trans", "GET_ALLOCTAED_ORDER_COUNT");
                     htget_Effecicy_Value.Add("@Client_Id", Eff_Client_Id);
@@ -1124,7 +1127,7 @@ namespace Ordermanagement_01
                 {
                     //Get the Allocated Count in the Efffecincy Matrix for Online
                     Hashtable htget_Effecicy_Value = new Hashtable();
-                    System.Data.DataTable dtget_Effeciency_Value = new System.Data.DataTable();
+                    DataTable dtget_Effeciency_Value = new DataTable();
 
                     htget_Effecicy_Value.Add("@Trans", "GET_ALLOCTAED_ORDER_COUNT");
                     htget_Effecicy_Value.Add("@Client_Id", Eff_Client_Id);
@@ -1175,7 +1178,7 @@ namespace Ordermanagement_01
                 else
                 {
                     Hashtable htget_Effecicy_Value = new Hashtable();
-                    System.Data.DataTable dtget_Effeciency_Value = new System.Data.DataTable();
+                    DataTable dtget_Effeciency_Value = new DataTable();
 
                     htget_Effecicy_Value.Add("@Trans", "GET_ALLOCTAED_ORDER_COUNT");
                     htget_Effecicy_Value.Add("@Client_Id", Eff_Client_Id);
@@ -1201,7 +1204,7 @@ namespace Ordermanagement_01
             {
                 // this is for Deed Chain Order and Typing 
                 Hashtable htcheck_Deed_Chain = new Hashtable();
-                System.Data.DataTable dtcheck_Deed_Chain = new System.Data.DataTable();
+                DataTable dtcheck_Deed_Chain = new DataTable();
                 htcheck_Deed_Chain.Add("@Trans", "GET_ORDER_SOURCE_TYPE_ID_BY_SUB_CLIENT");
                 htcheck_Deed_Chain.Add("@Subprocess_Id", Eff_Sub_Process_Id);
                 dtcheck_Deed_Chain = dataaccess.ExecuteSP("Sp_Emp_Order_Wise_User_Efficiency", htcheck_Deed_Chain);
@@ -1217,7 +1220,7 @@ namespace Ordermanagement_01
                 if (Eff_Order_Source_Type_Id != 0)
                 {
                     Hashtable htget_Effecicy_Value = new Hashtable();
-                    System.Data.DataTable dtget_Effeciency_Value = new System.Data.DataTable();
+                    DataTable dtget_Effeciency_Value = new DataTable();
 
                     htget_Effecicy_Value.Add("@Trans", "GET_ALLOCTAED_ORDER_COUNT");
                     htget_Effecicy_Value.Add("@Client_Id", Eff_Client_Id);
@@ -1272,7 +1275,7 @@ namespace Ordermanagement_01
 
                     //Get the Allocated Count in the Efffecincy Matrix for Online
                     Hashtable htget_Effecicy_Value = new Hashtable();
-                    System.Data.DataTable dtget_Effeciency_Value = new System.Data.DataTable();
+                    DataTable dtget_Effeciency_Value = new DataTable();
 
                     htget_Effecicy_Value.Add("@Trans", "GET_ALLOCTAED_ORDER_COUNT");
                     htget_Effecicy_Value.Add("@Client_Id", Eff_Client_Id);
@@ -1298,7 +1301,7 @@ namespace Ordermanagement_01
                 else
                 {
                     Hashtable htget_Effecicy_Value = new Hashtable();
-                    System.Data.DataTable dtget_Effeciency_Value = new System.Data.DataTable();
+                    DataTable dtget_Effeciency_Value = new DataTable();
 
                     htget_Effecicy_Value.Add("@Trans", "GET_ALLOCTAED_ORDER_COUNT");
                     htget_Effecicy_Value.Add("@Client_Id", Eff_Client_Id);
@@ -1326,7 +1329,7 @@ namespace Ordermanagement_01
             {
 
                 Hashtable htget_Effecicy_Value = new Hashtable();
-                System.Data.DataTable dtget_Effeciency_Value = new System.Data.DataTable();
+                DataTable dtget_Effeciency_Value = new DataTable();
 
                 htget_Effecicy_Value.Add("@Trans", "GET_ALLOCTAED_ORDER_COUNT");
                 htget_Effecicy_Value.Add("@Client_Id", Eff_Client_Id);
@@ -1597,9 +1600,9 @@ namespace Ordermanagement_01
                                             {
                                                 // Cancelling the Order in Tax
                                                 Hashtable htupdateOrderTaxStatus = new Hashtable();
-                                                System.Data.DataTable dtupdateOrderTaxStatus = new System.Data.DataTable();
+                                                DataTable dtupdateOrderTaxStatus = new DataTable();
                                                 Hashtable htupdateTaxStatus = new Hashtable();
-                                                System.Data.DataTable dtupdateTaxStatus = new System.Data.DataTable();
+                                                DataTable dtupdateTaxStatus = new DataTable();
 
                                                 htupdateTaxStatus.Add("@Trans", "UPDATE_TAX_STATUS");
                                                 htupdateTaxStatus.Add("@Tax_Status", 4);
@@ -1689,7 +1692,7 @@ namespace Ordermanagement_01
                                                     //==================================External Client_Vendor_Orders(Titlelogy)=====================================================
 
                                                     Hashtable htCheck_Order_InTitlelogy = new Hashtable();
-                                                    System.Data.DataTable dt_Order_InTitleLogy = new System.Data.DataTable();
+                                                    DataTable dt_Order_InTitleLogy = new DataTable();
                                                     htCheck_Order_InTitlelogy.Add("@Trans", "CHECK_ORDER_IN_TITLLELOGY");
                                                     htCheck_Order_InTitlelogy.Add("@Order_ID", Order_Id_value);
                                                     dt_Order_InTitleLogy = dataaccess.ExecuteSP("Sp_Order", htCheck_Order_InTitlelogy);
@@ -1706,7 +1709,7 @@ namespace Ordermanagement_01
                                                             if (Client_Id == 33 && Order_Satatus_Id == 4 || Order_Satatus_Id == 5 || Order_Satatus_Id == 1)
                                                             {
                                                                 Hashtable ht_Titlelogy_Order_Task_Status = new Hashtable();
-                                                                System.Data.DataTable dt_TitleLogy_Order_Task_Status = new System.Data.DataTable();
+                                                                DataTable dt_TitleLogy_Order_Task_Status = new DataTable();
                                                                 ht_Titlelogy_Order_Task_Status.Add("@Trans", "UPDATE_ORDER_TASK_STATUS");
                                                                 ht_Titlelogy_Order_Task_Status.Add("@Order_Id", External_Client_Order_Id);
                                                                 ht_Titlelogy_Order_Task_Status.Add("@Order_Task", Order_StatusId_Value);
@@ -1717,7 +1720,7 @@ namespace Ordermanagement_01
                                                             else
                                                             {
                                                                 Hashtable ht_Titlelogy_Order_Task_Status = new Hashtable();
-                                                                System.Data.DataTable dt_TitleLogy_Order_Task_Status = new System.Data.DataTable();
+                                                                DataTable dt_TitleLogy_Order_Task_Status = new DataTable();
                                                                 ht_Titlelogy_Order_Task_Status.Add("@Trans", "UPDATE_ORDER_TASK_STATUS");
                                                                 ht_Titlelogy_Order_Task_Status.Add("@Order_Id", External_Client_Order_Id);
                                                                 ht_Titlelogy_Order_Task_Status.Add("@Order_Task", Order_StatusId_Value);
@@ -1869,7 +1872,7 @@ namespace Ordermanagement_01
                                             //==================================External Client_Vendor_Orders(Titlelogy)=====================================================
 
                                             Hashtable htCheck_Order_InTitlelogy = new Hashtable();
-                                            System.Data.DataTable dt_Order_InTitleLogy = new System.Data.DataTable();
+                                            DataTable dt_Order_InTitleLogy = new DataTable();
                                             htCheck_Order_InTitlelogy.Add("@Trans", "CHECK_ORDER_IN_TITLLELOGY");
                                             htCheck_Order_InTitlelogy.Add("@Order_ID", Order_Id_value);
                                             dt_Order_InTitleLogy = dataaccess.ExecuteSP("Sp_Order", htCheck_Order_InTitlelogy);
@@ -1885,7 +1888,7 @@ namespace Ordermanagement_01
                                                     if (Client_Id == 33 && Order_Satatus_Id == 4 || Order_Satatus_Id == 5 || Order_Satatus_Id == 1)
                                                     {
                                                         Hashtable ht_Titlelogy_Order_Task_Status = new Hashtable();
-                                                        System.Data.DataTable dt_TitleLogy_Order_Task_Status = new System.Data.DataTable();
+                                                        DataTable dt_TitleLogy_Order_Task_Status = new DataTable();
                                                         ht_Titlelogy_Order_Task_Status.Add("@Trans", "UPDATE_ORDER_TASK_STATUS");
                                                         ht_Titlelogy_Order_Task_Status.Add("@Order_Id", External_Client_Order_Id);
                                                         ht_Titlelogy_Order_Task_Status.Add("@Order_Task", Order_StatusId_Value);
@@ -1896,7 +1899,7 @@ namespace Ordermanagement_01
                                                     else
                                                     {
                                                         Hashtable ht_Titlelogy_Order_Task_Status = new Hashtable();
-                                                        System.Data.DataTable dt_TitleLogy_Order_Task_Status = new System.Data.DataTable();
+                                                        DataTable dt_TitleLogy_Order_Task_Status = new DataTable();
                                                         ht_Titlelogy_Order_Task_Status.Add("@Trans", "UPDATE_ORDER_TASK_STATUS");
                                                         ht_Titlelogy_Order_Task_Status.Add("@Order_Id", External_Client_Order_Id);
                                                         ht_Titlelogy_Order_Task_Status.Add("@Order_Task", Order_StatusId_Value);
@@ -2865,9 +2868,9 @@ namespace Ordermanagement_01
                                             // Cancelling the Order in Tax
 
                                             Hashtable htupdateOrderTaxStatus = new Hashtable();
-                                            System.Data.DataTable dtupdateOrderTaxStatus = new System.Data.DataTable();
+                                            DataTable dtupdateOrderTaxStatus = new DataTable();
                                             Hashtable htupdateTaxStatus = new Hashtable();
-                                            System.Data.DataTable dtupdateTaxStatus = new System.Data.DataTable();
+                                            DataTable dtupdateTaxStatus = new DataTable();
 
                                             htupdateTaxStatus.Add("@Trans", "UPDATE_TAX_STATUS");
                                             htupdateTaxStatus.Add("@Tax_Status", 4);
@@ -2902,7 +2905,7 @@ namespace Ordermanagement_01
                                                 dtorderStatus = dataaccess.ExecuteSP("Sp_Order", htorderStatus);
 
                                                 Hashtable htupdate_Prog = new Hashtable();
-                                                DataTable dtupdate_Prog = new System.Data.DataTable();
+                                                DataTable dtupdate_Prog = new DataTable();
                                                 htupdate_Prog.Add("@Trans", "UPDATE_PROGRESS");
                                                 htupdate_Prog.Add("@Order_ID", Order_Id_value);
                                                 htupdate_Prog.Add("@Order_Progress", 8);
@@ -2942,7 +2945,7 @@ namespace Ordermanagement_01
 
 
                                                 Hashtable htCheck_Order_InTitlelogy = new Hashtable();
-                                                System.Data.DataTable dt_Order_InTitleLogy = new System.Data.DataTable();
+                                                DataTable dt_Order_InTitleLogy = new DataTable();
                                                 htCheck_Order_InTitlelogy.Add("@Trans", "CHECK_ORDER_IN_TITLLELOGY");
                                                 htCheck_Order_InTitlelogy.Add("@Order_ID", Order_Id_value);
                                                 dt_Order_InTitleLogy = dataaccess.ExecuteSP("Sp_Order", htCheck_Order_InTitlelogy);
@@ -2961,7 +2964,7 @@ namespace Ordermanagement_01
                                                         if (Client_Id == 33 && Order_Satatus_Id == 4 || Order_Satatus_Id == 5 || Order_Satatus_Id == 1)
                                                         {
                                                             Hashtable ht_Titlelogy_Order_Task_Status = new Hashtable();
-                                                            System.Data.DataTable dt_TitleLogy_Order_Task_Status = new System.Data.DataTable();
+                                                            DataTable dt_TitleLogy_Order_Task_Status = new DataTable();
                                                             ht_Titlelogy_Order_Task_Status.Add("@Trans", "UPDATE_ORDER_TASK_STATUS");
                                                             ht_Titlelogy_Order_Task_Status.Add("@Order_Id", External_Client_Order_Id);
                                                             ht_Titlelogy_Order_Task_Status.Add("@Order_Task", OrderStatusId);
@@ -2972,7 +2975,7 @@ namespace Ordermanagement_01
                                                         else
                                                         {
                                                             Hashtable ht_Titlelogy_Order_Task_Status = new Hashtable();
-                                                            System.Data.DataTable dt_TitleLogy_Order_Task_Status = new System.Data.DataTable();
+                                                            DataTable dt_TitleLogy_Order_Task_Status = new DataTable();
                                                             ht_Titlelogy_Order_Task_Status.Add("@Trans", "UPDATE_ORDER_TASK_STATUS");
                                                             ht_Titlelogy_Order_Task_Status.Add("@Order_Id", External_Client_Order_Id);
                                                             ht_Titlelogy_Order_Task_Status.Add("@Order_Task", OrderStatusId);
@@ -3118,7 +3121,7 @@ namespace Ordermanagement_01
                                         //==================================External Client_Vendor_Orders(Titlelogy)=====================================================
 
                                         Hashtable htCheck_Order_InTitlelogy = new Hashtable();
-                                        System.Data.DataTable dt_Order_InTitleLogy = new System.Data.DataTable();
+                                        DataTable dt_Order_InTitleLogy = new DataTable();
                                         htCheck_Order_InTitlelogy.Add("@Trans", "CHECK_ORDER_IN_TITLLELOGY");
                                         htCheck_Order_InTitlelogy.Add("@Order_ID", Order_Id_value);
                                         dt_Order_InTitleLogy = dataaccess.ExecuteSP("Sp_Order", htCheck_Order_InTitlelogy);
@@ -3136,7 +3139,7 @@ namespace Ordermanagement_01
                                                 if (Client_Id == 33 && Order_Satatus_Id == 4 || Order_Satatus_Id == 5 || Order_Satatus_Id == 1)
                                                 {
                                                     Hashtable ht_Titlelogy_Order_Task_Status = new Hashtable();
-                                                    System.Data.DataTable dt_TitleLogy_Order_Task_Status = new System.Data.DataTable();
+                                                    DataTable dt_TitleLogy_Order_Task_Status = new DataTable();
                                                     ht_Titlelogy_Order_Task_Status.Add("@Trans", "UPDATE_ORDER_TASK_STATUS");
                                                     ht_Titlelogy_Order_Task_Status.Add("@Order_Id", External_Client_Order_Id);
                                                     ht_Titlelogy_Order_Task_Status.Add("@Order_Task", OrderStatusId);
@@ -3147,7 +3150,7 @@ namespace Ordermanagement_01
                                                 else
                                                 {
                                                     Hashtable ht_Titlelogy_Order_Task_Status = new Hashtable();
-                                                    System.Data.DataTable dt_TitleLogy_Order_Task_Status = new System.Data.DataTable();
+                                                    DataTable dt_TitleLogy_Order_Task_Status = new DataTable();
                                                     ht_Titlelogy_Order_Task_Status.Add("@Trans", "UPDATE_ORDER_TASK_STATUS");
                                                     ht_Titlelogy_Order_Task_Status.Add("@Order_Id", External_Client_Order_Id);
                                                     ht_Titlelogy_Order_Task_Status.Add("@Order_Task", OrderStatusId);
@@ -3264,7 +3267,7 @@ namespace Ordermanagement_01
 
                         styleFormatForOffer.Appearance.Options.UseBackColor = true;
                         styleFormatForOffer.Column = this.gridColumn31;
-                        DevExpress.XtraEditors.XtraMessageBox.Show(defaultLookAndFeel1.LookAndFeel, this, "Few Orders are not DeAllocated Please check in Error Status Column.", "Warning", MessageBoxButtons.OK);
+                        XtraMessageBox.Show(defaultLookAndFeel1.LookAndFeel, this, "Few Orders are not DeAllocated Please check in Error Status Column.", "Warning", MessageBoxButtons.OK);
                         Get_Client_Wise_Production_Count_Orders_To_GridviewBind();
                     }
 

@@ -1815,6 +1815,12 @@
     <Compile Include="New Dashboard\Settings\OrderEntry.Designer.cs">
       <DependentUpon>OrderEntry.cs</DependentUpon>
     </Compile>
+    <Compile Include="New Dashboard\Settings\ProjectReview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New Dashboard\Settings\ProjectReview.Designer.cs">
+      <DependentUpon>ProjectReview.cs</DependentUpon>
+    </Compile>
     <Compile Include="New Dashboard\Settings\ProjectSelection.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -3627,6 +3633,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="New Dashboard\Settings\OrderEntry.resx">
       <DependentUpon>OrderEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New Dashboard\Settings\ProjectReview.resx">
+      <DependentUpon>ProjectReview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="New Dashboard\Settings\ProjectSelection.resx">
       <DependentUpon>ProjectSelection.cs</DependentUpon>

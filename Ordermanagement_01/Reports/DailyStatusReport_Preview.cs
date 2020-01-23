@@ -2722,11 +2722,12 @@ namespace Ordermanagement_01
                             System.Data.DataTable dt_getgrid_details = new System.Data.DataTable();
                             ht_getgrid_details.Clear();
                             ht_getgrid_details.Clear();
+                           
                             ht_getgrid_details.Add("@Trans", "AGENT_OPEN_ORDER_DETAILS");
                             ht_getgrid_details.Add("@Client_Number", Client_Number);
                             ht_getgrid_details.Add("@Order_Status", Order_Status);
                             ht_getgrid_details.Add("@date", Date);
-                            dt_getgrid_details = dataaccess.ExecuteSP("Sp_Daily_Status_Report", ht_getgrid_details);
+                            dt_getgrid_details = dataaccess.ExecuteSP("Sp_Daily_Status_Report_Open", ht_getgrid_details);
 
                             HeaderText = $"{Tab_Name} - {Client_Number} - {val_Order_Status} Orders on {Date}";
 
@@ -2782,7 +2783,7 @@ namespace Ordermanagement_01
                             ht_getgriddetails.Add("@Trans", "AGENT_OPEN_ORDER_CLIENT_AND_ORDER_STATUS_WISE");
                             ht_getgriddetails.Add("@Client_Number", Client_Number);
                             ht_getgriddetails.Add("@Order_Status", Order_Status);
-                            dt_getgriddetails = dataaccess.ExecuteSP("Sp_Daily_Status_Report", ht_getgriddetails);
+                            dt_getgriddetails = dataaccess.ExecuteSP("Sp_Daily_Status_Report_Open", ht_getgriddetails);
 
                             HeaderText = $"{Tab_Name} - {Client_Number} - All {val_Order_Status} Orders";
 
@@ -2828,7 +2829,7 @@ namespace Ordermanagement_01
                             ht_grid_details.Add("@Trans", "AGENT_OPEN_ORDER_ALL_CLIENT_AND_ORDER_STATUS_WISE");
                             // ht_getgriddetails.Add("@Client_Number", Client_Number);
                             ht_grid_details.Add("@Order_Status", Order_Status);
-                            dt_grid_details = dataaccess.ExecuteSP("Sp_Daily_Status_Report", ht_grid_details);
+                            dt_grid_details = dataaccess.ExecuteSP("Sp_Daily_Status_Report_Open", ht_grid_details);
 
 
 
@@ -2879,7 +2880,7 @@ namespace Ordermanagement_01
                             ht_get_Client_DateWise.Add("@Trans", "AGENT_OPEN_ORDER_CLIENT_AND_DATE_WISE");
                             ht_get_Client_DateWise.Add("@Client_Number", Client_Number);
                             ht_get_Client_DateWise.Add("@date", Date);
-                            dt_get_Client_DateWise = dataaccess.ExecuteSP("Sp_Daily_Status_Report", ht_get_Client_DateWise);
+                            dt_get_Client_DateWise = dataaccess.ExecuteSP("Sp_Daily_Status_Report_Open", ht_get_Client_DateWise);
 
 
 
@@ -2921,7 +2922,7 @@ namespace Ordermanagement_01
                             ht_get_Date_All_Task_Wise.Add("@Trans", "AGENT_OPEN_ORDER_CLIENT_AND_ALL_TASK_WISE");
                             ht_get_Date_All_Task_Wise.Add("@Client_Number", Client_Number);
 
-                            dt_get_Date_All_Task_Wise = dataaccess.ExecuteSP("Sp_Daily_Status_Report", ht_get_Date_All_Task_Wise);
+                            dt_get_Date_All_Task_Wise = dataaccess.ExecuteSP("Sp_Daily_Status_Report_Open", ht_get_Date_All_Task_Wise);
 
 
 
@@ -2959,7 +2960,7 @@ namespace Ordermanagement_01
                             ht_AgingPending_detail.Add("@Fromdate", dateEdit_From_date.Text);
                             ht_AgingPending_detail.Add("@Todate", dateEdit_To_Date.Text);
 
-                            dt_AgingPending_detail = dataaccess.ExecuteSP("Sp_Daily_Status_Report", ht_AgingPending_detail);
+                            dt_AgingPending_detail = dataaccess.ExecuteSP("Sp_Daily_Status_Report_Open", ht_AgingPending_detail);
 
                             HeaderText = $"{Tab_Name} - All Orders";
 

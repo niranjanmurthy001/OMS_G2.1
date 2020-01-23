@@ -1695,6 +1695,7 @@
     </Compile>
     <Compile Include="Models\Base_Url.cs" />
     <Compile Include="Models\Dashboard\Processing_Dashboard.cs" />
+    <Compile Include="Models\Email_Parms.cs" />
     <Compile Include="Models\Employee\AccuracySummary.cs" />
     <Compile Include="Models\Employee\Errors.cs" />
     <Compile Include="Models\OrderDetails.cs" />

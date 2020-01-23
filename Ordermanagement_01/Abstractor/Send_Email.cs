@@ -56,6 +56,7 @@ namespace Ordermanagement_01.Abstractor
                     Ftp_Password = dbc.Decrypt(Ftp_pass);
                 }
                 Export_Report();
+
                 Send_Html_Email_Body();
             }
             else
@@ -137,6 +138,12 @@ namespace Ordermanagement_01.Abstractor
                 MessageBox.Show("Problem in Downloading Files please Check with Administrator");
             }
         }
+
+        private void Send_Email_Load(object sender, EventArgs e)
+        {
+
+        }
+
         public void Export_Report()
         {
             if (DEED_CHAIN == "Yes")
@@ -428,7 +435,9 @@ namespace Ordermanagement_01.Abstractor
 
                 if (Emailid == "vendors@drnds.com")
                 {
+
                     mailMessage.To.Add("vendors@drnds.com");
+
                 }
                 else if (Emailid == "neworders@abstractshop.com")
                 {
@@ -450,6 +459,7 @@ namespace Ordermanagement_01.Abstractor
                 SmtpClient smtp = new SmtpClient();
                 if (Emailid == "vendors@drnds.com")
                 {
+
                     smtp.Host = "smtpout.secureserver.net";
                     NetworkCredential NetworkCred = new NetworkCredential("vendors@drnds.com", "AecXmC9T07DcP$");
                     smtp.EnableSsl = false;
@@ -458,6 +468,7 @@ namespace Ordermanagement_01.Abstractor
                 }
                 else if (Emailid == "neworders@abstractshop.com")
                 {
+
                     smtp.Host = "smtpout.secureserver.net";
                     NetworkCredential NetworkCred1 = new NetworkCredential("neworders@abstractshop.com", "DinNavABS");
                     smtp.UseDefaultCredentials = true;

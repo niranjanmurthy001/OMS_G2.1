@@ -3070,7 +3070,7 @@ namespace Ordermanagement_01
                             ht_get_Aging_Pending_griddetails.Add("@Client_Number", Aging_Client_Number);
                             ht_get_Aging_Pending_griddetails.Add("@Order_Status", Aging_Order_Status);
                             ht_get_Aging_Pending_griddetails.Add("@date", Aging_Date);
-                            dt_get_Aging_Pending_griddetails = dataaccess.ExecuteSP("Sp_Daily_Status_Report", ht_get_Aging_Pending_griddetails);
+                            dt_get_Aging_Pending_griddetails = dataaccess.ExecuteSP("Sp_Daily_Status_Report_Pending", ht_get_Aging_Pending_griddetails);
 
                             // DailyStatus_OrderViewDetail_New dailystatus_Aging_pending = new DailyStatus_OrderViewDetail_New(dt_get_Aging_Pending_griddetails, userroleid, User_id, Production_date);
 

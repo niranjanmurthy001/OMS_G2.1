@@ -31,14 +31,14 @@ namespace Ordermanagement_01
 
             //    Application.Run(new New_Dashboard.New_Dashboard(1,1));
 
-            //Application.Run(new New_Dashboard.NewLogin());
+            Application.Run(new New_Dashboard.NewLogin());
 
             //Application.Run(new OrderHistory(1,"123", 102,"102", "", "", "", ""));
 
 
+          // Application.Run(new New_Dashboard.Settings.EmailSetting());
 
-
-            Application.Run(new New_Dashboard.Settings.Client_Process());
+         //  Application.Run(new New_Dashboard.Settings.Client_Process());
 
 
 

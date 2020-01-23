@@ -287,9 +287,12 @@ namespace Ordermanagement_01.New_Dashboard.Settings
 
         private void btn_testconnection_Click(object sender, EventArgs e)
         {
-            testEmailadrdress();
-            XtraMessageBox.Show( "Email Has Been Sent");
-        }
+            if (Validation() != false && Usercheck()!=false)
+            {                
+                    testEmailadrdress();
+                    XtraMessageBox.Show("Account Tested Succesfully");
+           }
+             }
         private void testEmailadrdress()
         {
             using (MailMessage mm = new MailMessage())
@@ -518,7 +521,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
         }
 
         private void txt_IS_KeyPress(object sender, KeyPressEventArgs e)
-        {
+       {
             e.Handled = (e.KeyChar == (char)Keys.Space);
         }
 

@@ -77,6 +77,10 @@
             this.comments = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemHyperLinkEdit5 = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.gridColumn64 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn65 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn66 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn67 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn68 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -175,10 +179,6 @@
             this.repositoryItemPopupContainerEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit();
             this.repositoryItemPopupContainerEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
-            this.gridColumn65 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn66 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn67 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn68 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1018,6 +1018,38 @@
             this.gridColumn64.Visible = true;
             this.gridColumn64.VisibleIndex = 27;
             this.gridColumn64.Width = 45;
+            // 
+            // gridColumn65
+            // 
+            this.gridColumn65.Caption = "Status Comments";
+            this.gridColumn65.FieldName = "Status_Comments";
+            this.gridColumn65.Name = "gridColumn65";
+            this.gridColumn65.Visible = true;
+            this.gridColumn65.VisibleIndex = 28;
+            // 
+            // gridColumn66
+            // 
+            this.gridColumn66.Caption = "Permission Status";
+            this.gridColumn66.FieldName = "Permission_Status";
+            this.gridColumn66.Name = "gridColumn66";
+            this.gridColumn66.Visible = true;
+            this.gridColumn66.VisibleIndex = 29;
+            // 
+            // gridColumn67
+            // 
+            this.gridColumn67.Caption = "Permission Given By";
+            this.gridColumn67.FieldName = "Permission_Given_By";
+            this.gridColumn67.Name = "gridColumn67";
+            this.gridColumn67.OptionsColumn.AllowEdit = false;
+            this.gridColumn67.OptionsColumn.FixedWidth = true;
+            this.gridColumn67.Visible = true;
+            this.gridColumn67.VisibleIndex = 18;
+            // 
+            // gridColumn68
+            // 
+            this.gridColumn68.Caption = "Permission Comments";
+            this.gridColumn68.FieldName = "Permission_Comments";
+            this.gridColumn68.Name = "gridColumn68";
             // 
             // gridColumn30
             // 
@@ -2159,38 +2191,6 @@
             // defaultLookAndFeel1
             // 
             this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013";
-            // 
-            // gridColumn65
-            // 
-            this.gridColumn65.Caption = "Status Comments";
-            this.gridColumn65.FieldName = "Status_Comments";
-            this.gridColumn65.Name = "gridColumn65";
-            this.gridColumn65.Visible = true;
-            this.gridColumn65.VisibleIndex = 28;
-            // 
-            // gridColumn66
-            // 
-            this.gridColumn66.Caption = "Permission Status";
-            this.gridColumn66.FieldName = "Permission_Status";
-            this.gridColumn66.Name = "gridColumn66";
-            this.gridColumn66.Visible = true;
-            this.gridColumn66.VisibleIndex = 29;
-            // 
-            // gridColumn67
-            // 
-            this.gridColumn67.Caption = "Permission Given By";
-            this.gridColumn67.FieldName = "Permission_Given_By";
-            this.gridColumn67.Name = "gridColumn67";
-            this.gridColumn67.OptionsColumn.AllowEdit = false;
-            this.gridColumn67.OptionsColumn.FixedWidth = true;
-            this.gridColumn67.Visible = true;
-            this.gridColumn67.VisibleIndex = 18;
-            // 
-            // gridColumn68
-            // 
-            this.gridColumn68.Caption = "Permission Comments";
-            this.gridColumn68.FieldName = "Permission_Comments";
-            this.gridColumn68.Name = "gridColumn68";
             // 
             // DailyStatus_OrderViewDetail_New
             // 

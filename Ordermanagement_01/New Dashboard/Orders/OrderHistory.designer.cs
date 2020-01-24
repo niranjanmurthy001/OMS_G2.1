@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderHistory));
             this.groupControlOrderHistory = new DevExpress.XtraEditors.GroupControl();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -71,7 +72,7 @@
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.groupControlOrderHistory)).BeginInit();
             this.groupControlOrderHistory.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -480,10 +481,10 @@
             // gridControlOrderStatusPermissionHistory
             // 
             this.gridControlOrderStatusPermissionHistory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlOrderStatusPermissionHistory.Location = new System.Drawing.Point(2, 21);
+            this.gridControlOrderStatusPermissionHistory.Location = new System.Drawing.Point(2, 31);
             this.gridControlOrderStatusPermissionHistory.MainView = this.gridViewOrderStatusPermissionHistory;
             this.gridControlOrderStatusPermissionHistory.Name = "gridControlOrderStatusPermissionHistory";
-            this.gridControlOrderStatusPermissionHistory.Size = new System.Drawing.Size(1055, 180);
+            this.gridControlOrderStatusPermissionHistory.Size = new System.Drawing.Size(1055, 170);
             this.gridControlOrderStatusPermissionHistory.TabIndex = 20;
             this.gridControlOrderStatusPermissionHistory.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewOrderStatusPermissionHistory});

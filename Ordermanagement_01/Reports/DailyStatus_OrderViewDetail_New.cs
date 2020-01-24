@@ -50,7 +50,6 @@ namespace Ordermanagement_01
         int Sub_Process_ID, Order_Status_Id, Client_Id, Order_Type_Abs_Id, ClientId, Sub_Process_Id, Order_Task_Id, Order_Satatus_Id;
         int Emp_Job_role_Id, Emp_Sal_Cat_Id, Eff_Client_Id, Eff_Order_Type_Abs_Id, Eff_Order_Task_Id, Eff_Order_Source_Type_Id, Eff_State_Id, Eff_County_Id, Eff_Sub_Process_Id;
         string Clint, userroleid, Operation, Operation_Count, From_date, To_Date, Path1, errormessage = "", error_status = "", error_value = "", vendor_validation_msg = "", Order_Number;
-
         private void gridView2_RowCellStyle(object sender, RowCellStyleEventArgs e)
         {           
             string caption = e.Column.Caption;
@@ -88,31 +87,36 @@ namespace Ordermanagement_01
                         if (vie.Row["Order_Comments"] != null || vie.Row["Status_Comments"]!=null || vie.Row["Permission_Comments"]!=null)
                         {
                             string Comments = vie.Row["Order_Comments"].ToString();
-                            string StatusComments = vie.Row["Status_Comments"].ToString();
-                            string PermissionComments = vie.Row["Permission_Comments"].ToString();
-                            if (Comments != ""  || StatusComments !="" || PermissionComments != "")
+                            
+                            if (Comments != "" )
                             {
-                                
                                 string Order_Number = vie.Row["Client_Order_Number"].ToString();
-                                bs.Append(Order_Number.ToString());                                
-                                bs.AppendLine();    
-                                if(StatusComments !="")
-                                {
-                                    bs.AppendLine();
-                                    bs.Append(StatusComments.ToString());
-                                    bs.AppendLine();
-                                }                          
-                                if(PermissionComments !="")
-                                {
-                                    bs.AppendLine();
-                                    bs.Append(PermissionComments.ToString());
-                                    bs.AppendLine();
-                                }
-                                if(Comments !="")
+                                bs.Append(Order_Number.ToString());
+                                bs.AppendLine();
+                                                              
+                                if (Comments != "")
                                 {
                                     bs.AppendLine();
                                     (bs.Append(Comments.ToString().TrimStart('@')).AppendLine()).ToString();
                                 }
+                                if (Tab_Type_Name == "Open Order Wise" || Tab_Type_Name == "Pending Order Wise")
+                                {
+                                    string StatusComments = vie.Row["Status_Comments"].ToString();
+                                    string PermissionComments = vie.Row["Permission_Comments"].ToString();
+                                    if (StatusComments != "")
+                                    {
+                                        bs.AppendLine();
+                                        bs.Append(StatusComments.ToString());
+                                        bs.AppendLine();
+                                    }
+                                    if (PermissionComments != "")
+                                    {
+                                        bs.AppendLine();
+                                        bs.Append(PermissionComments.ToString());
+                                        bs.AppendLine();
+                                    }
+                                }
+                               
                                 string _str = bs.Replace("@", Environment.NewLine + Environment.NewLine).ToString();
                                 toolTipController1.ShowHint(_str);
                             }

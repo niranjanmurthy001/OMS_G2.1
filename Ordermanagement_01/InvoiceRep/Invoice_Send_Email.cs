@@ -11,6 +11,10 @@ using System.Collections;
 using System.IO;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using Newtonsoft.Json;
+using Ordermanagement_01.Models;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace Ordermanagement_01.InvoiceRep
 {
@@ -62,6 +66,7 @@ namespace Ordermanagement_01.InvoiceRep
         string Month, Year;
         string Destination_Path;
         string Temp_Source;
+        DataTable dt_Email_Details = new DataTable();
         public Invoice_Send_Email(string ORDER_NUMBER, int USER_ID, int ORDER_ID, int INVOICE_ID, string INVOICE_STATUS, string FORM, int SUB_PROCESS_ID)
         {
             InitializeComponent();
@@ -1007,339 +1012,387 @@ namespace Ordermanagement_01.InvoiceRep
             string body = Page_Source_Code.ToString();
             return body;
         }
-        private void SendHtmlFormattedEmail(string recepientEmail, string subject, string body)
+        private async void SendHtmlFormattedEmail(string recepientEmail, string subject, string body)
         {
             long maxsize;
             long size;
             using (MailMessage mailMessage = new MailMessage())
             {
-                if (Forms == "Order_Invoice")
+                try
                 {
-                    if (Client_Id == 11)
+                    if (Forms == "Order_Invoice")
                     {
-                        mailMessage.From = new MailAddress("neworders@abstractshop.com");
-                    }
-                    else if (Client_Id == 12)
-                    {
+                        if (Client_Id == 11)
+                        {
+                            mailMessage.From = new MailAddress("neworders@abstractshop.com");
+                        }
+                        else if (Client_Id == 12)
+                        {
 
-                        mailMessage.From = new MailAddress("Ave365@drnds.com ");
-                    }
-                    if (Invoice_Attchment_Type_Id == 1)
-                    {
-
-
-                        Path1 = TFOut_Put;// This is Ftp Output File Attaching From Local Pc By Combaining Two Pdf Files
-
-
-                        Attachment_Name = Order_Number.ToString() + ".pdf";
-
-
-
-
-                    }
-                    else if (Invoice_Attchment_Type_Id == 2)
-                    {
-
-                        Search_Attachment_Name = Order_Number.ToString() + " - Search Package" + ".pdf";
-                        Invoice_Attachment_Name = Order_Number.ToString() + "- Invoice" + ".pdf";
-
-                        Path1 = Search_Document_Path.ToString();
-
-                    }
-                    else if (Invoice_Attchment_Type_Id == 3)
-                    {
-                        Search_Attachment_Name = Order_Number.ToString() + " - Search Package" + ".pdf";
-                        Path1 = Search_Document_Path.ToString();
-
-                        Attachment_Name = Search_Attachment_Name.ToString();
-                    }
-
-                }
-                else if (Forms == "Monthly_Invoice")
-                {
-                    mailMessage.From = new MailAddress("accounts@abstractshop.com");
-
-                    // Assigning Ftp Exported Montly Invoice Output to path
-                    Path1 = Montly_Invoice_File_Out_Put_Path;
-
-
-                    Attachment_Name = "MonthlyInvoice.pdf";
-                }
-
-
-
-                maxsize = 15 * 1024 * 1000;
-                string fileName;
-
-                if (Invoice_Attchment_Type_Id == 1)
-                {
-                    fileName = Path1;
-                    FileInfo fi = new FileInfo(fileName);
-                    size = fi.Length;
-                }
-                else
-                {
-
-                    size = Ftp_File_Size(Path1);
-
-
-
-                }
-
-
-                MemoryStream ms = new MemoryStream();
-                MemoryStream ms1 = new MemoryStream();
-
-                if (size <= maxsize)
-                {
-                    if (Invoice_Attchment_Type_Id == 2 && Forms == "Order_Invoice")
-                    {
-                        // here attaching From Ftp Server path to the Mail
-
-                        // Search Attachment
-                        FtpWebRequest request = (FtpWebRequest)WebRequest.Create(Search_Document_Path);
-                        request.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password);
-                        request.Method = WebRequestMethods.Ftp.DownloadFile;
-                        Stream contentStream = request.GetResponse().GetResponseStream();
-                        Attachment attachment = new Attachment(contentStream, Search_Attachment_Name);
-                        mailMessage.Attachments.Add(attachment);
-
-                        // Invoice Attachment
-
-                        FtpWebRequest request_Invoice = (FtpWebRequest)WebRequest.Create(Invoice_Document_Path);
-                        request_Invoice.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password);
-                        request_Invoice.Method = WebRequestMethods.Ftp.DownloadFile;
-                        Stream contentStream_Invoice = request_Invoice.GetResponse().GetResponseStream();
-                        Attachment attachment_Invoice = new Attachment(contentStream_Invoice, Invoice_Attachment_Name);
-                        mailMessage.Attachments.Add(attachment_Invoice);
-
-
-                        //ms = new MemoryStream(File.ReadAllBytes(Search_Document_Path));
-                        //ms1 = new MemoryStream(File.ReadAllBytes(Invoice_Document_Path));
-                    }
-                    else
-                    {
-
-
-                        //FtpWebRequest request = (FtpWebRequest)WebRequest.Create(Path1);
-                        //request.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password);
-                        //request.Method = WebRequestMethods.Ftp.DownloadFile;
-                        //Stream contentStream = request.GetResponse().GetResponseStream();
-                        //Attachment attachment = new Attachment(contentStream, Attachment_Name.ToString());
-                        //mailMessage.Attachments.Add(attachment);
-
-                       // ms = new MemoryStream(File.ReadAllBytes(Path1));                        
-                    }
-
-                    if (Forms == "Monthly_Invoice")
-                    {
-
-                        ms = new MemoryStream(File.ReadAllBytes(Path1));
-                      //  FtpWebRequest request = (FtpWebRequest)WebRequest.Create(Path1);
-                        //request.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password);
-                      //  request.Method = WebRequestMethods.Ftp.DownloadFile;
-                       // Stream contentStream = request.GetResponse().GetResponseStream();
-                      //  Attachment attachment = new Attachment(contentStream, Attachment_Name.ToString());
-                      //  mailMessage.Attachments.Add(attachment);
-
-                       mailMessage.Attachments.Add(new Attachment(ms, Attachment_Name.ToString()));
-
-
-
-                    }
-                    else if (Forms == "Order_Invoice" && Invoice_Attchment_Type_Id == 1 || Invoice_Attchment_Type_Id == 3)
-                    {
-
-
+                            mailMessage.From = new MailAddress("ave365@drnds.com ");
+                        }
                         if (Invoice_Attchment_Type_Id == 1)
                         {
 
-                            FtpWebRequest request = (FtpWebRequest)WebRequest.Create(Merge_Attach_Path);
-                            request.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password);
-                            request.Method = WebRequestMethods.Ftp.DownloadFile;
-                            Stream contentStream = request.GetResponse().GetResponseStream();
-                            Attachment attachment = new Attachment(contentStream, Attachment_Name.ToString());
-                            mailMessage.Attachments.Add(attachment);
+
+                            Path1 = TFOut_Put;// This is Ftp Output File Attaching From Local Pc By Combaining Two Pdf Files
 
 
-                          //  mailMessage.Attachments.Add(new Attachment(ms, Attachment_Name.ToString()));
+                            Attachment_Name = Order_Number.ToString() + ".pdf";
+
+
+
+
+                        }
+                        else if (Invoice_Attchment_Type_Id == 2)
+                        {
+
+                            Search_Attachment_Name = Order_Number.ToString() + " - Search Package" + ".pdf";
+                            Invoice_Attachment_Name = Order_Number.ToString() + "- Invoice" + ".pdf";
+
+                            Path1 = Search_Document_Path.ToString();
 
                         }
                         else if (Invoice_Attchment_Type_Id == 3)
                         {
+                            Search_Attachment_Name = Order_Number.ToString() + " - Search Package" + ".pdf";
+                            Path1 = Search_Document_Path.ToString();
 
-
-                            FtpWebRequest request = (FtpWebRequest)WebRequest.Create(Path1);
-                            request.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password);
-                            request.Method = WebRequestMethods.Ftp.DownloadFile;
-                            Stream contentStream = request.GetResponse().GetResponseStream();
-                            Attachment attachment = new Attachment(contentStream, Attachment_Name.ToString());
-                            mailMessage.Attachments.Add(attachment);
-
+                            Attachment_Name = Search_Attachment_Name.ToString();
                         }
 
-
                     }
-
-
-
-                    Hashtable htdate = new Hashtable();
-                    DataTable dtdate = new DataTable();
-                    htdate.Add("@Trans", "SELECT");
-                    htdate.Add("@Sub_Process_Id", Sub_Process_ID);
-                    dtdate = dataaccess.ExecuteSP("Sp_Client_Mail", htdate);
-                    if (dtdate.Rows.Count > 0)
+                    else if (Forms == "Monthly_Invoice")
                     {
+                        mailMessage.From = new MailAddress("accounts@abstractshop.com");
 
-                        Email = "Avilable";
-                        Alternative_Email = "Avilable";
-                        Client_Id = int.Parse(dtdate.Rows[0]["Client_Id"].ToString());
+                        // Assigning Ftp Exported Montly Invoice Output to path
+                        Path1 = Montly_Invoice_File_Out_Put_Path;
 
+
+                        Attachment_Name = "MonthlyInvoice.pdf";
+                    }
+                    maxsize = 15 * 1024 * 1000;
+                    string fileName;
+
+                    if (Invoice_Attchment_Type_Id == 1)
+                    {
+                        fileName = Path1;
+                        FileInfo fi = new FileInfo(fileName);
+                        size = fi.Length;
                     }
                     else
                     {
 
-                        Email = "";
-                        Alternative_Email = "";
+                        size = Ftp_File_Size(Path1);
                     }
+                    MemoryStream ms = new MemoryStream();
+                    MemoryStream ms1 = new MemoryStream();
 
-
-                    if (Email != "")
+                    if (size <= maxsize)
                     {
-
-
-                        for (int j = 0; j < dtdate.Rows.Count; j++)
+                        if (Invoice_Attchment_Type_Id == 2 && Forms == "Order_Invoice")
                         {
-                            mailMessage.To.Add(dtdate.Rows[j]["Email-ID"].ToString());
+                            // here attaching From Ftp Server path to the Mail
 
+                            // Search Attachment
+                            FtpWebRequest request = (FtpWebRequest)WebRequest.Create(Search_Document_Path);
+                            request.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password);
+                            request.Method = WebRequestMethods.Ftp.DownloadFile;
+                            Stream contentStream = request.GetResponse().GetResponseStream();
+                            Attachment attachment = new Attachment(contentStream, Search_Attachment_Name);
+                            mailMessage.Attachments.Add(attachment);
+
+                            // Invoice Attachment
+
+                            FtpWebRequest request_Invoice = (FtpWebRequest)WebRequest.Create(Invoice_Document_Path);
+                            request_Invoice.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password);
+                            request_Invoice.Method = WebRequestMethods.Ftp.DownloadFile;
+                            Stream contentStream_Invoice = request_Invoice.GetResponse().GetResponseStream();
+                            Attachment attachment_Invoice = new Attachment(contentStream_Invoice, Invoice_Attachment_Name);
+                            mailMessage.Attachments.Add(attachment_Invoice);
+
+
+                            //ms = new MemoryStream(File.ReadAllBytes(Search_Document_Path));
+                            //ms1 = new MemoryStream(File.ReadAllBytes(Invoice_Document_Path));
                         }
+                        else
+                        {
 
-                       // mailMessage.To.Add("techteam@drnds.com");
 
+                            //FtpWebRequest request = (FtpWebRequest)WebRequest.Create(Path1);
+                            //request.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password);
+                            //request.Method = WebRequestMethods.Ftp.DownloadFile;
+                            //Stream contentStream = request.GetResponse().GetResponseStream();
+                            //Attachment attachment = new Attachment(contentStream, Attachment_Name.ToString());
+                            //mailMessage.Attachments.Add(attachment);
+
+                            // ms = new MemoryStream(File.ReadAllBytes(Path1));                        
+                        }
 
                         if (Forms == "Monthly_Invoice")
                         {
-                            if (Client_Id == 11)
+
+                            ms = new MemoryStream(File.ReadAllBytes(Path1));
+                            //  FtpWebRequest request = (FtpWebRequest)WebRequest.Create(Path1);
+                            //request.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password);
+                            //  request.Method = WebRequestMethods.Ftp.DownloadFile;
+                            // Stream contentStream = request.GetResponse().GetResponseStream();
+                            //  Attachment attachment = new Attachment(contentStream, Attachment_Name.ToString());
+                            //  mailMessage.Attachments.Add(attachment);
+
+                            mailMessage.Attachments.Add(new Attachment(ms, Attachment_Name.ToString()));
+
+
+
+                        }
+                        else if (Forms == "Order_Invoice" && Invoice_Attchment_Type_Id == 1 || Invoice_Attchment_Type_Id == 3)
+                        {
+
+
+                            if (Invoice_Attchment_Type_Id == 1)
                             {
-                                mailMessage.CC.Add("accounts@abstractshop.com");
+
+                                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(Merge_Attach_Path);
+                                request.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password);
+                                request.Method = WebRequestMethods.Ftp.DownloadFile;
+                                Stream contentStream = request.GetResponse().GetResponseStream();
+                                Attachment attachment = new Attachment(contentStream, Attachment_Name.ToString());
+                                mailMessage.Attachments.Add(attachment);
+
+
+                                //  mailMessage.Attachments.Add(new Attachment(ms, Attachment_Name.ToString()));
+
                             }
+                            else if (Invoice_Attchment_Type_Id == 3)
+                            {
+
+
+                                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(Path1);
+                                request.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password);
+                                request.Method = WebRequestMethods.Ftp.DownloadFile;
+                                Stream contentStream = request.GetResponse().GetResponseStream();
+                                Attachment attachment = new Attachment(contentStream, Attachment_Name.ToString());
+                                mailMessage.Attachments.Add(attachment);
+
+                            }
+
+
+                        }
+
+
+
+                        Hashtable htdate = new Hashtable();
+                        DataTable dtdate = new DataTable();
+                        htdate.Add("@Trans", "SELECT");
+                        htdate.Add("@Sub_Process_Id", Sub_Process_ID);
+                        dtdate = dataaccess.ExecuteSP("Sp_Client_Mail", htdate);
+                        if (dtdate.Rows.Count > 0)
+                        {
+
+                            Email = "Avilable";
+                            Alternative_Email = "Avilable";
+                            Client_Id = int.Parse(dtdate.Rows[0]["Client_Id"].ToString());
 
                         }
                         else
                         {
-                            if (Client_Id == 11)
-                            {
 
-                                mailMessage.CC.Add("neworders@abstractshop.com");
-                            }
-                            else if (Client_Id == 12)
-                            {
-
-                                mailMessage.CC.Add("ave365@drnds.com");
-
-                            }
-
-                        }
-
-                        if (Forms == "Order_Invoice")
-                        {
-                            Hashtable htorder = new Hashtable();
-                            DataTable dtorder = new DataTable();
-                            htorder.Add("@Trans", "GET_INVOICE_ORDER_DETAILS_FOR_EMAIL");
-                            htorder.Add("@Order_ID", Order_Id);
-                            dtorder = dataaccess.ExecuteSP("Sp_Order_Invoice_Entry", htorder);
-                            if (dtorder.Rows.Count > 0)
-                            {
-
-
-                            }
-
-                            string Title = dtorder.Rows[0]["Order_Type"].ToString();
-                            string Subject = "" + Order_Number + "-" + Title.ToString();
-                            mailMessage.Subject = Subject.ToString();
-
-                            StringBuilder sb = new StringBuilder();
-                            sb.Append("Subject: " + Subject.ToString() + "" + Environment.NewLine);
-
-                        }
-                        else if (Forms == "Monthly_Invoice")
-                        {
-                            string Subject = "Invoice - " + Invoice_Month_Name.ToString();
-                            mailMessage.Subject = Subject.ToString();
-
+                            Email = "";
+                            Alternative_Email = "";
                         }
 
 
-                        mailMessage.Body = body;
-                        mailMessage.IsBodyHtml = true;
-
-
-
-                        SmtpClient smtp = new SmtpClient();
-
-
-
-                        if (Forms == "Order_Invoice")
+                        if (Email != "")
                         {
 
-                            if (Client_Id == 11)
+
+                            for (int j = 0; j < dtdate.Rows.Count; j++)
                             {
-                                smtp.Host = "smtpout.secureserver.net";
-                                NetworkCred = new NetworkCredential("neworders@abstractshop.com", "Shopgratman221");
-                                smtp.Port = 3535;
+                                  mailMessage.To.Add(dtdate.Rows[j]["Email-ID"].ToString());
 
                             }
-                            else if (Client_Id == 12)
+
+
+
+                            if (Forms == "Monthly_Invoice")
                             {
-                                smtp.Host = "smtpout.secureserver.net";
-                                NetworkCred = new NetworkCredential("ave365@drnds.com", "AecXmC9T07DcP$");
-                                smtp.UseDefaultCredentials = true;
-                                smtp.Port = 25;
+                                if (Client_Id == 11)
+                                {
+                                     mailMessage.CC.Add("accounts@abstractshop.com");
+                                }
+
+                            }
+                            else
+                            {
+                                if (Client_Id == 11)
+                                {
+
+                                     mailMessage.CC.Add("neworders@abstractshop.com");
+                                }
+                                else if (Client_Id == 12)
+                                {
+
+                                    mailMessage.CC.Add("ave365@drnds.com");
+
+                                }
+
                             }
 
-                        }
-                        else if (Forms == "Monthly_Invoice")
-                        {
-                            if (Client_Id == 11)
+                            if (Forms == "Order_Invoice")
                             {
-                                smtp.Host = "smtpout.secureserver.net";
-                                NetworkCred = new NetworkCredential("accounts@abstractshop.com", "Gratmanshop221");
-                                smtp.Port = 3535;
-                                smtp.UseDefaultCredentials = true;
+                                Hashtable htorder = new Hashtable();
+                                DataTable dtorder = new DataTable();
+                                htorder.Add("@Trans", "GET_INVOICE_ORDER_DETAILS_FOR_EMAIL");
+                                htorder.Add("@Order_ID", Order_Id);
+                                dtorder = dataaccess.ExecuteSP("Sp_Order_Invoice_Entry", htorder);
+                                if (dtorder.Rows.Count > 0)
+                                {
+
+
+                                }
+                                string Title = dtorder.Rows[0]["Order_Type"].ToString();
+                                string Subject = "" + Order_Number + "-" + Title.ToString();
+                                mailMessage.Subject = Subject.ToString();
+
+                                StringBuilder sb = new StringBuilder();
+                                sb.Append("Subject: " + Subject.ToString() + "" + Environment.NewLine);
+
+                            }
+                            else if (Forms == "Monthly_Invoice")
+                            {
+                                string Subject = "Invoice - " + Invoice_Month_Name.ToString();
+                                mailMessage.Subject = Subject.ToString();
+
+                            }
+
+
+                            mailMessage.Body = body;
+                            mailMessage.IsBodyHtml = true;
+
+
+
+                            SmtpClient smtp = new SmtpClient();
+
+
+
+                            if (Forms == "Order_Invoice")
+                            {
+
+                                if (Client_Id == 11)
+                                {
+                                    await Get_Email_Details("neworders@abstractshop.com");
+                                    if (dt_Email_Details.Rows.Count > 0)
+                                    {
+                                        smtp.Host = dt_Email_Details.Rows[0]["Outgoing_Mail_Server"].ToString();
+                                        NetworkCredential NetworkCred = new NetworkCredential(dt_Email_Details.Rows[0]["User_Name"].ToString(), dt_Email_Details.Rows[0]["Password"].ToString());
+                                       
+                                        smtp.UseDefaultCredentials = true;
+                                        smtp.Credentials = NetworkCred;
+                                        smtp.Port = int.Parse(dt_Email_Details.Rows[0]["Outgoing_Server_Port"].ToString());
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Smtp Credientials Were Not Added To Send an  Email ");
+                                    }
+                                    //smtp.Host = "smtpout.secureserver.net";
+                                    //NetworkCred = new NetworkCredential("neworders@abstractshop.com", "Shopgratman221");
+                                    //smtp.Port = 3535;
+
+                                }
+                                else if (Client_Id == 12)
+                                {
+                                    await Get_Email_Details("ave365@drnds.com");
+                                    if (dt_Email_Details.Rows.Count > 0)
+                                    {
+                                        smtp.Host = dt_Email_Details.Rows[0]["Outgoing_Mail_Server"].ToString();
+                                        NetworkCredential NetworkCred = new NetworkCredential(dt_Email_Details.Rows[0]["User_Name"].ToString(), dt_Email_Details.Rows[0]["Password"].ToString());
+                                      
+                                        smtp.Credentials = NetworkCred;
+                                        smtp.Port = int.Parse(dt_Email_Details.Rows[0]["Outgoing_Server_Port"].ToString());
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Smtp Credientials Were Not Added To Send an  Email ");
+                                    }
+                                    //smtp.Host = "smtpout.secureserver.net";
+                                    //NetworkCred = new NetworkCredential("ave365@drnds.com", "AecXmC9T07DcP$");
+                                    //smtp.UseDefaultCredentials = true;
+                                    //smtp.Port = 25;
+                                }
+
+                            }
+                            else if (Forms == "Monthly_Invoice")
+                            {
+                                if (Client_Id == 11)
+                                {
+                                    await Get_Email_Details("accounts@abstractshop.com");
+                                    if (dt_Email_Details.Rows.Count > 0)
+                                    {
+                                        smtp.Host = dt_Email_Details.Rows[0]["Outgoing_Mail_Server"].ToString();
+                                        NetworkCredential NetworkCred = new NetworkCredential(dt_Email_Details.Rows[0]["User_Name"].ToString(), dt_Email_Details.Rows[0]["Password"].ToString());
+                                      
+                                        smtp.Credentials = NetworkCred;
+                                        smtp.Port = int.Parse(dt_Email_Details.Rows[0]["Outgoing_Server_Port"].ToString());
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Smtp Credientials Were Not Added To Send an  Email ");
+                                    }
+
+                                    //smtp.Host = "smtpout.secureserver.net";
+                                    //NetworkCred = new NetworkCredential("accounts@abstractshop.com", "Gratmanshop221");
+                                    //smtp.Port = 3535;
+                                    //smtp.UseDefaultCredentials = true;
+                                }
+                            }
+
+                            //  smtp.Timeout = Math.Max(attachments.Sum(Function(Item) (DirectCast(Item, MailAttachment).Size / 1024)), 100) * 1000
+
+                            if (dt_Email_Details.Rows.Count > 0)
+                            {
+                                smtp.Timeout = (60 * 5 * 1000);
+                                smtp.Credentials = NetworkCred;
+                                // smtp.EnableSsl = true;
+
+                                //string userState = "test message1";
+
+                                smtp.Send(mailMessage);
+                                smtp.Dispose();
+                                if (Forms == "Order_Invoice")
+                                {
+                                    Update_Invoice_Email_Status();
+                                }
+                                else if (Forms == "Monthly_Invoice")
+                                {
+                                    Update_Monthly_Invoice_Email_Status();
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Smtp Credientials Were Not Added To Send an  Email ");
                             }
                         }
-
-                        //  smtp.Timeout = Math.Max(attachments.Sum(Function(Item) (DirectCast(Item, MailAttachment).Size / 1024)), 100) * 1000
-                        smtp.Timeout = (60 * 5 * 1000);
-                        smtp.Credentials = NetworkCred;
-                        // smtp.EnableSsl = true;
-
-                        //string userState = "test message1";
-
-                        smtp.Send(mailMessage);
-                        smtp.Dispose();
-                        if (Forms == "Order_Invoice")
+                        else
                         {
-                            Update_Invoice_Email_Status();
-                        }
-                        else if (Forms == "Monthly_Invoice")
-                        {
-                            Update_Monthly_Invoice_Email_Status();
+                            MessageBox.Show("Email is Not Added Kindly Check It");
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Email is Not Added Kindly Check It");
+                        MessageBox.Show("Attachment Size should less than 10 mb ");
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Attachment Size should less than 10 mb ");
+                catch (Exception ex)
+                   {
+
+                    MessageBox.Show(ex.Message);
+
                 }
+
+
             }
         }
-
-
         public long Ftp_File_Size(string Ftp_File_Path)
         {
             FtpWebRequest request = (FtpWebRequest)FtpWebRequest.Create(new Uri(Ftp_File_Path));
@@ -1384,5 +1437,42 @@ namespace Ordermanagement_01.InvoiceRep
                 Invoice_Attchment_Type_Id = 0;
             }
         }
+        private async Task<DataTable> Get_Email_Details(string Email)
+        {
+
+            // Call api
+            dt_Email_Details.Clear();
+            try
+            {
+
+                var dictionary = new Dictionary<string, object>()
+                                            {
+                                               { "@Trans", "SELECT_BY_EMAIL"},
+                                               { "@Email_Address",Email},
+                                          };
+                var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
+                using (var httpClient2 = new HttpClient())
+                {
+                    var response2 = await httpClient2.PostAsync(Base_Url.Url + "/EmailSettings/BindData", data);
+                    if (response2.IsSuccessStatusCode)
+                    {
+                        if (response2.StatusCode == HttpStatusCode.OK)
+                        {
+                            var result2 = await response2.Content.ReadAsStringAsync();
+                            dt_Email_Details = JsonConvert.DeserializeObject<DataTable>(result2);
+                        }
+                    }
+                }
+
+                // get data
+
+                return dt_Email_Details;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
     }
 }

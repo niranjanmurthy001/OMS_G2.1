@@ -1,4 +1,8 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraSplashScreen;
+using Newtonsoft.Json;
+using Ordermanagement_01.Masters;
+using Ordermanagement_01.Models;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,6 +11,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Net.Mail;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -35,58 +40,85 @@ namespace Ordermanagement_01.New_Dashboard.Settings
             this.ActiveControl = txt_name;
 
         }
-        private void grid_Email_Address_list()
+        private async void grid_Email_Address_list()
         {
-            Hashtable ht = new Hashtable();
-            DataTable dt = new DataTable();
-            ht.Add("@Trans", "Select");
-            dt = dataccess.ExecuteSP("Sp_EmailVerify", ht);
-            if (dt.Rows.Count > 0)
-            {
-                gridControl1_Email_Address.DataSource = dt;
-                gridControl1_Email_Address.ForceInitialize();
-            }
-            else
-            {
-                gridControl1_Email_Address.DataSource = null;
-            }
 
+            try
+            {
+                var dictionary = new Dictionary<string, object>()
+            {
+                    { "@Trans", "Select"}
+            };
+                var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
+                using (var httpClient = new HttpClient())
+                {
+                    var response = await httpClient.PostAsync(Base_Url.Url + "/EmailSettings/Select", data);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        if (response.StatusCode == HttpStatusCode.OK)
+                        {
+                            var result = await response.Content.ReadAsStringAsync();
+                            DataTable dt = JsonConvert.DeserializeObject<DataTable>(result);
+                            if (dt.Rows.Count > 0)
+                            {
+                                gridControl1_Email_Address.DataSource = dt;
+                                gridControl1_Email_Address.ForceInitialize();
+                            }
+                            else
+                            {
+                                gridControl1_Email_Address.DataSource = null;
+                            }
+
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         private bool Validation()
         {
             if (txt_name.Text == "")
             {
+                SplashScreenManager.CloseForm(false);
                 XtraMessageBox.Show("Enter Your_Name");
                 txt_yourname.Focus();
                 return false;
             }
             else if (txt_Email_address.Text == "")
             {
+                SplashScreenManager.CloseForm(false);
                 XtraMessageBox.Show("Enter Email_Address");
                 txt_Email_address.Focus();
                 return false;
             }
             else if (txt_Incoming_server.Text == "")
             {
+                SplashScreenManager.CloseForm(false);
                 XtraMessageBox.Show("Enter Incoming Server details");
                 txt_Incoming_server.Focus();
                 return false;
             }
             else if (txt_Outgoing_server.Text == "")
             {
+                SplashScreenManager.CloseForm(false);
                 XtraMessageBox.Show("Enter Outgoing server details");
                 txt_Outgoing_server.Focus();
                 return false;
             }
             else if (txt_User_Name.Text == "")
             {
+                SplashScreenManager.CloseForm(false);
                 XtraMessageBox.Show("Enter User Name");
                 txt_User_Name.Focus();
                 return false;
             }
             else if (txt_password.Text == "")
             {
+                SplashScreenManager.CloseForm(false);
                 XtraMessageBox.Show("Enter Password");
                 txt_password.Focus();
                 return false;
@@ -98,10 +130,10 @@ namespace Ordermanagement_01.New_Dashboard.Settings
             //    return false;
 
             //}
-            else if (((txt_IS.Text != "" && (Convert.ToInt32(txt_IS.Text.Length) > 3)) || txt_IS.Text == ""))
+            else if (((txt_IS.Text != "" && (Convert.ToInt32(txt_IS.Text.Length) > 4)) || txt_IS.Text == ""))
             {
-
-                XtraMessageBox.Show("incoming port must be less than 3....And please enter Incoming port");
+                SplashScreenManager.CloseForm(false);
+                XtraMessageBox.Show("incoming port must be less than 4....And please enter Incoming port");
                 txt_IS.Focus();
                 return false;
             }
@@ -111,10 +143,10 @@ namespace Ordermanagement_01.New_Dashboard.Settings
             //    txt_OS.Focus();
             //    return false;
             //}
-            else if (((txt_OS.Text != "" && (Convert.ToInt32(txt_OS.Text.Length) > 3) || txt_OS.Text == "")))
+            else if (((txt_OS.Text != "" && (Convert.ToInt32(txt_OS.Text.Length) > 4) || txt_OS.Text == "")))
             {
-
-                XtraMessageBox.Show("Outgoing port must be less than 3.....And please enter Outgoing port");
+                SplashScreenManager.CloseForm(false);
+                XtraMessageBox.Show("Outgoing port must be less than 4.....And please enter Outgoing port");
                 txt_OS.Focus();
                 return false;
             }
@@ -125,6 +157,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
             }
             else
             {
+                SplashScreenManager.CloseForm(false);
                 XtraMessageBox.Show("Email Address Not Valid");
                 txt_Email_address.Focus();
                 return false;
@@ -132,75 +165,143 @@ namespace Ordermanagement_01.New_Dashboard.Settings
 
             return true;
         }
-        public bool Usercheck()
+        public async Task<bool> Usercheck()
         {
-
             DataTable dt = new DataTable();
-            if (txt_Email_address.Text != "")
+            try
             {
-                Hashtable htmail = new Hashtable();
-                htmail.Add("@Trans", "EmailCheck");
-                htmail.Add("@Email_Address", txt_Email_address.Text.Trim());
-                dt = dataccess.ExecuteSP("Sp_EmailVerify", htmail);
-                int count = Convert.ToInt32(dt.Rows[0]["count"].ToString());
-                if (count > 0)
-                {
-                    XtraMessageBox.Show("E-mail Already Exists");
-                    return false;
-                }
-                else
-                {
-                    return true;
-                }
-            }
-            return true;
-        }
-        private void btn_save_Click(object sender, EventArgs e)
-        {
-            Hashtable hsforSP = new Hashtable();
-            DataTable dt = new System.Data.DataTable();
-            if (Validation() != false)
-            {
-                if (emailId == 0 && btn_save.Text == "Save" && Usercheck() != false)
-                {
-                    txt_IS.Enabled = true;
-                    txt_OS.Enabled = true;
-                    hsforSP.Add("@Trans", "INSERT");
-                    hsforSP.Add("@Your_Name", txt_name.Text);
-                    hsforSP.Add("@Email_Address", txt_Email_address.Text);
-                    hsforSP.Add("@Incoming_Mail_Server", txt_Incoming_server.Text);
-                    hsforSP.Add("@Outgoing_Mail_Server", txt_Outgoing_server.Text);
-                    hsforSP.Add("@Incoming_Server_Port", txt_IS.Text);
-                    hsforSP.Add("@Outgoing_Server_Port", txt_OS.Text);
-                    hsforSP.Add("@User_Name", txt_User_Name.Text);
-                    hsforSP.Add("@Password", txt_password.Text);
-                    hsforSP.Add("@Connection_SSL", check_connection_SSL.Checked);
-                    dt = dataccess.ExecuteSP("Sp_EmailVerify", hsforSP);
-                    XtraMessageBox.Show(txt_User_Name.Text + " Created Successfully ");
-                    grid_Email_Address_list();
-                    Clear();
-                }
-                if (btn_save.Text == "Edit")
-                {
 
-                    hsforSP.Add("@Trans", "UPDATE");
-                    hsforSP.Add("@ID", emailId);
-                    hsforSP.Add("@Your_Name", txt_name.Text);
-                    hsforSP.Add("@Email_Address", txt_Email_address.Text);
-                    hsforSP.Add("@Incoming_Mail_Server", txt_Incoming_server.Text);
-                    hsforSP.Add("@Outgoing_Mail_Server", txt_Outgoing_server.Text);
-                    hsforSP.Add("@Connection_SSL", check_connection_SSL.Checked);
-                    hsforSP.Add("@Incoming_Server_Port", txt_IS.Text);
-                    hsforSP.Add("@Outgoing_Server_Port", txt_OS.Text);
-                    hsforSP.Add("@User_Name", txt_User_Name.Text);
-                    hsforSP.Add("@Password", txt_password.Text);
-                    dt = dataccess.ExecuteSP("Sp_EmailVerify", hsforSP);
-                    XtraMessageBox.Show(txt_User_Name.Text + " Updated Successfully ");
-                    grid_Email_Address_list();
-                    Clear();
+                if (txt_Email_address.Text != "")
+                {
+                    var dictionary = new Dictionary<string, object>()
+                {
+                    { "@Trans", "EmailCheck" },
+                    { "@Email_Address", txt_Email_address.Text.Trim()}
+                };
+                    var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
+                    using (var httpClient = new HttpClient())
+                    {
+                        var response = await httpClient.PostAsync(Base_Url.Url + "/EmailSettings/Check", data);
+                        if (response.IsSuccessStatusCode)
+                        {
+                            if (response.StatusCode == HttpStatusCode.OK)
+                            {
+                                var result = await response.Content.ReadAsStringAsync();
+                                DataTable dt1 = JsonConvert.DeserializeObject<DataTable>(result);
+                                int count = Convert.ToInt32(dt1.Rows[0]["count"].ToString());
+                                if (count > 0)
+                                {
+                                    SplashScreenManager.CloseForm(false);
+                                    XtraMessageBox.Show("E-mail Already Exists");
+                                    return false;
+                                }                              
+                                
+                            }
+                           
+
+                        }
+                       
+                    }
+                  
                 }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
+        private async void btn_save_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                
+                if (Validation() != false)
+                {
+                    if (emailId == 0 && btn_save.Text == "Save" && (await Usercheck()) != false)
+                    {
+                        SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
+                        txt_IS.Enabled = true;
+                        txt_OS.Enabled = true;
+                        var dictionary = new Dictionary<string, object>();
+                        {
+                            dictionary.Add("@Trans", "INSERT");
+                            dictionary.Add("@Your_Name", txt_name.Text);
+                            dictionary.Add("@Email_Address", txt_Email_address.Text);
+                            dictionary.Add("@Incoming_Mail_Server", txt_Incoming_server.Text);
+                            dictionary.Add("@Outgoing_Mail_Server", txt_Outgoing_server.Text);
+                            dictionary.Add("@Incoming_Server_Port", txt_IS.Text);
+                            dictionary.Add("@Outgoing_Server_Port", txt_OS.Text);
+                            dictionary.Add("@User_Name", txt_User_Name.Text);
+                            dictionary.Add("@Password", txt_password.Text);
+                            dictionary.Add("@Connection_SSL", check_connection_SSL.Checked);
+                        };
+                        var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
+                        using (var httpClient = new HttpClient())
+                        {
+                            var response = await httpClient.PostAsync(Base_Url.Url + "/EmailSettings/Insert", data);
+                            if (response.IsSuccessStatusCode)
+                            {
+                                if (response.StatusCode == HttpStatusCode.OK)
+                                {
+                                    var result = await response.Content.ReadAsStringAsync();
+                                     SplashScreenManager.CloseForm(false);
+                                XtraMessageBox.Show(txt_User_Name.Text + " Created Successfully ");
+                                 grid_Email_Address_list();
+                                    Clear();
+                                }
+                            }
+                        }
+                    
+                       
+                    }
+                    if (btn_save.Text == "Edit")
+                    {
+                        var dictionary1 = new Dictionary<string, object>();
+                        {
+                            dictionary1.Add("@Trans", "UPDATE");
+                            dictionary1.Add("@ID", emailId);
+                            dictionary1.Add("@Your_Name", txt_name.Text);
+                            dictionary1.Add("@Email_Address", txt_Email_address.Text);
+                            dictionary1.Add("@Incoming_Mail_Server", txt_Incoming_server.Text);
+                            dictionary1.Add("@Outgoing_Mail_Server", txt_Outgoing_server.Text);
+                            dictionary1.Add("@Connection_SSL", check_connection_SSL.Checked);
+                            dictionary1.Add("@Incoming_Server_Port", txt_IS.Text);
+                            dictionary1.Add("@Outgoing_Server_Port", txt_OS.Text);
+                            dictionary1.Add("@User_Name", txt_User_Name.Text);
+                            dictionary1.Add("@Password", txt_password.Text);
+                        };
+                       
+                        var data = new StringContent(JsonConvert.SerializeObject(dictionary1), Encoding.UTF8, "application/json");
+                        using (var httpClient = new HttpClient())
+                        {
+                            var response = await httpClient.PutAsync(Base_Url.Url + "/EmailSettings/Update", data);
+                            if (response.IsSuccessStatusCode)
+                            {
+                                if (response.StatusCode == HttpStatusCode.OK)
+                                {
+                                    var result = await response.Content.ReadAsStringAsync();
+                                    SplashScreenManager.CloseForm(false);
+                                    XtraMessageBox.Show(txt_User_Name.Text + " Updated Successfully ");
+                                    grid_Email_Address_list();
+                                    Clear();
+                                }
+                            }
+                        }                      
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                SplashScreenManager.CloseForm(false);
+                MessageBox.Show(ex.Message.ToString());
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm(false);
+            }
+        }
+
 
         private void gridView1_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
         {
@@ -262,51 +363,93 @@ namespace Ordermanagement_01.New_Dashboard.Settings
             }
         }
 
-        private void simpleButton2_Click(object sender, EventArgs e)
+        private async void simpleButton2_Click(object sender, EventArgs e)
         {
-            Hashtable ht = new Hashtable();
-            DataTable dt = new System.Data.DataTable();
+            
             string Email_Address = txt_Email_address.Text;
-            if (txt_Email_address.Text != "")
-            {
-                ht.Add("@Trans", "DELETE");
-                ht.Add("@Email_Address", Email_Address);
-                dt = dataccess.ExecuteSP("Sp_EmailVerify", ht);
-                gridControl1_Email_Address.DataSource = dt;
-                int count = dt.Rows.Count;
-                grid_Email_Address_list();
-                XtraMessageBox.Show("Record Deleted Successfully");
-                Clear();
-            }
-            else
-            {
-                XtraMessageBox.Show("Please Enter the Email Address");
-            }
+            try {
+                if (txt_Email_address.Text != "")
+                {
+                    var dictionary = new Dictionary<string, object>()
+                {
+                    { "@Trans", "DELETE" },
+                  { "@Email_Address", Email_Address }
+                };
+                    var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
+                    using (var httpClient = new HttpClient())
+                    {
+                        var response = await httpClient.PostAsync(Base_Url.Url + "/EmailSettings/Delete", data);
+                        if (response.IsSuccessStatusCode)
+                        {
+                            if (response.StatusCode == HttpStatusCode.OK)
+                            {
+                                var result = await response.Content.ReadAsStringAsync();
+                                DataTable dt= JsonConvert.DeserializeObject<DataTable>(result);
+                                gridControl1_Email_Address.DataSource = dt;
+                                int count = dt.Rows.Count;
+                                grid_Email_Address_list();
+                                SplashScreenManager.CloseForm(false);
+                                XtraMessageBox.Show("Record Deleted Successfully");
+                                Clear();
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    SplashScreenManager.CloseForm(false);
+                    XtraMessageBox.Show("Please Enter the Email Address");
+                }
 
-        }
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            }
 
         private void btn_testconnection_Click(object sender, EventArgs e)
         {
-            if (Validation() != false && Usercheck()!=false)
-            {                
+      
+            if (Validation() != false )
+            {
+                try
+                {
+                    SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
                     testEmailadrdress();
-                    XtraMessageBox.Show("Account Tested Succesfully");
-           }
-             }
+                    
+                }
+                catch(Exception ex)
+                {
+                    SplashScreenManager.CloseForm(false);
+                    MessageBox.Show(ex.Message.ToString());
+                }
+                finally
+                {
+                    SplashScreenManager.CloseForm(false);
+                }
+            }
+            }
         private void testEmailadrdress()
         {
             using (MailMessage mm = new MailMessage())
             {
                 try
                 {
-
+                    SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
                     SendHtmlFormattedEmail();
+               
                 }
                 catch (Exception error)
                 {
-                    XtraMessageBox.Show(error.Message);
+                    SplashScreenManager.CloseForm(false);
+                    XtraMessageBox.Show(error.Message.ToString());
                     return;
 
+                }
+                finally
+                {
+                    SplashScreenManager.CloseForm(false);
                 }
             }
 
@@ -316,15 +459,18 @@ namespace Ordermanagement_01.New_Dashboard.Settings
         {
             try
             {
+                SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
                 using (MailMessage mailMessage = new MailMessage())
                 {
                     mailMessage.From = new MailAddress(txt_Email_address.Text.ToString());
 
                     if (txt_Email_address.Text != "")
                     {
-                        mailMessage.To.Add("niranjanmurthy@drnds.com");
 
-                        string Subject = " " + txt_User_Name.Text + " " + "Email Tested Successfully";
+                        mailMessage.To.Add(txt_Email_address.Text);
+                    
+                        SplashScreenManager.CloseForm(false);
+                        string Subject = " " + txt_User_Name.Text + " " + "Test Email - OMS";
                         mailMessage.Subject = Subject.ToString();
 
                         StringBuilder sb = new StringBuilder();
@@ -344,17 +490,25 @@ namespace Ordermanagement_01.New_Dashboard.Settings
                         smtp.Port = Convert.ToInt32(txt_OS.Text);
                         smtp.Send(mailMessage);
                         smtp.Dispose();
+                        SplashScreenManager.CloseForm(false);
+                        XtraMessageBox.Show("Account Tested Succesfully");
                     }
                     else
                     {
+                        SplashScreenManager.CloseForm(false);
                         XtraMessageBox.Show("Email is Not Added Kindly Check It");
                     }
                 }
             }
             catch(Exception e)
             {
+                SplashScreenManager.CloseForm(false);
                 XtraMessageBox.Show(e.Message.ToString());
                 return;
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm(false);
             }
            
         }
@@ -374,6 +528,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
 
             if (txt_Email_address.Text == "")
             {
+                SplashScreenManager.CloseForm(false);
                 XtraMessageBox.Show("Enter Email_Address");
                 txt_Email_address.Focus();
                 return;
@@ -384,6 +539,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
             }
             else
             {
+                SplashScreenManager.CloseForm(false);
                 XtraMessageBox.Show("Email Address Not Valid");
                 txt_Email_address.Focus();
             }
@@ -436,6 +592,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
             //Regex RegExForIsPort = new Regex("^[0-9]$");
             if (txt_IS.Text == "")
             {
+                SplashScreenManager.CloseForm(false);
                 XtraMessageBox.Show("Enter Incoming Server Port details");
                 txt_IS.Focus();
                 return;
@@ -455,6 +612,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
             //Regex RegExForOsPort= new Regex("^[0-9]$");
             if (txt_OS.Text == "")
             {
+                SplashScreenManager.CloseForm(false);
                 XtraMessageBox.Show("Enter OutGoing Server Port details");
                 txt_OS.Focus();
                 return;
@@ -475,6 +633,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
             ////Regex RegExForPassword = new Regex("^.*(?=.{8,})(?=.*\\d)(?=.*[a-z])(?=.*[!*@#$%^&+=]).*$");
             if (txt_password.Text == "")
             {
+                SplashScreenManager.CloseForm(false);
                 XtraMessageBox.Show("Enter Password");
                 txt_password.Focus();
             }
@@ -493,6 +652,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
         {
             if (txt_User_Name.Text == "")
             {
+                SplashScreenManager.CloseForm(false);
                 XtraMessageBox.Show("Enter UserName");
                 txt_User_Name.Focus();
                 
@@ -510,7 +670,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
         }
 
         private void txt_Incoming_server_KeyPress(object sender, KeyPressEventArgs e)
-        {
+       {
 
             e.Handled = (e.KeyChar == (char)Keys.Space);
         }
@@ -521,12 +681,12 @@ namespace Ordermanagement_01.New_Dashboard.Settings
         }
 
         private void txt_IS_KeyPress(object sender, KeyPressEventArgs e)
-       {
+        {
             e.Handled = (e.KeyChar == (char)Keys.Space);
         }
 
         private void txt_OS_KeyPress(object sender, KeyPressEventArgs e)
-        {
+       {
             e.Handled = (e.KeyChar == (char)Keys.Space);
         }
 
@@ -539,5 +699,32 @@ namespace Ordermanagement_01.New_Dashboard.Settings
         {
             txt_User_Name.Text = txt_Email_address.Text;
         }
+
+        private void txt_Email_address_TextChanged(object sender, EventArgs e)
+        {
+            txt_Email_address.Text = txt_Email_address.Text.Replace(" ", string.Empty);
+        }
+
+        private void txt_Incoming_server_TextChanged(object sender, EventArgs e)
+        {
+            txt_Incoming_server.Text =txt_Incoming_server.Text.Replace(" ", string.Empty);
+        }
+
+        private void txt_Outgoing_server_TextChanged(object sender, EventArgs e)
+        {
+         txt_Outgoing_server.Text = txt_Outgoing_server.Text.Replace(" ", string.Empty);
+        }
+
+        private void txt_password_TextChanged(object sender, EventArgs e)
+        {
+           txt_password.Text = txt_password.Text.Replace(" ", string.Empty);
+        }
+
+        private void txt_password_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = (e.KeyChar == (char)Keys.Space);
+        }
+
+    
     }
 }

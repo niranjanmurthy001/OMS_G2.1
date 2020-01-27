@@ -1,4 +1,6 @@
-﻿namespace Ordermanagement_01.Abstractor
+﻿using System;
+
+namespace Ordermanagement_01.Abstractor
 {
     partial class Send_Email
     {
@@ -183,6 +185,11 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void Send_Email_Load(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

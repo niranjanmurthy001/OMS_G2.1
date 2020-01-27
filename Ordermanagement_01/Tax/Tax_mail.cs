@@ -10,7 +10,13 @@ using System.Runtime.InteropServices;
 using System.Collections.Generic;
 using DevExpress.XtraRichEdit;
 using DevExpress.XtraPrinting;
-
+using System.Threading.Tasks;
+using System.Net.Http;
+using Newtonsoft.Json;
+using Ordermanagement_01.Models;
+using System.Text;
+using Microsoft.Office.Interop.Excel;
+using System.Data;
 
 namespace Ordermanagement_01.Tax
 {
@@ -27,7 +33,7 @@ namespace Ordermanagement_01.Tax
         public Microsoft.Office.Interop.Word.Document wordDocument { get; set; }
         System.Data.DataTable dtother = new System.Data.DataTable();
         int clientId;
-
+       System.Data.DataTable dt_Email_Details = new System.Data.DataTable();
         private string directoryPath;
         private string year;
         private string month;
@@ -197,15 +203,16 @@ namespace Ordermanagement_01.Tax
             }
             return body;
         }
-        private void SendHtmlFormattedEmail(string mail, string subject, string body)
+        private async void SendHtmlFormattedEmail(string mail, string subject, string body)
         {
             if (OPERATION == "Bulk")
             {
                 using (System.Net.Mail.MailMessage mailMessage = new System.Net.Mail.MailMessage())
                 {
                     Get_Email_Id();
-                    mailMessage.To.Add(EMAILID);
-                    //mailMessage.To.Add("techteam@drnds.com");
+                     mailMessage.To.Add(EMAILID);
+
+                  
                     if (EMAILID != "")
                     {
                         if (int.Parse(SUBPROCESSID) == 344)
@@ -216,7 +223,7 @@ namespace Ordermanagement_01.Tax
                         {
                             mailMessage.From = new MailAddress("Taxes@drnds.com");
                         }
-                        //mailMessage.From = new MailAddress("techteam@drnds.com");
+                     
                         string Attachment = Ordernumber.ToString() + ".pdf";
                         // this is for Tax Certificate
                         if (Tax_Certificate_Path != "")
@@ -245,33 +252,58 @@ namespace Ordermanagement_01.Tax
                             }
                         }
 
-                        mailMessage.CC.Add("Taxes@drnds.com");//mail sending cc
+                        //mailMessage.CC.Add("Taxes@drnds.com");//mail sending cc
 
                         string Subject = Ordernumber.ToString();
                         mailMessage.Subject = Subject.ToString();//mail subject
                         mailMessage.Body = body;
                         mailMessage.IsBodyHtml = true;
                         SmtpClient smtp = new SmtpClient();
-
-                        smtp.Host = "smtpout.secureserver.net";
+                       // smtp.Host = "smtpout.secureserver.net";
                         if (int.Parse(SUBPROCESSID) == 344)
                         {
-                            NetworkCred = new NetworkCredential("Taxes@drnds.com", "ffP2mx=EoM");
+                            await Get_Email_Details("Taxes@drnds.com");
+                            if (dt_Email_Details.Rows.Count > 0)
+                            {
+                                smtp.Host = dt_Email_Details.Rows[0]["Outgoing_Mail_Server"].ToString();
+                                NetworkCredential NetworkCred = new NetworkCredential(dt_Email_Details.Rows[0]["User_Name"].ToString(), dt_Email_Details.Rows[0]["Password"].ToString());
+                                smtp.EnableSsl = false;
+                                smtp.Credentials = NetworkCred;
+                                smtp.Port = int.Parse(dt_Email_Details.Rows[0]["Outgoing_Server_Port"].ToString());
+                                smtp.Send(mailMessage);
+                                smtp.Dispose();
+
+                                Update_Email_Status();
+                            }
+                            //NetworkCred = new NetworkCredential("Taxes@drnds.com", "ffP2mx=EoM");
                         }
                         else if (int.Parse(SUBPROCESSID) == 349)
                         {
-                            NetworkCred = new NetworkCredential("Taxes@drnds.com", "ffP2mx=EoM");
-                        }
-                        //NetworkCredential NetworkCred = new NetworkCredential("techteam@drnds.com", "nop539");
-                        // smtp.UseDefaultCredentials = false;
-                        // smtp.EnableSsl = true;
-                        smtp.Timeout = (60 * 5 * 1000);
-                        smtp.Credentials = NetworkCred;
-                        smtp.Port = 25;
-                        smtp.Send(mailMessage);
-                        smtp.Dispose();
+                            await Get_Email_Details("Taxes@drnds.com");
+                            if (dt_Email_Details.Rows.Count > 0)
+                            {
+                                smtp.Host = dt_Email_Details.Rows[0]["Outgoing_Mail_Server"].ToString();
+                                NetworkCredential NetworkCred = new NetworkCredential(dt_Email_Details.Rows[0]["User_Name"].ToString(), dt_Email_Details.Rows[0]["Password"].ToString());
+                                smtp.EnableSsl = false;
+                                smtp.Credentials = NetworkCred;
+                                smtp.Port = int.Parse(dt_Email_Details.Rows[0]["Outgoing_Server_Port"].ToString());
+                                smtp.Send(mailMessage);
+                                smtp.Dispose();
 
-                        Update_Email_Status();
+                                Update_Email_Status();
+                            }
+                           // NetworkCred = new NetworkCredential("Taxes@drnds.com", "ffP2mx=EoM");
+
+
+                        }
+                  
+                        //// smtp.UseDefaultCredentials = false;
+                        //// smtp.EnableSsl = true;
+
+                        //smtp.Timeout = (60 * 5 * 1000);
+                        //smtp.Credentials = NetworkCred;
+                        //smtp.Port = 25;
+                     
                     }
                     else
                     {
@@ -294,7 +326,7 @@ namespace Ordermanagement_01.Tax
 
 
                     }
-                    //mailMessage.From = new MailAddress("techteam@drnds.com");
+                  
                     string Attachment = Ordernumber.ToString() + ".pdf";
 
                     // this is for Tax Certificate
@@ -327,10 +359,10 @@ namespace Ordermanagement_01.Tax
                     }
 
                     Get_Email_Id();
+                
                     mailMessage.To.Add(EMAILID);
-                    // mailMessage.To.Add("techteam@drnds.com");
 
-                    //  mailMessage.CC.Add("Taxes@drnds.com");
+                  
 
                     string Subject = Ordernumber.ToString();
                     mailMessage.Subject = Subject.ToString();//mail subject
@@ -338,24 +370,56 @@ namespace Ordermanagement_01.Tax
                     mailMessage.IsBodyHtml = true;
                     SmtpClient smtp = new SmtpClient();
 
-                    smtp.Host = "smtpout.secureserver.net";
+                   // smtp.Host = "smtpout.secureserver.net";
                     if (int.Parse(SUBPROCESSID) == 344)
                     {
-                        NetworkCred = new NetworkCredential("Taxes@drnds.com", "ffP2mx=EoM");
+                        await Get_Email_Details("Taxes@drnds.com");
+                        if (dt_Email_Details.Rows.Count > 0)
+                        {
+                            smtp.Host = dt_Email_Details.Rows[0]["Outgoing_Mail_Server"].ToString();
+                            NetworkCredential NetworkCred = new NetworkCredential(dt_Email_Details.Rows[0]["User_Name"].ToString(), dt_Email_Details.Rows[0]["Password"].ToString());
+                            smtp.EnableSsl = false;
+                            smtp.Credentials = NetworkCred;
+                            smtp.Port = int.Parse(dt_Email_Details.Rows[0]["Outgoing_Server_Port"].ToString());
+
+                            smtp.Send(mailMessage);
+                            smtp.Dispose();
+
+                            Update_Email_Status();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Smtp Credientials Were Not Added To Send an  Email ");
+                        }
+                        // NetworkCred = new NetworkCredential("Taxes@drnds.com", "ffP2mx=EoM");
                     }
                     else if (int.Parse(SUBPROCESSID) == 349)
                     {
-                        NetworkCred = new NetworkCredential("Taxes@drnds.com", "ffP2mx=EoM");
-                    }
-                    //NetworkCredential NetworkCred = new NetworkCredential("techteam@drnds.com", "nop539");
-                    // smtp.EnableSsl = true;
-                    smtp.Timeout = (60 * 5 * 1000);
-                    smtp.Credentials = NetworkCred;
-                    smtp.Port = 25;
-                    smtp.Send(mailMessage);
-                    smtp.Dispose();
+                        await Get_Email_Details("Taxes@drnds.com");
+                        if (dt_Email_Details.Rows.Count > 0)
+                        {
+                            smtp.Host = dt_Email_Details.Rows[0]["Outgoing_Mail_Server"].ToString();
+                            NetworkCredential NetworkCred = new NetworkCredential(dt_Email_Details.Rows[0]["User_Name"].ToString(), dt_Email_Details.Rows[0]["Password"].ToString());
+                            smtp.EnableSsl = false;
+                            smtp.Credentials = NetworkCred;
+                            smtp.Port = int.Parse(dt_Email_Details.Rows[0]["Outgoing_Server_Port"].ToString());
+                            smtp.Send(mailMessage);
+                            smtp.Dispose();
 
-                    Update_Email_Status();
+                            Update_Email_Status();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Smtp Credientials Were Not Added To Send an  Email ");
+                        }
+                        // NetworkCred = new NetworkCredential("Taxes@drnds.com", "ffP2mx=EoM");
+
+                    }
+                //// smtp.EnableSsl = true;
+                    //smtp.Timeout = (60 * 5 * 1000);
+                    //smtp.Credentials = NetworkCred;
+                    //smtp.Port = 25;
+                
                     this.Close();
                     //}
                     //else
@@ -367,16 +431,127 @@ namespace Ordermanagement_01.Tax
             }
         }
 
-        private void SendHtmlFormattedEmail_Word(string mail, string subject, string body)
+        private async void SendHtmlFormattedEmail_Word(string mail, string subject, string body)
         {
-            if (OPERATION == "Bulk")
-            {
-                using (System.Net.Mail.MailMessage mailMessage = new System.Net.Mail.MailMessage())
+            try {
+                if (OPERATION == "Bulk")
                 {
-                    Get_Email_Id();
-                    mailMessage.To.Add(EMAILID);
-                    // mailMessage.To.Add("techteam@drnds.com");
-                    if (EMAILID != "")
+                    using (System.Net.Mail.MailMessage mailMessage = new System.Net.Mail.MailMessage())
+                    {
+                        Get_Email_Id();
+                    
+                         mailMessage.To.Add(EMAILID);
+                    
+                        if (EMAILID != "")
+                        {
+                            if (int.Parse(SUBPROCESSID) == 344)
+                            {
+                                mailMessage.From = new MailAddress("Taxes@drnds.com");
+                            }
+                            else if (int.Parse(SUBPROCESSID) == 349)
+                            {
+                                mailMessage.From = new MailAddress("Taxes@drnds.com");
+                            }
+                           
+
+                            string Attachment = Ordernumber.ToString() + ".docx";
+
+                            // this is for Tax Certificate
+                            if (Tax_Certificate_Path != "")
+                            {
+                                FtpWebRequest ftpReqFile = (FtpWebRequest)WebRequest.Create(new Uri(Tax_Certificate_Path));
+                                ftpReqFile.Method = WebRequestMethods.Ftp.DownloadFile;
+                                ftpReqFile.UseBinary = true;
+                                ftpReqFile.Credentials = new NetworkCredential(Ftp_User_Name, Ftp_Password);
+                                Stream ftpStream = ftpReqFile.GetResponse().GetResponseStream();
+                                mailMessage.Attachments.Add(new Attachment(ftpStream, Attachment.ToString()));//mail attachments
+                            }
+                            if (dtother.Rows.Count > 0)
+                            {
+
+                                for (int i = 0; i < dtother.Rows.Count; i++)
+                                {
+                                    string Other_Path = dtother.Rows[i]["New_Document_Path"].ToString();
+                                    string Attach_File_Name = "";
+                                    Attach_File_Name = Path.GetFileName(Other_Path);
+
+                                    FtpWebRequest ftpReqFile = (FtpWebRequest)WebRequest.Create(new Uri(Other_Path));
+                                    ftpReqFile.Method = WebRequestMethods.Ftp.DownloadFile;
+                                    ftpReqFile.UseBinary = true;
+                                    ftpReqFile.Credentials = new NetworkCredential(Ftp_User_Name, Ftp_Password);
+                                    Stream ftpStream = ftpReqFile.GetResponse().GetResponseStream();
+                                    mailMessage.Attachments.Add(new Attachment(ftpStream, Attach_File_Name.ToString()));//mail attachments
+                                }
+                            }
+
+                            //  mailMessage.CC.Add("Taxes@drnds.com");//mail sending cc
+                            string Subject = Ordernumber.ToString();
+                            mailMessage.Subject = Subject.ToString();//mail subject
+                            mailMessage.Body = body;
+                            mailMessage.IsBodyHtml = true;
+                            SmtpClient smtp = new SmtpClient();
+                            // smtp.Host = "smtpout.secureserver.net";
+                            if (int.Parse(SUBPROCESSID) == 344)
+                            {
+                                await Get_Email_Details("Taxes@drnds.com");
+                                if (dt_Email_Details.Rows.Count > 0)
+                                {
+                                    smtp.Host = dt_Email_Details.Rows[0]["Outgoing_Mail_Server"].ToString();
+                                    NetworkCredential NetworkCred = new NetworkCredential(dt_Email_Details.Rows[0]["User_Name"].ToString(), dt_Email_Details.Rows[0]["Password"].ToString());
+                                    smtp.EnableSsl = false;
+                                    smtp.Credentials = NetworkCred;
+                                    smtp.Port = int.Parse(dt_Email_Details.Rows[0]["Outgoing_Server_Port"].ToString());
+
+                                    smtp.Send(mailMessage);
+                                    smtp.Dispose();
+                                    Update_Email_Status();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Smtp Credientials Were Not Added To Send an  Email ");
+                                }
+                                // NetworkCred = new NetworkCredential("Taxes@drnds.com", "ffP2mx=EoM");
+                            }
+                            else if (int.Parse(SUBPROCESSID) == 349)
+                            {
+                                await Get_Email_Details("Taxes@drnds.com");
+                                if (dt_Email_Details.Rows.Count > 0)
+                                {
+                                    smtp.Host = dt_Email_Details.Rows[0]["Outgoing_Mail_Server"].ToString();
+                                    NetworkCredential NetworkCred = new NetworkCredential(dt_Email_Details.Rows[0]["User_Name"].ToString(), dt_Email_Details.Rows[0]["Password"].ToString());
+                                    smtp.EnableSsl = false;
+                                    smtp.Credentials = NetworkCred;
+                                    smtp.Port = int.Parse(dt_Email_Details.Rows[0]["Outgoing_Server_Port"].ToString());
+
+                                    smtp.Send(mailMessage);
+                                    smtp.Dispose();
+                                    Update_Email_Status();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Smtp Credientials Were Not Added To Send an  Email ");
+                                }
+                                // NetworkCred = new NetworkCredential("Taxes@drnds.com", "ffP2mx=EoM");
+                            }
+                       
+                            //// smtp.UseDefaultCredentials = false;
+                            //// smtp.EnableSsl = true;
+
+                            //smtp.UseDefaultCredentials = true;
+                            //smtp.Timeout = (60 * 5 * 1000);
+                            //smtp.Credentials = NetworkCred;
+                            //smtp.Port = 25;
+                       
+                        }
+                        else
+                        {
+                            MessageBox.Show("To Email Address not Found ; Please setup in Client Subprocess");
+                        }
+                    }
+                }
+                else
+                {
+                    using (System.Net.Mail.MailMessage mailMessage = new System.Net.Mail.MailMessage())
                     {
                         if (int.Parse(SUBPROCESSID) == 344)
                         {
@@ -386,7 +561,7 @@ namespace Ordermanagement_01.Tax
                         {
                             mailMessage.From = new MailAddress("Taxes@drnds.com");
                         }
-                        //mailMessage.From = new MailAddress("techteam@drnds.com");
+                       
                         string Attachment = Ordernumber.ToString() + ".docx";
 
                         // this is for Tax Certificate
@@ -401,14 +576,13 @@ namespace Ordermanagement_01.Tax
                         }
                         if (dtother.Rows.Count > 0)
                         {
-
                             for (int i = 0; i < dtother.Rows.Count; i++)
                             {
                                 string Other_Path = dtother.Rows[i]["New_Document_Path"].ToString();
                                 string Attach_File_Name = "";
                                 Attach_File_Name = Path.GetFileName(Other_Path);
 
-                                FtpWebRequest ftpReqFile = (FtpWebRequest)WebRequest.Create(new Uri(Other_Path));
+                                FtpWebRequest ftpReqFile = (FtpWebRequest)WebRequest.Create(new Uri(Tax_Certificate_Path));
                                 ftpReqFile.Method = WebRequestMethods.Ftp.DownloadFile;
                                 ftpReqFile.UseBinary = true;
                                 ftpReqFile.Credentials = new NetworkCredential(Ftp_User_Name, Ftp_Password);
@@ -417,115 +591,82 @@ namespace Ordermanagement_01.Tax
                             }
                         }
 
-                        mailMessage.CC.Add("Taxes@drnds.com");//mail sending cc
+                        Get_Email_Id();
+                     
+                          mailMessage.To.Add(EMAILID);
+
+                   
+
                         string Subject = Ordernumber.ToString();
                         mailMessage.Subject = Subject.ToString();//mail subject
                         mailMessage.Body = body;
                         mailMessage.IsBodyHtml = true;
                         SmtpClient smtp = new SmtpClient();
-                        smtp.Host = "smtpout.secureserver.net";
+
+                        //   smtp.Host = "smtpout.secureserver.net";
                         if (int.Parse(SUBPROCESSID) == 344)
                         {
-                            NetworkCred = new NetworkCredential("Taxes@drnds.com", "ffP2mx=EoM");
+                            await Get_Email_Details("Taxes@drnds.com");
+                            if (dt_Email_Details.Rows.Count > 0)
+                            {
+                                smtp.Host = dt_Email_Details.Rows[0]["Outgoing_Mail_Server"].ToString();
+                                NetworkCredential NetworkCred = new NetworkCredential(dt_Email_Details.Rows[0]["User_Name"].ToString(), dt_Email_Details.Rows[0]["Password"].ToString());
+                                smtp.EnableSsl = false;
+                                smtp.Credentials = NetworkCred;
+                                smtp.Port = int.Parse(dt_Email_Details.Rows[0]["Outgoing_Server_Port"].ToString());
+
+                                smtp.Send(mailMessage);
+                                smtp.Dispose();
+
+                                Update_Email_Status();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Smtp Credientials Were Not Added To Send an  Email ");
+                            }
+                            //  NetworkCred = new NetworkCredential("Taxes@drnds.com", "ffP2mx=EoM");
+
                         }
                         else if (int.Parse(SUBPROCESSID) == 349)
                         {
-                            NetworkCred = new NetworkCredential("Taxes@drnds.com", "ffP2mx=EoM");
+                            await Get_Email_Details("Taxes@drnds.com");
+                            if (dt_Email_Details.Rows.Count > 0)
+                            {
+                                smtp.Host = dt_Email_Details.Rows[0]["Outgoing_Mail_Server"].ToString();
+                                NetworkCredential NetworkCred = new NetworkCredential(dt_Email_Details.Rows[0]["User_Name"].ToString(), dt_Email_Details.Rows[0]["Password"].ToString());
+                                smtp.EnableSsl = false;
+                                smtp.Credentials = NetworkCred;
+                                smtp.Port = int.Parse(dt_Email_Details.Rows[0]["Outgoing_Server_Port"].ToString());
+
+                                smtp.Send(mailMessage);
+                                smtp.Dispose();
+
+                                Update_Email_Status();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Smtp Credientials Were Not Added To Send an  Email ");
+                            }
+
+                            // NetworkCred = new NetworkCredential("Taxes@drnds.com", "ffP2mx=EoM");
                         }
-                        //NetworkCredential NetworkCred = new NetworkCredential("techteam@drnds.com", "nop539");
-                        // smtp.UseDefaultCredentials = false;
-                        // smtp.EnableSsl = true;
-                        smtp.UseDefaultCredentials = true;
-                        smtp.Timeout = (60 * 5 * 1000);
-                        smtp.Credentials = NetworkCred;
-                        smtp.Port = 25;
-                        smtp.Send(mailMessage);
-                        smtp.Dispose();
-                        Update_Email_Status();
-                    }
-                    else
-                    {
-                        MessageBox.Show("To Email Address not Found ; Please setup in Client Subprocess");
+                       
+                        //// smtp.EnableSsl = true;
+
+                        //smtp.Timeout = (60 * 5 * 1000);
+                        //smtp.Credentials = NetworkCred;
+                        //smtp.Port = 25;
+            
+                        Close();
                     }
                 }
             }
-            else
+            catch(Exception e)
             {
-                using (System.Net.Mail.MailMessage mailMessage = new System.Net.Mail.MailMessage())
-                {
-                    if (int.Parse(SUBPROCESSID) == 344)
-                    {
-                        mailMessage.From = new MailAddress("Taxes@drnds.com");
-                    }
-                    else if (int.Parse(SUBPROCESSID) == 349)
-                    {
-                        mailMessage.From = new MailAddress("Taxes@drnds.com");
-                    }
-                    //mailMessage.From = new MailAddress("techteam@drnds.com");
-                    string Attachment = Ordernumber.ToString() + ".docx";
-
-                    // this is for Tax Certificate
-                    if (Tax_Certificate_Path != "")
-                    {
-                        FtpWebRequest ftpReqFile = (FtpWebRequest)WebRequest.Create(new Uri(Tax_Certificate_Path));
-                        ftpReqFile.Method = WebRequestMethods.Ftp.DownloadFile;
-                        ftpReqFile.UseBinary = true;
-                        ftpReqFile.Credentials = new NetworkCredential(Ftp_User_Name, Ftp_Password);
-                        Stream ftpStream = ftpReqFile.GetResponse().GetResponseStream();
-                        mailMessage.Attachments.Add(new Attachment(ftpStream, Attachment.ToString()));//mail attachments
-                    }
-                    if (dtother.Rows.Count > 0)
-                    {
-                        for (int i = 0; i < dtother.Rows.Count; i++)
-                        {
-                            string Other_Path = dtother.Rows[i]["New_Document_Path"].ToString();
-                            string Attach_File_Name = "";
-                            Attach_File_Name = Path.GetFileName(Other_Path);
-
-                            FtpWebRequest ftpReqFile = (FtpWebRequest)WebRequest.Create(new Uri(Tax_Certificate_Path));
-                            ftpReqFile.Method = WebRequestMethods.Ftp.DownloadFile;
-                            ftpReqFile.UseBinary = true;
-                            ftpReqFile.Credentials = new NetworkCredential(Ftp_User_Name, Ftp_Password);
-                            Stream ftpStream = ftpReqFile.GetResponse().GetResponseStream();
-                            mailMessage.Attachments.Add(new Attachment(ftpStream, Attach_File_Name.ToString()));//mail attachments
-                        }
-                    }
-
-
-
-                    Get_Email_Id();
-                    mailMessage.To.Add(EMAILID);
-                    //mailMessage.To.Add("techteam@drnds.com");
-                    mailMessage.CC.Add("Taxes@drnds.com");
-
-                    string Subject = Ordernumber.ToString();
-                    mailMessage.Subject = Subject.ToString();//mail subject
-                    mailMessage.Body = body;
-                    mailMessage.IsBodyHtml = true;
-                    SmtpClient smtp = new SmtpClient();
-
-                    smtp.Host = "smtpout.secureserver.net";
-                    if (int.Parse(SUBPROCESSID) == 344)
-                    {
-                        NetworkCred = new NetworkCredential("Taxes@drnds.com", "ffP2mx=EoM");
-                    }
-                    else if (int.Parse(SUBPROCESSID) == 349)
-                    {
-                        NetworkCred = new NetworkCredential("Taxes@drnds.com", "ffP2mx=EoM");
-                    }
-                    //NetworkCredential NetworkCred = new NetworkCredential("techteam@drnds.com", "nop539");
-                    // smtp.EnableSsl = true;
-                    smtp.Timeout = (60 * 5 * 1000);
-                    smtp.Credentials = NetworkCred;
-                    smtp.Port = 25;
-                    smtp.Send(mailMessage);
-                    smtp.Dispose();
-
-                    Update_Email_Status();
-                    Close();
-                }
+                MessageBox.Show(e.Message);
             }
-        }
+            }
+
         private void Update_Email_Status()
         {
             htorder.Clear(); dtorder.Clear();
@@ -857,6 +998,40 @@ namespace Ordermanagement_01.Tax
                 {
                     MessageBox.Show("More than 1 tax Certificate were Checked ; Please check only one Tax Certificate");
                 }
+            }
+        }
+        private async Task<System.Data.DataTable> Get_Email_Details(string Email)
+        {
+
+            // Call api
+            dt_Email_Details.Clear();
+            try
+            {
+               
+                var dictionary = new Dictionary<string, object>()
+                                            {
+                                               { "@Trans", "SELECT_BY_EMAIL"},
+                                               { "@Email_Address",Email},
+                                          };
+                var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
+                using (var httpClient2 = new HttpClient())
+                {
+                    var response2 = await httpClient2.PostAsync(Base_Url.Url + "/EmailSettings/BindData", data);
+                    if (response2.IsSuccessStatusCode)
+                    {
+                        if (response2.StatusCode == HttpStatusCode.OK)
+                        {
+                            var result2 = await response2.Content.ReadAsStringAsync();
+                           dt_Email_Details = JsonConvert.DeserializeObject<System.Data.DataTable>(result2);
+                        }
+                    }
+                }
+                // get data
+                return dt_Email_Details;
+            }
+            catch (Exception e)
+            {
+                throw e;
             }
         }
     }

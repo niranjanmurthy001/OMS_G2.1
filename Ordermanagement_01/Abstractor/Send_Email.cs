@@ -9,6 +9,11 @@ using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
 using System.Collections;
 using System.IO;
+using Ordermanagement_01.Models;
+using System.Net.Http;
+using Newtonsoft.Json;
+using System.Threading.Tasks;
+
 namespace Ordermanagement_01.Abstractor
 {
     public partial class Send_Email : Form
@@ -33,6 +38,14 @@ namespace Ordermanagement_01.Abstractor
         string Copy_Type, DocRetrivalNotes, Order_Prior_Date;
         int Ab_Order_Email_Number;
         string Ftp_Domain_Name, Ftp_User_Name, Ftp_Password;
+        string OutGoingMailServer;
+        int  OutgoingServerPort;
+        private string EmailAddress;
+        string UserName;
+        string Password;
+
+
+        DataTable dt_Email_Details = new DataTable();
         public Send_Email(int ORDER_ID, int ABSTRACTOR_ID, string CLIENT_ORDERNO, int ORDER_TYPE_ID, string EMAIL, string ALTERNATIVE_EMAIL, int USER_ID, string deedchain, string emailid)
         {
             Order_Id = ORDER_ID;
@@ -56,7 +69,6 @@ namespace Ordermanagement_01.Abstractor
                     Ftp_Password = dbc.Decrypt(Ftp_pass);
                 }
                 Export_Report();
-
                 Send_Html_Email_Body();
             }
             else
@@ -138,12 +150,6 @@ namespace Ordermanagement_01.Abstractor
                 MessageBox.Show("Problem in Downloading Files please Check with Administrator");
             }
         }
-
-        private void Send_Email_Load(object sender, EventArgs e)
-        {
-
-        }
-
         public void Export_Report()
         {
             if (DEED_CHAIN == "Yes")
@@ -354,8 +360,8 @@ namespace Ordermanagement_01.Abstractor
                         Client_Order_no = Order_number;
                         SendHtmlFormattedEmail("vendors@drnds.com", "Sample", body);
                     }
-                    Assign_Orders_ToAbstractor();
-                    Update_Abstractor_Order_Status();
+                    //Assign_Orders_ToAbstractor();
+                    //Update_Abstractor_Order_Status();
                 }
                 catch (Exception error)
                 {
@@ -402,7 +408,7 @@ namespace Ordermanagement_01.Abstractor
             sr.Dispose();
             return body;
         }
-        private void SendHtmlFormattedEmail(string recepientEmail, string subject, string body)
+        private async void SendHtmlFormattedEmail(string recepientEmail, string subject, string body)
         {
             using (MailMessage mailMessage = new MailMessage())
             {
@@ -431,24 +437,25 @@ namespace Ordermanagement_01.Abstractor
                     Attachment attachment = new Attachment(contentStream, filename);
                     mailMessage.Attachments.Add(attachment);
                 }
+
                 mailMessage.To.Add(Email);
 
                 if (Emailid == "vendors@drnds.com")
                 {
-
                     mailMessage.To.Add("vendors@drnds.com");
-
                 }
                 else if (Emailid == "neworders@abstractshop.com")
                 {
                     mailMessage.To.Add("neworders@abstractshop.com");
                 }
-                //  mailMessage.To.Add("techteam@drnds.com");
+
+                
 
                 if (Alternative_Email != "")
                 {
                     mailMessage.To.Add(Alternative_Email);
                 }
+
                 txt_Subject.Text = "New Search Request - " + Client_Order_no + "-" + Report_Name.ToString();
                 mailMessage.Subject = txt_Subject.Text;
                 StringBuilder sb = new StringBuilder();
@@ -457,53 +464,80 @@ namespace Ordermanagement_01.Abstractor
                 mailMessage.IsBodyHtml = true;
 
                 SmtpClient smtp = new SmtpClient();
+
                 if (Emailid == "vendors@drnds.com")
                 {
+                   
+                    await Get_Email_Details("vendors@drnds.com");
+                 
+                    if (dt_Email_Details.Rows.Count > 0)
+                    {                      
+                        smtp.Host = dt_Email_Details.Rows[0]["Outgoing_Mail_Server"].ToString(); 
+                        NetworkCredential NetworkCred = new NetworkCredential(dt_Email_Details.Rows[0]["User_Name"].ToString(), dt_Email_Details.Rows[0]["Password"].ToString());
+                        smtp.EnableSsl = false;
+                        smtp.Credentials = NetworkCred;
+                        smtp.Port = int.Parse(dt_Email_Details.Rows[0]["Outgoing_Server_Port"].ToString());
 
-                    smtp.Host = "smtpout.secureserver.net";
-                    NetworkCredential NetworkCred = new NetworkCredential("vendors@drnds.com", "AecXmC9T07DcP$");
-                    smtp.EnableSsl = false;
-                    smtp.Credentials = NetworkCred;
-                    smtp.Port = 25;
+                    }
                 }
                 else if (Emailid == "neworders@abstractshop.com")
                 {
 
-                    smtp.Host = "smtpout.secureserver.net";
-                    NetworkCredential NetworkCred1 = new NetworkCredential("neworders@abstractshop.com", "DinNavABS");
-                    smtp.UseDefaultCredentials = true;
-                    smtp.Credentials = NetworkCred1;
-                    smtp.Port = 80;
+
+                    await Get_Email_Details("neworders@abstractshop.com");
+
+                    if (dt_Email_Details.Rows.Count > 0)
+                    {
+                        smtp.Host = dt_Email_Details.Rows[0]["Outgoing_Mail_Server"].ToString();
+                        NetworkCredential NetworkCred1 = new NetworkCredential(dt_Email_Details.Rows[0]["User_Name"].ToString(), dt_Email_Details.Rows[0]["Password"].ToString());
+                        smtp.EnableSsl = false;
+                        smtp.Credentials = NetworkCred1;
+                        smtp.Port = int.Parse(dt_Email_Details.Rows[0]["Outgoing_Server_Port"].ToString());
+
+                    }
+
+
+                    //smtp.Host = "smtpout.secureserver.net";
+                    //NetworkCredential NetworkCred1 = new NetworkCredential("neworders@abstractshop.com", "DinNavABS");
+                    //smtp.UseDefaultCredentials = true;
+                    //smtp.Credentials = NetworkCred1;
+                    //smtp.Port = 80;
                 }
-
-                Hashtable ht_GetMax_Ab_Order_EmailNum = new Hashtable();
-                DataTable dt_GetMax_Ab_Order_EmailNum = new DataTable();
-
-                ht_GetMax_Ab_Order_EmailNum.Add("@Trans", "GET_MAX_AD_ORDER_EMAIL_ID");
-                ht_GetMax_Ab_Order_EmailNum.Add("@Order_Id", Order_Id);
-                dt_GetMax_Ab_Order_EmailNum = dataaccess.ExecuteSP("Sp_Abstractor_Order_Email_Attachments", ht_GetMax_Ab_Order_EmailNum);
-
-                if (dt_GetMax_Ab_Order_EmailNum.Rows.Count > 0)
+                if (dt_Email_Details.Rows.Count > 0)
                 {
-                    Ab_Order_Email_Number = int.Parse(dt_GetMax_Ab_Order_EmailNum.Rows[0]["Ab_Order_Email_Number"].ToString());
-                }
+                    Hashtable ht_GetMax_Ab_Order_EmailNum = new Hashtable();
+                    DataTable dt_GetMax_Ab_Order_EmailNum = new DataTable();
 
-                Hashtable ht_Insert = new Hashtable();
-                DataTable dt_Insert = new DataTable();
-                ht_Insert.Add("@Trans", "INSERT");
-                ht_Insert.Add("@Ab_Order_Email_Number", Ab_Order_Email_Number);
-                ht_Insert.Add("@Order_Id", Order_Id);
-                ht_Insert.Add("@Abstractor_Id", abstarctor_id);
-                ht_Insert.Add("@To", Email);
-                ht_Insert.Add("@From", "vendors@drnds.com");
-                ht_Insert.Add("@Cc", Emailid);
-                ht_Insert.Add("@Subject", txt_Subject.Text);
-                ht_Insert.Add("@Message", body.ToString());
-                ht_Insert.Add("@Send_By", User_Id);
-                ht_Insert.Add("@status", "True");
-                dt_Insert = dataaccess.ExecuteSP("Sp_Abstractor_Order_Email_Details", ht_Insert);
-                smtp.Send(mailMessage);
-                smtp.Dispose();
+                    ht_GetMax_Ab_Order_EmailNum.Add("@Trans", "GET_MAX_AD_ORDER_EMAIL_ID");
+                    ht_GetMax_Ab_Order_EmailNum.Add("@Order_Id", Order_Id);
+                    dt_GetMax_Ab_Order_EmailNum = dataaccess.ExecuteSP("Sp_Abstractor_Order_Email_Attachments", ht_GetMax_Ab_Order_EmailNum);
+
+                    if (dt_GetMax_Ab_Order_EmailNum.Rows.Count > 0)
+                    {
+                        Ab_Order_Email_Number = int.Parse(dt_GetMax_Ab_Order_EmailNum.Rows[0]["Ab_Order_Email_Number"].ToString());
+                    }
+
+                    Hashtable ht_Insert = new Hashtable();
+                    DataTable dt_Insert = new DataTable();
+                    ht_Insert.Add("@Trans", "INSERT");
+                    ht_Insert.Add("@Ab_Order_Email_Number", Ab_Order_Email_Number);
+                    ht_Insert.Add("@Order_Id", Order_Id);
+                    ht_Insert.Add("@Abstractor_Id", abstarctor_id);
+                    ht_Insert.Add("@To", Email);
+                    ht_Insert.Add("@From", Emailid);
+                    ht_Insert.Add("@Cc", Emailid);
+                    ht_Insert.Add("@Subject", txt_Subject.Text);
+                    ht_Insert.Add("@Message", body.ToString());
+                    ht_Insert.Add("@Send_By", User_Id);
+                    ht_Insert.Add("@status", "True");
+                    dt_Insert = dataaccess.ExecuteSP("Sp_Abstractor_Order_Email_Details", ht_Insert);
+                    smtp.Send(mailMessage);
+                    smtp.Dispose();
+                }
+                else
+                {
+                    MessageBox.Show("Smtp Credientials Were Not Added To Send an  Email ");
+                }
             }
         }
         public void Assign_Orders_ToAbstractor()
@@ -556,6 +590,45 @@ namespace Ordermanagement_01.Abstractor
 
 
         }
+
+        private async Task<DataTable> Get_Email_Details(string Email)
+        {
+
+            // Call api
+           dt_Email_Details.Clear();
+
+             var dictionary = new Dictionary<string, object>()
+                                            {
+                                               { "@Trans", "SELECT_BY_EMAIL"},
+                                               { "@Email_Address",Email},
+                                          };
+            var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
+            using (var httpClient2 = new HttpClient())
+            {
+                var response2 = await httpClient2.PostAsync(Base_Url.Url + "/EmailSettings/BindData", data);
+                if (response2.IsSuccessStatusCode)
+                {
+                    if (response2.StatusCode == HttpStatusCode.OK)
+                    {
+                        var result2 = await response2.Content.ReadAsStringAsync();
+                        dt_Email_Details = JsonConvert.DeserializeObject<DataTable>(result2);
+                     
+
+
+                    }
+
+                 
+                }
+            }
+
+            // get data
+         
+            return dt_Email_Details;
+        }
+
+
+
+       
         public void Update_Abstractor_Order_Status()
         {
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.label1 = new System.Windows.Forms.Label();
@@ -66,7 +67,7 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -199,6 +200,10 @@
             this.Email_Address});
             this.gridView1.GridControl = this.gridControl1_Email_Address;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsCustomization.CustomizationFormSearchBoxVisible = true;
+            this.gridView1.OptionsFind.AllowFindPanel = false;
+            this.gridView1.OptionsFind.SearchInPreview = true;
+            this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridView1_RowCellClick);
             // 
             // Email_Address
@@ -211,6 +216,7 @@
             this.Email_Address.FieldName = "Email_Address";
             this.Email_Address.Name = "Email_Address";
             this.Email_Address.OptionsColumn.AllowEdit = false;
+            this.Email_Address.OptionsColumn.AllowShowHide = false;
             this.Email_Address.Visible = true;
             this.Email_Address.VisibleIndex = 0;
             // 
@@ -286,7 +292,7 @@
             this.txt_OS.Name = "txt_OS";
             this.txt_OS.Properties.Mask.EditMask = "n0";
             this.txt_OS.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txt_OS.Properties.MaxLength = 3;
+            this.txt_OS.Properties.MaxLength = 4;
             this.txt_OS.Properties.Leave += new System.EventHandler(this.txt_OS_Properties_Leave);
             this.txt_OS.Size = new System.Drawing.Size(160, 20);
             this.txt_OS.TabIndex = 7;
@@ -299,7 +305,7 @@
             this.txt_IS.Name = "txt_IS";
             this.txt_IS.Properties.Mask.EditMask = "d";
             this.txt_IS.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txt_IS.Properties.MaxLength = 3;
+            this.txt_IS.Properties.MaxLength = 4;
             this.txt_IS.Properties.Leave += new System.EventHandler(this.txt_IS_Properties_Leave);
             this.txt_IS.Size = new System.Drawing.Size(160, 20);
             this.txt_IS.TabIndex = 6;
@@ -384,6 +390,8 @@
             this.txt_password.Properties.Leave += new System.EventHandler(this.txt_password_Properties_Leave);
             this.txt_password.Size = new System.Drawing.Size(160, 20);
             this.txt_password.TabIndex = 9;
+            this.txt_password.TextChanged += new System.EventHandler(this.txt_password_TextChanged);
+            this.txt_password.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_password_KeyPress);
             // 
             // txt_Outgoing_server
             // 
@@ -392,6 +400,7 @@
             this.txt_Outgoing_server.Properties.Leave += new System.EventHandler(this.txt_Outgoing_server_Properties_Leave);
             this.txt_Outgoing_server.Size = new System.Drawing.Size(160, 20);
             this.txt_Outgoing_server.TabIndex = 4;
+            this.txt_Outgoing_server.TextChanged += new System.EventHandler(this.txt_Outgoing_server_TextChanged);
             this.txt_Outgoing_server.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Outgoing_server_KeyPress);
             // 
             // txt_Incoming_server
@@ -401,6 +410,7 @@
             this.txt_Incoming_server.Properties.Leave += new System.EventHandler(this.txt_Incoming_server_Properties_Leave);
             this.txt_Incoming_server.Size = new System.Drawing.Size(160, 20);
             this.txt_Incoming_server.TabIndex = 3;
+            this.txt_Incoming_server.TextChanged += new System.EventHandler(this.txt_Incoming_server_TextChanged);
             this.txt_Incoming_server.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Incoming_server_KeyPress);
             // 
             // txt_Email_address
@@ -411,6 +421,7 @@
             this.txt_Email_address.Properties.Leave += new System.EventHandler(this.txt_Email_address_Properties_Leave);
             this.txt_Email_address.Size = new System.Drawing.Size(160, 20);
             this.txt_Email_address.TabIndex = 2;
+            this.txt_Email_address.TextChanged += new System.EventHandler(this.txt_Email_address_TextChanged);
             this.txt_Email_address.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Email_address_KeyPress);
             this.txt_Email_address.Leave += new System.EventHandler(this.txt_Email_address_Leave);
             // 

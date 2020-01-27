@@ -72,6 +72,16 @@ namespace Ordermanagement_01
             }
         }
 
+        private void gridView2_CustomRowCellEdit(object sender, CustomRowCellEditEventArgs e)
+        {
+            //if (e.Column.FieldName == "Order_Production_Date" && e.CellValue.ToString() == "01/01/1900")
+            //{
+               
+
+            //    gridView2.SetRowCellValue(gridView2.FocusedRowHandle, "Order_Production_Date", DBNull.Value);
+            //}
+        }
+
         private void gridView2_MouseMove(object sender, MouseEventArgs e)
         {           
             GridView view = sender as GridView;
@@ -721,6 +731,8 @@ namespace Ordermanagement_01
             {
                 GridView view = sender as GridView;
                 e.DisplayText += string.Format("[{0}/{1}]", GetcheckedChildRowsCount(e, view, GetCheckedChildRowsCache(e)), GetFullChildRowsCount(view, e.GroupRowHandle));
+
+             
             }
         }
         private Dictionary<GroupRowHash, int> GetCheckedChildRowsCache(DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs e)
@@ -795,6 +807,15 @@ namespace Ordermanagement_01
 
                     e.DisplayText = value1.ToString();
 
+                }
+            }
+
+            if (e.Column.FieldName == "Order_Production_Date")
+            {
+                string v = e.CellValue.ToString();
+                if (v == "01/01/1900")
+                {
+                    e.DisplayText = null;
                 }
             }
         }

@@ -19,9 +19,6 @@ namespace Ordermanagement_01.New_Dashboard.Settings
 {
     public partial class OrderEntry : XtraForm
     {
-        Commonclass Comclass = new Commonclass();
-        DataAccess dataaccess = new DataAccess();
-        DropDownistBindClass dbc = new DropDownistBindClass();
         public OrderEntry()
         {
             InitializeComponent();

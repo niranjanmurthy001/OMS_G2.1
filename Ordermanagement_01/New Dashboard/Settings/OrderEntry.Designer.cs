@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.ddl_Ordertype = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.ddl_County = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.ddl_City = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.ddl_State = new DevExpress.XtraEditors.ComboBoxEdit();
             this.textEdit30 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit29 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl50 = new DevExpress.XtraEditors.LabelControl();
@@ -52,6 +55,8 @@
             this.textEdit8 = new DevExpress.XtraEditors.TextEdit();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.ddl_Subclient = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.ddl_Clientname = new DevExpress.XtraEditors.ComboBoxEdit();
             this.textEdit24 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit23 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit22 = new DevExpress.XtraEditors.TextEdit();
@@ -63,6 +68,7 @@
             this.labelControl45 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl44 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
+            this.ddl_Category = new DevExpress.XtraEditors.ComboBoxEdit();
             this.textEdit28 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit27 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit26 = new DevExpress.XtraEditors.TextEdit();
@@ -113,8 +119,8 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             this.ddl_County1 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.ddl_City1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.ddl_State1 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.ddl_City1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.ddl_Order_Type = new DevExpress.XtraEditors.ComboBoxEdit();
             this.ddl_SubprocessNumber = new DevExpress.XtraEditors.ComboBoxEdit();
             this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -164,16 +170,13 @@
             this.ddl_ClientNames = new DevExpress.XtraEditors.ComboBoxEdit();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.ddl_Clientname = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.ddl_Subclient = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.ddl_State = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.ddl_City = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.ddl_County = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.ddl_Category = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.ddl_Ordertype = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ddl_Ordertype.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddl_County.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddl_City.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddl_State.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit30.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit29.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit10.Properties)).BeginInit();
@@ -191,12 +194,15 @@
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ddl_Subclient.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddl_Clientname.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit24.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit23.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit22.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit21.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ddl_Category.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit28.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit27.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit26.Properties)).BeginInit();
@@ -224,8 +230,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ddl_County1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddl_City1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddl_State1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddl_City1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddl_Order_Type.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddl_SubprocessNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
@@ -252,13 +258,6 @@
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ddl_Clientname.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddl_Subclient.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddl_State.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddl_City.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddl_County.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddl_Category.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddl_Ordertype.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl3
@@ -280,6 +279,72 @@
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(400, 473);
             this.panelControl3.TabIndex = 1;
+            // 
+            // ddl_Ordertype
+            // 
+            this.ddl_Ordertype.EditValue = "Select Order-Type";
+            this.ddl_Ordertype.Location = new System.Drawing.Point(217, 138);
+            this.ddl_Ordertype.Name = "ddl_Ordertype";
+            this.ddl_Ordertype.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ddl_Ordertype.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            this.ddl_Ordertype.Properties.Appearance.Options.UseFont = true;
+            this.ddl_Ordertype.Properties.Appearance.Options.UseForeColor = true;
+            this.ddl_Ordertype.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ddl_Ordertype.Properties.Sorted = true;
+            this.ddl_Ordertype.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.ddl_Ordertype.Size = new System.Drawing.Size(134, 20);
+            this.ddl_Ordertype.TabIndex = 27;
+            // 
+            // ddl_County
+            // 
+            this.ddl_County.EditValue = "Select County";
+            this.ddl_County.Location = new System.Drawing.Point(217, 364);
+            this.ddl_County.Name = "ddl_County";
+            this.ddl_County.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ddl_County.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            this.ddl_County.Properties.Appearance.Options.UseFont = true;
+            this.ddl_County.Properties.Appearance.Options.UseForeColor = true;
+            this.ddl_County.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ddl_County.Properties.DropDownRows = 20;
+            this.ddl_County.Properties.Sorted = true;
+            this.ddl_County.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.ddl_County.Size = new System.Drawing.Size(134, 20);
+            this.ddl_County.TabIndex = 26;
+            // 
+            // ddl_City
+            // 
+            this.ddl_City.EditValue = "Select City";
+            this.ddl_City.Location = new System.Drawing.Point(217, 310);
+            this.ddl_City.Name = "ddl_City";
+            this.ddl_City.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ddl_City.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            this.ddl_City.Properties.Appearance.Options.UseFont = true;
+            this.ddl_City.Properties.Appearance.Options.UseForeColor = true;
+            this.ddl_City.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ddl_City.Properties.Sorted = true;
+            this.ddl_City.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.ddl_City.Size = new System.Drawing.Size(134, 20);
+            this.ddl_City.TabIndex = 25;
+            // 
+            // ddl_State
+            // 
+            this.ddl_State.EditValue = "Select State";
+            this.ddl_State.Location = new System.Drawing.Point(217, 252);
+            this.ddl_State.Name = "ddl_State";
+            this.ddl_State.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ddl_State.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            this.ddl_State.Properties.Appearance.Options.UseFont = true;
+            this.ddl_State.Properties.Appearance.Options.UseForeColor = true;
+            this.ddl_State.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ddl_State.Properties.DropDownRows = 20;
+            this.ddl_State.Properties.Sorted = true;
+            this.ddl_State.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.ddl_State.Size = new System.Drawing.Size(134, 20);
+            this.ddl_State.TabIndex = 24;
             // 
             // textEdit30
             // 
@@ -497,7 +562,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 473F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 479F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1220, 479);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
@@ -520,6 +585,40 @@
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(400, 473);
             this.panelControl2.TabIndex = 0;
+            // 
+            // ddl_Subclient
+            // 
+            this.ddl_Subclient.EditValue = "Select Sub-Client";
+            this.ddl_Subclient.Location = new System.Drawing.Point(195, 361);
+            this.ddl_Subclient.Name = "ddl_Subclient";
+            this.ddl_Subclient.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ddl_Subclient.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            this.ddl_Subclient.Properties.Appearance.Options.UseFont = true;
+            this.ddl_Subclient.Properties.Appearance.Options.UseForeColor = true;
+            this.ddl_Subclient.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ddl_Subclient.Properties.DropDownRows = 15;
+            this.ddl_Subclient.Properties.Sorted = true;
+            this.ddl_Subclient.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.ddl_Subclient.Size = new System.Drawing.Size(134, 20);
+            this.ddl_Subclient.TabIndex = 17;
+            // 
+            // ddl_Clientname
+            // 
+            this.ddl_Clientname.EditValue = "Select Client";
+            this.ddl_Clientname.Location = new System.Drawing.Point(195, 305);
+            this.ddl_Clientname.Name = "ddl_Clientname";
+            this.ddl_Clientname.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ddl_Clientname.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            this.ddl_Clientname.Properties.Appearance.Options.UseFont = true;
+            this.ddl_Clientname.Properties.Appearance.Options.UseForeColor = true;
+            this.ddl_Clientname.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ddl_Clientname.Properties.DropDownRows = 15;
+            this.ddl_Clientname.Properties.Sorted = true;
+            this.ddl_Clientname.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.ddl_Clientname.Size = new System.Drawing.Size(134, 20);
+            this.ddl_Clientname.TabIndex = 16;
             // 
             // textEdit24
             // 
@@ -656,6 +755,22 @@
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(402, 473);
             this.panelControl4.TabIndex = 2;
+            // 
+            // ddl_Category
+            // 
+            this.ddl_Category.EditValue = "Select Category";
+            this.ddl_Category.Location = new System.Drawing.Point(204, 364);
+            this.ddl_Category.Name = "ddl_Category";
+            this.ddl_Category.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ddl_Category.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            this.ddl_Category.Properties.Appearance.Options.UseFont = true;
+            this.ddl_Category.Properties.Appearance.Options.UseForeColor = true;
+            this.ddl_Category.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ddl_Category.Properties.Sorted = true;
+            this.ddl_Category.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.ddl_Category.Size = new System.Drawing.Size(134, 20);
+            this.ddl_Category.TabIndex = 24;
             // 
             // textEdit28
             // 
@@ -922,6 +1037,7 @@
             this.ddl_situs.Properties.Appearance.Options.UseForeColor = true;
             this.ddl_situs.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ddl_situs.Properties.Sorted = true;
             this.ddl_situs.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ddl_situs.Size = new System.Drawing.Size(121, 20);
             this.ddl_situs.TabIndex = 33;
@@ -937,6 +1053,7 @@
             this.ddl_Lender.Properties.Appearance.Options.UseForeColor = true;
             this.ddl_Lender.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ddl_Lender.Properties.Sorted = true;
             this.ddl_Lender.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ddl_Lender.Size = new System.Drawing.Size(121, 20);
             this.ddl_Lender.TabIndex = 32;
@@ -952,6 +1069,7 @@
             this.ddl_agency.Properties.Appearance.Options.UseForeColor = true;
             this.ddl_agency.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ddl_agency.Properties.Sorted = true;
             this.ddl_agency.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ddl_agency.Size = new System.Drawing.Size(121, 20);
             this.ddl_agency.TabIndex = 31;
@@ -967,6 +1085,7 @@
             this.ddl_Status.Properties.Appearance.Options.UseForeColor = true;
             this.ddl_Status.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ddl_Status.Properties.Sorted = true;
             this.ddl_Status.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ddl_Status.Size = new System.Drawing.Size(121, 20);
             this.ddl_Status.TabIndex = 30;
@@ -982,6 +1101,7 @@
             this.ddl_InOut.Properties.Appearance.Options.UseForeColor = true;
             this.ddl_InOut.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ddl_InOut.Properties.Sorted = true;
             this.ddl_InOut.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ddl_InOut.Size = new System.Drawing.Size(121, 20);
             this.ddl_InOut.TabIndex = 29;
@@ -997,6 +1117,7 @@
             this.ddl_Batchsuffix.Properties.Appearance.Options.UseForeColor = true;
             this.ddl_Batchsuffix.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ddl_Batchsuffix.Properties.Sorted = true;
             this.ddl_Batchsuffix.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ddl_Batchsuffix.Size = new System.Drawing.Size(121, 20);
             this.ddl_Batchsuffix.TabIndex = 28;
@@ -1012,6 +1133,7 @@
             this.ddl_BActh.Properties.Appearance.Options.UseForeColor = true;
             this.ddl_BActh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ddl_BActh.Properties.Sorted = true;
             this.ddl_BActh.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ddl_BActh.Size = new System.Drawing.Size(121, 20);
             this.ddl_BActh.TabIndex = 27;
@@ -1311,25 +1433,11 @@
             this.ddl_County1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ddl_County1.Properties.DropDownRows = 20;
+            this.ddl_County1.Properties.Sorted = true;
             this.ddl_County1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ddl_County1.Size = new System.Drawing.Size(121, 20);
             this.ddl_County1.TabIndex = 31;
             this.ddl_County1.SelectedIndexChanged += new System.EventHandler(this.ddl_County1_SelectedIndexChanged);
-            // 
-            // ddl_City1
-            // 
-            this.ddl_City1.EditValue = "Select City";
-            this.ddl_City1.Location = new System.Drawing.Point(156, 290);
-            this.ddl_City1.Name = "ddl_City1";
-            this.ddl_City1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ddl_City1.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            this.ddl_City1.Properties.Appearance.Options.UseFont = true;
-            this.ddl_City1.Properties.Appearance.Options.UseForeColor = true;
-            this.ddl_City1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ddl_City1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.ddl_City1.Size = new System.Drawing.Size(121, 20);
-            this.ddl_City1.TabIndex = 30;
             // 
             // ddl_State1
             // 
@@ -1343,10 +1451,27 @@
             this.ddl_State1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ddl_State1.Properties.DropDownRows = 20;
+            this.ddl_State1.Properties.Sorted = true;
             this.ddl_State1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ddl_State1.Size = new System.Drawing.Size(121, 20);
             this.ddl_State1.TabIndex = 29;
             this.ddl_State1.SelectedIndexChanged += new System.EventHandler(this.ddl_State1_SelectedIndexChanged);
+            // 
+            // ddl_City1
+            // 
+            this.ddl_City1.EditValue = "Select City";
+            this.ddl_City1.Location = new System.Drawing.Point(156, 290);
+            this.ddl_City1.Name = "ddl_City1";
+            this.ddl_City1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ddl_City1.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            this.ddl_City1.Properties.Appearance.Options.UseFont = true;
+            this.ddl_City1.Properties.Appearance.Options.UseForeColor = true;
+            this.ddl_City1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ddl_City1.Properties.Sorted = true;
+            this.ddl_City1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.ddl_City1.Size = new System.Drawing.Size(121, 20);
+            this.ddl_City1.TabIndex = 30;
             // 
             // ddl_Order_Type
             // 
@@ -1359,6 +1484,7 @@
             this.ddl_Order_Type.Properties.Appearance.Options.UseForeColor = true;
             this.ddl_Order_Type.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ddl_Order_Type.Properties.Sorted = true;
             this.ddl_Order_Type.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ddl_Order_Type.Size = new System.Drawing.Size(121, 20);
             this.ddl_Order_Type.TabIndex = 28;
@@ -1374,6 +1500,7 @@
             this.ddl_SubprocessNumber.Properties.Appearance.Options.UseForeColor = true;
             this.ddl_SubprocessNumber.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ddl_SubprocessNumber.Properties.Sorted = true;
             this.ddl_SubprocessNumber.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ddl_SubprocessNumber.Size = new System.Drawing.Size(121, 20);
             this.ddl_SubprocessNumber.TabIndex = 27;
@@ -1389,6 +1516,7 @@
             this.comboBoxEdit1.Properties.Appearance.Options.UseForeColor = true;
             this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEdit1.Properties.Sorted = true;
             this.comboBoxEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEdit1.Size = new System.Drawing.Size(121, 20);
             this.comboBoxEdit1.TabIndex = 26;
@@ -1600,6 +1728,7 @@
             this.ddl_County2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ddl_County2.Properties.DropDownRows = 20;
+            this.ddl_County2.Properties.Sorted = true;
             this.ddl_County2.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ddl_County2.Size = new System.Drawing.Size(121, 20);
             this.ddl_County2.TabIndex = 31;
@@ -1616,6 +1745,7 @@
             this.ddl_city2.Properties.Appearance.Options.UseForeColor = true;
             this.ddl_city2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ddl_city2.Properties.Sorted = true;
             this.ddl_city2.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ddl_city2.Size = new System.Drawing.Size(121, 20);
             this.ddl_city2.TabIndex = 30;
@@ -1632,6 +1762,7 @@
             this.ddl_state2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ddl_state2.Properties.DropDownRows = 20;
+            this.ddl_state2.Properties.Sorted = true;
             this.ddl_state2.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ddl_state2.Size = new System.Drawing.Size(121, 20);
             this.ddl_state2.TabIndex = 29;
@@ -1648,6 +1779,7 @@
             this.ddl_name.Properties.Appearance.Options.UseForeColor = true;
             this.ddl_name.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ddl_name.Properties.Sorted = true;
             this.ddl_name.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ddl_name.Size = new System.Drawing.Size(121, 20);
             this.ddl_name.TabIndex = 28;
@@ -1663,6 +1795,7 @@
             this.ddl_SubprocessName.Properties.Appearance.Options.UseForeColor = true;
             this.ddl_SubprocessName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ddl_SubprocessName.Properties.Sorted = true;
             this.ddl_SubprocessName.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ddl_SubprocessName.Size = new System.Drawing.Size(121, 20);
             this.ddl_SubprocessName.TabIndex = 27;
@@ -1678,6 +1811,7 @@
             this.ddl_CustomerID.Properties.Appearance.Options.UseForeColor = true;
             this.ddl_CustomerID.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ddl_CustomerID.Properties.Sorted = true;
             this.ddl_CustomerID.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ddl_CustomerID.Size = new System.Drawing.Size(121, 20);
             this.ddl_CustomerID.TabIndex = 26;
@@ -1952,6 +2086,7 @@
             this.ddl_orderTyp.Properties.Appearance.Options.UseFont = true;
             this.ddl_orderTyp.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ddl_orderTyp.Properties.Sorted = true;
             this.ddl_orderTyp.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ddl_orderTyp.Size = new System.Drawing.Size(140, 20);
             this.ddl_orderTyp.TabIndex = 5;
@@ -1965,6 +2100,8 @@
             this.ddl_SubClients.Properties.Appearance.Options.UseFont = true;
             this.ddl_SubClients.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ddl_SubClients.Properties.DropDownRows = 15;
+            this.ddl_SubClients.Properties.Sorted = true;
             this.ddl_SubClients.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ddl_SubClients.Size = new System.Drawing.Size(140, 20);
             this.ddl_SubClients.TabIndex = 4;
@@ -2018,111 +2155,6 @@
             // 
             this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013";
             // 
-            // ddl_Clientname
-            // 
-            this.ddl_Clientname.EditValue = "Select Client";
-            this.ddl_Clientname.Location = new System.Drawing.Point(195, 305);
-            this.ddl_Clientname.Name = "ddl_Clientname";
-            this.ddl_Clientname.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ddl_Clientname.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            this.ddl_Clientname.Properties.Appearance.Options.UseFont = true;
-            this.ddl_Clientname.Properties.Appearance.Options.UseForeColor = true;
-            this.ddl_Clientname.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ddl_Clientname.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.ddl_Clientname.Size = new System.Drawing.Size(134, 20);
-            this.ddl_Clientname.TabIndex = 16;
-            // 
-            // ddl_Subclient
-            // 
-            this.ddl_Subclient.EditValue = "Select Sub-Client";
-            this.ddl_Subclient.Location = new System.Drawing.Point(195, 361);
-            this.ddl_Subclient.Name = "ddl_Subclient";
-            this.ddl_Subclient.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ddl_Subclient.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            this.ddl_Subclient.Properties.Appearance.Options.UseFont = true;
-            this.ddl_Subclient.Properties.Appearance.Options.UseForeColor = true;
-            this.ddl_Subclient.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ddl_Subclient.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.ddl_Subclient.Size = new System.Drawing.Size(134, 20);
-            this.ddl_Subclient.TabIndex = 17;
-            // 
-            // ddl_State
-            // 
-            this.ddl_State.EditValue = "Select State";
-            this.ddl_State.Location = new System.Drawing.Point(217, 252);
-            this.ddl_State.Name = "ddl_State";
-            this.ddl_State.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ddl_State.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            this.ddl_State.Properties.Appearance.Options.UseFont = true;
-            this.ddl_State.Properties.Appearance.Options.UseForeColor = true;
-            this.ddl_State.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ddl_State.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.ddl_State.Size = new System.Drawing.Size(134, 20);
-            this.ddl_State.TabIndex = 24;
-            // 
-            // ddl_City
-            // 
-            this.ddl_City.EditValue = "Select City";
-            this.ddl_City.Location = new System.Drawing.Point(217, 310);
-            this.ddl_City.Name = "ddl_City";
-            this.ddl_City.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ddl_City.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            this.ddl_City.Properties.Appearance.Options.UseFont = true;
-            this.ddl_City.Properties.Appearance.Options.UseForeColor = true;
-            this.ddl_City.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ddl_City.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.ddl_City.Size = new System.Drawing.Size(134, 20);
-            this.ddl_City.TabIndex = 25;
-            // 
-            // ddl_County
-            // 
-            this.ddl_County.EditValue = "Select County";
-            this.ddl_County.Location = new System.Drawing.Point(217, 364);
-            this.ddl_County.Name = "ddl_County";
-            this.ddl_County.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ddl_County.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            this.ddl_County.Properties.Appearance.Options.UseFont = true;
-            this.ddl_County.Properties.Appearance.Options.UseForeColor = true;
-            this.ddl_County.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ddl_County.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.ddl_County.Size = new System.Drawing.Size(134, 20);
-            this.ddl_County.TabIndex = 26;
-            // 
-            // ddl_Category
-            // 
-            this.ddl_Category.EditValue = "Select Category";
-            this.ddl_Category.Location = new System.Drawing.Point(204, 364);
-            this.ddl_Category.Name = "ddl_Category";
-            this.ddl_Category.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ddl_Category.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            this.ddl_Category.Properties.Appearance.Options.UseFont = true;
-            this.ddl_Category.Properties.Appearance.Options.UseForeColor = true;
-            this.ddl_Category.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ddl_Category.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.ddl_Category.Size = new System.Drawing.Size(134, 20);
-            this.ddl_Category.TabIndex = 24;
-            // 
-            // ddl_Ordertype
-            // 
-            this.ddl_Ordertype.EditValue = "Select Order-Type";
-            this.ddl_Ordertype.Location = new System.Drawing.Point(217, 138);
-            this.ddl_Ordertype.Name = "ddl_Ordertype";
-            this.ddl_Ordertype.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ddl_Ordertype.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            this.ddl_Ordertype.Properties.Appearance.Options.UseFont = true;
-            this.ddl_Ordertype.Properties.Appearance.Options.UseForeColor = true;
-            this.ddl_Ordertype.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ddl_Ordertype.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.ddl_Ordertype.Size = new System.Drawing.Size(134, 20);
-            this.ddl_Ordertype.TabIndex = 27;
-            // 
             // OrderEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2137,6 +2169,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ddl_Ordertype.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddl_County.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddl_City.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddl_State.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit30.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit29.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit10.Properties)).EndInit();
@@ -2155,6 +2191,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ddl_Subclient.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddl_Clientname.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit24.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit23.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit22.Properties)).EndInit();
@@ -2162,6 +2200,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
             this.panelControl4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ddl_Category.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit28.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit27.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit26.Properties)).EndInit();
@@ -2191,8 +2230,8 @@
             this.groupControl4.ResumeLayout(false);
             this.groupControl4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ddl_County1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddl_City1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddl_State1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddl_City1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddl_Order_Type.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddl_SubprocessNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
@@ -2222,13 +2261,6 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ddl_Clientname.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddl_Subclient.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddl_State.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddl_City.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddl_County.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddl_Category.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddl_Ordertype.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

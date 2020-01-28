@@ -19,9 +19,6 @@ namespace Ordermanagement_01.New_Dashboard.Settings
 {
     public partial class OrderEntry : XtraForm
     {
-        Commonclass Comclass = new Commonclass();
-        DataAccess dataaccess = new DataAccess();
-        DropDownistBindClass dbc = new DropDownistBindClass();
         public OrderEntry()
         {
             InitializeComponent();
@@ -34,10 +31,12 @@ namespace Ordermanagement_01.New_Dashboard.Settings
 
         private void OrderEntry_Load(object sender, EventArgs e)
         {
+            SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
             Bindclients();
             BindSubClients();
-            BindState();
-            BindCounty();
+            //BindState();
+            //BindCounty();
+            SplashScreenManager.CloseForm(false);
         }
         private async void Bindclients()
         {
@@ -121,113 +120,90 @@ namespace Ordermanagement_01.New_Dashboard.Settings
                 SplashScreenManager.CloseForm(false);
             }
         }
-        private async void BindState()
-        {
-            try
-            {
-                SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
-                var dictionary = new Dictionary<string, object>
-                {
-                    {"@Trans", "SELECT_STATE" }
-                };
-                var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
-                using (var httpClient = new HttpClient())
-                {
-                    var response = await httpClient.PostAsync(Base_Url.Url + "/SubClient/BindSubClients", data);
-                    if (response.IsSuccessStatusCode)
-                    {
-                        if (response.StatusCode == HttpStatusCode.OK)
-                        {
-                            var result = await response.Content.ReadAsStringAsync();
-                            DataTable dt = JsonConvert.DeserializeObject<DataTable>(result);
-                            if (dt != null && dt.Rows.Count > 0)
-                            {
-                                foreach (DataRow row in dt.Rows)
-                                {
-                                    ddl_State.Properties.Items.Add(row["State"]);
-                                    ddl_State1.Properties.Items.Add(row["State"]);
-                                    ddl_state2.Properties.Items.Add(row["State"]);
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                SplashScreenManager.CloseForm(false);
-                throw ex;
-            }
-            finally
-            {
-                SplashScreenManager.CloseForm(false);
-            }
-        }
-        private async void BindCounty()
-        {
-            try
-            {
-                SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
-                var dictionary = new Dictionary<string, object>
-                {
-                    {"@Trans", "SELECT_COUNTY" }
-                };
-                var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
-                using (var httpClient = new HttpClient())
-                {
-                    var response = await httpClient.PostAsync(Base_Url.Url + "/SubClient/BindSubClients", data);
-                    if (response.IsSuccessStatusCode)
-                    {
-                        if (response.StatusCode == HttpStatusCode.OK)
-                        {
-                            var result = await response.Content.ReadAsStringAsync();
-                            DataTable dt = JsonConvert.DeserializeObject<DataTable>(result);
-                            if (dt != null && dt.Rows.Count > 0)
-                            {
-                                foreach (DataRow row in dt.Rows)
-                                {
-                                    ddl_County.Properties.Items.Add(row["County"]);
-                                    ddl_County1.Properties.Items.Add(row["County"]);
-                                    ddl_County2.Properties.Items.Add(row["County"]);
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                SplashScreenManager.CloseForm(false);
-                throw ex;
-            }
-            finally
-            {
-                SplashScreenManager.CloseForm(false);
-            }
-        }
+        //private async void BindState()
+        //{
+        //    try
+        //    {
+        //        SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
+        //        var dictionary = new Dictionary<string, object>
+        //        {
+        //            {"@Trans", "SELECT_STATE" }
+        //        };
+        //        var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
+        //        using (var httpClient = new HttpClient())
+        //        {
+        //            var response = await httpClient.PostAsync(Base_Url.Url + "/SubClient/BindSubClients", data);
+        //            if (response.IsSuccessStatusCode)
+        //            {
+        //                if (response.StatusCode == HttpStatusCode.OK)
+        //                {
+        //                    var result = await response.Content.ReadAsStringAsync();
+        //                    DataTable dt = JsonConvert.DeserializeObject<DataTable>(result);
+        //                    if (dt != null && dt.Rows.Count > 0)
+        //                    {
+        //                        foreach (DataRow row in dt.Rows)
+        //                        {
+        //                            ddl_State.Properties.Items.Add(row["State"]);
+        //                            ddl_State1.Properties.Items.Add(row["State"]);
+        //                            ddl_state2.Properties.Items.Add(row["State"]);
+        //                        }
+        //                    }
+        //                }
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        SplashScreenManager.CloseForm(false);
+        //        throw ex;
+        //    }
+        //    finally
+        //    {
+        //        SplashScreenManager.CloseForm(false);
+        //    }
+        //}
 
-
-        private void ddl_State1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if(ddl_State1.SelectedIndex>0)
-            {
-               
-            }
-        }
-
-        private void ddl_County1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ddl_state2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ddl_County2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        //private async void BindCounty()
+        //{
+        //    try
+        //    {
+        //        SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
+        //        var dictionary = new Dictionary<string, object>
+        //        {
+        //            {"@Trans", "SELECT_COUNTY" }
+        //        };
+        //        var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
+        //        using (var httpClient = new HttpClient())
+        //        {
+        //            var response = await httpClient.PostAsync(Base_Url.Url + "/SubClient/BindSubClients", data);
+        //            if (response.IsSuccessStatusCode)
+        //            {
+        //                if (response.StatusCode == HttpStatusCode.OK)
+        //                {
+        //                    var result = await response.Content.ReadAsStringAsync();
+        //                    DataTable dt = JsonConvert.DeserializeObject<DataTable>(result);
+        //                    if (dt != null && dt.Rows.Count > 0)
+        //                    {
+        //                        foreach (DataRow row in dt.Rows)
+        //                        {
+        //                            ddl_County.Properties.Items.Add(row["County"]);
+        //                            ddl_County1.Properties.Items.Add(row["County"]);
+        //                            ddl_County2.Properties.Items.Add(row["County"]);
+        //                        }
+        //                    }
+        //                }
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        SplashScreenManager.CloseForm(false);
+        //        throw ex;
+        //    }
+        //    finally
+        //    {
+        //        SplashScreenManager.CloseForm(false);
+        //    }
+        //}
     }
 }

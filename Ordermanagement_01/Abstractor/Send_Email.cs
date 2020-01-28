@@ -360,8 +360,8 @@ namespace Ordermanagement_01.Abstractor
                         Client_Order_no = Order_number;
                         SendHtmlFormattedEmail("vendors@drnds.com", "Sample", body);
                     }
-                    //Assign_Orders_ToAbstractor();
-                    //Update_Abstractor_Order_Status();
+                    Assign_Orders_ToAbstractor();
+                    Update_Abstractor_Order_Status();
                 }
                 catch (Exception error)
                 {

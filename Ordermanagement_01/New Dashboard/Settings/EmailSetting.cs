@@ -491,7 +491,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
                         smtp.Send(mailMessage);
                         smtp.Dispose();
                         SplashScreenManager.CloseForm(false);
-                        XtraMessageBox.Show("Account Tested Succesfully");
+                        XtraMessageBox.Show("Email Account Tested Succesfully");
                     }
                     else
                     {

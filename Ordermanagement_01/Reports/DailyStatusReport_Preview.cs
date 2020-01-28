@@ -9950,6 +9950,12 @@ namespace Ordermanagement_01
             col = new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Client_Number", 100);
             MyClientNumber.Properties.Columns.Add(col);
         }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void BindMyClientSubProcessName(LookUpEdit MyClientSubProcessName, int editvalue)
         {
 

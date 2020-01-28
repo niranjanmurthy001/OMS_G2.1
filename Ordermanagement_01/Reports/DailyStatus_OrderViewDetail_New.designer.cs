@@ -1015,8 +1015,8 @@
             // 
             // gridColumn64
             // 
-            this.gridColumn64.Caption = "Order_Comments";
-            this.gridColumn64.FieldName = "Comments";
+            this.gridColumn64.Caption = "Comments";
+            this.gridColumn64.FieldName = "Order_Comments";
             this.gridColumn64.MaxWidth = 65;
             this.gridColumn64.MinWidth = 45;
             this.gridColumn64.Name = "gridColumn64";

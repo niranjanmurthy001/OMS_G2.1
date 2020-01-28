@@ -51,9 +51,9 @@
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btn_clear = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Submit = new DevExpress.XtraEditors.SimpleButton();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
-            this.btn_clear = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_client_details)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -314,6 +314,8 @@
             this.checkedListBox_ProjectType.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
             this.checkedListBox_ProjectType.Appearance.Options.UseFont = true;
             this.checkedListBox_ProjectType.Appearance.Options.UseForeColor = true;
+            this.checkedListBox_ProjectType.CheckMode = DevExpress.XtraEditors.CheckMode.Single;
+            this.checkedListBox_ProjectType.CheckOnClick = true;
             this.checkedListBox_ProjectType.Cursor = System.Windows.Forms.Cursors.Default;
             this.checkedListBox_ProjectType.Location = new System.Drawing.Point(168, 0);
             this.checkedListBox_ProjectType.Name = "checkedListBox_ProjectType";
@@ -338,6 +340,8 @@
             this.checkedListBox_DeptType.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
             this.checkedListBox_DeptType.Appearance.Options.UseFont = true;
             this.checkedListBox_DeptType.Appearance.Options.UseForeColor = true;
+            this.checkedListBox_DeptType.CheckMode = DevExpress.XtraEditors.CheckMode.Single;
+            this.checkedListBox_DeptType.CheckOnClick = true;
             this.checkedListBox_DeptType.Cursor = System.Windows.Forms.Cursors.Default;
             this.checkedListBox_DeptType.Location = new System.Drawing.Point(168, 1);
             this.checkedListBox_DeptType.Name = "checkedListBox_DeptType";
@@ -378,6 +382,19 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(396, 38);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
+            // btn_clear
+            // 
+            this.btn_clear.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_clear.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            this.btn_clear.Appearance.Options.UseFont = true;
+            this.btn_clear.Appearance.Options.UseForeColor = true;
+            this.btn_clear.Location = new System.Drawing.Point(315, 3);
+            this.btn_clear.Name = "btn_clear";
+            this.btn_clear.Size = new System.Drawing.Size(78, 31);
+            this.btn_clear.TabIndex = 6;
+            this.btn_clear.Text = "Clear";
+            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
+            // 
             // btn_Submit
             // 
             this.btn_Submit.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -394,19 +411,6 @@
             // defaultLookAndFeel1
             // 
             this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013";
-            // 
-            // btn_clear
-            // 
-            this.btn_clear.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_clear.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            this.btn_clear.Appearance.Options.UseFont = true;
-            this.btn_clear.Appearance.Options.UseForeColor = true;
-            this.btn_clear.Location = new System.Drawing.Point(315, 3);
-            this.btn_clear.Name = "btn_clear";
-            this.btn_clear.Size = new System.Drawing.Size(78, 31);
-            this.btn_clear.TabIndex = 6;
-            this.btn_clear.Text = "Clear";
-            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 
             // Client_Process
             // 

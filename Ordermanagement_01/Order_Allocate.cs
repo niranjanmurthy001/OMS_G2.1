@@ -559,7 +559,7 @@ namespace Ordermanagement_01
 
                 Hashtable htuser = new Hashtable();
                 System.Data.DataTable dtuser = new System.Data.DataTable();
-                htuser.Add("@Trans", "GET_ALL_ALLOCATED_ORDERS");
+                htuser.Add("@Trans", "GET_ALL_ALLOCATED_ORDERS_NEW");
                 htuser.Add("@User_Id", Tree_View_UserId);
                 htuser.Add("@Order_Status_Id", Order_Status_Id);
                 dtuser = dataaccess.ExecuteSP("Sp_Orders_Que", htuser);

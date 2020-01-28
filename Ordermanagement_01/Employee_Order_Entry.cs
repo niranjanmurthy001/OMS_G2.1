@@ -2915,7 +2915,7 @@ namespace Ordermanagement_01
                                                         htuser.Add("@Order_Status", ddl_order_Task.Text);
                                                         dtuser = dataaccess.ExecuteSP("Sp_Order_Status", htuser);
                                                         ht_Status.Add("@Order_Status", int.Parse(dtuser.Rows[0]["Order_Status_ID"].ToString()));
-                                                        ht_Status.Add("@Order_Progress", 8);
+                                                        ht_Status.Add("@Order_Progress", 3);
                                                         Next_Status = int.Parse(dtuser.Rows[0]["Order_Status_ID"].ToString());
                                                     }
                                                     ht_Status.Add("@Modified_By", userid);
@@ -3543,7 +3543,14 @@ namespace Ordermanagement_01
                                                 htprogress.Add("@Order_ID", Order_Id);
                                                 if (ddl_order_Task.Visible != true)
                                                 {
-                                                    htprogress.Add("@Order_Progress_Id", int.Parse(ddl_order_Staus.SelectedValue.ToString()));
+                                                    if (ddl_order_Task.Text != "Upload Completed")
+                                                    {
+                                                        htprogress.Add("@Order_Progress_Id", int.Parse(ddl_order_Staus.SelectedValue.ToString()));
+                                                    }
+                                                    else if(ddl_order_Task.Text == "Upload Completed")
+                                                    {
+                                                        htprogress.Add("@Order_Progress_Id", 3);
+                                                    }
                                                 }
                                                 else if (ddl_order_Task.Visible == true && ddl_order_Task.Text != "Upload Completed")
                                                 {
@@ -3585,7 +3592,7 @@ namespace Ordermanagement_01
                                                     htuser.Add("@Order_Status", ddl_order_Task.Text);
                                                     dtuser = dataaccess.ExecuteSP("Sp_Order_Status", htuser);
                                                     ht_Status.Add("@Order_Status", int.Parse(dtuser.Rows[0]["Order_Status_ID"].ToString()));
-                                                    ht_Status.Add("@Order_Progress", 8);
+                                                    ht_Status.Add("@Order_Progress", 3);
                                                 }
                                                 ht_Status.Add("@Modified_By", userid);
                                                 ht_Status.Add("@Modified_Date", dateeval);
@@ -4586,6 +4593,7 @@ namespace Ordermanagement_01
                                                 htuser.Add("@Trans", "SELECT_STATUSID");
                                                 htuser.Add("@Order_Status", ddl_order_Task.Text);
                                                 dtuser = dataaccess.ExecuteSP("Sp_Order_Status", htuser);
+
                                                 ht_Status.Add("@Current_Task", int.Parse(dtuser.Rows[0]["Order_Status_ID"].ToString()));
                                                 ht_Status.Add("@Cureent_Status", 8);
                                                 Next_Status = int.Parse(dtuser.Rows[0]["Order_Status_ID"].ToString());
@@ -4604,6 +4612,7 @@ namespace Ordermanagement_01
                                             htEffectivedate.Add("@Modified_By", userid);
                                             htEffectivedate.Add("@Modified_Date", dateeval);
                                             dtEffectivdate = dataaccess.ExecuteSP("Sp_Order", htEffectivedate);
+
                                             Hashtable ht_Productiondate = new Hashtable();
                                             DataTable dt_Production_date = new DataTable();
 

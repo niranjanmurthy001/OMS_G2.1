@@ -1084,7 +1084,7 @@ namespace Ordermanagement_01.InvoiceRep
                     else
                     {
 
-                        size = Ftp_File_Size(Path1);
+                        size = new FileInfo(Path1).Length; 
                     }
                     MemoryStream ms = new MemoryStream();
                     MemoryStream ms1 = new MemoryStream();
@@ -1213,11 +1213,11 @@ namespace Ordermanagement_01.InvoiceRep
 
                             for (int j = 0; j < dtdate.Rows.Count; j++)
                             {
-                                mailMessage.To.Add(dtdate.Rows[j]["Email-ID"].ToString());
+                               mailMessage.To.Add(dtdate.Rows[j]["Email-ID"].ToString());
 
                             }
 
-                           // mailMessage.To.Add("niranjanmurthy@drnds.com");
+                          //  mailMessage.To.Add("techteam@drnds.com");
 
 
                             if (Forms == "Monthly_Invoice")

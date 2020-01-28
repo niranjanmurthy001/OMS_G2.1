@@ -1161,6 +1161,10 @@ namespace Ordermanagement_01.InvoiceRep
                                 mailMessage.Attachments.Add(attachment);
 
 
+                                //ms = new MemoryStream(File.ReadAllBytes(Path1));
+                                //mailMessage.Attachments.Add(new Attachment(ms, Attachment_Name.ToString()));
+
+
                                 //  mailMessage.Attachments.Add(new Attachment(ms, Attachment_Name.ToString()));
 
                             }
@@ -1209,10 +1213,11 @@ namespace Ordermanagement_01.InvoiceRep
 
                             for (int j = 0; j < dtdate.Rows.Count; j++)
                             {
-                                  mailMessage.To.Add(dtdate.Rows[j]["Email-ID"].ToString());
+                                mailMessage.To.Add(dtdate.Rows[j]["Email-ID"].ToString());
 
                             }
 
+                           // mailMessage.To.Add("niranjanmurthy@drnds.com");
 
 
                             if (Forms == "Monthly_Invoice")
@@ -1228,7 +1233,7 @@ namespace Ordermanagement_01.InvoiceRep
                                 if (Client_Id == 11)
                                 {
 
-                                     mailMessage.CC.Add("neworders@abstractshop.com");
+                                   mailMessage.CC.Add("neworders@abstractshop.com");
                                 }
                                 else if (Client_Id == 12)
                                 {
@@ -1287,7 +1292,7 @@ namespace Ordermanagement_01.InvoiceRep
                                         smtp.Host = dt_Email_Details.Rows[0]["Outgoing_Mail_Server"].ToString();
                                         NetworkCredential NetworkCred = new NetworkCredential(dt_Email_Details.Rows[0]["User_Name"].ToString(), dt_Email_Details.Rows[0]["Password"].ToString());
                                        
-                                        smtp.UseDefaultCredentials = true;
+                                     
                                         smtp.Credentials = NetworkCred;
                                         smtp.Port = int.Parse(dt_Email_Details.Rows[0]["Outgoing_Server_Port"].ToString());
                                     }
@@ -1352,10 +1357,8 @@ namespace Ordermanagement_01.InvoiceRep
                             if (dt_Email_Details.Rows.Count > 0)
                             {
                                 smtp.Timeout = (60 * 5 * 1000);
-                                smtp.Credentials = NetworkCred;
-                                // smtp.EnableSsl = true;
-
-                                //string userState = "test message1";
+                             
+                             
 
                                 smtp.Send(mailMessage);
                                 smtp.Dispose();

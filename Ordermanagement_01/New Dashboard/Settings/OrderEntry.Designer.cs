@@ -1437,7 +1437,6 @@
             this.ddl_County1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ddl_County1.Size = new System.Drawing.Size(121, 20);
             this.ddl_County1.TabIndex = 31;
-            this.ddl_County1.SelectedIndexChanged += new System.EventHandler(this.ddl_County1_SelectedIndexChanged);
             // 
             // ddl_State1
             // 
@@ -1455,7 +1454,6 @@
             this.ddl_State1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ddl_State1.Size = new System.Drawing.Size(121, 20);
             this.ddl_State1.TabIndex = 29;
-            this.ddl_State1.SelectedIndexChanged += new System.EventHandler(this.ddl_State1_SelectedIndexChanged);
             // 
             // ddl_City1
             // 
@@ -1732,7 +1730,6 @@
             this.ddl_County2.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ddl_County2.Size = new System.Drawing.Size(121, 20);
             this.ddl_County2.TabIndex = 31;
-            this.ddl_County2.SelectedIndexChanged += new System.EventHandler(this.ddl_County2_SelectedIndexChanged);
             // 
             // ddl_city2
             // 
@@ -1766,7 +1763,6 @@
             this.ddl_state2.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ddl_state2.Size = new System.Drawing.Size(121, 20);
             this.ddl_state2.TabIndex = 29;
-            this.ddl_state2.SelectedIndexChanged += new System.EventHandler(this.ddl_state2_SelectedIndexChanged);
             // 
             // ddl_name
             // 
@@ -1989,7 +1985,7 @@
             this.tab_otherorders.Appearance.Options.UseForeColor = true;
             this.tab_otherorders.Caption = "Other Orders";
             this.tab_otherorders.Name = "tab_otherorders";
-            this.tab_otherorders.Size = new System.Drawing.Size(1238, 518);
+            this.tab_otherorders.Size = new System.Drawing.Size(1220, 479);
             // 
             // ddl_batch
             // 
@@ -2101,7 +2097,6 @@
             this.ddl_SubClients.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ddl_SubClients.Properties.DropDownRows = 15;
-            this.ddl_SubClients.Properties.Sorted = true;
             this.ddl_SubClients.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ddl_SubClients.Size = new System.Drawing.Size(140, 20);
             this.ddl_SubClients.TabIndex = 4;
@@ -2116,6 +2111,7 @@
             this.ddl_ClientNames.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ddl_ClientNames.Properties.DropDownRows = 15;
+            this.ddl_ClientNames.Properties.Sorted = true;
             this.ddl_ClientNames.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ddl_ClientNames.Size = new System.Drawing.Size(140, 20);
             this.ddl_ClientNames.TabIndex = 3;

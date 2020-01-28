@@ -55,6 +55,7 @@
             this.Client_Number = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Production_Date = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.Order_Type = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Target_Category = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Order_Work_Type = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -82,7 +83,6 @@
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.gridSplitContainer1 = new DevExpress.XtraGrid.GridSplitContainer();
             this.simpleSeparator1 = new DevExpress.XtraLayout.SimpleSeparator();
-            this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlEfficiency)).BeginInit();
             this.groupControlEfficiency.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
@@ -98,6 +98,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControlEfficiencyDetails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewEfficiencyDetails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditCustomize.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
@@ -116,8 +118,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1)).BeginInit();
             this.gridSplitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControlEfficiency
@@ -424,6 +424,18 @@
             this.Production_Date.VisibleIndex = 3;
             this.Production_Date.Width = 103;
             // 
+            // repositoryItemDateEdit1
+            // 
+            this.repositoryItemDateEdit1.AutoHeight = false;
+            this.repositoryItemDateEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.EditFormat.FormatString = "\"MM/dd/yyyy\"";
+            this.repositoryItemDateEdit1.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.repositoryItemDateEdit1.Mask.UseMaskAsDisplayFormat = true;
+            this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
+            // 
             // Order_Type
             // 
             this.Order_Type.Caption = "Order Type";
@@ -701,18 +713,6 @@
             this.simpleSeparator1.Name = "simpleSeparator1";
             this.simpleSeparator1.Size = new System.Drawing.Size(1167, 6);
             // 
-            // repositoryItemDateEdit1
-            // 
-            this.repositoryItemDateEdit1.AutoHeight = false;
-            this.repositoryItemDateEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemDateEdit1.EditFormat.FormatString = "\"MM/dd/yyyy\"";
-            this.repositoryItemDateEdit1.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.repositoryItemDateEdit1.Mask.UseMaskAsDisplayFormat = true;
-            this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
-            // 
             // Efficiency_Summary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -741,6 +741,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControlEfficiencyDetails)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewEfficiencyDetails)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditCustomize.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
@@ -759,8 +761,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1)).EndInit();
             this.gridSplitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
             this.ResumeLayout(false);
 
         }

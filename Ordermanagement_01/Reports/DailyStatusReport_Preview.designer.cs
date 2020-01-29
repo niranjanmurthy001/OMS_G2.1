@@ -421,7 +421,9 @@
             this.gridColumn107 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.lbl_To_date = new System.Windows.Forms.Label();
             this.dateEdit_To_Date = new DevExpress.XtraEditors.DateEdit();
             this.lbl_From_date = new System.Windows.Forms.Label();
@@ -439,8 +441,6 @@
             this.pivotGridField69 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.pivotGridField36 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
-            this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit13)).BeginInit();
@@ -623,7 +623,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit35)).BeginInit();
             this.tableLayoutPanel10.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.tableLayoutPanel20.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_To_Date.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_To_Date.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_From_date.Properties.CalendarTimeProperties)).BeginInit();
@@ -634,9 +637,6 @@
             this.panel39.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Chk_List_Report)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
-            this.tableLayoutPanel20.SuspendLayout();
             this.SuspendLayout();
             // 
             // splashScreenManager2
@@ -980,7 +980,7 @@
             this.pivotGridField5.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
             this.pivotGridField5.AreaIndex = 0;
             this.pivotGridField5.Caption = "Date";
-            this.pivotGridField5.CellFormat.FormatString = "\"MM/dd/yyyy\"";
+            this.pivotGridField5.CellFormat.FormatString = "d";
             this.pivotGridField5.CellFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.pivotGridField5.FieldEdit = this.repositoryItemDateEdit2;
             this.pivotGridField5.FieldName = "Date";
@@ -995,10 +995,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemDateEdit2.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemDateEdit2.DisplayFormat.FormatString = "\"MM/dd/yyyy\"";
-            this.repositoryItemDateEdit2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.repositoryItemDateEdit2.EditFormat.FormatString = "\"MM/dd/yyyy\"";
-            this.repositoryItemDateEdit2.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.repositoryItemDateEdit2.Mask.UseMaskAsDisplayFormat = true;
             this.repositoryItemDateEdit2.Name = "repositoryItemDateEdit2";
             // 
             // repositoryItemDateEdit1
@@ -1023,7 +1020,7 @@
             this.tabNavigationPage7.Name = "tabNavigationPage7";
             this.tabNavigationPage7.Properties.AppearanceCaption.Font = new System.Drawing.Font("Calibri", 9.75F);
             this.tabNavigationPage7.Properties.AppearanceCaption.Options.UseFont = true;
-            this.tabNavigationPage7.Size = new System.Drawing.Size(954, 503);
+            this.tabNavigationPage7.Size = new System.Drawing.Size(936, 452);
             // 
             // tableLayoutPanel8
             // 
@@ -1037,7 +1034,7 @@
             this.tableLayoutPanel8.RowCount = 2;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.26437F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.73563F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(954, 503);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(936, 452);
             this.tableLayoutPanel8.TabIndex = 4;
             // 
             // panel12
@@ -1046,7 +1043,7 @@
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel12.Location = new System.Drawing.Point(3, 3);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(948, 50);
+            this.panel12.Size = new System.Drawing.Size(930, 44);
             this.panel12.TabIndex = 1;
             // 
             // tableLayoutPanel9
@@ -1061,7 +1058,7 @@
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(948, 50);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(930, 44);
             this.tableLayoutPanel9.TabIndex = 181;
             // 
             // panel22
@@ -1071,7 +1068,7 @@
             this.panel22.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel22.Location = new System.Drawing.Point(3, 3);
             this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(350, 44);
+            this.panel22.Size = new System.Drawing.Size(350, 38);
             this.panel22.TabIndex = 0;
             // 
             // label3
@@ -1107,7 +1104,7 @@
             this.panel23.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel23.Location = new System.Drawing.Point(359, 3);
             this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(941, 44);
+            this.panel23.Size = new System.Drawing.Size(941, 38);
             this.panel23.TabIndex = 1;
             // 
             // btn_Top_Eff_Export
@@ -1169,9 +1166,9 @@
             // 
             this.panel26.Controls.Add(this.pivotGridControlTopEfficiency);
             this.panel26.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel26.Location = new System.Drawing.Point(3, 59);
+            this.panel26.Location = new System.Drawing.Point(3, 53);
             this.panel26.Name = "panel26";
-            this.panel26.Size = new System.Drawing.Size(948, 441);
+            this.panel26.Size = new System.Drawing.Size(930, 396);
             this.panel26.TabIndex = 0;
             // 
             // pivotGridControlTopEfficiency
@@ -1207,7 +1204,7 @@
             this.pivotGridControlTopEfficiency.OptionsView.ShowColumnTotals = false;
             this.pivotGridControlTopEfficiency.OptionsView.ShowRowGrandTotals = false;
             this.pivotGridControlTopEfficiency.OptionsView.ShowRowTotals = false;
-            this.pivotGridControlTopEfficiency.Size = new System.Drawing.Size(948, 441);
+            this.pivotGridControlTopEfficiency.Size = new System.Drawing.Size(930, 396);
             this.pivotGridControlTopEfficiency.TabIndex = 0;
             this.pivotGridControlTopEfficiency.CustomFieldSort += new DevExpress.XtraPivotGrid.PivotGridCustomFieldSortEventHandler(this.pivotGridControl8_CustomFieldSort);
             this.pivotGridControlTopEfficiency.CellClick += new DevExpress.XtraPivotGrid.PivotCellEventHandler(this.pivotGridControl8_CellClick);
@@ -1322,7 +1319,7 @@
             this.tabNavigationPage8.Name = "tabNavigationPage8";
             this.tabNavigationPage8.Properties.AppearanceCaption.Font = new System.Drawing.Font("Calibri", 9.75F);
             this.tabNavigationPage8.Properties.AppearanceCaption.Options.UseFont = true;
-            this.tabNavigationPage8.Size = new System.Drawing.Size(954, 503);
+            this.tabNavigationPage8.Size = new System.Drawing.Size(936, 452);
             // 
             // tableLayoutPanel14
             // 
@@ -1339,7 +1336,7 @@
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(954, 503);
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(936, 452);
             this.tableLayoutPanel14.TabIndex = 1;
             // 
             // gridControlScoreBoard
@@ -1350,7 +1347,7 @@
             this.gridControlScoreBoard.LookAndFeel.UseDefaultLookAndFeel = false;
             this.gridControlScoreBoard.MainView = this.gridViewScoreBoard;
             this.gridControlScoreBoard.Name = "gridControlScoreBoard";
-            this.gridControlScoreBoard.Size = new System.Drawing.Size(948, 408);
+            this.gridControlScoreBoard.Size = new System.Drawing.Size(930, 357);
             this.gridControlScoreBoard.TabIndex = 3;
             this.gridControlScoreBoard.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewScoreBoard,
@@ -1379,7 +1376,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(3, 38);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(948, 48);
+            this.panelControl1.Size = new System.Drawing.Size(930, 48);
             this.panelControl1.TabIndex = 2;
             // 
             // tableLayoutPanel15
@@ -1397,7 +1394,7 @@
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 1;
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(948, 48);
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(930, 48);
             this.tableLayoutPanel15.TabIndex = 0;
             // 
             // panelControl2
@@ -1408,7 +1405,7 @@
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(3, 3);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(240, 43);
+            this.panelControl2.Size = new System.Drawing.Size(235, 43);
             this.panelControl2.TabIndex = 0;
             // 
             // lookUpEditMonth
@@ -1440,9 +1437,9 @@
             this.panelControl4.Controls.Add(this.pivotGridControl2);
             this.panelControl4.Controls.Add(this.label9);
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl4.Location = new System.Drawing.Point(249, 3);
+            this.panelControl4.Location = new System.Drawing.Point(244, 3);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(207, 43);
+            this.panelControl4.Size = new System.Drawing.Size(203, 43);
             this.panelControl4.TabIndex = 2;
             // 
             // lookUpEditYear
@@ -1482,9 +1479,9 @@
             this.panelControl3.Controls.Add(this.btnClear);
             this.panelControl3.Controls.Add(this.btnSubmit);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl3.Location = new System.Drawing.Point(462, 3);
+            this.panelControl3.Location = new System.Drawing.Point(453, 3);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(483, 43);
+            this.panelControl3.Size = new System.Drawing.Size(474, 43);
             this.panelControl3.TabIndex = 6;
             // 
             // btnExport
@@ -1543,7 +1540,7 @@
             this.panelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl5.Location = new System.Drawing.Point(3, 3);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(948, 29);
+            this.panelControl5.Size = new System.Drawing.Size(930, 29);
             this.panelControl5.TabIndex = 4;
             // 
             // checkEditTargetWise
@@ -1587,7 +1584,7 @@
             this.tabNavigationPage2.Name = "tabNavigationPage2";
             this.tabNavigationPage2.Properties.AppearanceCaption.Font = new System.Drawing.Font("Calibri", 9.75F);
             this.tabNavigationPage2.Properties.AppearanceCaption.Options.UseFont = true;
-            this.tabNavigationPage2.Size = new System.Drawing.Size(954, 503);
+            this.tabNavigationPage2.Size = new System.Drawing.Size(936, 452);
             // 
             // panel5
             // 
@@ -1595,7 +1592,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(954, 503);
+            this.panel5.Size = new System.Drawing.Size(936, 452);
             this.panel5.TabIndex = 0;
             // 
             // tableLayoutPanel3
@@ -1610,7 +1607,7 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.03448F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.96552F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(954, 503);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(936, 452);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
             // panel11
@@ -1619,7 +1616,7 @@
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel11.Location = new System.Drawing.Point(3, 3);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(948, 49);
+            this.panel11.Size = new System.Drawing.Size(930, 43);
             this.panel11.TabIndex = 1;
             // 
             // tableLayoutPanel7
@@ -1634,7 +1631,7 @@
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(948, 49);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(930, 43);
             this.tableLayoutPanel7.TabIndex = 181;
             // 
             // panel20
@@ -1644,7 +1641,7 @@
             this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel20.Location = new System.Drawing.Point(3, 3);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(350, 43);
+            this.panel20.Size = new System.Drawing.Size(350, 37);
             this.panel20.TabIndex = 0;
             // 
             // label1
@@ -1682,7 +1679,7 @@
             this.panel21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel21.Location = new System.Drawing.Point(359, 3);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(941, 43);
+            this.panel21.Size = new System.Drawing.Size(941, 37);
             this.panel21.TabIndex = 1;
             // 
             // lookUpEdit_Branch
@@ -1774,9 +1771,9 @@
             this.panel10.Controls.Add(this.pivotGridControlShiftWise2);
             this.panel10.Controls.Add(this.pivotGridControlShiftWise1);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel10.Location = new System.Drawing.Point(3, 58);
+            this.panel10.Location = new System.Drawing.Point(3, 52);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(948, 442);
+            this.panel10.Size = new System.Drawing.Size(930, 397);
             this.panel10.TabIndex = 0;
             // 
             // pivotGridControlShiftWise
@@ -1810,7 +1807,7 @@
             this.pivotGridControlShiftWise.OptionsView.RowTreeWidth = 240;
             this.pivotGridControlShiftWise.OptionsView.ShowColumnTotals = false;
             this.pivotGridControlShiftWise.OptionsView.ShowGrandTotalsForSingleValues = true;
-            this.pivotGridControlShiftWise.Size = new System.Drawing.Size(948, 442);
+            this.pivotGridControlShiftWise.Size = new System.Drawing.Size(930, 397);
             this.pivotGridControlShiftWise.TabIndex = 184;
             this.pivotGridControlShiftWise.CustomFieldSort += new DevExpress.XtraPivotGrid.PivotGridCustomFieldSortEventHandler(this.pivotGridControl9_CustomFieldSort);
             this.pivotGridControlShiftWise.CellClick += new DevExpress.XtraPivotGrid.PivotCellEventHandler(this.pivotGridControl9_CellClick);
@@ -2162,7 +2159,7 @@
             this.tabNavigationPage3.Name = "tabNavigationPage3";
             this.tabNavigationPage3.Properties.AppearanceCaption.Font = new System.Drawing.Font("Calibri", 9.75F);
             this.tabNavigationPage3.Properties.AppearanceCaption.Options.UseFont = true;
-            this.tabNavigationPage3.Size = new System.Drawing.Size(954, 503);
+            this.tabNavigationPage3.Size = new System.Drawing.Size(936, 452);
             // 
             // panel6
             // 
@@ -2170,7 +2167,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(954, 503);
+            this.panel6.Size = new System.Drawing.Size(936, 452);
             this.panel6.TabIndex = 0;
             // 
             // tableLayoutPanel13
@@ -2185,7 +2182,7 @@
             this.tableLayoutPanel13.RowCount = 2;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.502262F));
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.49773F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(954, 503);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(936, 452);
             this.tableLayoutPanel13.TabIndex = 1;
             // 
             // panel29
@@ -2200,7 +2197,7 @@
             this.panel29.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel29.Location = new System.Drawing.Point(3, 3);
             this.panel29.Name = "panel29";
-            this.panel29.Size = new System.Drawing.Size(948, 41);
+            this.panel29.Size = new System.Drawing.Size(930, 36);
             this.panel29.TabIndex = 0;
             // 
             // btn_Capacity_Clear
@@ -2310,9 +2307,9 @@
             // 
             this.panel30.Controls.Add(this.tableLayoutPanel2);
             this.panel30.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel30.Location = new System.Drawing.Point(3, 50);
+            this.panel30.Location = new System.Drawing.Point(3, 45);
             this.panel30.Name = "panel30";
-            this.panel30.Size = new System.Drawing.Size(948, 450);
+            this.panel30.Size = new System.Drawing.Size(930, 404);
             this.panel30.TabIndex = 1;
             // 
             // tableLayoutPanel2
@@ -2327,7 +2324,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(948, 450);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(930, 404);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // panel8
@@ -2337,7 +2334,7 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(271, 3);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(674, 444);
+            this.panel8.Size = new System.Drawing.Size(656, 398);
             this.panel8.TabIndex = 0;
             // 
             // chartControl1
@@ -2438,7 +2435,7 @@
             this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series1};
             this.chartControl1.SideBySideBarDistanceVariable = 0.6D;
-            this.chartControl1.Size = new System.Drawing.Size(674, 444);
+            this.chartControl1.Size = new System.Drawing.Size(656, 398);
             this.chartControl1.SmallChartText.Font = new System.Drawing.Font("Calibri", 8F);
             this.chartControl1.TabIndex = 3;
             chartTitle1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2462,7 +2459,7 @@
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(3, 3);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(262, 444);
+            this.panel9.Size = new System.Drawing.Size(262, 398);
             this.panel9.TabIndex = 1;
             // 
             // Grd_Capcity_Utilization
@@ -2476,7 +2473,7 @@
             this.Grd_Capcity_Utilization.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemHyperLinkEdit1,
             this.repositoryItemHyperLinkEdit2});
-            this.Grd_Capcity_Utilization.Size = new System.Drawing.Size(262, 444);
+            this.Grd_Capcity_Utilization.Size = new System.Drawing.Size(262, 398);
             this.Grd_Capcity_Utilization.TabIndex = 0;
             this.Grd_Capcity_Utilization.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -2595,7 +2592,7 @@
             this.tabNavigationPage4.Name = "tabNavigationPage4";
             this.tabNavigationPage4.Properties.AppearanceCaption.Font = new System.Drawing.Font("Calibri", 9.75F);
             this.tabNavigationPage4.Properties.AppearanceCaption.Options.UseFont = true;
-            this.tabNavigationPage4.Size = new System.Drawing.Size(954, 503);
+            this.tabNavigationPage4.Size = new System.Drawing.Size(936, 452);
             // 
             // panel7
             // 
@@ -2603,7 +2600,7 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(954, 503);
+            this.panel7.Size = new System.Drawing.Size(936, 452);
             this.panel7.TabIndex = 0;
             // 
             // tableLayoutPanel4
@@ -2618,7 +2615,7 @@
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 374F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(954, 503);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(936, 452);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // panel13
@@ -2627,7 +2624,7 @@
             this.panel13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel13.Location = new System.Drawing.Point(3, 42);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(948, 458);
+            this.panel13.Size = new System.Drawing.Size(930, 407);
             this.panel13.TabIndex = 1;
             // 
             // pivotGridControlProductTypeWise
@@ -2655,7 +2652,7 @@
             this.pivotGridControlProductTypeWise.OptionsPrint.UsePrintAppearance = true;
             this.pivotGridControlProductTypeWise.OptionsView.RowTotalsLocation = DevExpress.XtraPivotGrid.PivotRowTotalsLocation.Tree;
             this.pivotGridControlProductTypeWise.OptionsView.RowTreeWidth = 161;
-            this.pivotGridControlProductTypeWise.Size = new System.Drawing.Size(948, 458);
+            this.pivotGridControlProductTypeWise.Size = new System.Drawing.Size(930, 407);
             this.pivotGridControlProductTypeWise.TabIndex = 10;
             this.pivotGridControlProductTypeWise.CustomFieldSort += new DevExpress.XtraPivotGrid.PivotGridCustomFieldSortEventHandler(this.pivotGridControl3_CustomFieldSort);
             this.pivotGridControlProductTypeWise.CellClick += new DevExpress.XtraPivotGrid.PivotCellEventHandler(this.pivotGridControl3_CellClick);
@@ -2712,7 +2709,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(948, 33);
+            this.panel2.Size = new System.Drawing.Size(930, 33);
             this.panel2.TabIndex = 2;
             // 
             // btn_ProductTypeWise_Export
@@ -2727,7 +2724,7 @@
             this.btn_ProductTypeWise_Export.AppearanceHovered.Options.UseBackColor = true;
             this.btn_ProductTypeWise_Export.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.btn_ProductTypeWise_Export.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_ProductTypeWise_Export.Location = new System.Drawing.Point(833, 0);
+            this.btn_ProductTypeWise_Export.Location = new System.Drawing.Point(815, 0);
             this.btn_ProductTypeWise_Export.Name = "btn_ProductTypeWise_Export";
             this.btn_ProductTypeWise_Export.Size = new System.Drawing.Size(115, 33);
             this.btn_ProductTypeWise_Export.TabIndex = 12;
@@ -2742,7 +2739,7 @@
             this.tabNavigationPage5.Name = "tabNavigationPage5";
             this.tabNavigationPage5.Properties.AppearanceCaption.Font = new System.Drawing.Font("Calibri", 9.75F);
             this.tabNavigationPage5.Properties.AppearanceCaption.Options.UseFont = true;
-            this.tabNavigationPage5.Size = new System.Drawing.Size(954, 503);
+            this.tabNavigationPage5.Size = new System.Drawing.Size(936, 452);
             // 
             // panel14
             // 
@@ -2750,7 +2747,7 @@
             this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel14.Location = new System.Drawing.Point(0, 0);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(954, 503);
+            this.panel14.Size = new System.Drawing.Size(936, 452);
             this.panel14.TabIndex = 0;
             // 
             // tableLayoutPanel5
@@ -2765,16 +2762,16 @@
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.388646F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.61135F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(954, 503);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(936, 452);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // panel15
             // 
             this.panel15.Controls.Add(this.pivotGridControlAgingOpenOrders);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel15.Location = new System.Drawing.Point(3, 50);
+            this.panel15.Location = new System.Drawing.Point(3, 45);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(948, 450);
+            this.panel15.Size = new System.Drawing.Size(930, 404);
             this.panel15.TabIndex = 0;
             // 
             // pivotGridControlAgingOpenOrders
@@ -2802,7 +2799,7 @@
             this.pivotGridControlAgingOpenOrders.OptionsPrint.UsePrintAppearance = true;
             this.pivotGridControlAgingOpenOrders.OptionsView.RowTotalsLocation = DevExpress.XtraPivotGrid.PivotRowTotalsLocation.Tree;
             this.pivotGridControlAgingOpenOrders.OptionsView.RowTreeWidth = 161;
-            this.pivotGridControlAgingOpenOrders.Size = new System.Drawing.Size(948, 450);
+            this.pivotGridControlAgingOpenOrders.Size = new System.Drawing.Size(930, 404);
             this.pivotGridControlAgingOpenOrders.TabIndex = 13;
             this.pivotGridControlAgingOpenOrders.CustomFieldSort += new DevExpress.XtraPivotGrid.PivotGridCustomFieldSortEventHandler(this.pivotGridControl4_CustomFieldSort);
             this.pivotGridControlAgingOpenOrders.CellClick += new DevExpress.XtraPivotGrid.PivotCellEventHandler(this.pivotGridControl4_CellClick);
@@ -2861,7 +2858,7 @@
             this.panel16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel16.Location = new System.Drawing.Point(3, 3);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(948, 41);
+            this.panel16.Size = new System.Drawing.Size(930, 36);
             this.panel16.TabIndex = 1;
             // 
             // panel24
@@ -2874,7 +2871,7 @@
             this.panel24.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel24.Location = new System.Drawing.Point(0, 0);
             this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(948, 41);
+            this.panel24.Size = new System.Drawing.Size(930, 36);
             this.panel24.TabIndex = 182;
             // 
             // btn_Aging_Open_Orders_Export
@@ -2889,9 +2886,9 @@
             this.btn_Aging_Open_Orders_Export.AppearanceHovered.Options.UseBackColor = true;
             this.btn_Aging_Open_Orders_Export.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.btn_Aging_Open_Orders_Export.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_Aging_Open_Orders_Export.Location = new System.Drawing.Point(833, 0);
+            this.btn_Aging_Open_Orders_Export.Location = new System.Drawing.Point(815, 0);
             this.btn_Aging_Open_Orders_Export.Name = "btn_Aging_Open_Orders_Export";
-            this.btn_Aging_Open_Orders_Export.Size = new System.Drawing.Size(115, 41);
+            this.btn_Aging_Open_Orders_Export.Size = new System.Drawing.Size(115, 36);
             this.btn_Aging_Open_Orders_Export.TabIndex = 8;
             this.btn_Aging_Open_Orders_Export.Text = "Export";
             this.btn_Aging_Open_Orders_Export.Click += new System.EventHandler(this.btn_Aging_Open_Orders_Export_Click);
@@ -2971,7 +2968,7 @@
             this.tabNavigationPage6.Name = "tabNavigationPage6";
             this.tabNavigationPage6.Properties.AppearanceCaption.Font = new System.Drawing.Font("Calibri", 9.75F);
             this.tabNavigationPage6.Properties.AppearanceCaption.Options.UseFont = true;
-            this.tabNavigationPage6.Size = new System.Drawing.Size(954, 503);
+            this.tabNavigationPage6.Size = new System.Drawing.Size(936, 452);
             // 
             // panel17
             // 
@@ -2979,7 +2976,7 @@
             this.panel17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel17.Location = new System.Drawing.Point(0, 0);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(954, 503);
+            this.panel17.Size = new System.Drawing.Size(936, 452);
             this.panel17.TabIndex = 0;
             // 
             // tableLayoutPanel6
@@ -2994,7 +2991,7 @@
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(954, 503);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(936, 452);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
             // panel18
@@ -3003,7 +3000,7 @@
             this.panel18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel18.Location = new System.Drawing.Point(3, 3);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(948, 37);
+            this.panel18.Size = new System.Drawing.Size(930, 37);
             this.panel18.TabIndex = 0;
             // 
             // panel25
@@ -3016,7 +3013,7 @@
             this.panel25.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel25.Location = new System.Drawing.Point(0, 0);
             this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(948, 37);
+            this.panel25.Size = new System.Drawing.Size(930, 37);
             this.panel25.TabIndex = 181;
             // 
             // btn_Aging_PendingOrders_Export
@@ -3031,7 +3028,7 @@
             this.btn_Aging_PendingOrders_Export.AppearanceHovered.Options.UseBackColor = true;
             this.btn_Aging_PendingOrders_Export.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.btn_Aging_PendingOrders_Export.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_Aging_PendingOrders_Export.Location = new System.Drawing.Point(833, 0);
+            this.btn_Aging_PendingOrders_Export.Location = new System.Drawing.Point(815, 0);
             this.btn_Aging_PendingOrders_Export.Name = "btn_Aging_PendingOrders_Export";
             this.btn_Aging_PendingOrders_Export.Size = new System.Drawing.Size(115, 37);
             this.btn_Aging_PendingOrders_Export.TabIndex = 8;
@@ -3111,7 +3108,7 @@
             this.panel19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel19.Location = new System.Drawing.Point(3, 46);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(948, 454);
+            this.panel19.Size = new System.Drawing.Size(930, 403);
             this.panel19.TabIndex = 1;
             // 
             // pivotGridControlAginfPendingOrders
@@ -3143,7 +3140,7 @@
             this.pivotGridControlAginfPendingOrders.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemHyperLinkEdit3,
             this.repositoryItemHyperLinkEdit9});
-            this.pivotGridControlAginfPendingOrders.Size = new System.Drawing.Size(948, 454);
+            this.pivotGridControlAginfPendingOrders.Size = new System.Drawing.Size(930, 403);
             this.pivotGridControlAginfPendingOrders.TabIndex = 8;
             this.pivotGridControlAginfPendingOrders.CustomFieldSort += new DevExpress.XtraPivotGrid.PivotGridCustomFieldSortEventHandler(this.pivotGridControl5_CustomFieldSort);
             this.pivotGridControlAginfPendingOrders.CellClick += new DevExpress.XtraPivotGrid.PivotCellEventHandler(this.pivotGridControl5_CellClick);
@@ -3225,7 +3222,7 @@
             this.tabNavigationPage9.Controls.Add(this.tabPane2);
             this.tabNavigationPage9.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabNavigationPage9.Name = "tabNavigationPage9";
-            this.tabNavigationPage9.Size = new System.Drawing.Size(954, 503);
+            this.tabNavigationPage9.Size = new System.Drawing.Size(936, 452);
             // 
             // tabPane2
             // 
@@ -3241,9 +3238,9 @@
             this.tabPane2.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabNavigationPage11,
             this.tabNavigationPage12});
-            this.tabPane2.RegularSize = new System.Drawing.Size(954, 503);
+            this.tabPane2.RegularSize = new System.Drawing.Size(936, 452);
             this.tabPane2.SelectedPage = this.tabNavigationPage11;
-            this.tabPane2.Size = new System.Drawing.Size(954, 503);
+            this.tabPane2.Size = new System.Drawing.Size(936, 452);
             this.tabPane2.TabIndex = 0;
             // 
             // tabNavigationPage11
@@ -3253,7 +3250,7 @@
             this.tabNavigationPage11.LookAndFeel.SkinName = "Office 2010 Blue";
             this.tabNavigationPage11.LookAndFeel.UseDefaultLookAndFeel = false;
             this.tabNavigationPage11.Name = "tabNavigationPage11";
-            this.tabNavigationPage11.Size = new System.Drawing.Size(918, 413);
+            this.tabNavigationPage11.Size = new System.Drawing.Size(918, 407);
             // 
             // tableLayoutPanel16
             // 
@@ -3267,7 +3264,7 @@
             this.tableLayoutPanel16.RowCount = 2;
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.8593F));
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 78.1407F));
-            this.tableLayoutPanel16.Size = new System.Drawing.Size(918, 413);
+            this.tableLayoutPanel16.Size = new System.Drawing.Size(918, 407);
             this.tableLayoutPanel16.TabIndex = 0;
             // 
             // panel31
@@ -3287,7 +3284,7 @@
             this.panel31.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel31.Location = new System.Drawing.Point(3, 3);
             this.panel31.Name = "panel31";
-            this.panel31.Size = new System.Drawing.Size(912, 84);
+            this.panel31.Size = new System.Drawing.Size(912, 82);
             this.panel31.TabIndex = 0;
             // 
             // dateEditAllClientToDate
@@ -3461,9 +3458,9 @@
             this.panel32.Controls.Add(this.gridControlAllClientProduction);
             this.panel32.Controls.Add(this.gridControl5);
             this.panel32.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel32.Location = new System.Drawing.Point(3, 93);
+            this.panel32.Location = new System.Drawing.Point(3, 91);
             this.panel32.Name = "panel32";
-            this.panel32.Size = new System.Drawing.Size(912, 317);
+            this.panel32.Size = new System.Drawing.Size(912, 313);
             this.panel32.TabIndex = 1;
             // 
             // gridControlAllClientProduction
@@ -3478,7 +3475,7 @@
             this.gridControlAllClientProduction.Name = "gridControlAllClientProduction";
             this.gridControlAllClientProduction.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemHyperLinkEdit14});
-            this.gridControlAllClientProduction.Size = new System.Drawing.Size(912, 317);
+            this.gridControlAllClientProduction.Size = new System.Drawing.Size(912, 313);
             this.gridControlAllClientProduction.TabIndex = 2;
             this.gridControlAllClientProduction.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewAllClientProduction,
@@ -3827,7 +3824,7 @@
             this.gridControl5.LookAndFeel.UseDefaultLookAndFeel = false;
             this.gridControl5.MainView = this.gridView6;
             this.gridControl5.Name = "gridControl5";
-            this.gridControl5.Size = new System.Drawing.Size(912, 317);
+            this.gridControl5.Size = new System.Drawing.Size(912, 313);
             this.gridControl5.TabIndex = 1;
             this.gridControl5.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView6,
@@ -4332,7 +4329,7 @@
             this.tabNavigationPage10.Controls.Add(this.tabPane3);
             this.tabNavigationPage10.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabNavigationPage10.Name = "tabNavigationPage10";
-            this.tabNavigationPage10.Size = new System.Drawing.Size(954, 503);
+            this.tabNavigationPage10.Size = new System.Drawing.Size(936, 452);
             // 
             // tabPane3
             // 
@@ -4346,9 +4343,9 @@
             this.tabPane3.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabNavigationPage13,
             this.tabNavigationPage14});
-            this.tabPane3.RegularSize = new System.Drawing.Size(954, 503);
+            this.tabPane3.RegularSize = new System.Drawing.Size(936, 452);
             this.tabPane3.SelectedPage = this.tabNavigationPage13;
-            this.tabPane3.Size = new System.Drawing.Size(954, 503);
+            this.tabPane3.Size = new System.Drawing.Size(936, 452);
             this.tabPane3.TabIndex = 0;
             this.tabPane3.Text = "tabPane3";
             // 
@@ -4359,7 +4356,7 @@
             this.tabNavigationPage13.LookAndFeel.SkinName = "Office 2010 Blue";
             this.tabNavigationPage13.LookAndFeel.UseDefaultLookAndFeel = false;
             this.tabNavigationPage13.Name = "tabNavigationPage13";
-            this.tabNavigationPage13.Size = new System.Drawing.Size(918, 413);
+            this.tabNavigationPage13.Size = new System.Drawing.Size(918, 407);
             // 
             // tableLayoutPanel18
             // 
@@ -4374,7 +4371,7 @@
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.36181F));
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 77.63819F));
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel18.Size = new System.Drawing.Size(918, 413);
+            this.tableLayoutPanel18.Size = new System.Drawing.Size(918, 407);
             this.tableLayoutPanel18.TabIndex = 0;
             // 
             // panel35
@@ -4394,7 +4391,7 @@
             this.panel35.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel35.Location = new System.Drawing.Point(3, 3);
             this.panel35.Name = "panel35";
-            this.panel35.Size = new System.Drawing.Size(912, 86);
+            this.panel35.Size = new System.Drawing.Size(912, 85);
             this.panel35.TabIndex = 5;
             // 
             // dateEditMyClientsToDate
@@ -4565,9 +4562,9 @@
             this.panelControl6.Controls.Add(this.gridControlMyClientProduction);
             this.panelControl6.Controls.Add(this.gridControl6);
             this.panelControl6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl6.Location = new System.Drawing.Point(3, 95);
+            this.panelControl6.Location = new System.Drawing.Point(3, 94);
             this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Size = new System.Drawing.Size(912, 315);
+            this.panelControl6.Size = new System.Drawing.Size(912, 310);
             this.panelControl6.TabIndex = 6;
             // 
             // gridControlMyClientProduction
@@ -4582,7 +4579,7 @@
             this.gridControlMyClientProduction.Name = "gridControlMyClientProduction";
             this.gridControlMyClientProduction.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemHyperLinkEdit36});
-            this.gridControlMyClientProduction.Size = new System.Drawing.Size(908, 311);
+            this.gridControlMyClientProduction.Size = new System.Drawing.Size(908, 306);
             this.gridControlMyClientProduction.TabIndex = 2;
             this.gridControlMyClientProduction.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewMyClientProduction,
@@ -4931,7 +4928,7 @@
             this.gridControl6.LookAndFeel.UseDefaultLookAndFeel = false;
             this.gridControl6.MainView = this.gridView8;
             this.gridControl6.Name = "gridControl6";
-            this.gridControl6.Size = new System.Drawing.Size(908, 311);
+            this.gridControl6.Size = new System.Drawing.Size(908, 306);
             this.gridControl6.TabIndex = 0;
             this.gridControl6.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView8,
@@ -5440,6 +5437,21 @@
             this.panel1.Size = new System.Drawing.Size(948, 38);
             this.panel1.TabIndex = 174;
             // 
+            // tableLayoutPanel20
+            // 
+            this.tableLayoutPanel20.ColumnCount = 2;
+            this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.92405F));
+            this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.07595F));
+            this.tableLayoutPanel20.Controls.Add(this.panel4, 0, 0);
+            this.tableLayoutPanel20.Controls.Add(this.checkedLstBxCntrl_Branch_Wise, 1, 0);
+            this.tableLayoutPanel20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel20.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel20.Name = "tableLayoutPanel20";
+            this.tableLayoutPanel20.RowCount = 1;
+            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel20.Size = new System.Drawing.Size(948, 38);
+            this.tableLayoutPanel20.TabIndex = 0;
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.dateEdit1);
@@ -5452,6 +5464,20 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(362, 32);
             this.panel4.TabIndex = 173;
+            // 
+            // dateEdit1
+            // 
+            this.dateEdit1.EditValue = new System.DateTime(2018, 9, 6, 15, 7, 9, 712);
+            this.dateEdit1.Location = new System.Drawing.Point(255, 3);
+            this.dateEdit1.Name = "dateEdit1";
+            this.dateEdit1.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateEdit1.Properties.Appearance.Options.UseFont = true;
+            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit1.Size = new System.Drawing.Size(98, 24);
+            this.dateEdit1.TabIndex = 177;
             // 
             // lbl_To_date
             // 
@@ -5700,35 +5726,6 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // dateEdit1
-            // 
-            this.dateEdit1.EditValue = new System.DateTime(2018, 9, 6, 15, 7, 9, 712);
-            this.dateEdit1.Location = new System.Drawing.Point(255, 3);
-            this.dateEdit1.Name = "dateEdit1";
-            this.dateEdit1.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateEdit1.Properties.Appearance.Options.UseFont = true;
-            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Size = new System.Drawing.Size(98, 24);
-            this.dateEdit1.TabIndex = 177;
-            // 
-            // tableLayoutPanel20
-            // 
-            this.tableLayoutPanel20.ColumnCount = 2;
-            this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.92405F));
-            this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.07595F));
-            this.tableLayoutPanel20.Controls.Add(this.panel4, 0, 0);
-            this.tableLayoutPanel20.Controls.Add(this.checkedLstBxCntrl_Branch_Wise, 1, 0);
-            this.tableLayoutPanel20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel20.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel20.Name = "tableLayoutPanel20";
-            this.tableLayoutPanel20.RowCount = 1;
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel20.Size = new System.Drawing.Size(948, 38);
-            this.tableLayoutPanel20.TabIndex = 0;
-            // 
             // DailyStatusReport_Preview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -5937,8 +5934,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit35)).EndInit();
             this.tableLayoutPanel10.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.tableLayoutPanel20.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_To_Date.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_To_Date.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_From_date.Properties.CalendarTimeProperties)).EndInit();
@@ -5949,9 +5949,6 @@
             this.panel39.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Chk_List_Report)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
-            this.tableLayoutPanel20.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

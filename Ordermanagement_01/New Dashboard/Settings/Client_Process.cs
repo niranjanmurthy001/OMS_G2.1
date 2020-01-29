@@ -15,6 +15,9 @@ namespace Ordermanagement_01.New_Dashboard.Settings
     public partial class Client_Process : XtraForm
     {
         int Client;
+        int Subclient;
+        int Project_Type;
+        int Department_Type;
         public Client_Process()
         {
             InitializeComponent();
@@ -48,23 +51,24 @@ namespace Ordermanagement_01.New_Dashboard.Settings
                             var result = await response.Content.ReadAsStringAsync();
                            DataTable dt = JsonConvert.DeserializeObject<DataTable>(result);
                             if (dt != null && dt.Rows.Count > 0)
-                            {
-                                foreach (DataRow row in dt.Rows)
+                            {                                
+                                foreach (DataRow rows in dt.Rows)
                                 {
                                     //DataRow dr = dt.NewRow();
-                                    //dr[0] = 0;
-                                    //dr[1] = "Select Client";
-                                    //dt.Rows.InsertAt(dr, 0);
-                                    
+                                    //rows[0] = 0;
+                                    //rows[1] = "select client";
+                                    //dt.Rows.InsertAt(rows, 0);
+
                                     ddl_Client_Names.Properties.DataSource = dt;
                                     ddl_Client_Names.Properties.DisplayMember = "Client_Name";
                                     ddl_Client_Names.Properties.ValueMember = "Client_Id";
                                     ddl_Client_Names.Properties.Columns.Clear();
                                     DevExpress.XtraEditors.Controls.LookUpColumnInfo col;
                                     col = new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Client_Name", 100);
-                                    ddl_Client_Names.Properties.Columns.Add(col);                                   
+                                    ddl_Client_Names.Properties.Columns.Add(col);
                                 }
                             }
+                            
                         }
                     }
                 }
@@ -194,7 +198,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
                                 {
                                     checkedListBox_DeptType.DataSource = dt;
                                     checkedListBox_DeptType.DisplayMember = "Order_Department";
-                                    checkedListBox_DeptType.ValueMember = "Order_Department_Id";
+                                    checkedListBox_DeptType.ValueMember = "Order_Department_Id";                                    
                                 }
                             }
                         }
@@ -214,45 +218,75 @@ namespace Ordermanagement_01.New_Dashboard.Settings
 
         private async void btn_Submit_Click(object sender, EventArgs e)
         {
-
-            //var items = checkedListBox_Subclients.CheckedItems;
-            //foreach (var item in items)
-            //{
-            //    string s = item.ToString();
-            //}
-            int sub_client = int.Parse(checkedListBox_Subclients.SelectedIndex.ToString());
-            int Project_Type = int.Parse(checkedListBox_ProjectType.SelectedIndex.ToString());
-            int Dept_Type = int.Parse(checkedListBox_DeptType.SelectedIndex.ToString());
             try
             {
-                SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
-                var dictionary = new Dictionary<string, object>
+                DataTable dt = new DataTable();
+                dt.Columns.AddRange(new DataColumn[4]
+                {
+                new DataColumn("Client",typeof(int)),
+                new DataColumn("Sub_Client",typeof(int)),
+                new DataColumn("Project_Type",typeof(int)),
+                new DataColumn("Department_Type",typeof(int))
+                });
+                var items = checkedListBox_Subclients.CheckedItems;
+
+                //foreach (var item in items)
+                //{
+                //    string name = item.ToString();
+                //}
+                for (int i = 0; i < checkedListBox_Subclients.CheckedItemsCount; i++)
+                {
+                    //Subclient = checkedListBox_Subclients.GetItemValue(i).T ;
+                    //var c = z["Subprocess_Id"];                   
+                    dt.Rows.Add(Client, Subclient, Project_Type, Department_Type);
+
+                    //}
+
+                    //for (int i = 0; i < checkedListBox_Subclients.Items.Count; i++)
+                    //{
+                    //    if (chBoxListTables.Items[i].Selected)
+                    //    {
+                    //        string str = chBoxListTables.Items[i].Text;
+                    //        MessageBox.Show(str);
+
+                    //        var itemValue = chBoxListTables.Items[i].Value;
+                    //    }
+                    //}
+                    DataRowView r = checkedListBox_Subclients.GetItem(checkedListBox_Subclients.SelectedIndex) as DataRowView;
+                    var SubClient = r["Subprocess_Id"];
+                    DataRowView r1 = checkedListBox_ProjectType.GetItem(checkedListBox_ProjectType.SelectedIndex) as DataRowView;
+                    Project_Type = Convert.ToInt32(r1["Project_Type_Id"]);
+                    DataRowView r2 = checkedListBox_DeptType.GetItem(checkedListBox_DeptType.SelectedIndex) as DataRowView;
+                    Department_Type = Convert.ToInt32(r2["Order_Department_Id"]);
+                    SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
+                    var dictionary = new Dictionary<string, object>
                 {
                     {"@Trans","INSERT" },
                     {"@Client_Id",Client },
-                    {"@Sub_Client",sub_client },
+                    {"@Sub_Client",SubClient },
                     {"@Project_Type",Project_Type },
-                    {"@Department_Type",Dept_Type }
+                    {"@Department_Type",Department_Type }
 
                 };
-                var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
-                using (var httpClient = new HttpClient())
-                {
-                    var response = await httpClient.PostAsync(Base_Url.Url + "/Client_Process/Insert", data);
-                    if (response.IsSuccessStatusCode)
+                    var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
+                    using (var httpClient = new HttpClient())
                     {
-                        if (response.StatusCode == HttpStatusCode.OK)
+                        var response = await httpClient.PostAsync(Base_Url.Url + "/Client_Process/Insert", data);
+                        if (response.IsSuccessStatusCode)
                         {
-                            var result = await response.Content.ReadAsStringAsync();
-                            SplashScreenManager.CloseForm(false);
-                            XtraMessageBox.Show(ddl_Client_Names.EditValue.ToString() +" "+ "is Submitted");
-                            grid_Client_Details();
-                            Clear();                           
+                            if (response.StatusCode == HttpStatusCode.OK)
+                            {
+                                var result = await response.Content.ReadAsStringAsync();
+                                SplashScreenManager.CloseForm(false);
+                                XtraMessageBox.Show(ddl_Client_Names.EditValue.ToString() + " " + "is Submitted");
+                                grid_Client_Details();
+                                Clear();
+                            }
                         }
                     }
                 }
             }
-           catch (Exception ex)
+            catch (Exception ex)
             {
                 SplashScreenManager.CloseForm(false);
                 throw ex;
@@ -264,10 +298,18 @@ namespace Ordermanagement_01.New_Dashboard.Settings
         }
         private void Clear()
         {
-            ddl_Client_Names.EditValue=null;
-            checkedListBox_Subclients.UnCheckAll();
-            checkedListBox_ProjectType.UnCheckAll();
-            checkedListBox_DeptType.UnCheckAll();
+            try
+            {
+                ddl_Client_Names.EditValue = 0;
+                checkedListBox_Subclients.UnCheckAll();
+                checkedListBox_ProjectType.UnCheckAll();
+                checkedListBox_DeptType.UnCheckAll();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
         private async void grid_Client_Details()
         {
@@ -276,9 +318,9 @@ namespace Ordermanagement_01.New_Dashboard.Settings
             {
                 SplashScreenManager.ShowForm(this,typeof(Masters.WaitForm1), true, true, false);
                 var dictionary = new Dictionary<string, object>()
-            {
-                    { "@Trans", "SELECT"}
-            };
+                    {
+                        { "@Trans", "SELECT"}
+                    };
                 var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
                 using (var httpClient = new HttpClient())
                 {
@@ -328,7 +370,16 @@ namespace Ordermanagement_01.New_Dashboard.Settings
 
         private void btn_clear_Click(object sender, EventArgs e)
         {
-            Clear();
-        }
+            try
+            {
+                Clear();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
+        }              
     }
 }

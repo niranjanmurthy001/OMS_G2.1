@@ -1749,6 +1749,12 @@
     <Compile Include="New Dashboard\LockScreen.Designer.cs">
       <DependentUpon>LockScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="New Dashboard\Orders\OrderEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New Dashboard\Orders\OrderEntry.Designer.cs">
+      <DependentUpon>OrderEntry.cs</DependentUpon>
+    </Compile>
     <Compile Include="New Dashboard\Settings\Client_Process.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -3603,6 +3609,7 @@
     <EmbeddedResource Include="New Dashboard\LockScreen.resx">
       <DependentUpon>LockScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="New Dashboard\Orders\OrderEntry.resx" />
     <EmbeddedResource Include="New Dashboard\Settings\Client_Process.resx">
       <DependentUpon>Client_Process.cs</DependentUpon>
     </EmbeddedResource>
@@ -4417,6 +4424,9 @@
     <None Include="Resources\ic_time_span.png" />
     <None Include="Resources\ic_stopwatch.png" />
     <None Include="Resources\ic_idle.png" />
+    <None Include="Resources\ic_history.png" />
+    <None Include="Resources\ic_link.png" />
+    <None Include="Resources\ic_search_32.png" />
     <Content Include="Resources\list.png" />
     <None Include="Resources\list1.png" />
     <None Include="Resources\New_Refresh.png" />

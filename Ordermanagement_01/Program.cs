@@ -38,7 +38,7 @@ namespace Ordermanagement_01
 
             // Application.Run(new New_Dashboard.Settings.EmailSetting());
 
-            // Application.Run(new New_Dashboard.Settings.Client_Process());
+          //   Application.Run(new New_Dashboard.Settings.Client_Process());
 
             //Application.Run(new New_Dashboard.Settings.OrderEntry());
 
@@ -186,7 +186,7 @@ namespace Ordermanagement_01
             //Application.Run(new Ordermanagement_01.Employee.Error_Dashboard(264, 2));
 
             // Application.Run(new Ordermanagement_01.Reports.Reports_Master(1,"2"));
-            //  Application.Run(new Ordermanagement_01.Invoice.Invoice_Orders_List(1,"1","01/01/2020"));
+            //    Application.Run(new Ordermanagement_01.Invoice.Invoice_Orders_List(1,"1"));
 
             //  Application.Run(new Ordermanagement_01.Masters.Client_Order_Cost(1));
 

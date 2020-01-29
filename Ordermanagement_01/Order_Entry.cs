@@ -1460,6 +1460,7 @@ namespace Ordermanagement_01
                         if (ordertype != 70 && ordertype != 110)
                         {
                             // this tax Order movement
+
                             //if (Check_Count != 1)
                             //{
 

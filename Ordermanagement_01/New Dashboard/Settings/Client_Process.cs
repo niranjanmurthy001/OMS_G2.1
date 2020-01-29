@@ -9,15 +9,15 @@ using System.Net.Http;
 using Newtonsoft.Json;
 using Ordermanagement_01.Models;
 using System.Net;
-using System.Windows.Forms;
-using DevExpress.XtraEditors.Controls;
 
 namespace Ordermanagement_01.New_Dashboard.Settings
 {
     public partial class Client_Process : XtraForm
     {
         int Client;
-        string subclient;
+        int Subclient;
+        int Project_Type;
+        int Department_Type;
         public Client_Process()
         {
             InitializeComponent();
@@ -218,60 +218,75 @@ namespace Ordermanagement_01.New_Dashboard.Settings
 
         private async void btn_Submit_Click(object sender, EventArgs e)
         {
-            //var items = checkedListBox_Subclients.CheckedItems;
-            //foreach (var item in items)
-            //{
-            //    subclient = item.ToString();
-            //}
-            //DataTable dt = new DataTable();
-            //dt.Columns.AddRange(new DataColumn[4]
-            //{
-            //    new DataColumn("Client",typeof(int)),
-            //    new DataColumn("Sub_Client",typeof(int)),
-            //    new DataColumn("Project_Type",typeof(int)),
-            //    new DataColumn("Department_Type",typeof(int))
-            //});
-            //int sub_client = int.Parse(checkedListBox_Subclients.GetDisplayItemValue(checkedListBox_Subclients.FindString("Order_Department_Id")).ToString());
-            //int subclient = int.Parse(checkedListBox_Subclients.SelectedItem.ToString());
-            //int Project_Type = int.Parse(checkedListBox_ProjectType.CheckedItems.ToString());
-            //int Dept_Type = int.Parse(checkedListBox_DeptType.CheckedItems.ToString());
-            
             try
-            {                            
-                DataRowView r = checkedListBox_Subclients.GetItem(checkedListBox_Subclients.SelectedIndex) as DataRowView;
-                var SubClient = r["Subprocess_Id"];
-                DataRowView r1=checkedListBox_ProjectType.GetItem(checkedListBox_ProjectType.SelectedIndex) as DataRowView;
-                var Project_Type = r1["Project_Type_Id"];
-                DataRowView r2 = checkedListBox_DeptType.GetItem(checkedListBox_DeptType.SelectedIndex) as DataRowView;
-                var Dept_Type = r2["Order_Department_Id"];
-                SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
-                var dictionary = new Dictionary<string, object>
+            {
+                DataTable dt = new DataTable();
+                dt.Columns.AddRange(new DataColumn[4]
+                {
+                new DataColumn("Client",typeof(int)),
+                new DataColumn("Sub_Client",typeof(int)),
+                new DataColumn("Project_Type",typeof(int)),
+                new DataColumn("Department_Type",typeof(int))
+                });
+                var items = checkedListBox_Subclients.CheckedItems;
+
+                //foreach (var item in items)
+                //{
+                //    string name = item.ToString();
+                //}
+                for (int i = 0; i < checkedListBox_Subclients.CheckedItemsCount; i++)
+                {
+                    //Subclient = checkedListBox_Subclients.GetItemValue(i).T ;
+                    //var c = z["Subprocess_Id"];                   
+                    dt.Rows.Add(Client, Subclient, Project_Type, Department_Type);
+
+                    //}
+
+                    //for (int i = 0; i < checkedListBox_Subclients.Items.Count; i++)
+                    //{
+                    //    if (chBoxListTables.Items[i].Selected)
+                    //    {
+                    //        string str = chBoxListTables.Items[i].Text;
+                    //        MessageBox.Show(str);
+
+                    //        var itemValue = chBoxListTables.Items[i].Value;
+                    //    }
+                    //}
+                    DataRowView r = checkedListBox_Subclients.GetItem(checkedListBox_Subclients.SelectedIndex) as DataRowView;
+                    var SubClient = r["Subprocess_Id"];
+                    DataRowView r1 = checkedListBox_ProjectType.GetItem(checkedListBox_ProjectType.SelectedIndex) as DataRowView;
+                    Project_Type = Convert.ToInt32(r1["Project_Type_Id"]);
+                    DataRowView r2 = checkedListBox_DeptType.GetItem(checkedListBox_DeptType.SelectedIndex) as DataRowView;
+                    Department_Type = Convert.ToInt32(r2["Order_Department_Id"]);
+                    SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
+                    var dictionary = new Dictionary<string, object>
                 {
                     {"@Trans","INSERT" },
                     {"@Client_Id",Client },
                     {"@Sub_Client",SubClient },
                     {"@Project_Type",Project_Type },
-                    {"@Department_Type",Dept_Type }
+                    {"@Department_Type",Department_Type }
 
                 };
-                var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
-                using (var httpClient = new HttpClient())
-                {
-                    var response = await httpClient.PostAsync(Base_Url.Url + "/Client_Process/Insert", data);
-                    if (response.IsSuccessStatusCode)
+                    var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
+                    using (var httpClient = new HttpClient())
                     {
-                        if (response.StatusCode == HttpStatusCode.OK)
+                        var response = await httpClient.PostAsync(Base_Url.Url + "/Client_Process/Insert", data);
+                        if (response.IsSuccessStatusCode)
                         {
-                            var result = await response.Content.ReadAsStringAsync();
-                            SplashScreenManager.CloseForm(false);
-                            XtraMessageBox.Show(ddl_Client_Names.EditValue.ToString() +" "+ "is Submitted");
-                            grid_Client_Details();
-                            Clear();                           
+                            if (response.StatusCode == HttpStatusCode.OK)
+                            {
+                                var result = await response.Content.ReadAsStringAsync();
+                                SplashScreenManager.CloseForm(false);
+                                XtraMessageBox.Show(ddl_Client_Names.EditValue.ToString() + " " + "is Submitted");
+                                grid_Client_Details();
+                                Clear();
+                            }
                         }
                     }
                 }
             }
-           catch (Exception ex)
+            catch (Exception ex)
             {
                 SplashScreenManager.CloseForm(false);
                 throw ex;

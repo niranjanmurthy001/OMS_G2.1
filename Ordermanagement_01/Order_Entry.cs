@@ -1435,25 +1435,26 @@ namespace Ordermanagement_01
                         // This is commented because Directly moving to tax Option is disabled
 
                         ////==================================================
-                        //Hashtable ht_check = new Hashtable();
-                        //DataTable dt_check = new System.Data.DataTable();
-                        //ht_check.Add("@Trans", "CHECK");
-                        //ht_check.Add("@Client_Id", clientid);
-                        //ht_check.Add("@Order_Type_Id", ordertype);
-                        //ht_check.Add("@flag", "False");
-                        //dt_check = dataaccess.ExecuteSP("Sp_Tax_Order_Movement_Client_Product_Type", ht_check);
 
-                        //int Check_Count = 0;
-                        //if (dt_check.Rows.Count > 0)
-                        //{
+                        Hashtable ht_check = new Hashtable();
+                        DataTable dt_check = new System.Data.DataTable();
+                        ht_check.Add("@Trans", "CHECK");
+                        ht_check.Add("@Client_Id", clientid);
+                        ht_check.Add("@Order_Type_Id", ordertype);
+                        ht_check.Add("@flag", "False");
+                        dt_check = dataaccess.ExecuteSP("Sp_Tax_Order_Movement_Client_Product_Type", ht_check);
 
-                        //    Check_Count = int.Parse(dt_check.Rows[0]["COUNT"].ToString());
-                        //}
-                        //else
-                        //{
+                        int Check_Count = 0;
+                        if (dt_check.Rows.Count > 0)
+                        {
 
-                        //    Check_Count = 0;
-                        //}
+                            Check_Count = int.Parse(dt_check.Rows[0]["COUNT"].ToString());
+                        }
+                        else
+                        {
+
+                            Check_Count = 0;
+                        }
 
 
                         if (ordertype != 70 && ordertype != 110)
@@ -1520,11 +1521,11 @@ namespace Ordermanagement_01
 
                         else if (ordertype == 70 || ordertype == 110)
                         {
-                            //if (Check_Count == 0)
-                            //{
+                            if (Check_Count == 0)
+                            {
 
-                            htorder.Add("@Order_Status", 21);
-                            //}
+                                htorder.Add("@Order_Status", 21);
+                            }
                         }
 
 
@@ -1653,45 +1654,46 @@ namespace Ordermanagement_01
                         // This is Commented Because of Direct Tax Movement is not Using
 
 
-                        //if (Check_Count > 0)
-                        //{
-                        //    // This is for Tax Internal Client Orders Allocation
+                        if (Check_Count > 0)
+                        {
+                            // This is for Tax Internal Client Orders Allocation
 
-                        //    //==================================================
-                        //    Insert_Internal_Tax_Order_Status();
+                            //==================================================
 
-
-                        //    Hashtable htupdate = new Hashtable();
-                        //    System.Data.DataTable dtupdate = new System.Data.DataTable();
-                        //    htupdate.Add("@Trans", "UPDATE_SEARCH_TAX_REQUEST");
-                        //    htupdate.Add("@Order_ID", Entered_OrderId);
-                        //    htupdate.Add("@Search_Tax_Request", "True");
-
-                        //    dtupdate = dataaccess.ExecuteSP("Sp_Order", htupdate);
-
-                        //    Hashtable httaxupdate = new Hashtable();
-                        //    System.Data.DataTable dttaxupdate = new System.Data.DataTable();
-                        //    httaxupdate.Add("@Trans", "UPDATE_SEARCH_TAX_REQUEST_STATUS");
-                        //    httaxupdate.Add("@Order_ID", Entered_OrderId);
-                        //    httaxupdate.Add("@Search_Tax_Request_Progress", 8);
-
-                        //    dttaxupdate = dataaccess.ExecuteSP("Sp_Order", httaxupdate);
+                            Insert_Internal_Tax_Order_Status();
 
 
+                            Hashtable htupdate = new Hashtable();
+                            System.Data.DataTable dtupdate = new System.Data.DataTable();
+                            htupdate.Add("@Trans", "UPDATE_SEARCH_TAX_REQUEST");
+                            htupdate.Add("@Order_ID", Entered_OrderId);
+                            htupdate.Add("@Search_Tax_Request", "True");
 
-                        //    //OrderHistory
-                        //    Hashtable ht_Order_History1 = new Hashtable();
-                        //    DataTable dt_Order_History1 = new DataTable();
-                        //    ht_Order_History1.Add("@Trans", "INSERT");
-                        //    ht_Order_History1.Add("@Order_Id", Entered_OrderId);
-                        //    ht_Order_History1.Add("@User_Id", userid);
-                        //    ht_Order_History1.Add("@Status_Id", 26);
-                        //    ht_Order_History1.Add("@Progress_Id", 8);
-                        //    ht_Order_History1.Add("@Work_Type", 1);
-                        //    ht_Order_History1.Add("@Assigned_By", userid);
-                        //    ht_Order_History1.Add("@Modification_Type", "Order Moved Tax Queue");
-                        //    dt_Order_History1 = dataaccess.ExecuteSP("Sp_Order_History", ht_Order_History1);
-                        //}
+                            dtupdate = dataaccess.ExecuteSP("Sp_Order", htupdate);
+
+                            Hashtable httaxupdate = new Hashtable();
+                            System.Data.DataTable dttaxupdate = new System.Data.DataTable();
+                            httaxupdate.Add("@Trans", "UPDATE_SEARCH_TAX_REQUEST_STATUS");
+                            httaxupdate.Add("@Order_ID", Entered_OrderId);
+                            httaxupdate.Add("@Search_Tax_Request_Progress", 8);
+
+                            dttaxupdate = dataaccess.ExecuteSP("Sp_Order", httaxupdate);
+
+
+
+                            //OrderHistory
+                            Hashtable ht_Order_History1 = new Hashtable();
+                            DataTable dt_Order_History1 = new DataTable();
+                            ht_Order_History1.Add("@Trans", "INSERT");
+                            ht_Order_History1.Add("@Order_Id", Entered_OrderId);
+                            ht_Order_History1.Add("@User_Id", userid);
+                            ht_Order_History1.Add("@Status_Id", 26);
+                            ht_Order_History1.Add("@Progress_Id", 8);
+                            ht_Order_History1.Add("@Work_Type", 1);
+                            ht_Order_History1.Add("@Assigned_By", userid);
+                            ht_Order_History1.Add("@Modification_Type", "Order Moved Tax Queue");
+                            dt_Order_History1 = dataaccess.ExecuteSP("Sp_Order_History", ht_Order_History1);
+                        }
 
                         //Assigning the order to The Tax Allocation
 

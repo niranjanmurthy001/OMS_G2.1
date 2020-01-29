@@ -239,6 +239,7 @@ namespace Ordermanagement_01.Tax
                 txt_County.Text = dtorderdetail.Rows[0]["County"].ToString();
                 txt_Notes.Text = dtorderdetail.Rows[0]["Notes"].ToString();
                 txtClientOrderRef.Text = dtorderdetail.Rows[0]["Client_Order_Ref"].ToString();
+                txtTargetCategory.Text = dtorderdetail.Rows[0]["Target Category"].ToString();
                 txt_Assigned_Date.Text = dtorderdetail.Rows[0]["Assigned_Date"].ToString();
                 Client_Id = int.Parse(dtorderdetail.Rows[0]["Client_Id"].ToString());
                 if (Client_Id == 36)

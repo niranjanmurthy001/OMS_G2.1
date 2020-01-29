@@ -126,7 +126,7 @@ namespace Ordermanagement_01
                     BindMyClientnumber(lookUpEditMyClientName, User_id);
                     BindMyClientnumber(lookUpEditMyEmpProdClientName, User_id);
                 }
-                this.Text = "Daily Status Report";
+                Text = "Daily Status Report";
                 string D1 = DateTime.Now.ToString("M/d/yyyy");
                 string D2 = DateTime.Now.ToString("M/d/yyyy");
                 string D3 = DateTime.Now.ToString("MM/dd/yyyy");
@@ -149,7 +149,7 @@ namespace Ordermanagement_01
 
 
                 dateEdit_From_date.Text = D1;
-
+                dateEdit1.Text = D1;
 
 
 

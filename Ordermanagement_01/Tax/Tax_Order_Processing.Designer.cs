@@ -71,6 +71,8 @@
             this.btn_Tax_Details_Note_Pad = new System.Windows.Forms.Button();
             this.btn_Tax_ViolationEntry = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtTargetCategory = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.txt_Assigned_Date = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.txtClientOrderRef = new System.Windows.Forms.TextBox();
@@ -614,6 +616,8 @@
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupBox1.Controls.Add(this.txtTargetCategory);
+            this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Controls.Add(this.txt_Assigned_Date);
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.txtClientOrderRef);
@@ -652,6 +656,28 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ORDER DETAILS";
             // 
+            // txtTargetCategory
+            // 
+            this.txtTargetCategory.BackColor = System.Drawing.SystemColors.Info;
+            this.txtTargetCategory.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTargetCategory.Location = new System.Drawing.Point(710, 146);
+            this.txtTargetCategory.Name = "txtTargetCategory";
+            this.txtTargetCategory.ReadOnly = true;
+            this.txtTargetCategory.Size = new System.Drawing.Size(190, 24);
+            this.txtTargetCategory.TabIndex = 12;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.Transparent;
+            this.label18.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.Black;
+            this.label18.Location = new System.Drawing.Point(602, 150);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(102, 19);
+            this.label18.TabIndex = 117;
+            this.label18.Text = "Target Category:";
+            // 
             // txt_Assigned_Date
             // 
             this.txt_Assigned_Date.BackColor = System.Drawing.SystemColors.Info;
@@ -660,7 +686,7 @@
             this.txt_Assigned_Date.Name = "txt_Assigned_Date";
             this.txt_Assigned_Date.ReadOnly = true;
             this.txt_Assigned_Date.Size = new System.Drawing.Size(189, 24);
-            this.txt_Assigned_Date.TabIndex = 18;
+            this.txt_Assigned_Date.TabIndex = 10;
             // 
             // label16
             // 
@@ -683,7 +709,7 @@
             this.txtClientOrderRef.ReadOnly = true;
             this.txtClientOrderRef.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtClientOrderRef.Size = new System.Drawing.Size(459, 51);
-            this.txtClientOrderRef.TabIndex = 19;
+            this.txtClientOrderRef.TabIndex = 11;
             // 
             // label15
             // 
@@ -705,7 +731,7 @@
             this.txt_Zipcode.Name = "txt_Zipcode";
             this.txt_Zipcode.ReadOnly = true;
             this.txt_Zipcode.Size = new System.Drawing.Size(190, 24);
-            this.txt_Zipcode.TabIndex = 17;
+            this.txt_Zipcode.TabIndex = 9;
             // 
             // label7
             // 
@@ -727,7 +753,7 @@
             this.txt_City.Name = "txt_City";
             this.txt_City.ReadOnly = true;
             this.txt_City.Size = new System.Drawing.Size(190, 24);
-            this.txt_City.TabIndex = 16;
+            this.txt_City.TabIndex = 8;
             // 
             // label3
             // 
@@ -776,7 +802,7 @@
             this.Grid_Comments.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.Grid_Comments.RowTemplate.Height = 25;
             this.Grid_Comments.Size = new System.Drawing.Size(596, 103);
-            this.Grid_Comments.TabIndex = 89;
+            this.Grid_Comments.TabIndex = 14;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -822,7 +848,7 @@
             this.txt_ReceivedDate.Name = "txt_ReceivedDate";
             this.txt_ReceivedDate.ReadOnly = true;
             this.txt_ReceivedDate.Size = new System.Drawing.Size(190, 24);
-            this.txt_ReceivedDate.TabIndex = 9;
+            this.txt_ReceivedDate.TabIndex = 1;
             // 
             // label24
             // 
@@ -846,7 +872,7 @@
             this.txt_Notes.ReadOnly = true;
             this.txt_Notes.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txt_Notes.Size = new System.Drawing.Size(579, 103);
-            this.txt_Notes.TabIndex = 20;
+            this.txt_Notes.TabIndex = 13;
             // 
             // txt_Order_Number
             // 
@@ -857,7 +883,7 @@
             this.txt_Order_Number.Name = "txt_Order_Number";
             this.txt_Order_Number.ReadOnly = true;
             this.txt_Order_Number.Size = new System.Drawing.Size(190, 24);
-            this.txt_Order_Number.TabIndex = 8;
+            this.txt_Order_Number.TabIndex = 0;
             // 
             // txt_Property_Address
             // 
@@ -868,7 +894,7 @@
             this.txt_Property_Address.Name = "txt_Property_Address";
             this.txt_Property_Address.ReadOnly = true;
             this.txt_Property_Address.Size = new System.Drawing.Size(193, 61);
-            this.txt_Property_Address.TabIndex = 12;
+            this.txt_Property_Address.TabIndex = 4;
             // 
             // txt_County
             // 
@@ -878,7 +904,7 @@
             this.txt_County.Name = "txt_County";
             this.txt_County.ReadOnly = true;
             this.txt_County.Size = new System.Drawing.Size(190, 24);
-            this.txt_County.TabIndex = 15;
+            this.txt_County.TabIndex = 7;
             // 
             // txt_State
             // 
@@ -888,7 +914,7 @@
             this.txt_State.Name = "txt_State";
             this.txt_State.ReadOnly = true;
             this.txt_State.Size = new System.Drawing.Size(190, 24);
-            this.txt_State.TabIndex = 14;
+            this.txt_State.TabIndex = 6;
             // 
             // txt_Barrower_Name
             // 
@@ -898,7 +924,7 @@
             this.txt_Barrower_Name.Name = "txt_Barrower_Name";
             this.txt_Barrower_Name.ReadOnly = true;
             this.txt_Barrower_Name.Size = new System.Drawing.Size(190, 24);
-            this.txt_Barrower_Name.TabIndex = 11;
+            this.txt_Barrower_Name.TabIndex = 3;
             // 
             // txt_Order_Type
             // 
@@ -908,7 +934,7 @@
             this.txt_Order_Type.Name = "txt_Order_Type";
             this.txt_Order_Type.ReadOnly = true;
             this.txt_Order_Type.Size = new System.Drawing.Size(190, 24);
-            this.txt_Order_Type.TabIndex = 10;
+            this.txt_Order_Type.TabIndex = 2;
             // 
             // txt_APN
             // 
@@ -918,7 +944,7 @@
             this.txt_APN.Name = "txt_APN";
             this.txt_APN.ReadOnly = true;
             this.txt_APN.Size = new System.Drawing.Size(190, 24);
-            this.txt_APN.TabIndex = 13;
+            this.txt_APN.TabIndex = 5;
             // 
             // label11
             // 
@@ -1158,5 +1184,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.CheckBox checkBoxOrderSubmitted;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox txtTargetCategory;
+        private System.Windows.Forms.Label label18;
     }
 }

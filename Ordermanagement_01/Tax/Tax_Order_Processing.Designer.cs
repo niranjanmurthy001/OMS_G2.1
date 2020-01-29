@@ -108,6 +108,8 @@
             this.Comment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.User_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.txtTargetCategory = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -614,6 +616,8 @@
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupBox1.Controls.Add(this.txtTargetCategory);
+            this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Controls.Add(this.txt_Assigned_Date);
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.txtClientOrderRef);
@@ -1046,6 +1050,28 @@
             this.timer1.Interval = 30000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // txtTargetCategory
+            // 
+            this.txtTargetCategory.BackColor = System.Drawing.SystemColors.Info;
+            this.txtTargetCategory.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTargetCategory.Location = new System.Drawing.Point(710, 146);
+            this.txtTargetCategory.Name = "txtTargetCategory";
+            this.txtTargetCategory.ReadOnly = true;
+            this.txtTargetCategory.Size = new System.Drawing.Size(190, 24);
+            this.txtTargetCategory.TabIndex = 116;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.Transparent;
+            this.label18.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.Black;
+            this.label18.Location = new System.Drawing.Point(602, 150);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(102, 19);
+            this.label18.TabIndex = 117;
+            this.label18.Text = "Target Category:";
+            // 
             // Tax_Order_Processing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1158,5 +1184,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.CheckBox checkBoxOrderSubmitted;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox txtTargetCategory;
+        private System.Windows.Forms.Label label18;
     }
 }

@@ -58,6 +58,7 @@
             this.repositoryItemHyperLinkEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.Client_Number = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Subprocess_Number = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Order_Type = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Order_Asigned_Type = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Borrower_Name = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -85,6 +86,7 @@
             this.repositoryItemHyperLinkEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.Client_Number_A = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Subprocess_Number_A = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Order_Type_A = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Borrower_Name_A = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Address_A = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -460,6 +462,7 @@
             this.Client_Order_Number,
             this.Client_Number,
             this.Subprocess_Number,
+            this.gridColumn1,
             this.Order_Type,
             this.Order_Asigned_Type,
             this.Borrower_Name,
@@ -524,8 +527,16 @@
             this.Subprocess_Number.FilterMode = DevExpress.XtraGrid.ColumnFilterMode.DisplayText;
             this.Subprocess_Number.Name = "Subprocess_Number";
             this.Subprocess_Number.Visible = true;
-            this.Subprocess_Number.VisibleIndex = 3;
+            this.Subprocess_Number.VisibleIndex = 4;
             this.Subprocess_Number.Width = 100;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Client Order Reference";
+            this.gridColumn1.FieldName = "Client_Order_Ref";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 3;
             // 
             // Order_Type
             // 
@@ -533,7 +544,7 @@
             this.Order_Type.FieldName = "Order_Type";
             this.Order_Type.Name = "Order_Type";
             this.Order_Type.Visible = true;
-            this.Order_Type.VisibleIndex = 4;
+            this.Order_Type.VisibleIndex = 5;
             this.Order_Type.Width = 100;
             // 
             // Order_Asigned_Type
@@ -548,7 +559,7 @@
             this.Borrower_Name.FieldName = "Borrower_Name";
             this.Borrower_Name.Name = "Borrower_Name";
             this.Borrower_Name.Visible = true;
-            this.Borrower_Name.VisibleIndex = 5;
+            this.Borrower_Name.VisibleIndex = 6;
             this.Borrower_Name.Width = 150;
             // 
             // Address
@@ -557,7 +568,7 @@
             this.Address.FieldName = "Address";
             this.Address.Name = "Address";
             this.Address.Visible = true;
-            this.Address.VisibleIndex = 6;
+            this.Address.VisibleIndex = 7;
             this.Address.Width = 150;
             // 
             // State
@@ -566,7 +577,7 @@
             this.State.FieldName = "State";
             this.State.Name = "State";
             this.State.Visible = true;
-            this.State.VisibleIndex = 7;
+            this.State.VisibleIndex = 8;
             this.State.Width = 100;
             // 
             // County
@@ -575,7 +586,7 @@
             this.County.FieldName = "County";
             this.County.Name = "County";
             this.County.Visible = true;
-            this.County.VisibleIndex = 8;
+            this.County.VisibleIndex = 9;
             this.County.Width = 100;
             // 
             // Assigned_Date
@@ -584,7 +595,7 @@
             this.Assigned_Date.FieldName = "Assigned_Date";
             this.Assigned_Date.Name = "Assigned_Date";
             this.Assigned_Date.Visible = true;
-            this.Assigned_Date.VisibleIndex = 9;
+            this.Assigned_Date.VisibleIndex = 10;
             this.Assigned_Date.Width = 100;
             // 
             // APN
@@ -593,7 +604,7 @@
             this.APN.FieldName = "APN";
             this.APN.Name = "APN";
             this.APN.Visible = true;
-            this.APN.VisibleIndex = 10;
+            this.APN.VisibleIndex = 11;
             this.APN.Width = 100;
             // 
             // Completed_Date
@@ -602,7 +613,7 @@
             this.Completed_Date.FieldName = "Completed_Date";
             this.Completed_Date.Name = "Completed_Date";
             this.Completed_Date.Visible = true;
-            this.Completed_Date.VisibleIndex = 11;
+            this.Completed_Date.VisibleIndex = 12;
             this.Completed_Date.Width = 100;
             // 
             // Order_ID
@@ -641,7 +652,7 @@
             this.UserName.FieldName = "User_Name";
             this.UserName.Name = "UserName";
             this.UserName.Visible = true;
-            this.UserName.VisibleIndex = 12;
+            this.UserName.VisibleIndex = 13;
             this.UserName.Width = 100;
             // 
             // priority
@@ -747,6 +758,7 @@
             this.Client_Order_Number_A,
             this.Client_Number_A,
             this.Subprocess_Number_A,
+            this.gridColumn2,
             this.Order_Type_A,
             this.Borrower_Name_A,
             this.Address_A,
@@ -803,8 +815,16 @@
             this.Subprocess_Number_A.FieldName = "Subprocess_Number";
             this.Subprocess_Number_A.Name = "Subprocess_Number_A";
             this.Subprocess_Number_A.Visible = true;
-            this.Subprocess_Number_A.VisibleIndex = 3;
+            this.Subprocess_Number_A.VisibleIndex = 4;
             this.Subprocess_Number_A.Width = 100;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Client Order Reference";
+            this.gridColumn2.FieldName = "Client_Order_Ref";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 3;
             // 
             // Order_Type_A
             // 
@@ -812,7 +832,7 @@
             this.Order_Type_A.FieldName = "Order_Type";
             this.Order_Type_A.Name = "Order_Type_A";
             this.Order_Type_A.Visible = true;
-            this.Order_Type_A.VisibleIndex = 4;
+            this.Order_Type_A.VisibleIndex = 5;
             this.Order_Type_A.Width = 100;
             // 
             // Borrower_Name_A
@@ -821,7 +841,7 @@
             this.Borrower_Name_A.FieldName = "Borrower_Name";
             this.Borrower_Name_A.Name = "Borrower_Name_A";
             this.Borrower_Name_A.Visible = true;
-            this.Borrower_Name_A.VisibleIndex = 5;
+            this.Borrower_Name_A.VisibleIndex = 6;
             this.Borrower_Name_A.Width = 150;
             // 
             // Address_A
@@ -830,7 +850,7 @@
             this.Address_A.FieldName = "Address";
             this.Address_A.Name = "Address_A";
             this.Address_A.Visible = true;
-            this.Address_A.VisibleIndex = 6;
+            this.Address_A.VisibleIndex = 7;
             this.Address_A.Width = 150;
             // 
             // State_A
@@ -839,7 +859,7 @@
             this.State_A.FieldName = "State";
             this.State_A.Name = "State_A";
             this.State_A.Visible = true;
-            this.State_A.VisibleIndex = 7;
+            this.State_A.VisibleIndex = 8;
             this.State_A.Width = 100;
             // 
             // County_A
@@ -848,7 +868,7 @@
             this.County_A.FieldName = "County";
             this.County_A.Name = "County_A";
             this.County_A.Visible = true;
-            this.County_A.VisibleIndex = 9;
+            this.County_A.VisibleIndex = 10;
             this.County_A.Width = 100;
             // 
             // Assigned_Type
@@ -857,7 +877,7 @@
             this.Assigned_Type.FieldName = "Order_Status";
             this.Assigned_Type.Name = "Assigned_Type";
             this.Assigned_Type.Visible = true;
-            this.Assigned_Type.VisibleIndex = 8;
+            this.Assigned_Type.VisibleIndex = 9;
             this.Assigned_Type.Width = 100;
             // 
             // Task
@@ -866,7 +886,7 @@
             this.Task.FieldName = "Tax_Task";
             this.Task.Name = "Task";
             this.Task.Visible = true;
-            this.Task.VisibleIndex = 10;
+            this.Task.VisibleIndex = 11;
             this.Task.Width = 100;
             // 
             // status
@@ -875,7 +895,7 @@
             this.status.FieldName = "Tax_Status";
             this.status.Name = "status";
             this.status.Visible = true;
-            this.status.VisibleIndex = 11;
+            this.status.VisibleIndex = 12;
             this.status.Width = 100;
             // 
             // User_Name_A
@@ -884,7 +904,7 @@
             this.User_Name_A.FieldName = "User_Name";
             this.User_Name_A.Name = "User_Name_A";
             this.User_Name_A.Visible = true;
-            this.User_Name_A.VisibleIndex = 12;
+            this.User_Name_A.VisibleIndex = 13;
             this.User_Name_A.Width = 100;
             // 
             // Order_ID_A
@@ -1015,5 +1035,7 @@
         private DevExpress.LookAndFeel.DefaultLookAndFeel Default_Look_Confirmation;
         private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit repositoryItemHyperLinkEdit1;
         private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit repositoryItemHyperLinkEdit2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
     }
 }

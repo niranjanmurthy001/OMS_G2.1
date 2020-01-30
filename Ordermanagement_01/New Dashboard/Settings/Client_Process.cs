@@ -10,9 +10,7 @@ using Newtonsoft.Json;
 using Ordermanagement_01.Models;
 using System.Net;
 using System.Windows.Forms;
-using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraGrid.Views.Grid;
-using System.Threading;
 
 namespace Ordermanagement_01.New_Dashboard.Settings
 {
@@ -20,8 +18,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
     {
         int Client;        
         int Project_Type;
-        int Department_Type;
-        private System.Windows.Forms.BindingSource categoriesBindingSource;
+        int Department_Type;       
         public Process_Settings()
         {
             InitializeComponent();
@@ -104,12 +101,9 @@ namespace Ordermanagement_01.New_Dashboard.Settings
                             DataTable dt = JsonConvert.DeserializeObject<DataTable>(result);
                             if (dt != null && dt.Rows.Count > 0)
                             {
-                                for (int i = 0; i < dt.Rows.Count; i++)
-                                { 
-                                    checkedListBox_Subclients.DataSource = dt;
-                                    checkedListBox_Subclients.DisplayMember = "Sub_ProcessName";
-                                    checkedListBox_Subclients.ValueMember = "Order_Sub_Client_Id";
-                                }
+                                checkedListBox_Subclients.DataSource = dt;
+                                checkedListBox_Subclients.DisplayMember = "Sub_ProcessName";
+                                checkedListBox_Subclients.ValueMember = "Order_Sub_Client_Id";
                             }
                             else
                             {
@@ -332,11 +326,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
             if (ddl_Client_Names.ItemIndex > 0)
             {
                 BindSubClients();
-            }
-            else
-            {
-                BindSubClients();
-            }
+            }           
         }
 
         private void btn_clear_Click(object sender, EventArgs e)
@@ -400,14 +390,18 @@ namespace Ordermanagement_01.New_Dashboard.Settings
                     GridView view = gridControl_client_details.MainView as GridView;                    
                     var index = view.GetDataRow(view.GetSelectedRows()[0]);
                     ddl_Client_Names.EditValue = index.ItemArray[4];
-                
+                   
                     int SC = Convert.ToInt32(index.ItemArray[5]);
                     int PT = Convert.ToInt32(index.ItemArray[6]);
-                    int DT = Convert.ToInt32(index.ItemArray[7]);                   
-                    
+                    int DT = Convert.ToInt32(index.ItemArray[7]);
                     checkedListBox_ProjectType.SelectedValue = PT;
                     checkedListBox_DeptType.SelectedValue = DT;
                     checkedListBox_Subclients.SelectedValue = SC;
+                    checkedListBox_Subclients.Enabled = false;
+                }
+                for (int i = 0; i <= checkedListBox_Subclients.SelectedIndex; i++)
+                {
+                    checkedListBox_Subclients.SetItemChecked(i, true);
                 }
                 for (int i = 0; i <= checkedListBox_ProjectType.SelectedIndex; i++)
                 {
@@ -417,10 +411,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
                 {
                     checkedListBox_DeptType.SetItemChecked(i, true);
                 }
-                for (int i = 0; i <= checkedListBox_Subclients.SelectedIndex; i++)
-                {
-                    checkedListBox_Subclients.SetItemChecked(i, true);
-                }
+               
             }
             catch (Exception ex)
             {

@@ -10,15 +10,18 @@ using Newtonsoft.Json;
 using Ordermanagement_01.Models;
 using System.Net;
 using System.Windows.Forms;
+using DevExpress.XtraEditors.Controls;
+using DevExpress.XtraGrid.Views.Grid;
+using System.Threading;
 
 namespace Ordermanagement_01.New_Dashboard.Settings
 {
     public partial class Process_Settings : XtraForm
     {
-        int Client;
-        int Subclient;
+        int Client;        
         int Project_Type;
         int Department_Type;
+        private System.Windows.Forms.BindingSource categoriesBindingSource;
         public Process_Settings()
         {
             InitializeComponent();
@@ -29,10 +32,8 @@ namespace Ordermanagement_01.New_Dashboard.Settings
             Bindclients();
             BindProjectType();
             BindDepartmentType();
-            grid_Client_Details();
-            
+            grid_Client_Details();            
         }
-
         private async void Bindclients()
         {
             try
@@ -64,7 +65,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
                             ddl_Client_Names.Properties.ValueMember = "Client_Id";
                             DevExpress.XtraEditors.Controls.LookUpColumnInfo col;
                             col = new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Client_Name");
-                            ddl_Client_Names.Properties.Columns.Add(col);
+                            ddl_Client_Names.Properties.Columns.Add(col);                                                  
                         }
                     }
                 }
@@ -110,6 +111,10 @@ namespace Ordermanagement_01.New_Dashboard.Settings
                                     checkedListBox_Subclients.ValueMember = "Order_Sub_Client_Id";
                                 }
                             }
+                            else
+                            {
+                                XtraMessageBox.Show("No data found");
+                            }
                         }
                     }
                 }
@@ -147,8 +152,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
                             if (dt != null && dt.Rows.Count > 0)
                             {
                                 for (int i = 0; i < dt.Rows.Count; i++)
-                                {
-                                    //checkedListBox_ProjectType.Items.Add(dt.Rows[i]["Project_Type"].ToString());
+                                {                                    
                                     checkedListBox_ProjectType.DataSource = dt;
                                     checkedListBox_ProjectType.DisplayMember = "Project_Type";
                                     checkedListBox_ProjectType.ValueMember = "Project_Type_Id";
@@ -217,9 +221,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
             if (validate() != false)
             {
                 try
-                {
-                    DataRowView r = checkedListBox_Subclients.GetItem(checkedListBox_Subclients.SelectedIndex) as DataRowView;
-                    var SubClient = r["Subprocess_Id"];
+                {                    
                     DataRowView r1 = checkedListBox_ProjectType.GetItem(checkedListBox_ProjectType.SelectedIndex) as DataRowView;
                     Project_Type = Convert.ToInt32(r1["Project_Type_Id"]);
                     DataRowView r2 = checkedListBox_DeptType.GetItem(checkedListBox_DeptType.SelectedIndex) as DataRowView;
@@ -241,15 +243,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
                         int departmenttype = Department_Type;
                         dtmulti.Rows.Add(Client, subclient, projecttype,departmenttype);
                     }
-                    SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
-                    //var dictionary = new Dictionary<string, object>
-                    //{
-                    //{"@Trans","INSERT" },
-                    //{"@Client_Id",Client },
-                    //{"@Sub_Client",SubClient },
-                    //{"@Project_Type",Project_Type },
-                    //{"@Department_Type",Department_Type }
-                    //};
+                    SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);                    
                     var data = new StringContent(JsonConvert.SerializeObject(dtmulti), Encoding.UTF8, "application/json");
                     using (var httpClient = new HttpClient())
                     {
@@ -260,7 +254,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
                             {
                                 var result = await response.Content.ReadAsStringAsync();
                                 SplashScreenManager.CloseForm(false);
-                                XtraMessageBox.Show(ddl_Client_Names.EditValue.ToString() + " " + "is Submitted");
+                                XtraMessageBox.Show("Client is Submitted");
                                 grid_Client_Details();
                                 Clear();
                             }
@@ -282,7 +276,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
         {
             ddl_Client_Names.ItemIndex = 0;
             checkedListBox_Subclients.UnCheckAll();
-            checkedListBox_Subclients.DataSource = null;               
+            checkedListBox_Subclients.DataSource = null;
             checkedListBox_ProjectType.UnCheckAll();
             checkedListBox_ProjectType.SelectedIndex = 0;
             checkedListBox_DeptType.UnCheckAll();
@@ -293,7 +287,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
 
             try
             {
-                SplashScreenManager.ShowForm(this,typeof(Masters.WaitForm1), true, true, false);
+                SplashScreenManager.ShowForm(this,typeof(WaitForm1), true, true, false);
                 var dictionary = new Dictionary<string, object>()
                     {
                         { "@Trans", "SELECT"}
@@ -334,7 +328,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
         }
 
         private void ddl_Client_Names_EditValueChanged(object sender, EventArgs e)
-        {
+        {            
             if (ddl_Client_Names.ItemIndex > 0)
             {
                 BindSubClients();
@@ -392,6 +386,51 @@ namespace Ordermanagement_01.New_Dashboard.Settings
                 return false;
             }
             return true;
-        }       
+        }
+
+        private void gridView1_RowCellClick(object sender, RowCellClickEventArgs e)
+        {
+           
+            //checkedListBox_ProjectType.UnCheckSelectedItems();
+            try
+            {
+                SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
+                if (e.Column.FieldName == "Sub_ProcessName")
+                {
+                    GridView view = gridControl_client_details.MainView as GridView;                    
+                    var index = view.GetDataRow(view.GetSelectedRows()[0]);
+                    ddl_Client_Names.EditValue = index.ItemArray[4];
+                
+                    int SC = Convert.ToInt32(index.ItemArray[5]);
+                    int PT = Convert.ToInt32(index.ItemArray[6]);
+                    int DT = Convert.ToInt32(index.ItemArray[7]);                   
+                    
+                    checkedListBox_ProjectType.SelectedValue = PT;
+                    checkedListBox_DeptType.SelectedValue = DT;
+                    checkedListBox_Subclients.SelectedValue = SC;
+                }
+                for (int i = 0; i <= checkedListBox_ProjectType.SelectedIndex; i++)
+                {
+                    checkedListBox_ProjectType.SetItemChecked(i, true);
+                }
+                for (int i = 0; i <= checkedListBox_DeptType.SelectedIndex; i++)
+                {
+                    checkedListBox_DeptType.SetItemChecked(i, true);
+                }
+                for (int i = 0; i <= checkedListBox_Subclients.SelectedIndex; i++)
+                {
+                    checkedListBox_Subclients.SetItemChecked(i, true);
+                }
+            }
+            catch (Exception ex)
+            {
+                SplashScreenManager.CloseForm(false);
+                throw ex;
+            }
+            finally
+            {                
+                SplashScreenManager.CloseForm(false);
+            }
+        }
     }
 }

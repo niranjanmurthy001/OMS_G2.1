@@ -1761,6 +1761,12 @@
     <Compile Include="New Dashboard\Settings\Client_Process.Designer.cs">
       <DependentUpon>Client_Process.cs</DependentUpon>
     </Compile>
+    <Compile Include="New Dashboard\Settings\Demo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New Dashboard\Settings\Demo.Designer.cs">
+      <DependentUpon>Demo.cs</DependentUpon>
+    </Compile>
     <Compile Include="New Dashboard\Settings\EmailSetting.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1814,24 +1820,6 @@
     </Compile>
     <Compile Include="New Dashboard\Sample.Designer.cs">
       <DependentUpon>Sample.cs</DependentUpon>
-    </Compile>
-    <Compile Include="New Dashboard\Settings\OrderEntry.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="New Dashboard\Settings\OrderEntry.Designer.cs">
-      <DependentUpon>OrderEntry.cs</DependentUpon>
-    </Compile>
-    <Compile Include="New Dashboard\Settings\ProjectReview.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="New Dashboard\Settings\ProjectReview.Designer.cs">
-      <DependentUpon>ProjectReview.cs</DependentUpon>
-    </Compile>
-    <Compile Include="New Dashboard\Settings\ProjectSelection.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="New Dashboard\Settings\ProjectSelection.Designer.cs">
-      <DependentUpon>ProjectSelection.cs</DependentUpon>
     </Compile>
     <Compile Include="New Dashboard\XtraForm2.cs">
       <SubType>Form</SubType>
@@ -3613,6 +3601,9 @@
     <EmbeddedResource Include="New Dashboard\Settings\Client_Process.resx">
       <DependentUpon>Client_Process.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="New Dashboard\Settings\Demo.resx">
+      <DependentUpon>Demo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="New Dashboard\Settings\EmailSetting.resx">
       <DependentUpon>EmailSetting.cs</DependentUpon>
     </EmbeddedResource>
@@ -3637,15 +3628,6 @@
     <EmbeddedResource Include="New Dashboard\Orders\Search_NotePad.resx" />
     <EmbeddedResource Include="New Dashboard\Sample.resx">
       <DependentUpon>Sample.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="New Dashboard\Settings\OrderEntry.resx">
-      <DependentUpon>OrderEntry.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="New Dashboard\Settings\ProjectReview.resx">
-      <DependentUpon>ProjectReview.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="New Dashboard\Settings\ProjectSelection.resx">
-      <DependentUpon>ProjectSelection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="New Dashboard\XtraForm2.resx">
       <DependentUpon>XtraForm2.cs</DependentUpon>

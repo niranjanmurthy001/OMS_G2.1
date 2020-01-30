@@ -1743,6 +1743,12 @@
     <Compile Include="New Dashboard\Employee\messageform.Designer.cs">
       <DependentUpon>messageform.cs</DependentUpon>
     </Compile>
+    <Compile Include="New Dashboard\Employee\TopEmployeePerformance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New Dashboard\Employee\TopEmployeePerformance.Designer.cs">
+      <DependentUpon>TopEmployeePerformance.cs</DependentUpon>
+    </Compile>
     <Compile Include="New Dashboard\LockScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -3593,6 +3599,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="New Dashboard\Employee\messageform.resx">
       <DependentUpon>messageform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New Dashboard\Employee\TopEmployeePerformance.resx">
+      <DependentUpon>TopEmployeePerformance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="New Dashboard\LockScreen.resx">
       <DependentUpon>LockScreen.cs</DependentUpon>

@@ -86,7 +86,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1146, 696);
             this.tableLayoutPanel1.TabIndex = 0;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            //this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // panel1
             // 
@@ -247,7 +247,7 @@
             this.rbtn_Completed.TabIndex = 80;
             this.rbtn_Completed.Text = "Completed Date Wise";
             this.rbtn_Completed.UseVisualStyleBackColor = true;
-            this.rbtn_Completed.CheckedChanged += new System.EventHandler(this.rbtn_Completed_CheckedChanged);
+            //this.rbtn_Completed.CheckedChanged += new System.EventHandler(this.rbtn_Completed_CheckedChanged);
             // 
             // rbtn_Recived_Date
             // 
@@ -261,7 +261,7 @@
             this.rbtn_Recived_Date.TabStop = true;
             this.rbtn_Recived_Date.Text = "Recieved Date Wise";
             this.rbtn_Recived_Date.UseVisualStyleBackColor = true;
-            this.rbtn_Recived_Date.CheckedChanged += new System.EventHandler(this.rbtn_Recived_Date_CheckedChanged);
+            //this.rbtn_Recived_Date.CheckedChanged += new System.EventHandler(this.rbtn_Recived_Date_CheckedChanged);
             // 
             // btn_Export
             // 

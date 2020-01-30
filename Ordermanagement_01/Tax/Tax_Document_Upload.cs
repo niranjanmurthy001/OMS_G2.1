@@ -15,6 +15,7 @@ using DevExpress.XtraEditors;
 using System.Net;
 using System.Globalization;
 using System.Diagnostics;
+using DevExpress.XtraSplashScreen;
 
 namespace Ordermanagement_01.Tax
 {
@@ -264,9 +265,22 @@ namespace Ordermanagement_01.Tax
 
 
         private void btn_Tax_Upload_Click(object sender, EventArgs e)
-        {   //1111
-            if (Order_Id != "0" && txt_Tax_Dscription.Text != "" && ddl_document_Type.SelectedIndex > 0)
+        {
+            if (string.IsNullOrEmpty(txt_Tax_Dscription.Text.Trim()))
             {
+                MessageBox.Show("Enter Description of Uploading File");
+                txt_Tax_Dscription.Focus();
+                return;
+            }
+            if (ddl_document_Type.SelectedIndex < 1)
+            {
+                MessageBox.Show("Select Document Type");
+                ddl_document_Type.Focus();
+                return;
+            }
+            try
+            {
+                SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
                 Hashtable htorderkb = new Hashtable();
                 DataTable dtorderkb = new DataTable();
                 OpenFileDialog op1 = new OpenFileDialog();
@@ -276,134 +290,82 @@ namespace Ordermanagement_01.Tax
                 int count = 0;
                 foreach (string file in op1.FileNames)
                 {
-                    //string file = op1.FileName;
-                    //string filePath = f.ToString();
                     FileInfo f = new FileInfo(file);
-                    double filesize = f.Length;
-                    File_size = GetFileSize(filesize);
+                    File_size = GetFileSize(f.Length);
                     ftpfullpath = "ftp://" + Ftp_Domain_Name + "/Ftp_Application_Files/OMS/Inhouse_Tax_Documents/" + directoryPath + "";
-                    //Create the folder, Please notice if the WPF folder already exist, it will result 550 error.
-                    try
+                    string ftpUploadFullPath = "" + ftpfullpath + "/" + f.Name + "";
+                    // Checking File Exit or not
+                    FtpWebRequest ftpRequest = (FtpWebRequest)WebRequest.Create(ftpfullpath); // FTP Address  
+                    ftpRequest.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password); // Credentials  
+                    ftpRequest.Method = WebRequestMethods.Ftp.ListDirectory;
+                    FtpWebResponse response = (FtpWebResponse)ftpRequest.GetResponse();
+                    StreamReader streamReader = new StreamReader(response.GetResponseStream());
+                    HashSet<string> files = new HashSet<string>(); // create list to store directories.   
+                    string line = streamReader.ReadLine();
+                    while (!string.IsNullOrEmpty(line))
                     {
-                        //FtpWebRequest ftp = (FtpWebRequest)WebRequest.Create(ftpfullpath);
-                        //ftp.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password);
-                        //ftp.Method = WebRequestMethods.Ftp.MakeDirectory;
-                        //FtpWebResponse CreateForderResponse = (FtpWebResponse)ftp.GetResponse();
-                        //if (CreateForderResponse.StatusCode == FtpStatusCode.PathnameCreated)
-                        //{
-                        //If folder created, upload file
-                        string ftpUploadFullPath = "" + ftpfullpath + "/" + f.Name + "";
-                        // Checking File Exit or not
-                        FtpWebRequest ftpRequest = (FtpWebRequest)WebRequest.Create(ftpfullpath); // FTP Address  
-                        ftpRequest.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password); // Credentials  
-                        ftpRequest.Method = WebRequestMethods.Ftp.ListDirectory;
-                        FtpWebResponse response = (FtpWebResponse)ftpRequest.GetResponse();
-                        StreamReader streamReader = new StreamReader(response.GetResponseStream());
-                        HashSet<string> directories = new HashSet<string>(); // create list to store directories.   
-                        string line = streamReader.ReadLine();
-                        while (!string.IsNullOrEmpty(line))
-                        {
-                            directories.Add(line); // Add Each Directory to the List.  
-                            line = streamReader.ReadLine();
-                        }
-                        if (!directories.Contains(f.Name))
-                        {
-                            FtpWebRequest ftpUpLoadFile = (FtpWebRequest)WebRequest.Create(ftpUploadFullPath);
-                            ftpUpLoadFile.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password);
-                            ftpUpLoadFile.KeepAlive = true;
-                            ftpUpLoadFile.UseBinary = true;
-                            ftpUpLoadFile.Method = WebRequestMethods.Ftp.UploadFile;
-                            FileStream fs = File.OpenRead(file);
-                            Stream ftpstream = ftpUpLoadFile.GetRequestStream();
-                            fs.CopyTo(ftpstream);
-                            fs.Close();
-                            ftpstream.Close();
-                            count++;
-                            htorderkb.Clear();
-                            dtorderkb.Clear();
-                            htorderkb.Add("@Trans", "INSERT");
-                            htorderkb.Add("@Order_Id", Order_Id);
-                            htorderkb.Add("@Instuction", txt_Tax_Dscription.Text.ToString());
-                            htorderkb.Add("@Document_Path", ftpUploadFullPath);
-                            htorderkb.Add("@Document_Type", ddl_document_Type.SelectedValue.ToString());
-                            htorderkb.Add("@Tax_Task", Task_Id);
-                            htorderkb.Add("@FileSize", File_size);
-                            htorderkb.Add("@File_Extension", f.Extension);
-                            htorderkb.Add("@Inserted_By", User_ID);
-                            htorderkb.Add("@status", "True");
-                            htorderkb.Add("@Check_Status", "False");
-                            dtorderkb = dataaccess.ExecuteSP("Sp_Tax_Orders_Documents", htorderkb);
-                            if (User_Role == "1")
-                            {
-                                Gridview_bind_Tax_Admin_Side_Document_Upload();
-                            }
-                            else
-                            {
-                                Gridview_bind_Tax_Employee_Side_Document_Upload();
-                            }
-                            txt_Tax_Dscription.Text = "";
-                            MessageBox.Show(Convert.ToString(count) + " File(s) copied");
-                        }
-                        else
-                        {
-                            MessageBox.Show("File already exist");
-                        }                     
+                        files.Add(line); // Add Each file to the List.  
+                        line = streamReader.ReadLine();
                     }
-                    catch (Exception ex)
+                    if (!files.Contains(f.Name))
                     {
-                        XtraMessageBox.Show(ex+"Something went wrong contact admin");
-                        //string ftpUploadFullPath = "" + ftpfullpath + "/" + f.Name + "";
-                        //// Checking File Exit or not
-                        //FtpWebRequest ftpRequest = (FtpWebRequest)WebRequest.Create(ftpfullpath); // FTP Address  
-                        //ftpRequest.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password); // Credentials  
-                        //ftpRequest.Method = WebRequestMethods.Ftp.ListDirectory;
-                        //FtpWebResponse response = (FtpWebResponse)ftpRequest.GetResponse();
-                        //StreamReader streamReader = new StreamReader(response.GetResponseStream());
-                        //List<string> directories = new List<string>(); // create list to store directories.   
-                        //string line = streamReader.ReadLine();
-                        //while (!string.IsNullOrEmpty(line))
-                        //{
-                        //    directories.Add(line); // Add Each Directory to the List.  
-                        //    line = streamReader.ReadLine();
-                        //}
-                        //if (!directories.Contains(f.Name))
-                        //{
-                        //    FtpWebRequest ftpUpLoadFile = (FtpWebRequest)WebRequest.Create(ftpUploadFullPath);
-                        //    ftpUpLoadFile.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password);
-                        //    ftpUpLoadFile.KeepAlive = true;
-                        //    ftpUpLoadFile.UseBinary = true;
-                        //    ftpUpLoadFile.Method = WebRequestMethods.Ftp.UploadFile;
-                        //    FileStream fs = File.OpenRead(filePath);
-                        //    Stream ftpstream = ftpUpLoadFile.GetRequestStream();
-                        //    fs.CopyTo(ftpstream);
-                        //    fs.Close();
-                        //    ftpstream.Close();
-                        //    count++;
-                        //    htorderkb.Clear();
-                        //    dtorderkb.Clear();
-                        //    htorderkb.Add("@Trans", "INSERT");
-                        //    htorderkb.Add("@Order_Id", Order_Id);
-                        //    htorderkb.Add("@Instuction", txt_Tax_Dscription.Text.ToString());
-                        //    htorderkb.Add("@Document_Path", ftpUploadFullPath);
-                        //    htorderkb.Add("@Document_Type", ddl_document_Type.SelectedValue.ToString());
-                        //    htorderkb.Add("@Tax_Task", Task_Id);
-                        //    htorderkb.Add("@FileSize", File_size);
-                        //    htorderkb.Add("@File_Extension", f.Extension);
-                        //    htorderkb.Add("@Inserted_By", User_ID);
-                        //    htorderkb.Add("@status", "True");
-                        //    htorderkb.Add("@Check_Status", "False");
-                        //    dtorderkb = dataaccess.ExecuteSP("Sp_Tax_Orders_Documents", htorderkb);
-                        //}
-                        //else
-                        //{
-                        //    MessageBox.Show("File already exist");
-                        //}
+                        FtpWebRequest ftpUpLoadFile = (FtpWebRequest)WebRequest.Create(ftpUploadFullPath);
+                        ftpUpLoadFile.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password);
+                        ftpUpLoadFile.KeepAlive = true;
+                        ftpUpLoadFile.UseBinary = true;
+                        ftpUpLoadFile.Method = WebRequestMethods.Ftp.UploadFile;
+                        FileStream fs = File.OpenRead(file);
+                        Stream ftpstream = ftpUpLoadFile.GetRequestStream();
+                        fs.CopyTo(ftpstream);
+                        fs.Close();
+                        ftpstream.Close();
+                        count++;
+                        htorderkb.Clear();
+                        dtorderkb.Clear();
+                        htorderkb.Add("@Trans", "INSERT");
+                        htorderkb.Add("@Order_Id", Order_Id);
+                        htorderkb.Add("@Instuction", txt_Tax_Dscription.Text.ToString());
+                        htorderkb.Add("@Document_Path", ftpUploadFullPath);
+                        htorderkb.Add("@Document_Type", ddl_document_Type.SelectedValue.ToString());
+                        htorderkb.Add("@Tax_Task", Task_Id);
+                        htorderkb.Add("@FileSize", File_size);
+                        htorderkb.Add("@File_Extension", f.Extension);
+                        htorderkb.Add("@Inserted_By", User_ID);
+                        htorderkb.Add("@status", "True");
+                        htorderkb.Add("@Check_Status", "False");
+                        dtorderkb = dataaccess.ExecuteSP("Sp_Tax_Orders_Documents", htorderkb);
+                    }
+                    else
+                    {
+                        throw new WebException("File Already Exists");
                     }
                 }
+                if (User_Role == "1")
+                {
+                    Gridview_bind_Tax_Admin_Side_Document_Upload();
+                }
+                else
+                {
+                    Gridview_bind_Tax_Employee_Side_Document_Upload();
+                }
+                txt_Tax_Dscription.Text = "";
+                ddl_document_Type.SelectedIndex = 0;
+                SplashScreenManager.CloseForm(false);
+                MessageBox.Show(count + " File(s) copied");
             }
-            else
+            catch (WebException ex)
             {
-                MessageBox.Show("Enter Description of Uploading File");
+                SplashScreenManager.CloseForm(false);
+                XtraMessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                SplashScreenManager.CloseForm(false);
+                XtraMessageBox.Show("something went wrong");
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm(false);
             }
         }
 
@@ -506,9 +468,9 @@ namespace Ordermanagement_01.Tax
                 string localPath = @"C:\temp\" + fileName;
 
 
-         
 
-               
+
+
 
                 FtpWebRequest reqFTP;
                 FileStream outputStream = new FileStream(localPath, FileMode.Create);
@@ -525,7 +487,7 @@ namespace Ordermanagement_01.Tax
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString()+"Problem in Downloading Files please Check with Administrator");
+                MessageBox.Show(ex.ToString() + "Problem in Downloading Files please Check with Administrator");
             }
         }
 
@@ -533,68 +495,38 @@ namespace Ordermanagement_01.Tax
         {
             try
             {
-                //string File_Name = p;
-                //File_Name = File_Name.Replace("%20"," ");
-
                 FtpWebRequest reqFTP;
-
                 string Folder_Path = "C:\\OMS\\Temp\\";
                 if (!Directory.Exists(Folder_Path))
                 {
-
                     Directory.CreateDirectory(Folder_Path);
                 }
-
-                string fileName = DateTime.Now.ToString("yyyyMMddHHmmss") + p;
+                string fileName = DateTime.Now.ToString("yyyyMMddHHmmss-") + p;
                 string localPath = "C:\\OMS\\Temp\\" + "\\" + fileName;
-                FileStream outputStream = new FileStream(localPath, FileMode.Create);
-
-
+                FileStream outputStream = new FileStream(localPath, FileMode.Create);                
                 reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(Source_Path));
-
                 reqFTP.Method = WebRequestMethods.Ftp.DownloadFile;
-
                 reqFTP.UseBinary = true;
-
                 reqFTP.Credentials = new NetworkCredential(Ftp_User_Name, Ftp_Password);
-
                 FtpWebResponse response = (FtpWebResponse)reqFTP.GetResponse();
-
                 Stream ftpStream = response.GetResponseStream();
-
                 long cl = response.ContentLength;
-
                 int bufferSize = 2048;
-
                 int readCount;
-
                 byte[] buffer = new byte[bufferSize];
-
-
                 readCount = ftpStream.Read(buffer, 0, bufferSize);
-
                 while (readCount > 0)
                 {
-
                     outputStream.Write(buffer, 0, readCount);
-
                     readCount = ftpStream.Read(buffer, 0, bufferSize);
-
                 }
-
-
                 ftpStream.Close();
-
                 outputStream.Close();
-
                 response.Close();
-
-                System.Diagnostics.Process.Start(localPath);
-
+                Process.Start(localPath);
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.ToString() + "Problem in Downloading Files please Check with Administrator");
             }
         }

@@ -15,6 +15,7 @@ using CrystalDecisions.Shared;
 using iTextSharp.text.pdf;
 using Ordermanagement_01.Tax;
 using System.Net;
+using DevExpress.XtraSplashScreen;
 
 namespace Ordermanagement_01
 {
@@ -605,214 +606,55 @@ namespace Ordermanagement_01
         {
             if (Operation == "Update")
             {
-                Hashtable htorderkb = new Hashtable();
-                System.Data.DataTable dtorderkb = new System.Data.DataTable();
-                OpenFileDialog op1 = new OpenFileDialog();
-                op1.Multiselect = true;
-                op1.ShowDialog();
-                op1.Filter = "allfiles|*.xls";
-                // txt_path.Text = op1.FileName;
-                int count = 0;
-                int Chk = 0;
-
-                foreach (string s in op1.FileNames)
+                try
                 {
-                    FName = s.Split('\\');
-                    string file = op1.FileName.ToString();
-
-                    string Docname = new FileInfo(file).Name;
-
-                    FileInfo f = new FileInfo(file);
-                    double filesize = f.Length;
-
-                    File_size = GetFileSize(filesize);
-                    homeFolder = year + "/" + month + "/" + Client_Name + "/" + OrderId + "";
-                    mainPath = "Orders_Files";
-                    ftpfullpath = "ftp://" + Ftp_Domain_Name + "/Ftp_Application_Files/OMS/" + mainPath + "/" + homeFolder + "";
-                    CreateDirectory(mainPath, homeFolder);
-                    try
+                    SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
+                    Hashtable htorderkb = new Hashtable();
+                    System.Data.DataTable dtorderkb = new System.Data.DataTable();
+                    OpenFileDialog op1 = new OpenFileDialog();
+                    op1.Multiselect = true;
+                    op1.ShowDialog();
+                    op1.Filter = "allfiles|*.xls";
+                    int count = 0;
+                    foreach (string s in op1.FileNames)
                     {
-                        // File.Copy(s, dest_path1, false);
-
-                        FtpWebRequest ftp = (FtpWebRequest)WebRequest.Create(ftpfullpath);
-                        ftp.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password);
-                        ftp.Method = WebRequestMethods.Ftp.MakeDirectory;
-
-                        FtpWebResponse CreateForderResponse = (FtpWebResponse)ftp.GetResponse();
-
-                        if (CreateForderResponse.StatusCode == FtpStatusCode.PathnameCreated)
-                        {
-
-                            //If folder created, upload file
-
-                            string ftpUploadFullPath = "" + ftpfullpath + "/" + f.Name + "";
-
-
-
-                            // Checking File Exist or not
-
-                            FtpWebRequest ftpRequest = (FtpWebRequest)WebRequest.Create(ftpfullpath); // FTP Address  
-
-                            ftpRequest.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password); // Credentials  
-
-                            ftpRequest.Method = WebRequestMethods.Ftp.ListDirectory;
-
-                            FtpWebResponse response = (FtpWebResponse)ftpRequest.GetResponse();
-                            StreamReader streamReader = new StreamReader(response.GetResponseStream());
-
-                            List<string> directories = new List<string>(); // create list to store directories.   
-
-                            string line = streamReader.ReadLine();
-
-                            while (!string.IsNullOrEmpty(line))
-                            {
-                                directories.Add(line); // Add Each Directory to the List.  
-                                line = streamReader.ReadLine();
-                            }
-
-
-                            int File_Check = 0;
-
-                            for (int i = 0; i <= directories.Count - 1; i++)
-                            {
-
-                                string FileName = directories[i].ToString();
-
-                                if (FileName == f.Name)
-                                {
-                                    File_Check = 1;
-                                    break;
-                                    //1111
-                                }
-                                else
-                                {
-                                    File_Check = 0;
-                                }
-
-                            }
-
-                            if (File_Check == 0)
-                            {
-
-                                FtpWebRequest ftpUpLoadFile = (FtpWebRequest)FtpWebRequest.Create(ftpUploadFullPath);
-                                ftpUpLoadFile.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password);
-
-                                ftpUpLoadFile.KeepAlive = true;
-
-                                ftpUpLoadFile.UseBinary = true;
-
-                                ftpUpLoadFile.Method = WebRequestMethods.Ftp.UploadFile;
-
-                                FileStream fs = File.OpenRead(file);
-
-                                byte[] buffer = new byte[fs.Length];
-
-                                fs.Read(buffer, 0, buffer.Length);
-
-                                fs.Close();
-
-                                Stream ftpstream = ftpUpLoadFile.GetRequestStream();
-
-                                ftpstream.Write(buffer, 0, buffer.Length);
-
-                                ftpstream.Close();
-                                count++;
-                                htorderkb.Clear();
-                                dtorderkb.Clear();
-                                htorderkb.Add("@Trans", "INSERT");
-                                htorderkb.Add("@Instuction", txt_path.Text);
-                                htorderkb.Add("@Order_ID", OrderId);
-                                htorderkb.Add("@File_Size", File_size);
-                                htorderkb.Add("@Document_Name", op1.SafeFileName);
-                                htorderkb.Add("@Document_Path", ftpUploadFullPath);
-                                htorderkb.Add("@Inserted_By", userid);
-                                htorderkb.Add("@Inserted_date", DateTime.Now);
-                                dtorderkb = dataaccess.ExecuteSP("Sp_Document_Upload", htorderkb);
-                                Grd_Document_upload_Load();
-                                RefreshView();
-                            }
-                            else
-                            {
-                                MessageBox.Show("File already exist");
-                            }
-                        }
-                    }
-                    catch (WebException ex)
-                    {
-
-
+                        FName = s.Split('\\');
+                        string file = op1.FileName.ToString();
+                        string Docname = new FileInfo(file).Name;
+                        FileInfo f = new FileInfo(file);
+                        File_size = GetFileSize(f.Length);
+                        homeFolder = year + "/" + month + "/" + Client_Name + "/" + OrderId + "";
+                        mainPath = "Orders_Files";
+                        CreateDirectory(mainPath, homeFolder);
+                        ftpfullpath = "ftp://" + Ftp_Domain_Name + "/Ftp_Application_Files/OMS/" + mainPath + "/" + homeFolder + "";
                         string ftpUploadFullPath = "" + ftpfullpath + "/" + f.Name + "";
 
-
-
-                        // Checking File Exit or not
-
                         FtpWebRequest ftpRequest = (FtpWebRequest)WebRequest.Create(ftpfullpath); // FTP Address  
-
                         ftpRequest.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password); // Credentials  
-
                         ftpRequest.Method = WebRequestMethods.Ftp.ListDirectory;
-
                         FtpWebResponse response = (FtpWebResponse)ftpRequest.GetResponse();
                         StreamReader streamReader = new StreamReader(response.GetResponseStream());
-
-                        List<string> directories = new List<string>(); // create list to store directories.   
-
+                        HashSet<string> files = new HashSet<string>(); // create list to store directories.   
                         string line = streamReader.ReadLine();
-
                         while (!string.IsNullOrEmpty(line))
                         {
-                            directories.Add(line); // Add Each Directory to the List.  
+                            files.Add(line); // Add Each Directory to the List.  
                             line = streamReader.ReadLine();
                         }
 
-
-                        int File_Check = 0;
-
-                        for (int i = 0; i <= directories.Count - 1; i++)
+                        if (!files.Contains(f.Name))
                         {
-
-                            string FileName = directories[i].ToString();
-
-                            if (FileName == f.Name)
-                            {
-                                File_Check = 1;
-
-                                break;
-
-                            }
-                            else
-                            {
-
-                                File_Check = 0;
-                            }
-
-                        }
-
-                        if (File_Check == 0)
-                        {
-
-                            FtpWebRequest ftpUpLoadFile = (FtpWebRequest)FtpWebRequest.Create(ftpUploadFullPath);
+                            FtpWebRequest ftpUpLoadFile = (FtpWebRequest)WebRequest.Create(ftpUploadFullPath);
                             ftpUpLoadFile.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password);
-
                             ftpUpLoadFile.KeepAlive = true;
-
                             ftpUpLoadFile.UseBinary = true;
-
                             ftpUpLoadFile.Method = WebRequestMethods.Ftp.UploadFile;
-
                             FileStream fs = File.OpenRead(file);
-
                             byte[] buffer = new byte[fs.Length];
-
                             fs.Read(buffer, 0, buffer.Length);
-
                             fs.Close();
-
                             Stream ftpstream = ftpUpLoadFile.GetRequestStream();
-
                             ftpstream.Write(buffer, 0, buffer.Length);
-
                             ftpstream.Close();
                             count++;
                             htorderkb.Clear();
@@ -826,80 +668,33 @@ namespace Ordermanagement_01
                             htorderkb.Add("@Inserted_By", userid);
                             htorderkb.Add("@Inserted_date", DateTime.Now);
                             dtorderkb = dataaccess.ExecuteSP("Sp_Document_Upload", htorderkb);
-                            Grd_Document_upload_Load();
-                            RefreshView();
+
                         }
                         else
                         {
-                            MessageBox.Show("File already exist");
+                            throw new WebException("File already exists");
                         }
                     }
+                    SplashScreenManager.CloseForm(false);
+                    MessageBox.Show(count + " File(s) copied");
+                    Grd_Document_upload_Load();
+                    RefreshView();
                 }
-                MessageBox.Show(Convert.ToString(count) + " File(s) copied");
-            }
-            else if (Operation == "Insert")
-            {
-                Hashtable htorderkb = new Hashtable();
-                System.Data.DataTable dtorderkb = new System.Data.DataTable();
-                OpenFileDialog op1 = new OpenFileDialog();
-                op1.Multiselect = true;
-                op1.ShowDialog();
-                op1.Filter = "allfiles|*.xls";
-                // txt_path.Text = op1.FileName;
-                int count = 0;
-                int Chk = 0;
-
-                foreach (string s in op1.FileNames)
+                catch (WebException ex)
                 {
-                    FName = s.Split('\\');
-                    string Docname = FName[FName.Length - 1].ToString();
-                    for (int i = 0; i < Grd_Document_upload.Rows.Count; i++)
-                    {
-                        if (Docname == Grd_Document_upload.Rows[i].Cells[2].Value.ToString())
-                        {
-                            Chk = 1;
-                            break;
-                        }
-                        else
-                        {
-                            Chk = 0;
-                        }
-                    }
-                    if (Chk == 0)
-                    {
-                        string dest_path1 = @"\\192.168.12.33\oms\" + Client_Name + @"\" + Sub_Client + @"\" + OrderId + @"\" + FName[FName.Length - 1];
-                        DirectoryEntry de = new DirectoryEntry(dest_path1, "administrator", "password1$");
-                        de.Username = "administrator";
-                        de.Password = "password1$";
-
-                        Directory.CreateDirectory(@"\\192.168.12.33\oms\" + Client_Name + @"\" + Sub_Client + @"\" + OrderId);
-
-                        File.Copy(s, dest_path1, true);
-                        count++;
-                        htorderkb.Clear();
-                        dtorderkb.Clear();
-                        htorderkb.Add("@Trans", "INSERT");
-                        htorderkb.Add("@Instuction", txt_path.Text);
-                        htorderkb.Add("@Order_ID", OrderId);
-                        htorderkb.Add("@File_Size", File_size);
-                        htorderkb.Add("@Document_Name", op1.SafeFileName);
-                        //htorderkb.Add("@Chk_UploadPackage", chk_Upload.Checked);
-                        // htorderkb.Add("@Extension", extension);
-                        htorderkb.Add("@Document_Path", dest_path1);
-                        htorderkb.Add("@Inserted_By", userid);
-                        htorderkb.Add("@Inserted_date", DateTime.Now);
-                        dtorderkb = dataaccess.ExecuteSP("Sp_Document_Upload", htorderkb);
-                        Grd_Document_upload_Load();
-                    }
-                    else
-                    {
-                        MessageBox.Show("File name already exists");
-                    }
+                    SplashScreenManager.CloseForm(false);
+                    MessageBox.Show(ex.Message);
                 }
-                MessageBox.Show(Convert.ToString(count) + " File(s) copied");
+                catch (Exception ex)
+                {
+                    SplashScreenManager.CloseForm(false);
+                    MessageBox.Show("something went wrong");
+                }
+                finally
+                {
+                    SplashScreenManager.CloseForm(false);
+                }
             }
-
-
         }
 
         protected void Grd_Document_upload_Load()
@@ -1557,7 +1352,7 @@ namespace Ordermanagement_01
                 {
                     Directory.CreateDirectory(Folder_Path);
                 }
-                string fileName = DateTime.Now.ToString("yyyyMMddHHmmss") + p;
+                string fileName = DateTime.Now.ToString("yyyyMMddHHmmss-") + p;
                 string localPath = "C:\\OMS\\Temp\\" + "\\" + fileName;
                 FileStream outputStream = new FileStream(localPath, FileMode.Create);
                 reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(Source_Path));
@@ -1691,226 +1486,53 @@ namespace Ordermanagement_01
 
         private void Upload_Ftp_Files(string[] Upload_Files)
         {
-            //Creating Ftp File Path and Directory
-
-            Hashtable htorderkb = new Hashtable();
-            System.Data.DataTable dtorderkb = new System.Data.DataTable();
-            homeFolder = year + "/" + month + "/" + Client_Name + "/" + OrderId + "";
-            mainPath = "Orders_Files";
-            ftpfullpath = "ftp://" + Ftp_Domain_Name + "/Ftp_Application_Files/OMS/" + mainPath + "/" + homeFolder + "";
-            CreateDirectory(mainPath, homeFolder);
-
-
-            string[] files = Upload_Files;
-
-
-
-            foreach (string file in files)
+            try
             {
-                htorderkb.Clear();
-                dtorderkb.Clear();
-
-
-                //  string dest = homeFolder + "\\" + Path.GetFileName(file);
-
-                bool isFolder = Directory.Exists(file);
-                bool isFile = File.Exists(file);
-                System.IO.FileInfo f = new System.IO.FileInfo(file);
-                double filesize = f.Length;
-                File_size = GetFileSize(filesize);
-                if (!isFolder && !isFile)                    // Ignore if it doesn't exist
-
-                    continue;
-                string Docname = "";
-                int Chk = 0;
-
-
-                try
+                SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
+                Hashtable htorderkb = new Hashtable();
+                System.Data.DataTable dtorderkb = new System.Data.DataTable();
+                homeFolder = year + "/" + month + "/" + Client_Name + "/" + OrderId + "";
+                mainPath = "Orders_Files";
+                CreateDirectory(mainPath, homeFolder);
+                ftpfullpath = "ftp://" + Ftp_Domain_Name + "/Ftp_Application_Files/OMS/" + mainPath + "/" + homeFolder + "";
+                int count = 0;
+                foreach (string file in Upload_Files)
                 {
-                    int count = 0;
-                    // File.Copy(s, dest_path1, false);
-
-                    FtpWebRequest ftp = (FtpWebRequest)FtpWebRequest.Create(ftpfullpath);
-                    ftp.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password);
-                    ftp.Method = WebRequestMethods.Ftp.MakeDirectory;
-
-                    FtpWebResponse CreateForderResponse = (FtpWebResponse)ftp.GetResponse();
-
-                    if (CreateForderResponse.StatusCode == FtpStatusCode.PathnameCreated)
-                    {
-
-                        //If folder created, upload file
-
-                        string ftpUploadFullPath = "" + ftpfullpath + "/" + f.Name + "";
-
-
-
-                        // Checking File Exit or not
-
-                        FtpWebRequest ftpRequest = (FtpWebRequest)WebRequest.Create(ftpfullpath); // FTP Address  
-
-                        ftpRequest.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password); // Credentials  
-
-                        ftpRequest.Method = WebRequestMethods.Ftp.ListDirectory;
-
-                        FtpWebResponse response = (FtpWebResponse)ftpRequest.GetResponse();
-                        StreamReader streamReader = new StreamReader(response.GetResponseStream());
-
-                        List<string> directories = new List<string>(); // create list to store directories.   
-
-                        string line = streamReader.ReadLine();
-
-                        while (!string.IsNullOrEmpty(line))
-                        {
-                            directories.Add(line); // Add Each Directory to the List.  
-                            line = streamReader.ReadLine();
-                        }
-
-
-                        int File_Check = 0;
-
-                        for (int i = 0; i <= directories.Count - 1; i++)
-                        {
-
-                            string FileName = directories[i].ToString();
-
-                            if (FileName == f.Name)
-                            {
-                                File_Check = 1;
-
-                                break;
-                                //1111
-                            }
-                            else
-                            {
-
-                                File_Check = 0;
-                            }
-
-                        }
-
-                        if (File_Check == 0)
-                        {
-
-                            FtpWebRequest ftpUpLoadFile = (FtpWebRequest)FtpWebRequest.Create(ftpUploadFullPath);
-                            ftpUpLoadFile.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password);
-
-                            ftpUpLoadFile.KeepAlive = true;
-
-                            ftpUpLoadFile.UseBinary = true;
-
-                            ftpUpLoadFile.Method = WebRequestMethods.Ftp.UploadFile;
-
-                            FileStream fs = File.OpenRead(file);
-
-                            byte[] buffer = new byte[fs.Length];
-
-                            fs.Read(buffer, 0, buffer.Length);
-
-                            fs.Close();
-
-                            Stream ftpstream = ftpUpLoadFile.GetRequestStream();
-
-                            ftpstream.Write(buffer, 0, buffer.Length);
-
-                            ftpstream.Close();
-                            count++;
-                            htorderkb.Clear();
-                            dtorderkb.Clear();
-                            htorderkb.Add("@Trans", "INSERT");
-                            htorderkb.Add("@Instuction", txt_path.Text);
-                            htorderkb.Add("@Order_ID", OrderId);
-                            htorderkb.Add("@File_Size", File_size);
-                            htorderkb.Add("@Document_Name", f.Name);
-                            htorderkb.Add("@Document_Path", ftpUploadFullPath);
-                            htorderkb.Add("@Inserted_By", userid);
-                            htorderkb.Add("@Inserted_date", DateTime.Now);
-                            dtorderkb = dataaccess.ExecuteSP("Sp_Document_Upload", htorderkb);
-                            Grd_Document_upload_Load();
-                            RefreshView();
-                        }
-                        else
-                        {
-                            MessageBox.Show("File already exist");
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    int count = 0;
-
+                    htorderkb.Clear();
+                    dtorderkb.Clear();
+                    bool isFolder = Directory.Exists(file);
+                    bool isFile = File.Exists(file);
+                    FileInfo f = new FileInfo(file);
+                    double filesize = f.Length;
+                    File_size = GetFileSize(filesize);
+                    if (!isFolder && !isFile)
+                        continue;
                     string ftpUploadFullPath = "" + ftpfullpath + "/" + f.Name + "";
-
-
-
-                    // Checking File Exit or not
-
                     FtpWebRequest ftpRequest = (FtpWebRequest)WebRequest.Create(ftpfullpath); // FTP Address  
-
                     ftpRequest.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password); // Credentials  
-
                     ftpRequest.Method = WebRequestMethods.Ftp.ListDirectory;
-
                     FtpWebResponse response = (FtpWebResponse)ftpRequest.GetResponse();
                     StreamReader streamReader = new StreamReader(response.GetResponseStream());
-
-                    List<string> directories = new List<string>(); // create list to store directories.   
-
+                    HashSet<string> files = new HashSet<string>();
                     string line = streamReader.ReadLine();
-
                     while (!string.IsNullOrEmpty(line))
                     {
-                        directories.Add(line); // Add Each Directory to the List.  
+                        files.Add(line);
                         line = streamReader.ReadLine();
                     }
-
-
-                    int File_Check = 0;
-
-                    for (int i = 0; i <= directories.Count - 1; i++)
+                    if (!files.Contains(f.Name))
                     {
-
-                        string FileName = directories[i].ToString();
-
-                        if (FileName == f.Name)
-                        {
-                            File_Check = 1;
-
-                            break;
-
-                        }
-                        else
-                        {
-
-                            File_Check = 0;
-                        }
-
-                    }
-
-                    if (File_Check == 0)
-                    {
-
                         FtpWebRequest ftpUpLoadFile = (FtpWebRequest)FtpWebRequest.Create(ftpUploadFullPath);
                         ftpUpLoadFile.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password);
-
                         ftpUpLoadFile.KeepAlive = true;
-
                         ftpUpLoadFile.UseBinary = true;
-
                         ftpUpLoadFile.Method = WebRequestMethods.Ftp.UploadFile;
-
                         FileStream fs = File.OpenRead(file);
-
                         byte[] buffer = new byte[fs.Length];
-
                         fs.Read(buffer, 0, buffer.Length);
-
                         fs.Close();
-
                         Stream ftpstream = ftpUpLoadFile.GetRequestStream();
-
                         ftpstream.Write(buffer, 0, buffer.Length);
-
                         ftpstream.Close();
                         count++;
                         htorderkb.Clear();
@@ -1924,22 +1546,31 @@ namespace Ordermanagement_01
                         htorderkb.Add("@Inserted_By", userid);
                         htorderkb.Add("@Inserted_date", DateTime.Now);
                         dtorderkb = dataaccess.ExecuteSP("Sp_Document_Upload", htorderkb);
-                        Grd_Document_upload_Load();
-                        RefreshView();
                     }
                     else
                     {
-                        MessageBox.Show("File already exist");
+                        throw new WebException("File already exists");
                     }
-
-
-
-
-
                 }
-
+                SplashScreenManager.CloseForm(false);
+                MessageBox.Show(count + " File(s) copied");
+                Grd_Document_upload_Load();
+                RefreshView();
             }
-
+            catch (WebException ex)
+            {
+                SplashScreenManager.CloseForm(false);
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                SplashScreenManager.CloseForm(false);
+                MessageBox.Show("something went wrong");
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm(false);
+            }
         }
 
 
@@ -3858,7 +3489,7 @@ namespace Ordermanagement_01
         {
             try
             {
-                string fileName = DateTime.Now.ToString("yyyyMMddHHmmss") +p;                
+                string fileName = DateTime.Now.ToString("yyyyMMddHHmmss") + p;
                 FileStream outputStream = new FileStream("" + Target_Path + "\\" + fileName, FileMode.Create);
                 FtpWebRequest ftpDownloadReq = (FtpWebRequest)WebRequest.Create(new Uri(File_path));
                 ftpDownloadReq.Method = WebRequestMethods.Ftp.DownloadFile;

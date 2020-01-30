@@ -102,7 +102,7 @@ namespace Ordermanagement_01.New_Dashboard
                         {
                             if (_User_Role_Id == 2)
                             {
-                                Employee.Dashboard dashboard = new Employee.Dashboard(_User_Id, _User_Role_Id);
+                                Employee.Dashboard dashboard = new Employee.Dashboard(_User_Id, _User_Role_Id,_Password);
                                 Invoke(new MethodInvoker(delegate { dashboard.Show(); }));
                             }
                             else

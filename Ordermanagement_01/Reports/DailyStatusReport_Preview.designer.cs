@@ -428,6 +428,7 @@
             this.dateEdit_To_Date = new DevExpress.XtraEditors.DateEdit();
             this.lbl_From_date = new System.Windows.Forms.Label();
             this.dateEdit_From_date = new DevExpress.XtraEditors.DateEdit();
+            this.panel37 = new System.Windows.Forms.Panel();
             this.checkedLstBxCntrl_Branch_Wise = new DevExpress.XtraEditors.CheckedListBoxControl();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.panel38 = new System.Windows.Forms.Panel();
@@ -631,6 +632,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_To_Date.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_From_date.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_From_date.Properties)).BeginInit();
+            this.panel37.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkedLstBxCntrl_Branch_Wise)).BeginInit();
             this.tableLayoutPanel11.SuspendLayout();
             this.panel38.SuspendLayout();
@@ -676,7 +678,6 @@
             // repositoryItemHyperLinkEdit11
             // 
             this.repositoryItemHyperLinkEdit11.AutoHeight = false;
-            this.repositoryItemHyperLinkEdit11.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.repositoryItemHyperLinkEdit11.Name = "repositoryItemHyperLinkEdit11";
             // 
             // repositoryItemHyperLinkEdit7
@@ -5443,7 +5444,7 @@
             this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.92405F));
             this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.07595F));
             this.tableLayoutPanel20.Controls.Add(this.panel4, 0, 0);
-            this.tableLayoutPanel20.Controls.Add(this.checkedLstBxCntrl_Branch_Wise, 1, 0);
+            this.tableLayoutPanel20.Controls.Add(this.panel37, 1, 0);
             this.tableLayoutPanel20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel20.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel20.Name = "tableLayoutPanel20";
@@ -5532,6 +5533,15 @@
             this.dateEdit_From_date.TabIndex = 1;
             this.dateEdit_From_date.EditValueChanged += new System.EventHandler(this.dateEdit_From_date_EditValueChanged);
             // 
+            // panel37
+            // 
+            this.panel37.Controls.Add(this.checkedLstBxCntrl_Branch_Wise);
+            this.panel37.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel37.Location = new System.Drawing.Point(371, 3);
+            this.panel37.Name = "panel37";
+            this.panel37.Size = new System.Drawing.Size(574, 32);
+            this.panel37.TabIndex = 174;
+            // 
             // checkedLstBxCntrl_Branch_Wise
             // 
             this.checkedLstBxCntrl_Branch_Wise.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -5545,7 +5555,7 @@
             new DevExpress.XtraEditors.Controls.CheckedListBoxItem(((short)(0)), "ALL", System.Windows.Forms.CheckState.Checked),
             new DevExpress.XtraEditors.Controls.CheckedListBoxItem("1", "BANGALORE"),
             new DevExpress.XtraEditors.Controls.CheckedListBoxItem("2", "HOSUR")});
-            this.checkedLstBxCntrl_Branch_Wise.Location = new System.Drawing.Point(371, 3);
+            this.checkedLstBxCntrl_Branch_Wise.Location = new System.Drawing.Point(3, 3);
             this.checkedLstBxCntrl_Branch_Wise.LookAndFeel.SkinName = "Office 2010 Blue";
             this.checkedLstBxCntrl_Branch_Wise.LookAndFeel.UseDefaultLookAndFeel = false;
             this.checkedLstBxCntrl_Branch_Wise.MultiColumn = true;
@@ -5943,6 +5953,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_To_Date.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_From_date.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_From_date.Properties)).EndInit();
+            this.panel37.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.checkedLstBxCntrl_Branch_Wise)).EndInit();
             this.tableLayoutPanel11.ResumeLayout(false);
             this.panel38.ResumeLayout(false);
@@ -6362,5 +6373,6 @@
         private System.Windows.Forms.Panel panel39;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel20;
         private DevExpress.XtraEditors.DateEdit dateEdit1;
+        private System.Windows.Forms.Panel panel37;
     }
 }

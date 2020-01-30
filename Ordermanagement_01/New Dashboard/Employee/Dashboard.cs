@@ -62,11 +62,12 @@ namespace Ordermanagement_01.New_Dashboard.Employee
         /// <param name="userId"></param>
         /// <param name="userRoleId"></param>
         /// <param name="productionDate"></param>
-        public Dashboard(int userId, int userRoleId)
+        public Dashboard(int userId, int userRoleId,string password)
         {
             DevExpress.UserSkins.BonusSkins.Register();
             this.userId = userId;
             this.userRoleId = userRoleId;
+            this.Password = password;
             dataaccess = new DataAccess();
             InitializeComponent();
            // KeyDown += new System.Windows.Forms.KeyEventHandler(Dashboard_KeyDown);

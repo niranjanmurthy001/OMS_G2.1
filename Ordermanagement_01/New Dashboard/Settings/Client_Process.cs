@@ -269,11 +269,13 @@ namespace Ordermanagement_01.New_Dashboard.Settings
         }
 
         private async void btn_Submit_Click(object sender, EventArgs e)
-        {                       
+        {
+            Client = Convert.ToInt32(ddl_Client_Names.EditValue);
             if (btn_Submit.Text== "Submit" && validate() != false)
             {
                 try
-                {                    
+                {
+                    
                     DataRowView r1 = checkedListBox_ProjectType.GetItem(checkedListBox_ProjectType.SelectedIndex) as DataRowView;
                     Project_Type = Convert.ToInt32(r1["Project_Type_Id"]);
                     DataRowView r2 = checkedListBox_DeptType.GetItem(checkedListBox_DeptType.SelectedIndex) as DataRowView;
@@ -299,15 +301,16 @@ namespace Ordermanagement_01.New_Dashboard.Settings
                     var data = new StringContent(JsonConvert.SerializeObject(dtmulti), Encoding.UTF8, "application/json");
                     using (var httpClient = new HttpClient())
                     {
-                        var response = await httpClient.PostAsync(Base_Url.Url + "/Client_Process/Insert", data);
+                        var response = await httpClient.PostAsync(Base_Url.Url + "/Master/Insert", data);
                         if (response.IsSuccessStatusCode)
                         {
                             if (response.StatusCode == HttpStatusCode.OK)
                             {
                                 var result = await response.Content.ReadAsStringAsync();
                                 SplashScreenManager.CloseForm(false);
-                                grid_Client_Details();
+                                
                                 XtraMessageBox.Show("Client is Submitted");
+                                grid_Client_Details();
                                 Clear();
                             }
                         }
@@ -343,15 +346,16 @@ namespace Ordermanagement_01.New_Dashboard.Settings
                     var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
                     using (var httpClient = new HttpClient())
                     {
-                        var response = await httpClient.PostAsync(Base_Url.Url + "/Client_Process/Update", data);
+                        var response = await httpClient.PostAsync(Base_Url.Url + "/Master/Update", data);
                         if (response.IsSuccessStatusCode)
                         {
                             if (response.StatusCode == HttpStatusCode.OK)
                             {
                                 var result = await response.Content.ReadAsStringAsync();
                                 SplashScreenManager.CloseForm(false);
-                                grid_Client_Details();
+                              
                                 XtraMessageBox.Show("Client Updated Successfully");
+                                grid_Client_Details();
                                 Clear();                             
                             }
                         }
@@ -395,7 +399,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
                 var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
                 using (var httpClient = new HttpClient())
                 {
-                    var response = await httpClient.PostAsync(Base_Url.Url + "/Client_Process/BindData", data);
+                    var response = await httpClient.PostAsync(Base_Url.Url + "/Master/BindData", data);
                     if (response.IsSuccessStatusCode)
                     {
                         if (response.StatusCode == HttpStatusCode.OK)

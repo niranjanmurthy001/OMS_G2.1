@@ -4447,6 +4447,7 @@
     <None Include="Resources\notify.png" />
     <None Include="Resources\red.png" />
     <None Include="Resources\OrderhistoryIcon.png" />
+    <None Include="Resources\shapes-and-symbols.png" />
     <Content Include="Resources\windowsUIButtonImageOptions1.Image.png" />
     <None Include="Resources\windowsUIButtonImageOptions1.Image1.png" />
     <Content Include="Resources\windowsUIButtonImageOptions2.Image.png" />

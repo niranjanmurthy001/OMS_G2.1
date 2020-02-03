@@ -2130,7 +2130,7 @@ namespace Ordermanagement_01
 
                     this.Invoke(new MethodInvoker(delegate
                     {
-                        lbl_Upload_Orders_Allocate_Count.Text = "UPLOAD       " + "(" + dtOrder_Uploaded.Rows[0]["count"].ToString() + ")";
+                        lbl_Upload_Orders_Allocate_Count.Text = "UPLOAD" + "(" + dtOrder_Uploaded.Rows[0]["count"].ToString() + ")";
                     }));
                 }
                 else
@@ -2177,13 +2177,13 @@ namespace Ordermanagement_01
 
                     this.Invoke(new MethodInvoker(delegate
                     {
-                        lbl_Upload_Order_Work_Count.Text = "UPLOAD     " + "(" + dtqcwork.Rows[0]["count"].ToString() + ")";
+                        lbl_Upload_Order_Work_Count.Text = "UPLOAD" + "(" + dtqcwork.Rows[0]["count"].ToString() + ")";
                     }));
                 }
                 else
                 {
 
-                    lbl_Upload_Order_Work_Count.Text = "UPLOAD     " + "(" + dtqcwork.Rows[0]["count"].ToString() + ")";
+                    lbl_Upload_Order_Work_Count.Text = "UPLOAD" + "(" + dtqcwork.Rows[0]["count"].ToString() + ")";
                 }
                 //}
                 //else if (User_Role_Id == "2")

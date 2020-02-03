@@ -4418,6 +4418,13 @@
     <None Include="Resources\ic_history.png" />
     <None Include="Resources\ic_link.png" />
     <None Include="Resources\ic_search_32.png" />
+    <None Include="Resources\ic_info.png" />
+    <None Include="Resources\ic_info_.png" />
+    <None Include="Resources\ic_info_32.png" />
+    <None Include="Resources\ic_checklist.png" />
+    <None Include="Resources\ic_checklist_32.png" />
+    <None Include="Resources\ic_docs.png" />
+    <None Include="Resources\ic_comments.png" />
     <Content Include="Resources\list.png" />
     <None Include="Resources\list1.png" />
     <None Include="Resources\New_Refresh.png" />

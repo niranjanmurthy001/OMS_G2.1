@@ -883,6 +883,46 @@ namespace Ordermanagement_01.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ic_checklist {
+            get {
+                object obj = ResourceManager.GetObject("ic_checklist", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ic_checklist_32 {
+            get {
+                object obj = ResourceManager.GetObject("ic_checklist_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ic_comments {
+            get {
+                object obj = ResourceManager.GetObject("ic_comments", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ic_docs {
+            get {
+                object obj = ResourceManager.GetObject("ic_docs", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ic_error {
             get {
                 object obj = ResourceManager.GetObject("ic_error", resourceCulture);
@@ -916,6 +956,36 @@ namespace Ordermanagement_01.Properties {
         internal static System.Drawing.Bitmap ic_idle {
             get {
                 object obj = ResourceManager.GetObject("ic_idle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ic_info {
+            get {
+                object obj = ResourceManager.GetObject("ic_info", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ic_info_ {
+            get {
+                object obj = ResourceManager.GetObject("ic_info_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ic_info_32 {
+            get {
+                object obj = ResourceManager.GetObject("ic_info_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

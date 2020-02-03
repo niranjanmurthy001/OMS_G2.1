@@ -130,6 +130,7 @@ namespace Ordermanagement_01.New_Dashboard
             public Nullable<int> Typing_Qc { get; set; }
             public Nullable<int> Final_Qc { get; set; }
             public Nullable<int> Exception { get; set; }
+            public Nullable<int> Upload { get; set; }
 
             public List<Models.Users> Users { get; set; }
             // public List<Models.Dashboard.Processing_Dashboard> Processing_Dashboard { get; set; }            
@@ -477,6 +478,7 @@ namespace Ordermanagement_01.New_Dashboard
                                     Tile_Typing_Qc.Frames[0].Elements[1].Text = Result.Typing_Qc.ToString();
                                     Tile_Final_Qc.Frames[0].Elements[1].Text = Result.Final_Qc.ToString();
                                     Tile_Exception.Frames[0].Elements[1].Text = Result.Exception.ToString();
+                                    Tile_Upload.Frames[0].Elements[1].Text = Result.Upload.ToString();
                                 }
                             }
                         }
@@ -1558,6 +1560,26 @@ namespace Ordermanagement_01.New_Dashboard
                 e.Handled = true;
             }
 
+        }
+
+        private void Tile_Upload_ItemClick(object sender, TileItemEventArgs e)
+        {
+            try
+            {
+                SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
+                Load_Socket_Details();
+                Bind_Order_Detilas_Task_Wise(Tile_Upload.Id, Work_Type_Id);
+
+            }
+            catch (Exception ex)
+            {
+                SplashScreenManager.CloseForm(false);
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm(false);
+            }
         }
 
         private void gridView2_KeyDown(object sender, KeyEventArgs e)

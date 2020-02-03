@@ -1,19 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using System.Globalization;
 using System.Collections;
-using System.Data;
-using Microsoft.Office.Interop.Excel;
-using Excel = Microsoft.Office.Interop.Excel;
 using System.IO;
 using ClosedXML.Excel;
-using System.Web.UI.WebControls;
 
 namespace Ordermanagement_01.Tax
 {
@@ -32,19 +23,6 @@ namespace Ordermanagement_01.Tax
             //User_ID = User_id;
             //Role_Id = User_roleid;
         }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void AddChilds(string sKey)
-        {
-            //TreeNode parentnode;
-           // Tree_View_Report.Nodes[0].Nodes.Add("User Production Report");
-           // Tree_View_Report.ExpandAll();
-        }
-
         private void Tax_Reports_Load(object sender, EventArgs e)
         {
             //string sKeyTemp = "";
@@ -65,7 +43,6 @@ namespace Ordermanagement_01.Tax
             db.Bind_Client_Name_For_Tax_Violation(ddl_Client);           // --------- Code Voilation
            
         }
-
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
             form_loader.Start_progres();
@@ -83,7 +60,6 @@ namespace Ordermanagement_01.Tax
                 }
             }
         }
-
         private bool validate_My_Report()
         {
             System.Windows.Forms.TreeNode tn = Tree_View_Report.SelectedNode;
@@ -100,7 +76,6 @@ namespace Ordermanagement_01.Tax
             }
 
         }
-
         private void Load_User_Production_Report()
         {
             DateTime Fromdate = Convert.ToDateTime(txt_Fromdate.Text.ToString());
@@ -213,7 +188,7 @@ namespace Ordermanagement_01.Tax
                 Grd_OrderTime.DataSource = null;
                 Grd_OrderTime.AutoGenerateColumns = false;
 
-                Grd_OrderTime.ColumnCount = 23;
+                Grd_OrderTime.ColumnCount = 24;
                 //Grd_OrderTime.Rows.Add();
                 Grd_OrderTime.Columns[0].Name = "Orderid";
                 Grd_OrderTime.Columns[0].HeaderText = "Order Id";
@@ -241,7 +216,11 @@ namespace Ordermanagement_01.Tax
                 Grd_OrderTime.Columns[4].HeaderText = "Subprocess_Number";
                 Grd_OrderTime.Columns[4].DataPropertyName = "Subprocess_Number";
                 Grd_OrderTime.Columns[4].Width = 120;
-                
+
+                Grd_OrderTime.Columns[5].Name = "Client_Order_Ref";
+                Grd_OrderTime.Columns[5].HeaderText = "Client Order Ref No";
+                Grd_OrderTime.Columns[5].DataPropertyName = "Client_Order_Ref";
+                Grd_OrderTime.Columns[5].Width = 300;
                 //else  if (Role_Id==1)
                 //{
 
@@ -250,7 +229,7 @@ namespace Ordermanagement_01.Tax
                 //    Grd_OrderTime.Columns[3].HeaderText = "Client_Name";
                 //    Grd_OrderTime.Columns[3].DataPropertyName = "Client_Name";
                 //    Grd_OrderTime.Columns[3].Width = 120;
-                                          
+
                 //    Grd_OrderTime.Columns[4].Name = "Sub_ProcessName";
                 //    Grd_OrderTime.Columns[4].HeaderText = "Sub_ProcessName";
                 //    Grd_OrderTime.Columns[4].DataPropertyName = "Client_Name";
@@ -259,99 +238,99 @@ namespace Ordermanagement_01.Tax
 
 
 
-                Grd_OrderTime.Columns[5].Name = "Borrower_Name";
-                Grd_OrderTime.Columns[5].HeaderText = "Name";
-                Grd_OrderTime.Columns[5].DataPropertyName = "Borrower_Name";
-                Grd_OrderTime.Columns[5].Width = 300;
-
-                Grd_OrderTime.Columns[6].Name = "Address";
-                Grd_OrderTime.Columns[6].HeaderText = "Address";
-                Grd_OrderTime.Columns[6].DataPropertyName = "Address";
+                Grd_OrderTime.Columns[6].Name = "Borrower_Name";
+                Grd_OrderTime.Columns[6].HeaderText = "Name";
+                Grd_OrderTime.Columns[6].DataPropertyName = "Borrower_Name";
                 Grd_OrderTime.Columns[6].Width = 300;
 
-                Grd_OrderTime.Columns[7].Name = "APN";
-                Grd_OrderTime.Columns[7].HeaderText = "Parcel ID";
-                Grd_OrderTime.Columns[7].DataPropertyName = "APN";
-                Grd_OrderTime.Columns[7].Width = 150;
+                Grd_OrderTime.Columns[7].Name = "Address";
+                Grd_OrderTime.Columns[7].HeaderText = "Address";
+                Grd_OrderTime.Columns[7].DataPropertyName = "Address";
+                Grd_OrderTime.Columns[7].Width = 300;
 
-                Grd_OrderTime.Columns[8].Name = "State";
-                Grd_OrderTime.Columns[8].HeaderText = "State";
-                Grd_OrderTime.Columns[8].DataPropertyName = "State";
-                Grd_OrderTime.Columns[8].Width = 200;
+                Grd_OrderTime.Columns[8].Name = "APN";
+                Grd_OrderTime.Columns[8].HeaderText = "Parcel ID";
+                Grd_OrderTime.Columns[8].DataPropertyName = "APN";
+                Grd_OrderTime.Columns[8].Width = 150;
 
-                Grd_OrderTime.Columns[9].Name = "County";
-                Grd_OrderTime.Columns[9].HeaderText = "County";
-                Grd_OrderTime.Columns[9].DataPropertyName = "County";
+                Grd_OrderTime.Columns[9].Name = "State";
+                Grd_OrderTime.Columns[9].HeaderText = "State";
+                Grd_OrderTime.Columns[9].DataPropertyName = "State";
                 Grd_OrderTime.Columns[9].Width = 200;
 
-                Grd_OrderTime.Columns[10].Name = "Tax_Task";
-                Grd_OrderTime.Columns[10].HeaderText = "Task";
-                Grd_OrderTime.Columns[10].DataPropertyName = "Tax_Task";
-                Grd_OrderTime.Columns[10].Width = 150;
+                Grd_OrderTime.Columns[10].Name = "County";
+                Grd_OrderTime.Columns[10].HeaderText = "County";
+                Grd_OrderTime.Columns[10].DataPropertyName = "County";
+                Grd_OrderTime.Columns[10].Width = 200;
 
-                Grd_OrderTime.Columns[11].Name = "Tax_Status";
-                Grd_OrderTime.Columns[11].HeaderText = "Status";
-                Grd_OrderTime.Columns[11].DataPropertyName = "Tax_Status";
+                Grd_OrderTime.Columns[11].Name = "Tax_Task";
+                Grd_OrderTime.Columns[11].HeaderText = "Task";
+                Grd_OrderTime.Columns[11].DataPropertyName = "Tax_Task";
                 Grd_OrderTime.Columns[11].Width = 150;
 
-                Grd_OrderTime.Columns[12].Name = "Progress_Status";
-                Grd_OrderTime.Columns[12].HeaderText = "SEARCH ORDER STATUS";
-                Grd_OrderTime.Columns[12].DataPropertyName = "Progress_Status";
+                Grd_OrderTime.Columns[12].Name = "Tax_Status";
+                Grd_OrderTime.Columns[12].HeaderText = "Status";
+                Grd_OrderTime.Columns[12].DataPropertyName = "Tax_Status";
                 Grd_OrderTime.Columns[12].Width = 150;
 
-
-                Grd_OrderTime.Columns[13].Name = "Completed_Date";
-                Grd_OrderTime.Columns[13].HeaderText = "Completed Date";
-                Grd_OrderTime.Columns[13].DataPropertyName = "Completed_Date";
+                Grd_OrderTime.Columns[13].Name = "Progress_Status";
+                Grd_OrderTime.Columns[13].HeaderText = "SEARCH ORDER STATUS";
+                Grd_OrderTime.Columns[13].DataPropertyName = "Progress_Status";
                 Grd_OrderTime.Columns[13].Width = 150;
 
-                Grd_OrderTime.Columns[14].Name = "Agent_User_Name";
-                Grd_OrderTime.Columns[14].HeaderText = "Processor";
-                Grd_OrderTime.Columns[14].DataPropertyName = "Agent_User_Name";
+
+                Grd_OrderTime.Columns[14].Name = "Completed_Date";
+                Grd_OrderTime.Columns[14].HeaderText = "Completed Date";
+                Grd_OrderTime.Columns[14].DataPropertyName = "Completed_Date";
                 Grd_OrderTime.Columns[14].Width = 150;
 
-                Grd_OrderTime.Columns[15].Name = "Qucier_User_Name";
-                Grd_OrderTime.Columns[15].HeaderText = "QC'er";
-                Grd_OrderTime.Columns[15].DataPropertyName = "Qucier_User_Name";
-                Grd_OrderTime.Columns[15].Width = 160;
+                Grd_OrderTime.Columns[15].Name = "Agent_User_Name";
+                Grd_OrderTime.Columns[15].HeaderText = "Processor";
+                Grd_OrderTime.Columns[15].DataPropertyName = "Agent_User_Name";
+                Grd_OrderTime.Columns[15].Width = 150;
 
-                Grd_OrderTime.Columns[16].Name = "Agent_User_Comments";
-                Grd_OrderTime.Columns[16].HeaderText = "Processor Comments";
-                Grd_OrderTime.Columns[16].DataPropertyName = "Agent_User_Comments";
+                Grd_OrderTime.Columns[16].Name = "Qucier_User_Name";
+                Grd_OrderTime.Columns[16].HeaderText = "QC'er";
+                Grd_OrderTime.Columns[16].DataPropertyName = "Qucier_User_Name";
                 Grd_OrderTime.Columns[16].Width = 160;
 
-                Grd_OrderTime.Columns[17].Name = "Qucier_Comments";
-                Grd_OrderTime.Columns[17].HeaderText = "QC'er Comments";
-                Grd_OrderTime.Columns[17].DataPropertyName = "Qucier_Comments";
+                Grd_OrderTime.Columns[17].Name = "Agent_User_Comments";
+                Grd_OrderTime.Columns[17].HeaderText = "Processor Comments";
+                Grd_OrderTime.Columns[17].DataPropertyName = "Agent_User_Comments";
                 Grd_OrderTime.Columns[17].Width = 160;
 
+                Grd_OrderTime.Columns[18].Name = "Qucier_Comments";
+                Grd_OrderTime.Columns[18].HeaderText = "QC'er Comments";
+                Grd_OrderTime.Columns[18].DataPropertyName = "Qucier_Comments";
+                Grd_OrderTime.Columns[18].Width = 160;
 
-                Grd_OrderTime.Columns[18].Name = "Error_Status";
-                Grd_OrderTime.Columns[18].HeaderText = "Error";
-                Grd_OrderTime.Columns[18].DataPropertyName = "Error_Status";
-                Grd_OrderTime.Columns[18].Width = 120;
 
-                Grd_OrderTime.Columns[19].Name = "Error_Note";
-                Grd_OrderTime.Columns[19].HeaderText = "Error Note";
-                Grd_OrderTime.Columns[19].DataPropertyName = "Error_Note";
+                Grd_OrderTime.Columns[19].Name = "Error_Status";
+                Grd_OrderTime.Columns[19].HeaderText = "Error";
+                Grd_OrderTime.Columns[19].DataPropertyName = "Error_Status";
                 Grd_OrderTime.Columns[19].Width = 120;
 
-                Grd_OrderTime.Columns[20].Name = "Tax_Order_Source";
-                Grd_OrderTime.Columns[20].HeaderText = "Order Source";
-                Grd_OrderTime.Columns[20].DataPropertyName = "Tax_Order_Source";
+                Grd_OrderTime.Columns[20].Name = "Error_Note";
+                Grd_OrderTime.Columns[20].HeaderText = "Error Note";
+                Grd_OrderTime.Columns[20].DataPropertyName = "Error_Note";
                 Grd_OrderTime.Columns[20].Width = 120;
 
-
-                Grd_OrderTime.Columns[21].Name = "Tax_Order_Source_Details";
-                Grd_OrderTime.Columns[21].HeaderText = "Source Details";
-                Grd_OrderTime.Columns[21].DataPropertyName = "Tax_Order_Source_Details";
+                Grd_OrderTime.Columns[21].Name = "Tax_Order_Source";
+                Grd_OrderTime.Columns[21].HeaderText = "Order Source";
+                Grd_OrderTime.Columns[21].DataPropertyName = "Tax_Order_Source";
                 Grd_OrderTime.Columns[21].Width = 120;
 
 
-                Grd_OrderTime.Columns[22].Name = "Delq_Status";
-                Grd_OrderTime.Columns[22].HeaderText = "Deliquent Status";
-                Grd_OrderTime.Columns[22].DataPropertyName = "Delq_Status";
+                Grd_OrderTime.Columns[22].Name = "Tax_Order_Source_Details";
+                Grd_OrderTime.Columns[22].HeaderText = "Source Details";
+                Grd_OrderTime.Columns[22].DataPropertyName = "Tax_Order_Source_Details";
                 Grd_OrderTime.Columns[22].Width = 120;
+
+
+                Grd_OrderTime.Columns[23].Name = "Delq_Status";
+                Grd_OrderTime.Columns[23].HeaderText = "Deliquent Status";
+                Grd_OrderTime.Columns[23].DataPropertyName = "Delq_Status";
+                Grd_OrderTime.Columns[23].Width = 120;
 
 
                 Grd_OrderTime.DataSource = dt_Status;
@@ -366,26 +345,24 @@ namespace Ordermanagement_01.Tax
 
             }
         }
-
-        private System.Data.DataTable GetTransposedTable(System.Data.DataTable dt_orders)
-        {
-            System.Data.DataTable newTable = new System.Data.DataTable();
-            newTable.Columns.Add(new DataColumn("0", typeof(string)));
-            for (int i = 0; i < dt_orders.Columns.Count; i++)
-            {
-                DataRow newRow = newTable.NewRow();
-                newRow[0] = dt_orders.Columns[i].ColumnName;
-                for (int j = 1; j <= dt_orders.Rows.Count; j++)
-                {
-                    if (newTable.Columns.Count < dt_orders.Rows.Count + 1)
-                        newTable.Columns.Add(new DataColumn(j.ToString(), typeof(string)));
-                    newRow[j] = dt_orders.Rows[j - 1][i];
-                }
-                newTable.Rows.Add(newRow);
-            }
-            return newTable;
-        } 
- 
+        //private DataTable GetTransposedTable(System.Data.DataTable dt_orders)
+        //{
+        //    System.Data.DataTable newTable = new System.Data.DataTable();
+        //    newTable.Columns.Add(new DataColumn("0", typeof(string)));
+        //    for (int i = 0; i < dt_orders.Columns.Count; i++)
+        //    {
+        //        DataRow newRow = newTable.NewRow();
+        //        newRow[0] = dt_orders.Columns[i].ColumnName;
+        //        for (int j = 1; j <= dt_orders.Rows.Count; j++)
+        //        {
+        //            if (newTable.Columns.Count < dt_orders.Rows.Count + 1)
+        //                newTable.Columns.Add(new DataColumn(j.ToString(), typeof(string)));
+        //            newRow[j] = dt_orders.Rows[j - 1][i];
+        //        }
+        //        newTable.Rows.Add(newRow);
+        //    }
+        //    return newTable;
+        //}  
         private void Load_User_Code_Violation_Report()
         {
             Hashtable ht_Status = new Hashtable();
@@ -610,7 +587,6 @@ namespace Ordermanagement_01.Tax
                 }
           
         }
-
         private void btn_Export_Click(object sender, EventArgs e)
         {
 
@@ -625,7 +601,6 @@ namespace Ordermanagement_01.Tax
                 MessageBox.Show("Refresh The Report and Export");
             }
         }
-
         private void Export_ReportData()
         {
             System.Data.DataTable dt = new System.Data.DataTable();
@@ -702,7 +677,6 @@ namespace Ordermanagement_01.Tax
             }
             System.Diagnostics.Process.Start(Path1);
         }
-
         private void Tree_View_Report_AfterSelect(object sender, TreeViewEventArgs e)
         {
             if (Tree_View_Report.SelectedNode.Index == 0)
@@ -759,18 +733,7 @@ namespace Ordermanagement_01.Tax
                 db.Bind_Client_Name_For_Tax_Violation(ddl_Client);
 
             }
-        }
-
-        private void rbtn_Recived_Date_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void rbtn_Completed_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        }       
         private void ddl_Client_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (Lbl_Title.Text == "EXTERNAL PRODUCTION REPORT")
@@ -813,9 +776,5 @@ namespace Ordermanagement_01.Tax
             }
 
         }
-
-
-
-
     }
 }

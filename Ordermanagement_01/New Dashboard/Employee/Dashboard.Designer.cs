@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions1 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
             DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange1 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
             DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange2 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
@@ -129,7 +130,7 @@
             this.arcScaleRangeBarComponent2 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleRangeBarComponent();
             this.circularGauge2 = new DevExpress.XtraGauges.Win.Gauges.Circular.CircularGauge();
             this.arcScaleBackgroundLayerComponent2 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleBackgroundLayerComponent();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.groupControlDashboard)).BeginInit();
             this.groupControlDashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -1115,7 +1116,7 @@
             // 
             this.pictureEditProfile.Cursor = System.Windows.Forms.Cursors.Default;
             this.pictureEditProfile.EditValue = ((object)(resources.GetObject("pictureEditProfile.EditValue")));
-            this.pictureEditProfile.Location = new System.Drawing.Point(0, 0);
+            this.pictureEditProfile.Location = new System.Drawing.Point(16, 14);
             this.pictureEditProfile.MaximumSize = new System.Drawing.Size(114, 97);
             this.pictureEditProfile.Name = "pictureEditProfile";
             this.pictureEditProfile.Properties.AllowFocused = false;
@@ -1127,7 +1128,7 @@
             this.pictureEditProfile.Properties.Name = "pictureEdit1";
             this.pictureEditProfile.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEditProfile.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.pictureEditProfile.Size = new System.Drawing.Size(114, 97);
+            this.pictureEditProfile.Size = new System.Drawing.Size(105, 97);
             this.pictureEditProfile.TabIndex = 10;
             // 
             // groupControlQueue

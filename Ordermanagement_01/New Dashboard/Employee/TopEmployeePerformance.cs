@@ -247,8 +247,8 @@ namespace Ordermanagement_01.New_Dashboard.Employee
 
         private void lbl_AccuracySpeed_Click(object sender, EventArgs e)
         {
-            Efficiency_Summary summary = new Efficiency_Summary(userId, userRoleId, productionDate.ToString());
-            summary.Show();
+           // Efficiency_Summary summary = new Efficiency_Summary(userId, userRoleId, productionDate.ToString());
+            //summary.Show();
         }
         private Image GetImage(string fileName)
         {

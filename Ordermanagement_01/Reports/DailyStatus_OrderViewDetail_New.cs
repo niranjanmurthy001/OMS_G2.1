@@ -110,14 +110,15 @@ namespace Ordermanagement_01
                         if (vie.Row["Order_Comments"] != null || vie.Row["Status_Comments"] != null || vie.Row["Permission_Comments"] != null || vie.Row["Tax_Task"] != null || vie.Row["Tax_Task_Id"] != null || vie.Row["Assigned_Date"] !=null)
                         {
                             string Comments = vie.Row["Order_Comments"].ToString();
-                            if (Comments != "" )
-                            {
-                                string Order_Number = vie.Row["Client_Order_Number"].ToString();
-                                bs.Append(Order_Number.ToString());
-                                bs.AppendLine();
+                            //if (Comments != "" )
+                            //{
+                               
                                                               
                                 if (Comments != "")
                                 {
+                                    string Order_Number = vie.Row["Client_Order_Number"].ToString();
+                                    bs.Append(Order_Number.ToString());
+                                    bs.AppendLine();
                                     bs.AppendLine();
                                     (bs.Append(Comments.ToString().TrimStart('@')).AppendLine()).ToString();
                                 }                                
@@ -150,7 +151,7 @@ namespace Ordermanagement_01
                                         bs.Append("--".ToString());
                                         bs.Append(AssignedDate.ToString());
                                     }
-                                }                               
+                                //}                               
                                 string _str = bs.Replace("@", Environment.NewLine + Environment.NewLine).ToString();
                                 toolTipController1.ShowHint(_str);
                             }

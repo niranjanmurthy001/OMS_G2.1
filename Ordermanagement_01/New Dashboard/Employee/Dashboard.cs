@@ -21,12 +21,7 @@ using static Ordermanagement_01.New_Dashboard.New_Dashboard;
 using System.Runtime.InteropServices;
 using Ordermanagement_01.Properties;
 using Ordermanagement_01.Masters;
-using System.Data.SqlClient;
 using System.IO;
-using System.Drawing.Drawing2D;
-using Ordermanagement_01.New_Dashboard.Employee;
-using System.Windows.Input;
-using DocumentFormat.OpenXml.Office2013.PowerPoint.Roaming;
 
 namespace Ordermanagement_01.New_Dashboard.Employee
 {
@@ -39,8 +34,10 @@ namespace Ordermanagement_01.New_Dashboard.Employee
         private readonly DataAccess dataaccess;
         private int Day, Hour, Current_Holiday, Previous_Holiday, Prv_day;
         private System.Threading.Timer timer;
+        private System.Threading.Timer timer1;
         private int mCounter;
         private int timeDifference;
+        byte[] bimage;
         [DllImport("user32")]
         static extern IntPtr GetSystemMenu(IntPtr hWnd, bool bRevert);
         [DllImport("user32")]
@@ -50,11 +47,12 @@ namespace Ordermanagement_01.New_Dashboard.Employee
         const int MF_DISABLED = 2;
         const int SC_CLOSE = 0xF060;
         private DataSet ds;
-        private byte[] bimage;
-         public  int i;
 
-
-      public string Password;
+         public  int i;     
+        private int BranchId;
+        private int ShiftType;
+        private byte[] image;
+        private string Password;
 
         /// <summary>
         /// Employee Dashboard
@@ -62,12 +60,15 @@ namespace Ordermanagement_01.New_Dashboard.Employee
         /// <param name="userId"></param>
         /// <param name="userRoleId"></param>
         /// <param name="productionDate"></param>
-        public Dashboard(int userId, int userRoleId,string password)
+        public Dashboard(int userId, int userRoleId,string password, int BranchId, int ShiftType)
         {
             DevExpress.UserSkins.BonusSkins.Register();
             this.userId = userId;
             this.userRoleId = userRoleId;
-            this.Password = password;
+            this.Password = password;          
+            this.BranchId = BranchId;
+         
+            this.ShiftType = ShiftType;
             dataaccess = new DataAccess();
             InitializeComponent();
            // KeyDown += new System.Windows.Forms.KeyEventHandler(Dashboard_KeyDown);
@@ -102,8 +103,14 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                 {
                     await IdleProductionTimeUpdateAsync();
                     await UpdateLoginDateAsync();
+                    
                 }, null, TimeSpan.FromSeconds(1), TimeSpan.FromMinutes(1));
                 //_originalImage = pictureEditProfile.Image.Clone() as Image;
+                timer1=new System.Threading.Timer( async b =>
+                {
+                     await BindToPemployeePerformnace();
+
+                }, null, TimeSpan.FromSeconds(1), TimeSpan.FromHours(1));
             }
             catch (Exception ex)
             {
@@ -1243,7 +1250,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                             }
                             if (pictureEditProfile.Image == null && !string.IsNullOrEmpty(user.EmployeeImage))
                             {
-                                byte[] bimage = Convert.FromBase64String(user.EmployeeImage);
+                                bimage = Convert.FromBase64String(user.EmployeeImage);
                                 MemoryStream ms = new MemoryStream(bimage, 0, bimage.Length);
                                 ms.Write(bimage, 0, bimage.Length);
                                 pictureEditProfile.Image = GetDataToImage((byte[])bimage);
@@ -1668,7 +1675,27 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                 throw ex;
             }
 
-        }     
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
+                Ordermanagement_01.New_Dashboard.Employee.TopEmployeePerformance top = new TopEmployeePerformance(userId, productionDate, BranchId, ShiftType, bimage);
+                top.Show();
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm(false);
+            }
+            }
+
+
         private void link_Order_Count_Click(object sender, EventArgs e)
         {
             try
@@ -2230,5 +2257,24 @@ namespace Ordermanagement_01.New_Dashboard.Employee
             public string Argument { get; set; }
             public double Value { get; set; }
         }
+        private async Task  BindToPemployeePerformnace()
+        {
+            try
+            {
+                SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
+                if (Application.OpenForms["TopEmployeePerformance"] != null) return;
+                Ordermanagement_01.New_Dashboard.Employee.TopEmployeePerformance TopEff = new TopEmployeePerformance(userId, productionDate, BranchId, ShiftType, bimage);
+                Invoke(new MethodInvoker(delegate { TopEff.Show(); }));
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm(false);
+            }
+            }
+
     }
 }

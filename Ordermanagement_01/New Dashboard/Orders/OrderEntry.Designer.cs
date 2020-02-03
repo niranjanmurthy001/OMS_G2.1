@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
@@ -143,7 +142,7 @@
             this.gridControl6 = new DevExpress.XtraGrid.GridControl();
             this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.emptySpaceItem9 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.textEdit21 = new DevExpress.XtraEditors.TextEdit();
@@ -274,13 +273,13 @@
             this.Window_Ui_Btn_View_List.AppearanceButton.Pressed.BackColor = System.Drawing.Color.Gainsboro;
             this.Window_Ui_Btn_View_List.AppearanceButton.Pressed.Options.UseBackColor = true;
             this.Window_Ui_Btn_View_List.BackColor = System.Drawing.Color.Transparent;
-            windowsUIButtonImageOptions1.ImageUri.Uri = "Columns;GrayScaled";
-            windowsUIButtonImageOptions2.Image = global::Ordermanagement_01.Properties.Resources.checklist;
+            windowsUIButtonImageOptions1.Image = global::Ordermanagement_01.Properties.Resources.ic_info_32;
+            windowsUIButtonImageOptions2.Image = global::Ordermanagement_01.Properties.Resources.ic_checklist_32;
             windowsUIButtonImageOptions3.Image = global::Ordermanagement_01.Properties.Resources.ic_history;
-            windowsUIButtonImageOptions4.ImageUri.Uri = "Preview;Size32x32;GrayScaled";
+            windowsUIButtonImageOptions4.Image = global::Ordermanagement_01.Properties.Resources.ic_docs;
             windowsUIButtonImageOptions5.Image = global::Ordermanagement_01.Properties.Resources.ic_link;
             windowsUIButtonImageOptions6.Image = global::Ordermanagement_01.Properties.Resources.ic_search_32;
-            windowsUIButtonImageOptions7.ImageUri.Uri = "BringToFrontOfText;GrayScaled";
+            windowsUIButtonImageOptions7.Image = global::Ordermanagement_01.Properties.Resources.ic_comments;
             this.Window_Ui_Btn_View_List.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("Instructions", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.CheckButton, "", -1, true, null, true, false, true, "Instructions", -1, false),
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("CheckList", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.CheckButton, "", -1, true, null, true, false, true, "CheckList", -1, false),
@@ -542,7 +541,7 @@
             // 
             // textEdit9
             // 
-            this.textEdit9.Location = new System.Drawing.Point(130, 323);
+            this.textEdit9.Location = new System.Drawing.Point(125, 299);
             this.textEdit9.MinimumSize = new System.Drawing.Size(170, 25);
             this.textEdit9.Name = "textEdit9";
             this.textEdit9.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -556,7 +555,7 @@
             // 
             // textEdit19
             // 
-            this.textEdit19.Location = new System.Drawing.Point(440, 323);
+            this.textEdit19.Location = new System.Drawing.Point(435, 299);
             this.textEdit19.MinimumSize = new System.Drawing.Size(170, 25);
             this.textEdit19.Name = "textEdit19";
             this.textEdit19.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -570,7 +569,7 @@
             // 
             // textEdit23
             // 
-            this.textEdit23.Location = new System.Drawing.Point(750, 323);
+            this.textEdit23.Location = new System.Drawing.Point(745, 299);
             this.textEdit23.MinimumSize = new System.Drawing.Size(170, 25);
             this.textEdit23.Name = "textEdit23";
             this.textEdit23.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -584,7 +583,7 @@
             // 
             // textEdit10
             // 
-            this.textEdit10.Location = new System.Drawing.Point(130, 354);
+            this.textEdit10.Location = new System.Drawing.Point(125, 330);
             this.textEdit10.MinimumSize = new System.Drawing.Size(170, 25);
             this.textEdit10.Name = "textEdit10";
             this.textEdit10.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -599,7 +598,7 @@
             // textEdit20
             // 
             this.textEdit20.EditValue = null;
-            this.textEdit20.Location = new System.Drawing.Point(440, 354);
+            this.textEdit20.Location = new System.Drawing.Point(435, 330);
             this.textEdit20.MinimumSize = new System.Drawing.Size(170, 25);
             this.textEdit20.Name = "textEdit20";
             this.textEdit20.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -621,7 +620,7 @@
             // textEdit24
             // 
             this.textEdit24.EditValue = null;
-            this.textEdit24.Location = new System.Drawing.Point(750, 354);
+            this.textEdit24.Location = new System.Drawing.Point(745, 330);
             this.textEdit24.MinimumSize = new System.Drawing.Size(170, 25);
             this.textEdit24.Name = "textEdit24";
             this.textEdit24.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -645,7 +644,7 @@
             this.simpleButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton3.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton3.Appearance.Options.UseFont = true;
-            this.simpleButton3.Location = new System.Drawing.Point(830, 415);
+            this.simpleButton3.Location = new System.Drawing.Point(825, 391);
             this.simpleButton3.MaximumSize = new System.Drawing.Size(0, 30);
             this.simpleButton3.MinimumSize = new System.Drawing.Size(0, 30);
             this.simpleButton3.Name = "simpleButton3";
@@ -659,7 +658,7 @@
             this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Location = new System.Drawing.Point(712, 415);
+            this.simpleButton1.Location = new System.Drawing.Point(707, 391);
             this.simpleButton1.MaximumSize = new System.Drawing.Size(0, 30);
             this.simpleButton1.MinimumSize = new System.Drawing.Size(0, 30);
             this.simpleButton1.Name = "simpleButton1";
@@ -740,7 +739,7 @@
             // 
             // lookUpEdit2
             // 
-            this.lookUpEdit2.Location = new System.Drawing.Point(440, 385);
+            this.lookUpEdit2.Location = new System.Drawing.Point(435, 361);
             this.lookUpEdit2.MinimumSize = new System.Drawing.Size(170, 25);
             this.lookUpEdit2.Name = "lookUpEdit2";
             this.lookUpEdit2.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -754,7 +753,7 @@
             // 
             // textEdit3
             // 
-            this.textEdit3.Location = new System.Drawing.Point(750, 385);
+            this.textEdit3.Location = new System.Drawing.Point(745, 361);
             this.textEdit3.MinimumSize = new System.Drawing.Size(170, 25);
             this.textEdit3.Name = "textEdit3";
             this.textEdit3.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -765,7 +764,7 @@
             // 
             // lookUpEdit3
             // 
-            this.lookUpEdit3.Location = new System.Drawing.Point(130, 385);
+            this.lookUpEdit3.Location = new System.Drawing.Point(125, 361);
             this.lookUpEdit3.MinimumSize = new System.Drawing.Size(170, 25);
             this.lookUpEdit3.Name = "lookUpEdit3";
             this.lookUpEdit3.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -785,7 +784,7 @@
             this.layoutControlGroup3,
             this.layoutControlGroupAdditional});
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(961, 463);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(961, 333);
             this.layoutControlGroup1.Spacing = new DevExpress.XtraLayout.Utils.Padding(1, 1, 1, 1);
             this.layoutControlGroup1.TextVisible = false;
             // 
@@ -1130,6 +1129,7 @@
             this.layoutControlGroupAdditional.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlGroupAdditional.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlGroupAdditional.ExpandButtonVisible = true;
+            this.layoutControlGroupAdditional.Expanded = false;
             this.layoutControlGroupAdditional.ExpandOnDoubleClick = true;
             this.layoutControlGroupAdditional.HeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
             this.layoutControlGroupAdditional.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
@@ -1142,7 +1142,7 @@
             this.layoutControlGroupAdditional.Name = "layoutControlGroupAdditional";
             this.layoutControlGroupAdditional.OptionsItemText.TextToControlDistance = 4;
             this.layoutControlGroupAdditional.Padding = new DevExpress.XtraLayout.Utils.Padding(3, 3, 3, 3);
-            this.layoutControlGroupAdditional.Size = new System.Drawing.Size(939, 156);
+            this.layoutControlGroupAdditional.Size = new System.Drawing.Size(939, 26);
             this.layoutControlGroupAdditional.Spacing = new DevExpress.XtraLayout.Utils.Padding(1, 1, 1, 1);
             this.layoutControlGroupAdditional.Text = "Additional Details";
             // 

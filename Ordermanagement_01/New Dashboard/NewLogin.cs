@@ -31,6 +31,11 @@ namespace Ordermanagement_01.New_Dashboard
         string _Password;
         string URL = "";
         string data;
+         string productionDate;
+        int _Branch_Id;
+        int _ShiftType;
+
+
         Models.Users _User_det = new Models.Users();
 
         private bool IsClicked = false;
@@ -75,7 +80,7 @@ namespace Ordermanagement_01.New_Dashboard
 
             _User_det.DRN_Emp_Code = _Emp_Code;
             _User_det.Password = _Password;
-
+            
             using (var Client = new HttpClient())
             {
 
@@ -87,7 +92,7 @@ namespace Ordermanagement_01.New_Dashboard
                 {
                     var UserJsonString = await result.Content.ReadAsStringAsync();
                     var objResultData = JsonConvert.DeserializeObject<Result_Data>(UserJsonString);
-                    if (objResultData.Users != null && objResultData.Users.Count > 0)
+                             if (objResultData.Users != null && objResultData.Users.Count > 0)
                     {
                         List<Models.Users> _Rlist_data = objResultData.Users.ToList();
                         //if (_Result == 0)
@@ -97,12 +102,13 @@ namespace Ordermanagement_01.New_Dashboard
                         _User_Role_Id = _Rlist_data[0].User_RoleId;
                         _User_Name = _Rlist_data[0].DRN_Emp_Code;
                         _Employee_Name = _Rlist_data[0].Employee_Name;
-
+                        _ShiftType = _Rlist_data[0].Shift_Type_Id;
+                        _Branch_Id = _Rlist_data[0].Branch_ID;
                         if (_Application_Login_Type == 1)
                         {
                             if (_User_Role_Id == 2)
                             {
-                                Employee.Dashboard dashboard = new Employee.Dashboard(_User_Id, _User_Role_Id,_Password);
+                                Employee.Dashboard dashboard = new Employee.Dashboard(_User_Id, _User_Role_Id,_Password,_Branch_Id,_ShiftType);
                                 Invoke(new MethodInvoker(delegate { dashboard.Show(); }));
                             }
                             else

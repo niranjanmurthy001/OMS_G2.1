@@ -8458,12 +8458,13 @@ namespace Ordermanagement_01
                         if (SESSSION_ORDER_TYPE == "Final QC")
                         {
                             ddl_order_Task.Items.Insert(0, "Exception");
-                            ddl_order_Task.Items.Insert(1, "Upload Completed");
+                            ddl_order_Task.Items.Insert(1, "Upload");
+                            ddl_order_Task.Items.Insert(2, "Upload Completed");
                         }
                         if (SESSSION_ORDER_TYPE == "Exception")
                         {
-
-                            ddl_order_Task.Items.Insert(0, "Upload Completed");
+                            ddl_order_Task.Items.Insert(0, "Upload");
+                            ddl_order_Task.Items.Insert(1, "Upload Completed");
                         }
                         if (SESSSION_ORDER_TYPE == "Search Tax Request")
                         {
@@ -8553,17 +8554,19 @@ namespace Ordermanagement_01
                         if (SESSSION_ORDER_TYPE == "Upload")
                         {
                             ddl_order_Task.Items.Insert(0, "Final QC");
+                       
                             ddl_order_Task.Items.Insert(1, "Upload Completed");
                         }
                         if (SESSSION_ORDER_TYPE == "Final QC")
                         {
                             ddl_order_Task.Items.Insert(0, "Exception");
-                            ddl_order_Task.Items.Insert(1, "Upload Completed");
+                            ddl_order_Task.Items.Insert(1, "Upload");
+                            ddl_order_Task.Items.Insert(2, "Upload Completed");
                         }
                         if (SESSSION_ORDER_TYPE == "Exception")
                         {
-
-                            ddl_order_Task.Items.Insert(0, "Upload Completed");
+                            ddl_order_Task.Items.Insert(0, "Upload");
+                            ddl_order_Task.Items.Insert(1, "Upload Completed");
                         }
                         if (SESSSION_ORDER_TYPE == "Search Tax Request")
                         {

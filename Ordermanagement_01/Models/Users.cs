@@ -16,6 +16,8 @@ namespace Ordermanagement_01.Models
         public int Job_Role_Id { get; set; }
         public int Application_Login_Type { get; set; }
         public string DRN_Emp_Code { get; set; }
+        public int Shift_Type_Id { get; set; }
+        public int Branch_ID { get; set; }
 
 
     }

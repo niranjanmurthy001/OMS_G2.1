@@ -2135,7 +2135,7 @@ namespace Ordermanagement_01
                 }
                 else
                 {
-
+                    lbl_Upload_Orders_Allocate_Count.Text = "UPLOAD" + "(" + dtOrder_Uploaded.Rows[0]["count"].ToString() + ")";
                 }
 
                 //}

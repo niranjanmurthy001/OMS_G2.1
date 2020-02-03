@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using System.Data;
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using DevExpress.XtraLayout.Utils;
 using DevExpress.XtraLayout;
@@ -15,12 +16,12 @@ namespace Ordermanagement_01.New_Dashboard.Orders
             InitializeComponent();
         }
 
-        private void OrderEntry_Resize(object sender, System.EventArgs e)
+        private void OrderEntry_Resize(object sender, EventArgs e)
         {
             // layoutControlGroupAdditional.Expanded = WindowState == FormWindowState.Maximized ? true : false;
         }
 
-        private void OrderEntry_Load(object sender, System.EventArgs e)
+        private void OrderEntry_Load(object sender, EventArgs e)
         {
             DevExpress.UserSkins.BonusSkins.Register();
             WindowState = FormWindowState.Maximized;
@@ -35,8 +36,9 @@ namespace Ordermanagement_01.New_Dashboard.Orders
                 {0,"SELECT" },
                 {1,"TITLE" },
                 {2,"TAX" },
-                {3,"Code" }
-            };
+                {3,"CODE" },
+                {4,"LERETA" }
+            };                       
             lookUpEditProjectType.Properties.DataSource = dictionary;
             lookUpEditProjectType.Properties.DisplayMember = "Value";
             lookUpEditProjectType.Properties.ValueMember = "Key";
@@ -68,13 +70,29 @@ namespace Ordermanagement_01.New_Dashboard.Orders
 
         private void lookUpEditProjectType_EditValueChanged(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(lookUpEditProjectType.EditValue) > 0)
+            int projectType = Convert.ToInt32(lookUpEditProjectType.EditValue);
+            if (projectType > 0)
             {
-                if (Convert.ToInt32(lookUpEditProjectType.EditValue) == 1)
+                if (projectType == 4)
+                {
+                    layoutControlGroupOrder.Visibility = LayoutVisibility.Never;
+                    layoutControlGroupOthers.Visibility = LayoutVisibility.Never;
+                    layoutControlGroupAdditional.Visibility = LayoutVisibility.Never;
+                    layoutControlGroupLereta.Visibility = LayoutVisibility.Always;
+                }
+                else
+                {
+                    layoutControlGroupOrder.Visibility = LayoutVisibility.Always;
+                    layoutControlGroupOthers.Visibility = LayoutVisibility.Always;
+                    layoutControlGroupAdditional.Visibility = LayoutVisibility.Always;
+                    layoutControlGroupLereta.Visibility = LayoutVisibility.Never;
+
+                }
+                if (projectType == 1)
                 {
                     SetVisibility(new List<LayoutControlItem>() {
                         layoutControlItem27,
-                        layoutControlItem28,                       
+                        layoutControlItem28,
                     }, LayoutVisibility.Never);
 
                     SetVisibility(new List<LayoutControlItem>() {
@@ -85,7 +103,7 @@ namespace Ordermanagement_01.New_Dashboard.Orders
                     layoutControlGroupTaxCode.Visibility = LayoutVisibility.Never;
 
                 }
-                if (Convert.ToInt32(lookUpEditProjectType.EditValue) == 2 || Convert.ToInt32(lookUpEditProjectType.EditValue) == 3)
+                if (projectType == 2 || projectType == 3)
                 {
                     SetVisibility(new List<LayoutControlItem>() {
                         layoutControlItem27,
@@ -110,6 +128,10 @@ namespace Ordermanagement_01.New_Dashboard.Orders
                     }, LayoutVisibility.Always);
                 layoutControlGroupTaxCode.Visibility = LayoutVisibility.Never;
                 layoutControlGroupTitle.Visibility = LayoutVisibility.Never;
+                layoutControlGroupLereta.Visibility = LayoutVisibility.Never;
+                layoutControlGroupOrder.Visibility = LayoutVisibility.Never;
+                layoutControlGroupOthers.Visibility = LayoutVisibility.Never;
+                layoutControlGroupAdditional.Visibility = LayoutVisibility.Never;
             }
         }
     }

@@ -51,7 +51,7 @@ namespace Ordermanagement_01
         int Emp_Job_role_Id, Emp_Sal_Cat_Id, Eff_Client_Id, Eff_Order_Type_Abs_Id, Eff_Order_Task_Id, Eff_Order_Source_Type_Id, Eff_State_Id, Eff_County_Id, Eff_Sub_Process_Id;
         string Clint, userroleid, Operation, Operation_Count, From_date, To_Date, Path1, errormessage = "", error_status = "", error_value = "", vendor_validation_msg = "", Order_Number;
         private void gridView2_RowCellStyle(object sender, RowCellStyleEventArgs e)
-        {           
+        {
             string caption = e.Column.Caption;
             if (caption == "Comments")
             {
@@ -59,14 +59,14 @@ namespace Ordermanagement_01
                 if (view.Row["Order_Comments"] != null)
                 {
                     string Comments = view.Row["Order_Comments"].ToString();
-                    if (Comments !="")
+                    if (Comments != "")
                     {
                         e.Appearance.BackColor = Color.Orange;
                         e.Appearance.ForeColor = Color.Black;
                     }
                     else
                     {
-                        e.Appearance.BackColor = Color.FromArgb(217,217,217);
+                        e.Appearance.BackColor = Color.FromArgb(217, 217, 217);
                     }
                 }
             }
@@ -92,7 +92,7 @@ namespace Ordermanagement_01
         {
             //if (e.Column.FieldName == "Order_Production_Date" && e.CellValue.ToString() == "01/01/1900")
             //{
-               
+
 
             //    gridView2.SetRowCellValue(gridView2.FocusedRowHandle, "Order_Production_Date", DBNull.Value);
             //}
@@ -102,7 +102,7 @@ namespace Ordermanagement_01
         {
             GridView view = sender as GridView;
             GridHitInfo info = gridView2.CalcHitInfo(e.Location);
-            if(info.InRowCell==true)
+            if (info.InRowCell == true)
             {
                 string caption = info.Column.Caption;
                 {
@@ -112,7 +112,7 @@ namespace Ordermanagement_01
                         StringBuilder bs = new StringBuilder();
                         if (vie.Row["Order_Comments"] != null || vie.Row["Status_Comments"] != null || vie.Row["Permission_Comments"] != null || vie.Row["Tax_Task"] != null || vie.Row["Tax_Task_Id"] != null || vie.Row["Assigned_Date"] != null)
                         {
-                            string Comments = vie.Row["Order_Comments"].ToString();                            
+                            string Comments = vie.Row["Order_Comments"].ToString();
                             string Order_Number = vie.Row["Client_Order_Number"].ToString();
                             bs.Append(Order_Number.ToString());
                             if (Comments != "")
@@ -156,15 +156,15 @@ namespace Ordermanagement_01
                                     bs.Append("--".ToString());
                                     bs.Append("Assigned On--");
                                     bs.Append(AssignedDate.ToString());
-                                }                                
+                                }
                                 string _str = bs.Replace("@", Environment.NewLine + Environment.NewLine).ToString();
                                 toolTipController1.ShowHint(_str);
                             }
-                            
+
                         }
                     }
                 }
-            }            
+            }
         }
         private void gridView2_MouseUp(object sender, MouseEventArgs e)
         {
@@ -175,7 +175,7 @@ namespace Ordermanagement_01
             {
                 string caption = info.Column.Caption;
                 if (caption == "Comments")
-                {                    
+                {
                     Order_Passing_Params obj_Order_Details_List = new Order_Passing_Params();
                     DataRow row = gridView2.GetDataRow(gridView2.FocusedRowHandle);
                     int Order_ID = int.Parse(row["Order_Id"].ToString());
@@ -185,7 +185,7 @@ namespace Ordermanagement_01
                     cmd.Show();
                 }
             }
-        }     
+        }
         private void gridView2_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
         {
             if (e.RowHandle >= 0)
@@ -221,14 +221,14 @@ namespace Ordermanagement_01
 
             pivotGridControl1.DataSource = dt;
 
-         
+
 
             repositoryItemPopupContainerEdit1.QueryPopUp += repositoryItemPopupContainerEdit1_QueryPopUp;
             repositoryItemPopupContainerEdit1.CloseUp += repositoryItemPopupContainerEdit1_CloseUp;
             repositoryItemPopupContainerEdit1.PopupControl = CreatePopupControl();
 
-           
-                if (Tab_Type_Name == "Shift Wise")
+
+            if (Tab_Type_Name == "Shift Wise")
             {
                 panel7.Visible = true;
                 panel2.Visible = true;
@@ -300,7 +300,7 @@ namespace Ordermanagement_01
             }
             else
             {
-               
+
 
                 if (Tab_Type_Name == "Shift Wise")
                 {
@@ -314,9 +314,9 @@ namespace Ordermanagement_01
                 }
                 if (dt.Rows.Count > 0)
                 {
-           
-                        grd_Targetorder.DataSource = dt;
-                    
+
+                    grd_Targetorder.DataSource = dt;
+
 
 
                     if (User_Role_Id == "1")
@@ -400,13 +400,13 @@ namespace Ordermanagement_01
             //string To_Date_1 = T_date.ToString("MM/dd/yyyy");
 
 
-           //DateTime grid_date = DateTime.ParseExact(date, "dd-MM-yyyy", CultureInfo.InvariantCulture);
-           // //s will be MM/dd/yyyy format string
-           // string s_Date = grid_date.ToString("MM/dd/yyyy");
+            //DateTime grid_date = DateTime.ParseExact(date, "dd-MM-yyyy", CultureInfo.InvariantCulture);
+            // //s will be MM/dd/yyyy format string
+            // string s_Date = grid_date.ToString("MM/dd/yyyy");
 
 
 
-
+            string spName = "";
             httargetorder.Clear();
             dttargetorder.Clear();
 
@@ -417,9 +417,25 @@ namespace Ordermanagement_01
             httargetorder.Add("@Fromdate", Fromdate);
             httargetorder.Add("@Todate", Todate);
             httargetorder.Add("@date", date);
-           // httargetorder.Add("@date", s_Date);
-            dttargetorder = dataaccess.ExecuteSP("Sp_Daily_Status_Report", httargetorder);
-         
+            // httargetorder.Add("@date", s_Date);
+            if (Operation == "AGENT_OPEN_ORDER_DETAILS" || Operation == "AGENT_OPEN_ORDER_ROW_TOTAL_CLIENT_DATE_WISE" || Operation == "AGENT_OPEN_ORDER_COLUMN_GRANT_TOTAL_WISE" ||
+                 Operation == "AGENT_OPEN_ORDER_COLUMN_GRANT_TOTAL_WISE" || Operation == "AGENT_OPEN_ORDER_ALL_CLIENT_AND_ORDER_STATUS_WISE" || Operation == "AGENT_OPEN_ORDER_CLIENT_AND_DATE_WISE" ||
+                 Operation == "AGENT_OPEN_ORDER_CLIENT_AND_ALL_TASK_WISE" || Operation == "AGENT_OPEN_ORDER_DATE_WISE" || Operation == "AGENT_OPEN_ORDER_CLIENT_AND_ORDER_STATUS_WISE")
+            {
+                spName = "Sp_Daily_Status_Report_Open";
+            }
+            else if (Operation == "AGENT_PENDING_ORDER_DETAILS" || Operation == "AGENT_OPEN_ORDER_ROW_TOTAL_CLIENT_DATE_WISE" || 
+                Operation == "AGENT_PENDING_ORDER_CLIENT_AND_STATUS" || Operation == "AGENT_PENDING_ORDER_ALL_CLIENT_STATUS_WISE" ||
+                Operation == "AGENT_PENDING_ORDER_CLIENT_DATE_WISE" || Operation == "AGENT_PENDING_ORDER_CLIENT_AND_ALL_STATUS_WISE" 
+                || Operation == "AGING_PENDING_ORDER_DATE_WISE")
+            {
+                spName = "Sp_Daily_Status_Report_Pending";
+            }
+            else
+            {
+                spName = "Sp_Daily_Status_Report";
+            }
+            dttargetorder = dataaccess.ExecuteSP(spName, httargetorder);
             dt_Order_Details = dttargetorder;
             if (dttargetorder.Rows.Count > 0)
             {
@@ -526,7 +542,7 @@ namespace Ordermanagement_01
             else
             {
                 XtraMessageBox.Show("No Records were found to export", "Message", MessageBoxButtons.OK);
-            }            
+            }
         }
         void PrintingSystem_XlSheetCreated(object sender, XlSheetCreatedEventArgs e)
         {
@@ -546,7 +562,7 @@ namespace Ordermanagement_01
             pivotGridControl1.OptionsView.ShowColumnHeaders = false;
 
             gridView2.OptionsView.ShowFooter = false;
-            gridView2.Columns.ColumnByFieldName("Client_Order_Number").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.None;            
+            gridView2.Columns.ColumnByFieldName("Client_Order_Number").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.None;
             gridView2.VisibleColumns[0].OptionsColumn.Printable = DevExpress.Utils.DefaultBoolean.False;
             SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
             try
@@ -758,7 +774,7 @@ namespace Ordermanagement_01
                 GridView view = sender as GridView;
                 e.DisplayText += string.Format("[{0}/{1}]", GetcheckedChildRowsCount(e, view, GetCheckedChildRowsCache(e)), GetFullChildRowsCount(view, e.GroupRowHandle));
 
-             
+
             }
         }
         private Dictionary<GroupRowHash, int> GetCheckedChildRowsCache(DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs e)
@@ -931,7 +947,7 @@ namespace Ordermanagement_01
                 dt_1.Rows.Add(rowValues);
             }
             return dt_1;
-        }    
+        }
         private PopupContainerControl CreatePopupControl()
         {
             PopupContainerControl result = new PopupContainerControl();

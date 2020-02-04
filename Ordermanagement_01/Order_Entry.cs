@@ -238,6 +238,7 @@ namespace Ordermanagement_01
                 ddl_Copy_Type.SelectedIndex = 2;
                 btn_Save.Text = "Add New Order";
                 this.Text = "Add New Order";
+                ddl_ordertask.Enabled = true;
             }
             else
             {

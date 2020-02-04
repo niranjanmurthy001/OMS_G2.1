@@ -31,28 +31,28 @@ namespace Ordermanagement_01
 
             //    Application.Run(new New_Dashboard.New_Dashboard(1,1));
 
-            Application.Run(new New_Dashboard.Orders.OrderEntry());
+            //Application.Run(new New_Dashboard.Orders.OrderEntry());
 
             //Application.Run(new OrderHistory(1,"123", 102,"102", "", "", "", ""));
 
 
             // Application.Run(new New_Dashboard.Settings.EmailSetting());
 
-           // Application.Run(new New_Dashboard.Settings.Process_Settings());
+            // Application.Run(new New_Dashboard.Settings.Process_Settings());
 
             //Application.Run(new New_Dashboard.Settings.Demo());
 
             //Application.Run(new New_Dashboard.Settings.OrderEntry());
 
-           
+
 
 
 
 
             //Application.Run(new New_Dashboard.Settings.EmailSetting());
             //Application.Run(new Task_Conformation(1, 102, 3, 6));
-            
-            
+
+
             //Application.Run(new Ordermanagement_01.Employee.Error_Dashboard(4, 1, "05/01/2018"));
             // Application.Run(new Test.Api_Call());
 
@@ -144,7 +144,7 @@ namespace Ordermanagement_01
             // Application.Run(new Ordermanagement_01.Employee_View(2, "Search", 71, "2", "Live", 1));
 
 
-
+            Application.Run(new New_Dashboard.NewLogin());
             //   Application.Run(new Ordermanagement_01.User_Create(1,1,"smashdot"));
 
             //Application.Run(new Ordermanagement_01.Email_Send());

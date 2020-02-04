@@ -53,6 +53,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
         private int ShiftType;
         private byte[] image;
         private string Password;
+     
 
         /// <summary>
         /// Employee Dashboard

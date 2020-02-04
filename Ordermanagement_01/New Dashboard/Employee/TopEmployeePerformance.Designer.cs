@@ -39,11 +39,12 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.lbl_AccuracySpeed = new System.Windows.Forms.Label();
-            this.lbl_EmpBranch = new System.Windows.Forms.Label();
+            this.lbl_EfficiencySpeed = new System.Windows.Forms.Label();
             this.lbl_RepotingTo = new System.Windows.Forms.Label();
+            this.lbl_EmpBranch = new System.Windows.Forms.Label();
             this.lbl_Designation = new System.Windows.Forms.Label();
-            this.lbl_EmpName_EmpCode = new System.Windows.Forms.Label();
+            this.lbl_EmpCode = new System.Windows.Forms.Label();
+            this.lbl_EmpName = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer();
             this.panel1.SuspendLayout();
@@ -67,7 +68,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(296, 500);
+            this.panel1.Size = new System.Drawing.Size(287, 500);
             this.panel1.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -83,8 +84,8 @@
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.0355F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 73.9645F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 349F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(296, 500);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 348F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(287, 500);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel2
@@ -92,10 +93,9 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.pictureEditClose);
             this.panel2.Controls.Add(this.pictureEdit1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(290, 33);
+            this.panel2.Size = new System.Drawing.Size(281, 33);
             this.panel2.TabIndex = 0;
             // 
             // label2
@@ -104,7 +104,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(78, 1);
+            this.label2.Location = new System.Drawing.Point(70, 3);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(144, 25);
             this.label2.TabIndex = 137;
@@ -115,7 +115,7 @@
             // 
             this.pictureEditClose.Cursor = System.Windows.Forms.Cursors.Default;
             this.pictureEditClose.EditValue = ((object)(resources.GetObject("pictureEditClose.EditValue")));
-            this.pictureEditClose.Location = new System.Drawing.Point(266, 1);
+            this.pictureEditClose.Location = new System.Drawing.Point(254, 3);
             this.pictureEditClose.Name = "pictureEditClose";
             this.pictureEditClose.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pictureEditClose.Properties.PictureAlignment = System.Drawing.ContentAlignment.TopRight;
@@ -146,15 +146,14 @@
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Location = new System.Drawing.Point(3, 42);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(290, 105);
+            this.panel3.Size = new System.Drawing.Size(281, 106);
             this.panel3.TabIndex = 1;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.pictureBox1.Image = global::Ordermanagement_01.Properties.Resources.King;
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(86, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(80, 3);
             this.pictureBox1.MaximumSize = new System.Drawing.Size(119, 100);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(119, 100);
@@ -164,31 +163,43 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.lbl_AccuracySpeed);
-            this.panel4.Controls.Add(this.lbl_EmpBranch);
+            this.panel4.Controls.Add(this.lbl_EfficiencySpeed);
             this.panel4.Controls.Add(this.lbl_RepotingTo);
+            this.panel4.Controls.Add(this.lbl_EmpBranch);
             this.panel4.Controls.Add(this.lbl_Designation);
-            this.panel4.Controls.Add(this.lbl_EmpName_EmpCode);
+            this.panel4.Controls.Add(this.lbl_EmpCode);
+            this.panel4.Controls.Add(this.lbl_EmpName);
             this.panel4.Controls.Add(this.pictureBox2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(3, 153);
+            this.panel4.Location = new System.Drawing.Point(3, 154);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(290, 344);
+            this.panel4.Size = new System.Drawing.Size(281, 343);
             this.panel4.TabIndex = 2;
             // 
-            // lbl_AccuracySpeed
+            // lbl_EfficiencySpeed
             // 
-            this.lbl_AccuracySpeed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.lbl_AccuracySpeed.AutoSize = true;
-            this.lbl_AccuracySpeed.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_AccuracySpeed.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_AccuracySpeed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(111)))), ((int)(((byte)(225)))));
-            this.lbl_AccuracySpeed.Location = new System.Drawing.Point(106, 234);
-            this.lbl_AccuracySpeed.Name = "lbl_AccuracySpeed";
-            this.lbl_AccuracySpeed.Size = new System.Drawing.Size(56, 45);
-            this.lbl_AccuracySpeed.TabIndex = 141;
-            this.lbl_AccuracySpeed.Text = "00";
-            this.lbl_AccuracySpeed.Click += new System.EventHandler(this.lbl_AccuracySpeed_Click);
+            this.lbl_EfficiencySpeed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lbl_EfficiencySpeed.AutoSize = true;
+            this.lbl_EfficiencySpeed.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_EfficiencySpeed.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_EfficiencySpeed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(111)))), ((int)(((byte)(225)))));
+            this.lbl_EfficiencySpeed.Location = new System.Drawing.Point(98, 234);
+            this.lbl_EfficiencySpeed.Name = "lbl_EfficiencySpeed";
+            this.lbl_EfficiencySpeed.Size = new System.Drawing.Size(56, 45);
+            this.lbl_EfficiencySpeed.TabIndex = 153;
+            this.lbl_EfficiencySpeed.Text = "00";
+            // 
+            // lbl_RepotingTo
+            // 
+            this.lbl_RepotingTo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lbl_RepotingTo.AutoSize = true;
+            this.lbl_RepotingTo.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_RepotingTo.ForeColor = System.Drawing.Color.Black;
+            this.lbl_RepotingTo.Location = new System.Drawing.Point(95, 156);
+            this.lbl_RepotingTo.Name = "lbl_RepotingTo";
+            this.lbl_RepotingTo.Size = new System.Drawing.Size(87, 17);
+            this.lbl_RepotingTo.TabIndex = 152;
+            this.lbl_RepotingTo.Text = "Reporting To";
             // 
             // lbl_EmpBranch
             // 
@@ -197,23 +208,11 @@
             this.lbl_EmpBranch.BackColor = System.Drawing.Color.Transparent;
             this.lbl_EmpBranch.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_EmpBranch.ForeColor = System.Drawing.Color.Black;
-            this.lbl_EmpBranch.Location = new System.Drawing.Point(102, 37);
+            this.lbl_EmpBranch.Location = new System.Drawing.Point(97, 69);
             this.lbl_EmpBranch.Name = "lbl_EmpBranch";
             this.lbl_EmpBranch.Size = new System.Drawing.Size(50, 17);
-            this.lbl_EmpBranch.TabIndex = 139;
+            this.lbl_EmpBranch.TabIndex = 151;
             this.lbl_EmpBranch.Text = "Branch";
-            // 
-            // lbl_RepotingTo
-            // 
-            this.lbl_RepotingTo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.lbl_RepotingTo.AutoSize = true;
-            this.lbl_RepotingTo.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_RepotingTo.ForeColor = System.Drawing.Color.Black;
-            this.lbl_RepotingTo.Location = new System.Drawing.Point(96, 93);
-            this.lbl_RepotingTo.Name = "lbl_RepotingTo";
-            this.lbl_RepotingTo.Size = new System.Drawing.Size(87, 17);
-            this.lbl_RepotingTo.TabIndex = 138;
-            this.lbl_RepotingTo.Text = "Reporting To";
             // 
             // lbl_Designation
             // 
@@ -221,23 +220,36 @@
             this.lbl_Designation.AutoSize = true;
             this.lbl_Designation.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Designation.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Designation.Location = new System.Drawing.Point(80, 66);
+            this.lbl_Designation.Location = new System.Drawing.Point(79, 96);
             this.lbl_Designation.Name = "lbl_Designation";
             this.lbl_Designation.Size = new System.Drawing.Size(112, 17);
-            this.lbl_Designation.TabIndex = 137;
+            this.lbl_Designation.TabIndex = 150;
             this.lbl_Designation.Text = "Designation-Shift";
             // 
-            // lbl_EmpName_EmpCode
+            // lbl_EmpCode
             // 
-            this.lbl_EmpName_EmpCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.lbl_EmpName_EmpCode.AutoSize = true;
-            this.lbl_EmpName_EmpCode.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_EmpName_EmpCode.ForeColor = System.Drawing.Color.Black;
-            this.lbl_EmpName_EmpCode.Location = new System.Drawing.Point(83, 11);
-            this.lbl_EmpName_EmpCode.Name = "lbl_EmpName_EmpCode";
-            this.lbl_EmpName_EmpCode.Size = new System.Drawing.Size(107, 17);
-            this.lbl_EmpName_EmpCode.TabIndex = 136;
-            this.lbl_EmpName_EmpCode.Text = "Name-EmpCode";
+            this.lbl_EmpCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lbl_EmpCode.AutoSize = true;
+            this.lbl_EmpCode.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_EmpCode.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_EmpCode.ForeColor = System.Drawing.Color.Black;
+            this.lbl_EmpCode.Location = new System.Drawing.Point(100, 38);
+            this.lbl_EmpCode.Name = "lbl_EmpCode";
+            this.lbl_EmpCode.Size = new System.Drawing.Size(66, 17);
+            this.lbl_EmpCode.TabIndex = 149;
+            this.lbl_EmpCode.Text = "EmpCode";
+            // 
+            // lbl_EmpName
+            // 
+            this.lbl_EmpName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lbl_EmpName.AutoSize = true;
+            this.lbl_EmpName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_EmpName.ForeColor = System.Drawing.Color.Black;
+            this.lbl_EmpName.Location = new System.Drawing.Point(96, 5);
+            this.lbl_EmpName.Name = "lbl_EmpName";
+            this.lbl_EmpName.Size = new System.Drawing.Size(56, 21);
+            this.lbl_EmpName.TabIndex = 144;
+            this.lbl_EmpName.Text = "Name";
             // 
             // pictureBox2
             // 
@@ -246,8 +258,8 @@
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(290, 344);
-            this.pictureBox2.TabIndex = 130;
+            this.pictureBox2.Size = new System.Drawing.Size(281, 343);
+            this.pictureBox2.TabIndex = 132;
             this.pictureBox2.TabStop = false;
             // 
             // timer1
@@ -260,7 +272,7 @@
             this.Appearance.Options.UseBorderColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(296, 500);
+            this.ClientSize = new System.Drawing.Size(287, 500);
             this.Controls.Add(this.panel1);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -294,12 +306,13 @@
         private System.Windows.Forms.Panel panel3;
         public System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label lbl_AccuracySpeed;
-        private System.Windows.Forms.Label lbl_EmpBranch;
-        private System.Windows.Forms.Label lbl_RepotingTo;
-        private System.Windows.Forms.Label lbl_Designation;
-        private System.Windows.Forms.Label lbl_EmpName_EmpCode;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label lbl_EmpName;
+        private System.Windows.Forms.Label lbl_EmpCode;
+        private System.Windows.Forms.Label lbl_EmpBranch;
+        private System.Windows.Forms.Label lbl_Designation;
+        private System.Windows.Forms.Label lbl_EfficiencySpeed;
+        private System.Windows.Forms.Label lbl_RepotingTo;
     }
 }

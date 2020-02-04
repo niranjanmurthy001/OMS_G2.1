@@ -4393,6 +4393,7 @@
     <Content Include="Resources\DRN-Logo.png" />
     <None Include="Resources\Final_Qc_32.png" />
     <None Include="Resources\Exception_32.png" />
+    <None Include="Resources\Employee.png" />
     <Content Include="Resources\groupControlAccuracy.CaptionImageOptions.Image.png" />
     <None Include="Resources\groupControlAccuracy.CaptionImageOptions.Image1.png" />
     <Content Include="Resources\iconfinder_Windows_View_Detail_52792.png" />
@@ -4458,6 +4459,7 @@
     <None Include="Resources\red.png" />
     <None Include="Resources\OrderhistoryIcon.png" />
     <None Include="Resources\shapes-and-symbols.png" />
+    <None Include="Resources\TopPerformer.png" />
     <Content Include="Resources\windowsUIButtonImageOptions1.Image.png" />
     <None Include="Resources\windowsUIButtonImageOptions1.Image1.png" />
     <Content Include="Resources\windowsUIButtonImageOptions2.Image.png" />

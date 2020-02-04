@@ -678,6 +678,7 @@
             // repositoryItemHyperLinkEdit11
             // 
             this.repositoryItemHyperLinkEdit11.AutoHeight = false;
+            this.repositoryItemHyperLinkEdit11.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.repositoryItemHyperLinkEdit11.Name = "repositoryItemHyperLinkEdit11";
             // 
             // repositoryItemHyperLinkEdit7

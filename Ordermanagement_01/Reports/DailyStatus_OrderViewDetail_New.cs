@@ -70,16 +70,19 @@ namespace Ordermanagement_01
                     }
                 }
             }
-            if(caption == "Tax Status")
+            if (Tab_Type_Name == "Open Order Wise" || Tab_Type_Name == "Pending Order Wise")
             {
-                DataRowView view = gridView2.GetRow(e.RowHandle) as DataRowView;
-                if (view.Row["Tax_Status"] != null)
+                if (caption == "Tax Status")
                 {
-                    string Task = view.Row["Tax_Status"].ToString();
-                    if(Task== "COMPLETED")
+                    DataRowView view = gridView2.GetRow(e.RowHandle) as DataRowView;
+                    if (view.Row["Tax_Status"] != null)
                     {
-                        e.Appearance.BackColor = Color.Green;
-                        e.Appearance.ForeColor = Color.White;
+                        string Task = view.Row["Tax_Status"].ToString();
+                        if (Task == "COMPLETED")
+                        {
+                            e.Appearance.BackColor = Color.Green;
+                            e.Appearance.ForeColor = Color.White;
+                        }
                     }
                 }
             }
@@ -109,19 +112,20 @@ namespace Ordermanagement_01
                         StringBuilder bs = new StringBuilder();
                         if (vie.Row["Order_Comments"] != null || vie.Row["Status_Comments"] != null || vie.Row["Permission_Comments"] != null || vie.Row["Tax_Task"] != null || vie.Row["Tax_Task_Id"] != null || vie.Row["Assigned_Date"] != null)
                         {
-                            string Comments = vie.Row["Order_Comments"].ToString();
-                            //if (Comments != "" )
-                            //{
-
+                            string Comments = vie.Row["Order_Comments"].ToString();                            
                             string Order_Number = vie.Row["Client_Order_Number"].ToString();
                             bs.Append(Order_Number.ToString());
                             if (Comments != "")
                             {
-
                                 bs.AppendLine();
                                 bs.AppendLine();
                                 (bs.Append(Comments.ToString().TrimStart('@')).AppendLine()).ToString();
                             }
+                            //else
+                            //{
+                            //    string message = "No Comments";
+                            //    toolTipController1.ShowHint(message);
+                            //}
                             if (Tab_Type_Name == "Open Order Wise" || Tab_Type_Name == "Pending Order Wise")
                             {
                                 string StatusComments = vie.Row["Status_Comments"].ToString();
@@ -152,16 +156,11 @@ namespace Ordermanagement_01
                                     bs.Append("--".ToString());
                                     bs.Append("Assigned On--");
                                     bs.Append(AssignedDate.ToString());
-                                }
-                                //}                               
+                                }                                
                                 string _str = bs.Replace("@", Environment.NewLine + Environment.NewLine).ToString();
                                 toolTipController1.ShowHint(_str);
                             }
-                            else
-                            {
-                                string message = "No Comments";
-                                toolTipController1.ShowHint(message);
-                            }
+                            
                         }
                     }
                 }

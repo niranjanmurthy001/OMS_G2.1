@@ -1074,18 +1074,18 @@ namespace Ordermanagement_01.InvoiceRep
                     }
                     maxsize = 15 * 1024 * 1000;
                     string fileName;
-
+                    size = 0;
                     if (Invoice_Attchment_Type_Id == 1)
                     {
                         fileName = Path1;
                         FileInfo fi = new FileInfo(fileName);
                         size = fi.Length;
                     }
-                    else
-                    {
+                    //else
+                    //{
 
-                        size = new FileInfo(Path1).Length; 
-                    }
+                    //  //  size = new FileInfo(Path1).Length; 
+                    //}
                     MemoryStream ms = new MemoryStream();
                     MemoryStream ms1 = new MemoryStream();
 

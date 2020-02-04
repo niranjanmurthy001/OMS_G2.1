@@ -349,7 +349,7 @@ namespace Ordermanagement_01.Tax
                     Gridview_bind_Tax_Employee_Side_Document_Upload();
                 }
                 txt_Tax_Dscription.Text = "";
-                ddl_document_Type.SelectedIndex = 0;
+                //ddl_document_Type.SelectedIndex = 0;
                 SplashScreenManager.CloseForm(false);
                 MessageBox.Show(count + " File(s) copied");
             }

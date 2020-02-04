@@ -130,6 +130,7 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Accessibility" />
     <Reference Include="AdvancedDataGridView">
       <HintPath>..\..\..\Niranjan Software Examples\AdvancedDataGridView.dll</HintPath>
     </Reference>
@@ -364,6 +365,8 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Printing" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Speech" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -4390,6 +4393,7 @@
     <Content Include="Resources\DRN-Logo.png" />
     <None Include="Resources\Final_Qc_32.png" />
     <None Include="Resources\Exception_32.png" />
+    <None Include="Resources\Employee.png" />
     <Content Include="Resources\groupControlAccuracy.CaptionImageOptions.Image.png" />
     <None Include="Resources\groupControlAccuracy.CaptionImageOptions.Image1.png" />
     <Content Include="Resources\iconfinder_Windows_View_Detail_52792.png" />
@@ -4418,6 +4422,13 @@
     <None Include="Resources\ic_history.png" />
     <None Include="Resources\ic_link.png" />
     <None Include="Resources\ic_search_32.png" />
+    <None Include="Resources\ic_info.png" />
+    <None Include="Resources\ic_info_.png" />
+    <None Include="Resources\ic_info_32.png" />
+    <None Include="Resources\ic_checklist.png" />
+    <None Include="Resources\ic_checklist_32.png" />
+    <None Include="Resources\ic_docs.png" />
+    <None Include="Resources\ic_comments.png" />
     <Content Include="Resources\list.png" />
     <None Include="Resources\list1.png" />
     <None Include="Resources\New_Refresh.png" />
@@ -4448,6 +4459,7 @@
     <None Include="Resources\red.png" />
     <None Include="Resources\OrderhistoryIcon.png" />
     <None Include="Resources\shapes-and-symbols.png" />
+    <None Include="Resources\TopPerformer.png" />
     <Content Include="Resources\windowsUIButtonImageOptions1.Image.png" />
     <None Include="Resources\windowsUIButtonImageOptions1.Image1.png" />
     <Content Include="Resources\windowsUIButtonImageOptions2.Image.png" />

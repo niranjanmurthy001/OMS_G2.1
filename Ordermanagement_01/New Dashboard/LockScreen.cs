@@ -195,7 +195,7 @@ namespace Ordermanagement_01.New_Dashboard
             }
         }
         private void LockScreen_FormClosing(object sender, FormClosingEventArgs e)
-        {
+        { 
             if (!IsClosing)
             {
                 XtraMessageBox.Show("Enter the password and login");

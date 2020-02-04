@@ -14,11 +14,8 @@ namespace Ordermanagement_01
         static void Main()
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-           
-            Application.Run(new New_Dashboard.NewLogin());
-          
+            Application.SetCompatibleTextRenderingDefault(false);           
+            Application.Run(new New_Dashboard.NewLogin());          
         }
-
     }
 }

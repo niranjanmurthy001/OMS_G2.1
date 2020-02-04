@@ -2010,6 +2010,7 @@ namespace Ordermanagement_01
                             {
                                 btn_Save.Text = "Add New Order";
                                 Control_Enable();
+                                ddl_ordertask.Enabled = true;
                             }
                         }
                         else if (btn_Save.Text == "Add New Order" && Validation_ControlEnable() != false && validate_Update_Search_Control_Enable() != false)
@@ -2041,6 +2042,7 @@ namespace Ordermanagement_01
                     {
                         btn_Save.Text = "Add New Order";
                         Control_Enable();
+                        ddl_ordertask.Enabled = true;
                     }
                     MessageBox.Show("Select Order Task");
 

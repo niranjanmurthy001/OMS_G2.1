@@ -81,8 +81,6 @@ namespace Ordermanagement_01.New_Dashboard.Orders
             public string user { get; set; }
         }
 
-
-
         private void lookUpEditProjectType_EditValueChanged(object sender, EventArgs e)
         {
             int projectType = Convert.ToInt32(lookUpEditProjectType.EditValue);
@@ -115,7 +113,7 @@ namespace Ordermanagement_01.New_Dashboard.Orders
             }
             else
             {
-                dictionaryLayoutGroups.Keys.ToList().ForEach(group => group.Visibility = LayoutVisibility.Never);
+                dictionaryLayoutGroups.Keys.ToList().ForEach(group => group.Visibility = LayoutVisibility.Never);              
             }
         }
     }

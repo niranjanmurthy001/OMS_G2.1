@@ -160,6 +160,9 @@
   <data name="Greenboxbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Greenboxbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="groupControlAccuracy.CaptionImageOptions.Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\groupControlAccuracy.CaptionImageOptions.Image1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="right_arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\right_arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -177,6 +180,9 @@
   </data>
   <data name="moon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\moon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="YellowRoundbutton1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\YellowRoundbutton1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="comments_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\comments_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -301,9 +307,6 @@
   <data name="imageedit_11_7667811494" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imageedit_11_7667811494.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Export" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Export.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Background006" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Background006.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -343,6 +346,9 @@
   <data name="048-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\048-1281.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="reports" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\reports.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="1421797544_new1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1421797544_new1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -370,8 +376,8 @@
   <data name="Mail" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Mail1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="reports" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\reports.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ic_docs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ic_docs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Final_Qc_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Final_Qc_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -411,6 +417,9 @@
   </data>
   <data name="My_Orders_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\My_Orders_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_comments" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ic_comments.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="instagram (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\instagram (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -489,9 +498,6 @@
   </data>
   <data name="Icon_test_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icon_test_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_docs" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ic_docs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="red" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -739,17 +745,17 @@
   <data name="background-gradient" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background-gradient.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="TopPerformer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TopPerformer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="list_Svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\list_Svg.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="Down" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="YellowRoundbutton1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\YellowRoundbutton1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="play" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\play.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="download" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\download.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="dashboard_1_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dashboard_1_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -772,8 +778,8 @@
   <data name="web_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\web_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="download" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\download.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="play" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\play.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pictureEdit9.EditValue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pictureEdit9.EditValue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -784,13 +790,13 @@
   <data name="star" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\star1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="groupControlAccuracy.CaptionImageOptions.Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\groupControlAccuracy.CaptionImageOptions.Image1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Export" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Export.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Progress_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Progress_32.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ic_comments" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ic_comments.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Employee" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Employee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

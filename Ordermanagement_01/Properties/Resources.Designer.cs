@@ -713,6 +713,16 @@ namespace Ordermanagement_01.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Employee {
+            get {
+                object obj = ResourceManager.GetObject("Employee", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Exception_32 {
             get {
                 object obj = ResourceManager.GetObject("Exception_32", resourceCulture);
@@ -2076,6 +2086,16 @@ namespace Ordermanagement_01.Properties {
         internal static System.Drawing.Bitmap Tax {
             get {
                 object obj = ResourceManager.GetObject("Tax", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TopPerformer {
+            get {
+                object obj = ResourceManager.GetObject("TopPerformer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

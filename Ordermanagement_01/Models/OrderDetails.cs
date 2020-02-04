@@ -1,4 +1,6 @@
-﻿namespace Ordermanagement_01.Models
+﻿using System.Collections.Generic;
+
+namespace Ordermanagement_01.Models
 {
     class Order_Details
     {
@@ -24,5 +26,15 @@
         public string Branch_Name { get; set; }
         public string Reporting_To_1 { get; set; }
         public string Reporting_To_2 { get; set; }
+
+
+
+        public void Result()
+        {
+
+            KeyValuePair<string, string> key = new KeyValuePair<string, string>();
+
+
+        }
     }
 }

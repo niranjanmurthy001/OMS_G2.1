@@ -70,16 +70,19 @@ namespace Ordermanagement_01
                     }
                 }
             }
-            if(caption == "Tax Status")
+            if (Tab_Type_Name == "Open Order Wise" || Tab_Type_Name == "Pending Order Wise")
             {
-                DataRowView view = gridView2.GetRow(e.RowHandle) as DataRowView;
-                if (view.Row["Tax_Status"] != null)
+                if (caption == "Tax Status")
                 {
-                    string Task = view.Row["Tax_Status"].ToString();
-                    if(Task== "COMPLETED")
+                    DataRowView view = gridView2.GetRow(e.RowHandle) as DataRowView;
+                    if (view.Row["Tax_Status"] != null)
                     {
-                        e.Appearance.BackColor = Color.Green;
-                        e.Appearance.ForeColor = Color.White;
+                        string Task = view.Row["Tax_Status"].ToString();
+                        if (Task == "COMPLETED")
+                        {
+                            e.Appearance.BackColor = Color.Green;
+                            e.Appearance.ForeColor = Color.White;
+                        }
                     }
                 }
             }
@@ -105,61 +108,59 @@ namespace Ordermanagement_01
                 {
                     if (caption == "Comments")
                     {
-                       DataRowView vie= gridView2.GetRow(info.RowHandle) as DataRowView;
+                        DataRowView vie = gridView2.GetRow(info.RowHandle) as DataRowView;
                         StringBuilder bs = new StringBuilder();
-                        if (vie.Row["Order_Comments"] != null || vie.Row["Status_Comments"] != null || vie.Row["Permission_Comments"] != null || vie.Row["Tax_Task"] != null || vie.Row["Tax_Task_Id"] != null || vie.Row["Assigned_Date"] !=null)
+                        if (vie.Row["Order_Comments"] != null || vie.Row["Status_Comments"] != null || vie.Row["Permission_Comments"] != null || vie.Row["Tax_Task"] != null || vie.Row["Tax_Task_Id"] != null || vie.Row["Assigned_Date"] != null)
                         {
-                            string Comments = vie.Row["Order_Comments"].ToString();
-                            //if (Comments != "" )
+                            string Comments = vie.Row["Order_Comments"].ToString();                            
+                            string Order_Number = vie.Row["Client_Order_Number"].ToString();
+                            bs.Append(Order_Number.ToString());
+                            if (Comments != "")
+                            {
+                                bs.AppendLine();
+                                bs.AppendLine();
+                                (bs.Append(Comments.ToString().TrimStart('@')).AppendLine()).ToString();
+                            }
+                            //else
                             //{
-                               
-                                                              
-                                if (Comments != "")
+                            //    string message = "No Comments";
+                            //    toolTipController1.ShowHint(message);
+                            //}
+                            if (Tab_Type_Name == "Open Order Wise" || Tab_Type_Name == "Pending Order Wise")
+                            {
+                                string StatusComments = vie.Row["Status_Comments"].ToString();
+                                string PermissionComments = vie.Row["Permission_Comments"].ToString();
+                                string Taxtask = vie.Row["Tax_Task"].ToString();
+                                string Taxstatus = vie.Row["Tax_Status"].ToString();
+                                string AssignedDate = vie.Row["Assigned_Date"].ToString();
+                                string Task1 = vie.Row["Tax_Status"].ToString();
+                                if (StatusComments != "")
                                 {
-                                    string Order_Number = vie.Row["Client_Order_Number"].ToString();
-                                    bs.Append(Order_Number.ToString());
                                     bs.AppendLine();
+                                    bs.Append(StatusComments.ToString());
                                     bs.AppendLine();
-                                    (bs.Append(Comments.ToString().TrimStart('@')).AppendLine()).ToString();
+                                }
+                                if (PermissionComments != "")
+                                {
+                                    bs.AppendLine();
+                                    bs.Append(PermissionComments.ToString());
+                                    bs.AppendLine();
+                                }
+                                if (Task1 != "COMPLETED" && Task1 != "")
+                                {
+                                    bs.AppendLine();
+                                    bs.Append("Tax---");
+                                    bs.Append(Taxtask.ToString());
+                                    bs.Append("--".ToString());
+                                    bs.Append(Taxstatus.ToString());
+                                    bs.Append("--".ToString());
+                                    bs.Append("Assigned On--");
+                                    bs.Append(AssignedDate.ToString());
                                 }                                
-                                if (Tab_Type_Name == "Open Order Wise" || Tab_Type_Name == "Pending Order Wise")
-                                {
-                                    string StatusComments = vie.Row["Status_Comments"].ToString();
-                                    string PermissionComments = vie.Row["Permission_Comments"].ToString();
-                                    string Taxtask = vie.Row["Tax_Task"].ToString();
-                                    string TaxTaskId = vie.Row["Tax_Task_Id"].ToString();
-                                    string AssignedDate = vie.Row["Assigned_Date"].ToString();
-                                    string Task1 = vie.Row["Tax_Status"].ToString();
-                                    if (StatusComments != "")
-                                    {
-                                        bs.AppendLine();
-                                        bs.Append(StatusComments.ToString());
-                                        bs.AppendLine();
-                                    }
-                                    if (PermissionComments != "")
-                                    {
-                                        bs.AppendLine();
-                                        bs.Append(PermissionComments.ToString());
-                                        bs.AppendLine();
-                                    }
-                                    if (Task1 != "COMPLETED" && Task1 != "")
-                                    {
-                                        bs.AppendLine();
-                                        bs.Append(Taxtask.ToString());
-                                        bs.Append("--".ToString());
-                                        bs.Append(TaxTaskId.ToString());
-                                        bs.Append("--".ToString());
-                                        bs.Append(AssignedDate.ToString());
-                                    }
-                                //}                               
                                 string _str = bs.Replace("@", Environment.NewLine + Environment.NewLine).ToString();
                                 toolTipController1.ShowHint(_str);
                             }
-                            else
-                            {
-                                string message = "No Comments";
-                                toolTipController1.ShowHint(message);
-                            }
+                            
                         }
                     }
                 }

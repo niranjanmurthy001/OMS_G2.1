@@ -11,9 +11,27 @@ namespace Ordermanagement_01.New_Dashboard.Orders
 {
     public partial class OrderEntry : XtraForm
     {
+        private Dictionary<LayoutControlItem, int> dictionaryLayoutItems;
+        private Dictionary<LayoutControlGroup, int> dictionaryLayoutGroups;
         public OrderEntry()
         {
             InitializeComponent();
+            dictionaryLayoutItems = new Dictionary<LayoutControlItem, int>()
+            {
+                { layoutControlItemPriorDate,1 },
+                { layoutControlItemDeedChain,1 },
+                { layoutControlItemLoanNo, 2 },
+                { layoutControlItemReqType,2 }
+            };
+            dictionaryLayoutGroups = new Dictionary<LayoutControlGroup, int>()
+            {
+                { layoutControlGroupOrder,1 },
+                { layoutControlGroupOthers,1 },
+                { layoutControlGroupAdditional,1 },
+                { layoutControlGroupLereta,2 },
+                { layoutControlGroupTitle,3 },
+                { layoutControlGroupTaxCode,4 }
+            };
         }
 
         private void OrderEntry_Resize(object sender, EventArgs e)
@@ -38,7 +56,7 @@ namespace Ordermanagement_01.New_Dashboard.Orders
                 {2,"TAX" },
                 {3,"CODE" },
                 {4,"LERETA" }
-            };                       
+            };
             lookUpEditProjectType.Properties.DataSource = dictionary;
             lookUpEditProjectType.Properties.DisplayMember = "Value";
             lookUpEditProjectType.Properties.ValueMember = "Key";
@@ -63,10 +81,7 @@ namespace Ordermanagement_01.New_Dashboard.Orders
             public string user { get; set; }
         }
 
-        private void SetVisibility(List<LayoutControlItem> layoutControlItems, LayoutVisibility mode)
-        {
-            layoutControlItems.ForEach(layoutControlItem => layoutControlItem.Visibility = mode);
-        }
+
 
         private void lookUpEditProjectType_EditValueChanged(object sender, EventArgs e)
         {
@@ -75,63 +90,32 @@ namespace Ordermanagement_01.New_Dashboard.Orders
             {
                 if (projectType == 4)
                 {
-                    layoutControlGroupOrder.Visibility = LayoutVisibility.Never;
-                    layoutControlGroupOthers.Visibility = LayoutVisibility.Never;
-                    layoutControlGroupAdditional.Visibility = LayoutVisibility.Never;
-                    layoutControlGroupLereta.Visibility = LayoutVisibility.Always;
+                    dictionaryLayoutGroups.Where(kv => kv.Value == 2).ToList().ForEach(kv => kv.Key.Visibility = LayoutVisibility.Always);
+                    dictionaryLayoutGroups.Where(kv => kv.Value == 1).ToList().ForEach(kv => kv.Key.Visibility = LayoutVisibility.Never);
                 }
                 else
                 {
-                    layoutControlGroupOrder.Visibility = LayoutVisibility.Always;
-                    layoutControlGroupOthers.Visibility = LayoutVisibility.Always;
-                    layoutControlGroupAdditional.Visibility = LayoutVisibility.Always;
-                    layoutControlGroupLereta.Visibility = LayoutVisibility.Never;
-
+                    dictionaryLayoutGroups.Where(kv => kv.Value == 1).ToList().ForEach(kv => kv.Key.Visibility = LayoutVisibility.Always);
+                    dictionaryLayoutGroups.Where(kv => kv.Value == 2).ToList().ForEach(kv => kv.Key.Visibility = LayoutVisibility.Never);
                 }
                 if (projectType == 1)
                 {
-                    SetVisibility(new List<LayoutControlItem>() {
-                        layoutControlItem27,
-                        layoutControlItem28,
-                    }, LayoutVisibility.Never);
-
-                    SetVisibility(new List<LayoutControlItem>() {
-                        layoutControlItem18,
-                        layoutControlItem29
-                    }, LayoutVisibility.Always);
-                    layoutControlGroupTitle.Visibility = LayoutVisibility.Always;
-                    layoutControlGroupTaxCode.Visibility = LayoutVisibility.Never;
-
+                    dictionaryLayoutItems.Where(kv => kv.Value == 1).ToList().ForEach(kv => kv.Key.Visibility = LayoutVisibility.Always);
+                    dictionaryLayoutItems.Where(kv => kv.Value != 1).ToList().ForEach(kv => kv.Key.Visibility = LayoutVisibility.Never);
+                    dictionaryLayoutGroups.Where(kv => kv.Value == 3).ToList().ForEach(kv => kv.Key.Visibility = LayoutVisibility.Always);
+                    dictionaryLayoutGroups.Where(kv => kv.Value == 4).ToList().ForEach(kv => kv.Key.Visibility = LayoutVisibility.Never);
                 }
                 if (projectType == 2 || projectType == 3)
                 {
-                    SetVisibility(new List<LayoutControlItem>() {
-                        layoutControlItem27,
-                        layoutControlItem28
-                    }, LayoutVisibility.Always);
-
-                    SetVisibility(new List<LayoutControlItem>() {
-                        layoutControlItem18,
-                        layoutControlItem29
-                    }, LayoutVisibility.Never);
-                    layoutControlGroupTaxCode.Visibility = LayoutVisibility.Always;
-                    layoutControlGroupTitle.Visibility = LayoutVisibility.Never;
+                    dictionaryLayoutItems.Where(kv => kv.Value == 1).ToList().ForEach(kv => kv.Key.Visibility = LayoutVisibility.Never);
+                    dictionaryLayoutItems.Where(kv => kv.Value != 1).ToList().ForEach(kv => kv.Key.Visibility = LayoutVisibility.Always);
+                    dictionaryLayoutGroups.Where(kv => kv.Value == 3).ToList().ForEach(kv => kv.Key.Visibility = LayoutVisibility.Never);
+                    dictionaryLayoutGroups.Where(kv => kv.Value == 4).ToList().ForEach(kv => kv.Key.Visibility = LayoutVisibility.Always);
                 }
             }
             else
             {
-                SetVisibility(new List<LayoutControlItem>() {
-                        layoutControlItem27,
-                        layoutControlItem28,
-                        layoutControlItem18,
-                        layoutControlItem29
-                    }, LayoutVisibility.Always);
-                layoutControlGroupTaxCode.Visibility = LayoutVisibility.Never;
-                layoutControlGroupTitle.Visibility = LayoutVisibility.Never;
-                layoutControlGroupLereta.Visibility = LayoutVisibility.Never;
-                layoutControlGroupOrder.Visibility = LayoutVisibility.Never;
-                layoutControlGroupOthers.Visibility = LayoutVisibility.Never;
-                layoutControlGroupAdditional.Visibility = LayoutVisibility.Never;
+                dictionaryLayoutGroups.Keys.ToList().ForEach(group => group.Visibility = LayoutVisibility.Never);
             }
         }
     }

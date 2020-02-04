@@ -111,7 +111,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                 {
                      await BindToPemployeePerformnace();
 
-                }, null, TimeSpan.FromSeconds(1), TimeSpan.FromHours(1));
+                }, null, TimeSpan.FromSeconds(5), TimeSpan.FromHours(1));
             }
             catch (Exception ex)
             {

@@ -27,16 +27,12 @@ namespace Ordermanagement_01.New_Dashboard.Employee
         private  string productionDate;
         private int BranchId;
         private int ShiftType;
-
         private byte[] image;
         private bool isStopped;
         private bool isStarted;
         private bool isClosed = false;
         private int userRoleId;
-        private string imagefileName;
-        private int  time;
-
-        public bool IsImageAvailable { get; private set; }
+        public int Hour { get; private set; }
         public TopEmployeePerformance(int userId,string ProductionDate,int BranchId,int ShiftType, byte[] bimage)
         {
             this.userId = userId;
@@ -124,7 +120,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                                 lbl_EmpBranch.Text = dt1.Rows[0]["Branch_Name"].ToString();
                                 lbl_Designation.Text = dt1.Rows[0]["Emp_Job_Role"].ToString() + " - " + dt1.Rows[0]["Shift_Type_Name"].ToString();
                                lbl_RepotingTo.Text = dt1.Rows[0]["Reporting_To_1"].ToString();
-                               lbl_EfficiencySpeed.Text = dt1.Rows[0]["User_Effeciency"].ToString();                                                                         
+                                lbl_EfficiencySpeed.Text = dt1.Rows[0]["User_Effeciency"].ToString() + "%";                                                                       
                             }
                             else
                             {
@@ -168,13 +164,13 @@ namespace Ordermanagement_01.New_Dashboard.Employee
         }
         private void getTimings()
         {
-            if(time < 17)
+            if (Hour == 17 || Hour == 18 || Hour == 19 || Hour == 20 || Hour == 21 || Hour == 22 || Hour == 23 || Hour == 0 || Hour == 1 || Hour == 2 || Hour == 3 || Hour == 4 || Hour == 5 || Hour == 6)
             {
-                ShiftType = 1;
+                ShiftType = 3;
             }
             else
             {
-                ShiftType = 3;
+                ShiftType = 1;
             }
         }
 

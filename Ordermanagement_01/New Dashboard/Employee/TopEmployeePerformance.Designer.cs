@@ -60,7 +60,7 @@
             // 
             // defaultLookAndFeel1
             // 
-            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013";
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2010 Black";
             // 
             // panel1
             // 
@@ -102,6 +102,7 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(70, 3);
@@ -117,6 +118,8 @@
             this.pictureEditClose.EditValue = ((object)(resources.GetObject("pictureEditClose.EditValue")));
             this.pictureEditClose.Location = new System.Drawing.Point(254, 3);
             this.pictureEditClose.Name = "pictureEditClose";
+            this.pictureEditClose.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.pictureEditClose.Properties.Appearance.Options.UseBackColor = true;
             this.pictureEditClose.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pictureEditClose.Properties.PictureAlignment = System.Drawing.ContentAlignment.TopRight;
             this.pictureEditClose.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
@@ -132,6 +135,8 @@
             this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
             this.pictureEdit1.Location = new System.Drawing.Point(3, 1);
             this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
             this.pictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pictureEdit1.Properties.PictureAlignment = System.Drawing.ContentAlignment.TopRight;
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
@@ -183,7 +188,7 @@
             this.lbl_EfficiencySpeed.BackColor = System.Drawing.Color.Transparent;
             this.lbl_EfficiencySpeed.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_EfficiencySpeed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(111)))), ((int)(((byte)(225)))));
-            this.lbl_EfficiencySpeed.Location = new System.Drawing.Point(98, 234);
+            this.lbl_EfficiencySpeed.Location = new System.Drawing.Point(93, 234);
             this.lbl_EfficiencySpeed.Name = "lbl_EfficiencySpeed";
             this.lbl_EfficiencySpeed.Size = new System.Drawing.Size(56, 45);
             this.lbl_EfficiencySpeed.TabIndex = 153;
@@ -195,7 +200,7 @@
             this.lbl_RepotingTo.AutoSize = true;
             this.lbl_RepotingTo.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_RepotingTo.ForeColor = System.Drawing.Color.Black;
-            this.lbl_RepotingTo.Location = new System.Drawing.Point(95, 156);
+            this.lbl_RepotingTo.Location = new System.Drawing.Point(94, 156);
             this.lbl_RepotingTo.Name = "lbl_RepotingTo";
             this.lbl_RepotingTo.Size = new System.Drawing.Size(87, 17);
             this.lbl_RepotingTo.TabIndex = 152;
@@ -233,7 +238,7 @@
             this.lbl_EmpCode.BackColor = System.Drawing.Color.Transparent;
             this.lbl_EmpCode.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_EmpCode.ForeColor = System.Drawing.Color.Black;
-            this.lbl_EmpCode.Location = new System.Drawing.Point(100, 38);
+            this.lbl_EmpCode.Location = new System.Drawing.Point(98, 38);
             this.lbl_EmpCode.Name = "lbl_EmpCode";
             this.lbl_EmpCode.Size = new System.Drawing.Size(66, 17);
             this.lbl_EmpCode.TabIndex = 149;

@@ -120,7 +120,7 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                                 lbl_EmpCode.Text= dt1.Rows[0]["DRN_Emp_Code"].ToString();
                                 lbl_EmpBranch.Text = dt1.Rows[0]["Branch_Name"].ToString();
                                 lbl_Designation.Text = dt1.Rows[0]["Emp_Job_Role"].ToString() + " - " + dt1.Rows[0]["Shift_Type_Name"].ToString();
-                               lbl_RepotingTo.Text = dt1.Rows[0]["Reporting_To_1"].ToString();
+                             //  lbl_RepotingTo.Text = dt1.Rows[0]["Reporting_To_1"].ToString();
                                 lbl_EfficiencySpeed.Text = dt1.Rows[0]["User_Effeciency"].ToString() + "%";                                                                       
                             }
                             else

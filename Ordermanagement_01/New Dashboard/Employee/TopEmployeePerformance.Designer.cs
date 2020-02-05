@@ -40,7 +40,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lbl_EfficiencySpeed = new System.Windows.Forms.Label();
-            this.lbl_RepotingTo = new System.Windows.Forms.Label();
             this.lbl_EmpBranch = new System.Windows.Forms.Label();
             this.lbl_Designation = new System.Windows.Forms.Label();
             this.lbl_EmpCode = new System.Windows.Forms.Label();
@@ -165,7 +164,6 @@
             // panel4
             // 
             this.panel4.Controls.Add(this.lbl_EfficiencySpeed);
-            this.panel4.Controls.Add(this.lbl_RepotingTo);
             this.panel4.Controls.Add(this.lbl_EmpBranch);
             this.panel4.Controls.Add(this.lbl_Designation);
             this.panel4.Controls.Add(this.lbl_EmpCode);
@@ -184,23 +182,11 @@
             this.lbl_EfficiencySpeed.BackColor = System.Drawing.Color.Transparent;
             this.lbl_EfficiencySpeed.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_EfficiencySpeed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(111)))), ((int)(((byte)(225)))));
-            this.lbl_EfficiencySpeed.Location = new System.Drawing.Point(93, 234);
+            this.lbl_EfficiencySpeed.Location = new System.Drawing.Point(93, 240);
             this.lbl_EfficiencySpeed.Name = "lbl_EfficiencySpeed";
             this.lbl_EfficiencySpeed.Size = new System.Drawing.Size(56, 45);
             this.lbl_EfficiencySpeed.TabIndex = 153;
             this.lbl_EfficiencySpeed.Text = "00";
-            // 
-            // lbl_RepotingTo
-            // 
-            this.lbl_RepotingTo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.lbl_RepotingTo.AutoSize = true;
-            this.lbl_RepotingTo.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_RepotingTo.ForeColor = System.Drawing.Color.Black;
-            this.lbl_RepotingTo.Location = new System.Drawing.Point(94, 156);
-            this.lbl_RepotingTo.Name = "lbl_RepotingTo";
-            this.lbl_RepotingTo.Size = new System.Drawing.Size(87, 17);
-            this.lbl_RepotingTo.TabIndex = 152;
-            this.lbl_RepotingTo.Text = "Reporting To";
             // 
             // lbl_EmpBranch
             // 
@@ -314,6 +300,5 @@
         private System.Windows.Forms.Label lbl_EmpBranch;
         private System.Windows.Forms.Label lbl_Designation;
         private System.Windows.Forms.Label lbl_EfficiencySpeed;
-        private System.Windows.Forms.Label lbl_RepotingTo;
     }
 }

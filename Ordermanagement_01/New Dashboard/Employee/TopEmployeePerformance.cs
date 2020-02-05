@@ -31,8 +31,9 @@ namespace Ordermanagement_01.New_Dashboard.Employee
         private bool isStopped;
         private bool isStarted;
         private bool isClosed = false;
-        private int userRoleId;
-        public int Hour { get; private set; }
+        private int userRoleId;     
+        DateTime time = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 17, 0, 0);
+
         public TopEmployeePerformance(int userId,string ProductionDate,int BranchId,int ShiftType, byte[] bimage)
         {
             this.userId = userId;
@@ -164,13 +165,13 @@ namespace Ordermanagement_01.New_Dashboard.Employee
         }
         private void getTimings()
         {
-            if (Hour == 17 || Hour == 18 || Hour == 19 || Hour == 20 || Hour == 21 || Hour == 22 || Hour == 23 || Hour == 0 || Hour == 1 || Hour == 2 || Hour == 3 || Hour == 4 || Hour == 5 || Hour == 6)
+            if (DateTime.Now < time)
+            {
+                ShiftType =1 ;
+            }
+           else
             {
                 ShiftType = 3;
-            }
-            else
-            {
-                ShiftType = 1;
             }
         }
 

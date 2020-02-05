@@ -58,10 +58,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // defaultLookAndFeel1
-            // 
-            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2010 Black";
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.tableLayoutPanel1);

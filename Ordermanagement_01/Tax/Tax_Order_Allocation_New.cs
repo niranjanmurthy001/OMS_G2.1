@@ -894,6 +894,7 @@ namespace Ordermanagement_01.Tax
                     else
                     {
                         XtraMessageBox.Show(Default_Look_Confirmation.LookAndFeel, "This Order Processed by the Same User");
+                        break;
                     }
                 }
                 else if (Tax_Task_Id == 1)
@@ -952,10 +953,11 @@ namespace Ordermanagement_01.Tax
                     dttaxupdate = da.ExecuteSP("Sp_Tax_Order_Allocate", httaxupdate);
                     CheckedCount = 1;
                 }
-                if (CheckedCount > 0)
-                {
-                    XtraMessageBox.Show(Default_Look_Confirmation.LookAndFeel, "Order Re Assigned Successfully");
-                }
+               
+            }
+            if (CheckedCount > 0)
+            {
+                XtraMessageBox.Show(Default_Look_Confirmation.LookAndFeel, "Order Re Assigned Successfully");
             }
             //  BindOrdersAllocated(Convert.ToInt32(lookUpEditUsername.EditValue));
             //  gridViewUsers.ClearSelection();

@@ -441,6 +441,7 @@ namespace Ordermanagement_01.Tax
                         Get_Email_Id();
                     
                          mailMessage.To.Add(EMAILID);
+                        mailMessage.CC.Add("Taxes@drnds.com");
                     
                         if (EMAILID != "")
                         {
@@ -594,8 +595,9 @@ namespace Ordermanagement_01.Tax
                         Get_Email_Id();
                      
                           mailMessage.To.Add(EMAILID);
+                        mailMessage.CC.Add("Taxes@drnds.com");
 
-                   
+
 
                         string Subject = Ordernumber.ToString();
                         mailMessage.Subject = Subject.ToString();//mail subject

@@ -894,6 +894,7 @@ namespace Ordermanagement_01.Tax
                     else
                     {
                         XtraMessageBox.Show(Default_Look_Confirmation.LookAndFeel, "This Order Processed by the Same User");
+                        break;
                     }
                 }
                 else if (Tax_Task_Id == 1)

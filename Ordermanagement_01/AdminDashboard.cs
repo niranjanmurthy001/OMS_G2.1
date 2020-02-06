@@ -1,26 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using ClosedXML.Excel;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
+using DevExpress.XtraSplashScreen;
+using Microsoft.Office.Interop.Excel;
+using System;
+using System.Collections;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using System.Collections;
 using System.Globalization;
-using Microsoft.Office.Interop.Excel;
-using Excel = Microsoft.Office.Interop.Excel;
-using CrystalDecisions.CrystalReports.Engine;
-using CrystalDecisions.ReportSource;
-using CrystalDecisions.Shared;
-using CrystalDecisions.Windows;
 using System.IO;
-using ClosedXML.Excel;
-using System.IO;
+using System.Linq;
 using System.Threading;
-using DevExpress.XtraSplashScreen;
+using System.Windows.Forms;
 using System.Windows.Input;
-using System.Timers;
 
 
 namespace Ordermanagement_01
@@ -117,7 +110,7 @@ namespace Ordermanagement_01
         private BackgroundWorker Dash_Board_Worker = new BackgroundWorker();
 
 
-        public AdminDashboard(string User_Role, string user_id, string User_name,string Password)
+        public AdminDashboard(string User_Role, string user_id, string User_name, string Password)
         {
 
             SplashScreenManager.ShowForm(this, typeof(Ordermanagement_01.Masters.WaitForm1), true, true, false);
@@ -778,7 +771,7 @@ namespace Ordermanagement_01
 
         private void AdminDashboard_Load(object sender, EventArgs e)
         {
-           
+
             //  load_Progressbar.Start_progres();
             // clsLoader.startProgress();
 
@@ -788,7 +781,7 @@ namespace Ordermanagement_01
             SplashScreenManager.ShowForm(this, typeof(Ordermanagement_01.Masters.WaitForm1), true, true, false);
             try
             {
-               
+
                 Ordermanagement_01.Gen_Forms.Login loginfrm = new Ordermanagement_01.Gen_Forms.Login();
 
                 loginfrm.Close();
@@ -816,12 +809,12 @@ namespace Ordermanagement_01
                 if (User_Role_Id != "2")
                 {
 
-                   Bind_Auto_Not_Assigned_Orders();
-                   Bind_Auto_Assigned_Orders();
+                    Bind_Auto_Not_Assigned_Orders();
+                    Bind_Auto_Assigned_Orders();
 
                     Get_Count_Of_Vendor_Orders();
 
-                   // Bind_Admin_User_Clients();
+                    // Bind_Admin_User_Clients();
 
                     AddParent_Superqc_My_report();
                     AddParent_Superqc_All_report();
@@ -873,7 +866,7 @@ namespace Ordermanagement_01
                 // dateTimePicker1.Text = lnk_Zone_Time.Text;
                 toolStripButton2.Visible = true;
                 tabControl1.SelectedIndex = 0;
-               
+
                 //======================Reports Details===================
                 dbc.BindOrderStatusRpt(ddl_Task);
                 dbc.Bind_Order_Progress_rpt(ddl_Status);
@@ -10970,7 +10963,7 @@ namespace Ordermanagement_01
 
             //if (tabControl1.SelectedIndex == 8)
             //{
-                
+
             //    Bind_Auto_Assigned_Orders();
             //    Bind_Auto_Not_Assigned_Orders();
             //}
@@ -11008,7 +11001,7 @@ namespace Ordermanagement_01
                 {
                     Grd_OrderTime.Focus();
                 }
-              
+
             }
         }
 
@@ -14808,7 +14801,7 @@ namespace Ordermanagement_01
         private void User_Production_Summary_design()
         {
 
-            lbl_SubprocessName.Visible = true;
+            lbl_SubProcessNames.Visible = true;
             ddl_Subprocess_name.Visible = true;
             lbl_From_date.Visible = true;
             dtp_From_date.Visible = true;
@@ -14919,7 +14912,7 @@ namespace Ordermanagement_01
             dtp_To_Date.Visible = true;
             lbl_ClientName.Visible = true;
             ddl_Client_name.Visible = true;
-            lbl_SubprocessName.Visible = false;
+            lbl_SubProcessNames.Visible = false;
             ddl_Subprocess_name.Visible = false;
             lbl_Task.Visible = false;
             ddl_Order_task.Visible = false;
@@ -14979,7 +14972,7 @@ namespace Ordermanagement_01
             dtp_To_Date.Visible = true;
             lbl_ClientName.Visible = true;
             ddl_Client_name.Visible = true;
-            lbl_SubprocessName.Visible = true;
+            lbl_SubProcessNames.Visible = true;
             ddl_Subprocess_name.Visible = true;
             lbl_Task.Visible = true;
             ddl_Order_task.Visible = true;
@@ -18011,7 +18004,7 @@ namespace Ordermanagement_01
                         grd_Rework_Reports.Visible = false;
                         grd_Rework_Reports.DataSource = null;
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
 
                     }
@@ -22370,10 +22363,10 @@ namespace Ordermanagement_01
         {
 
             dtp_Rework.Value = DateTime.Now;
-          dtp_Rework_Fromdate.Value = DateTime.Now;
-           dtp_Rework_Todate.Value = DateTime.Now;
-           dtp_MyTodate.Value = DateTime.Now;
-           dtp_MyFromdate.Value = DateTime.Now;       
+            dtp_Rework_Fromdate.Value = DateTime.Now;
+            dtp_Rework_Todate.Value = DateTime.Now;
+            dtp_MyTodate.Value = DateTime.Now;
+            dtp_MyFromdate.Value = DateTime.Now;
             if (tabControl4.SelectedIndex == 1)
             {
                 if (User_Role_Id == "1")
@@ -25207,10 +25200,10 @@ namespace Ordermanagement_01
         private void tabControl5_SelectedIndexChanged(object sender, EventArgs e)
         {
             dtp_Superqc.Value = DateTime.Now;
-          dtp_MySuperqc_To.Value = DateTime.Now;
-           dtp_MySuperqcFrom.Value = DateTime.Now;
+            dtp_MySuperqc_To.Value = DateTime.Now;
+            dtp_MySuperqcFrom.Value = DateTime.Now;
             dtp_All_SuperqcFromdate.Value = DateTime.Now;
-          dtp_All_SuperqcTodate.Value = DateTime.Now;
+            dtp_All_SuperqcTodate.Value = DateTime.Now;
             if (tabControl5.SelectedIndex == 1)
             {
                 if (User_Role_Id == "1")
@@ -30864,7 +30857,7 @@ namespace Ordermanagement_01
 
 
 
-                        Ordermanagement_01.Dashboard.Emp_Production_Score_Board TargeDashboard = new Ordermanagement_01.Dashboard.Emp_Production_Score_Board(int.Parse(Employee_24_7_Production_user_id), User_Role_Id, Prd_Date1.ToString(),"");
+                        Ordermanagement_01.Dashboard.Emp_Production_Score_Board TargeDashboard = new Ordermanagement_01.Dashboard.Emp_Production_Score_Board(int.Parse(Employee_24_7_Production_user_id), User_Role_Id, Prd_Date1.ToString(), "");
                         TargeDashboard.Show();
                     }
                     else if (e.ColumnIndex == 3)
@@ -30977,7 +30970,7 @@ namespace Ordermanagement_01
 
         }
 
-      
+
 
         private void ClientUserTeamtoolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -31069,7 +31062,7 @@ namespace Ordermanagement_01
         }
 
         private void Bind_Auto_Not_Assigned_Orders()
-       
+
         {
 
             Hashtable htAutoNotAssgined_Order = new Hashtable();
@@ -31208,7 +31201,7 @@ namespace Ordermanagement_01
 
 
 
-        }       
+        }
         private void timer2_Tick(object sender, EventArgs e)
         {
             Update_User_Last_Login_Date();
@@ -31401,7 +31394,7 @@ namespace Ordermanagement_01
         private void buttonIdleMode_Click(object sender, EventArgs e)
         {
             Dashboard.IdleTrack iTrack = new Dashboard.IdleTrack(userid, Production_Date, true);
-           Invoke(new MethodInvoker(delegate { iTrack.Show(); }));
+            Invoke(new MethodInvoker(delegate { iTrack.Show(); }));
         }
 
         private void breakIdleTypesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -31422,7 +31415,7 @@ namespace Ordermanagement_01
 
         private void Grid_Auto_Not_Assigned_Orders_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void cr_Rework_ReportsViewer_Load(object sender, EventArgs e)
@@ -31443,7 +31436,7 @@ namespace Ordermanagement_01
 
         private void emailSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (User_Role_Id =="1") 
+            if (User_Role_Id == "1")
             {
                 Ordermanagement_01.New_Dashboard.Settings.EmailSetting emailsettings = new New_Dashboard.Settings.EmailSetting();
                 emailsettings.Show();
@@ -31750,8 +31743,8 @@ namespace Ordermanagement_01
         private void crv_My_Superqc_Load(object sender, EventArgs e)
         {
 
-        }        
-      
+        }
+
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
@@ -31861,7 +31854,7 @@ namespace Ordermanagement_01
                         htupdateOrder.Add("@Expidate", "False");
                         htupdateOrder.Add("@Order_ID", Order_Id);
                         dtupdateorder = dataaccess.ExecuteSP("Sp_Order", htupdateOrder);
-                   }
+                    }
                 }
                 Bind_Auto_Not_Assigned_Orders();
                 MessageBox.Show("Record Updated Sucessfully");
@@ -32004,7 +31997,7 @@ namespace Ordermanagement_01
                 }
 
             }
-        }     
+        }
         private void txt_Search_Auto_Assgined_TextChanged_1(object sender, EventArgs e)
         {
             DataView dtsearch = new DataView(dtAuto_Assigned_Order);
@@ -32069,13 +32062,13 @@ namespace Ordermanagement_01
             txt_Search_Auto_Assgined.Text = "";
         }
 
-        private void AdminDashboard_KeyDown(object sender,System.Windows.Forms. KeyEventArgs e)
+        private void AdminDashboard_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
         {
             if (((Keyboard.IsKeyDown(Key.RightAlt)) || (Keyboard.IsKeyDown(Key.LeftAlt))) && (Keyboard.IsKeyDown(Key.L)))
             {
                 try
                 {
-                  FormCollection collection = System.Windows.Forms.Application.OpenForms;
+                    FormCollection collection = System.Windows.Forms.Application.OpenForms;
                     foreach (Form form in collection)
                     {
                         form.Invoke(new MethodInvoker(delegate { form.Hide(); }));
@@ -32118,7 +32111,7 @@ namespace Ordermanagement_01
 
         private void btn_Break_Click(object sender, EventArgs e)
         {
-            this.Enabled = false;         
+            this.Enabled = false;
             Thread t = new Thread((ThreadStart)delegate { System.Windows.Forms.Application.Run(new Employee.Break_Details(int.Parse(userid.ToString()), F_Date, T_Date, Production_Date)); });
             t.SetApartmentState(ApartmentState.STA);
             t.Start();
@@ -32132,7 +32125,7 @@ namespace Ordermanagement_01
 
         private void lbl_Tax_Order_Email_Sended_Click(object sender, EventArgs e)
         {
-            Ordermanagement_01.Tax.Tax_Summary ts = new Tax.Tax_Summary(Convert.ToInt32(userid),User_Role_Id);
+            Ordermanagement_01.Tax.Tax_Summary ts = new Tax.Tax_Summary(Convert.ToInt32(userid), User_Role_Id);
             ts.Show();
         }
 
@@ -33443,12 +33436,12 @@ namespace Ordermanagement_01
 
         private void tabControl2_SelectedIndexChanged(object sender, EventArgs e)
         {
-               txt_Fromdate.Value = DateTime.Now;
-               txt_Todate.Value = DateTime.Now;
+            txt_Fromdate.Value = DateTime.Now;
+            txt_Todate.Value = DateTime.Now;
             txt_Employee_From_Date.Value = DateTime.Now;
             txt_Employee_Todate.Value = DateTime.Now;
 
-                        
+
         }
     }
 }

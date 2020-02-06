@@ -778,6 +778,7 @@ namespace Ordermanagement_01
 
         private void AdminDashboard_Load(object sender, EventArgs e)
         {
+           
             //  load_Progressbar.Start_progres();
             // clsLoader.startProgress();
 
@@ -787,8 +788,19 @@ namespace Ordermanagement_01
             SplashScreenManager.ShowForm(this, typeof(Ordermanagement_01.Masters.WaitForm1), true, true, false);
             try
             {
+               
                 Ordermanagement_01.Gen_Forms.Login loginfrm = new Ordermanagement_01.Gen_Forms.Login();
+
                 loginfrm.Close();
+                this.WindowState = FormWindowState.Maximized;
+                btn_Client_Green.Visible = false;
+                btn_Client_Yellow.Visible = false;
+                btn_Client_Red.Visible = false;
+                btn_Employee_Green.Visible = false;
+                btn_Employee_Red.Visible = false;
+                btn_Employee_Yellow.Visible = false;
+                label12.Visible = false;
+                label13.Visible = false;
                 //User_Control();
                 User_Access();
 
@@ -804,12 +816,12 @@ namespace Ordermanagement_01
                 if (User_Role_Id != "2")
                 {
 
-                    Bind_Auto_Not_Assigned_Orders();
-                    Bind_Auto_Assigned_Orders();
+                   Bind_Auto_Not_Assigned_Orders();
+                   Bind_Auto_Assigned_Orders();
 
                     Get_Count_Of_Vendor_Orders();
 
-                    Bind_Admin_User_Clients();
+                   // Bind_Admin_User_Clients();
 
                     AddParent_Superqc_My_report();
                     AddParent_Superqc_All_report();
@@ -861,7 +873,7 @@ namespace Ordermanagement_01
                 // dateTimePicker1.Text = lnk_Zone_Time.Text;
                 toolStripButton2.Visible = true;
                 tabControl1.SelectedIndex = 0;
-
+               
                 //======================Reports Details===================
                 dbc.BindOrderStatusRpt(ddl_Task);
                 dbc.Bind_Order_Progress_rpt(ddl_Status);
@@ -2130,7 +2142,7 @@ namespace Ordermanagement_01
 
                     this.Invoke(new MethodInvoker(delegate
                     {
-                        lbl_Upload_Orders_Allocate_Count.Text = "UPLOAD" + "(" + dtOrder_Uploaded.Rows[0]["count"].ToString() + ")";
+                        lbl_Upload_Orders_Allocate_Count.Text = "UPLOAD       " + "(" + dtOrder_Uploaded.Rows[0]["count"].ToString() + ")";
                     }));
                 }
                 else
@@ -2177,13 +2189,13 @@ namespace Ordermanagement_01
 
                     this.Invoke(new MethodInvoker(delegate
                     {
-                        lbl_Upload_Order_Work_Count.Text = "UPLOAD" + "(" + dtqcwork.Rows[0]["count"].ToString() + ")";
+                        lbl_Upload_Order_Work_Count.Text = "UPLOAD     " + "(" + dtqcwork.Rows[0]["count"].ToString() + ")";
                     }));
                 }
                 else
                 {
 
-                    lbl_Upload_Order_Work_Count.Text = "UPLOAD" + "(" + dtqcwork.Rows[0]["count"].ToString() + ")";
+                    lbl_Upload_Order_Work_Count.Text = "UPLOAD     " + "(" + dtqcwork.Rows[0]["count"].ToString() + ")";
                 }
                 //}
                 //else if (User_Role_Id == "2")
@@ -10956,7 +10968,12 @@ namespace Ordermanagement_01
             //Grid_Score.Rows.Clear();
             //txt_Search_By_Employee_Name.Text = "";
 
-
+            //if (tabControl1.SelectedIndex == 8)
+            //{
+                
+            //    Bind_Auto_Assigned_Orders();
+            //    Bind_Auto_Not_Assigned_Orders();
+            //}
             if (tabControl1.SelectedIndex == 2 || tabControl1.SelectedIndex == 5)
             {
                 if (User_Role_Id == "1")
@@ -10991,6 +11008,7 @@ namespace Ordermanagement_01
                 {
                     Grd_OrderTime.Focus();
                 }
+              
             }
         }
 
@@ -14790,7 +14808,7 @@ namespace Ordermanagement_01
         private void User_Production_Summary_design()
         {
 
-            lbl_Subprocess.Visible = true;
+            lbl_SubprocessName.Visible = true;
             ddl_Subprocess_name.Visible = true;
             lbl_From_date.Visible = true;
             dtp_From_date.Visible = true;
@@ -14801,26 +14819,26 @@ namespace Ordermanagement_01
             lbl_Task.Visible = false;
             ddl_Order_task.Visible = false;
 
-            lbl_Fromdate.X = 467; lbl_Fromdate.Y = 41;
-            Fromdate.X = 568; Fromdate.Y = 40;
+            //lbl_Fromdate.X = 467; lbl_Fromdate.Y = 41;
+            //Fromdate.X = 568; Fromdate.Y = 40;
 
-            Todate_1.X = 765; Todate_1.Y = 43;
-            Todate.X = 883; Todate.Y = 40;
+            //Todate_1.X = 765; Todate_1.Y = 43;
+            //Todate.X = 883; Todate.Y = 40;
 
-            lbl_client.X = 465; lbl_client.Y = 82;
-            client.X = 566; client.Y = 82;
+            //lbl_client.X = 465; lbl_client.Y = 82;
+            //client.X = 566; client.Y = 82;
 
-            lbl_subprocess.X = 767; lbl_subprocess.Y = 88;
-            subprocess.X = 892; subprocess.Y = 84;
+            //lbl_subprocess.X = 767; lbl_subprocess.Y = 88;
+            //subprocess.X = 892; subprocess.Y = 84;
 
-            lbl_From_date.Location = lbl_Fromdate;
-            dtp_From_date.Location = Fromdate;
-            lbl_Todate.Location = Todate_1;
-            dtp_To_Date.Location = Todate;
-            lbl_ClientName.Location = lbl_client;
-            ddl_Client_name.Location = client;
-            lbl_Subprocess.Location = lbl_subprocess;
-            ddl_Subprocess_name.Location = subprocess;
+            //lbl_From_date.Location = lbl_Fromdate;
+            //dtp_From_date.Location = Fromdate;
+            //lbl_Todate.Location = Todate_1;
+            //dtp_To_Date.Location = Todate;
+            //lbl_ClientName.Location = lbl_client;
+            //ddl_Client_name.Location = client;
+            //lbl_Subprocess.Location = lbl_subprocess;
+            //ddl_Subprocess_name.Location = subprocess;
 
         }
 
@@ -14901,26 +14919,26 @@ namespace Ordermanagement_01
             dtp_To_Date.Visible = true;
             lbl_ClientName.Visible = true;
             ddl_Client_name.Visible = true;
-            lbl_Subprocess.Visible = false;
+            lbl_SubprocessName.Visible = false;
             ddl_Subprocess_name.Visible = false;
             lbl_Task.Visible = false;
             ddl_Order_task.Visible = false;
 
 
-            lbl_Fromdate.X = 467; lbl_Fromdate.Y = 41;
-            Fromdate.X = 568; Fromdate.Y = 40;
+            //lbl_Fromdate.X = 467; lbl_Fromdate.Y = 41;
+            //Fromdate.X = 568; Fromdate.Y = 40;
 
-            Todate_1.X = 765; Todate_1.Y = 43;
-            Todate.X = 883; Todate.Y = 40;
+            //Todate_1.X = 765; Todate_1.Y = 43;
+            //Todate.X = 883; Todate.Y = 40;
 
-            lbl_client.X = 465; lbl_client.Y = 82;
-            client.X = 566; client.Y = 82;
-            lbl_From_date.Location = lbl_Fromdate;
-            dtp_From_date.Location = Fromdate;
-            lbl_Todate.Location = Todate_1;
-            dtp_To_Date.Location = Todate;
-            lbl_ClientName.Location = lbl_client;
-            ddl_Client_name.Location = client;
+            //lbl_client.X = 465; lbl_client.Y = 82;
+            //client.X = 566; client.Y = 82;
+            //lbl_From_date.Location = lbl_Fromdate;
+            //dtp_From_date.Location = Fromdate;
+            //lbl_Todate.Location = Todate_1;
+            //dtp_To_Date.Location = Todate;
+            //lbl_ClientName.Location = lbl_client;
+            //ddl_Client_name.Location = client;
 
         }
 
@@ -14961,38 +14979,38 @@ namespace Ordermanagement_01
             dtp_To_Date.Visible = true;
             lbl_ClientName.Visible = true;
             ddl_Client_name.Visible = true;
-            lbl_Subprocess.Visible = true;
+            lbl_SubprocessName.Visible = true;
             ddl_Subprocess_name.Visible = true;
             lbl_Task.Visible = true;
             ddl_Order_task.Visible = true;
 
 
 
-            lbl_Fromdate.X = 329; lbl_Fromdate.Y = 40;
-            Fromdate.X = 430; Fromdate.Y = 40;
+            //lbl_Fromdate.X = 329; lbl_Fromdate.Y = 40;
+            //Fromdate.X = 430; Fromdate.Y = 40;
 
-            Todate_1.X = 631; Todate_1.Y = 45;
-            Todate.X = 755; Todate.Y = 41;
+            //Todate_1.X = 631; Todate_1.Y = 45;
+            //Todate.X = 755; Todate.Y = 41;
 
-            lbl_client.X = 329; lbl_client.Y = 82;
-            client.X = 430; client.Y = 82;
+            //lbl_client.X = 329; lbl_client.Y = 82;
+            //client.X = 430; client.Y = 82;
 
-            lbl_subprocess.X = 631; lbl_subprocess.Y = 88;
-            subprocess.X = 756; subprocess.Y = 84;
+            //lbl_subprocess.X = 631; lbl_subprocess.Y = 88;
+            //subprocess.X = 756; subprocess.Y = 84;
 
-            username.X = 941; username.Y = 44;
-            username1.X = 1033; username1.Y = 43;
+            //username.X = 941; username.Y = 44;
+            //username1.X = 1033; username1.Y = 43;
 
-            lbl_From_date.Location = lbl_Fromdate;
-            dtp_From_date.Location = Fromdate;
-            lbl_Todate.Location = Todate_1;
-            dtp_To_Date.Location = Todate;
-            lbl_ClientName.Location = lbl_client;
-            ddl_Client_name.Location = client;
-            lbl_Subprocess.Location = lbl_subprocess;
-            ddl_Subprocess_name.Location = subprocess;
-            lbl_Task.Location = username;
-            ddl_Order_task.Location = username1;
+            //lbl_From_date.Location = lbl_Fromdate;
+            //dtp_From_date.Location = Fromdate;
+            //lbl_Todate.Location = Todate_1;
+            //dtp_To_Date.Location = Todate;
+            //lbl_ClientName.Location = lbl_client;
+            //ddl_Client_name.Location = client;
+            //lbl_Subprocess.Location = lbl_subprocess;
+            //ddl_Subprocess_name.Location = subprocess;
+            //lbl_Task.Location = username;
+            //ddl_Order_task.Location = username1;
 
         }
 
@@ -30959,44 +30977,7 @@ namespace Ordermanagement_01
 
         }
 
-        private void grid_User_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex != -1)
-            {
-                if (e.ColumnIndex == 0)
-                {
-                    int User_Id = int.Parse(grid_User.Rows[e.RowIndex].Cells[2].Value.ToString());
-                    string value = "False";
-
-                    if (grid_User.CurrentCell.Value != null)
-                    {
-                        if (bool.Parse(grid_User.CurrentCell.Value.ToString()) == true)
-                        {
-                            value = "False";
-                        }
-                        else
-                        {
-                            value = "True";
-                        }
-                    }
-                    else
-                    {
-                        value = "True";
-                    }
-
-                    Hashtable htupdate_Production = new Hashtable();
-                    System.Data.DataTable dtupdate_Production = new System.Data.DataTable();
-
-                    htupdate_Production.Add("@Trans", "UPDTAE_PRODUCTION_LIST");
-                    htupdate_Production.Add("@User_Id", User_Id);
-                    htupdate_Production.Add("@Production_Set", value);
-                    dtupdate_Production = dataaccess.ExecuteSP("Sp_Auto_Allocation_User_Profile", htupdate_Production);
-                    Auto_Allocation_Scrol_Postion = grid_User.FirstDisplayedScrollingRowIndex;
-                    Bind_Auto_Allocation_Users_List();
-                }
-
-            }
-        }
+      
 
         private void ClientUserTeamtoolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -31009,7 +30990,6 @@ namespace Ordermanagement_01
             //t.SetApartmentState(ApartmentState.STA);
             //t.Start();
         }
-
         private void userWiseClientProfileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (Validate_User_Access(87) != false)
@@ -31089,6 +31069,7 @@ namespace Ordermanagement_01
         }
 
         private void Bind_Auto_Not_Assigned_Orders()
+       
         {
 
             Hashtable htAutoNotAssgined_Order = new Hashtable();
@@ -31227,284 +31208,7 @@ namespace Ordermanagement_01
 
 
 
-        }
-
-        private void btn_Auto_Assigned_Refresh_Click(object sender, EventArgs e)
-        {
-            Bind_Auto_Assigned_Orders();
-        }
-
-        private void btn_Auto_Not_Assigned_Refresh_Click(object sender, EventArgs e)
-        {
-            Bind_Auto_Not_Assigned_Orders();
-        }
-
-        private void txt_Search_Auto_Not_Assgined_Click(object sender, EventArgs e)
-        {
-            txt_Search_Auto_Not_Assgined.ForeColor = Color.Black;
-            txt_Search_Auto_Not_Assgined.Text = "";
-        }
-
-        private void txt_Search_Auto_Assgined_Click(object sender, EventArgs e)
-        {
-            txt_Search_Auto_Assgined.ForeColor = Color.Black;
-            txt_Search_Auto_Assgined.Text = "";
-        }
-
-        private void btn_Auto_Not_Assigned_Submit_Click(object sender, EventArgs e)
-        {
-
-            if (Grid_Auto_Not_Assigned_Orders.Rows.Count > 0)
-            {
-
-                for (int i = 0; i < Grid_Auto_Not_Assigned_Orders.Rows.Count; i++)
-                {
-                    bool isChecked = (bool)Grid_Auto_Not_Assigned_Orders[0, i].FormattedValue;
-                    int Order_Id = int.Parse(Grid_Auto_Not_Assigned_Orders.Rows[i].Cells[8].Value.ToString());
-
-                    // chk = (CheckBox)row.Cells[0].FormattedValue("chkBxSelect");
-                    //  CheckBox chkId = (row.Cells[0].FormattedValue as CheckBox);
-                    if (isChecked == true)
-                    {
-
-                        Hashtable htupdateOrder = new Hashtable();
-                        System.Data.DataTable dtupdateorder = new System.Data.DataTable();
-                        htupdateOrder.Add("@Trans", "UPDATE_EXPIDATE");
-                        htupdateOrder.Add("@Expidate", "True");
-                        htupdateOrder.Add("@Order_ID", Order_Id);
-                        dtupdateorder = dataaccess.ExecuteSP("Sp_Order", htupdateOrder);
-
-                    }
-                    else
-                    {
-                        Hashtable htupdateOrder = new Hashtable();
-                        System.Data.DataTable dtupdateorder = new System.Data.DataTable();
-                        htupdateOrder.Add("@Trans", "UPDATE_EXPIDATE");
-                        htupdateOrder.Add("@Expidate", "False");
-                        htupdateOrder.Add("@Order_ID", Order_Id);
-                        dtupdateorder = dataaccess.ExecuteSP("Sp_Order", htupdateOrder);
-
-
-                    }
-
-
-
-
-
-
-
-
-
-                }
-                Bind_Auto_Not_Assigned_Orders();
-                MessageBox.Show("Record Updated Sucessfully");
-
-
-
-            }
-
-
-        }
-
-        private void btn_Auto_Assigned_Submit_Click(object sender, EventArgs e)
-        {
-            if (Grid_Auto_Assigned_Order.Rows.Count > 0)
-            {
-
-                for (int i = 0; i < Grid_Auto_Assigned_Order.Rows.Count; i++)
-                {
-                    bool isChecked = (bool)Grid_Auto_Assigned_Order[0, i].FormattedValue;
-                    int Order_Id = int.Parse(Grid_Auto_Assigned_Order.Rows[i].Cells[9].Value.ToString());
-
-                    // chk = (CheckBox)row.Cells[0].FormattedValue("chkBxSelect");
-                    //  CheckBox chkId = (row.Cells[0].FormattedValue as CheckBox);
-                    if (isChecked == true)
-                    {
-
-                        Hashtable htupdateOrder = new Hashtable();
-                        System.Data.DataTable dtupdateorder = new System.Data.DataTable();
-                        htupdateOrder.Add("@Trans", "UPDATE_EXPIDATE");
-                        htupdateOrder.Add("@Expidate", "True");
-                        htupdateOrder.Add("@Order_ID", Order_Id);
-                        dtupdateorder = dataaccess.ExecuteSP("Sp_Order", htupdateOrder);
-
-                    }
-                    else
-                    {
-                        Hashtable htupdateOrder = new Hashtable();
-                        System.Data.DataTable dtupdateorder = new System.Data.DataTable();
-                        htupdateOrder.Add("@Trans", "UPDATE_EXPIDATE");
-                        htupdateOrder.Add("@Expidate", "False");
-                        htupdateOrder.Add("@Order_ID", Order_Id);
-                        dtupdateorder = dataaccess.ExecuteSP("Sp_Order", htupdateOrder);
-
-
-                    }
-
-
-
-                }
-
-                Bind_Auto_Assigned_Orders();
-                MessageBox.Show("Record Updated Sucessfully");
-
-            }
-        }
-
-        private void txt_Search_Auto_Not_Assgined_TextChanged(object sender, EventArgs e)
-        {
-            DataView dtsearch = new DataView(dtAuto_Not_Assigned_Order);
-            dtsearch.RowFilter = "Client_Order_Number like '%" + txt_Search_Auto_Not_Assgined.Text.ToString() + "%'";
-            System.Data.DataTable dt = new System.Data.DataTable();
-            dt = dtsearch.ToTable();
-            if (dt.Rows.Count > 0)
-            {
-
-                Grid_Auto_Not_Assigned_Orders.Columns[0].Width = 60;
-                Grid_Auto_Not_Assigned_Orders.Columns[1].Width = 125;
-                Grid_Auto_Not_Assigned_Orders.Columns[2].Width = 180;
-                Grid_Auto_Not_Assigned_Orders.Columns[3].Width = 180;
-                Grid_Auto_Not_Assigned_Orders.Columns[4].Width = 180;
-                Grid_Auto_Not_Assigned_Orders.Columns[5].Width = 100;
-                Grid_Auto_Not_Assigned_Orders.Columns[6].Width = 110;
-                Grid_Auto_Not_Assigned_Orders.Columns[7].Width = 100;
-
-                if (dt.Rows.Count > 0)
-                {
-                    Grid_Auto_Not_Assigned_Orders.Rows.Clear();
-
-                    for (int i = 0; i < dt.Rows.Count; i++)
-                    {
-                        Grid_Auto_Not_Assigned_Orders.Rows.Add();
-                        bool expidate = Convert.ToBoolean(dt.Rows[i]["Expidate"].ToString());
-                        Grid_Auto_Not_Assigned_Orders.Rows[i].Cells[0].Value = expidate;
-                        Grid_Auto_Not_Assigned_Orders.Rows[i].Cells[1].Value = dt.Rows[i]["Client_Order_Number"].ToString();
-
-
-                        if (User_Role_Id == "1")
-                        {
-                            Grid_Auto_Not_Assigned_Orders.Rows[i].Cells[2].Value = dt.Rows[i]["Client_Name"].ToString();
-                            Grid_Auto_Not_Assigned_Orders.Rows[i].Cells[3].Value = dt.Rows[i]["Sub_ProcessName"].ToString();
-                        }
-                        else
-                        {
-                            Grid_Auto_Not_Assigned_Orders.Rows[i].Cells[2].Value = dt.Rows[i]["Client_Number"].ToString();
-                            Grid_Auto_Not_Assigned_Orders.Rows[i].Cells[3].Value = dt.Rows[i]["Subprocess_Number"].ToString();
-
-                        }
-
-                        Grid_Auto_Not_Assigned_Orders.Rows[i].Cells[4].Value = dt.Rows[i]["Order_Type"].ToString();
-                        Grid_Auto_Not_Assigned_Orders.Rows[i].Cells[5].Value = dt.Rows[i]["Date"].ToString();
-                        Grid_Auto_Not_Assigned_Orders.Rows[i].Cells[6].Value = dt.Rows[i]["State"].ToString();
-                        Grid_Auto_Not_Assigned_Orders.Rows[i].Cells[7].Value = dt.Rows[i]["County"].ToString();
-                        Grid_Auto_Not_Assigned_Orders.Rows[i].Cells[8].Value = dt.Rows[i]["Order_ID"].ToString();
-
-                    }
-                }
-                else
-                {
-                    Grid_Auto_Not_Assigned_Orders.DataSource = null;
-                    Grid_Auto_Not_Assigned_Orders.Rows.Clear();
-                    //grd_Assigned_Orders.EmptyDataText = "No Orders Are Avilable";
-                    //grd_Assigned_Orders.DataBind();
-                }
-
-            }
-        }
-
-        private void txt_Search_Auto_Assgined_TextChanged(object sender, EventArgs e)
-        {
-            DataView dtsearch = new DataView(dtAuto_Assigned_Order);
-            dtsearch.RowFilter = "Client_Order_Number like '%" + txt_Search_Auto_Assgined.Text.ToString() + "%'";
-            System.Data.DataTable dt = new System.Data.DataTable();
-            dt = dtsearch.ToTable();
-
-            if (dt.Rows.Count > 0)
-            {
-
-                Grid_Auto_Assigned_Order.Columns[0].Width = 50;
-                Grid_Auto_Assigned_Order.Columns[1].Width = 125;
-                Grid_Auto_Assigned_Order.Columns[2].Width = 180;
-                Grid_Auto_Assigned_Order.Columns[3].Width = 180;
-                Grid_Auto_Assigned_Order.Columns[4].Width = 180;
-                Grid_Auto_Assigned_Order.Columns[5].Width = 100;
-                Grid_Auto_Assigned_Order.Columns[6].Width = 110;
-                Grid_Auto_Assigned_Order.Columns[7].Width = 150;
-                Grid_Auto_Assigned_Order.Columns[8].Width = 150;
-
-                if (dt.Rows.Count > 0)
-                {
-                    Grid_Auto_Assigned_Order.Rows.Clear();
-
-                    for (int i = 0; i < dt.Rows.Count; i++)
-                    {
-                        Grid_Auto_Assigned_Order.Rows.Add();
-                        bool expidate = Convert.ToBoolean(dt.Rows[i]["Expidate"].ToString());
-                        Grid_Auto_Assigned_Order.Rows[i].Cells[0].Value = expidate;
-                        Grid_Auto_Assigned_Order.Rows[i].Cells[1].Value = dt.Rows[i]["Client_Order_Number"].ToString();
-
-                        if (User_Role_Id == "1")
-                        {
-                            Grid_Auto_Assigned_Order.Rows[i].Cells[2].Value = dt.Rows[i]["Client_Name"].ToString();
-                            Grid_Auto_Assigned_Order.Rows[i].Cells[3].Value = dt.Rows[i]["Sub_ProcessName"].ToString();
-                        }
-                        else
-                        {
-                            Grid_Auto_Assigned_Order.Rows[i].Cells[2].Value = dt.Rows[i]["Client_Number"].ToString();
-                            Grid_Auto_Assigned_Order.Rows[i].Cells[3].Value = dt.Rows[i]["Subprocess_Number"].ToString();
-
-
-                        }
-                        Grid_Auto_Assigned_Order.Rows[i].Cells[4].Value = dt.Rows[i]["Order_Type"].ToString();
-                        Grid_Auto_Assigned_Order.Rows[i].Cells[5].Value = dt.Rows[i]["Date"].ToString();
-                        Grid_Auto_Assigned_Order.Rows[i].Cells[6].Value = dt.Rows[i]["State"].ToString();
-                        Grid_Auto_Assigned_Order.Rows[i].Cells[7].Value = dt.Rows[i]["County"].ToString();
-                        Grid_Auto_Assigned_Order.Rows[i].Cells[8].Value = dt.Rows[i]["User_Name"].ToString();
-                        Grid_Auto_Assigned_Order.Rows[i].Cells[9].Value = dt.Rows[i]["Order_ID"].ToString();
-
-                    }
-                }
-                else
-                {
-                    Grid_Auto_Assigned_Order.DataSource = null;
-                    Grid_Auto_Assigned_Order.Rows.Clear();
-                    //grd_Assigned_Orders.EmptyDataText = "No Orders Are Avilable";
-                    //grd_Assigned_Orders.DataBind();
-                }
-
-
-
-
-
-            }
-        }
-
-        private void Grid_Auto_Not_Assigned_Orders_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex != -1)
-            {
-                if (e.ColumnIndex == 1)
-                {
-
-                    Ordermanagement_01.Order_Entry Order_Entry = new Ordermanagement_01.Order_Entry(int.Parse(Grid_Auto_Not_Assigned_Orders.Rows[e.RowIndex].Cells[8].Value.ToString()), int.Parse(userid.ToString()), User_Role_Id.ToString(), Production_Date);
-                    Order_Entry.Show();
-                }
-            }
-        }
-
-        private void Grid_Auto_Assigned_Order_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex != -1)
-            {
-                if (e.ColumnIndex == 1)
-                {
-
-                    Ordermanagement_01.Order_Entry Order_Entry = new Ordermanagement_01.Order_Entry(int.Parse(Grid_Auto_Assigned_Order.Rows[e.RowIndex].Cells[9].Value.ToString()), int.Parse(userid.ToString()), User_Role_Id.ToString(), Production_Date);
-                    Order_Entry.Show();
-                }
-            }
-        }
-
+        }       
         private void timer2_Tick(object sender, EventArgs e)
         {
             Update_User_Last_Login_Date();
@@ -31739,11 +31443,630 @@ namespace Ordermanagement_01
 
         private void emailSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (User_Role_Id == "1")
+            if (User_Role_Id =="1") 
             {
                 Ordermanagement_01.New_Dashboard.Settings.EmailSetting emailsettings = new New_Dashboard.Settings.EmailSetting();
                 emailsettings.Show();
             }
+        }
+
+        private void panel7_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btn_Rework_Myrefresh_Click_1(object sender, EventArgs e)
+        {
+
+            load_Progressbar.Start_progres();
+            if (validate_My_Rework() != false)
+            {
+                if (trw_Rework_Myreport.SelectedNode.Text == "User Production Report")
+                {
+                    First_report_Rework_Design();
+                    cr_Rework_ReportsViewer.Visible = false;
+                    grd_Rework_MyReport.Visible = true;
+                    grd_Rework_MyReport.Columns.Clear();
+                    Load_Grd_Rework_My_User_Production_Report();
+                }
+                else if (trw_Rework_Myreport.SelectedNode.Text == "User Production Count")
+                {
+
+                    First_report_Rework_Design();
+                    grd_Rework_MyReport.Rows.Clear();
+                    cr_Rework_ReportsViewer.Visible = false;
+                    grd_Rework_MyReport.Visible = true;
+                    grd_Rework_MyReport.Columns.Clear();
+                    Load_Grd_Rework_My_User_Production_Report();
+
+                }
+                else if (trw_Rework_Myreport.SelectedNode.Text == "Orders Document List Report")
+                {
+                    Order_Document_list_Rework_design();
+                    grd_Rework_MyReport.AutoGenerateColumns = true;
+                    grd_Rework_MyReport.DataSource = null;
+                    grd_Rework_MyReport.Visible = true;
+                    cr_Rework_ReportsViewer.Visible = false;
+                    Export_Title_Name = "Document_List_Report";
+                    lbl_Rework_Myerrror.Visible = false;
+                    Load_Order_Document_List_Rework_Report();
+                }
+                else if (trw_Rework_Myreport.SelectedNode.Text == "Orders Check List Report")
+                {
+                    Order_Chklist_Design();
+                    grd_Rework_MyReport.AutoGenerateColumns = true;
+                    grd_Rework_MyReport.DataSource = null;
+                    lbl_Rework_Myerrror.Visible = false;
+                    cr_Rework_ReportsViewer.Visible = true;
+                    Load_Check_List_Rework_data();
+                }
+                else if (trw_Rework_Myreport.SelectedNode.Text == "Orders Error Info Report")
+                {
+                    grd_Rework_MyReport.DataSource = null;
+                    grd_Rework_MyReport.Visible = true;
+                    cr_Rework_ReportsViewer.Visible = false;
+                    Export_Title_Name = "Error_Info_Report";
+                    lbl_Rework_Myerrror.Visible = false;
+                    Load_Orders_Error_Info_My_Rework_Report();
+
+                }
+                else
+                {
+                    cr_Rework_ReportsViewer.Visible = false;
+                    grd_Rework_MyReport.Visible = false;
+                    lbl_Rework_Myerrror.Visible = true;
+                }
+            }
+        }
+
+        private void btn_Rework_Myexport_Click_1(object sender, EventArgs e)
+        {
+            load_Progressbar.Start_progres();
+            Export_Rework_Wise_ReportData();
+        }
+
+        private void btn_Rework_Refresh_Click_1(object sender, EventArgs e)
+        {
+            // mm
+            load_Progressbar.Start_progres();
+            //clsLoader.startProgress();
+            if (validate_All_Rework() != false)
+            {
+                if (trw_Rework_Report.SelectedNode.Text == "User Production Report")
+                {
+                    Load_Grd_Rework_All_User_Production_Report();
+                }
+                else if (trw_Rework_Report.SelectedNode.Text == "User Production Count")
+                {
+                    Load_Grd_Rework_All_User_Production_Report();
+                }
+                else if (trw_Rework_Report.SelectedNode.Text == "Orders Document List Report")
+                {
+                    Export_Title_Name = "Document_List_Report";
+                    lbl_Rework_Myerrror.Visible = false;
+
+                    Load_Order_Document_List_Rework_All_Report();
+                }
+                else if (trw_Rework_Report.SelectedNode.Text == "Orders Check List Report")
+                {
+                    Load_Check_List_Rework_data();
+                }
+                else if (trw_Rework_Report.SelectedNode.Text == "Orders Error Info Report")
+                {
+                    Load_Orders_Error_Info_Rework_Report();
+                }
+                else
+                {
+                    cr_Rework_ReportsViewer.Visible = false;
+                    grd_Rework_MyReport.Visible = false;
+                    lbl_Rework_Myerrror.Visible = true;
+                }
+            }
+        }
+
+        private void btn_Rework_Export_Click_1(object sender, EventArgs e)
+        {
+            load_Progressbar.Start_progres();
+            Export_Rework_MY_Wise_ReportData();
+
+        }
+
+        private void trw_Rework_Report_AfterSelect_1(object sender, TreeViewEventArgs e)
+        {
+
+            //lbl_Rework_All_Header.Text = trw_Rework_Report.SelectedNode.Text;
+            grd_My_Reports.DataSource = null;
+
+            grd_My_Reports.Refresh();
+
+            lbl_User_summary.Visible = false;
+
+            if (User_Role_Id == "1")
+            {
+                dbc.BindClientName_rpt(ddl_Rework_client);
+            }
+            else
+            {
+                dbc.BindClientName_For_Employee(ddl_Rework_client);
+            }
+            if (trw_Rework_Report.SelectedNode.Text == "User Production Report")
+            {
+                First_All_report_Rework_Design();
+
+                grd_Rework_Reports.Visible = true;
+                grd_Rework_Reports.DataSource = null;
+                cr_Rework_AllReportsViewer.Visible = false;
+            }
+
+            else if (trw_Rework_Report.SelectedNode.Text == "User Production Count")
+            {
+
+                First_All_report_Rework_Design();
+                grd_Rework_Reports.Visible = true;
+                grd_Rework_Reports.DataSource = null;
+                cr_Rework_AllReportsViewer.Visible = false;
+            }
+            else if (trw_Rework_Report.SelectedNode.Text == "Orders Document List Report")
+            {
+
+                Order_Document_list_All_Rework_design();
+                // grd_Rework_Reports.Rows.Clear();
+                cr_Rework_AllReportsViewer.Visible = false;
+                grd_Rework_Reports.Visible = true;
+                grd_Rework_Reports.Columns.Clear();
+            }
+            else if (trw_Rework_Report.SelectedNode.Text == "Orders Check List Report")
+            {
+                All_Rework_checklist_design();
+
+                cr_Rework_AllReportsViewer.Visible = true;
+                grd_Rework_Reports.Visible = false;
+
+                grd_Rework_Reports.Columns.Clear();
+            }
+            else if (trw_Rework_Report.SelectedNode.Text == "Orders Error Info Report")
+            {
+                Order_Error_All_Rework_Report();
+                grd_Rework_Reports.Visible = true;
+                cr_Rework_AllReportsViewer.Visible = false;
+
+                grd_Rework_Reports.Columns.Clear();
+            }
+        }
+
+        private void trw_Rework_Myreport_AfterSelect_1(object sender, TreeViewEventArgs e)
+        {
+            //lbl_Rework_My_Heder.Text = trw_Rework_Myreport.SelectedNode.Text;
+            AddParent_Rework_All_report();
+            grd_Rework_MyReport.DataSource = null;
+            grd_Rework_MyReport.Refresh();
+            if (User_Role_Id == "1")
+            {
+                dbc.Bind_UserClient_rpt(ddl_MyClient, Loged_In_User_Id);
+            }
+            else
+            {
+                dbc.Bind_UserClient_Number_rpt(ddl_MyClient, Loged_In_User_Id);
+                // dbc.Bind_UserClient_Number_rpt_1(ddl_MyClient, Loged_In_User_Id);
+            }
+            lbl_User_summary.Visible = false;
+
+            if (ddl_Client_name.Text == "")
+            {
+                lbl_User_summary.Visible = true;
+            }
+
+            if (trw_Rework_Myreport.SelectedNode.Text == "User Production Report")
+            {
+                First_report_Rework_Design();
+            }
+            else if (trw_Rework_Myreport.SelectedNode.Text == "User Production Count")
+            {
+
+                First_report_Rework_Design();
+            }
+            else if (trw_Rework_Myreport.SelectedNode.Text == "Orders Document List Report")
+            {
+                Order_Document_list_Rework_design();
+
+            }
+            else if (trw_Rework_Myreport.SelectedNode.Text == "Orders Check List Report")
+            {
+                Order_Chklist_Rework_Design();
+
+            }
+            else if (trw_Rework_Myreport.SelectedNode.Text == "Orders Error Info Report")
+            {
+                OrderError_Rework_Design();
+            }
+
+        }
+
+        private void grd_Rework_MyReport_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            load_Progressbar.Start_progres();
+            //clsLoader.startProgress();
+            if (trw_Rework_Myreport.SelectedNode.Text == "User Production Report")
+            {
+                if (e.ColumnIndex == 12)
+                {
+
+                    Ordermanagement_01.Rework_Superqc_Order_Entry OrderEntry = new Ordermanagement_01.Rework_Superqc_Order_Entry(int.Parse(grd_Rework_MyReport.Rows[e.RowIndex].Cells[11].Value.ToString()), userid, "Rework", User_Role_Id.ToString(), Production_Date);
+                    OrderEntry.Show();
+                }
+            }
+            else if (trw_Rework_Myreport.SelectedNode.Text == "Orders Document List Report")
+            {
+                if (e.ColumnIndex == 2)
+                {
+                    Ordermanagement_01.Rework_Superqc_Order_Entry OrderEntry = new Ordermanagement_01.Rework_Superqc_Order_Entry(int.Parse(grd_Rework_MyReport.Rows[e.RowIndex].Cells[1].Value.ToString()), userid, "Rework", User_Role_Id.ToString(), Production_Date);
+                    OrderEntry.Show();
+                }
+            }
+            else if (trw_Rework_Myreport.SelectedNode.Text == "Orders Document List Report")
+            {
+                if (e.ColumnIndex == 3)
+                {
+                    Ordermanagement_01.Rework_Superqc_Order_Entry OrderEntry = new Ordermanagement_01.Rework_Superqc_Order_Entry(int.Parse(grd_Rework_MyReport.Rows[e.RowIndex].Cells[2].Value.ToString()), userid, "Rework", User_Role_Id.ToString(), Production_Date);
+                    OrderEntry.Show();
+                }
+            }
+        }
+
+        private void grd_Rework_MyReport_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void grd_Rework_Reports_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            load_Progressbar.Start_progres();
+            if (trw_Rework_Report.SelectedNode.Text == "User Production Report")
+            {
+                if (e.ColumnIndex == 12)
+                {
+                    Ordermanagement_01.Rework_Superqc_Order_Entry OrderEntry = new Ordermanagement_01.Rework_Superqc_Order_Entry(int.Parse(grd_Rework_Reports.Rows[e.RowIndex].Cells[11].Value.ToString()), userid, "Rework", User_Role_Id, Production_Date);
+                    OrderEntry.Show();
+                }
+            }
+            else if (trw_Rework_Report.SelectedNode.Text == "Orders Document List Report")
+            {
+                if (e.ColumnIndex == 1)
+                {
+                    Ordermanagement_01.Rework_Superqc_Order_Entry OrderEntry = new Ordermanagement_01.Rework_Superqc_Order_Entry(int.Parse(grd_Rework_Reports.Rows[e.RowIndex].Cells[0].Value.ToString()), userid, "Rework", User_Role_Id, Production_Date);
+                    OrderEntry.Show();
+                }
+            }
+            else if (trw_Rework_Report.SelectedNode.Text == "Orders Document List Report")
+            {
+                if (e.ColumnIndex == 3)
+                {
+                    Ordermanagement_01.Rework_Superqc_Order_Entry OrderEntry = new Ordermanagement_01.Rework_Superqc_Order_Entry(int.Parse(grd_Rework_Reports.Rows[e.RowIndex].Cells[2].Value.ToString()), userid, "Rework", User_Role_Id, Production_Date);
+                    OrderEntry.Show();
+                }
+            }
+        }
+
+        private void crv_My_Superqc_Load(object sender, EventArgs e)
+        {
+
+        }        
+      
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Grid_Auto_Not_Assigned_Orders_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (e.RowIndex != -1)
+            {
+                if (e.ColumnIndex == 1)
+                {
+
+                    Ordermanagement_01.Order_Entry Order_Entry = new Ordermanagement_01.Order_Entry(int.Parse(Grid_Auto_Not_Assigned_Orders.Rows[e.RowIndex].Cells[8].Value.ToString()), int.Parse(userid.ToString()), User_Role_Id.ToString(), Production_Date);
+                    Order_Entry.Show();
+                }
+            }
+        }
+
+        private void Grid_Auto_Assigned_Order_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                if (e.ColumnIndex == 1)
+                {
+
+                    Ordermanagement_01.Order_Entry Order_Entry = new Ordermanagement_01.Order_Entry(int.Parse(Grid_Auto_Assigned_Order.Rows[e.RowIndex].Cells[9].Value.ToString()), int.Parse(userid.ToString()), User_Role_Id.ToString(), Production_Date);
+                    Order_Entry.Show();
+                }
+            }
+        }
+
+        private void btn_Auto_Assigned_Submit_Click_1(object sender, EventArgs e)
+        {
+            if (Grid_Auto_Assigned_Order.Rows.Count > 0)
+            {
+
+                for (int i = 0; i < Grid_Auto_Assigned_Order.Rows.Count; i++)
+                {
+                    bool isChecked = (bool)Grid_Auto_Assigned_Order[0, i].FormattedValue;
+                    int Order_Id = int.Parse(Grid_Auto_Assigned_Order.Rows[i].Cells[9].Value.ToString());
+
+                    // chk = (CheckBox)row.Cells[0].FormattedValue("chkBxSelect");
+                    //  CheckBox chkId = (row.Cells[0].FormattedValue as CheckBox);
+                    if (isChecked == true)
+                    {
+
+                        Hashtable htupdateOrder = new Hashtable();
+                        System.Data.DataTable dtupdateorder = new System.Data.DataTable();
+                        htupdateOrder.Add("@Trans", "UPDATE_EXPIDATE");
+                        htupdateOrder.Add("@Expidate", "True");
+                        htupdateOrder.Add("@Order_ID", Order_Id);
+                        dtupdateorder = dataaccess.ExecuteSP("Sp_Order", htupdateOrder);
+
+                    }
+                    else
+                    {
+                        Hashtable htupdateOrder = new Hashtable();
+                        System.Data.DataTable dtupdateorder = new System.Data.DataTable();
+                        htupdateOrder.Add("@Trans", "UPDATE_EXPIDATE");
+                        htupdateOrder.Add("@Expidate", "False");
+                        htupdateOrder.Add("@Order_ID", Order_Id);
+                        dtupdateorder = dataaccess.ExecuteSP("Sp_Order", htupdateOrder);
+
+
+                    }
+
+
+
+                }
+
+                Bind_Auto_Assigned_Orders();
+                MessageBox.Show("Record Updated Sucessfully");
+
+            }
+        }
+
+        private void btn_Auto_Not_Assigned_Submit_Click_1(object sender, EventArgs e)
+        {
+
+            if (Grid_Auto_Not_Assigned_Orders.Rows.Count > 0)
+            {
+
+                for (int i = 0; i < Grid_Auto_Not_Assigned_Orders.Rows.Count; i++)
+                {
+                    bool isChecked = (bool)Grid_Auto_Not_Assigned_Orders[0, i].FormattedValue;
+                    int Order_Id = int.Parse(Grid_Auto_Not_Assigned_Orders.Rows[i].Cells[8].Value.ToString());
+
+                    // chk = (CheckBox)row.Cells[0].FormattedValue("chkBxSelect");
+                    //  CheckBox chkId = (row.Cells[0].FormattedValue as CheckBox);
+                    if (isChecked == true)
+                    {
+
+                        Hashtable htupdateOrder = new Hashtable();
+                        System.Data.DataTable dtupdateorder = new System.Data.DataTable();
+                        htupdateOrder.Add("@Trans", "UPDATE_EXPIDATE");
+                        htupdateOrder.Add("@Expidate", "True");
+                        htupdateOrder.Add("@Order_ID", Order_Id);
+                        dtupdateorder = dataaccess.ExecuteSP("Sp_Order", htupdateOrder);
+
+                    }
+                    else
+                    {
+                        Hashtable htupdateOrder = new Hashtable();
+                        System.Data.DataTable dtupdateorder = new System.Data.DataTable();
+                        htupdateOrder.Add("@Trans", "UPDATE_EXPIDATE");
+                        htupdateOrder.Add("@Expidate", "False");
+                        htupdateOrder.Add("@Order_ID", Order_Id);
+                        dtupdateorder = dataaccess.ExecuteSP("Sp_Order", htupdateOrder);
+                   }
+                }
+                Bind_Auto_Not_Assigned_Orders();
+                MessageBox.Show("Record Updated Sucessfully");
+            }
+
+        }
+
+        private void txt_Search_Auto_Not_Assgined_Click_1(object sender, EventArgs e)
+        {
+            txt_Search_Auto_Not_Assgined.ForeColor = Color.Black;
+            txt_Search_Auto_Not_Assgined.Text = "";
+        }
+
+        private void txt_Search_Auto_Not_Assgined_TextChanged_1(object sender, EventArgs e)
+        {
+            DataView dtsearch = new DataView(dtAuto_Not_Assigned_Order);
+            dtsearch.RowFilter = "Client_Order_Number like '%" + txt_Search_Auto_Not_Assgined.Text.ToString() + "%'";
+            System.Data.DataTable dt = new System.Data.DataTable();
+            dt = dtsearch.ToTable();
+            if (dt.Rows.Count > 0)
+            {
+
+                Grid_Auto_Not_Assigned_Orders.Columns[0].Width = 60;
+                Grid_Auto_Not_Assigned_Orders.Columns[1].Width = 125;
+                Grid_Auto_Not_Assigned_Orders.Columns[2].Width = 180;
+                Grid_Auto_Not_Assigned_Orders.Columns[3].Width = 180;
+                Grid_Auto_Not_Assigned_Orders.Columns[4].Width = 180;
+                Grid_Auto_Not_Assigned_Orders.Columns[5].Width = 100;
+                Grid_Auto_Not_Assigned_Orders.Columns[6].Width = 110;
+                Grid_Auto_Not_Assigned_Orders.Columns[7].Width = 100;
+
+                if (dt.Rows.Count > 0)
+                {
+                    Grid_Auto_Not_Assigned_Orders.Rows.Clear();
+
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        Grid_Auto_Not_Assigned_Orders.Rows.Add();
+                        bool expidate = Convert.ToBoolean(dt.Rows[i]["Expidate"].ToString());
+                        Grid_Auto_Not_Assigned_Orders.Rows[i].Cells[0].Value = expidate;
+                        Grid_Auto_Not_Assigned_Orders.Rows[i].Cells[1].Value = dt.Rows[i]["Client_Order_Number"].ToString();
+
+
+                        if (User_Role_Id == "1")
+                        {
+                            Grid_Auto_Not_Assigned_Orders.Rows[i].Cells[2].Value = dt.Rows[i]["Client_Name"].ToString();
+                            Grid_Auto_Not_Assigned_Orders.Rows[i].Cells[3].Value = dt.Rows[i]["Sub_ProcessName"].ToString();
+                        }
+                        else
+                        {
+                            Grid_Auto_Not_Assigned_Orders.Rows[i].Cells[2].Value = dt.Rows[i]["Client_Number"].ToString();
+                            Grid_Auto_Not_Assigned_Orders.Rows[i].Cells[3].Value = dt.Rows[i]["Subprocess_Number"].ToString();
+
+                        }
+
+                        Grid_Auto_Not_Assigned_Orders.Rows[i].Cells[4].Value = dt.Rows[i]["Order_Type"].ToString();
+                        Grid_Auto_Not_Assigned_Orders.Rows[i].Cells[5].Value = dt.Rows[i]["Date"].ToString();
+                        Grid_Auto_Not_Assigned_Orders.Rows[i].Cells[6].Value = dt.Rows[i]["State"].ToString();
+                        Grid_Auto_Not_Assigned_Orders.Rows[i].Cells[7].Value = dt.Rows[i]["County"].ToString();
+                        Grid_Auto_Not_Assigned_Orders.Rows[i].Cells[8].Value = dt.Rows[i]["Order_ID"].ToString();
+
+                    }
+                }
+                else
+                {
+                    Grid_Auto_Not_Assigned_Orders.DataSource = null;
+                    Grid_Auto_Not_Assigned_Orders.Rows.Clear();
+                    //grd_Assigned_Orders.EmptyDataText = "No Orders Are Avilable";
+                    //grd_Assigned_Orders.DataBind();
+                }
+
+            }
+        }
+
+        private void btn_Auto_Not_Assigned_Refresh_Click_1(object sender, EventArgs e)
+        {
+            Bind_Auto_Not_Assigned_Orders();
+        }
+
+        private void btn_Auto_Assigned_Refresh_Click_1(object sender, EventArgs e)
+        {
+            Bind_Auto_Assigned_Orders();
+        }
+
+        private void grid_User_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                if (e.ColumnIndex == 0)
+                {
+                    int User_Id = int.Parse(grid_User.Rows[e.RowIndex].Cells[2].Value.ToString());
+                    string value = "False";
+
+                    if (grid_User.CurrentCell.Value != null)
+                    {
+                        if (bool.Parse(grid_User.CurrentCell.Value.ToString()) == true)
+                        {
+                            value = "False";
+                        }
+                        else
+                        {
+                            value = "True";
+                        }
+                    }
+                    else
+                    {
+                        value = "True";
+                    }
+
+                    Hashtable htupdate_Production = new Hashtable();
+                    System.Data.DataTable dtupdate_Production = new System.Data.DataTable();
+
+                    htupdate_Production.Add("@Trans", "UPDTAE_PRODUCTION_LIST");
+                    htupdate_Production.Add("@User_Id", User_Id);
+                    htupdate_Production.Add("@Production_Set", value);
+                    dtupdate_Production = dataaccess.ExecuteSP("Sp_Auto_Allocation_User_Profile", htupdate_Production);
+                    Auto_Allocation_Scrol_Postion = grid_User.FirstDisplayedScrollingRowIndex;
+                    Bind_Auto_Allocation_Users_List();
+                }
+
+            }
+        }
+
+        private void grid_User_CellFormatting_1(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            foreach (DataGridViewRow myrow in grid_User.Rows)
+            {
+
+                int Diff = int.Parse(grid_User.Rows[e.RowIndex].Cells[3].Value.ToString());
+
+                if (Diff == 0)
+                {
+
+                    this.grid_User.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightPink;
+
+                }
+                else if (Diff == 1)
+                {
+                    this.grid_User.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGreen;
+                }
+
+            }
+        }     
+        private void txt_Search_Auto_Assgined_TextChanged_1(object sender, EventArgs e)
+        {
+            DataView dtsearch = new DataView(dtAuto_Assigned_Order);
+            dtsearch.RowFilter = "Client_Order_Number like '%" + txt_Search_Auto_Assgined.Text.ToString() + "%'";
+            System.Data.DataTable dt = new System.Data.DataTable();
+            dt = dtsearch.ToTable();
+
+            if (dt.Rows.Count > 0)
+            {
+
+                Grid_Auto_Assigned_Order.Columns[0].Width = 60;
+                Grid_Auto_Assigned_Order.Columns[1].Width = 125;
+                Grid_Auto_Assigned_Order.Columns[2].Width = 180;
+                Grid_Auto_Assigned_Order.Columns[3].Width = 180;
+                Grid_Auto_Assigned_Order.Columns[4].Width = 180;
+                Grid_Auto_Assigned_Order.Columns[5].Width = 100;
+                Grid_Auto_Assigned_Order.Columns[6].Width = 110;
+                Grid_Auto_Assigned_Order.Columns[7].Width = 150;
+                Grid_Auto_Assigned_Order.Columns[8].Width = 150;
+
+                if (dt.Rows.Count > 0)
+                {
+                    Grid_Auto_Assigned_Order.Rows.Clear();
+
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        Grid_Auto_Assigned_Order.Rows.Add();
+                        bool expidate = Convert.ToBoolean(dt.Rows[i]["Expidate"].ToString());
+                        Grid_Auto_Assigned_Order.Rows[i].Cells[0].Value = expidate;
+                        Grid_Auto_Assigned_Order.Rows[i].Cells[1].Value = dt.Rows[i]["Client_Order_Number"].ToString();
+
+                        if (User_Role_Id == "1")
+                        {
+                            Grid_Auto_Assigned_Order.Rows[i].Cells[2].Value = dt.Rows[i]["Client_Name"].ToString();
+                            Grid_Auto_Assigned_Order.Rows[i].Cells[3].Value = dt.Rows[i]["Sub_ProcessName"].ToString();
+                        }
+                        else
+                        {
+                            Grid_Auto_Assigned_Order.Rows[i].Cells[2].Value = dt.Rows[i]["Client_Number"].ToString();
+                            Grid_Auto_Assigned_Order.Rows[i].Cells[3].Value = dt.Rows[i]["Subprocess_Number"].ToString();
+                        }
+                        Grid_Auto_Assigned_Order.Rows[i].Cells[4].Value = dt.Rows[i]["Order_Type"].ToString();
+                        Grid_Auto_Assigned_Order.Rows[i].Cells[5].Value = dt.Rows[i]["Date"].ToString();
+                        Grid_Auto_Assigned_Order.Rows[i].Cells[6].Value = dt.Rows[i]["State"].ToString();
+                        Grid_Auto_Assigned_Order.Rows[i].Cells[7].Value = dt.Rows[i]["County"].ToString();
+                        Grid_Auto_Assigned_Order.Rows[i].Cells[8].Value = dt.Rows[i]["User_Name"].ToString();
+                        Grid_Auto_Assigned_Order.Rows[i].Cells[9].Value = dt.Rows[i]["Order_ID"].ToString();
+                    }
+                }
+                else
+                {
+                    Grid_Auto_Assigned_Order.DataSource = null;
+                    Grid_Auto_Assigned_Order.Rows.Clear();
+                    //grd_Assigned_Orders.EmptyDataText = "No Orders Are Avilable";
+                    //grd_Assigned_Orders.DataBind();
+                }
+            }
+        }
+        private void txt_Search_Auto_Assgined_Click_1(object sender, EventArgs e)
+        {
+            txt_Search_Auto_Assgined.ForeColor = Color.Black;
+            txt_Search_Auto_Assgined.Text = "";
         }
 
         private void AdminDashboard_KeyDown(object sender,System.Windows.Forms. KeyEventArgs e)

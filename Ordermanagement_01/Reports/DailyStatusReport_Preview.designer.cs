@@ -987,7 +987,8 @@
             this.pivotGridField5.FieldEdit = this.repositoryItemDateEdit2;
             this.pivotGridField5.FieldName = "Date";
             this.pivotGridField5.Name = "pivotGridField5";
-            this.pivotGridField5.ValueFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.pivotGridField5.ValueFormat.FormatString = "d";
+            this.pivotGridField5.ValueFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.pivotGridField5.Width = 154;
             // 
             // repositoryItemDateEdit2
@@ -1839,6 +1840,8 @@
             this.pivotGridField64.Name = "pivotGridField64";
             this.pivotGridField64.Options.AllowDrag = DevExpress.Utils.DefaultBoolean.False;
             this.pivotGridField64.Options.AllowExpand = DevExpress.Utils.DefaultBoolean.False;
+            this.pivotGridField64.ValueFormat.FormatString = "d";
+            this.pivotGridField64.ValueFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             // 
             // pivotGridField65
             // 
@@ -1910,6 +1913,8 @@
             this.pivotGridField35.CellFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.pivotGridField35.FieldName = "Order_Production_Date";
             this.pivotGridField35.Name = "pivotGridField35";
+            this.pivotGridField35.ValueFormat.FormatString = "d";
+            this.pivotGridField35.ValueFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.pivotGridField35.Visible = false;
             // 
             // pivotGridControlShiftWise2
@@ -2664,8 +2669,12 @@
             this.pivotGridField13.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
             this.pivotGridField13.AreaIndex = 0;
             this.pivotGridField13.Caption = "Order Production Date";
+            this.pivotGridField13.CellFormat.FormatString = "d";
+            this.pivotGridField13.CellFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.pivotGridField13.FieldName = "Order_Production_Date";
             this.pivotGridField13.Name = "pivotGridField13";
+            this.pivotGridField13.ValueFormat.FormatString = "d";
+            this.pivotGridField13.ValueFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             // 
             // pivotGridField14
             // 
@@ -2843,6 +2852,8 @@
             this.pivotGridField28.CellFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.pivotGridField28.FieldName = "Received_Date";
             this.pivotGridField28.Name = "pivotGridField28";
+            this.pivotGridField28.ValueFormat.FormatString = "d";
+            this.pivotGridField28.ValueFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             // 
             // pivotGridField54
             // 
@@ -3156,6 +3167,8 @@
             this.pivotGridField23.CellFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.pivotGridField23.FieldName = "Received_Date";
             this.pivotGridField23.Name = "pivotGridField23";
+            this.pivotGridField23.ValueFormat.FormatString = "d";
+            this.pivotGridField23.ValueFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             // 
             // pivotGridField25
             // 

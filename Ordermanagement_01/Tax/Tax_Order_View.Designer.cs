@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtClientOrderRef = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.chk_Priority = new System.Windows.Forms.CheckBox();
             this.btn_Inhouse_Documents = new System.Windows.Forms.Button();
@@ -95,8 +97,6 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtClientOrderRef = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -182,6 +182,29 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ORDER DETAILS";
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.Black;
+            this.label16.Location = new System.Drawing.Point(10, 194);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(103, 19);
+            this.label16.TabIndex = 130;
+            this.label16.Text = "Client Order Ref:";
+            // 
+            // txtClientOrderRef
+            // 
+            this.txtClientOrderRef.BackColor = System.Drawing.SystemColors.Info;
+            this.txtClientOrderRef.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClientOrderRef.Location = new System.Drawing.Point(6, 218);
+            this.txtClientOrderRef.Multiline = true;
+            this.txtClientOrderRef.Name = "txtClientOrderRef";
+            this.txtClientOrderRef.ReadOnly = true;
+            this.txtClientOrderRef.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtClientOrderRef.Size = new System.Drawing.Size(595, 47);
+            this.txtClientOrderRef.TabIndex = 12;
+            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -200,7 +223,7 @@
             this.chk_Priority.Location = new System.Drawing.Point(1025, 235);
             this.chk_Priority.Name = "chk_Priority";
             this.chk_Priority.Size = new System.Drawing.Size(15, 14);
-            this.chk_Priority.TabIndex = 127;
+            this.chk_Priority.TabIndex = 16;
             this.chk_Priority.UseVisualStyleBackColor = true;
             this.chk_Priority.CheckedChanged += new System.EventHandler(this.chk_Priority_CheckedChanged);
             // 
@@ -214,7 +237,7 @@
             this.btn_Inhouse_Documents.Location = new System.Drawing.Point(1001, 333);
             this.btn_Inhouse_Documents.Name = "btn_Inhouse_Documents";
             this.btn_Inhouse_Documents.Size = new System.Drawing.Size(160, 41);
-            this.btn_Inhouse_Documents.TabIndex = 126;
+            this.btn_Inhouse_Documents.TabIndex = 20;
             this.btn_Inhouse_Documents.Text = "Inhouse Documents";
             this.btn_Inhouse_Documents.UseVisualStyleBackColor = true;
             this.btn_Inhouse_Documents.Click += new System.EventHandler(this.btn_Inhouse_Documents_Click);
@@ -227,7 +250,7 @@
             this.txtOrderSourceDetails.Name = "txtOrderSourceDetails";
             this.txtOrderSourceDetails.ReadOnly = true;
             this.txtOrderSourceDetails.Size = new System.Drawing.Size(231, 24);
-            this.txtOrderSourceDetails.TabIndex = 125;
+            this.txtOrderSourceDetails.TabIndex = 15;
             // 
             // label14
             // 
@@ -247,7 +270,7 @@
             this.txtDelqStatus.Name = "txtDelqStatus";
             this.txtDelqStatus.ReadOnly = true;
             this.txtDelqStatus.Size = new System.Drawing.Size(183, 24);
-            this.txtDelqStatus.TabIndex = 123;
+            this.txtDelqStatus.TabIndex = 14;
             // 
             // txtOrderSource
             // 
@@ -257,7 +280,7 @@
             this.txtOrderSource.Name = "txtOrderSource";
             this.txtOrderSource.ReadOnly = true;
             this.txtOrderSource.Size = new System.Drawing.Size(232, 24);
-            this.txtOrderSource.TabIndex = 122;
+            this.txtOrderSource.TabIndex = 13;
             // 
             // label7
             // 
@@ -291,7 +314,7 @@
             this.btn_Tax_ViolationEntry.Location = new System.Drawing.Point(836, 333);
             this.btn_Tax_ViolationEntry.Name = "btn_Tax_ViolationEntry";
             this.btn_Tax_ViolationEntry.Size = new System.Drawing.Size(159, 41);
-            this.btn_Tax_ViolationEntry.TabIndex = 119;
+            this.btn_Tax_ViolationEntry.TabIndex = 19;
             this.btn_Tax_ViolationEntry.Text = "View Tax Violation";
             this.btn_Tax_ViolationEntry.UseVisualStyleBackColor = true;
             this.btn_Tax_ViolationEntry.Click += new System.EventHandler(this.btn_Tax_ViolationEntry_Click);
@@ -307,7 +330,7 @@
             this.button1.Location = new System.Drawing.Point(670, 333);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(160, 41);
-            this.button1.TabIndex = 71;
+            this.button1.TabIndex = 18;
             this.button1.Text = "View Tax Certifcate";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -322,7 +345,7 @@
             this.lbl_Notes.ReadOnly = true;
             this.lbl_Notes.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.lbl_Notes.Size = new System.Drawing.Size(595, 87);
-            this.lbl_Notes.TabIndex = 118;
+            this.lbl_Notes.TabIndex = 17;
             // 
             // label4
             // 
@@ -343,7 +366,7 @@
             this.txt_Order_Assigned_Type.Name = "txt_Order_Assigned_Type";
             this.txt_Order_Assigned_Type.ReadOnly = true;
             this.txt_Order_Assigned_Type.Size = new System.Drawing.Size(185, 24);
-            this.txt_Order_Assigned_Type.TabIndex = 116;
+            this.txt_Order_Assigned_Type.TabIndex = 3;
             // 
             // lbl_Assigned_Type
             // 
@@ -364,7 +387,7 @@
             this.txt_Assigned_Date.Name = "txt_Assigned_Date";
             this.txt_Assigned_Date.ReadOnly = true;
             this.txt_Assigned_Date.Size = new System.Drawing.Size(184, 24);
-            this.txt_Assigned_Date.TabIndex = 114;
+            this.txt_Assigned_Date.TabIndex = 7;
             // 
             // label5
             // 
@@ -418,7 +441,7 @@
             this.txt_ReceivedDate.Name = "txt_ReceivedDate";
             this.txt_ReceivedDate.ReadOnly = true;
             this.txt_ReceivedDate.Size = new System.Drawing.Size(231, 24);
-            this.txt_ReceivedDate.TabIndex = 109;
+            this.txt_ReceivedDate.TabIndex = 1;
             // 
             // label24
             // 
@@ -440,7 +463,7 @@
             this.txt_Order_Number.Name = "txt_Order_Number";
             this.txt_Order_Number.ReadOnly = true;
             this.txt_Order_Number.Size = new System.Drawing.Size(191, 24);
-            this.txt_Order_Number.TabIndex = 107;
+            this.txt_Order_Number.TabIndex = 0;
             // 
             // txt_Property_Address
             // 
@@ -450,7 +473,7 @@
             this.txt_Property_Address.Name = "txt_Property_Address";
             this.txt_Property_Address.ReadOnly = true;
             this.txt_Property_Address.Size = new System.Drawing.Size(231, 24);
-            this.txt_Property_Address.TabIndex = 106;
+            this.txt_Property_Address.TabIndex = 5;
             // 
             // txt_County
             // 
@@ -460,7 +483,7 @@
             this.txt_County.Name = "txt_County";
             this.txt_County.ReadOnly = true;
             this.txt_County.Size = new System.Drawing.Size(231, 24);
-            this.txt_County.TabIndex = 105;
+            this.txt_County.TabIndex = 9;
             // 
             // txt_State
             // 
@@ -470,7 +493,7 @@
             this.txt_State.Name = "txt_State";
             this.txt_State.ReadOnly = true;
             this.txt_State.Size = new System.Drawing.Size(193, 24);
-            this.txt_State.TabIndex = 104;
+            this.txt_State.TabIndex = 8;
             // 
             // txt_Barrower_Name
             // 
@@ -480,7 +503,7 @@
             this.txt_Barrower_Name.Name = "txt_Barrower_Name";
             this.txt_Barrower_Name.ReadOnly = true;
             this.txt_Barrower_Name.Size = new System.Drawing.Size(193, 24);
-            this.txt_Barrower_Name.TabIndex = 103;
+            this.txt_Barrower_Name.TabIndex = 4;
             // 
             // txt_Order_Type
             // 
@@ -490,7 +513,7 @@
             this.txt_Order_Type.Name = "txt_Order_Type";
             this.txt_Order_Type.ReadOnly = true;
             this.txt_Order_Type.Size = new System.Drawing.Size(232, 24);
-            this.txt_Order_Type.TabIndex = 102;
+            this.txt_Order_Type.TabIndex = 2;
             // 
             // txt_APN
             // 
@@ -500,7 +523,7 @@
             this.txt_APN.Name = "txt_APN";
             this.txt_APN.ReadOnly = true;
             this.txt_APN.Size = new System.Drawing.Size(232, 24);
-            this.txt_APN.TabIndex = 101;
+            this.txt_APN.TabIndex = 6;
             // 
             // label12
             // 
@@ -554,7 +577,7 @@
             this.txt_Status.Name = "txt_Status";
             this.txt_Status.ReadOnly = true;
             this.txt_Status.Size = new System.Drawing.Size(183, 24);
-            this.txt_Status.TabIndex = 96;
+            this.txt_Status.TabIndex = 11;
             // 
             // txt_Task
             // 
@@ -564,7 +587,7 @@
             this.txt_Task.Name = "txt_Task";
             this.txt_Task.ReadOnly = true;
             this.txt_Task.Size = new System.Drawing.Size(232, 24);
-            this.txt_Task.TabIndex = 95;
+            this.txt_Task.TabIndex = 10;
             // 
             // label3
             // 
@@ -658,14 +681,14 @@
             this.Grid_Comments.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(223)))), ((int)(((byte)(216)))));
             this.Grid_Comments.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.Grid_Comments.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_Comments.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_Comments.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.Grid_Comments.ColumnHeadersHeight = 25;
             this.Grid_Comments.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SNo,
@@ -752,14 +775,14 @@
             this.Grid_Error_Description.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(223)))), ((int)(((byte)(216)))));
             this.Grid_Error_Description.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.Grid_Error_Description.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_Error_Description.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_Error_Description.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.Grid_Error_Description.ColumnHeadersHeight = 25;
             this.Grid_Error_Description.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column2,
@@ -835,14 +858,14 @@
             this.grid_Production.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(223)))), ((int)(((byte)(216)))));
             this.grid_Production.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.grid_Production.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid_Production.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid_Production.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.grid_Production.ColumnHeadersHeight = 25;
             this.grid_Production.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -887,29 +910,6 @@
             this.dataGridViewTextBoxColumn8.FillWeight = 203.0457F;
             this.dataGridViewTextBoxColumn8.HeaderText = "COMPLETED DATE";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(10, 194);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(103, 19);
-            this.label16.TabIndex = 130;
-            this.label16.Text = "Client Order Ref:";
-            // 
-            // txtClientOrderRef
-            // 
-            this.txtClientOrderRef.BackColor = System.Drawing.SystemColors.Info;
-            this.txtClientOrderRef.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClientOrderRef.Location = new System.Drawing.Point(6, 218);
-            this.txtClientOrderRef.Multiline = true;
-            this.txtClientOrderRef.Name = "txtClientOrderRef";
-            this.txtClientOrderRef.ReadOnly = true;
-            this.txtClientOrderRef.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtClientOrderRef.Size = new System.Drawing.Size(595, 47);
-            this.txtClientOrderRef.TabIndex = 129;
             // 
             // Tax_Order_View
             // 

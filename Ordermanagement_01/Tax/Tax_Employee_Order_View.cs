@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraPrinting;
+using DevExpress.XtraSplashScreen;
+using System;
+using System.Collections;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using System.Collections;
-using System.Globalization;
-using DevExpress.XtraGrid.Views.Grid;
-using DevExpress.XtraPrinting;
-using DevExpress.XtraEditors;
-using DevExpress.XtraSplashScreen;
 
 namespace Ordermanagement_01.Tax
 {
@@ -72,7 +68,7 @@ namespace Ordermanagement_01.Tax
         {
             Operation = "My_Orders";
             lbl_Order.Text = "MY  ORDERS:";
-           
+
             Gridview_Bind_Assigned_Orders();
         }
 
@@ -85,7 +81,7 @@ namespace Ordermanagement_01.Tax
 
         private void Tax_Employee_Order_View_Load(object sender, EventArgs e)
         {
-            SplashScreenManager.ShowForm(this, typeof(Ordermanagement_01.Masters.WaitForm1), true, true, false);
+            SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
             try
             {
                 gridViewTaxOrders.IndicatorWidth = 40;
@@ -155,171 +151,14 @@ namespace Ordermanagement_01.Tax
             htuser.Add("@User_Id", User_Id);
             dtuser = dataaccess.ExecuteSP("Sp_Tax_Orders", htuser);
 
-            //grd_Admin_orders.Columns[0].Width = 50;
-            //grd_Admin_orders.Columns[1].Width = 50;
-            //grd_Admin_orders.Columns[2].Width = 150;
-            //grd_Admin_orders.Columns[3].Width = 250;
-            //grd_Admin_orders.Columns[4].Width = 120;
-            //grd_Admin_orders.Columns[5].Width = 120;
-            //grd_Admin_orders.Columns[6].Width = 250;
-            //grd_Admin_orders.Columns[7].Width = 195;
-            //grd_Admin_orders.Columns[8].Width = 180;
-            //grd_Admin_orders.Columns[9].Width = 150;
-            //grd_Admin_orders.Columns[10].Width = 170;
-            //grd_Admin_orders.Columns[11].Width = 170;
-            //grd_Admin_orders.Columns[12].Width = 120;
-            //grd_Admin_orders.Columns[13].Width = 120;
-            //grd_Admin_orders.Columns[14].Width = 120;
-            //grd_Admin_orders.Rows.Clear();
+
             if (dtuser.Rows.Count > 0)
             {
                 gridControlTaxOrders.DataSource = dtuser;
-                //for (int i = 0; i < dtuser.Rows.Count; i++)
-                //{
-                //    grd_Admin_orders.Rows.Add();
-                //    grd_Admin_orders.Rows[i].Cells[1].Value = i + 1;
-                //    grd_Admin_orders.Rows[i].Cells[2].Value = dtuser.Rows[i]["Client_Order_Number"].ToString();
-                //    grd_Admin_orders.Rows[i].Cells[3].Value = dtuser.Rows[i]["Client_Order_Ref"].ToString();
-                //    grd_Admin_orders.Rows[i].Cells[4].Value = dtuser.Rows[i]["Client_Number"].ToString();
-                //    grd_Admin_orders.Rows[i].Cells[5].Value = dtuser.Rows[i]["Subprocess_Number"].ToString();
-                //    grd_Admin_orders.Rows[i].Cells[6].Value = dtuser.Rows[i]["Order_Type"].ToString();
-                //    grd_Admin_orders.Rows[i].Cells[7].Value = dtuser.Rows[i]["State"].ToString();
-                //    grd_Admin_orders.Rows[i].Cells[8].Value = dtuser.Rows[i]["County"].ToString();
-                //    grd_Admin_orders.Rows[i].Cells[9].Value = dtuser.Rows[i]["User_Name"].ToString();
-                //    grd_Admin_orders.Rows[i].Cells[10].Value = dtuser.Rows[i]["Recived_Date"].ToString(); // Cell - 9
-                //    grd_Admin_orders.Rows[i].Cells[11].Value = dtuser.Rows[i]["Tax_Status"].ToString();
-                //    grd_Admin_orders.Rows[i].Cells[12].Value = dtuser.Rows[i]["Order_ID"].ToString();
-                //    grd_Admin_orders.Rows[i].Cells[13].Value = dtuser.Rows[i]["Order_Task"].ToString();
-                //    grd_Admin_orders.Rows[i].Cells[14].Value = dtuser.Rows[i]["Tax_Task_Id"].ToString();
-                //    grd_Admin_orders.Rows[i].Cells[15].Value = dtuser.Rows[i]["Tax_Status_Id"].ToString();
-                //    //grd_Admin_orders.Rows[i].Cells[13].Value = dtuser.Rows[i]["Tax_Status_Id"].ToString();
-                //    grd_Admin_orders.Rows[i].Cells[16].Value = dtuser.Rows[i]["Followup_Date"].ToString();
-                //    grd_Admin_orders.Rows[i].Cells[17].Value = dtuser.Rows[i]["Order_Task"].ToString();
-
-                //    grd_Admin_orders.Rows[i].Cells[19].Value = dtuser.Rows[i]["priority"].ToString();
-
-                //    string Clientnum = dtuser.Rows[i]["Client_Number"].ToString();
-                //    string Subclient = dtuser.Rows[i]["Subprocess_Number"].ToString();
-                //    string Priority = dtuser.Rows[i]["priority"].ToString();
-                //    if (Clientnum == "10000" && Subclient == "10187")
-                //    {
-                //        grd_Admin_orders.Rows[i].DefaultCellStyle.BackColor = Color.Yellow;
-                //    }
-
-                //    int Order_Task_Id = int.Parse(dtuser.Rows[i]["Order_Task"].ToString());
-
-                //    if (Order_Task_Id == 26)
-                //    {
-                //        grd_Admin_orders.Rows[i].DefaultCellStyle.BackColor = ColorTranslator.FromHtml("#b19cd9");
-                //    }
-                //    if (Clientnum != "10000")
-                //    {
-                //        if (Priority == "True")
-                //        {
-                //            grd_Admin_orders.Rows[i].DefaultCellStyle.BackColor = Color.Pink;
-                //        }
-
-                //    }
-                //    if (Order_Process == "Internal_Tax_Request_Qc" || Order_Process == "Internal_Tax_Request_Qc" || Order_Process == "External_Tax_Request_Qc")
-                //    {
-                //        grd_Admin_orders.Rows[i].Cells[18].Value = dtuser.Rows[i]["Process_User"].ToString();
-                //    }
-                //}
             }
-            //else
-            //{
-            //    grd_Admin_orders.DataSource = null;
-            //    grd_Admin_orders.Rows.Clear();
-            //}
         }
 
-        //private void grd_Admin_orders_CellClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    if (e.RowIndex != -1)
-        //    {
-        //        if (e.ColumnIndex == 2 && Operation == "My_Orders")
-        //        {
-        //            string Order_Id = grd_Admin_orders.Rows[e.RowIndex].Cells[12].Value.ToString();
-        //            string Order_Task_Id = grd_Admin_orders.Rows[e.RowIndex].Cells[13].Value.ToString();
-        //            string Tax_TAsk_Id = grd_Admin_orders.Rows[e.RowIndex].Cells[14].Value.ToString();
-        //            string Tax_Status = grd_Admin_orders.Rows[e.RowIndex].Cells[15].Value.ToString();
-        //            string Order_Number = grd_Admin_orders.Rows[e.RowIndex].Cells[2].Value.ToString();
-        //            string Check_Tax_Status = "";
-        //            if (Order_Process == "Internal_Tax_Request")
-        //            {
-        //                Hashtable htcheck_Order_Status = new Hashtable();
-        //                DataTable dtcheck_Order_Status = new DataTable();
 
-        //                htcheck_Order_Status.Add("@Trans", "GET_INTERNAL_TAX_ORDER_STATUS");
-        //                htcheck_Order_Status.Add("@Order_Id", Order_Id);
-        //                dtcheck_Order_Status = dataaccess.ExecuteSP("Sp_Tax_Orders", htcheck_Order_Status);
-        //                if (dtcheck_Order_Status.Rows.Count > 0)
-        //                {
-        //                    Check_Tax_Status = dtcheck_Order_Status.Rows[0]["Search_Tax_Request"].ToString();
-        //                }
-        //                else
-        //                {
-        //                    Check_Tax_Status = "False";
-        //                }
-
-        //                if (Check_Tax_Status == "True")
-        //                {
-        //                    // Inserting Order Timings for the user
-        //                    Hashtable ht_InserT_Time = new Hashtable();
-        //                    DataTable dt_Insert_Time = new DataTable();
-        //                    ht_InserT_Time.Add("@Trans", "INSERT");
-        //                    ht_InserT_Time.Add("@Order_Id", Order_Id);
-        //                    ht_InserT_Time.Add("@Tax_Task", Tax_TAsk_Id);
-        //                    ht_InserT_Time.Add("@Tax_Status", Tax_Status);
-        //                    ht_InserT_Time.Add("@User_Id", User_Id);
-        //                    ht_InserT_Time.Add("@Status", "True");
-        //                    var Time_Id = dataaccess.ExecuteSPForScalar("Sp_Tax_Order_User_Timings", ht_InserT_Time);
-
-        //                    int Order_Time_Id = int.Parse(Time_Id.ToString());
-        //                    Tax_Order_Processing txpr = new Tax_Order_Processing(Order_Id, Order_Task_Id, Tax_TAsk_Id, Tax_Status, User_Id, Order_Number, User_Role, Order_Time_Id);
-        //                    txpr.Show();
-        //                    this.Close();
-        //                }
-        //                else
-        //                {
-        //                    MessageBox.Show("This Order has been cancelled from the internal Search Team");
-        //                }
-        //            }
-        //            else
-        //            {
-
-
-        //                // Inserting Order Timings for the user
-
-        //                Hashtable ht_InserT_Time = new Hashtable();
-        //                DataTable dt_Insert_Time = new DataTable();
-        //                ht_InserT_Time.Add("@Trans", "INSERT");
-        //                ht_InserT_Time.Add("@Order_Id", Order_Id);
-        //                ht_InserT_Time.Add("@Tax_Task", Tax_TAsk_Id);
-        //                ht_InserT_Time.Add("@Tax_Status", Tax_Status);
-        //                ht_InserT_Time.Add("@User_Id", User_Id);
-        //                ht_InserT_Time.Add("@Status", "True");
-        //                var Time_Id = dataaccess.ExecuteSPForScalar("Sp_Tax_Order_User_Timings", ht_InserT_Time);
-        //                int Order_Time_Id = int.Parse(Time_Id.ToString());
-        //                Tax_Order_Processing txpr = new Tax_Order_Processing(Order_Id, Order_Task_Id, Tax_TAsk_Id, Tax_Status, User_Id, Order_Number, User_Role, Order_Time_Id);
-        //                txpr.Show();
-        //                this.Close();
-        //            }
-        //        }
-        //        else if (e.ColumnIndex == 2 && Operation == "All_Orders")
-        //        {
-        //            string Order_Id = grd_Admin_orders.Rows[e.RowIndex].Cells[12].Value.ToString();
-        //            string Order_Task_Id = grd_Admin_orders.Rows[e.RowIndex].Cells[13].Value.ToString();
-        //            string Tax_TAsk_Id = grd_Admin_orders.Rows[e.RowIndex].Cells[14].Value.ToString();
-        //            string Tax_Status = grd_Admin_orders.Rows[e.RowIndex].Cells[15].Value.ToString();
-        //            string Order_Number = grd_Admin_orders.Rows[e.RowIndex].Cells[2].Value.ToString();
-
-        //            Tax_Order_View txview = new Tax_Order_View(Order_Id, User_Id, Order_Number, User_Role);
-        //            txview.Show();
-        //        }
-        //    }
-
-        //}
 
         private void gridViewTaxOrders_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
         {
@@ -349,11 +188,11 @@ namespace Ordermanagement_01.Tax
                         htcheck_Order_Status.Add("@Trans", "GET_INTERNAL_TAX_ORDER_STATUS");
                         htcheck_Order_Status.Add("@Order_Id", Order_Id);
                         dtcheck_Order_Status = dataaccess.ExecuteSP("Sp_Tax_Orders", htcheck_Order_Status);
-                       string Order_Status = dtcheck_Order_Status.Rows[0]["Order_Progress"].ToString();
+                        string Order_Status = dtcheck_Order_Status.Rows[0]["Order_Progress"].ToString();
                         if (dtcheck_Order_Status.Rows.Count > 0)
                         {
                             Check_Tax_Status = dtcheck_Order_Status.Rows[0]["Search_Tax_Request"].ToString();
-                          
+
                         }
                         else
                         {
@@ -453,6 +292,7 @@ namespace Ordermanagement_01.Tax
             try
             {
                 gridViewTaxOrders.VisibleColumns[0].OptionsColumn.Printable = DevExpress.Utils.DefaultBoolean.False;
+                gridViewTaxOrders.Columns.ColumnByFieldName("Address").Visible = true;
                 string folderPath = "C:\\Temp\\";
                 string Path1 = folderPath + "Tax Orders" + DateTime.Now.ToString("dd-MM-yyyy-hh-mm-ss") + ".xlsx";
                 XlsxExportOptionsEx options = new XlsxExportOptionsEx();
@@ -469,7 +309,7 @@ namespace Ordermanagement_01.Tax
             }
             finally
             {
-
+                gridViewTaxOrders.Columns.ColumnByFieldName("Address").Visible = false;
             }
         }
 

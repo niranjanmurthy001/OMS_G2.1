@@ -678,7 +678,6 @@
             // repositoryItemHyperLinkEdit11
             // 
             this.repositoryItemHyperLinkEdit11.AutoHeight = false;
-            this.repositoryItemHyperLinkEdit11.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.repositoryItemHyperLinkEdit11.Name = "repositoryItemHyperLinkEdit11";
             // 
             // repositoryItemHyperLinkEdit7
@@ -3861,7 +3860,7 @@
             this.tabNavigationPage12.Caption = "Employee Production";
             this.tabNavigationPage12.Controls.Add(this.tableLayoutPanel17);
             this.tabNavigationPage12.Name = "tabNavigationPage12";
-            this.tabNavigationPage12.Size = new System.Drawing.Size(918, 409);
+            this.tabNavigationPage12.Size = new System.Drawing.Size(918, 407);
             // 
             // tableLayoutPanel17
             // 
@@ -3873,9 +3872,9 @@
             this.tableLayoutPanel17.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel17.Name = "tableLayoutPanel17";
             this.tableLayoutPanel17.RowCount = 2;
-            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.43552F));
-            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.56448F));
-            this.tableLayoutPanel17.Size = new System.Drawing.Size(918, 409);
+            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.14742F));
+            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 79.85258F));
+            this.tableLayoutPanel17.Size = new System.Drawing.Size(918, 407);
             this.tableLayoutPanel17.TabIndex = 0;
             // 
             // panel33
@@ -3893,7 +3892,7 @@
             this.panel33.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel33.Location = new System.Drawing.Point(3, 3);
             this.panel33.Name = "panel33";
-            this.panel33.Size = new System.Drawing.Size(912, 40);
+            this.panel33.Size = new System.Drawing.Size(912, 76);
             this.panel33.TabIndex = 0;
             // 
             // simple_Button_Exprt
@@ -3907,7 +3906,7 @@
             this.simple_Button_Exprt.AppearanceHovered.BackColor = System.Drawing.Color.Transparent;
             this.simple_Button_Exprt.AppearanceHovered.Options.UseBackColor = true;
             this.simple_Button_Exprt.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simple_Button_Exprt.Location = new System.Drawing.Point(1185, 1);
+            this.simple_Button_Exprt.Location = new System.Drawing.Point(478, 39);
             this.simple_Button_Exprt.Name = "simple_Button_Exprt";
             this.simple_Button_Exprt.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.True;
             this.simple_Button_Exprt.Size = new System.Drawing.Size(94, 32);
@@ -3926,7 +3925,7 @@
             this.simple_Button_Refresh.AppearanceHovered.BackColor = System.Drawing.Color.Transparent;
             this.simple_Button_Refresh.AppearanceHovered.Options.UseBackColor = true;
             this.simple_Button_Refresh.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simple_Button_Refresh.Location = new System.Drawing.Point(1088, 1);
+            this.simple_Button_Refresh.Location = new System.Drawing.Point(378, 39);
             this.simple_Button_Refresh.Name = "simple_Button_Refresh";
             this.simple_Button_Refresh.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.True;
             this.simple_Button_Refresh.Size = new System.Drawing.Size(94, 32);
@@ -3937,7 +3936,7 @@
             // lookUpEditAllEmpProdSubProcess
             // 
             this.lookUpEditAllEmpProdSubProcess.EditValue = "0";
-            this.lookUpEditAllEmpProdSubProcess.Location = new System.Drawing.Point(798, 7);
+            this.lookUpEditAllEmpProdSubProcess.Location = new System.Drawing.Point(759, 7);
             this.lookUpEditAllEmpProdSubProcess.Name = "lookUpEditAllEmpProdSubProcess";
             this.lookUpEditAllEmpProdSubProcess.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lookUpEditAllEmpProdSubProcess.Properties.Appearance.Options.UseFont = true;
@@ -3946,14 +3945,14 @@
             this.lookUpEditAllEmpProdSubProcess.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
             this.lookUpEditAllEmpProdSubProcess.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lookUpEditAllEmpProdSubProcess.Properties.NullText = "ALL";
-            this.lookUpEditAllEmpProdSubProcess.Size = new System.Drawing.Size(111, 26);
+            this.lookUpEditAllEmpProdSubProcess.Size = new System.Drawing.Size(150, 26);
             this.lookUpEditAllEmpProdSubProcess.TabIndex = 4;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(680, 11);
+            this.label18.Location = new System.Drawing.Point(638, 9);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(119, 18);
             this.label18.TabIndex = 7;
@@ -3962,7 +3961,7 @@
             // lookUpEditAllEmpProdClientName
             // 
             this.lookUpEditAllEmpProdClientName.EditValue = "0";
-            this.lookUpEditAllEmpProdClientName.Location = new System.Drawing.Point(478, 7);
+            this.lookUpEditAllEmpProdClientName.Location = new System.Drawing.Point(482, 7);
             this.lookUpEditAllEmpProdClientName.Name = "lookUpEditAllEmpProdClientName";
             this.lookUpEditAllEmpProdClientName.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lookUpEditAllEmpProdClientName.Properties.Appearance.Options.UseFont = true;
@@ -3971,7 +3970,7 @@
             this.lookUpEditAllEmpProdClientName.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
             this.lookUpEditAllEmpProdClientName.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lookUpEditAllEmpProdClientName.Properties.NullText = "ALL";
-            this.lookUpEditAllEmpProdClientName.Size = new System.Drawing.Size(196, 26);
+            this.lookUpEditAllEmpProdClientName.Size = new System.Drawing.Size(150, 26);
             this.lookUpEditAllEmpProdClientName.TabIndex = 3;
             this.lookUpEditAllEmpProdClientName.EditValueChanged += new System.EventHandler(this.lookUpEditAllEmpProdClientName_EditValueChanged);
             // 
@@ -3979,7 +3978,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(392, 9);
+            this.label17.Location = new System.Drawing.Point(387, 11);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(89, 18);
             this.label17.TabIndex = 5;
@@ -3996,7 +3995,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEditAllEmpProdToDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEditAllEmpProdToDate.Size = new System.Drawing.Size(125, 26);
+            this.dateEditAllEmpProdToDate.Size = new System.Drawing.Size(120, 26);
             this.dateEditAllEmpProdToDate.TabIndex = 2;
             // 
             // label16
@@ -4037,9 +4036,9 @@
             // 
             this.panel34.Controls.Add(this.gridControlAllClientEmpProduction);
             this.panel34.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel34.Location = new System.Drawing.Point(3, 49);
+            this.panel34.Location = new System.Drawing.Point(3, 85);
             this.panel34.Name = "panel34";
-            this.panel34.Size = new System.Drawing.Size(912, 357);
+            this.panel34.Size = new System.Drawing.Size(912, 319);
             this.panel34.TabIndex = 1;
             // 
             // gridControlAllClientEmpProduction
@@ -4054,7 +4053,7 @@
             this.gridControlAllClientEmpProduction.Name = "gridControlAllClientEmpProduction";
             this.gridControlAllClientEmpProduction.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemHyperLinkEdit34});
-            this.gridControlAllClientEmpProduction.Size = new System.Drawing.Size(912, 357);
+            this.gridControlAllClientEmpProduction.Size = new System.Drawing.Size(912, 319);
             this.gridControlAllClientEmpProduction.TabIndex = 0;
             this.gridControlAllClientEmpProduction.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewAllClientEmpProduction,
@@ -4966,7 +4965,7 @@
             this.tabNavigationPage14.Caption = "Employee Production";
             this.tabNavigationPage14.Controls.Add(this.tableLayoutPanel19);
             this.tabNavigationPage14.Name = "tabNavigationPage14";
-            this.tabNavigationPage14.Size = new System.Drawing.Size(918, 413);
+            this.tabNavigationPage14.Size = new System.Drawing.Size(918, 407);
             // 
             // tableLayoutPanel19
             // 
@@ -4978,9 +4977,9 @@
             this.tableLayoutPanel19.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel19.Name = "tableLayoutPanel19";
             this.tableLayoutPanel19.RowCount = 2;
-            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.9489F));
-            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.05109F));
-            this.tableLayoutPanel19.Size = new System.Drawing.Size(918, 413);
+            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.65602F));
+            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.34398F));
+            this.tableLayoutPanel19.Size = new System.Drawing.Size(918, 407);
             this.tableLayoutPanel19.TabIndex = 0;
             // 
             // panel36
@@ -4998,7 +4997,7 @@
             this.panel36.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel36.Location = new System.Drawing.Point(3, 3);
             this.panel36.Name = "panel36";
-            this.panel36.Size = new System.Drawing.Size(912, 39);
+            this.panel36.Size = new System.Drawing.Size(912, 73);
             this.panel36.TabIndex = 1;
             // 
             // simple_Button_Expt
@@ -5012,7 +5011,7 @@
             this.simple_Button_Expt.AppearanceHovered.BackColor = System.Drawing.Color.Transparent;
             this.simple_Button_Expt.AppearanceHovered.Options.UseBackColor = true;
             this.simple_Button_Expt.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simple_Button_Expt.Location = new System.Drawing.Point(1190, 3);
+            this.simple_Button_Expt.Location = new System.Drawing.Point(440, 38);
             this.simple_Button_Expt.Name = "simple_Button_Expt";
             this.simple_Button_Expt.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.True;
             this.simple_Button_Expt.Size = new System.Drawing.Size(94, 32);
@@ -5031,7 +5030,7 @@
             this.simpleButton_Refresh.AppearanceHovered.BackColor = System.Drawing.Color.Transparent;
             this.simpleButton_Refresh.AppearanceHovered.Options.UseBackColor = true;
             this.simpleButton_Refresh.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton_Refresh.Location = new System.Drawing.Point(1095, 3);
+            this.simpleButton_Refresh.Location = new System.Drawing.Point(340, 38);
             this.simpleButton_Refresh.Name = "simpleButton_Refresh";
             this.simpleButton_Refresh.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.True;
             this.simpleButton_Refresh.Size = new System.Drawing.Size(94, 32);
@@ -5042,7 +5041,7 @@
             // lookUpEditMyEmpProdSubprocess
             // 
             this.lookUpEditMyEmpProdSubprocess.EditValue = "0";
-            this.lookUpEditMyEmpProdSubprocess.Location = new System.Drawing.Point(732, 6);
+            this.lookUpEditMyEmpProdSubprocess.Location = new System.Drawing.Point(760, 5);
             this.lookUpEditMyEmpProdSubprocess.Name = "lookUpEditMyEmpProdSubprocess";
             this.lookUpEditMyEmpProdSubprocess.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lookUpEditMyEmpProdSubprocess.Properties.Appearance.Options.UseFont = true;
@@ -5051,14 +5050,14 @@
             this.lookUpEditMyEmpProdSubprocess.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
             this.lookUpEditMyEmpProdSubprocess.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lookUpEditMyEmpProdSubprocess.Properties.NullText = "ALL";
-            this.lookUpEditMyEmpProdSubprocess.Size = new System.Drawing.Size(177, 26);
+            this.lookUpEditMyEmpProdSubprocess.Size = new System.Drawing.Size(140, 26);
             this.lookUpEditMyEmpProdSubprocess.TabIndex = 4;
             // 
             // label24
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(614, 9);
+            this.label24.Location = new System.Drawing.Point(636, 9);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(119, 18);
             this.label24.TabIndex = 7;
@@ -5067,7 +5066,7 @@
             // lookUpEditMyEmpProdClientName
             // 
             this.lookUpEditMyEmpProdClientName.EditValue = "0";
-            this.lookUpEditMyEmpProdClientName.Location = new System.Drawing.Point(431, 6);
+            this.lookUpEditMyEmpProdClientName.Location = new System.Drawing.Point(491, 5);
             this.lookUpEditMyEmpProdClientName.Name = "lookUpEditMyEmpProdClientName";
             this.lookUpEditMyEmpProdClientName.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lookUpEditMyEmpProdClientName.Properties.Appearance.Options.UseFont = true;
@@ -5076,7 +5075,7 @@
             this.lookUpEditMyEmpProdClientName.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
             this.lookUpEditMyEmpProdClientName.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lookUpEditMyEmpProdClientName.Properties.NullText = "ALL";
-            this.lookUpEditMyEmpProdClientName.Size = new System.Drawing.Size(182, 26);
+            this.lookUpEditMyEmpProdClientName.Size = new System.Drawing.Size(140, 26);
             this.lookUpEditMyEmpProdClientName.TabIndex = 3;
             this.lookUpEditMyEmpProdClientName.EditValueChanged += new System.EventHandler(this.lookUpEditMyEmpProdClientName_EditValueChanged);
             // 
@@ -5084,7 +5083,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(346, 9);
+            this.label25.Location = new System.Drawing.Point(397, 9);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(89, 18);
             this.label25.TabIndex = 5;
@@ -5093,7 +5092,7 @@
             // dateEditMyClientEmpProdToDate
             // 
             this.dateEditMyClientEmpProdToDate.EditValue = null;
-            this.dateEditMyClientEmpProdToDate.Location = new System.Drawing.Point(245, 6);
+            this.dateEditMyClientEmpProdToDate.Location = new System.Drawing.Point(272, 5);
             this.dateEditMyClientEmpProdToDate.Name = "dateEditMyClientEmpProdToDate";
             this.dateEditMyClientEmpProdToDate.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateEditMyClientEmpProdToDate.Properties.Appearance.Options.UseFont = true;
@@ -5101,14 +5100,14 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEditMyClientEmpProdToDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEditMyClientEmpProdToDate.Size = new System.Drawing.Size(98, 26);
+            this.dateEditMyClientEmpProdToDate.Size = new System.Drawing.Size(120, 26);
             this.dateEditMyClientEmpProdToDate.TabIndex = 2;
             // 
             // label26
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(182, 9);
+            this.label26.Location = new System.Drawing.Point(209, 9);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(58, 18);
             this.label26.TabIndex = 3;
@@ -5117,7 +5116,7 @@
             // dateEditMyClientEmpProdFromDate
             // 
             this.dateEditMyClientEmpProdFromDate.EditValue = null;
-            this.dateEditMyClientEmpProdFromDate.Location = new System.Drawing.Point(78, 6);
+            this.dateEditMyClientEmpProdFromDate.Location = new System.Drawing.Point(84, 5);
             this.dateEditMyClientEmpProdFromDate.Name = "dateEditMyClientEmpProdFromDate";
             this.dateEditMyClientEmpProdFromDate.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateEditMyClientEmpProdFromDate.Properties.Appearance.Options.UseFont = true;
@@ -5125,14 +5124,14 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEditMyClientEmpProdFromDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEditMyClientEmpProdFromDate.Size = new System.Drawing.Size(98, 26);
+            this.dateEditMyClientEmpProdFromDate.Size = new System.Drawing.Size(120, 26);
             this.dateEditMyClientEmpProdFromDate.TabIndex = 1;
             // 
             // label27
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(2, 9);
+            this.label27.Location = new System.Drawing.Point(3, 9);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(76, 18);
             this.label27.TabIndex = 1;
@@ -5143,14 +5142,14 @@
             this.gridControlMyClientEmpProduction.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControlMyClientEmpProduction.EmbeddedNavigator.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(221)))), ((int)(((byte)(238)))));
             this.gridControlMyClientEmpProduction.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
-            this.gridControlMyClientEmpProduction.Location = new System.Drawing.Point(3, 48);
+            this.gridControlMyClientEmpProduction.Location = new System.Drawing.Point(3, 82);
             this.gridControlMyClientEmpProduction.LookAndFeel.SkinName = "Office 2010 Blue";
             this.gridControlMyClientEmpProduction.LookAndFeel.UseDefaultLookAndFeel = false;
             this.gridControlMyClientEmpProduction.MainView = this.gridViewMyClientEmpProduction;
             this.gridControlMyClientEmpProduction.Name = "gridControlMyClientEmpProduction";
             this.gridControlMyClientEmpProduction.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemHyperLinkEdit35});
-            this.gridControlMyClientEmpProduction.Size = new System.Drawing.Size(912, 362);
+            this.gridControlMyClientEmpProduction.Size = new System.Drawing.Size(912, 322);
             this.gridControlMyClientEmpProduction.TabIndex = 2;
             this.gridControlMyClientEmpProduction.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewMyClientEmpProduction});

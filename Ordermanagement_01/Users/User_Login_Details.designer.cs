@@ -52,6 +52,8 @@
             this.pivotGridField4 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.Branch = new DevExpress.XtraPivotGrid.PivotGridField();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
+            this.labelUsersCount = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -65,8 +67,6 @@
             this.lblp = new DevExpress.XtraEditors.LabelControl();
             this.LabelControl = new DevExpress.XtraEditors.LabelControl();
             this.btnExport = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelUsersCount = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -406,6 +406,26 @@
             this.panelControl5.Size = new System.Drawing.Size(1252, 34);
             this.panelControl5.TabIndex = 559;
             // 
+            // labelUsersCount
+            // 
+            this.labelUsersCount.Appearance.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
+            this.labelUsersCount.Appearance.Options.UseFont = true;
+            this.labelUsersCount.Location = new System.Drawing.Point(94, 7);
+            this.labelUsersCount.Name = "labelUsersCount";
+            this.labelUsersCount.Size = new System.Drawing.Size(14, 18);
+            this.labelUsersCount.TabIndex = 572;
+            this.labelUsersCount.Text = "00";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(9, 7);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(79, 18);
+            this.labelControl2.TabIndex = 571;
+            this.labelControl2.Text = "Total Users : ";
+            // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Green;
@@ -545,26 +565,6 @@
             this.btnExport.TabIndex = 558;
             this.btnExport.Text = "Export";
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(9, 7);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(79, 18);
-            this.labelControl2.TabIndex = 571;
-            this.labelControl2.Text = "Total Users : ";
-            // 
-            // labelUsersCount
-            // 
-            this.labelUsersCount.Appearance.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            this.labelUsersCount.Appearance.Options.UseFont = true;
-            this.labelUsersCount.Location = new System.Drawing.Point(94, 7);
-            this.labelUsersCount.Name = "labelUsersCount";
-            this.labelUsersCount.Size = new System.Drawing.Size(14, 18);
-            this.labelUsersCount.TabIndex = 572;
-            this.labelUsersCount.Text = "00";
             // 
             // User_Login_Details
             // 

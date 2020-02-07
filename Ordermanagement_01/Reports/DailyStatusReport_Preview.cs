@@ -4590,97 +4590,39 @@ namespace Ordermanagement_01
 
         //}
 
-        private void pivotGridControl8_CellClick(object sender, PivotCellEventArgs e)
+        private void pivotGridControlTopEfficiency_CellClick(object sender, PivotCellEventArgs e)
         {
-            SplashScreenManager.ShowForm(this, typeof(Ordermanagement_01.Masters.WaitForm1), true, true, false);
+            SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
             try
             {
-                string Tab_Name = "";
-                Tab_Name = "Top Efficiency Wise";
-                PivotGridHitInfo hi = pivotGridControlTopEfficiency.CalcHitInfo(pivotGridControlTopEfficiency.PointToClient(MousePosition));
-                if (hi.HitTest == PivotGridHitTest.Cell)
+                if (e.DataField.FieldName == "User_Effeciency")
                 {
-                    string Column_Name = "";
-                    // string Row_Value_Type = "";
-                    // string Column_Value_Type = "";
-                    //string value_Eff_Avg = "";
-                    //string value_Shift = "";
-                    // string value_UserName = ""; string val_Order_Status = "";
-                    // string ShiftType = "";
-                    string Emp_Name = "";
-                    // string Efficiency = "";
-                    // string Order_Status = "";
-                    // string Eff_Avg = "";
-                    string V_Data = "";
-                    //string User_Id = "";
-
-                    Column_Name = hi.CellInfo.DataField.FieldName.ToString();
-                    foreach (var field in pivotGridControlTopEfficiency.GetFieldsByArea(PivotArea.ColumnArea))
+                    PivotDrillDownDataSource source = e.CreateDrillDownDataSource();
+                    if (source.RowCount > 0)
                     {
-                        if (Column_Name == "Employee_Name")
+                        PivotDrillDownDataRow row = source[0];
+                        object userId = row["User_Id"];
+                        object userRole = row["User_RoleId"];
+                        var ht = new Hashtable()
                         {
-                            V_Data = e.GetFieldValue(pivotGridField49).ToString();
-                        }
-                        if (Column_Name == "User_Effeciency")
-                        {
-                            V_Data = e.GetFieldValue(pivotGridField47).ToString();
-                        }
-                        Emp_Name = e.GetFieldValue(pivotGridField49).ToString();
-                    }
-                    if (V_Data != "" && V_Data != "0")
-                    {
-                        Hashtable ht_get_grid = new Hashtable();
-                        DataTable dt_get_grid = new DataTable();
-                        ht_get_grid.Clear();
-                        dt_get_grid.Clear();
-                        ht_get_grid.Add("@Trans", "GET_USER_ID");
-                        ht_get_grid.Add("@Emp_Name", Emp_Name);
-                        dt_get_grid = dataaccess.ExecuteSP("Sp_Daily_Status_Top_Efficiency_Calculation", ht_get_grid);
-
-                        Hashtable htinsert = new Hashtable();
-                        DataTable dtinsert = new DataTable();
-
-                        // new july/19/2019
-                        if (dateEdit1_Current_Date_Top_Eff.Text != "" && dateEdit_From_date.Text == "" && dateEdit_To_Date.Text == "")
-                        {
-                            htinsert.Add("@Trans", "INSERT_INTO_TEMP_USER");
-                            htinsert.Add("@Production_Date", dateEdit1_Current_Date_Top_Eff.Text.ToString());
-
-                        }
-                        else if (dateEdit1_Current_Date_Top_Eff.Text == "" && dateEdit_From_date.Text != "" && dateEdit_To_Date.Text != "")
-                        {
-                            htinsert.Add("@Trans", "INSERT_INTO_TEMP_USER");
-                            htinsert.Add("@Fromdate", dateEdit_From_date.Text.ToString());
-                            htinsert.Add("@Todate", dateEdit_To_Date.Text.ToString());
-                        }
-
-
-
-
-                        htinsert.Add("@User_Id", int.Parse(dt_get_grid.Rows[0]["User_id"].ToString()));
-                        dtinsert = dataaccess.ExecuteSP("Sp_Employee_Production_Score_Board", htinsert);
-
-
-                        Ordermanagement_01.Dashboard.Emp_Production_Score_Board TargeDashboard =
-                           new Ordermanagement_01.Dashboard.Emp_Production_Score_Board(int.Parse(dt_get_grid.Rows[0]["User_id"].ToString()), dt_get_grid.Rows[0]["User_RoleId"].ToString(), dateEdit1_Current_Date_Top_Eff.Text, "");
+                            {"@Trans", "INSERT_INTO_TEMP_USER" },
+                            { "@Production_Date", dateEdit1_Current_Date_Top_Eff.Text },
+                            {"@User_Id",userId }
+                        };
+                        var val = dataaccess.ExecuteSP("Sp_Employee_Production_Score_Board", ht);
+                        Dashboard.Emp_Production_Score_Board TargeDashboard = new Dashboard.Emp_Production_Score_Board(Convert.ToInt32(userId), userRole.ToString(), dateEdit1_Current_Date_Top_Eff.Text, "");
                         TargeDashboard.Show();
-
-                    }
-                    else
-                    {
-                        SplashScreenManager.CloseForm(false);
                     }
                 }
+
             }
             catch (Exception ex)
             {
-                //Close Wait Form
                 SplashScreenManager.CloseForm(false);
                 MessageBox.Show("Error Occured Please Check With Administrator");
             }
             finally
             {
-                //Close Wait Form
                 SplashScreenManager.CloseForm(false);
             }
 
@@ -5025,7 +4967,7 @@ namespace Ordermanagement_01
                     dt_Capacity_Utilization = dt_get;
                     // ---------------Bind Chart here------------------
                     chartControl1.DataSource = dt_get;
-                    chartControl1.Series[0].ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
+                    chartControl1.Series[0].ArgumentScaleType = ScaleType.Qualitative;
                     chartControl1.Series["Cap_Utilization"].ArgumentDataMember = "Date";
                     chartControl1.Series["Cap_Utilization"].ValueDataMembers[0] = "Cap_Utilization";
                 }

@@ -13,7 +13,8 @@ namespace Ordermanagement_01
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new New_Dashboard.NewLogin());
+            //Application.Run(new New_Dashboard.NewLogin());
+            Application.Run(new DailyStatusReport_Preview(1, "1", "02/07/2020"));
         }
     }
 }

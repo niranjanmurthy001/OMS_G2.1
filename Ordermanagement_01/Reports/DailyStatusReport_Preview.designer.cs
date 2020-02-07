@@ -442,6 +442,7 @@
             this.pivotGridField69 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.pivotGridField36 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.pivotGridField56 = new DevExpress.XtraPivotGrid.PivotGridField();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit13)).BeginInit();
@@ -1186,7 +1187,8 @@
             this.pivotGridField48,
             this.pivotGridField49,
             this.pivotGridField50,
-            this.pivotGridField34});
+            this.pivotGridField34,
+            this.pivotGridField56});
             this.pivotGridControlTopEfficiency.Location = new System.Drawing.Point(0, 0);
             this.pivotGridControlTopEfficiency.LookAndFeel.SkinName = "Office 2010 Blue";
             this.pivotGridControlTopEfficiency.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -1209,7 +1211,7 @@
             this.pivotGridControlTopEfficiency.Size = new System.Drawing.Size(930, 396);
             this.pivotGridControlTopEfficiency.TabIndex = 0;
             this.pivotGridControlTopEfficiency.CustomFieldSort += new DevExpress.XtraPivotGrid.PivotGridCustomFieldSortEventHandler(this.pivotGridControl8_CustomFieldSort);
-            this.pivotGridControlTopEfficiency.CellClick += new DevExpress.XtraPivotGrid.PivotCellEventHandler(this.pivotGridControl8_CellClick);
+            this.pivotGridControlTopEfficiency.CellClick += new DevExpress.XtraPivotGrid.PivotCellEventHandler(this.pivotGridControlTopEfficiency_CellClick);
             // 
             // pivotGridField51
             // 
@@ -3906,7 +3908,7 @@
             this.simple_Button_Exprt.AppearanceHovered.BackColor = System.Drawing.Color.Transparent;
             this.simple_Button_Exprt.AppearanceHovered.Options.UseBackColor = true;
             this.simple_Button_Exprt.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simple_Button_Exprt.Location = new System.Drawing.Point(478, 39);
+            this.simple_Button_Exprt.Location = new System.Drawing.Point(460, 37);
             this.simple_Button_Exprt.Name = "simple_Button_Exprt";
             this.simple_Button_Exprt.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.True;
             this.simple_Button_Exprt.Size = new System.Drawing.Size(94, 32);
@@ -3925,7 +3927,7 @@
             this.simple_Button_Refresh.AppearanceHovered.BackColor = System.Drawing.Color.Transparent;
             this.simple_Button_Refresh.AppearanceHovered.Options.UseBackColor = true;
             this.simple_Button_Refresh.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simple_Button_Refresh.Location = new System.Drawing.Point(378, 39);
+            this.simple_Button_Refresh.Location = new System.Drawing.Point(360, 37);
             this.simple_Button_Refresh.Name = "simple_Button_Refresh";
             this.simple_Button_Refresh.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.True;
             this.simple_Button_Refresh.Size = new System.Drawing.Size(94, 32);
@@ -3936,7 +3938,7 @@
             // lookUpEditAllEmpProdSubProcess
             // 
             this.lookUpEditAllEmpProdSubProcess.EditValue = "0";
-            this.lookUpEditAllEmpProdSubProcess.Location = new System.Drawing.Point(759, 7);
+            this.lookUpEditAllEmpProdSubProcess.Location = new System.Drawing.Point(755, 5);
             this.lookUpEditAllEmpProdSubProcess.Name = "lookUpEditAllEmpProdSubProcess";
             this.lookUpEditAllEmpProdSubProcess.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lookUpEditAllEmpProdSubProcess.Properties.Appearance.Options.UseFont = true;
@@ -3952,7 +3954,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(638, 9);
+            this.label18.Location = new System.Drawing.Point(633, 9);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(119, 18);
             this.label18.TabIndex = 7;
@@ -3961,7 +3963,7 @@
             // lookUpEditAllEmpProdClientName
             // 
             this.lookUpEditAllEmpProdClientName.EditValue = "0";
-            this.lookUpEditAllEmpProdClientName.Location = new System.Drawing.Point(482, 7);
+            this.lookUpEditAllEmpProdClientName.Location = new System.Drawing.Point(480, 5);
             this.lookUpEditAllEmpProdClientName.Name = "lookUpEditAllEmpProdClientName";
             this.lookUpEditAllEmpProdClientName.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lookUpEditAllEmpProdClientName.Properties.Appearance.Options.UseFont = true;
@@ -3978,7 +3980,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(387, 11);
+            this.label17.Location = new System.Drawing.Point(388, 9);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(89, 18);
             this.label17.TabIndex = 5;
@@ -3987,7 +3989,7 @@
             // dateEditAllEmpProdToDate
             // 
             this.dateEditAllEmpProdToDate.EditValue = null;
-            this.dateEditAllEmpProdToDate.Location = new System.Drawing.Point(261, 7);
+            this.dateEditAllEmpProdToDate.Location = new System.Drawing.Point(265, 5);
             this.dateEditAllEmpProdToDate.Name = "dateEditAllEmpProdToDate";
             this.dateEditAllEmpProdToDate.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateEditAllEmpProdToDate.Properties.Appearance.Options.UseFont = true;
@@ -4002,7 +4004,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(201, 9);
+            this.label16.Location = new System.Drawing.Point(204, 9);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(58, 18);
             this.label16.TabIndex = 3;
@@ -4011,7 +4013,7 @@
             // dateEditAllEmpProdFromDate
             // 
             this.dateEditAllEmpProdFromDate.EditValue = null;
-            this.dateEditAllEmpProdFromDate.Location = new System.Drawing.Point(75, 7);
+            this.dateEditAllEmpProdFromDate.Location = new System.Drawing.Point(81, 5);
             this.dateEditAllEmpProdFromDate.Name = "dateEditAllEmpProdFromDate";
             this.dateEditAllEmpProdFromDate.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateEditAllEmpProdFromDate.Properties.Appearance.Options.UseFont = true;
@@ -5011,7 +5013,7 @@
             this.simple_Button_Expt.AppearanceHovered.BackColor = System.Drawing.Color.Transparent;
             this.simple_Button_Expt.AppearanceHovered.Options.UseBackColor = true;
             this.simple_Button_Expt.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simple_Button_Expt.Location = new System.Drawing.Point(440, 38);
+            this.simple_Button_Expt.Location = new System.Drawing.Point(460, 38);
             this.simple_Button_Expt.Name = "simple_Button_Expt";
             this.simple_Button_Expt.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.True;
             this.simple_Button_Expt.Size = new System.Drawing.Size(94, 32);
@@ -5030,7 +5032,7 @@
             this.simpleButton_Refresh.AppearanceHovered.BackColor = System.Drawing.Color.Transparent;
             this.simpleButton_Refresh.AppearanceHovered.Options.UseBackColor = true;
             this.simpleButton_Refresh.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton_Refresh.Location = new System.Drawing.Point(340, 38);
+            this.simpleButton_Refresh.Location = new System.Drawing.Point(360, 38);
             this.simpleButton_Refresh.Name = "simpleButton_Refresh";
             this.simpleButton_Refresh.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.True;
             this.simpleButton_Refresh.Size = new System.Drawing.Size(94, 32);
@@ -5749,6 +5751,15 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // pivotGridField56
+            // 
+            this.pivotGridField56.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
+            this.pivotGridField56.AreaIndex = 1;
+            this.pivotGridField56.Caption = "User_Role_Id";
+            this.pivotGridField56.FieldName = "User_RoleId";
+            this.pivotGridField56.Name = "pivotGridField56";
+            this.pivotGridField56.Visible = false;
+            // 
             // DailyStatusReport_Preview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -6387,5 +6398,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel20;
         private DevExpress.XtraEditors.DateEdit dateEdit1;
         private System.Windows.Forms.Panel panel37;
+        private DevExpress.XtraPivotGrid.PivotGridField pivotGridField56;
     }
 }

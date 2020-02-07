@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DailyStatus_OrderViewDetail_New));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
             DevExpress.XtraEditors.FormatConditionRuleExpression formatConditionRuleExpression1 = new DevExpress.XtraEditors.FormatConditionRuleExpression();
             DevExpress.XtraGrid.GridFormatRule gridFormatRule2 = new DevExpress.XtraGrid.GridFormatRule();
             DevExpress.XtraEditors.FormatConditionRuleExpression formatConditionRuleExpression2 = new DevExpress.XtraEditors.FormatConditionRuleExpression();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemHyperLinkEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -56,7 +56,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.grd_Targetorder = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn53 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemHyperLinkEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -117,7 +116,7 @@
             this.repositoryItemLookUpEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.repositoryItemImageEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemImageEdit();
             this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
-            this.toolTipController1 = new DevExpress.Utils.ToolTipController();
+            this.toolTipController1 = new DevExpress.Utils.ToolTipController(this.components);
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -184,7 +183,7 @@
             this.repositoryItemPopupContainerEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit();
             this.repositoryItemPopupContainerEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit();
             this.repositoryItemPopupContainerEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -238,7 +237,7 @@
             // 
             // gridColumn31
             // 
-            this.gridColumn31.AppearanceCell.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn31.AppearanceCell.Font = new System.Drawing.Font("Calibri", 9.75F);
             this.gridColumn31.AppearanceCell.ForeColor = System.Drawing.Color.Blue;
             this.gridColumn31.AppearanceCell.Options.UseBackColor = true;
             this.gridColumn31.AppearanceCell.Options.UseFont = true;
@@ -255,12 +254,10 @@
             this.gridColumn31.ColumnEdit = this.repositoryItemHyperLinkEdit1;
             this.gridColumn31.FieldName = "Error_Status";
             this.gridColumn31.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
-            this.gridColumn31.MinWidth = 50;
             this.gridColumn31.Name = "gridColumn31";
-            this.gridColumn31.OptionsColumn.FixedWidth = true;
             this.gridColumn31.Visible = true;
             this.gridColumn31.VisibleIndex = 31;
-            this.gridColumn31.Width = 50;
+            this.gridColumn31.Width = 74;
             // 
             // repositoryItemHyperLinkEdit1
             // 
@@ -531,9 +528,6 @@
             // grd_Targetorder
             // 
             this.grd_Targetorder.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode1.RelationName = "Level1";
-            this.grd_Targetorder.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
             this.grd_Targetorder.Location = new System.Drawing.Point(2, 2);
             this.grd_Targetorder.MainView = this.gridView2;
             this.grd_Targetorder.Name = "grd_Targetorder";
@@ -560,11 +554,10 @@
             // 
             this.gridView2.Appearance.HeaderPanel.BackColor = System.Drawing.Color.SkyBlue;
             this.gridView2.Appearance.HeaderPanel.BackColor2 = System.Drawing.Color.Beige;
-            this.gridView2.Appearance.HeaderPanel.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView2.Appearance.HeaderPanel.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold);
             this.gridView2.Appearance.HeaderPanel.Options.UseBackColor = true;
             this.gridView2.Appearance.HeaderPanel.Options.UseFont = true;
             this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn53,
             this.gridColumn13,
             this.gridColumn14,
             this.gridColumn37,
@@ -644,12 +637,12 @@
             this.gridView2.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             this.gridView2.OptionsSelection.ShowCheckBoxSelectorInGroupRow = DevExpress.Utils.DefaultBoolean.True;
             this.gridView2.OptionsView.AllowHtmlDrawHeaders = true;
+            this.gridView2.OptionsView.ColumnAutoWidth = false;
             this.gridView2.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.gridView2.OptionsView.ShowFooter = true;
             this.gridView2.OptionsView.ShowVerticalLines = DevExpress.Utils.DefaultBoolean.True;
             this.gridView2.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridView2_RowCellClick);
             this.gridView2.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView2_CustomDrawRowIndicator);
-            this.gridView2.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView2_CustomDrawCell);
             this.gridView2.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gridView2_RowCellStyle);
             this.gridView2.CustomRowCellEdit += new DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventHandler(this.gridView2_CustomRowCellEdit);
             this.gridView2.CustomSummaryCalculate += new DevExpress.Data.CustomSummaryEventHandler(this.gridView2_CustomSummaryCalculate);
@@ -659,16 +652,9 @@
             this.gridView2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.gridView2_MouseUp);
             this.gridView2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.gridView2_MouseMove);
             // 
-            // gridColumn53
-            // 
-            this.gridColumn53.Caption = "SI.NO";
-            this.gridColumn53.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            this.gridColumn53.Name = "gridColumn53";
-            this.gridColumn53.Width = 43;
-            // 
             // gridColumn13
             // 
-            this.gridColumn13.AppearanceCell.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn13.AppearanceCell.Font = new System.Drawing.Font("Calibri", 9.75F);
             this.gridColumn13.AppearanceCell.ForeColor = System.Drawing.Color.Blue;
             this.gridColumn13.AppearanceCell.Options.UseFont = true;
             this.gridColumn13.AppearanceCell.Options.UseForeColor = true;
@@ -684,7 +670,7 @@
             this.gridColumn13.Caption = "Client Order Number";
             this.gridColumn13.ColumnEdit = this.repositoryItemHyperLinkEdit2;
             this.gridColumn13.FieldName = "Client_Order_Number";
-            this.gridColumn13.MinWidth = 78;
+            this.gridColumn13.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.gridColumn13.Name = "gridColumn13";
             this.gridColumn13.OptionsColumn.AllowEdit = false;
             this.gridColumn13.OptionsColumn.FixedWidth = true;
@@ -720,6 +706,7 @@
             this.gridColumn14.Caption = "Client Name";
             this.gridColumn14.FieldName = "Client_Name";
             this.gridColumn14.FilterMode = DevExpress.XtraGrid.ColumnFilterMode.DisplayText;
+            this.gridColumn14.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.gridColumn14.MinWidth = 70;
             this.gridColumn14.Name = "gridColumn14";
             this.gridColumn14.OptionsColumn.AllowEdit = false;
@@ -738,6 +725,7 @@
             this.gridColumn37.Caption = "Client Number";
             this.gridColumn37.FieldName = "Client_Number";
             this.gridColumn37.FilterMode = DevExpress.XtraGrid.ColumnFilterMode.DisplayText;
+            this.gridColumn37.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.gridColumn37.MinWidth = 45;
             this.gridColumn37.Name = "gridColumn37";
             this.gridColumn37.OptionsColumn.AllowEdit = false;
@@ -759,6 +747,7 @@
             this.gridColumn15.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.gridColumn15.Caption = "Sub Process Name";
             this.gridColumn15.FieldName = "Sub_ProcessName";
+            this.gridColumn15.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.gridColumn15.MinWidth = 55;
             this.gridColumn15.Name = "gridColumn15";
             this.gridColumn15.OptionsColumn.AllowEdit = false;
@@ -776,12 +765,12 @@
             this.gridColumn38.Caption = "Subprocess Number";
             this.gridColumn38.FieldName = "Subprocess_Number";
             this.gridColumn38.FilterMode = DevExpress.XtraGrid.ColumnFilterMode.DisplayText;
-            this.gridColumn38.MinWidth = 45;
+            this.gridColumn38.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.gridColumn38.Name = "gridColumn38";
             this.gridColumn38.OptionsColumn.AllowEdit = false;
             this.gridColumn38.Visible = true;
             this.gridColumn38.VisibleIndex = 5;
-            this.gridColumn38.Width = 45;
+            this.gridColumn38.Width = 119;
             // 
             // gridColumn16
             // 
@@ -797,14 +786,12 @@
             this.gridColumn16.DisplayFormat.FormatString = "d";
             this.gridColumn16.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn16.FieldName = "Date";
-            this.gridColumn16.MinWidth = 40;
             this.gridColumn16.Name = "gridColumn16";
             this.gridColumn16.OptionsColumn.AllowEdit = false;
-            this.gridColumn16.OptionsColumn.FixedWidth = true;
             this.gridColumn16.OptionsColumn.ReadOnly = true;
             this.gridColumn16.Visible = true;
             this.gridColumn16.VisibleIndex = 6;
-            this.gridColumn16.Width = 63;
+            this.gridColumn16.Width = 96;
             // 
             // gridColumn1
             // 
@@ -818,10 +805,8 @@
             this.gridColumn1.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.gridColumn1.Caption = "Order Type";
             this.gridColumn1.FieldName = "Order_Type";
-            this.gridColumn1.MinWidth = 80;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowEdit = false;
-            this.gridColumn1.OptionsColumn.FixedWidth = true;
             this.gridColumn1.OptionsColumn.ReadOnly = true;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 7;
@@ -839,14 +824,12 @@
             this.gridColumn18.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.gridColumn18.Caption = "Borrower Name";
             this.gridColumn18.FieldName = "Borrower_Name";
-            this.gridColumn18.MinWidth = 90;
             this.gridColumn18.Name = "gridColumn18";
             this.gridColumn18.OptionsColumn.AllowEdit = false;
-            this.gridColumn18.OptionsColumn.FixedWidth = true;
             this.gridColumn18.OptionsColumn.ReadOnly = true;
             this.gridColumn18.Visible = true;
             this.gridColumn18.VisibleIndex = 8;
-            this.gridColumn18.Width = 90;
+            this.gridColumn18.Width = 98;
             // 
             // gridColumn19
             // 
@@ -860,14 +843,12 @@
             this.gridColumn19.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.gridColumn19.Caption = "Property Address";
             this.gridColumn19.FieldName = "Address";
-            this.gridColumn19.MinWidth = 90;
             this.gridColumn19.Name = "gridColumn19";
             this.gridColumn19.OptionsColumn.AllowEdit = false;
-            this.gridColumn19.OptionsColumn.FixedWidth = true;
             this.gridColumn19.OptionsColumn.ReadOnly = true;
             this.gridColumn19.Visible = true;
             this.gridColumn19.VisibleIndex = 9;
-            this.gridColumn19.Width = 90;
+            this.gridColumn19.Width = 105;
             // 
             // gridColumn20
             // 
@@ -881,14 +862,12 @@
             this.gridColumn20.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.gridColumn20.Caption = "Client Order Ref No";
             this.gridColumn20.FieldName = "Client_Order_Ref";
-            this.gridColumn20.MinWidth = 90;
             this.gridColumn20.Name = "gridColumn20";
             this.gridColumn20.OptionsColumn.AllowEdit = false;
-            this.gridColumn20.OptionsColumn.FixedWidth = true;
             this.gridColumn20.OptionsColumn.ReadOnly = true;
             this.gridColumn20.Visible = true;
             this.gridColumn20.VisibleIndex = 10;
-            this.gridColumn20.Width = 90;
+            this.gridColumn20.Width = 117;
             // 
             // gridColumn21
             // 
@@ -902,14 +881,12 @@
             this.gridColumn21.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.gridColumn21.Caption = "County Type";
             this.gridColumn21.FieldName = "County_Type";
-            this.gridColumn21.MinWidth = 50;
             this.gridColumn21.Name = "gridColumn21";
             this.gridColumn21.OptionsColumn.AllowEdit = false;
-            this.gridColumn21.OptionsColumn.FixedWidth = true;
             this.gridColumn21.OptionsColumn.ReadOnly = true;
             this.gridColumn21.Visible = true;
             this.gridColumn21.VisibleIndex = 11;
-            this.gridColumn21.Width = 50;
+            this.gridColumn21.Width = 77;
             // 
             // gridColumn22
             // 
@@ -923,10 +900,8 @@
             this.gridColumn22.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.gridColumn22.Caption = "State";
             this.gridColumn22.FieldName = "State";
-            this.gridColumn22.MinWidth = 50;
             this.gridColumn22.Name = "gridColumn22";
             this.gridColumn22.OptionsColumn.AllowEdit = false;
-            this.gridColumn22.OptionsColumn.FixedWidth = true;
             this.gridColumn22.OptionsColumn.ReadOnly = true;
             this.gridColumn22.Visible = true;
             this.gridColumn22.VisibleIndex = 12;
@@ -937,9 +912,9 @@
             this.gridColumn63.Caption = "Abbreviation";
             this.gridColumn63.FieldName = "Abbreviation";
             this.gridColumn63.Name = "gridColumn63";
-            this.gridColumn63.OptionsColumn.FixedWidth = true;
             this.gridColumn63.Visible = true;
             this.gridColumn63.VisibleIndex = 13;
+            this.gridColumn63.Width = 80;
             // 
             // gridColumn23
             // 
@@ -953,10 +928,8 @@
             this.gridColumn23.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.gridColumn23.Caption = "County";
             this.gridColumn23.FieldName = "County";
-            this.gridColumn23.MinWidth = 70;
             this.gridColumn23.Name = "gridColumn23";
             this.gridColumn23.OptionsColumn.AllowEdit = false;
-            this.gridColumn23.OptionsColumn.FixedWidth = true;
             this.gridColumn23.OptionsColumn.ReadOnly = true;
             this.gridColumn23.Visible = true;
             this.gridColumn23.VisibleIndex = 14;
@@ -973,9 +946,7 @@
             this.gridColumn24.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.gridColumn24.Caption = "Task";
             this.gridColumn24.FieldName = "Order_Status";
-            this.gridColumn24.MinWidth = 50;
             this.gridColumn24.Name = "gridColumn24";
-            this.gridColumn24.OptionsColumn.FixedWidth = true;
             this.gridColumn24.Visible = true;
             this.gridColumn24.VisibleIndex = 15;
             this.gridColumn24.Width = 58;
@@ -992,9 +963,7 @@
             this.gridColumn25.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.gridColumn25.Caption = "Status";
             this.gridColumn25.FieldName = "Progress_Status";
-            this.gridColumn25.MinWidth = 55;
             this.gridColumn25.Name = "gridColumn25";
-            this.gridColumn25.OptionsColumn.FixedWidth = true;
             this.gridColumn25.OptionsColumn.ReadOnly = true;
             this.gridColumn25.Visible = true;
             this.gridColumn25.VisibleIndex = 16;
@@ -1016,10 +985,8 @@
             // 
             this.gridColumn71.Caption = "Tax Status";
             this.gridColumn71.FieldName = "Tax_Status";
-            this.gridColumn71.MinWidth = 70;
             this.gridColumn71.Name = "gridColumn71";
             this.gridColumn71.OptionsColumn.AllowEdit = false;
-            this.gridColumn71.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumn71.Visible = true;
             this.gridColumn71.VisibleIndex = 17;
             this.gridColumn71.Width = 70;
@@ -1045,7 +1012,6 @@
             this.comments.ColumnEdit = this.repositoryItemHyperLinkEdit5;
             this.comments.Name = "comments";
             this.comments.OptionsColumn.AllowEdit = false;
-            this.comments.OptionsColumn.FixedWidth = true;
             this.comments.Visible = true;
             this.comments.VisibleIndex = 18;
             // 
@@ -1063,12 +1029,11 @@
             // 
             this.gridColumn64.Caption = "Comments";
             this.gridColumn64.FieldName = "Order_Comments";
-            this.gridColumn64.MaxWidth = 65;
-            this.gridColumn64.MinWidth = 45;
+            this.gridColumn64.MaxWidth = 80;
             this.gridColumn64.Name = "gridColumn64";
             this.gridColumn64.Visible = true;
             this.gridColumn64.VisibleIndex = 28;
-            this.gridColumn64.Width = 45;
+            this.gridColumn64.Width = 69;
             // 
             // gridColumn65
             // 
@@ -1077,6 +1042,7 @@
             this.gridColumn65.Name = "gridColumn65";
             this.gridColumn65.Visible = true;
             this.gridColumn65.VisibleIndex = 29;
+            this.gridColumn65.Width = 106;
             // 
             // gridColumn66
             // 
@@ -1085,6 +1051,7 @@
             this.gridColumn66.Name = "gridColumn66";
             this.gridColumn66.Visible = true;
             this.gridColumn66.VisibleIndex = 30;
+            this.gridColumn66.Width = 106;
             // 
             // gridColumn67
             // 
@@ -1092,9 +1059,9 @@
             this.gridColumn67.FieldName = "Permission_Given_By";
             this.gridColumn67.Name = "gridColumn67";
             this.gridColumn67.OptionsColumn.AllowEdit = false;
-            this.gridColumn67.OptionsColumn.FixedWidth = true;
             this.gridColumn67.Visible = true;
             this.gridColumn67.VisibleIndex = 19;
+            this.gridColumn67.Width = 119;
             // 
             // gridColumn68
             // 
@@ -1110,9 +1077,7 @@
             this.gridColumn30.AppearanceHeader.Options.UseFont = true;
             this.gridColumn30.Caption = "User Name";
             this.gridColumn30.FieldName = "User_Name";
-            this.gridColumn30.MinWidth = 90;
             this.gridColumn30.Name = "gridColumn30";
-            this.gridColumn30.OptionsColumn.FixedWidth = true;
             this.gridColumn30.Width = 90;
             // 
             // gridColumn2
@@ -1127,10 +1092,8 @@
             this.gridColumn2.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.gridColumn2.Caption = "Notes";
             this.gridColumn2.FieldName = "Notes";
-            this.gridColumn2.MinWidth = 90;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowEdit = false;
-            this.gridColumn2.OptionsColumn.FixedWidth = true;
             this.gridColumn2.OptionsColumn.ReadOnly = true;
             this.gridColumn2.Width = 39;
             // 
@@ -1149,14 +1112,12 @@
             this.gridColumn28.DisplayFormat.FormatString = "\"MM/dd/YYYY\"";
             this.gridColumn28.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.gridColumn28.FieldName = "Order_Production_Date";
-            this.gridColumn28.MinWidth = 70;
             this.gridColumn28.Name = "gridColumn28";
             this.gridColumn28.OptionsColumn.AllowEdit = false;
-            this.gridColumn28.OptionsColumn.FixedWidth = true;
             this.gridColumn28.OptionsColumn.ReadOnly = true;
             this.gridColumn28.Visible = true;
             this.gridColumn28.VisibleIndex = 20;
-            this.gridColumn28.Width = 80;
+            this.gridColumn28.Width = 98;
             // 
             // repositoryItemDateEdit1
             // 
@@ -1183,7 +1144,6 @@
             this.gridColumn3.FieldName = "Order_Status_ID";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
-            this.gridColumn3.OptionsColumn.FixedWidth = true;
             this.gridColumn3.OptionsColumn.ReadOnly = true;
             this.gridColumn3.Width = 20;
             // 
@@ -1196,9 +1156,7 @@
             this.gridColumn4.Caption = "User Name";
             this.gridColumn4.ColumnEdit = this.repositoryItemLookUpEdit1;
             this.gridColumn4.FieldName = "User_Name";
-            this.gridColumn4.MinWidth = 90;
             this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.OptionsColumn.FixedWidth = true;
             this.gridColumn4.Width = 90;
             // 
             // repositoryItemLookUpEdit1
@@ -1214,7 +1172,6 @@
             this.gridColumn5.Caption = "Client Id";
             this.gridColumn5.FieldName = "Client_Id";
             this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.OptionsColumn.FixedWidth = true;
             this.gridColumn5.Width = 20;
             // 
             // gridColumn50
@@ -1222,14 +1179,12 @@
             this.gridColumn50.Caption = "OrderType_Abs_Id";
             this.gridColumn50.FieldName = "OrderType_Abs_Id";
             this.gridColumn50.Name = "gridColumn50";
-            this.gridColumn50.OptionsColumn.FixedWidth = true;
             this.gridColumn50.Width = 40;
             // 
             // gridColumn54
             // 
             this.gridColumn54.Caption = "Employee Name";
             this.gridColumn54.FieldName = "Employee_Name";
-            this.gridColumn54.MinWidth = 100;
             this.gridColumn54.Name = "gridColumn54";
             this.gridColumn54.Visible = true;
             this.gridColumn54.VisibleIndex = 21;
@@ -1239,7 +1194,6 @@
             // 
             this.gridColumn55.Caption = "Emp Code";
             this.gridColumn55.FieldName = "DRN_Emp_Code";
-            this.gridColumn55.MinWidth = 90;
             this.gridColumn55.Name = "gridColumn55";
             this.gridColumn55.Visible = true;
             this.gridColumn55.VisibleIndex = 22;
@@ -1249,7 +1203,6 @@
             // 
             this.gridColumn56.Caption = "Shift Type";
             this.gridColumn56.FieldName = "Shift_Type_Name";
-            this.gridColumn56.MinWidth = 90;
             this.gridColumn56.Name = "gridColumn56";
             this.gridColumn56.Visible = true;
             this.gridColumn56.VisibleIndex = 23;
@@ -1259,7 +1212,6 @@
             // 
             this.gridColumn57.Caption = "Reporting To 1";
             this.gridColumn57.FieldName = "Reporting_To_1";
-            this.gridColumn57.MinWidth = 100;
             this.gridColumn57.Name = "gridColumn57";
             this.gridColumn57.Visible = true;
             this.gridColumn57.VisibleIndex = 24;
@@ -1269,7 +1221,6 @@
             // 
             this.gridColumn58.Caption = "Reporting To 2";
             this.gridColumn58.FieldName = "Reporting_To_2";
-            this.gridColumn58.MinWidth = 100;
             this.gridColumn58.Name = "gridColumn58";
             this.gridColumn58.Visible = true;
             this.gridColumn58.VisibleIndex = 25;
@@ -1279,19 +1230,16 @@
             // 
             this.gridColumn59.Caption = "Branch Name";
             this.gridColumn59.FieldName = "Branch_Name";
-            this.gridColumn59.MinWidth = 70;
             this.gridColumn59.Name = "gridColumn59";
             this.gridColumn59.Visible = true;
             this.gridColumn59.VisibleIndex = 26;
-            this.gridColumn59.Width = 70;
+            this.gridColumn59.Width = 82;
             // 
             // gridColumn32
             // 
             this.gridColumn32.Caption = "Error Message";
             this.gridColumn32.FieldName = "Error_Mesg";
-            this.gridColumn32.MinWidth = 80;
             this.gridColumn32.Name = "gridColumn32";
-            this.gridColumn32.OptionsColumn.FixedWidth = true;
             this.gridColumn32.Width = 80;
             // 
             // gridColumn60
@@ -1304,7 +1252,6 @@
             // 
             this.gridColumn61.Caption = "Target Category";
             this.gridColumn61.FieldName = "Order_Source_Type_Name";
-            this.gridColumn61.MinWidth = 100;
             this.gridColumn61.Name = "gridColumn61";
             this.gridColumn61.Visible = true;
             this.gridColumn61.VisibleIndex = 27;
@@ -1432,9 +1379,9 @@
             // 
             // gridControl1
             // 
-            gridLevelNode2.RelationName = "Level1";
+            gridLevelNode1.RelationName = "Level1";
             this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode1});
             this.gridControl1.Location = new System.Drawing.Point(233, 93);
             this.gridControl1.LookAndFeel.SkinName = "Office 2010 Blue";
             this.gridControl1.LookAndFeel.UseWindowsXPTheme = true;
@@ -2408,7 +2355,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn52;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn53;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn54;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn55;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn56;

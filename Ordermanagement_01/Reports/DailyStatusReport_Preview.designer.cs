@@ -423,7 +423,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
+            this.dateEditToAll = new DevExpress.XtraEditors.DateEdit();
             this.lbl_To_date = new System.Windows.Forms.Label();
             this.dateEdit_To_Date = new DevExpress.XtraEditors.DateEdit();
             this.lbl_From_date = new System.Windows.Forms.Label();
@@ -627,8 +627,8 @@
             this.panel1.SuspendLayout();
             this.tableLayoutPanel20.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditToAll.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditToAll.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_To_Date.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_To_Date.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_From_date.Properties.CalendarTimeProperties)).BeginInit();
@@ -5470,7 +5470,7 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.dateEdit1);
+            this.panel4.Controls.Add(this.dateEditToAll);
             this.panel4.Controls.Add(this.lbl_To_date);
             this.panel4.Controls.Add(this.dateEdit_To_Date);
             this.panel4.Controls.Add(this.lbl_From_date);
@@ -5483,17 +5483,17 @@
             // 
             // dateEdit1
             // 
-            this.dateEdit1.EditValue = new System.DateTime(2018, 9, 6, 15, 7, 9, 712);
-            this.dateEdit1.Location = new System.Drawing.Point(255, 3);
-            this.dateEdit1.Name = "dateEdit1";
-            this.dateEdit1.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateEdit1.Properties.Appearance.Options.UseFont = true;
-            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dateEditToAll.EditValue = new System.DateTime(2018, 9, 6, 15, 7, 9, 712);
+            this.dateEditToAll.Location = new System.Drawing.Point(255, 3);
+            this.dateEditToAll.Name = "dateEdit1";
+            this.dateEditToAll.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateEditToAll.Properties.Appearance.Options.UseFont = true;
+            this.dateEditToAll.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dateEditToAll.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Size = new System.Drawing.Size(98, 24);
-            this.dateEdit1.TabIndex = 177;
+            this.dateEditToAll.Size = new System.Drawing.Size(98, 24);
+            this.dateEditToAll.TabIndex = 177;
             // 
             // lbl_To_date
             // 
@@ -5971,8 +5971,8 @@
             this.tableLayoutPanel20.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditToAll.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditToAll.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_To_Date.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_To_Date.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_From_date.Properties.CalendarTimeProperties)).EndInit();
@@ -6396,7 +6396,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
         private System.Windows.Forms.Panel panel39;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel20;
-        private DevExpress.XtraEditors.DateEdit dateEdit1;
+        private DevExpress.XtraEditors.DateEdit dateEditToAll;
         private System.Windows.Forms.Panel panel37;
         private DevExpress.XtraPivotGrid.PivotGridField pivotGridField56;
     }

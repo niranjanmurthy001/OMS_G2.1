@@ -6,6 +6,7 @@
         static Base_Url()
         {
             URI = "http://localhost:28537/Api";
+
             //URI = "https://titlelogy.com/title_Production_Api_demo/Api";
         }
         public static string Url => URI;

@@ -51,9 +51,7 @@ public class DataAccess
                 }
                 using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                 {
-                    da.Fill(dt);
-
-                  
+                    da.Fill(dt);                 
                 }
 
                
@@ -163,6 +161,7 @@ public class DataAccess
         {
 
             connectionstring.Close();
+            MessageBox.Show(ex.Message.ToString());
         }
         finally
         {

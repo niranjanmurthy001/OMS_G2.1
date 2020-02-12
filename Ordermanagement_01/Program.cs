@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace Ordermanagement_01
@@ -14,8 +12,9 @@ namespace Ordermanagement_01
         static void Main()
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);           
-            Application.Run(new New_Dashboard.NewLogin());          
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new New_Dashboard.NewLogin());
+            //Application.Run(new New_Dashboard.Settings.Process_Settings());
         }
     }
 }

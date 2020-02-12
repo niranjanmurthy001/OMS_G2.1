@@ -1,29 +1,27 @@
-﻿using System;
-using System.Data;
-using System.Text;
-using System.Windows.Forms;
+﻿using ClosedXML.Excel;
+using DevExpress.Utils;
+using DevExpress.XtraCharts;
 using DevExpress.XtraEditors;
-using System.Collections;
+using DevExpress.XtraEditors.Repository;
+using DevExpress.XtraGrid;
+using DevExpress.XtraGrid.Columns;
+using DevExpress.XtraGrid.Drawing;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using DevExpress.XtraPivotGrid;
-using DevExpress.XtraPrintingLinks;
 using DevExpress.XtraPrinting;
+using DevExpress.XtraPrintingLinks;
+using DevExpress.XtraSplashScreen;
 //using DevExpress.Spreadsheet;
 using ProgressBarExample;
-using DevExpress.XtraSplashScreen;
-using DevExpress.XtraCharts;
-using DevExpress.XtraGrid;
-using DevExpress.XtraEditors.Repository;
-using DevExpress.XtraGrid.Columns;
-using DevExpress.Utils;
-using DevExpress.XtraGrid.Views.Grid;
-using System.IO;
-using ClosedXML.Excel;
-using System.Linq;
+using System;
+using System.Collections;
+using System.Data;
 using System.Globalization;
-using System.Drawing.Printing;
-using DevExpress.XtraReports.UI;
-using DevExpress.XtraGrid.Views.Grid.ViewInfo;
-using DevExpress.XtraGrid.Drawing;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
 
 namespace Ordermanagement_01
 {
@@ -72,7 +70,7 @@ namespace Ordermanagement_01
             userRoleId = Convert.ToInt32(User_roleid);
             Production_date = PRODUCTION_DATE;
 
-        
+
 
             //BindLookUpEdit_ShiftWise_Manager();
             //BindLookUpEdit_Product_Manager();
@@ -149,7 +147,7 @@ namespace Ordermanagement_01
 
 
                 dateEdit_From_date.Text = D1;
-                dateEdit1.Text = D1;
+                dateEditToAll.Text = D1;
 
 
 
@@ -190,7 +188,7 @@ namespace Ordermanagement_01
 
                 //panel12.Visible = true;
                 //pivotGridControl7_Shift_Datewise.Visible = true;
-             
+
                 InitTabScoreBoard();
             }
             catch (Exception ex)
@@ -699,8 +697,8 @@ namespace Ordermanagement_01
         private void DateWise()
         {
             string fdate = dateEdit_From_date.Text.ToString();
-            string todate = dateEdit_To_Date.Text.ToString();
-            if (dateEdit_From_date.Text != "" && dateEdit_To_Date.Text != "")
+            string todate = dateEditToAll.Text.ToString();
+            if (dateEdit_From_date.Text != "" && dateEditToAll.Text != "")
             {
                 httargetorder.Clear();
                 dttargetorder.Clear();
@@ -729,7 +727,7 @@ namespace Ordermanagement_01
             pivotGridControlShiftWise.Dock = DockStyle.Fill;
 
             //new 10-july-2019
-            if (dateEdit_From_date.Text != "" && dateEdit_To_Date.Text != "" && Check_Branch_All == "Unchecked" && Check_Banglore == "Unchecked" && Check_Hosur == "Unchecked")
+            if (dateEdit_From_date.Text != "" && dateEditToAll.Text != "" && Check_Branch_All == "Unchecked" && Check_Banglore == "Unchecked" && Check_Hosur == "Unchecked")
             {
                 Hashtable ht_get = new Hashtable();
                 DataTable dt_get = new DataTable();
@@ -737,14 +735,14 @@ namespace Ordermanagement_01
                 dt_get.Clear();
                 ht_get.Add("@Trans", "SHIFT_WISE_FROM_AND_TO_DATE");
                 ht_get.Add("@Fromdate", dateEdit_From_date.Text);
-                ht_get.Add("@Todate", dateEdit_To_Date.Text);
+                ht_get.Add("@Todate", dateEditToAll.Text);
                 dt_get = dataaccess.ExecuteSP("Sp_Daily_Status_Report", ht_get);
                 pivotGridControlShiftWise.DataSource = dt_get;
 
             }
 
             // both bangl and hosur
-            else if (dateEdit_From_date.Text != "" && dateEdit_To_Date.Text != "" && Check_Branch_All == "Checked" && Check_Banglore == "Checked" && Check_Hosur == "Checked")
+            else if (dateEdit_From_date.Text != "" && dateEditToAll.Text != "" && Check_Branch_All == "Checked" && Check_Banglore == "Checked" && Check_Hosur == "Checked")
             {
                 Hashtable ht_get = new Hashtable();
                 DataTable dt_get = new DataTable();
@@ -752,13 +750,13 @@ namespace Ordermanagement_01
                 dt_get.Clear();
                 ht_get.Add("@Trans", "SHIFT_WISE_FROM_AND_TO_DATE");
                 ht_get.Add("@Fromdate", dateEdit_From_date.Text);
-                ht_get.Add("@Todate", dateEdit_To_Date.Text);
+                ht_get.Add("@Todate", dateEditToAll.Text);
                 dt_get = dataaccess.ExecuteSP("Sp_Daily_Status_Report", ht_get);
                 pivotGridControlShiftWise.DataSource = dt_get;
             }
 
             // banglore branch wise
-            else if (dateEdit_From_date.Text != "" && dateEdit_To_Date.Text != "" && Check_Branch_All == "Unchecked" && Check_Banglore == "Checked" && Check_Hosur == "Unchecked")
+            else if (dateEdit_From_date.Text != "" && dateEditToAll.Text != "" && Check_Branch_All == "Unchecked" && Check_Banglore == "Checked" && Check_Hosur == "Unchecked")
             {
                 SplashScreenManager.ShowForm(this, typeof(Ordermanagement_01.Masters.WaitForm1), true, true, false);
                 try
@@ -769,7 +767,7 @@ namespace Ordermanagement_01
 
                     ht_getShift.Add("@Trans", "SHIFT_FROM_AND_TO_DATE_AND_BRANCH_WISE");
                     ht_getShift.Add("@Fromdate", dateEdit_From_date.Text);
-                    ht_getShift.Add("@Todate", dateEdit_To_Date.Text);
+                    ht_getShift.Add("@Todate", dateEditToAll.Text);
                     ht_getShift.Add("@Branch_ID", 3);
                     dt_getShift = dataaccess.ExecuteSP("Sp_Daily_Status_Report", ht_getShift);
 
@@ -788,7 +786,7 @@ namespace Ordermanagement_01
                 }
             }
             // hosur branch wise
-            else if (dateEdit_From_date.Text != "" && dateEdit_To_Date.Text != "" && Check_Branch_All == "Unchecked" && Check_Banglore == "Unchecked" && Check_Hosur == "Checked")
+            else if (dateEdit_From_date.Text != "" && dateEditToAll.Text != "" && Check_Branch_All == "Unchecked" && Check_Banglore == "Unchecked" && Check_Hosur == "Checked")
             {
 
                 SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
@@ -800,7 +798,7 @@ namespace Ordermanagement_01
 
                     ht_Shift_hosur.Add("@Trans", "SHIFT_FROM_AND_TO_DATE_AND_BRANCH_WISE");
                     ht_Shift_hosur.Add("@Fromdate", dateEdit_From_date.Text);
-                    ht_Shift_hosur.Add("@Todate", dateEdit_To_Date.Text);
+                    ht_Shift_hosur.Add("@Todate", dateEditToAll.Text);
                     ht_Shift_hosur.Add("@Branch_ID", 5);
                     dt_Shift_hosur = dataaccess.ExecuteSP("Sp_Daily_Status_Report", ht_Shift_hosur);
 
@@ -822,14 +820,14 @@ namespace Ordermanagement_01
 
         private void ProductTypeDateWise()
         {
-            if (dateEdit_From_date.Text != "" && dateEdit_To_Date.Text != "")
+            if (dateEdit_From_date.Text != "" && dateEditToAll.Text != "")
             {
                 Hashtable ht_get_ProductType = new Hashtable();
                 DataTable dt_get_ProductType = new DataTable();
 
                 ht_get_ProductType.Add("@Trans", "PRODUCT_TYPE_DATE_WISE");
                 ht_get_ProductType.Add("@Fromdate", dateEdit_From_date.Text);
-                ht_get_ProductType.Add("@Todate", dateEdit_To_Date.Text);
+                ht_get_ProductType.Add("@Todate", dateEditToAll.Text);
                 dt_get_ProductType = dataaccess.ExecuteSP("Sp_Daily_Status_Report", ht_get_ProductType);
                 pivotGridControlProductTypeWise.DataSource = dt_get_ProductType;
             }
@@ -1308,14 +1306,14 @@ namespace Ordermanagement_01
         private void AgingOpenOrdersDateWise()
         {
 
-            if (dateEdit_From_date.Text != "" && dateEdit_To_Date.Text != "")
+            if (dateEdit_From_date.Text != "" && dateEditToAll.Text != "")
             {
                 Hashtable ht_get_AginOpenOrders = new Hashtable();
                 DataTable dt_get_AginOpenOrders = new DataTable();
 
                 ht_get_AginOpenOrders.Add("@Trans", "AGING_PREVIEW_OPEN_ORDER_DATE_WISE");
                 ht_get_AginOpenOrders.Add("@Fromdate", dateEdit_From_date.Text);
-                ht_get_AginOpenOrders.Add("@Todate", dateEdit_To_Date.Text);
+                ht_get_AginOpenOrders.Add("@Todate", dateEditToAll.Text);
                 dt_get_AginOpenOrders = dataaccess.ExecuteSP("Sp_Daily_Status_Report", ht_get_AginOpenOrders);
 
                 pivotGridControlAgingOpenOrders.DataSource = dt_get_AginOpenOrders;
@@ -1490,14 +1488,14 @@ namespace Ordermanagement_01
         private void AgingPendingOrdersDateWise()
         {
 
-            if (dateEdit_From_date.Text != "" && dateEdit_To_Date.Text != "")
+            if (dateEdit_From_date.Text != "" && dateEditToAll.Text != "")
             {
                 Hashtable ht_get_AginOpenOrders = new Hashtable();
                 DataTable dt_get_AginOpenOrders = new DataTable();
 
                 ht_get_AginOpenOrders.Add("@Trans", "AGING_PREVIEW_PENDING_ORDER_DATE_WISE");
                 ht_get_AginOpenOrders.Add("@Fromdate", dateEdit_From_date.Text);
-                ht_get_AginOpenOrders.Add("@Todate", dateEdit_To_Date.Text);
+                ht_get_AginOpenOrders.Add("@Todate", dateEditToAll.Text);
                 dt_get_AginOpenOrders = dataaccess.ExecuteSP("Sp_Daily_Status_Report", ht_get_AginOpenOrders);
 
                 pivotGridControlAginfPendingOrders.DataSource = dt_get_AginOpenOrders;
@@ -2102,7 +2100,7 @@ namespace Ordermanagement_01
                         ht_get_grid.Add("@Client_Number", Client_Number);
                         ht_get_grid.Add("@date", s_Date);
                         ht_get_grid.Add("@Fromdate", dateEdit_From_date.Text.ToString());
-                        ht_get_grid.Add("@Todate", dateEdit_To_Date.Text.ToString());
+                        ht_get_grid.Add("@Todate", dateEditToAll.Text.ToString());
                         dt_get_grid = dataaccess.ExecuteSP("Sp_Daily_Status_Report", ht_get_grid);
 
 
@@ -2142,7 +2140,7 @@ namespace Ordermanagement_01
                         }
                         ht_get_grid.Add("@Client_Number", Client_Number);
                         ht_get_grid.Add("@Fromdate", dateEdit_From_date.Text.ToString());
-                        ht_get_grid.Add("@Todate", dateEdit_To_Date.Text.ToString());
+                        ht_get_grid.Add("@Todate", dateEditToAll.Text.ToString());
                         dt_get_grid = dataaccess.ExecuteSP("Sp_Daily_Status_Report", ht_get_grid);
 
 
@@ -2182,7 +2180,7 @@ namespace Ordermanagement_01
                         }
                         //ht_get_grid.Add("@Client_Number", Client_Number);
                         ht_get_grid.Add("@Fromdate", dateEdit_From_date.Text.ToString());
-                        ht_get_grid.Add("@Todate", dateEdit_To_Date.Text.ToString());
+                        ht_get_grid.Add("@Todate", dateEditToAll.Text.ToString());
                         ht_get_grid.Add("@date", s_Date);
                         dt_get_grid = dataaccess.ExecuteSP("Sp_Daily_Status_Report", ht_get_grid);
 
@@ -2227,7 +2225,7 @@ namespace Ordermanagement_01
                         }
                         //ht_get_grid.Add("@Client_Number", Client_Number);
                         ht_get_grid.Add("@Fromdate", dateEdit_From_date.Text.ToString());
-                        ht_get_grid.Add("@Todate", dateEdit_To_Date.Text.ToString());
+                        ht_get_grid.Add("@Todate", dateEditToAll.Text.ToString());
                         //ht_get_grid.Add("@date", Date);
                         dt_get_grid = dataaccess.ExecuteSP("Sp_Daily_Status_Report", ht_get_grid);
 
@@ -2722,7 +2720,7 @@ namespace Ordermanagement_01
                             DataTable dt_getgrid_details = new DataTable();
                             ht_getgrid_details.Clear();
                             ht_getgrid_details.Clear();
-                           
+
                             ht_getgrid_details.Add("@Trans", "AGENT_OPEN_ORDER_DETAILS");
                             ht_getgrid_details.Add("@Client_Number", Client_Number);
                             ht_getgrid_details.Add("@Order_Status", Order_Status);
@@ -4592,97 +4590,39 @@ namespace Ordermanagement_01
 
         //}
 
-        private void pivotGridControl8_CellClick(object sender, PivotCellEventArgs e)
+        private void pivotGridControlTopEfficiency_CellClick(object sender, PivotCellEventArgs e)
         {
-            SplashScreenManager.ShowForm(this, typeof(Ordermanagement_01.Masters.WaitForm1), true, true, false);
+            SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
             try
             {
-                string Tab_Name = "";
-                Tab_Name = "Top Efficiency Wise";
-                PivotGridHitInfo hi = pivotGridControlTopEfficiency.CalcHitInfo(pivotGridControlTopEfficiency.PointToClient(MousePosition));
-                if (hi.HitTest == PivotGridHitTest.Cell)
+                if (e.DataField.FieldName == "User_Effeciency")
                 {
-                    string Column_Name = "";
-                    // string Row_Value_Type = "";
-                    // string Column_Value_Type = "";
-                    //string value_Eff_Avg = "";
-                    //string value_Shift = "";
-                    // string value_UserName = ""; string val_Order_Status = "";
-                    // string ShiftType = "";
-                    string Emp_Name = "";
-                    // string Efficiency = "";
-                    // string Order_Status = "";
-                    // string Eff_Avg = "";
-                    string V_Data = "";
-                    //string User_Id = "";
-
-                    Column_Name = hi.CellInfo.DataField.FieldName.ToString();
-                    foreach (var field in pivotGridControlTopEfficiency.GetFieldsByArea(PivotArea.ColumnArea))
+                    PivotDrillDownDataSource source = e.CreateDrillDownDataSource();
+                    if (source.RowCount > 0)
                     {
-                        if (Column_Name == "Employee_Name")
+                        PivotDrillDownDataRow row = source[0];
+                        object userId = row["User_Id"];
+                        object userRole = row["User_RoleId"];
+                        var ht = new Hashtable()
                         {
-                            V_Data = e.GetFieldValue(pivotGridField49).ToString();
-                        }
-                        if (Column_Name == "User_Effeciency")
-                        {
-                            V_Data = e.GetFieldValue(pivotGridField47).ToString();
-                        }
-                        Emp_Name = e.GetFieldValue(pivotGridField49).ToString();
-                    }
-                    if (V_Data != "" && V_Data != "0")
-                    {
-                        Hashtable ht_get_grid = new Hashtable();
-                        DataTable dt_get_grid = new DataTable();
-                        ht_get_grid.Clear();
-                        dt_get_grid.Clear();
-                        ht_get_grid.Add("@Trans", "GET_USER_ID");
-                        ht_get_grid.Add("@Emp_Name", Emp_Name);
-                        dt_get_grid = dataaccess.ExecuteSP("Sp_Daily_Status_Top_Efficiency_Calculation", ht_get_grid);
-
-                        Hashtable htinsert = new Hashtable();
-                        DataTable dtinsert = new DataTable();
-
-                        // new july/19/2019
-                        if (dateEdit1_Current_Date_Top_Eff.Text != "" && dateEdit_From_date.Text == "" && dateEdit_To_Date.Text == "")
-                        {
-                            htinsert.Add("@Trans", "INSERT_INTO_TEMP_USER");
-                            htinsert.Add("@Production_Date", dateEdit1_Current_Date_Top_Eff.Text.ToString());
-
-                        }
-                        else if (dateEdit1_Current_Date_Top_Eff.Text == "" && dateEdit_From_date.Text != "" && dateEdit_To_Date.Text != "")
-                        {
-                            htinsert.Add("@Trans", "INSERT_INTO_TEMP_USER");
-                            htinsert.Add("@Fromdate", dateEdit_From_date.Text.ToString());
-                            htinsert.Add("@Todate", dateEdit_To_Date.Text.ToString());
-                        }
-
-
-
-
-                        htinsert.Add("@User_Id", int.Parse(dt_get_grid.Rows[0]["User_id"].ToString()));
-                        dtinsert = dataaccess.ExecuteSP("Sp_Employee_Production_Score_Board", htinsert);
-
-
-                        Ordermanagement_01.Dashboard.Emp_Production_Score_Board TargeDashboard =
-                           new Ordermanagement_01.Dashboard.Emp_Production_Score_Board(int.Parse(dt_get_grid.Rows[0]["User_id"].ToString()), dt_get_grid.Rows[0]["User_RoleId"].ToString(), dateEdit1_Current_Date_Top_Eff.Text, "");
+                            {"@Trans", "INSERT_INTO_TEMP_USER" },
+                            { "@Production_Date", dateEdit1_Current_Date_Top_Eff.Text },
+                            {"@User_Id",userId }
+                        };
+                        var val = dataaccess.ExecuteSP("Sp_Employee_Production_Score_Board", ht);
+                        Dashboard.Emp_Production_Score_Board TargeDashboard = new Dashboard.Emp_Production_Score_Board(Convert.ToInt32(userId), userRole.ToString(), dateEdit1_Current_Date_Top_Eff.Text, "");
                         TargeDashboard.Show();
-
-                    }
-                    else
-                    {
-                        SplashScreenManager.CloseForm(false);
                     }
                 }
+
             }
             catch (Exception ex)
             {
-                //Close Wait Form
                 SplashScreenManager.CloseForm(false);
                 MessageBox.Show("Error Occured Please Check With Administrator");
             }
             finally
             {
-                //Close Wait Form
                 SplashScreenManager.CloseForm(false);
             }
 
@@ -5011,7 +4951,7 @@ namespace Ordermanagement_01
 
                 // new 
                 // All branch wise
-                if (dateEdit_From_date.Text != "" && dateEdit_To_Date.Text != "" && Check_Branch_All == "Checked" && Check_Banglore == "Checked" && Check_Hosur == "Checked")
+                if (dateEdit_From_date.Text != "" && dateEditToAll.Text != "" && Check_Branch_All == "Checked" && Check_Banglore == "Checked" && Check_Hosur == "Checked")
                 {
                     Hashtable ht_get = new Hashtable();
                     //System.Data.DataTable dt_get = new System.Data.DataTable();
@@ -5019,7 +4959,7 @@ namespace Ordermanagement_01
                     dt_get.Clear();
                     ht_get.Add("@Trans", "CAPACITY_UTILIZATION");
                     ht_get.Add("@Fromdate", dateEdit_From_date.Text);
-                    ht_get.Add("@Todate", dateEdit_To_Date.Text);
+                    ht_get.Add("@Todate", dateEditToAll.Text);
                     dt_get = dataaccess.ExecuteSP("Sp_Daily_Status_Capcity_Utilization", ht_get);
 
                     Grd_Capcity_Utilization.DataSource = dt_get;
@@ -5027,7 +4967,7 @@ namespace Ordermanagement_01
                     dt_Capacity_Utilization = dt_get;
                     // ---------------Bind Chart here------------------
                     chartControl1.DataSource = dt_get;
-                    chartControl1.Series[0].ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
+                    chartControl1.Series[0].ArgumentScaleType = ScaleType.Qualitative;
                     chartControl1.Series["Cap_Utilization"].ArgumentDataMember = "Date";
                     chartControl1.Series["Cap_Utilization"].ValueDataMembers[0] = "Cap_Utilization";
                 }
@@ -5036,7 +4976,7 @@ namespace Ordermanagement_01
 
 
                 // banglore branch wise
-                else if (dateEdit_From_date.Text != "" && dateEdit_To_Date.Text != "" && Check_Branch_All == "Unchecked" && Check_Banglore == "Checked" && Check_Hosur == "Unchecked")
+                else if (dateEdit_From_date.Text != "" && dateEditToAll.Text != "" && Check_Branch_All == "Unchecked" && Check_Banglore == "Checked" && Check_Hosur == "Unchecked")
                 {
                     Hashtable ht_get = new Hashtable();
                     //System.Data.DataTable dt_get = new System.Data.DataTable();
@@ -5044,7 +4984,7 @@ namespace Ordermanagement_01
                     dt_get.Clear();
                     ht_get.Add("@Trans", "CAPACITY_UTILIZATION_BRANCH_WISE");
                     ht_get.Add("@Fromdate", dateEdit_From_date.Text);
-                    ht_get.Add("@Todate", dateEdit_To_Date.Text);
+                    ht_get.Add("@Todate", dateEditToAll.Text);
                     ht_get.Add("@Branch_Id", branch_id);
                     dt_get = dataaccess.ExecuteSP("Sp_Daily_Status_Capcity_Utilization", ht_get);
 
@@ -5059,7 +4999,7 @@ namespace Ordermanagement_01
                 }
 
                 // Hosur branch wise
-                else if (dateEdit_From_date.Text != "" && dateEdit_To_Date.Text != "" && Check_Branch_All == "Unchecked" && Check_Banglore == "Unchecked" && Check_Hosur == "Checked")
+                else if (dateEdit_From_date.Text != "" && dateEditToAll.Text != "" && Check_Branch_All == "Unchecked" && Check_Banglore == "Unchecked" && Check_Hosur == "Checked")
                 {
                     Hashtable ht_get = new Hashtable();
                     //System.Data.DataTable dt_get = new System.Data.DataTable();
@@ -5067,7 +5007,7 @@ namespace Ordermanagement_01
                     dt_get.Clear();
                     ht_get.Add("@Trans", "CAPACITY_UTILIZATION_BRANCH_WISE");
                     ht_get.Add("@Fromdate", dateEdit_From_date.Text);
-                    ht_get.Add("@Todate", dateEdit_To_Date.Text);
+                    ht_get.Add("@Todate", dateEditToAll.Text);
                     ht_get.Add("@Branch_Id", branch_id);
                     dt_get = dataaccess.ExecuteSP("Sp_Daily_Status_Capcity_Utilization", ht_get);
 
@@ -5081,7 +5021,7 @@ namespace Ordermanagement_01
                     chartControl1.Series["Cap_Utilization"].ValueDataMembers[0] = "Cap_Utilization";
                 }
 
-                else if (dateEdit_From_date.Text != "" && dateEdit_To_Date.Text != "" && Check_Branch_All == "Unchecked" && Check_Banglore == "Unchecked" && Check_Hosur == "Unchecked")
+                else if (dateEdit_From_date.Text != "" && dateEditToAll.Text != "" && Check_Branch_All == "Unchecked" && Check_Banglore == "Unchecked" && Check_Hosur == "Unchecked")
                 {
                     Hashtable ht_get = new Hashtable();
                     //System.Data.DataTable dt_get = new System.Data.DataTable();
@@ -5089,7 +5029,7 @@ namespace Ordermanagement_01
                     dt_get.Clear();
                     ht_get.Add("@Trans", "CAPACITY_UTILIZATION");
                     ht_get.Add("@Fromdate", dateEdit_From_date.Text);
-                    ht_get.Add("@Todate", dateEdit_To_Date.Text);
+                    ht_get.Add("@Todate", dateEditToAll.Text);
                     dt_get = dataaccess.ExecuteSP("Sp_Daily_Status_Capcity_Utilization", ht_get);
 
                     Grd_Capcity_Utilization.DataSource = dt_get;
@@ -5119,7 +5059,7 @@ namespace Ordermanagement_01
         {
             try
             {
-                if (dateEdit_From_date.Text != "" && dateEdit_To_Date.Text != "")
+                if (dateEdit_From_date.Text != "" && dateEditToAll.Text != "")
                 {
                     Hashtable ht_get = new Hashtable();
                     //System.Data.DataTable dt_get = new System.Data.DataTable();
@@ -5127,7 +5067,7 @@ namespace Ordermanagement_01
                     dt_get.Clear();
                     ht_get.Add("@Trans", "CAPACITY_UTILIZATION_BRANCH_WISE");
                     ht_get.Add("@Fromdate", dateEdit_From_date.Text);
-                    ht_get.Add("@Todate", dateEdit_To_Date.Text);
+                    ht_get.Add("@Todate", dateEditToAll.Text);
                     ht_get.Add("@Branch_Id", Branch_Id);
                     dt_get = dataaccess.ExecuteSP("Sp_Daily_Status_Capcity_Utilization", ht_get);
 
@@ -5161,7 +5101,7 @@ namespace Ordermanagement_01
         private void Bind_Capacity_Utilization_Branch_Wise(int Branch_Id, int Shift_Type_Id)
         {
 
-            if (dateEdit_From_date.Text != "" && dateEdit_To_Date.Text != "")
+            if (dateEdit_From_date.Text != "" && dateEditToAll.Text != "")
             {
                 Hashtable ht_get = new Hashtable();
                 //System.Data.DataTable dt_get = new System.Data.DataTable();
@@ -5169,7 +5109,7 @@ namespace Ordermanagement_01
                 dt_get.Clear();
                 ht_get.Add("@Trans", "CAPACITY_UTILIZATION_BRANCH_SHIFT_WISE");
                 ht_get.Add("@Fromdate", dateEdit_From_date.Text);
-                ht_get.Add("@Todate", dateEdit_To_Date.Text);
+                ht_get.Add("@Todate", dateEditToAll.Text);
                 ht_get.Add("@Branch_Id", Branch_Id);
                 ht_get.Add("@Shift_Type_Id", Shift_Type_Id);
                 dt_get = dataaccess.ExecuteSP("Sp_Daily_Status_Capcity_Utilization", ht_get);
@@ -7682,7 +7622,7 @@ namespace Ordermanagement_01
 
 
                             // old current date wise
-                            else if (Val_Branch_Name_1 == "ALL" && dateEditShiftWiseCurrent.Text != "" && Shift_Current_Date_Status=="True")
+                            else if (Val_Branch_Name_1 == "ALL" && dateEditShiftWiseCurrent.Text != "" && Shift_Current_Date_Status == "True")
                             {
                                 ht_get_Shift_Current_date_wise.Add("@Trans", "SHIFT_CURRENTDATE_WISE_ALL_BRANCH_WISE");
 
@@ -7771,7 +7711,7 @@ namespace Ordermanagement_01
                             }
 
                             // old onr current date wise
-                            else if (val_Shift_Type_Name != "" && s_Date1 != "" && Shift_Current_Date_Status=="True")
+                            else if (val_Shift_Type_Name != "" && s_Date1 != "" && Shift_Current_Date_Status == "True")
                             {
                                 ht_get_Shift_Current_date_wise.Add("@Trans", "CURRENT_DATE_AND_SHIFT_TYPE_WISE");
                                 ht_get_Shift_Current_date_wise.Add("@date", s_Date1);

@@ -75,6 +75,7 @@
             this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -452,6 +453,7 @@
             this.gridViewTaxOrders.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
             this.gridColumn2,
+            this.gridColumn17,
             this.gridColumn3,
             this.gridColumn4,
             this.gridColumn5,
@@ -628,6 +630,13 @@
             this.gridColumn18.FieldName = "priority";
             this.gridColumn18.Name = "gridColumn18";
             // 
+            // gridColumn17
+            // 
+            this.gridColumn17.Caption = "Address";
+            this.gridColumn17.FieldName = "Address";
+            this.gridColumn17.Name = "gridColumn17";
+            this.gridColumn17.OptionsColumn.Printable = DevExpress.Utils.DefaultBoolean.True;
+            // 
             // Column8
             // 
             this.Column8.FillWeight = 32.48731F;
@@ -793,5 +802,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
         private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit repositoryItemHyperLinkEdit1;
         private System.Windows.Forms.Button buttonExport;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
     }
 }

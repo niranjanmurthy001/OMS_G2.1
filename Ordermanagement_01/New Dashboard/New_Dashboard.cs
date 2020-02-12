@@ -481,6 +481,17 @@ namespace Ordermanagement_01.New_Dashboard
                                     Tile_Upload.Frames[0].Elements[1].Text = Result.Upload.ToString();
                                 }
                             }
+                            else
+                            {
+
+                                Tile_Search.Frames[0].Elements[1].Text = "0";
+                                Tile_Search_Qc.Frames[0].Elements[1].Text = "0";
+                                Tile_Typing.Frames[0].Elements[1].Text = "0";
+                                Tile_Typing_Qc.Frames[0].Elements[1].Text = "0";
+                                Tile_Final_Qc.Frames[0].Elements[1].Text = "0";
+                                Tile_Exception.Frames[0].Elements[1].Text = "0";
+                                Tile_Upload.Frames[0].Elements[1].Text = "0";
+                            }
                         }
                     }
 
@@ -1441,6 +1452,7 @@ namespace Ordermanagement_01.New_Dashboard
                 Tile_Typing_Qc.Visible = true;
                 Tile_Final_Qc.Visible = false;
                 Tile_Exception.Visible = false;
+                Tile_Upload.Visible = false;
 
             }
             else if (Work_Type == 4)

@@ -1,6 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
+
 using System;
 using System.Collections;
 using System.Data;
@@ -39,9 +40,9 @@ namespace Ordermanagement_01.Test
             path = "C:\\VijayKumar\\FileUpload";
             Directory.CreateDirectory(path);
             DownloadedFilePath = "C:\\VijayKumar\\DownloadedFile";
-            Directory.CreateDirectory(DownloadedFilePath);
-            //this.DragEnter += gridControl1_DragEnter;
-            FolderPath = Path.GetPathRoot(DownloadedFilePath).ToUpper();
+            //Directory.CreateDirectory(DownloadedFilePath);
+            ////this.DragEnter += gridControl1_DragEnter;
+            //FolderPath =Path.GetPathRoot(DownloadedFilePath).ToUpper();
         }
 
         private void gridControl1_DragDrop(object sender, DragEventArgs e)
@@ -60,7 +61,7 @@ namespace Ordermanagement_01.Test
                 ht.Clear();
                 dt.Clear();
                 string dest = path + "//" + Path.GetFileName(file);
-                string DownloadPath = DownloadedFilePath + "//" + Path.GetFileName(file);
+                //string DownloadPath = DownloadedFilePath + "//" + Path.GetFileName(file);
                 bool isFolder = Directory.Exists(file);
                 bool isFile = File.Exists(file);
                 System.IO.FileInfo f = new System.IO.FileInfo(file);
@@ -196,27 +197,27 @@ namespace Ordermanagement_01.Test
             else
             {
                 e.Effect = DragDropEffects.Move;
-                int[] selectedRows = gridView1.GetSelectedRows();
-                foreach (int rowHandle in selectedRows)
-                {
-                    if (rowHandle >= 0)
-                    {
-                        var cellvalue = (string)gridView1.GetRowCellValue(rowHandle, "DocumentPath");
-                        if (cellvalue != null)
-                        {
-                            folderBrowserDialog1.ShowDialog();
-                            string tpath = folderBrowserDialog1.SelectedPath.ToString();
-                            for (int i = 0; i < cellvalue.Length; i++)
-                            {
-                                string[] filename = cellvalue[i].ToString().Split('/');
-                                string DocName = Path.GetFileName(filename.ToString());
-                                File.Copy(filename[0], @"C:\\Vijaykumar\\DownlodedFiles" + DocName, true);
-                            }
-                        }
+                //int[] selectedRows = gridView1.GetSelectedRows();
+                //foreach (int rowHandle in selectedRows)
+                //{
+                //    if (rowHandle >= 0)
+                //    {
+                //        var cellvalue = (string)gridView1.GetRowCellValue(rowHandle, "DocumentPath");
+                //        if (cellvalue != null)
+                //        {
+                //            folderBrowserDialog1.ShowDialog();
+                //            string tpath = folderBrowserDialog1.SelectedPath.ToString();
+                //            for (int i = 0; i < cellvalue.Length; i++)
+                //            {
+                //                string[] filename = cellvalue[i].ToString().Split('/');
+                //                string DocName =path.GetFileName(filename.ToString());
+                //                File.Copy(filename[0], @"C:\\Vijaykumar\\DownlodedFiles" + DocName, true);
+                //            }
+                //        }
 
-                    }
-                    XtraMessageBox.Show("Drag Move Event Occured");
-                }
+                //    }
+                //    XtraMessageBox.Show("Drag Move Event Occured");
+                //}
             }
 
         }
@@ -261,27 +262,27 @@ namespace Ordermanagement_01.Test
         private void gridControl1_DragLeave(object sender, EventArgs e)
         {
             MessageBox.Show("Drag Leave");
-            int[] selectedRows = gridView1.GetSelectedRows();
-            foreach (int rowHandle in selectedRows)
-            {
-                if (rowHandle >= 0)
-                {
-                    var cellvalue = (string)gridView1.GetRowCellValue(rowHandle, "DocumentPath");
-                    if (cellvalue != null)
-                    {
-                        folderBrowserDialog1.ShowDialog();
-                        string tpath = folderBrowserDialog1.SelectedPath.ToString();
-                        for (int i = 0; i < cellvalue.Length; i++)
-                        {
-                            string[] filename = cellvalue[i].ToString().Split('/');
-                            string DocName = Path.GetFileName(filename.ToString());
-                            File.Copy(filename[0], @"C:\\Vijaykumar\\DownlodedFiles" + DocName, true);
-                        }
-                    }
+            //int[] selectedRows = gridView1.GetSelectedRows();
+            //foreach (int rowHandle in selectedRows)
+            //{
+            //    if (rowHandle >= 0)
+            //    {
+            //        var cellvalue = (string)gridView1.GetRowCellValue(rowHandle, "DocumentPath");
+            //        if (cellvalue != null)
+            //        {
+            //            folderBrowserDialog1.ShowDialog();
+            //            string tpath = folderBrowserDialog1.SelectedPath.ToString();
+            //            for (int i = 0; i < cellvalue.Length; i++)
+            //            {
+            //                string[] filename = cellvalue[i].ToString().Split('/');
+            //                string DocName = Path.GetFileName(filename.ToString());
+            //                File.Copy(filename[0], @"C:\\Vijaykumar\\DownlodedFiles" + DocName, true);
+            //            }
+            //        }
 
-                }
-                XtraMessageBox.Show("Drag Move Event Occured");
-            }
+            //    }
+            //    XtraMessageBox.Show("Drag Move Event Occured");
+            //}
         }
 
         private void gridControl1_MouseDown(object sender, MouseEventArgs e)
@@ -328,6 +329,14 @@ namespace Ordermanagement_01.Test
 
 
             }
+        }
+
+        private void gridControl1_MouseMove(object sender, MouseEventArgs e)
+        {
+            DevExpress.Utils.DXMouseEventArgs ea1 = e as DevExpress.Utils.DXMouseEventArgs;
+            GridView view1 = (GridView)sender;
+
+            //GridHitInfo hitinfo = view1.CalcHitInfo(new Point(e.X, e.Y));
         }
     }
 }

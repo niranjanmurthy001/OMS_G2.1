@@ -58,6 +58,7 @@ namespace Ordermanagement_01.Test
             this.gridControl1.DragOver += new System.Windows.Forms.DragEventHandler(this.gridControl1_DragOver);
             this.gridControl1.DragLeave += new System.EventHandler(this.gridControl1_DragLeave);
             this.gridControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gridControl1_MouseDown);
+            this.gridControl1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.gridControl1_MouseMove);
             // 
             // gridView1
             // 

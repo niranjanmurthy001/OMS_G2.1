@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Drawing;
-using System.Windows.Forms;
-using System.Collections;
-using System.IO;
-using System.Data.SqlClient;
-using System.DirectoryServices;
-using CrystalDecisions.CrystalReports.Engine;
+﻿using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
 using DevExpress.XtraSplashScreen;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.IO;
 using System.Net;
-using DevExpress.XtraEditors;
-using System.Net.Http;
+using System.Windows.Forms;
 
 namespace Ordermanagement_01
 {
@@ -1300,6 +1297,8 @@ namespace Ordermanagement_01
                     Error_Count = 1;
                     Error_Tab_Count = 1;
                     grd_AssessorTaxes_Chklist[7, i].Style.BackColor = Color.Red;
+
+                    break;
                 }
 
                 else
@@ -2277,6 +2276,7 @@ namespace Ordermanagement_01
                     Error_Count = 1;
                     Error_Tab_Count = 1;
                     grd_Deed_Checklist[7, i].Style.BackColor = Color.Red;
+                    break;
                 }
 
                 else
@@ -3000,6 +3000,7 @@ namespace Ordermanagement_01
                     Error_Count = 1;
                     Error_Tab_Count = 1;
                     grd_Mortgage_Checklist[7, i].Style.BackColor = Color.Red;
+                    break;
                 }
 
                 else
@@ -3733,6 +3734,7 @@ namespace Ordermanagement_01
                     Error_Count = 1;
                     Error_Tab_Count = 1;
                     grd_Judgment_Liens_Checklist[7, i].Style.BackColor = Color.Red;
+                    break;
 
                 }
                 else
@@ -4443,6 +4445,7 @@ namespace Ordermanagement_01
                     Error_Count = 1;
                     Error_Tab_Count = 1;
                     grd_Others_Checklist[7, i].Style.BackColor = Color.Red;
+                    break;
 
                 }
                 else
@@ -6548,53 +6551,53 @@ namespace Ordermanagement_01
                     dtorderkb = dataaccess.ExecuteSP("Sp_Document_Upload", htorderkb);
                 }
                 else
-                {                    
-                        FtpWebRequest ftpDeleteFile = (FtpWebRequest)WebRequest.Create(ftpUploadFullPath);
-                        ftpDeleteFile.Credentials = credentials;
-                        ftpDeleteFile.KeepAlive = true;
-                        ftpDeleteFile.UseBinary = true;
-                        ftpDeleteFile.Method = WebRequestMethods.Ftp.DeleteFile;
-                        FtpWebResponse deleteResponse = (FtpWebResponse)ftpDeleteFile.GetResponse();
-                        if (deleteResponse.StatusCode == FtpStatusCode.FileActionOK)
-                        {
-                            FtpWebRequest ftpUpLoadFile = (FtpWebRequest)WebRequest.Create(ftpUploadFullPath);
-                            ftpUpLoadFile.Credentials = credentials;
-                            ftpUpLoadFile.KeepAlive = true;
-                            ftpUpLoadFile.UseBinary = true;
-                            ftpUpLoadFile.Method = WebRequestMethods.Ftp.UploadFile;
-                            Stream ftpstream = ftpUpLoadFile.GetRequestStream();
-                            FileStream stream = new FileStream(dirTemp + "\\Order Check List Report.pdf", FileMode.Open);
-                            stream.CopyTo(ftpstream);
-                            ftpstream.Close();
-                            Hashtable htorderkb = new Hashtable();
-                            DataTable dtorderkb = new DataTable();
+                {
+                    FtpWebRequest ftpDeleteFile = (FtpWebRequest)WebRequest.Create(ftpUploadFullPath);
+                    ftpDeleteFile.Credentials = credentials;
+                    ftpDeleteFile.KeepAlive = true;
+                    ftpDeleteFile.UseBinary = true;
+                    ftpDeleteFile.Method = WebRequestMethods.Ftp.DeleteFile;
+                    FtpWebResponse deleteResponse = (FtpWebResponse)ftpDeleteFile.GetResponse();
+                    if (deleteResponse.StatusCode == FtpStatusCode.FileActionOK)
+                    {
+                        FtpWebRequest ftpUpLoadFile = (FtpWebRequest)WebRequest.Create(ftpUploadFullPath);
+                        ftpUpLoadFile.Credentials = credentials;
+                        ftpUpLoadFile.KeepAlive = true;
+                        ftpUpLoadFile.UseBinary = true;
+                        ftpUpLoadFile.Method = WebRequestMethods.Ftp.UploadFile;
+                        Stream ftpstream = ftpUpLoadFile.GetRequestStream();
+                        FileStream stream = new FileStream(dirTemp + "\\Order Check List Report.pdf", FileMode.Open);
+                        stream.CopyTo(ftpstream);
+                        ftpstream.Close();
+                        Hashtable htorderkb = new Hashtable();
+                        DataTable dtorderkb = new DataTable();
 
-                            htorderkb.Add("@Trans", "INSERT");
-                            if (Work_Type_Id == 1)
-                            {
-                                htorderkb.Add("@Instuction", "" + Order_Task.ToString() + "Check List Report");
-                            }
-                            else if (Work_Type_Id == 2)
-                            {
-                                htorderkb.Add("@Instuction", "REWORK -" + Order_Task.ToString() + "Check List Report");
-
-                            }
-                            else if (Work_Type_Id == 2)
-                            {
-                                htorderkb.Add("@Instuction", "SUPER QC -" + Order_Task.ToString() + "Check List Report");
-                            }
-                            htorderkb.Add("@Order_ID", Order_Id);
-                            htorderkb.Add("@Document_Name", File_Name);
-                            htorderkb.Add("@Document_Path", ftpUploadFullPath);
-                            htorderkb.Add("@Inserted_By", user_ID);
-                            htorderkb.Add("@Inserted_date", DateTime.Now);
-                            dtorderkb = dataaccess.ExecuteSP("Sp_Document_Upload", htorderkb);
-                        }
-                        else
+                        htorderkb.Add("@Trans", "INSERT");
+                        if (Work_Type_Id == 1)
                         {
-                            throw new WebException("Unable to delete file");
+                            htorderkb.Add("@Instuction", "" + Order_Task.ToString() + "Check List Report");
                         }
-                    }                
+                        else if (Work_Type_Id == 2)
+                        {
+                            htorderkb.Add("@Instuction", "REWORK -" + Order_Task.ToString() + "Check List Report");
+
+                        }
+                        else if (Work_Type_Id == 2)
+                        {
+                            htorderkb.Add("@Instuction", "SUPER QC -" + Order_Task.ToString() + "Check List Report");
+                        }
+                        htorderkb.Add("@Order_ID", Order_Id);
+                        htorderkb.Add("@Document_Name", File_Name);
+                        htorderkb.Add("@Document_Path", ftpUploadFullPath);
+                        htorderkb.Add("@Inserted_By", user_ID);
+                        htorderkb.Add("@Inserted_date", DateTime.Now);
+                        dtorderkb = dataaccess.ExecuteSP("Sp_Document_Upload", htorderkb);
+                    }
+                    else
+                    {
+                        throw new WebException("Unable to delete file");
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -6642,14 +6645,14 @@ namespace Ordermanagement_01
                 //}
                 ftpStream.Close();
                 outputStream.Close();
-                response.Close();                
+                response.Close();
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-       
+
         private void Logon_Cr()
         {
             List<string> cl_Lgoin = Comclass.Crystal_report_Login();

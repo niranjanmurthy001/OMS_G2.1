@@ -2620,6 +2620,12 @@
     <Compile Include="Test\Sql_Notification.Designer.cs">
       <DependentUpon>Sql_Notification.cs</DependentUpon>
     </Compile>
+    <Compile Include="Test\UploadFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test\UploadFile.Designer.cs">
+      <DependentUpon>UploadFile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Test\User_Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -4068,6 +4074,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Test\Sql_Notification.resx">
       <DependentUpon>Sql_Notification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test\UploadFile.resx">
+      <DependentUpon>UploadFile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Test\User_Form1.resx">
       <DependentUpon>User_Form1.cs</DependentUpon>

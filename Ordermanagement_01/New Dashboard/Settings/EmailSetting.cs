@@ -8,8 +8,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Mail;
@@ -194,15 +192,15 @@ namespace Ordermanagement_01.New_Dashboard.Settings
                                     SplashScreenManager.CloseForm(false);
                                     XtraMessageBox.Show("E-mail Already Exists");
                                     return false;
-                                }                              
-                                
+                                }
+
                             }
-                           
+
 
                         }
-                       
+
                     }
-                  
+
                 }
                 return true;
             }
@@ -215,7 +213,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
         {
             try
             {
-                
+
                 if (Validation() != false)
                 {
                     if (emailId == 0 && btn_save.Text == "Save" && (await Usercheck()) != false)
@@ -245,15 +243,15 @@ namespace Ordermanagement_01.New_Dashboard.Settings
                                 if (response.StatusCode == HttpStatusCode.OK)
                                 {
                                     var result = await response.Content.ReadAsStringAsync();
-                                     SplashScreenManager.CloseForm(false);
-                                XtraMessageBox.Show(txt_User_Name.Text + " Created Successfully ");
-                                 grid_Email_Address_list();
+                                    SplashScreenManager.CloseForm(false);
+                                    XtraMessageBox.Show(txt_User_Name.Text + " Created Successfully ");
+                                    grid_Email_Address_list();
                                     Clear();
                                 }
                             }
                         }
-                    
-                       
+
+
                     }
                     if (btn_save.Text == "Edit")
                     {
@@ -271,7 +269,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
                             dictionary1.Add("@User_Name", txt_User_Name.Text);
                             dictionary1.Add("@Password", txt_password.Text);
                         };
-                       
+
                         var data = new StringContent(JsonConvert.SerializeObject(dictionary1), Encoding.UTF8, "application/json");
                         using (var httpClient = new HttpClient())
                         {
@@ -287,7 +285,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
                                     Clear();
                                 }
                             }
-                        }                      
+                        }
                     }
                 }
             }
@@ -313,15 +311,23 @@ namespace Ordermanagement_01.New_Dashboard.Settings
                     DataRow row = gridView1.GetDataRow(e.RowHandle);
                     emailId = Convert.ToInt32(row["ID"]);
                     txt_name.Text = row["Your_Name"].ToString();
+                    Txt_Name();
                     txt_Email_address.Text = row["Email_Address"].ToString();
+                    Txt_EmailAddress();
                     txt_Incoming_server.Text = row["Incoming_Mail_Server"].ToString();
+                    Txt_incoming_server();
                     txt_Outgoing_server.Text = row["Outgoing_Mail_Server"].ToString();
+                    Txt_Outgoingserver();
                     bool con = Convert.ToBoolean(Convert.ToInt32(row["Connection_SSL"]));
                     check_connection_SSL.Checked = con;
                     txt_User_Name.Text = row["User_Name"].ToString();
+                    TXt_username();
                     txt_password.Text = row["Password"].ToString();
+                    Txt_Password();
                     txt_IS.Text = row["Incoming_Server_Port"].ToString();
+                    Txt_Incomingserverport();
                     txt_OS.Text = row["Outgoing_Server_Port"].ToString();
+                    Txt_Outgoingport();
 
                 }
             }
@@ -365,9 +371,10 @@ namespace Ordermanagement_01.New_Dashboard.Settings
 
         private async void simpleButton2_Click(object sender, EventArgs e)
         {
-            
+
             string Email_Address = txt_Email_address.Text;
-            try {
+            try
+            {
                 if (txt_Email_address.Text != "")
                 {
                     var dictionary = new Dictionary<string, object>()
@@ -384,7 +391,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
                             if (response.StatusCode == HttpStatusCode.OK)
                             {
                                 var result = await response.Content.ReadAsStringAsync();
-                                DataTable dt= JsonConvert.DeserializeObject<DataTable>(result);
+                                DataTable dt = JsonConvert.DeserializeObject<DataTable>(result);
                                 gridControl1_Email_Address.DataSource = dt;
                                 int count = dt.Rows.Count;
                                 grid_Email_Address_list();
@@ -402,24 +409,24 @@ namespace Ordermanagement_01.New_Dashboard.Settings
                 }
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
-            }
+        }
 
         private void btn_testconnection_Click(object sender, EventArgs e)
         {
-      
-            if (Validation() != false )
+
+            if (Validation() != false)
             {
                 try
                 {
                     SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
                     testEmailadrdress();
-                    
+
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     SplashScreenManager.CloseForm(false);
                     MessageBox.Show(ex.Message.ToString());
@@ -429,7 +436,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
                     SplashScreenManager.CloseForm(false);
                 }
             }
-            }
+        }
         private void testEmailadrdress()
         {
             using (MailMessage mm = new MailMessage())
@@ -438,7 +445,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
                 {
                     SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
                     SendHtmlFormattedEmail();
-               
+
                 }
                 catch (Exception error)
                 {
@@ -468,7 +475,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
                     {
 
                         mailMessage.To.Add(txt_Email_address.Text);
-                    
+
                         SplashScreenManager.CloseForm(false);
                         string Subject = " " + txt_User_Name.Text + " " + "Test Email - OMS";
                         mailMessage.Subject = Subject.ToString();
@@ -500,7 +507,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
                     }
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 SplashScreenManager.CloseForm(false);
                 XtraMessageBox.Show(e.Message.ToString());
@@ -510,16 +517,16 @@ namespace Ordermanagement_01.New_Dashboard.Settings
             {
                 SplashScreenManager.CloseForm(false);
             }
-           
+
         }
-    
+
         private void txt_name_Properties_Leave(object sender, EventArgs e)
         {
             //if (txt_name.Text == "")
             //{
             //    XtraMessageBox.Show("Enter Your_Name");
             //    txt_yourname.Focus();
-               
+
             //}
         }
         private void txt_Email_address_Properties_Leave(object sender, EventArgs e)
@@ -529,6 +536,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
             if (txt_Email_address.Text == "")
             {
                 SplashScreenManager.CloseForm(false);
+                Txt_EmailAddress();
                 XtraMessageBox.Show("Enter Email_Address");
                 txt_Email_address.Focus();
                 return;
@@ -546,7 +554,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
         }
 
         private void txt_Incoming_server_Properties_Leave(object sender, EventArgs e)
-           {
+        {
             //Regex RegExForIncomingServer = new Regex("^[0-9]{3}$");
             //if (txt_Incoming_server.Text == "")
             //{
@@ -564,7 +572,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
             //    txt_Incoming_server.Focus();
 
             //}
-        
+
         }
 
         private void txt_Outgoing_server_Properties_Leave(object sender, EventArgs e)
@@ -588,11 +596,12 @@ namespace Ordermanagement_01.New_Dashboard.Settings
         }
 
         private void txt_IS_Properties_Leave(object sender, EventArgs e)
-            {
+        {
             //Regex RegExForIsPort = new Regex("^[0-9]$");
             if (txt_IS.Text == "")
             {
                 SplashScreenManager.CloseForm(false);
+                Txt_Incomingserverport();
                 XtraMessageBox.Show("Enter Incoming Server Port details");
                 txt_IS.Focus();
                 return;
@@ -613,6 +622,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
             if (txt_OS.Text == "")
             {
                 SplashScreenManager.CloseForm(false);
+                Txt_Outgoingport();
                 XtraMessageBox.Show("Enter OutGoing Server Port details");
                 txt_OS.Focus();
                 return;
@@ -629,7 +639,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
         }
 
         private void txt_password_Properties_Leave(object sender, EventArgs e)
-            {
+        {
             ////Regex RegExForPassword = new Regex("^.*(?=.{8,})(?=.*\\d)(?=.*[a-z])(?=.*[!*@#$%^&+=]).*$");
             if (txt_password.Text == "")
             {
@@ -655,7 +665,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
                 SplashScreenManager.CloseForm(false);
                 XtraMessageBox.Show("Enter UserName");
                 txt_User_Name.Focus();
-                
+
             }
         }
 
@@ -666,11 +676,11 @@ namespace Ordermanagement_01.New_Dashboard.Settings
 
         private void txt_Email_address_KeyPress(object sender, KeyPressEventArgs e)
         {
-           e.Handled = (e.KeyChar == (char)Keys.Space); 
+            e.Handled = (e.KeyChar == (char)Keys.Space);
         }
 
         private void txt_Incoming_server_KeyPress(object sender, KeyPressEventArgs e)
-       {
+        {
 
             e.Handled = (e.KeyChar == (char)Keys.Space);
         }
@@ -686,7 +696,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
         }
 
         private void txt_OS_KeyPress(object sender, KeyPressEventArgs e)
-       {
+        {
             e.Handled = (e.KeyChar == (char)Keys.Space);
         }
 
@@ -707,17 +717,17 @@ namespace Ordermanagement_01.New_Dashboard.Settings
 
         private void txt_Incoming_server_TextChanged(object sender, EventArgs e)
         {
-            txt_Incoming_server.Text =txt_Incoming_server.Text.Replace(" ", string.Empty);
+            txt_Incoming_server.Text = txt_Incoming_server.Text.Replace(" ", string.Empty);
         }
 
         private void txt_Outgoing_server_TextChanged(object sender, EventArgs e)
         {
-         txt_Outgoing_server.Text = txt_Outgoing_server.Text.Replace(" ", string.Empty);
+            txt_Outgoing_server.Text = txt_Outgoing_server.Text.Replace(" ", string.Empty);
         }
 
         private void txt_password_TextChanged(object sender, EventArgs e)
         {
-           txt_password.Text = txt_password.Text.Replace(" ", string.Empty);
+            txt_password.Text = txt_password.Text.Replace(" ", string.Empty);
         }
 
         private void txt_password_KeyPress(object sender, KeyPressEventArgs e)
@@ -725,6 +735,143 @@ namespace Ordermanagement_01.New_Dashboard.Settings
             e.Handled = (e.KeyChar == (char)Keys.Space);
         }
 
-    
+        public bool Txt_Name()
+        {
+            bool bStatus = true;
+            if (txt_name.Text == "")
+            {
+                dxErrorProvider1.SetError(txt_name, "Please Enter Name");
+                bStatus = false;
+            }
+            else
+                dxErrorProvider1.SetError(txt_name, "");
+            return bStatus;
+        }
+        private void txt_name_Validating(object sender, CancelEventArgs e)
+        {
+            Txt_Name();
+        }
+
+        public bool Txt_EmailAddress()
+        {
+            bool bStatus = true;
+            Regex myRegularExpression = new Regex("^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$");
+            if (myRegularExpression.IsMatch(txt_Email_address.Text))
+            {
+                dxErrorProvider1.SetError(txt_Email_address, "");
+            }
+            else
+            {
+                dxErrorProvider1.SetError(txt_Email_address, "Please Enter Valid Email-Id");
+                bStatus = false;
+            }
+            return bStatus;
+        }
+        private void txt_Email_address_Validating(object sender, CancelEventArgs e)
+        {
+            Txt_EmailAddress();
+        }
+
+        public bool Txt_incoming_server()
+        {
+            bool bStatus = true;
+            if (txt_Incoming_server.Text == "")
+            {
+                dxErrorProvider1.SetError(txt_Incoming_server, "Please Enter incoming mail server");
+                bStatus = false;
+            }
+            else
+                dxErrorProvider1.SetError(txt_Incoming_server, "");
+            return bStatus;
+        }
+        private void txt_Incoming_server_Validating(object sender, CancelEventArgs e)
+        {
+            Txt_incoming_server();
+        }
+
+        public bool Txt_Outgoingserver()
+        {
+            bool bStatus = true;
+            if (txt_Outgoing_server.Text == "")
+            {
+                dxErrorProvider1.SetError(txt_Outgoing_server, "Please Enter Outgoing mail server");
+                bStatus = false;
+            }
+            else
+                dxErrorProvider1.SetError(txt_Outgoing_server, "");
+            return bStatus;
+        }
+        private void txt_Outgoing_server_Validating(object sender, CancelEventArgs e)
+        {
+            Txt_Outgoingserver();
+        }
+
+        public bool Txt_Incomingserverport()
+        {
+            bool bStatus = true;
+            if (txt_IS.Text == "")
+            {
+                dxErrorProvider1.SetError(txt_IS, "Please enter the incoming server port number");
+                bStatus = false;
+            }
+            else
+                dxErrorProvider1.SetError(txt_IS, "");
+            return bStatus;
+        }
+        private void txt_IS_Validating(object sender, CancelEventArgs e)
+        {
+            Txt_Incomingserverport();
+        }
+
+        public bool Txt_Outgoingport()
+        {
+            bool bStatus = true;
+            if (txt_OS.Text == "")
+            {
+                dxErrorProvider1.SetError(txt_OS, "Please nter outgoing server port number");
+                bStatus = false;
+            }
+            else
+                dxErrorProvider1.SetError(txt_OS, "");
+            return bStatus;
+        }
+        private void txt_OS_Validating(object sender, CancelEventArgs e)
+        {
+            Txt_Outgoingport();
+        }
+
+        public bool TXt_username()
+        {
+            bool bstatus = true;
+            if (txt_User_Name.Text == "")
+            {
+                dxErrorProvider1.SetError(txt_User_Name, "Please enter the username");
+                bstatus = false;
+            }
+            else
+                dxErrorProvider1.SetError(txt_User_Name, "");
+            return bstatus;
+        }
+        private void txt_User_Name_Validating(object sender, CancelEventArgs e)
+        {
+            TXt_username();
+        }
+
+        public bool Txt_Password()
+        {
+            bool bstatus = true;
+            if (txt_password.Text == "")
+            {
+                dxErrorProvider1.SetError(txt_password, "Please enter the password");
+                bstatus = false;
+            }
+            else
+                dxErrorProvider1.SetError(txt_password, "");
+            return bstatus;
+        }
+        private void txt_password_Validating(object sender, CancelEventArgs e)
+        {
+            Txt_Password();
+        }
     }
 }

@@ -15,6 +15,7 @@ namespace Ordermanagement_01
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new New_Dashboard.NewLogin());
             //Application.Run(new New_Dashboard.Settings.Process_Settings());
+            //Application.Run(new New_Dashboard.Settings.EmailSetting());
         }
     }
 }

@@ -184,6 +184,7 @@
             this.repositoryItemPopupContainerEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit();
             this.repositoryItemPopupContainerEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.gridColumn53 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -256,7 +257,7 @@
             this.gridColumn31.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
             this.gridColumn31.Name = "gridColumn31";
             this.gridColumn31.Visible = true;
-            this.gridColumn31.VisibleIndex = 31;
+            this.gridColumn31.VisibleIndex = 32;
             this.gridColumn31.Width = 74;
             // 
             // repositoryItemHyperLinkEdit1
@@ -602,7 +603,8 @@
             this.gridColumn32,
             this.gridColumn60,
             this.gridColumn61,
-            this.gridColumn62});
+            this.gridColumn62,
+            this.gridColumn53});
             this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             gridFormatRule1.Column = this.gridColumn31;
             gridFormatRule1.ColumnApplyTo = this.gridColumn31;
@@ -2204,6 +2206,23 @@
             // 
             this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013";
             // 
+            // gridColumn53
+            // 
+            this.gridColumn53.AppearanceHeader.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.gridColumn53.AppearanceHeader.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold);
+            this.gridColumn53.AppearanceHeader.Options.UseBackColor = true;
+            this.gridColumn53.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn53.Caption = "Order Prior Date";
+            this.gridColumn53.DisplayFormat.FormatString = "\"MM/dd/YYYY\"";
+            this.gridColumn53.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.gridColumn53.FieldName = "Order_Prior_Date";
+            this.gridColumn53.Name = "gridColumn53";
+            this.gridColumn53.OptionsColumn.AllowEdit = false;
+            this.gridColumn53.OptionsColumn.ReadOnly = true;
+            this.gridColumn53.Visible = true;
+            this.gridColumn53.VisibleIndex = 31;
+            this.gridColumn53.Width = 98;
+            // 
             // DailyStatus_OrderViewDetail_New
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2421,5 +2440,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn71;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn72;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn73;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn53;
     }
 }

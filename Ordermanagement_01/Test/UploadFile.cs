@@ -1,7 +1,8 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.Xpf.Core;
+using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
-
+using DocumentFormat.OpenXml.Drawing.Diagrams;
 using System;
 using System.Collections;
 using System.Data;
@@ -335,8 +336,7 @@ namespace Ordermanagement_01.Test
         {
             DevExpress.Utils.DXMouseEventArgs ea1 = e as DevExpress.Utils.DXMouseEventArgs;
             GridView view1 = (GridView)sender;
-
-            //GridHitInfo hitinfo = view1.CalcHitInfo(new Point(e.X, e.Y));
+           // GridHitInfo hitinfo = view1.CalcHitInfo(new Point(e.X, e.Y));
         }
     }
 }

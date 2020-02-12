@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions1 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
             DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange1 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
             DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange2 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
@@ -94,6 +95,7 @@
             this.buttonWeek = new DevExpress.XtraEditors.SimpleButton();
             this.buttonToday = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.buttonTheme = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.lookUpEditSkins = new DevExpress.XtraEditors.LookUpEdit();
@@ -129,7 +131,7 @@
             this.arcScaleRangeBarComponent2 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleRangeBarComponent();
             this.circularGauge2 = new DevExpress.XtraGauges.Win.Gauges.Circular.CircularGauge();
             this.arcScaleBackgroundLayerComponent2 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleBackgroundLayerComponent();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.groupControlDashboard)).BeginInit();
             this.groupControlDashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -209,9 +211,9 @@
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl1.Controls.Add(this.tableLayoutPanel1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(2, 37);
+            this.panelControl1.Location = new System.Drawing.Point(2, 31);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(980, 443);
+            this.panelControl1.Size = new System.Drawing.Size(980, 449);
             this.panelControl1.TabIndex = 2;
             // 
             // tableLayoutPanel1
@@ -238,7 +240,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 41.20267F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 41.95921F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.994173F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(980, 443);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(980, 449);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
             // groupControlEfficiency
@@ -252,9 +254,9 @@
             new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("", true, buttonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1)});
             this.groupControlEfficiency.CustomHeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.BeforeText;
             this.groupControlEfficiency.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControlEfficiency.Location = new System.Drawing.Point(248, 50);
+            this.groupControlEfficiency.Location = new System.Drawing.Point(248, 51);
             this.groupControlEfficiency.Name = "groupControlEfficiency";
-            this.groupControlEfficiency.Size = new System.Drawing.Size(239, 176);
+            this.groupControlEfficiency.Size = new System.Drawing.Size(239, 179);
             this.groupControlEfficiency.TabIndex = 6;
             this.groupControlEfficiency.Text = "Efficiency";
             this.groupControlEfficiency.CustomButtonClick += new DevExpress.XtraBars.Docking2010.BaseButtonEventHandler(this.groupControlEfficiency_CustomButtonClick);
@@ -267,15 +269,15 @@
             this.gaugeControlEfficiency.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gaugeControlEfficiency.Gauges.AddRange(new DevExpress.XtraGauges.Base.IGauge[] {
             this.circularGaugeEfficiency});
-            this.gaugeControlEfficiency.Location = new System.Drawing.Point(2, 28);
+            this.gaugeControlEfficiency.Location = new System.Drawing.Point(2, 22);
             this.gaugeControlEfficiency.Name = "gaugeControlEfficiency";
-            this.gaugeControlEfficiency.Size = new System.Drawing.Size(235, 146);
+            this.gaugeControlEfficiency.Size = new System.Drawing.Size(235, 155);
             this.gaugeControlEfficiency.TabIndex = 6;
             this.gaugeControlEfficiency.Click += new System.EventHandler(this.gaugeControlEfficiency_Click);
             // 
             // circularGaugeEfficiency
             // 
-            this.circularGaugeEfficiency.Bounds = new System.Drawing.Rectangle(6, 6, 223, 134);
+            this.circularGaugeEfficiency.Bounds = new System.Drawing.Rectangle(6, 6, 223, 143);
             this.circularGaugeEfficiency.Labels.AddRange(new DevExpress.XtraGauges.Win.Base.LabelComponent[] {
             this.labelComponentEfficiency});
             this.circularGaugeEfficiency.Name = "circularGaugeEfficiency";
@@ -374,7 +376,7 @@
             this.chartControlEfficiency.Legend.AlignmentVertical = DevExpress.XtraCharts.LegendAlignmentVertical.TopOutside;
             this.chartControlEfficiency.Legend.Name = "Default Legend";
             this.chartControlEfficiency.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
-            this.chartControlEfficiency.Location = new System.Drawing.Point(2, 28);
+            this.chartControlEfficiency.Location = new System.Drawing.Point(2, 22);
             this.chartControlEfficiency.Name = "chartControlEfficiency";
             series1.Name = "Efficiency";
             sideBySideBarSeriesView1.BarWidth = 0.4D;
@@ -383,7 +385,7 @@
             series1.View = sideBySideBarSeriesView1;
             this.chartControlEfficiency.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series1};
-            this.chartControlEfficiency.Size = new System.Drawing.Size(235, 146);
+            this.chartControlEfficiency.Size = new System.Drawing.Size(235, 155);
             this.chartControlEfficiency.TabIndex = 0;
             this.chartControlEfficiency.Click += new System.EventHandler(this.chartControlEfficiency_Click);
             // 
@@ -395,9 +397,9 @@
             this.groupControlError.CustomHeaderButtons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
             new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("", true, buttonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1)});
             this.groupControlError.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControlError.Location = new System.Drawing.Point(493, 232);
+            this.groupControlError.Location = new System.Drawing.Point(493, 236);
             this.groupControlError.Name = "groupControlError";
-            this.groupControlError.Size = new System.Drawing.Size(239, 180);
+            this.groupControlError.Size = new System.Drawing.Size(239, 182);
             this.groupControlError.TabIndex = 8;
             this.groupControlError.Text = "Errors";
             this.groupControlError.CustomButtonClick += new DevExpress.XtraBars.Docking2010.BaseButtonEventHandler(this.groupControlErrors_CustomButtonClick);
@@ -409,7 +411,7 @@
             this.linkLabelErrors.ForeColor = System.Drawing.Color.ForestGreen;
             this.linkLabelErrors.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.linkLabelErrors.LinkColor = System.Drawing.Color.ForestGreen;
-            this.linkLabelErrors.Location = new System.Drawing.Point(79, 78);
+            this.linkLabelErrors.Location = new System.Drawing.Point(79, 76);
             this.linkLabelErrors.Name = "linkLabelErrors";
             this.linkLabelErrors.Size = new System.Drawing.Size(83, 53);
             this.linkLabelErrors.TabIndex = 31;
@@ -428,9 +430,9 @@
             this.groupControlTimings.CustomHeaderButtons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
             new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("", true, buttonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1)});
             this.groupControlTimings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControlTimings.Location = new System.Drawing.Point(248, 232);
+            this.groupControlTimings.Location = new System.Drawing.Point(248, 236);
             this.groupControlTimings.Name = "groupControlTimings";
-            this.groupControlTimings.Size = new System.Drawing.Size(239, 180);
+            this.groupControlTimings.Size = new System.Drawing.Size(239, 182);
             this.groupControlTimings.TabIndex = 7;
             this.groupControlTimings.Text = "Timings";
             this.groupControlTimings.CustomButtonClick += new DevExpress.XtraBars.Docking2010.BaseButtonEventHandler(this.groupControlTimings_CustomButtonClick);
@@ -443,7 +445,7 @@
             this.chartControlTimings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartControlTimings.Legend.Name = "Default Legend";
             this.chartControlTimings.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
-            this.chartControlTimings.Location = new System.Drawing.Point(2, 28);
+            this.chartControlTimings.Location = new System.Drawing.Point(2, 22);
             this.chartControlTimings.Margin = new System.Windows.Forms.Padding(0);
             this.chartControlTimings.Name = "chartControlTimings";
             this.chartControlTimings.Padding.Bottom = 0;
@@ -468,17 +470,17 @@
         series2};
             this.chartControlTimings.SeriesTemplate.ArgumentDataMember = "100";
             this.chartControlTimings.SeriesTemplate.LegendName = "Default Legend";
-            this.chartControlTimings.Size = new System.Drawing.Size(235, 150);
+            this.chartControlTimings.Size = new System.Drawing.Size(235, 158);
             this.chartControlTimings.TabIndex = 3;
             this.chartControlTimings.Click += new System.EventHandler(this.chartControlTimings_Click);
             // 
             // gridControlTimings
             // 
             this.gridControlTimings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlTimings.Location = new System.Drawing.Point(2, 28);
+            this.gridControlTimings.Location = new System.Drawing.Point(2, 22);
             this.gridControlTimings.MainView = this.gridViewTimings;
             this.gridControlTimings.Name = "gridControlTimings";
-            this.gridControlTimings.Size = new System.Drawing.Size(235, 150);
+            this.gridControlTimings.Size = new System.Drawing.Size(235, 158);
             this.gridControlTimings.TabIndex = 4;
             this.gridControlTimings.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewTimings});
@@ -548,9 +550,9 @@
             this.groupControlAccuracy.CustomHeaderButtons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
             new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("", true, buttonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1)});
             this.groupControlAccuracy.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControlAccuracy.Location = new System.Drawing.Point(493, 50);
+            this.groupControlAccuracy.Location = new System.Drawing.Point(493, 51);
             this.groupControlAccuracy.Name = "groupControlAccuracy";
-            this.groupControlAccuracy.Size = new System.Drawing.Size(239, 176);
+            this.groupControlAccuracy.Size = new System.Drawing.Size(239, 179);
             this.groupControlAccuracy.TabIndex = 1;
             this.groupControlAccuracy.Text = "Accuracy";
             this.groupControlAccuracy.CustomButtonClick += new DevExpress.XtraBars.Docking2010.BaseButtonEventHandler(this.groupControlAccuracy_CustomButtonClick);
@@ -575,7 +577,7 @@
             this.chartControlAccuracy.Legend.AlignmentVertical = DevExpress.XtraCharts.LegendAlignmentVertical.TopOutside;
             this.chartControlAccuracy.Legend.Name = "Default Legend";
             this.chartControlAccuracy.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
-            this.chartControlAccuracy.Location = new System.Drawing.Point(2, 37);
+            this.chartControlAccuracy.Location = new System.Drawing.Point(2, 29);
             this.chartControlAccuracy.Margin = new System.Windows.Forms.Padding(0);
             this.chartControlAccuracy.Name = "chartControlAccuracy";
             series3.Name = "Accuracy";
@@ -586,7 +588,7 @@
             this.chartControlAccuracy.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series3};
             this.chartControlAccuracy.SeriesTemplate.LegendName = "Default Legend";
-            this.chartControlAccuracy.Size = new System.Drawing.Size(235, 137);
+            this.chartControlAccuracy.Size = new System.Drawing.Size(235, 148);
             this.chartControlAccuracy.TabIndex = 4;
             this.chartControlAccuracy.Click += new System.EventHandler(this.chartControlAccuracy_Click);
             // 
@@ -597,9 +599,9 @@
             this.gaugeControl_Accuracy.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gaugeControl_Accuracy.Gauges.AddRange(new DevExpress.XtraGauges.Base.IGauge[] {
             this.circularGauge_Accuracy});
-            this.gaugeControl_Accuracy.Location = new System.Drawing.Point(2, 37);
+            this.gaugeControl_Accuracy.Location = new System.Drawing.Point(2, 29);
             this.gaugeControl_Accuracy.Name = "gaugeControl_Accuracy";
-            this.gaugeControl_Accuracy.Size = new System.Drawing.Size(235, 137);
+            this.gaugeControl_Accuracy.Size = new System.Drawing.Size(235, 148);
             this.gaugeControl_Accuracy.TabIndex = 0;
             this.gaugeControl_Accuracy.Click += new System.EventHandler(this.gaugeControl_Accuracy_Click);
             // 
@@ -607,7 +609,7 @@
             // 
             this.circularGauge_Accuracy.BackgroundLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleBackgroundLayerComponent[] {
             this.arcScaleBackgroundLayerComponent1});
-            this.circularGauge_Accuracy.Bounds = new System.Drawing.Rectangle(6, 6, 223, 125);
+            this.circularGauge_Accuracy.Bounds = new System.Drawing.Rectangle(6, 6, 223, 136);
             this.circularGauge_Accuracy.Name = "circularGauge_Accuracy";
             this.circularGauge_Accuracy.Needles.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleNeedleComponent[] {
             this.arcScaleNeedleComponent2});
@@ -697,7 +699,7 @@
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(248, 3);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(729, 41);
+            this.panelControl2.Size = new System.Drawing.Size(729, 42);
             this.panelControl2.TabIndex = 5;
             // 
             // btn_notification
@@ -713,7 +715,7 @@
             this.btn_notification.AutoSize = true;
             this.btn_notification.AutoWidthInLayoutControl = true;
             this.btn_notification.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn_notification.Location = new System.Drawing.Point(386, 1);
+            this.btn_notification.Location = new System.Drawing.Point(386, 2);
             this.btn_notification.MinimumSize = new System.Drawing.Size(137, 38);
             this.btn_notification.Name = "btn_notification";
             this.btn_notification.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
@@ -735,7 +737,7 @@
             this.buttonBreak.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.buttonBreak.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.buttonBreak.ImageOptions.Image = global::Ordermanagement_01.Properties.Resources.ic_time_span;
-            this.buttonBreak.Location = new System.Drawing.Point(530, 2);
+            this.buttonBreak.Location = new System.Drawing.Point(530, 3);
             this.buttonBreak.Name = "buttonBreak";
             this.buttonBreak.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.buttonBreak.Size = new System.Drawing.Size(78, 38);
@@ -756,7 +758,7 @@
             this.buttonIdle.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.buttonIdle.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.buttonIdle.ImageOptions.Image = global::Ordermanagement_01.Properties.Resources.ic_idle;
-            this.buttonIdle.Location = new System.Drawing.Point(614, 2);
+            this.buttonIdle.Location = new System.Drawing.Point(614, 3);
             this.buttonIdle.Name = "buttonIdle";
             this.buttonIdle.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.buttonIdle.Size = new System.Drawing.Size(66, 38);
@@ -771,7 +773,7 @@
             this.buttonYesterday.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.buttonYesterday.Appearance.Options.UseFont = true;
             this.buttonYesterday.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.buttonYesterday.Location = new System.Drawing.Point(109, 5);
+            this.buttonYesterday.Location = new System.Drawing.Point(109, 6);
             this.buttonYesterday.Name = "buttonYesterday";
             this.buttonYesterday.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.buttonYesterday.Size = new System.Drawing.Size(100, 32);
@@ -791,7 +793,7 @@
             this.buttonLogout.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.buttonLogout.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.buttonLogout.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonLogout.ImageOptions.Image")));
-            this.buttonLogout.Location = new System.Drawing.Point(686, 2);
+            this.buttonLogout.Location = new System.Drawing.Point(686, 3);
             this.buttonLogout.Name = "buttonLogout";
             this.buttonLogout.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.buttonLogout.Size = new System.Drawing.Size(40, 38);
@@ -805,7 +807,7 @@
             this.buttonWeek.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.buttonWeek.Appearance.Options.UseFont = true;
             this.buttonWeek.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.buttonWeek.Location = new System.Drawing.Point(215, 5);
+            this.buttonWeek.Location = new System.Drawing.Point(215, 6);
             this.buttonWeek.Name = "buttonWeek";
             this.buttonWeek.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.buttonWeek.Size = new System.Drawing.Size(100, 32);
@@ -819,7 +821,7 @@
             this.buttonToday.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonToday.Appearance.Options.UseFont = true;
             this.buttonToday.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.buttonToday.Location = new System.Drawing.Point(3, 5);
+            this.buttonToday.Location = new System.Drawing.Point(3, 6);
             this.buttonToday.Name = "buttonToday";
             this.buttonToday.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.buttonToday.Size = new System.Drawing.Size(100, 32);
@@ -830,6 +832,7 @@
             // panelControl3
             // 
             this.panelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.panelControl3.Controls.Add(this.simpleButton1);
             this.panelControl3.Controls.Add(this.buttonTheme);
             this.panelControl3.Controls.Add(this.labelControl3);
             this.panelControl3.Controls.Add(this.lookUpEditSkins);
@@ -851,8 +854,28 @@
             this.panelControl3.Location = new System.Drawing.Point(3, 3);
             this.panelControl3.Name = "panelControl3";
             this.tableLayoutPanel1.SetRowSpan(this.panelControl3, 3);
-            this.panelControl3.Size = new System.Drawing.Size(239, 409);
+            this.panelControl3.Size = new System.Drawing.Size(239, 415);
             this.panelControl3.TabIndex = 6;
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.AllowFocus = false;
+            this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.AppearanceHovered.BackColor = System.Drawing.Color.Transparent;
+            this.simpleButton1.AppearanceHovered.Options.UseBackColor = true;
+            this.simpleButton1.AutoSize = true;
+            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.simpleButton1.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.simpleButton1.ImageOptions.Image = global::Ordermanagement_01.Properties.Resources.lock_icon1;
+            this.simpleButton1.Location = new System.Drawing.Point(196, 109);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.simpleButton1.Size = new System.Drawing.Size(34, 38);
+            this.simpleButton1.TabIndex = 26;
+            this.simpleButton1.ToolTip = "Press (Alt + L) To Lock Screen";
+            //this.simpleButton1.MouseHover += new System.EventHandler(this.simpleButton1_MouseHover);
             // 
             // buttonTheme
             // 
@@ -866,7 +889,7 @@
             this.buttonTheme.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.buttonTheme.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.buttonTheme.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonTheme.ImageOptions.Image")));
-            this.buttonTheme.Location = new System.Drawing.Point(202, 373);
+            this.buttonTheme.Location = new System.Drawing.Point(202, 379);
             this.buttonTheme.Name = "buttonTheme";
             this.buttonTheme.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.buttonTheme.Size = new System.Drawing.Size(32, 30);
@@ -883,7 +906,7 @@
             this.labelControl3.LineLocation = DevExpress.XtraEditors.LineLocation.Bottom;
             this.labelControl3.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Horizontal;
             this.labelControl3.LineVisible = true;
-            this.labelControl3.Location = new System.Drawing.Point(5, 381);
+            this.labelControl3.Location = new System.Drawing.Point(5, 387);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(37, 18);
             this.labelControl3.TabIndex = 6;
@@ -894,7 +917,7 @@
             // 
             this.lookUpEditSkins.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lookUpEditSkins.EditValue = 0;
-            this.lookUpEditSkins.Location = new System.Drawing.Point(49, 380);
+            this.lookUpEditSkins.Location = new System.Drawing.Point(49, 386);
             this.lookUpEditSkins.Name = "lookUpEditSkins";
             this.lookUpEditSkins.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -934,7 +957,7 @@
             this.buttonEditProfile.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.buttonEditProfile.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.buttonEditProfile.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonEditProfile.ImageOptions.Image")));
-            this.buttonEditProfile.Location = new System.Drawing.Point(186, 110);
+            this.buttonEditProfile.Location = new System.Drawing.Point(153, 109);
             this.buttonEditProfile.Name = "buttonEditProfile";
             this.buttonEditProfile.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.buttonEditProfile.Size = new System.Drawing.Size(40, 38);
@@ -1139,9 +1162,9 @@
             this.groupControlQueue.CustomHeaderButtons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
             new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("", true, buttonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1)});
             this.groupControlQueue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControlQueue.Location = new System.Drawing.Point(738, 232);
+            this.groupControlQueue.Location = new System.Drawing.Point(738, 236);
             this.groupControlQueue.Name = "groupControlQueue";
-            this.groupControlQueue.Size = new System.Drawing.Size(239, 180);
+            this.groupControlQueue.Size = new System.Drawing.Size(239, 182);
             this.groupControlQueue.TabIndex = 8;
             this.groupControlQueue.Text = "Queue";
             // 
@@ -1152,7 +1175,7 @@
             this.link_Order_Count.ForeColor = System.Drawing.Color.ForestGreen;
             this.link_Order_Count.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.link_Order_Count.LinkColor = System.Drawing.Color.ForestGreen;
-            this.link_Order_Count.Location = new System.Drawing.Point(87, 78);
+            this.link_Order_Count.Location = new System.Drawing.Point(87, 76);
             this.link_Order_Count.Name = "link_Order_Count";
             this.link_Order_Count.Size = new System.Drawing.Size(83, 53);
             this.link_Order_Count.TabIndex = 30;
@@ -1160,6 +1183,7 @@
             this.link_Order_Count.Text = "000";
             this.link_Order_Count.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.link_Order_Count.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+           // this.link_Order_Count.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.link_Order_Count_LinkClicked);
             this.link_Order_Count.Click += new System.EventHandler(this.link_Order_Count_Click);
             // 
             // panelControl4
@@ -1170,7 +1194,7 @@
             this.panelControl4.Controls.Add(this.lblCopyRight);
             this.panelControl4.Controls.Add(this.labelControlToDay);
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl4.Location = new System.Drawing.Point(3, 418);
+            this.panelControl4.Location = new System.Drawing.Point(3, 424);
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(974, 22);
             this.panelControl4.TabIndex = 8;
@@ -1224,9 +1248,9 @@
             this.groupControlAttendance.CustomHeaderButtons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
             new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("", true, buttonImageOptions6, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1)});
             this.groupControlAttendance.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControlAttendance.Location = new System.Drawing.Point(738, 50);
+            this.groupControlAttendance.Location = new System.Drawing.Point(738, 51);
             this.groupControlAttendance.Name = "groupControlAttendance";
-            this.groupControlAttendance.Size = new System.Drawing.Size(239, 176);
+            this.groupControlAttendance.Size = new System.Drawing.Size(239, 179);
             this.groupControlAttendance.TabIndex = 2;
             this.groupControlAttendance.Text = "Attendance";
             this.groupControlAttendance.CustomButtonClick += new DevExpress.XtraBars.Docking2010.BaseButtonEventHandler(this.groupControlAttendance_CustomButtonClick);
@@ -1238,9 +1262,9 @@
             this.panelControlAttendance.Controls.Add(this.labelControlLoginTime);
             this.panelControlAttendance.Controls.Add(this.labelControl2);
             this.panelControlAttendance.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControlAttendance.Location = new System.Drawing.Point(2, 37);
+            this.panelControlAttendance.Location = new System.Drawing.Point(2, 29);
             this.panelControlAttendance.Name = "panelControlAttendance";
-            this.panelControlAttendance.Size = new System.Drawing.Size(235, 137);
+            this.panelControlAttendance.Size = new System.Drawing.Size(235, 148);
             this.panelControlAttendance.TabIndex = 0;
             this.panelControlAttendance.Click += new System.EventHandler(this.panelControlAttendance_Click);
             // 
@@ -1251,7 +1275,7 @@
             this.labelControlLoginStatus.ForeColor = System.Drawing.Color.ForestGreen;
             this.labelControlLoginStatus.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.labelControlLoginStatus.LinkColor = System.Drawing.Color.ForestGreen;
-            this.labelControlLoginStatus.Location = new System.Drawing.Point(97, 41);
+            this.labelControlLoginStatus.Location = new System.Drawing.Point(97, 47);
             this.labelControlLoginStatus.Name = "labelControlLoginStatus";
             this.labelControlLoginStatus.Size = new System.Drawing.Size(42, 53);
             this.labelControlLoginStatus.TabIndex = 29;
@@ -1296,10 +1320,10 @@
             gridLevelNode1.RelationName = "Level1";
             this.gridControlAttendance.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
-            this.gridControlAttendance.Location = new System.Drawing.Point(2, 37);
+            this.gridControlAttendance.Location = new System.Drawing.Point(2, 29);
             this.gridControlAttendance.MainView = this.gridViewAttendance;
             this.gridControlAttendance.Name = "gridControlAttendance";
-            this.gridControlAttendance.Size = new System.Drawing.Size(235, 137);
+            this.gridControlAttendance.Size = new System.Drawing.Size(235, 148);
             this.gridControlAttendance.TabIndex = 27;
             this.gridControlAttendance.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewAttendance});
@@ -1350,6 +1374,10 @@
             this.arcScaleBackgroundLayerComponent2.Name = "bg";
             this.arcScaleBackgroundLayerComponent2.ShapeType = DevExpress.XtraGauges.Core.Model.BackgroundLayerShapeType.CircularFull_Style21;
             this.arcScaleBackgroundLayerComponent2.ZOrder = 1000;
+            // 
+            // defaultLookAndFeel1
+            // 
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Visual Studio 2013 Light";
             // 
             // Dashboard
             // 
@@ -1512,5 +1540,6 @@
         private System.Windows.Forms.LinkLabel linkLabelErrors;
         private DevExpress.XtraEditors.SimpleButton btn_notification;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

@@ -4469,6 +4469,9 @@
     <None Include="Resources\OrderhistoryIcon.png" />
     <None Include="Resources\shapes-and-symbols.png" />
     <None Include="Resources\TopPerformer.png" />
+    <None Include="Resources\LockIcon.png" />
+    <None Include="Resources\lock icon1.png" />
+    <None Include="Resources\lockScreenIcon.png" />
     <Content Include="Resources\windowsUIButtonImageOptions1.Image.png" />
     <None Include="Resources\windowsUIButtonImageOptions1.Image1.png" />
     <Content Include="Resources\windowsUIButtonImageOptions2.Image.png" />

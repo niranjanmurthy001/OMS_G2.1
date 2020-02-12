@@ -4257,6 +4257,10 @@
     <Content Include="fonts\FontAwesome.otf" />
     <EmbeddedResource Include="fonts\Roboto-Light.ttf" />
     <None Include="ClassDiagram5.cd" />
+    <None Include="Deed\Annexure 1.docx" />
+    <None Include="Deed\Pay slip - December 2019.pdf" />
+    <None Include="Deed\Pay slip - January 2020.pdf" />
+    <None Include="Deed\Pay slip - November 2019.pdf" />
     <None Include="Order_Type.xlsx" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest">

@@ -1,28 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using System.Collections;
-using System.Text.RegularExpressions;
-using System.Globalization;
-using System.IO;
-using System.DirectoryServices;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
-using System.Text.RegularExpressions;
-using CrystalDecisions.CrystalReports.Engine;
-using CrystalDecisions.ReportSource;
+﻿using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
-using CrystalDecisions.Windows.Forms;
-using System.Diagnostics;
-using System.Threading;
 using DevExpress.XtraSplashScreen;
 using Ordermanagement_01.Models;
 using Ordermanagement_01.New_Dashboard.Orders;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Data;
+using System.DirectoryServices;
+using System.IO;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace Ordermanagement_01
 {
@@ -1697,7 +1687,7 @@ namespace Ordermanagement_01
             {
                 btn_Cancel_Tax_Request.Visible = false;
                 btn_Send_Tax_Request.Visible = false;
-               /// MessageBox.Show("Tax Certificate Received kindly check in Upload Document - Tax Tab ");
+                /// MessageBox.Show("Tax Certificate Received kindly check in Upload Document - Tax Tab ");
             }
 
 
@@ -3380,9 +3370,9 @@ namespace Ordermanagement_01
                         {
                             //employee order entry form enabled false
                             this.Enabled = false;
-                             Order_Task = int.Parse(SESSION_ORDER_TASK.ToString().ToString());
-                             Order_Status_Id = Convert.ToInt32(ddl_order_Staus.SelectedValue);
-                            Ordermanagement_01.Task_Conformation Taskconfomation = new Ordermanagement_01.Task_Conformation(userid,Order_Id, Order_Task, Order_Status_Id);
+                            Order_Task = int.Parse(SESSION_ORDER_TASK.ToString().ToString());
+                            Order_Status_Id = Convert.ToInt32(ddl_order_Staus.SelectedValue);
+                            Ordermanagement_01.Task_Conformation Taskconfomation = new Ordermanagement_01.Task_Conformation(userid, Order_Id, Order_Task, Order_Status_Id);
                             Taskconfomation.ShowDialog();
                             Chk = 1;
                             ddl_order_Task.Visible = false;
@@ -3547,7 +3537,7 @@ namespace Ordermanagement_01
                                                     {
                                                         htprogress.Add("@Order_Progress_Id", int.Parse(ddl_order_Staus.SelectedValue.ToString()));
                                                     }
-                                                    else if(ddl_order_Task.Text == "Upload Completed")
+                                                    else if (ddl_order_Task.Text == "Upload Completed")
                                                     {
                                                         htprogress.Add("@Order_Progress_Id", 3);
                                                     }
@@ -8554,7 +8544,7 @@ namespace Ordermanagement_01
                         if (SESSSION_ORDER_TYPE == "Upload")
                         {
                             ddl_order_Task.Items.Insert(0, "Final QC");
-                       
+
                             ddl_order_Task.Items.Insert(1, "Upload Completed");
                         }
                         if (SESSSION_ORDER_TYPE == "Final QC")
@@ -8694,7 +8684,7 @@ namespace Ordermanagement_01
                         }
                         MessageBox.Show("Please Enter Search Notes");
 
-                        Ordermanagement_01.Employee.Search_NotePad form_Search_Note_Pad = new Employee.Search_NotePad(Order_Id, Work_Type_Id, userid,userid, int.Parse(SESSION_ORDER_TASK.ToString()), "Create", lbl_Order_Number.Text);
+                        Ordermanagement_01.Employee.Search_NotePad form_Search_Note_Pad = new Employee.Search_NotePad(Order_Id, Work_Type_Id, userid, userid, int.Parse(SESSION_ORDER_TASK.ToString()), "Create", lbl_Order_Number.Text);
 
                         Invoke(new MethodInvoker(delegate { form_Search_Note_Pad.Show(); }));
 
@@ -9575,9 +9565,11 @@ namespace Ordermanagement_01
 
         private void txt_Order_No_Of_Pages_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar < 48 || e.KeyChar > 57) &&
-         e.KeyChar != 46 && e.KeyChar != 44 && e.KeyChar != 8)
+
+            if ((e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar == 46 && e.KeyChar != 44 && e.KeyChar != 8)
+            {
                 e.Handled = true;
+            }
         }
 
         private void txt_Order_Search_Cost_TextChanged(object sender, EventArgs e)
@@ -9818,7 +9810,7 @@ namespace Ordermanagement_01
             //btn_Judgement_Period_Click(sender, e);
             //Emp_Alert();
             //btn_Employee_Order_Info_Click(sender, e);
-           obj_Order_Details_List = new Order_Passing_Params()
+            obj_Order_Details_List = new Order_Passing_Params()
             {
                 Client_Id = Client_id,
                 Sub_Client_Id = Sub_ProcessId,
@@ -9835,7 +9827,7 @@ namespace Ordermanagement_01
             Order_Instruction instructions = new Order_Instruction(obj_Order_Details_List);
             Invoke(new MethodInvoker(delegate { instructions.Show(); }));
             timer1.Enabled = false;
-         //   this.Enabled = true;
+            //   this.Enabled = true;
         }
 
         private void ddl_Web_search_sites_SelectedIndexChanged(object sender, EventArgs e)
@@ -9934,7 +9926,7 @@ namespace Ordermanagement_01
         {
             //Create_Search_Notepad_Document();
 
-            Ordermanagement_01.Employee.Search_NotePad form_Search_Note_Pad = new Employee.Search_NotePad(Order_Id,Work_Type_Id,userid,userid,int.Parse(SESSION_ORDER_TASK.ToString()),"Create",lbl_Order_Number.Text);
+            Ordermanagement_01.Employee.Search_NotePad form_Search_Note_Pad = new Employee.Search_NotePad(Order_Id, Work_Type_Id, userid, userid, int.Parse(SESSION_ORDER_TASK.ToString()), "Create", lbl_Order_Number.Text);
 
             Invoke(new MethodInvoker(delegate { form_Search_Note_Pad.Show(); }));
 

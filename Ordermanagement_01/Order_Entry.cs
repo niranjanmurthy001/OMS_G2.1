@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using DevExpress.XtraEditors;
+using DevExpress.XtraSplashScreen;
+using System;
+using System.Collections;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using System.Collections;
-using System.Data.SqlClient;
-using System.IO;
-using System.Text.RegularExpressions;
-using DevExpress.XtraEditors;
-using DevExpress.XtraSplashScreen;
 
 namespace Ordermanagement_01
 {
@@ -423,7 +416,7 @@ namespace Ordermanagement_01
                         //txt_Abstractor_Cost.PasswordChar = '*';
                         //txt_noofpage.PasswordChar = '*';                        
                     }
-                    
+
                     btn_Save.Text = "Edit Order";
                     Hashtable ht_Select_Order_Details = new Hashtable();
                     DataTable dt_Select_Order_Details = new DataTable();
@@ -2012,7 +2005,7 @@ namespace Ordermanagement_01
                             {
                                 btn_Save.Text = "Add New Order";
                                 Control_Enable();
-                               // ddl_ordertask.Enabled = true;
+                                // ddl_ordertask.Enabled = true;
                             }
                         }
                         else if (btn_Save.Text == "Add New Order" && Validation_ControlEnable() != false && validate_Update_Search_Control_Enable() != false)
@@ -2044,7 +2037,7 @@ namespace Ordermanagement_01
                     {
                         btn_Save.Text = "Add New Order";
                         Control_Enable();
-                      //  ddl_ordertask.Enabled = true;
+                        //  ddl_ordertask.Enabled = true;
                     }
                     MessageBox.Show("Select Order Task");
 
@@ -4093,7 +4086,7 @@ namespace Ordermanagement_01
         private void txt_noofpage_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar < 48 || e.KeyChar > 57) &&
-    e.KeyChar != 46 && e.KeyChar != 44 && e.KeyChar != 8)
+    e.KeyChar == 46 && e.KeyChar != 44 && e.KeyChar != 8)
                 e.Handled = true;
         }
 

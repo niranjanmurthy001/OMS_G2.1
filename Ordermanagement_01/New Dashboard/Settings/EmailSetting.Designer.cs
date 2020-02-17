@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,6 +41,7 @@
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_testconnection = new DevExpress.XtraEditors.SimpleButton();
+            this.toolTipController1 = new DevExpress.Utils.ToolTipController();
             this.check_connection_SSL = new DevExpress.XtraEditors.CheckEdit();
             this.txt_OS = new DevExpress.XtraEditors.TextEdit();
             this.txt_IS = new DevExpress.XtraEditors.TextEdit();
@@ -67,9 +67,8 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.dxErrorProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
-            this.toolTipController1 = new DevExpress.Utils.ToolTipController(this.components);
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            this.dxErrorProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -183,7 +182,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.labelControl2);
             this.splitContainer1.Panel2.Controls.Add(this.labelControl1);
             this.splitContainer1.Size = new System.Drawing.Size(662, 465);
-            this.splitContainer1.SplitterDistance = 157;
+            this.splitContainer1.SplitterDistance = 156;
             this.splitContainer1.TabIndex = 3;
             // 
             // gridControl1_Email_Address
@@ -192,7 +191,7 @@
             this.gridControl1_Email_Address.Location = new System.Drawing.Point(0, 0);
             this.gridControl1_Email_Address.MainView = this.gridView1;
             this.gridControl1_Email_Address.Name = "gridControl1_Email_Address";
-            this.gridControl1_Email_Address.Size = new System.Drawing.Size(153, 461);
+            this.gridControl1_Email_Address.Size = new System.Drawing.Size(152, 461);
             this.gridControl1_Email_Address.TabIndex = 0;
             this.gridControl1_Email_Address.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -248,7 +247,7 @@
             this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel2.Controls.Add(this.panel2);
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(319, 3);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(320, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(175, 32);
             this.flowLayoutPanel2.TabIndex = 46;
@@ -327,7 +326,7 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 416);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(497, 45);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(498, 45);
             this.flowLayoutPanel1.TabIndex = 41;
             // 
             // panel1
@@ -335,7 +334,7 @@
             this.panel1.Controls.Add(this.simpleButton2);
             this.panel1.Controls.Add(this.simpleButton1);
             this.panel1.Controls.Add(this.btn_save);
-            this.panel1.Location = new System.Drawing.Point(252, 3);
+            this.panel1.Location = new System.Drawing.Point(253, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(242, 39);
             this.panel1.TabIndex = 0;

@@ -1,26 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using ClosedXML.Excel;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
+using DevExpress.XtraSplashScreen;
+using Microsoft.Office.Interop.Excel;
+using System;
+using System.Collections;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using System.Collections;
 using System.Globalization;
-using Microsoft.Office.Interop.Excel;
-using Excel = Microsoft.Office.Interop.Excel;
-using CrystalDecisions.CrystalReports.Engine;
-using CrystalDecisions.ReportSource;
-using CrystalDecisions.Shared;
-using CrystalDecisions.Windows;
 using System.IO;
-using ClosedXML.Excel;
-using System.IO;
+using System.Linq;
 using System.Threading;
-using DevExpress.XtraSplashScreen;
+using System.Windows.Forms;
 using System.Windows.Input;
-using System.Timers;
 
 
 namespace Ordermanagement_01
@@ -117,7 +110,7 @@ namespace Ordermanagement_01
         private BackgroundWorker Dash_Board_Worker = new BackgroundWorker();
 
 
-        public AdminDashboard(string User_Role, string user_id, string User_name,string Password)
+        public AdminDashboard(string User_Role, string user_id, string User_name, string Password)
         {
 
             SplashScreenManager.ShowForm(this, typeof(Ordermanagement_01.Masters.WaitForm1), true, true, false);
@@ -17993,7 +17986,7 @@ namespace Ordermanagement_01
                         grd_Rework_Reports.Visible = false;
                         grd_Rework_Reports.DataSource = null;
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
 
                     }
@@ -22352,10 +22345,10 @@ namespace Ordermanagement_01
         {
 
             dtp_Rework.Value = DateTime.Now;
-          dtp_Rework_Fromdate.Value = DateTime.Now;
-           dtp_Rework_Todate.Value = DateTime.Now;
-           dtp_MyTodate.Value = DateTime.Now;
-           dtp_MyFromdate.Value = DateTime.Now;       
+            dtp_Rework_Fromdate.Value = DateTime.Now;
+            dtp_Rework_Todate.Value = DateTime.Now;
+            dtp_MyTodate.Value = DateTime.Now;
+            dtp_MyFromdate.Value = DateTime.Now;
             if (tabControl4.SelectedIndex == 1)
             {
                 if (User_Role_Id == "1")
@@ -25189,10 +25182,10 @@ namespace Ordermanagement_01
         private void tabControl5_SelectedIndexChanged(object sender, EventArgs e)
         {
             dtp_Superqc.Value = DateTime.Now;
-          dtp_MySuperqc_To.Value = DateTime.Now;
-           dtp_MySuperqcFrom.Value = DateTime.Now;
+            dtp_MySuperqc_To.Value = DateTime.Now;
+            dtp_MySuperqcFrom.Value = DateTime.Now;
             dtp_All_SuperqcFromdate.Value = DateTime.Now;
-          dtp_All_SuperqcTodate.Value = DateTime.Now;
+            dtp_All_SuperqcTodate.Value = DateTime.Now;
             if (tabControl5.SelectedIndex == 1)
             {
                 if (User_Role_Id == "1")
@@ -30846,7 +30839,7 @@ namespace Ordermanagement_01
 
 
 
-                        Ordermanagement_01.Dashboard.Emp_Production_Score_Board TargeDashboard = new Ordermanagement_01.Dashboard.Emp_Production_Score_Board(int.Parse(Employee_24_7_Production_user_id), User_Role_Id, Prd_Date1.ToString(),"");
+                        Ordermanagement_01.Dashboard.Emp_Production_Score_Board TargeDashboard = new Ordermanagement_01.Dashboard.Emp_Production_Score_Board(int.Parse(Employee_24_7_Production_user_id), User_Role_Id, Prd_Date1.ToString(), "");
                         TargeDashboard.Show();
                     }
                     else if (e.ColumnIndex == 3)
@@ -31697,7 +31690,7 @@ namespace Ordermanagement_01
         private void buttonIdleMode_Click(object sender, EventArgs e)
         {
             Dashboard.IdleTrack iTrack = new Dashboard.IdleTrack(userid, Production_Date, true);
-           Invoke(new MethodInvoker(delegate { iTrack.Show(); }));
+            Invoke(new MethodInvoker(delegate { iTrack.Show(); }));
         }
 
         private void breakIdleTypesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -31718,7 +31711,7 @@ namespace Ordermanagement_01
 
         private void Grid_Auto_Not_Assigned_Orders_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void cr_Rework_ReportsViewer_Load(object sender, EventArgs e)
@@ -31746,13 +31739,25 @@ namespace Ordermanagement_01
             }
         }
 
-        private void AdminDashboard_KeyDown(object sender,System.Windows.Forms. KeyEventArgs e)
+        private void orderEntryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Ordermanagement_01.New_Dashboard.Orders.OrderEntry orderentry = new New_Dashboard.Orders.OrderEntry();
+            orderentry.Show();
+        }
+
+        private void processSettingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Ordermanagement_01.New_Dashboard.Settings.Process_Settings processsettings = new New_Dashboard.Settings.Process_Settings();
+            processsettings.Show();
+        }
+
+        private void AdminDashboard_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
         {
             if (((Keyboard.IsKeyDown(Key.RightAlt)) || (Keyboard.IsKeyDown(Key.LeftAlt))) && (Keyboard.IsKeyDown(Key.L)))
             {
                 try
                 {
-                  FormCollection collection = System.Windows.Forms.Application.OpenForms;
+                    FormCollection collection = System.Windows.Forms.Application.OpenForms;
                     foreach (Form form in collection)
                     {
                         form.Invoke(new MethodInvoker(delegate { form.Hide(); }));
@@ -31795,7 +31800,7 @@ namespace Ordermanagement_01
 
         private void btn_Break_Click(object sender, EventArgs e)
         {
-            this.Enabled = false;         
+            this.Enabled = false;
             Thread t = new Thread((ThreadStart)delegate { System.Windows.Forms.Application.Run(new Employee.Break_Details(int.Parse(userid.ToString()), F_Date, T_Date, Production_Date)); });
             t.SetApartmentState(ApartmentState.STA);
             t.Start();
@@ -31809,7 +31814,7 @@ namespace Ordermanagement_01
 
         private void lbl_Tax_Order_Email_Sended_Click(object sender, EventArgs e)
         {
-            Ordermanagement_01.Tax.Tax_Summary ts = new Tax.Tax_Summary(Convert.ToInt32(userid),User_Role_Id);
+            Ordermanagement_01.Tax.Tax_Summary ts = new Tax.Tax_Summary(Convert.ToInt32(userid), User_Role_Id);
             ts.Show();
         }
 
@@ -33120,12 +33125,12 @@ namespace Ordermanagement_01
 
         private void tabControl2_SelectedIndexChanged(object sender, EventArgs e)
         {
-               txt_Fromdate.Value = DateTime.Now;
-               txt_Todate.Value = DateTime.Now;
+            txt_Fromdate.Value = DateTime.Now;
+            txt_Todate.Value = DateTime.Now;
             txt_Employee_From_Date.Value = DateTime.Now;
             txt_Employee_Todate.Value = DateTime.Now;
 
-                        
+
         }
     }
 }

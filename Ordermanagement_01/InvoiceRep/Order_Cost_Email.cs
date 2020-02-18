@@ -238,9 +238,9 @@ namespace Ordermanagement_01.InvoiceRep
                             {
                               
 
-                                for (int j = 0; j < dt_Email_Details.Rows.Count; j++)
+                                for (int j = 0; j < dtdate.Rows.Count; j++)
                                 {
-                                    mailMessage.To.Add(dt_Email_Details.Rows[j]["Email_ID"].ToString());
+                                    mailMessage.To.Add(dtdate.Rows[j]["Email_ID"].ToString());
                                 }
 
                                 mailMessage.Bcc.Add("jegadeesh@drnds.com");

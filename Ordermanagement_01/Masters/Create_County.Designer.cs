@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_Import = new System.Windows.Forms.Button();
             this.lbl_ErrorInfo = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
@@ -78,6 +78,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.btn_Export = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grd_County)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -94,7 +95,7 @@
             this.btn_Import.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
             this.btn_Import.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Import.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btn_Import.Location = new System.Drawing.Point(813, 0);
+            this.btn_Import.Location = new System.Drawing.Point(951, 0);
             this.btn_Import.Name = "btn_Import";
             this.btn_Import.Size = new System.Drawing.Size(154, 39);
             this.btn_Import.TabIndex = 16;
@@ -109,7 +110,7 @@
             this.lbl_ErrorInfo.AutoSize = true;
             this.lbl_ErrorInfo.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_ErrorInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(104)))), ((int)(((byte)(156)))));
-            this.lbl_ErrorInfo.Location = new System.Drawing.Point(454, 1);
+            this.lbl_ErrorInfo.Location = new System.Drawing.Point(523, 1);
             this.lbl_ErrorInfo.Name = "lbl_ErrorInfo";
             this.lbl_ErrorInfo.Size = new System.Drawing.Size(92, 31);
             this.lbl_ErrorInfo.TabIndex = 100;
@@ -124,7 +125,7 @@
             this.label45.AutoSize = true;
             this.label45.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label45.ForeColor = System.Drawing.Color.Red;
-            this.label45.Location = new System.Drawing.Point(765, 10);
+            this.label45.Location = new System.Drawing.Point(903, 10);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(200, 19);
             this.label45.TabIndex = 222;
@@ -196,14 +197,14 @@
             this.grd_County.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.grd_County.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.grd_County.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grd_County.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_County.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.grd_County.ColumnHeadersHeight = 30;
             this.grd_County.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column6,
@@ -214,35 +215,35 @@
             this.Column12,
             this.Column3,
             this.Column5});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grd_County.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grd_County.DefaultCellStyle = dataGridViewCellStyle3;
             this.grd_County.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grd_County.Location = new System.Drawing.Point(0, 0);
             this.grd_County.Name = "grd_County";
             this.grd_County.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grd_County.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_County.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.grd_County.RowHeadersVisible = false;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grd_County.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_County.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.grd_County.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.grd_County.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.SystemColors.Control;
             this.grd_County.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -252,14 +253,14 @@
             this.grd_County.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grd_County.RowTemplate.Height = 25;
             this.grd_County.ShowCellToolTips = false;
-            this.grd_County.Size = new System.Drawing.Size(972, 251);
+            this.grd_County.Size = new System.Drawing.Size(1110, 251);
             this.grd_County.TabIndex = 10;
             this.grd_County.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_County_CellClick);
             // 
             // Column6
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column6.FillWeight = 33.50254F;
             this.Column6.HeaderText = "S.No";
             this.Column6.Name = "Column6";
@@ -312,7 +313,7 @@
             this.btn_Submit.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
             this.btn_Submit.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_Submit.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btn_Submit.Location = new System.Drawing.Point(362, 1);
+            this.btn_Submit.Location = new System.Drawing.Point(431, 1);
             this.btn_Submit.Name = "btn_Submit";
             this.btn_Submit.Size = new System.Drawing.Size(98, 36);
             this.btn_Submit.TabIndex = 4;
@@ -325,7 +326,7 @@
             this.btn_Cancel.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
             this.btn_Cancel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_Cancel.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btn_Cancel.Location = new System.Drawing.Point(499, 1);
+            this.btn_Cancel.Location = new System.Drawing.Point(568, 1);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(98, 36);
             this.btn_Cancel.TabIndex = 5;
@@ -402,6 +403,7 @@
             // groupBox1
             // 
             this.groupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
+            this.groupBox1.Controls.Add(this.btn_Export);
             this.groupBox1.Controls.Add(this.ddl_searchCounty);
             this.groupBox1.Controls.Add(this.btn_searchClear);
             this.groupBox1.Controls.Add(this.btn_searchSub);
@@ -412,7 +414,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(972, 57);
+            this.groupBox1.Size = new System.Drawing.Size(1110, 57);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search By";
@@ -506,7 +508,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 462);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(972, 35);
+            this.panel1.Size = new System.Drawing.Size(1110, 35);
             this.panel1.TabIndex = 13;
             // 
             // btnFirst
@@ -515,7 +517,7 @@
             this.btnFirst.BackColor = System.Drawing.Color.Gainsboro;
             this.btnFirst.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFirst.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFirst.Location = new System.Drawing.Point(207, 10);
+            this.btnFirst.Location = new System.Drawing.Point(276, 10);
             this.btnFirst.Name = "btnFirst";
             this.btnFirst.Size = new System.Drawing.Size(75, 25);
             this.btnFirst.TabIndex = 11;
@@ -529,7 +531,7 @@
             this.lblRecordsStatus.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblRecordsStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblRecordsStatus.Font = new System.Drawing.Font("Ebrima", 9.75F);
-            this.lblRecordsStatus.Location = new System.Drawing.Point(421, 10);
+            this.lblRecordsStatus.Location = new System.Drawing.Point(490, 10);
             this.lblRecordsStatus.Name = "lblRecordsStatus";
             this.lblRecordsStatus.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblRecordsStatus.Size = new System.Drawing.Size(70, 22);
@@ -542,7 +544,7 @@
             this.btnPrevious.BackColor = System.Drawing.Color.Gainsboro;
             this.btnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPrevious.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrevious.Location = new System.Drawing.Point(309, 9);
+            this.btnPrevious.Location = new System.Drawing.Point(378, 9);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(75, 25);
             this.btnPrevious.TabIndex = 12;
@@ -557,7 +559,7 @@
             this.btnLast.BackColor = System.Drawing.Color.Gainsboro;
             this.btnLast.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLast.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLast.Location = new System.Drawing.Point(617, 7);
+            this.btnLast.Location = new System.Drawing.Point(686, 7);
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(75, 25);
             this.btnLast.TabIndex = 15;
@@ -572,7 +574,7 @@
             this.btnNext.BackColor = System.Drawing.Color.Gainsboro;
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNext.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.Location = new System.Drawing.Point(518, 8);
+            this.btnNext.Location = new System.Drawing.Point(587, 8);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(75, 25);
             this.btnNext.TabIndex = 14;
@@ -585,7 +587,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(833, 10);
+            this.label8.Location = new System.Drawing.Point(971, 10);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(91, 19);
@@ -598,7 +600,7 @@
             this.lbl_Total_Orders.AutoSize = true;
             this.lbl_Total_Orders.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Total_Orders.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Total_Orders.Location = new System.Drawing.Point(932, 10);
+            this.lbl_Total_Orders.Location = new System.Drawing.Point(1070, 10);
             this.lbl_Total_Orders.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Total_Orders.Name = "lbl_Total_Orders";
             this.lbl_Total_Orders.Size = new System.Drawing.Size(14, 17);
@@ -626,7 +628,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.75864F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 71.46815F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.08033F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(978, 500);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1116, 500);
             this.tableLayoutPanel1.TabIndex = 231;
             // 
             // panel2
@@ -637,7 +639,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(972, 42);
+            this.panel2.Size = new System.Drawing.Size(1110, 42);
             this.panel2.TabIndex = 0;
             // 
             // panel3
@@ -655,7 +657,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 51);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(972, 40);
+            this.panel3.Size = new System.Drawing.Size(1110, 40);
             this.panel3.TabIndex = 1;
             // 
             // panel4
@@ -668,7 +670,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(3, 97);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(972, 39);
+            this.panel4.Size = new System.Drawing.Size(1110, 39);
             this.panel4.TabIndex = 2;
             // 
             // panel5
@@ -677,7 +679,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(3, 142);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(972, 57);
+            this.panel5.Size = new System.Drawing.Size(1110, 57);
             this.panel5.TabIndex = 3;
             // 
             // panel6
@@ -686,14 +688,25 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(3, 205);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(972, 251);
+            this.panel6.Size = new System.Drawing.Size(1110, 251);
             this.panel6.TabIndex = 4;
+            // 
+            // btn_Export
+            // 
+            this.btn_Export.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Export.Location = new System.Drawing.Point(956, 19);
+            this.btn_Export.Name = "btn_Export";
+            this.btn_Export.Size = new System.Drawing.Size(98, 36);
+            this.btn_Export.TabIndex = 234;
+            this.btn_Export.Text = "Export";
+            this.btn_Export.UseVisualStyleBackColor = true;
+            this.btn_Export.Click += new System.EventHandler(this.btn_Export_Click);
             // 
             // Create_County
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(978, 500);
+            this.ClientSize = new System.Drawing.Size(1116, 500);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Create_County";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -766,5 +779,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Button btn_Export;
     }
 }

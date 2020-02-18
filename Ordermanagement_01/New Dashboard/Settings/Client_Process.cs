@@ -238,7 +238,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
                     var data = new StringContent(JsonConvert.SerializeObject(dtmulti), Encoding.UTF8, "application/json");
                     using (var httpClient = new HttpClient())
                     {
-                        var response = await httpClient.PostAsync(Base_Url.Url + "/Master/Insert", data);
+                        var response = await httpClient.PostAsync(Base_Url.Url + "/Process_settings/Insert", data);
                         if (response.IsSuccessStatusCode)
                         {
                             if (response.StatusCode == HttpStatusCode.OK)
@@ -283,7 +283,7 @@ namespace Ordermanagement_01.New_Dashboard.Settings
                     var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
                     using (var httpClient = new HttpClient())
                     {
-                        var response = await httpClient.PostAsync(Base_Url.Url + "/Master/Update", data);
+                        var response = await httpClient.PostAsync(Base_Url.Url + "/Process_settings/Update", data);
                         if (response.IsSuccessStatusCode)
                         {
                             if (response.StatusCode == HttpStatusCode.OK)

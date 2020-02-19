@@ -58,6 +58,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btn_Refresh = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_Export = new System.Windows.Forms.Button();
             this.ddl_searchCounty = new System.Windows.Forms.ComboBox();
             this.btn_searchClear = new System.Windows.Forms.Button();
             this.btn_searchSub = new System.Windows.Forms.Button();
@@ -78,7 +79,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.btn_Export = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grd_County)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -419,6 +419,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search By";
             // 
+            // btn_Export
+            // 
+            this.btn_Export.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Export.Location = new System.Drawing.Point(956, 19);
+            this.btn_Export.Name = "btn_Export";
+            this.btn_Export.Size = new System.Drawing.Size(98, 36);
+            this.btn_Export.TabIndex = 234;
+            this.btn_Export.Text = "Export";
+            this.btn_Export.UseVisualStyleBackColor = true;
+            this.btn_Export.Click += new System.EventHandler(this.btn_Export_Click);
+            // 
             // ddl_searchCounty
             // 
             this.ddl_searchCounty.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
@@ -690,17 +701,6 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1110, 251);
             this.panel6.TabIndex = 4;
-            // 
-            // btn_Export
-            // 
-            this.btn_Export.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Export.Location = new System.Drawing.Point(956, 19);
-            this.btn_Export.Name = "btn_Export";
-            this.btn_Export.Size = new System.Drawing.Size(98, 36);
-            this.btn_Export.TabIndex = 234;
-            this.btn_Export.Text = "Export";
-            this.btn_Export.UseVisualStyleBackColor = true;
-            this.btn_Export.Click += new System.EventHandler(this.btn_Export_Click);
             // 
             // Create_County
             // 

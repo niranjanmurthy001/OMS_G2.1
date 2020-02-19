@@ -16,6 +16,7 @@ using Ordermanagement_01.Models;
 using static Ordermanagement_01.New_Dashboard.New_Dashboard;
 using System.Text.RegularExpressions;
 using DevExpress.XtraSpreadsheet.Model;
+using System.Net.Http.Headers;
 
 namespace Ordermanagement_01.New_Dashboard
 {
@@ -104,10 +105,13 @@ namespace Ordermanagement_01.New_Dashboard
                         _Employee_Name = _Rlist_data[0].Employee_Name;
                         _ShiftType = _Rlist_data[0].Shift_Type_Id;
                         _Branch_Id = _Rlist_data[0].Branch_ID;
+
+                     await GetToken(_User_Name, _Password);
                         if (_Application_Login_Type == 1)
                         {
                             if (_User_Role_Id == 2)
                             {
+
                                 Employee.Dashboard dashboard = new Employee.Dashboard(_User_Id, _User_Role_Id,_Password,_Branch_Id,_ShiftType);
                                 Invoke(new MethodInvoker(delegate { dashboard.Show(); }));
                             }
@@ -154,6 +158,8 @@ namespace Ordermanagement_01.New_Dashboard
                 }
             }
         }
+
+
 
         private bool ValidateCredentials()
         {
@@ -267,6 +273,65 @@ namespace Ordermanagement_01.New_Dashboard
         {
             lblCopyright.Text = $"© {DateTime.Now.Year} DRN All Rights Reserved.";
         }
+
+        static async Task GetToken(string User_Name,string Password)
+        {
+            try
+            {
+                using (var Client = new HttpClient())
+                {
+
+                    Client.DefaultRequestHeaders.Clear();
+                    Client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    var body = new List<KeyValuePair<string, string>>
+                {
+                    new KeyValuePair<string, string>("UserName",User_Name),
+                    new KeyValuePair<string, string>("Password",Password),
+                    new KeyValuePair<string, string>("grant_type","password")
+
+                };
+
+                    var Content = new FormUrlEncodedContent(body);
+                    HttpResponseMessage response = await Client.PostAsync(Base_Url.Url+"/token", Content);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string responseStream = await response.Content.ReadAsStringAsync();
+
+                        var ListToken = JsonConvert.DeserializeObject<TokenDetails>(responseStream);
+
+
+
+                        ApiToken.access_token = ListToken.access_token;
+                        ApiToken.expires_in = ListToken.expires_in;
+                        ApiToken.token_type = ListToken.token_type;
+
+                    }
+                }
+            }
+            catch (HttpRequestException httpex)
+            {
+
+                XtraMessageBox.Show(httpex.ToString());
+
+            }
+            finally
+            {
+
+
+            }
+        }
+
+        public class TokenDetails
+        {
+            public string access_token { get; set; }
+
+            public string token_type { get; set; }
+
+            public int expires_in { get; set; }
+
+
+        }
+
 
     }
 

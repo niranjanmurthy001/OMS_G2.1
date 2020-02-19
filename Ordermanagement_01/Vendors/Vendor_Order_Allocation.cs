@@ -1,20 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using ClosedXML.Excel;
+using DevExpress.XtraEditors;
+using System;
+using System.Collections;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using System.Collections;
-using System.Speech.Synthesis;
 using System.IO;
-using Microsoft.Office.Interop.Excel;
-using Excel = Microsoft.Office.Interop.Excel;
-using ClosedXML.Excel;
-using System.Globalization;
-using System.Threading;
-
+using System.Linq;
+using System.Speech.Synthesis;
+using System.Windows.Forms;
 namespace Ordermanagement_01.Vendors
 {
     public partial class Vendor_Order_Allocation : Form
@@ -41,15 +34,15 @@ namespace Ordermanagement_01.Vendors
         int External_Client_Order_Id, External_Client_Order_Task_Id;
         System.Data.DataTable dt = new System.Data.DataTable();
         string Path1;
-        
+
         System.Data.DataTable dtuser = new System.Data.DataTable();
         System.Data.DataTable dtget = new System.Data.DataTable();
         static int Currentpageindex = 0;
         int pagesize = 50;
-     
+
 
         string Export_Title_Name;
-          int Vendor_Total_No_Of_Order_Recived, Vendor_No_Of_Order_For_each_Vendor, Vendor_Order_capacity;
+        int Vendor_Total_No_Of_Order_Recived, Vendor_No_Of_Order_For_each_Vendor, Vendor_Order_capacity;
         decimal Vendor_Order_Percentage;
         int No_Of_Order_Assignd_for_Vendor;
 
@@ -57,14 +50,14 @@ namespace Ordermanagement_01.Vendors
         string lbl_Order_Id;
         string Vendor_Id;
         string lbl_Order_Type_Id;
-        int Order_Type_Abs_Id,Client_Id,Sub_Process_Id,User_Role_Id;
-        public Vendor_Order_Allocation(string OrderProcess, int Userid,int USER_ROLE)
-            
+        int Order_Type_Abs_Id, Client_Id, Sub_Process_Id, User_Role_Id;
+        public Vendor_Order_Allocation(string OrderProcess, int Userid, int USER_ROLE)
+
         {
             InitializeComponent();
             User_id = Userid;
             Order_Process = OrderProcess;
-            User_Role_Id=USER_ROLE;
+            User_Role_Id = USER_ROLE;
 
 
             if (OrderProcess == "WAITING_FOR_ACCEPTANCE")
@@ -77,8 +70,8 @@ namespace Ordermanagement_01.Vendors
                 lbl_Header.Text = "VENDOR REJECTED ORDER ALLOCATE";
 
             }
-         
-         
+
+
         }
 
 
@@ -98,10 +91,10 @@ namespace Ordermanagement_01.Vendors
 
 
             Hashtable htselect = new Hashtable();
-           System.Data.DataTable dtselect = new System.Data.DataTable();
+            System.Data.DataTable dtselect = new System.Data.DataTable();
 
-           htselect.Add("@Trans", "VENDOR_USER_ORDER_COUNT");
-           dtselect = dataaccess.ExecuteSP("Sp_Vendor_Order_Count", htselect);
+            htselect.Add("@Trans", "VENDOR_USER_ORDER_COUNT");
+            dtselect = dataaccess.ExecuteSP("Sp_Vendor_Order_Count", htselect);
             System.Data.DataTable dtchild = new System.Data.DataTable();
             dtchild = gen.FillChildTable();
             for (int i = 0; i < dtchild.Rows.Count; i++)
@@ -118,7 +111,7 @@ namespace Ordermanagement_01.Vendors
         private void Grodview_Bind_Orders()
         {
             Hashtable htget = new Hashtable();
-          
+
 
 
 
@@ -133,51 +126,53 @@ namespace Ordermanagement_01.Vendors
                 htget.Add("@Trans", "GET_VENDORS_REJECTED_ORDER");
             }
 
-                dtget = dataaccess.ExecuteSP("Sp_Vendor_Order_Count", htget);
-          
-                if (dtget.Rows.Count > 0)
+            dtget = dataaccess.ExecuteSP("Sp_Vendor_Order_Count", htget);
+
+            if (dtget.Rows.Count > 0)
+            {
+
+                grid_Export.DataSource = dtget;
+
+                grd_order.Rows.Clear();
+                for (int i = 0; i < dtget.Rows.Count; i++)
                 {
+                    grd_order.Rows.Add();
+                    grd_order.Rows[i].Cells[1].Value = i + 1;
 
-                    grid_Export.DataSource = dtget;
 
-                    grd_order.Rows.Clear();
-                    for (int i = 0; i < dtget.Rows.Count; i++)
+                    if (User_Role_Id == 1)
                     {
-                        grd_order.Rows.Add();
-                        grd_order.Rows[i].Cells[1].Value = i + 1;
-
-
-                        if (User_Role_Id == 1)
-                        {
-                            grd_order.Rows[i].Cells[2].Value = dtget.Rows[i]["Client_Name"].ToString();
-                            grd_order.Rows[i].Cells[3].Value = dtget.Rows[i]["Sub_ProcessName"].ToString();
-                        }
-                        else 
-                        {
-                            grd_order.Rows[i].Cells[2].Value = dtget.Rows[i]["Client_Number"].ToString();
-                            grd_order.Rows[i].Cells[3].Value = dtget.Rows[i]["Subprocess_Number"].ToString();
-
-                        }
-
-                        grd_order.Rows[i].Cells[4].Value = dtget.Rows[i]["Order_Number"].ToString();
-                        grd_order.Rows[i].Cells[5].Value = dtget.Rows[i]["Client_Order_Number"].ToString();
-                        grd_order.Rows[i].Cells[6].Value = dtget.Rows[i]["Order_Type"].ToString();
-                        grd_order.Rows[i].Cells[7].Value = dtget.Rows[i]["STATECOUNTY"].ToString();
-                        grd_order.Rows[i].Cells[8].Value = dtget.Rows[i]["Date"].ToString();
-                        grd_order.Rows[i].Cells[9].Value = dtget.Rows[i]["Assigned_Date_Time"].ToString();
-                        grd_order.Rows[i].Cells[10].Value = dtget.Rows[i]["Vendor_Name"].ToString();
-                        grd_order.Rows[i].Cells[11].Value = dtget.Rows[i]["Order_ID"].ToString();
-                        grd_order.Rows[i].Cells[12].Value = dtget.Rows[i]["Vendor_Id"].ToString();
-                        grd_order.Rows[i].Cells[13].Value = dtget.Rows[i]["Client_Id"].ToString();
-                        grd_order.Rows[i].Cells[14].Value = dtget.Rows[i]["Subprocess_Id"].ToString();
-                        grd_order.Rows[i].Cells[15].Value = dtget.Rows[i]["Order_Type_ID"].ToString();
-                      
-                        System.Windows.Forms.Application.DoEvents();
+                        grd_order.Rows[i].Cells[2].Value = dtget.Rows[i]["Client_Name"].ToString();
+                        grd_order.Rows[i].Cells[3].Value = dtget.Rows[i]["Sub_ProcessName"].ToString();
                     }
+                    else
+                    {
+                        grd_order.Rows[i].Cells[2].Value = dtget.Rows[i]["Client_Number"].ToString();
+                        grd_order.Rows[i].Cells[3].Value = dtget.Rows[i]["Subprocess_Number"].ToString();
+
+                    }
+
+                    grd_order.Rows[i].Cells[4].Value = dtget.Rows[i]["Order_Number"].ToString();
+                    grd_order.Rows[i].Cells[5].Value = dtget.Rows[i]["Client_Order_Number"].ToString();
+                    grd_order.Rows[i].Cells[6].Value = dtget.Rows[i]["Order_Type"].ToString();
+                    grd_order.Rows[i].Cells[7].Value = dtget.Rows[i]["STATECOUNTY"].ToString();
+                    grd_order.Rows[i].Cells[8].Value = dtget.Rows[i]["Date"].ToString();
+                    grd_order.Rows[i].Cells[9].Value = dtget.Rows[i]["Assigned_Date_Time"].ToString();
+                    grd_order.Rows[i].Cells[10].Value = dtget.Rows[i]["Vendor_Name"].ToString();
+                    grd_order.Rows[i].Cells[11].Value = dtget.Rows[i]["Order_ID"].ToString();
+                    grd_order.Rows[i].Cells[12].Value = dtget.Rows[i]["Vendor_Id"].ToString();
+                    grd_order.Rows[i].Cells[13].Value = dtget.Rows[i]["Client_Id"].ToString();
+                    grd_order.Rows[i].Cells[14].Value = dtget.Rows[i]["Subprocess_Id"].ToString();
+                    grd_order.Rows[i].Cells[15].Value = dtget.Rows[i]["Order_Type_ID"].ToString();
+
+                    System.Windows.Forms.Application.DoEvents();
                 }
-
-
             }
+
+
+        }
+
+        Func<string, DataTable, bool> CheckWords = (word, dtKeywords) => dtKeywords.Rows.Cast<DataRow>().Any(row => row["Keyword"].ToString() == word);
 
 
         private void btn_Allocate_Click(object sender, EventArgs e)
@@ -189,8 +184,10 @@ namespace Ordermanagement_01.Vendors
 
                 int allocated_Vendor_Id = Tree_View_UserId;
 
-
-
+                var htKeywords = new Hashtable() {
+                    { "@Trans" , "SELECT" }
+                };
+                var dtKeywords = dataaccess.ExecuteSP("usp_Vendor_Keywords", htKeywords);
                 for (int i = 0; i < grd_order.Rows.Count; i++)
                 {
                     bool isChecked = (bool)grd_order[0, i].FormattedValue;
@@ -200,26 +197,47 @@ namespace Ordermanagement_01.Vendors
                     if (isChecked == true)
                     {
                         CheckedCount = 1;
-                         lbl_Order_Id = grd_order.Rows[i].Cells[11].Value.ToString();
-                          Vendor_Id  = grd_order.Rows[i].Cells[12].Value.ToString();
+                        lbl_Order_Id = grd_order.Rows[i].Cells[11].Value.ToString();
 
+                        if (dtKeywords != null && dtKeywords.Rows.Count > 0)
+                        {
+                            var ht = new Hashtable()
+                            {
+                                { "@Trans","GET_VENDOR_INSTRUCTIONS" },
+                                { "@Order_ID",lbl_Order_Id }
+                            };
 
-                          lbl_Order_Type_Id = grd_order.Rows[i].Cells[15].Value.ToString();
-                          Client_Id = int.Parse(grd_order.Rows[i].Cells[13].Value.ToString());
-                          Sub_Process_Id = int.Parse(grd_order.Rows[i].Cells[14].Value.ToString());
+                            var dt = dataaccess.ExecuteSP("Sp_Order", ht);
+                            if (dt != null && dt.Rows.Count > 0)
+                            {
+                                if (!string.IsNullOrEmpty(dt.Rows[0]["Vendor_Instructions"].ToString()))
+                                {
+                                    string instructions = dt.Rows[0]["Vendor_Instructions"].ToString();
+                                    if (instructions.Split(new char[] { ' ', ',', '.', '-', '#' }).ToList().Any(word => CheckWords(word, dtKeywords)))
+                                    {
+                                        XtraMessageBox.Show("Vendor notes contains some information which is not allowed, check and allocate");
+                                        return;
+                                    }
+                                }
+                            }
+                        }
+                        Vendor_Id = grd_order.Rows[i].Cells[12].Value.ToString();
+                        lbl_Order_Type_Id = grd_order.Rows[i].Cells[15].Value.ToString();
+                        Client_Id = int.Parse(grd_order.Rows[i].Cells[13].Value.ToString());
+                        Sub_Process_Id = int.Parse(grd_order.Rows[i].Cells[14].Value.ToString());
 
-                          Hashtable ht_Get_Order_Type_Abs_Id = new Hashtable();
-                          System.Data.DataTable dt_Get_Order_Type_Abs_Id = new System.Data.DataTable();
-                          ht_Get_Order_Type_Abs_Id.Add("@Trans", "SELECT_BY_ORDER_TYPE_ID");
-                          ht_Get_Order_Type_Abs_Id.Add("@Order_Type_ID", lbl_Order_Type_Id.ToString());
-                          dt_Get_Order_Type_Abs_Id = dataaccess.ExecuteSP("Sp_Order_Type", ht_Get_Order_Type_Abs_Id);
+                        Hashtable ht_Get_Order_Type_Abs_Id = new Hashtable();
+                        System.Data.DataTable dt_Get_Order_Type_Abs_Id = new System.Data.DataTable();
+                        ht_Get_Order_Type_Abs_Id.Add("@Trans", "SELECT_BY_ORDER_TYPE_ID");
+                        ht_Get_Order_Type_Abs_Id.Add("@Order_Type_ID", lbl_Order_Type_Id.ToString());
+                        dt_Get_Order_Type_Abs_Id = dataaccess.ExecuteSP("Sp_Order_Type", ht_Get_Order_Type_Abs_Id);
 
-                          if (dt_Get_Order_Type_Abs_Id.Rows.Count > 0)
-                          {
-                              Order_Type_Abs_Id = int.Parse(dt_Get_Order_Type_Abs_Id.Rows[0]["OrderType_ABS_Id"].ToString());
+                        if (dt_Get_Order_Type_Abs_Id.Rows.Count > 0)
+                        {
+                            Order_Type_Abs_Id = int.Parse(dt_Get_Order_Type_Abs_Id.Rows[0]["OrderType_ABS_Id"].ToString());
 
-                          }
-                        
+                        }
+
 
                         Hashtable htinsertrec = new Hashtable();
                         System.Data.DataTable dtinsertrec = new System.Data.DataTable();
@@ -232,14 +250,14 @@ namespace Ordermanagement_01.Vendors
                         //23-01-2018
                         DateTime date = new DateTime();
                         DateTime time;
-                      date= DateTime.Now;
+                        date = DateTime.Now;
                         string dateeval = date.ToString("MM/dd/yyyy");
 
 
                         if (Validate_Vedndor_Sate_county() != false && Validate_Order_Type(allocated_Vendor_Id, Order_Type_Abs_Id) && Validate_Client_Sub_Client(allocated_Vendor_Id, Client_Id, Sub_Process_Id))
                         {
 
-                         Hashtable htdel = new Hashtable();
+                            Hashtable htdel = new Hashtable();
                             System.Data.DataTable dtdel = new System.Data.DataTable();
                             htdel.Add("@Trans", "DELETE");
                             htdel.Add("@Order_Id", lbl_Order_Id);
@@ -429,8 +447,8 @@ namespace Ordermanagement_01.Vendors
                                 }
                             }
                             else
-                            { 
-                            
+                            {
+
 
                             }
 
@@ -438,31 +456,31 @@ namespace Ordermanagement_01.Vendors
 
 
 
-                                //TreeView1.SelectedNode.Value =ViewState["User_Id"].ToString();
-                                //   lbl_allocated_user.Text = ViewState["User_Wise_Count"].ToString();
-                                //  ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Msg", "<script> alert('Order Reallocated Successfully')</script>", false);
-
-                            }
-
+                            //TreeView1.SelectedNode.Value =ViewState["User_Id"].ToString();
+                            //   lbl_allocated_user.Text = ViewState["User_Wise_Count"].ToString();
+                            //  ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Msg", "<script> alert('Order Reallocated Successfully')</script>", false);
 
                         }
-                       
-            }
+
+
+                    }
 
                 }
 
-                if (CheckedCount >= 1)
-                {
-                    MessageBox.Show("Order Allocated Successfully");
-
-
-                    Grodview_Bind_Orders();
-                    Gridview_Bind_Orders_Wise_Treeview_Selected();
-                    //  Restrict_Controls();
-                    Sub_AddParent();
-                }
             }
-        
+
+            if (CheckedCount >= 1)
+            {
+                MessageBox.Show("Order Allocated Successfully");
+
+
+                Grodview_Bind_Orders();
+                Gridview_Bind_Orders_Wise_Treeview_Selected();
+                //  Restrict_Controls();
+                Sub_AddParent();
+            }
+        }
+
 
 
 
@@ -476,7 +494,7 @@ namespace Ordermanagement_01.Vendors
             System.Data.DataTable dtcheckstate = new System.Data.DataTable();
             htstatecounty.Add("@Trans", "GET_STATE_COUNTY_OF_THE_ORDER");
             htstatecounty.Add("@Order_Id", lbl_Order_Id);
-            dtstatecounty = dataaccess.ExecuteSP("Sp_Vendor_Order_Assignment",htstatecounty);
+            dtstatecounty = dataaccess.ExecuteSP("Sp_Vendor_Order_Assignment", htstatecounty);
             if (dtstatecounty.Rows.Count > 0)
             {
 
@@ -488,8 +506,8 @@ namespace Ordermanagement_01.Vendors
 
                 dtcheckstate = dataaccess.ExecuteSP("Sp_Vendor_Order_Assignment", htcheckstate);
 
-                
-            
+
+
 
             }
 
@@ -512,7 +530,7 @@ namespace Ordermanagement_01.Vendors
 
         }
 
-        private bool Validate_Order_Type(int Vendor_Id,int Order_Type_Id)
+        private bool Validate_Order_Type(int Vendor_Id, int Order_Type_Id)
         {
 
             Hashtable htcheck_Vendor_Order_Type_Abs = new Hashtable();
@@ -531,36 +549,36 @@ namespace Ordermanagement_01.Vendors
             {
                 MessageBox.Show("This Order Type is not Allocated for this Vendor");
                 return false;
-            
+
             }
         }
 
         private bool Validate_Client_Sub_Client(int Vendor_Id, int Client_Id, int Sub_Process_Id)
-        { 
-        
-                        Hashtable htget_vendor_Client_And_Sub_Client = new Hashtable();
-                        System.Data.DataTable dtget_Vendor_Client_And_Sub_Client = new System.Data.DataTable();
+        {
 
-                        htget_vendor_Client_And_Sub_Client.Add("@Trans", "GET_VENDOR_ON_CLIENT_AND_SUB_CLIENT");
-                        htget_vendor_Client_And_Sub_Client.Add("@Client_Id",Client_Id);
-                        htget_vendor_Client_And_Sub_Client.Add("@Sub_Client_Id",Sub_Process_Id);
-                        htget_vendor_Client_And_Sub_Client.Add("@Vendors_Id", Vendor_Id);
-                        dtget_Vendor_Client_And_Sub_Client = dataaccess.ExecuteSP("Sp_Vendor_Order_Assignment", htget_vendor_Client_And_Sub_Client);
+            Hashtable htget_vendor_Client_And_Sub_Client = new Hashtable();
+            System.Data.DataTable dtget_Vendor_Client_And_Sub_Client = new System.Data.DataTable();
 
-                        if (dtget_Vendor_Client_And_Sub_Client.Rows.Count > 0)
-                        {
+            htget_vendor_Client_And_Sub_Client.Add("@Trans", "GET_VENDOR_ON_CLIENT_AND_SUB_CLIENT");
+            htget_vendor_Client_And_Sub_Client.Add("@Client_Id", Client_Id);
+            htget_vendor_Client_And_Sub_Client.Add("@Sub_Client_Id", Sub_Process_Id);
+            htget_vendor_Client_And_Sub_Client.Add("@Vendors_Id", Vendor_Id);
+            dtget_Vendor_Client_And_Sub_Client = dataaccess.ExecuteSP("Sp_Vendor_Order_Assignment", htget_vendor_Client_And_Sub_Client);
 
-
-                            return true;
+            if (dtget_Vendor_Client_And_Sub_Client.Rows.Count > 0)
+            {
 
 
-                        }
-                        else
-                        {
+                return true;
 
-                            MessageBox.Show("This Vendor not belongs to this Client");
-                            return false;
-                        }
+
+            }
+            else
+            {
+
+                MessageBox.Show("This Vendor not belongs to this Client");
+                return false;
+            }
 
         }
 
@@ -606,12 +624,12 @@ namespace Ordermanagement_01.Vendors
             if (Tree_View_UserId.ToString() != "")
             {
                 Hashtable htuser = new Hashtable();
-           
-               htuser.Add("@Trans", "GET_VENDOR_ORDER_VENDOR_WISE");
-               htuser.Add("@Vendor_Id", Tree_View_UserId);
+
+                htuser.Add("@Trans", "GET_VENDOR_ORDER_VENDOR_WISE");
+                htuser.Add("@Vendor_Id", Tree_View_UserId);
                 //   htuser.Add("@Subprocess_id", Sub_ProcessName);
 
-               dtuser = dataaccess.ExecuteSP("Sp_Vendor_Order_Count", htuser);
+                dtuser = dataaccess.ExecuteSP("Sp_Vendor_Order_Count", htuser);
                 grd_order_Allocated.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.DarkCyan;
                 grd_order_Allocated.EnableHeadersVisualStyles = false;
                 //grd_order_Allocated.Columns[0].Width = 35;
@@ -639,11 +657,11 @@ namespace Ordermanagement_01.Vendors
                             grd_order_Allocated.Rows[i].Cells[2].Value = dtuser.Rows[i]["Client_Name"].ToString();
                             grd_order_Allocated.Rows[i].Cells[3].Value = dtuser.Rows[i]["Sub_ProcessName"].ToString();
                         }
-                        else 
+                        else
                         {
                             grd_order_Allocated.Rows[i].Cells[2].Value = dtuser.Rows[i]["Client_Number"].ToString();
                             grd_order_Allocated.Rows[i].Cells[3].Value = dtuser.Rows[i]["Subprocess_Number"].ToString();
-                        
+
                         }
                         grd_order_Allocated.Rows[i].Cells[4].Value = dtuser.Rows[i]["Order_Number"].ToString();
                         grd_order_Allocated.Rows[i].Cells[5].Value = dtuser.Rows[i]["Client_Order_Number"].ToString();
@@ -655,7 +673,7 @@ namespace Ordermanagement_01.Vendors
                         grd_order_Allocated.Rows[i].Cells[11].Value = dtuser.Rows[i]["Progress_Status"].ToString();
                         grd_order_Allocated.Rows[i].Cells[12].Value = dtuser.Rows[i]["Order_ID"].ToString();
                         grd_order_Allocated.Rows[i].Cells[13].Value = dtuser.Rows[i]["Vendor_Id"].ToString();
-                   
+
                         grd_order_Allocated.Rows[i].Cells[14].Value = dtuser.Rows[i]["County_Id"].ToString();
                         grd_order_Allocated.Rows[i].Cells[15].Value = dtuser.Rows[i]["Client_Id"].ToString();
 
@@ -700,7 +718,7 @@ namespace Ordermanagement_01.Vendors
         {
             if (e.RowIndex != -1)
             {
-                if (e.ColumnIndex == 4 || e.ColumnIndex ==5)
+                if (e.ColumnIndex == 4 || e.ColumnIndex == 5)
                 {
 
                     int Order_Id = int.Parse(grd_order.Rows[e.RowIndex].Cells[11].Value.ToString());
@@ -729,7 +747,7 @@ namespace Ordermanagement_01.Vendors
 
                     int Order_Id = int.Parse(grd_order_Allocated.Rows[e.RowIndex].Cells[12].Value.ToString());
 
-                    Vendor_Order_View view = new Vendor_Order_View(Order_Id, User_id,User_Role_Id);
+                    Vendor_Order_View view = new Vendor_Order_View(Order_Id, User_id, User_Role_Id);
                     view.Show();
 
 
@@ -751,7 +769,7 @@ namespace Ordermanagement_01.Vendors
             {
 
 
-       
+
 
 
 
@@ -779,99 +797,99 @@ namespace Ordermanagement_01.Vendors
                         //23-01-2018
                         DateTime date = new DateTime();
                         DateTime time;
-                      date= DateTime.Now;
+                        date = DateTime.Now;
                         string dateeval = date.ToString("MM/dd/yyyy");
-                    
-
-                            Hashtable htdel = new Hashtable();
-                            System.Data.DataTable dtdel = new System.Data.DataTable();
-                            htdel.Add("@Trans", "DELETE");
-                            htdel.Add("@Order_Id", lbl_Order_Id);
-                            dtdel = dataaccess.ExecuteSP("Sp_Vendor_Order_Assignment", htdel);
 
 
-                            Hashtable htdelvendstatus = new Hashtable();
-                            System.Data.DataTable dtdelvendstatus = new System.Data.DataTable();
-                            htdelvendstatus.Add("@Trans", "DELETE");
-                            htdelvendstatus.Add("@Order_Id", lbl_Order_Id);
-                            dtdelvendstatus = dataaccess.ExecuteSP("Sp_Vendor_Order_Status", htdelvendstatus);
+                        Hashtable htdel = new Hashtable();
+                        System.Data.DataTable dtdel = new System.Data.DataTable();
+                        htdel.Add("@Trans", "DELETE");
+                        htdel.Add("@Order_Id", lbl_Order_Id);
+                        dtdel = dataaccess.ExecuteSP("Sp_Vendor_Order_Assignment", htdel);
 
 
-
-
-                                      
-
-                            Hashtable htupdatestatus = new Hashtable();
-                            System.Data.DataTable dtupdatestatus = new System.Data.DataTable();
-                            htupdatestatus.Add("@Trans", "UPDATE_STATUS");
-                            htupdatestatus.Add("@Order_Status", 2);
-                            htupdatestatus.Add("@Modified_By", User_id);
-                            htupdatestatus.Add("@Order_ID", lbl_Order_Id);
-                            dtupdatestatus = dataaccess.ExecuteSP("Sp_Order", htupdatestatus);
-                           
-                           
-                            Hashtable htupdateprogress = new Hashtable();
-                            System.Data.DataTable dtupdateprogress = new System.Data.DataTable();
-                            htupdateprogress.Add("@Trans", "UPDATE_PROGRESS");
-                            htupdateprogress.Add("@Order_Progress", 8);
-                            htupdateprogress.Add("@Modified_By", User_id);
-                            htupdateprogress.Add("@Order_ID", lbl_Order_Id);
-                            dtupdateprogress = dataaccess.ExecuteSP("Sp_Order", htupdateprogress);
-
-
-                        
-
-                                    //OrderHistory
-                            Hashtable ht_Order_History = new Hashtable();
-                            System.Data.DataTable dt_Order_History = new System.Data.DataTable();
-                            ht_Order_History.Add("@Trans", "INSERT");
-                            ht_Order_History.Add("@Order_Id", lbl_Order_Id);
-                            ht_Order_History.Add("@User_Id",User_id);
-                            ht_Order_History.Add("@Status_Id", 2);
-                            ht_Order_History.Add("@Progress_Id", 8);
-                            ht_Order_History.Add("@Assigned_By", User_id);
-                            ht_Order_History.Add("@Work_Type", 1);
-                            ht_Order_History.Add("@Modification_Type", "Order Moved from Vendor Waiting For Acceptance queue to Inhouse Search");
-                            dt_Order_History = dataaccess.ExecuteSP("Sp_Order_History", ht_Order_History);
-                            
-
-                                    //==================================External Client_Vendor_Orders=====================================================
-
-
-                              Hashtable htCheck_Order_InTitlelogy = new Hashtable();
-                              System.Data.DataTable dt_Order_InTitleLogy = new System.Data.DataTable();
-                              htCheck_Order_InTitlelogy.Add("@Trans", "CHECK_ORDER_IN_TITLLELOGY");
-                              htCheck_Order_InTitlelogy.Add("@Order_ID", lbl_Order_Id);
-                              dt_Order_InTitleLogy = dataaccess.ExecuteSP("Sp_Order", htCheck_Order_InTitlelogy);
-
-                              if (dt_Order_InTitleLogy.Rows.Count > 0)
-                              {
-
-                                  External_Client_Order_Id = int.Parse(dt_Order_InTitleLogy.Rows[0]["External_Order_Id"].ToString());
-                                  External_Client_Order_Task_Id = int.Parse(dt_Order_InTitleLogy.Rows[0]["External_Order_Task_id"].ToString());
-
-
-
-                                  if (External_Client_Order_Task_Id != 18)
-                                  {
-                                      Hashtable ht_Titlelogy_Order_Task_Status = new Hashtable();
-                                      System.Data.DataTable dt_TitleLogy_Order_Task_Status = new System.Data.DataTable();
-                                      ht_Titlelogy_Order_Task_Status.Add("@Trans", "UPDATE_ORDER_TASK_STATUS");
-                                      ht_Titlelogy_Order_Task_Status.Add("@Order_Id", External_Client_Order_Id);
-                                      ht_Titlelogy_Order_Task_Status.Add("@Order_Task", 2);
-                                      ht_Titlelogy_Order_Task_Status.Add("@Order_Status", 14);
-
-                                      dt_TitleLogy_Order_Task_Status = dataaccess.ExecuteSP("Sp_External_Client_Orders", ht_Titlelogy_Order_Task_Status);
-                                  }
+                        Hashtable htdelvendstatus = new Hashtable();
+                        System.Data.DataTable dtdelvendstatus = new System.Data.DataTable();
+                        htdelvendstatus.Add("@Trans", "DELETE");
+                        htdelvendstatus.Add("@Order_Id", lbl_Order_Id);
+                        dtdelvendstatus = dataaccess.ExecuteSP("Sp_Vendor_Order_Status", htdelvendstatus);
 
 
 
 
-                              }
-                               
+
+
+                        Hashtable htupdatestatus = new Hashtable();
+                        System.Data.DataTable dtupdatestatus = new System.Data.DataTable();
+                        htupdatestatus.Add("@Trans", "UPDATE_STATUS");
+                        htupdatestatus.Add("@Order_Status", 2);
+                        htupdatestatus.Add("@Modified_By", User_id);
+                        htupdatestatus.Add("@Order_ID", lbl_Order_Id);
+                        dtupdatestatus = dataaccess.ExecuteSP("Sp_Order", htupdatestatus);
+
+
+                        Hashtable htupdateprogress = new Hashtable();
+                        System.Data.DataTable dtupdateprogress = new System.Data.DataTable();
+                        htupdateprogress.Add("@Trans", "UPDATE_PROGRESS");
+                        htupdateprogress.Add("@Order_Progress", 8);
+                        htupdateprogress.Add("@Modified_By", User_id);
+                        htupdateprogress.Add("@Order_ID", lbl_Order_Id);
+                        dtupdateprogress = dataaccess.ExecuteSP("Sp_Order", htupdateprogress);
+
+
+
+
+                        //OrderHistory
+                        Hashtable ht_Order_History = new Hashtable();
+                        System.Data.DataTable dt_Order_History = new System.Data.DataTable();
+                        ht_Order_History.Add("@Trans", "INSERT");
+                        ht_Order_History.Add("@Order_Id", lbl_Order_Id);
+                        ht_Order_History.Add("@User_Id", User_id);
+                        ht_Order_History.Add("@Status_Id", 2);
+                        ht_Order_History.Add("@Progress_Id", 8);
+                        ht_Order_History.Add("@Assigned_By", User_id);
+                        ht_Order_History.Add("@Work_Type", 1);
+                        ht_Order_History.Add("@Modification_Type", "Order Moved from Vendor Waiting For Acceptance queue to Inhouse Search");
+                        dt_Order_History = dataaccess.ExecuteSP("Sp_Order_History", ht_Order_History);
+
+
+                        //==================================External Client_Vendor_Orders=====================================================
+
+
+                        Hashtable htCheck_Order_InTitlelogy = new Hashtable();
+                        System.Data.DataTable dt_Order_InTitleLogy = new System.Data.DataTable();
+                        htCheck_Order_InTitlelogy.Add("@Trans", "CHECK_ORDER_IN_TITLLELOGY");
+                        htCheck_Order_InTitlelogy.Add("@Order_ID", lbl_Order_Id);
+                        dt_Order_InTitleLogy = dataaccess.ExecuteSP("Sp_Order", htCheck_Order_InTitlelogy);
+
+                        if (dt_Order_InTitleLogy.Rows.Count > 0)
+                        {
+
+                            External_Client_Order_Id = int.Parse(dt_Order_InTitleLogy.Rows[0]["External_Order_Id"].ToString());
+                            External_Client_Order_Task_Id = int.Parse(dt_Order_InTitleLogy.Rows[0]["External_Order_Task_id"].ToString());
+
+
+
+                            if (External_Client_Order_Task_Id != 18)
+                            {
+                                Hashtable ht_Titlelogy_Order_Task_Status = new Hashtable();
+                                System.Data.DataTable dt_TitleLogy_Order_Task_Status = new System.Data.DataTable();
+                                ht_Titlelogy_Order_Task_Status.Add("@Trans", "UPDATE_ORDER_TASK_STATUS");
+                                ht_Titlelogy_Order_Task_Status.Add("@Order_Id", External_Client_Order_Id);
+                                ht_Titlelogy_Order_Task_Status.Add("@Order_Task", 2);
+                                ht_Titlelogy_Order_Task_Status.Add("@Order_Status", 14);
+
+                                dt_TitleLogy_Order_Task_Status = dataaccess.ExecuteSP("Sp_External_Client_Orders", ht_Titlelogy_Order_Task_Status);
+                            }
+
+
+
+
+                        }
+
                     }
-                              
-                      
+
+
                 }
 
                 if (CheckedCount >= 1)
@@ -888,7 +906,7 @@ namespace Ordermanagement_01.Vendors
         }
 
         private void txt_SearchOrdernumber_TextChanged(object sender, EventArgs e)
-        
+
         {
             if (txt_SearchOrdernumber.Text != "")
             {
@@ -908,14 +926,14 @@ namespace Ordermanagement_01.Vendors
                             grd_order.Rows[i].Cells[2].Value = dt.Rows[i]["Client_Name"].ToString();
                             grd_order.Rows[i].Cells[3].Value = dt.Rows[i]["Sub_ProcessName"].ToString();
                         }
-                        else 
-                        
+                        else
+
                         {
                             grd_order.Rows[i].Cells[2].Value = dt.Rows[i]["Client_Number"].ToString();
                             grd_order.Rows[i].Cells[3].Value = dt.Rows[i]["Subprocess_Number"].ToString();
 
                         }
-                        
+
                         grd_order.Rows[i].Cells[4].Value = dt.Rows[i]["Order_Number"].ToString();
 
                         grd_order.Rows[i].Cells[5].Value = dt.Rows[i]["Client_Order_Number"].ToString();
@@ -947,7 +965,7 @@ namespace Ordermanagement_01.Vendors
 
         private void txt_SearchOrdernumber_Click(object sender, EventArgs e)
         {
-             txt_SearchOrdernumber.ForeColor = Color.Black;
+            txt_SearchOrdernumber.ForeColor = Color.Black;
             txt_SearchOrdernumber.Text = "";
         }
 
@@ -994,7 +1012,7 @@ namespace Ordermanagement_01.Vendors
                             Order_Type_Abs_Id = int.Parse(dt_Get_Order_Type_Abs_Id.Rows[0]["OrderType_ABS_Id"].ToString());
 
                         }
-                        
+
                         Vendor_Id = allocated_Vendor_Id.ToString();
                         Hashtable htinsertrec = new Hashtable();
                         System.Data.DataTable dtinsertrec = new System.Data.DataTable();
@@ -1008,10 +1026,10 @@ namespace Ordermanagement_01.Vendors
                         //23-01-2018
                         DateTime date = new DateTime();
                         DateTime time;
-                      date= DateTime.Now;
+                        date = DateTime.Now;
                         string dateeval = date.ToString("MM/dd/yyyy");
 
-                        if (Validate_Vedndor_Sate_county() != false && Validate_Order_Type(allocated_Vendor_Id,Order_Type_Abs_Id) &&  Validate_Client_Sub_Client(allocated_Vendor_Id,Client_Id,Sub_Process_Id))
+                        if (Validate_Vedndor_Sate_county() != false && Validate_Order_Type(allocated_Vendor_Id, Order_Type_Abs_Id) && Validate_Client_Sub_Client(allocated_Vendor_Id, Client_Id, Sub_Process_Id))
                         {
 
                             Hashtable htdel = new Hashtable();
@@ -1225,22 +1243,22 @@ namespace Ordermanagement_01.Vendors
 
             }
             else
-            { 
-            
-              
-            
+            {
+
+
+
 
                 MessageBox.Show("Select Vendor Name");
                 ddl_Vendor_Name.Focus();
-            
+
             }
 
-                
-            }
-           
+
+        }
 
 
-        
+
+
 
         private void btn_Rallocate_Move_To_Inhouse_Click(object sender, EventArgs e)
         {
@@ -1249,134 +1267,134 @@ namespace Ordermanagement_01.Vendors
 
 
             for (int i = 0; i < grd_order_Allocated.Rows.Count; i++)
+            {
+                bool isChecked = (bool)grd_order_Allocated[0, i].FormattedValue;
+
+                // chk = (CheckBox)row.Cells[0].FormattedValue("chkBxSelect");
+                //  CheckBox chkId = (row.Cells[0].FormattedValue as CheckBox);
+                if (isChecked == true)
                 {
-                    bool isChecked = (bool)grd_order_Allocated[0, i].FormattedValue;
+                    CheckedCount = 1;
+                    lbl_Order_Id = grd_order_Allocated.Rows[i].Cells[12].Value.ToString();
+                    Vendor_Id = grd_order_Allocated.Rows[i].Cells[13].Value.ToString();
+                    Hashtable htinsertrec = new Hashtable();
+                    System.Data.DataTable dtinsertrec = new System.Data.DataTable();
+                    //DateTime date = new DateTime();
+                    //date = DateTime.Now;
+                    //string dateeval = date.ToString("dd/MM/yyyy");
+                    //string time = date.ToString("hh:mm tt");
 
-                    // chk = (CheckBox)row.Cells[0].FormattedValue("chkBxSelect");
-                    //  CheckBox chkId = (row.Cells[0].FormattedValue as CheckBox);
-                    if (isChecked == true)
+
+                    //23-01-2018
+                    DateTime date = new DateTime();
+                    DateTime time;
+                    date = DateTime.Now;
+                    string dateeval = date.ToString("MM/dd/yyyy");
+
+
+
+                    Hashtable htdel = new Hashtable();
+                    System.Data.DataTable dtdel = new System.Data.DataTable();
+                    htdel.Add("@Trans", "DELETE");
+                    htdel.Add("@Order_Id", lbl_Order_Id);
+                    dtdel = dataaccess.ExecuteSP("Sp_Vendor_Order_Assignment", htdel);
+
+
+                    Hashtable htdelvendstatus = new Hashtable();
+                    System.Data.DataTable dtdelvendstatus = new System.Data.DataTable();
+                    htdelvendstatus.Add("@Trans", "DELETE");
+                    htdelvendstatus.Add("@Order_Id", lbl_Order_Id);
+                    dtdelvendstatus = dataaccess.ExecuteSP("Sp_Vendor_Order_Status", htdelvendstatus);
+
+
+
+
+
+
+                    Hashtable htupdatestatus = new Hashtable();
+                    System.Data.DataTable dtupdatestatus = new System.Data.DataTable();
+                    htupdatestatus.Add("@Trans", "UPDATE_STATUS");
+                    htupdatestatus.Add("@Order_Status", 2);
+                    htupdatestatus.Add("@Modified_By", User_id);
+                    htupdatestatus.Add("@Order_ID", lbl_Order_Id);
+                    dtupdatestatus = dataaccess.ExecuteSP("Sp_Order", htupdatestatus);
+
+
+                    Hashtable htupdateprogress = new Hashtable();
+                    System.Data.DataTable dtupdateprogress = new System.Data.DataTable();
+                    htupdateprogress.Add("@Trans", "UPDATE_PROGRESS");
+                    htupdateprogress.Add("@Order_Progress", 8);
+                    htupdateprogress.Add("@Modified_By", User_id);
+                    htupdateprogress.Add("@Order_ID", lbl_Order_Id);
+                    dtupdateprogress = dataaccess.ExecuteSP("Sp_Order", htupdateprogress);
+
+
+
+
+                    //OrderHistory
+                    Hashtable ht_Order_History = new Hashtable();
+                    System.Data.DataTable dt_Order_History = new System.Data.DataTable();
+                    ht_Order_History.Add("@Trans", "INSERT");
+                    ht_Order_History.Add("@Order_Id", lbl_Order_Id);
+                    ht_Order_History.Add("@User_Id", User_id);
+                    ht_Order_History.Add("@Status_Id", 2);
+                    ht_Order_History.Add("@Progress_Id", 8);
+                    ht_Order_History.Add("@Assigned_By", User_id);
+                    ht_Order_History.Add("@Work_Type", 1);
+                    ht_Order_History.Add("@Modification_Type", "Order Moved from Vendor Allocated queue to Inhouse Search");
+                    dt_Order_History = dataaccess.ExecuteSP("Sp_Order_History", ht_Order_History);
+
+
+                    //==================================External Client_Vendor_Orders=====================================================
+
+
+                    Hashtable htCheck_Order_InTitlelogy = new Hashtable();
+                    System.Data.DataTable dt_Order_InTitleLogy = new System.Data.DataTable();
+                    htCheck_Order_InTitlelogy.Add("@Trans", "CHECK_ORDER_IN_TITLLELOGY");
+                    htCheck_Order_InTitlelogy.Add("@Order_ID", lbl_Order_Id);
+                    dt_Order_InTitleLogy = dataaccess.ExecuteSP("Sp_Order", htCheck_Order_InTitlelogy);
+
+                    if (dt_Order_InTitleLogy.Rows.Count > 0)
                     {
-                        CheckedCount = 1;
-                        lbl_Order_Id = grd_order_Allocated.Rows[i].Cells[12].Value.ToString();
-                        Vendor_Id = grd_order_Allocated.Rows[i].Cells[13].Value.ToString();
-                        Hashtable htinsertrec = new Hashtable();
-                        System.Data.DataTable dtinsertrec = new System.Data.DataTable();
-                        //DateTime date = new DateTime();
-                        //date = DateTime.Now;
-                        //string dateeval = date.ToString("dd/MM/yyyy");
-                        //string time = date.ToString("hh:mm tt");
 
-
-                        //23-01-2018
-                        DateTime date = new DateTime();
-                        DateTime time;
-                      date= DateTime.Now;
-                        string dateeval = date.ToString("MM/dd/yyyy");
+                        External_Client_Order_Id = int.Parse(dt_Order_InTitleLogy.Rows[0]["External_Order_Id"].ToString());
+                        External_Client_Order_Task_Id = int.Parse(dt_Order_InTitleLogy.Rows[0]["External_Order_Task_id"].ToString());
 
 
 
-                        Hashtable htdel = new Hashtable();
-                        System.Data.DataTable dtdel = new System.Data.DataTable();
-                        htdel.Add("@Trans", "DELETE");
-                        htdel.Add("@Order_Id", lbl_Order_Id);
-                        dtdel = dataaccess.ExecuteSP("Sp_Vendor_Order_Assignment", htdel);
-
-
-                        Hashtable htdelvendstatus = new Hashtable();
-                        System.Data.DataTable dtdelvendstatus = new System.Data.DataTable();
-                        htdelvendstatus.Add("@Trans", "DELETE");
-                        htdelvendstatus.Add("@Order_Id", lbl_Order_Id);
-                        dtdelvendstatus = dataaccess.ExecuteSP("Sp_Vendor_Order_Status", htdelvendstatus);
-
-
-
-
-
-
-                        Hashtable htupdatestatus = new Hashtable();
-                        System.Data.DataTable dtupdatestatus = new System.Data.DataTable();
-                        htupdatestatus.Add("@Trans", "UPDATE_STATUS");
-                        htupdatestatus.Add("@Order_Status", 2);
-                        htupdatestatus.Add("@Modified_By", User_id);
-                        htupdatestatus.Add("@Order_ID", lbl_Order_Id);
-                        dtupdatestatus = dataaccess.ExecuteSP("Sp_Order", htupdatestatus);
-
-
-                        Hashtable htupdateprogress = new Hashtable();
-                        System.Data.DataTable dtupdateprogress = new System.Data.DataTable();
-                        htupdateprogress.Add("@Trans", "UPDATE_PROGRESS");
-                        htupdateprogress.Add("@Order_Progress", 8);
-                        htupdateprogress.Add("@Modified_By", User_id);
-                        htupdateprogress.Add("@Order_ID", lbl_Order_Id);
-                        dtupdateprogress = dataaccess.ExecuteSP("Sp_Order", htupdateprogress);
-
-
-
-
-                        //OrderHistory
-                        Hashtable ht_Order_History = new Hashtable();
-                        System.Data.DataTable dt_Order_History = new System.Data.DataTable();
-                        ht_Order_History.Add("@Trans", "INSERT");
-                        ht_Order_History.Add("@Order_Id", lbl_Order_Id);
-                        ht_Order_History.Add("@User_Id", User_id);
-                        ht_Order_History.Add("@Status_Id", 2);
-                        ht_Order_History.Add("@Progress_Id", 8);
-                        ht_Order_History.Add("@Assigned_By", User_id);
-                        ht_Order_History.Add("@Work_Type", 1);
-                        ht_Order_History.Add("@Modification_Type", "Order Moved from Vendor Allocated queue to Inhouse Search");
-                        dt_Order_History = dataaccess.ExecuteSP("Sp_Order_History", ht_Order_History);
-
-
-                        //==================================External Client_Vendor_Orders=====================================================
-
-
-                        Hashtable htCheck_Order_InTitlelogy = new Hashtable();
-                        System.Data.DataTable dt_Order_InTitleLogy = new System.Data.DataTable();
-                        htCheck_Order_InTitlelogy.Add("@Trans", "CHECK_ORDER_IN_TITLLELOGY");
-                        htCheck_Order_InTitlelogy.Add("@Order_ID", lbl_Order_Id);
-                        dt_Order_InTitleLogy = dataaccess.ExecuteSP("Sp_Order", htCheck_Order_InTitlelogy);
-
-                        if (dt_Order_InTitleLogy.Rows.Count > 0)
+                        if (External_Client_Order_Task_Id != 18)
                         {
+                            Hashtable ht_Titlelogy_Order_Task_Status = new Hashtable();
+                            System.Data.DataTable dt_TitleLogy_Order_Task_Status = new System.Data.DataTable();
+                            ht_Titlelogy_Order_Task_Status.Add("@Trans", "UPDATE_ORDER_TASK_STATUS");
+                            ht_Titlelogy_Order_Task_Status.Add("@Order_Id", External_Client_Order_Id);
+                            ht_Titlelogy_Order_Task_Status.Add("@Order_Task", 2);
+                            ht_Titlelogy_Order_Task_Status.Add("@Order_Status", 14);
 
-                            External_Client_Order_Id = int.Parse(dt_Order_InTitleLogy.Rows[0]["External_Order_Id"].ToString());
-                            External_Client_Order_Task_Id = int.Parse(dt_Order_InTitleLogy.Rows[0]["External_Order_Task_id"].ToString());
-
-
-
-                            if (External_Client_Order_Task_Id != 18)
-                            {
-                                Hashtable ht_Titlelogy_Order_Task_Status = new Hashtable();
-                                System.Data.DataTable dt_TitleLogy_Order_Task_Status = new System.Data.DataTable();
-                                ht_Titlelogy_Order_Task_Status.Add("@Trans", "UPDATE_ORDER_TASK_STATUS");
-                                ht_Titlelogy_Order_Task_Status.Add("@Order_Id", External_Client_Order_Id);
-                                ht_Titlelogy_Order_Task_Status.Add("@Order_Task", 2);
-                                ht_Titlelogy_Order_Task_Status.Add("@Order_Status", 14);
-
-                                dt_TitleLogy_Order_Task_Status = dataaccess.ExecuteSP("Sp_External_Client_Orders", ht_Titlelogy_Order_Task_Status);
-                            }
-
-
-
-
+                            dt_TitleLogy_Order_Task_Status = dataaccess.ExecuteSP("Sp_External_Client_Orders", ht_Titlelogy_Order_Task_Status);
                         }
+
+
+
 
                     }
 
-
                 }
 
-                if (CheckedCount >= 1)
-                {
-                    MessageBox.Show("Order Moved to Inhouse Search Queue Successfully");
 
-
-                    Grodview_Bind_Orders();
-                    Gridview_Bind_Orders_Wise_Treeview_Selected();
-                    //  Restrict_Controls();
-                    Sub_AddParent();
-                }
             }
+
+            if (CheckedCount >= 1)
+            {
+                MessageBox.Show("Order Moved to Inhouse Search Queue Successfully");
+
+
+                Grodview_Bind_Orders();
+                Gridview_Bind_Orders_Wise_Treeview_Selected();
+                //  Restrict_Controls();
+                Sub_AddParent();
+            }
+        }
 
         private void btn_Export_Click(object sender, EventArgs e)
         {
@@ -1472,8 +1490,8 @@ namespace Ordermanagement_01.Vendors
 
         private void Export_Report_Vendor_Data()
         {
-            
-          
+
+
 
 
             System.Data.DataTable dt = new System.Data.DataTable();
@@ -1586,7 +1604,7 @@ namespace Ordermanagement_01.Vendors
                         //23-01-2018
                         DateTime date = new DateTime();
                         DateTime time;
-                      date= DateTime.Now;
+                        date = DateTime.Now;
                         string dateeval = date.ToString("MM/dd/yyyy");
 
 
@@ -1851,14 +1869,14 @@ namespace Ordermanagement_01.Vendors
 
             }
         }
-        
-
-       
 
 
-        
 
-      
+
+
+
+
+
 
 
 

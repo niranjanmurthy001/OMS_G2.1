@@ -84,6 +84,10 @@
             this.btn_Clear = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Export = new DevExpress.XtraEditors.SimpleButton();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.repositoryItemHypertextLabel1 = new DevExpress.XtraEditors.Repository.RepositoryItemHypertextLabel();
+            this.repositoryItemHyperLinkEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
+            this.repositoryItemHyperLinkEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
+            this.repositoryItemHyperLinkEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabPaneReports)).BeginInit();
@@ -101,6 +105,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEditFromDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditToDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditToDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit3)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -194,6 +202,11 @@
             this.pivotGridControlSummary.Location = new System.Drawing.Point(0, 0);
             this.pivotGridControlSummary.Name = "pivotGridControlSummary";
             this.pivotGridControlSummary.OptionsDataField.RowHeaderWidth = 559;
+            this.pivotGridControlSummary.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemHypertextLabel1,
+            this.repositoryItemHyperLinkEdit1,
+            this.repositoryItemHyperLinkEdit2,
+            this.repositoryItemHyperLinkEdit3});
             this.pivotGridControlSummary.Size = new System.Drawing.Size(953, 489);
             this.pivotGridControlSummary.TabIndex = 4;
             this.pivotGridControlSummary.CustomSummary += new DevExpress.XtraPivotGrid.PivotGridCustomSummaryEventHandler(this.pivotGridControlSummary_CustomSummary);
@@ -223,6 +236,7 @@
             this.pivotGridFieldPHours.AreaIndex = 0;
             this.pivotGridFieldPHours.Caption = "Production Hours";
             this.pivotGridFieldPHours.EmptyCellText = "0";
+            this.pivotGridFieldPHours.FieldEdit = this.repositoryItemHyperLinkEdit1;
             this.pivotGridFieldPHours.FieldName = "Production Hours";
             this.pivotGridFieldPHours.Name = "pivotGridFieldPHours";
             this.pivotGridFieldPHours.SummaryType = DevExpress.Data.PivotGrid.PivotSummaryType.Custom;
@@ -238,6 +252,7 @@
             this.pivotGridFieldIHours.AreaIndex = 1;
             this.pivotGridFieldIHours.Caption = "Idle Hours";
             this.pivotGridFieldIHours.EmptyCellText = "0";
+            this.pivotGridFieldIHours.FieldEdit = this.repositoryItemHyperLinkEdit2;
             this.pivotGridFieldIHours.FieldName = "Ideal Hours";
             this.pivotGridFieldIHours.Name = "pivotGridFieldIHours";
             this.pivotGridFieldIHours.SummaryType = DevExpress.Data.PivotGrid.PivotSummaryType.Custom;
@@ -253,6 +268,7 @@
             this.pivotGridFieldBHours.AreaIndex = 2;
             this.pivotGridFieldBHours.Caption = "Break Hours";
             this.pivotGridFieldBHours.EmptyCellText = "0";
+            this.pivotGridFieldBHours.FieldEdit = this.repositoryItemHyperLinkEdit3;
             this.pivotGridFieldBHours.FieldName = "Break Hours";
             this.pivotGridFieldBHours.Name = "pivotGridFieldBHours";
             this.pivotGridFieldBHours.SummaryType = DevExpress.Data.PivotGrid.PivotSummaryType.Custom;
@@ -896,6 +912,25 @@
             // 
             this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013";
             // 
+            // repositoryItemHypertextLabel1
+            // 
+            this.repositoryItemHypertextLabel1.Name = "repositoryItemHypertextLabel1";
+            // 
+            // repositoryItemHyperLinkEdit1
+            // 
+            this.repositoryItemHyperLinkEdit1.AutoHeight = false;
+            this.repositoryItemHyperLinkEdit1.Name = "repositoryItemHyperLinkEdit1";
+            // 
+            // repositoryItemHyperLinkEdit2
+            // 
+            this.repositoryItemHyperLinkEdit2.AutoHeight = false;
+            this.repositoryItemHyperLinkEdit2.Name = "repositoryItemHyperLinkEdit2";
+            // 
+            // repositoryItemHyperLinkEdit3
+            // 
+            this.repositoryItemHyperLinkEdit3.AutoHeight = false;
+            this.repositoryItemHyperLinkEdit3.Name = "repositoryItemHyperLinkEdit3";
+            // 
             // BreakIdleReportsNew
             // 
             this.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -929,6 +964,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEditFromDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditToDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditToDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -990,5 +1029,9 @@
         private DevExpress.XtraPivotGrid.PivotGridField pivotGridFieldBRP1;
         private DevExpress.XtraPivotGrid.PivotGridField pivotGridFieldBRP2;
         private DevExpress.XtraPivotGrid.PivotGridField pivotGridFieldBUserId;
+        private DevExpress.XtraEditors.Repository.RepositoryItemHypertextLabel repositoryItemHypertextLabel1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit repositoryItemHyperLinkEdit1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit repositoryItemHyperLinkEdit2;
+        private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit repositoryItemHyperLinkEdit3;
     }
 }

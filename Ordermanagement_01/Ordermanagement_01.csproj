@@ -2584,6 +2584,12 @@
     <Compile Include="Test.Designer.cs">
       <DependentUpon>Test.cs</DependentUpon>
     </Compile>
+    <Compile Include="Test\ApiTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test\ApiTest.Designer.cs">
+      <DependentUpon>ApiTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Test\Api_Call.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -4062,6 +4068,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Test.resx">
       <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test\ApiTest.resx">
+      <DependentUpon>ApiTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Test\Api_Call.resx">
       <DependentUpon>Api_Call.cs</DependentUpon>

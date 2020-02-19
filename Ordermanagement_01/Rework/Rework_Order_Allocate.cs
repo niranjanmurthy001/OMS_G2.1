@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using ClosedXML.Excel;
+using Microsoft.Office.Interop.Excel;
+using System;
+using System.Collections;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using System.Collections;
-using System.Speech.Synthesis;
 using System.IO;
-using Microsoft.Office.Interop.Excel;
-using Excel = Microsoft.Office.Interop.Excel;
-using ClosedXML.Excel;
+using System.Speech.Synthesis;
+using System.Windows.Forms;
 
 namespace Ordermanagement_01
 {
@@ -40,15 +35,15 @@ namespace Ordermanagement_01
         int count_chk, ckcnt;
         string Order_Process;
         string Path1, From_Date, userroleid, To_date, Export_Title_Name;
-        int Order_Status_Id,Tree_View_UserId;
+        int Order_Status_Id, Tree_View_UserId;
         int User_id, Allocate_Status_Id;
         //  int External_Client_Order_Id, External_Client_Order_Task_Id,Check_Order_Assign,PausePlay = 0;
-       // bool Abstractor_Check;
-         //string County_Type;
+        // bool Abstractor_Check;
+        //string County_Type;
         //InfiniteProgressBar.clsProgress clsLoader = new InfiniteProgressBar.clsProgress();
-       
 
-        public Rework_Order_Allocate(string OrderProcess, int OrderStatusId, int Userid,int AllocationStatus_Id,string Userroleid)
+
+        public Rework_Order_Allocate(string OrderProcess, int OrderStatusId, int Userid, int AllocationStatus_Id, string Userroleid)
         {
             InitializeComponent();
             User_id = Userid;
@@ -99,7 +94,7 @@ namespace Ordermanagement_01
 
         private void Completed_Order_Allocate_Load(object sender, EventArgs e)
         {
-         
+
             reader = new SpeechSynthesizer();
             dbc.BindUserName_Allocate(ddl_UserName);
             dbc.BindOrderStatus(ddl_Order_Status_Reallocate);
@@ -111,19 +106,19 @@ namespace Ordermanagement_01
                 //dbc.BindClient(ddl_Client_Name);
                 dbc.Bind_Rework_Client(ddl_Client_Name);
             }
-            else 
+            else
             {
 
                 dbc.Bind_Rework_ClientNo(ddl_Client_Name);
-             //   dbc.BindClientNo(ddl_Client_Name);
+                //   dbc.BindClientNo(ddl_Client_Name);
             }
             //dbc.BindState(ddl_State);
             //dbc.Bind_Order_Assign_Type(ddl_County_Type);
             dbc.Bind_Rework_State(ddl_State);
             dbc.Bind_Rework_Order_Assign_Type(ddl_County_Type);
-          
 
-          
+
+
 
             //txt_Fromdate.Text = DateTime.Now.ToString();
             //txt_To_Date.Text = DateTime.Now.ToString();
@@ -201,7 +196,7 @@ namespace Ordermanagement_01
             //From_Date = f_date.ToString();
             //To_date = t_date.ToString();
 
-                //
+            //
             //DateTime f_date = Convert.ToDateTime(txt_Fromdate.Text);
             //DateTime t_date = Convert.ToDateTime(txt_To_Date.Text);
 
@@ -213,101 +208,101 @@ namespace Ordermanagement_01
             DateTime t_date = Convert.ToDateTime(txt_To_Date.Text);
 
             From_Date = f_date.ToString("MM/dd/yyyy");
-            To_date = t_date.ToString("MM/dd/yyyy");    
+            To_date = t_date.ToString("MM/dd/yyyy");
 
 
-                //Hashtable htall = new Hashtable();
-                //System.Data.DataTable dtall = new System.Data.DataTable();
+            //Hashtable htall = new Hashtable();
+            //System.Data.DataTable dtall = new System.Data.DataTable();
 
-                htAllocate.Clear();
-                dtexp.Clear();
-                dtAllocate.Clear();
-                if (Order_Process == "REWORK_ORDER_ALLOCATE")
+            htAllocate.Clear();
+            dtexp.Clear();
+            dtAllocate.Clear();
+            if (Order_Process == "REWORK_ORDER_ALLOCATE")
+            {
+
+                htAllocate.Add("@Trans", "REWORK_ORDER_ALLOCATE");
+                htAllocate.Add("@Order_Status_Id", Order_Status_Id);
+                htAllocate.Add("@From_Date", From_Date);
+                htAllocate.Add("@To_date", To_date);
+                dtAllocate = dataaccess.ExecuteSP("Sp_Order_Rework_Allocation", htAllocate);
+
+            }
+
+            else if (Order_Process == "REWORK_SEARCH_ORDER_ALLOCATE" || Order_Process == "REWORK_SEARCH_QC_ORDER_ALLOCATE" || Order_Process == "REWORK_TYPING_ORDER_ALLOCATE" || Order_Process == "REWORK_TYPING_QC_ORDERS_ALLOCATE" || Order_Process == "REWORK_UPLOAD_ORDERS_ALLOCATE" || Order_Process == "REWORK_FINAL_QC_ORDERS_ALLOCATE" || Order_Process == "REWORK_EXCEPTION_ORDERS_ALLOCATE")
+            {
+                dtexport.Rows.Clear();
+                htAllocate.Add("@Trans", "NOT ASSIGNED");
+                htAllocate.Add("@Order_Status_Id", Allocate_Status_Id);
+                dtAllocate = dataaccess.ExecuteSP("Sp_Order_Rework_Count", htAllocate);
+
+            }
+            else if (Order_Process == "COMPLETED_ORDER_BY_ORDER_ID")
+            {
+                dtexport.Rows.Clear();
+                htAllocate.Add("@Trans", "REWORK_ORDER_BY_ORDER_ID");
+                htAllocate.Add("@Order_Status_Id", Order_Status_Id);
+                htAllocate.Add("@Order_Number", txt_Order_Number.Text);
+                dtAllocate = dataaccess.ExecuteSP("Sp_Order_Assignment", htAllocate);
+            }
+
+            grd_order.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.SkyBlue;
+            grd_order.EnableHeadersVisualStyles = false;
+
+            if (dtAllocate.Rows.Count > 0)
+            {
+                grd_order.Rows.Clear();
+                for (int i = 0; i < dtAllocate.Rows.Count; i++)
                 {
-
-                    htAllocate.Add("@Trans", "REWORK_ORDER_ALLOCATE");
-                    htAllocate.Add("@Order_Status_Id", Order_Status_Id);
-                    htAllocate.Add("@From_Date", From_Date);
-                    htAllocate.Add("@To_date", To_date);
-                    dtAllocate = dataaccess.ExecuteSP("Sp_Order_Rework_Allocation", htAllocate);
-
-                }
-
-                else if (Order_Process == "REWORK_SEARCH_ORDER_ALLOCATE" || Order_Process == "REWORK_SEARCH_QC_ORDER_ALLOCATE" || Order_Process == "REWORK_TYPING_ORDER_ALLOCATE" || Order_Process == "REWORK_TYPING_QC_ORDERS_ALLOCATE" || Order_Process == "REWORK_UPLOAD_ORDERS_ALLOCATE" || Order_Process == "REWORK_FINAL_QC_ORDERS_ALLOCATE" || Order_Process == "REWORK_EXCEPTION_ORDERS_ALLOCATE")
-                {
-                    dtexport.Rows.Clear();
-                    htAllocate.Add("@Trans", "NOT ASSIGNED");
-                    htAllocate.Add("@Order_Status_Id", Allocate_Status_Id);
-                    dtAllocate = dataaccess.ExecuteSP("Sp_Order_Rework_Count", htAllocate);
-
-                }
-                else if (Order_Process == "COMPLETED_ORDER_BY_ORDER_ID")
-                {
-                    dtexport.Rows.Clear();
-                    htAllocate.Add("@Trans", "REWORK_ORDER_BY_ORDER_ID");
-                    htAllocate.Add("@Order_Status_Id", Order_Status_Id);
-                    htAllocate.Add("@Order_Number", txt_Order_Number.Text);
-                    dtAllocate = dataaccess.ExecuteSP("Sp_Order_Assignment", htAllocate);
-                }
-
-                grd_order.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.SkyBlue;
-                grd_order.EnableHeadersVisualStyles = false;
-
-                if (dtAllocate.Rows.Count > 0)
-                {
-                    grd_order.Rows.Clear();
-                    for (int i = 0; i < dtAllocate.Rows.Count; i++)
+                    grd_order.Rows.Add();
+                    grd_order.Rows[i].Cells[1].Value = i + 1;
+                    if (userroleid == "1")
                     {
-                        grd_order.Rows.Add();
-                        grd_order.Rows[i].Cells[1].Value = i + 1;
-                        if (userroleid == "1")
-                        {
-                            grd_order.Rows[i].Cells[2].Value = dtAllocate.Rows[i]["Client_Name"].ToString();
-                        }
-                        else
-                        {
-                            grd_order.Rows[i].Cells[2].Value = dtAllocate.Rows[i]["Client_Number"].ToString();
-                        }
-                        if (userroleid == "1")
-                        {
-                            grd_order.Rows[i].Cells[3].Value = dtAllocate.Rows[i]["Sub_ProcessName"].ToString();
-                        }
-                        else
-                        {
-                            grd_order.Rows[i].Cells[3].Value = dtAllocate.Rows[i]["Subprocess_Number"].ToString();
-
-                        }
-                        grd_order.Rows[i].Cells[4].Value = dtAllocate.Rows[i]["Order_Number"].ToString();
-                        grd_order.Rows[i].Cells[5].Value = dtAllocate.Rows[i]["Order_Type"].ToString();
-                        grd_order.Rows[i].Cells[6].Value = dtAllocate.Rows[i]["STATECOUNTY"].ToString();
-                        grd_order.Rows[i].Cells[7].Value = dtAllocate.Rows[i]["County_Type"].ToString();
-                        grd_order.Rows[i].Cells[8].Value = dtAllocate.Rows[i]["Date"].ToString();
-                        grd_order.Rows[i].Cells[9].Value = dtAllocate.Rows[i]["Order_ID"].ToString();
-                        grd_order.Rows[i].Cells[10].Value = 0;//Not requried its from titlelogy 
-                        grd_order.Rows[i].Cells[11].Value = dtAllocate.Rows[i]["Order_Status"].ToString();
-                        grd_order.Rows[i].Cells[12].Value = dtAllocate.Rows[i]["State"].ToString();
-                        grd_order.Rows[i].Cells[4].Style.BackColor = System.Drawing.Color.DarkCyan;
+                        grd_order.Rows[i].Cells[2].Value = dtAllocate.Rows[i]["Client_Name"].ToString();
                     }
-                    for (int j = 0; j < grd_order.Rows.Count; j++)
+                    else
                     {
-                        int v1 = int.Parse(grd_order.Rows[j].Cells[10].Value.ToString());
-                        int v2 = int.Parse(grd_order.Rows[j].Cells[11].Value.ToString());
-                        if (v1 == 1 && v2 != 2)
-                        {
-                            grd_order.Rows[j].DefaultCellStyle.BackColor = Color.YellowGreen;
-
-                        }
+                        grd_order.Rows[i].Cells[2].Value = dtAllocate.Rows[i]["Client_Number"].ToString();
                     }
-                    lbl_Total_Orders.Text = dtAllocate.Rows.Count.ToString();
-                }
-                else
-                {
-                    grd_order.DataSource = null;
-                    grd_order.Rows.Clear();
-                    lbl_Total_Orders.Text = dtAllocate.Rows.Count.ToString();
+                    if (userroleid == "1")
+                    {
+                        grd_order.Rows[i].Cells[3].Value = dtAllocate.Rows[i]["Sub_ProcessName"].ToString();
+                    }
+                    else
+                    {
+                        grd_order.Rows[i].Cells[3].Value = dtAllocate.Rows[i]["Subprocess_Number"].ToString();
 
+                    }
+                    grd_order.Rows[i].Cells[4].Value = dtAllocate.Rows[i]["Order_Number"].ToString();
+                    grd_order.Rows[i].Cells[5].Value = dtAllocate.Rows[i]["Order_Type"].ToString();
+                    grd_order.Rows[i].Cells[6].Value = dtAllocate.Rows[i]["STATECOUNTY"].ToString();
+                    grd_order.Rows[i].Cells[7].Value = dtAllocate.Rows[i]["County_Type"].ToString();
+                    grd_order.Rows[i].Cells[8].Value = dtAllocate.Rows[i]["Date"].ToString();
+                    grd_order.Rows[i].Cells[9].Value = dtAllocate.Rows[i]["Order_ID"].ToString();
+                    grd_order.Rows[i].Cells[10].Value = 0;//Not requried its from titlelogy 
+                    grd_order.Rows[i].Cells[11].Value = dtAllocate.Rows[i]["Order_Status"].ToString();
+                    grd_order.Rows[i].Cells[12].Value = dtAllocate.Rows[i]["State"].ToString();
+                    grd_order.Rows[i].Cells[4].Style.BackColor = System.Drawing.Color.DarkCyan;
                 }
-          
+                for (int j = 0; j < grd_order.Rows.Count; j++)
+                {
+                    int v1 = int.Parse(grd_order.Rows[j].Cells[10].Value.ToString());
+                    int v2 = int.Parse(grd_order.Rows[j].Cells[11].Value.ToString());
+                    if (v1 == 1 && v2 != 2)
+                    {
+                        grd_order.Rows[j].DefaultCellStyle.BackColor = Color.YellowGreen;
+
+                    }
+                }
+                lbl_Total_Orders.Text = dtAllocate.Rows.Count.ToString();
+            }
+            else
+            {
+                grd_order.DataSource = null;
+                grd_order.Rows.Clear();
+                lbl_Total_Orders.Text = dtAllocate.Rows.Count.ToString();
+
+            }
+
         }
 
 
@@ -319,7 +314,7 @@ namespace Ordermanagement_01
             TreeView1.Nodes.Clear();
             // TreeView1.Nodes.Add("User Name", "User Name");
             AddChilds(sKeyTemp);
-          
+
         }
         private void AddChilds(string sKeyTemp)
         {
@@ -370,11 +365,11 @@ namespace Ordermanagement_01
                     // Restrict_Controls();
                     //  btn_Allocate.CssClass = "Windowbutton";
                     btn_Allocate.Enabled = true;
-                //    CountCheckedRows(sender, e);
+                    //    CountCheckedRows(sender, e);
 
                 }
             }
-           
+
             lbl_allocated_user.Text = TreeView1.SelectedNode.Text;
             lbl_allocated_user.ForeColor = System.Drawing.Color.Teal;
             Tree_View_UserId = int.Parse(TreeView1.SelectedNode.Name);
@@ -419,7 +414,7 @@ namespace Ordermanagement_01
                             grd_order_Allocated.Rows[i].Cells[3].Value = dtuser.Rows[i]["Sub_ProcessName"].ToString();
                         }
                         else
-                        
+
                         {
                             grd_order_Allocated.Rows[i].Cells[2].Value = dtuser.Rows[i]["Client_Number"].ToString();
                             grd_order_Allocated.Rows[i].Cells[3].Value = dtuser.Rows[i]["Subprocess_Number"].ToString();
@@ -455,9 +450,9 @@ namespace Ordermanagement_01
             {
                 grd_order_Allocated.Rows.Clear();
             }
-           
+
         }
-      
+
         private void TreeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             // int NODE = int.Parse(TreeView1.SelectedNode.Name);
@@ -468,7 +463,7 @@ namespace Ordermanagement_01
             load_Progressbar.Start_progres();
             if (Order_Process == "REWORK_ORDER_ALLOCATE")
             {
-                
+
                 int CheckedCount = 0;
                 if (Tree_View_UserId != 0 && Validate_Work_Type() != false)
                 {
@@ -503,19 +498,19 @@ namespace Ordermanagement_01
 
                             DateTime date = new DateTime();
                             DateTime time;
-                            date= DateTime.Now;
+                            date = DateTime.Now;
                             string dateeval = date.ToString("MM/dd/yyyy");
 
-                            Order_Status_Id = int.Parse(ddl_Task.SelectedValue.ToString());
+                            int Order_Status_id = int.Parse(ddl_Task.SelectedValue.ToString());
 
                             string lbl_Allocated_Userid = ddl_UserName.ValueMember;
                             Hashtable htchk_Assign = new Hashtable();
                             System.Data.DataTable dtchk_Assign = new System.Data.DataTable();
-                       
+
                             htinsertrec.Add("@Trans", "INSERT");
                             htinsertrec.Add("@Order_Id", lbl_Order_Id);
                             htinsertrec.Add("@User_Id", allocated_Userid);
-                            htinsertrec.Add("@Order_Status_Id", Order_Status_Id);
+                            htinsertrec.Add("@Order_Status_Id", Order_Status_id);
                             htinsertrec.Add("@Order_Progress_Id", 6);
                             htinsertrec.Add("@Assigned_Date", dateeval);
                             htinsertrec.Add("@Assigned_By", User_id);
@@ -645,10 +640,10 @@ namespace Ordermanagement_01
 
                             DateTime date = new DateTime();
                             DateTime time;
-                            date= DateTime.Now;
+                            date = DateTime.Now;
                             string dateeval = date.ToString("MM/dd/yyyy");
 
-                          
+
                             htinsertrec.Add("@Trans", "INSERT");
                             htinsertrec.Add("@Order_Id", lbl_Order_Id);
                             htinsertrec.Add("@User_Id", allocated_Userid);
@@ -759,7 +754,7 @@ namespace Ordermanagement_01
         }
 
 
-       
+
         private void Clear()
         {
 
@@ -823,7 +818,7 @@ namespace Ordermanagement_01
                     grd_order_Allocated.DataSource = null;
                     grd_order_Allocated.Rows.Clear();
                 }
-               
+
             }
 
 
@@ -867,8 +862,8 @@ namespace Ordermanagement_01
             return true;
         }
 
-       private void btn_Reallocate_Click(object sender, EventArgs e)
-       {
+        private void btn_Reallocate_Click(object sender, EventArgs e)
+        {
             int Check_Count = 0;
             if (Validation() != false)
             {
@@ -1144,7 +1139,7 @@ namespace Ordermanagement_01
             if (e.ColumnIndex == 4)
             {
 
-                Ordermanagement_01.Rework_Superqc_Order_Entry Order_Entry = new Ordermanagement_01.Rework_Superqc_Order_Entry(int.Parse(grd_order.Rows[e.RowIndex].Cells[9].Value.ToString()), User_id, "Rework", userroleid,"");
+                Ordermanagement_01.Rework_Superqc_Order_Entry Order_Entry = new Ordermanagement_01.Rework_Superqc_Order_Entry(int.Parse(grd_order.Rows[e.RowIndex].Cells[9].Value.ToString()), User_id, "Rework", userroleid, "");
                 Order_Entry.Show();
             }
         }
@@ -1160,7 +1155,7 @@ namespace Ordermanagement_01
                 }
             }
         }
-    
+
         void reader_SpeakCompleted(object sender, SpeakCompletedEventArgs e)
         {
             //  label2.Text = "IDLE";
@@ -1211,7 +1206,7 @@ namespace Ordermanagement_01
 
                     htexp.Add("@Trans", "COMPLETED_ORDER_EXPORT");
                     htexp.Add("@From_Date", From_Date);
-                    htexp.Add("@To_date",To_date);
+                    htexp.Add("@To_date", To_date);
 
                     dtexp = dataaccess.ExecuteSP("Sp_Rework_Order_Assignment_Export", htexp);
 
@@ -1432,7 +1427,7 @@ namespace Ordermanagement_01
                     }
 
                 }
-               
+
             }
             else
             {
@@ -1506,7 +1501,7 @@ namespace Ordermanagement_01
                     MessageBox.Show("Please Select From Date and To Date Properly");
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -1541,7 +1536,7 @@ namespace Ordermanagement_01
                 else
                 {
                     dbc.Bind_Rework_SubProcessNumber(ddl_Client_SubProcess, int.Parse(ddl_Client_Name.SelectedValue.ToString()));
-                  
+
                 }
             }
             Binnd_Filter_Data();
@@ -1566,7 +1561,7 @@ namespace Ordermanagement_01
             string County_Type = ddl_County_Type.Text.ToString();
 
             dt = dtsearch.ToTable();
-       
+
             if (dt.Rows.Count > 0)
             {
                 if (ddl_Client_Name.SelectedIndex != 0 && ddl_Client_SubProcess.SelectedIndex == 0 && state == "Select" && County_Type == "Select")
@@ -1575,7 +1570,7 @@ namespace Ordermanagement_01
                     {
                         dtsearch.RowFilter = "Client_Name like '%" + ddl_Client_Name.Text.ToString() + "%'";
                     }
-                    else 
+                    else
                     {
                         dtsearch.RowFilter = "Client_Number =" + ddl_Client_Name.Text.ToString() + "";
                     }
@@ -1608,7 +1603,7 @@ namespace Ordermanagement_01
                     {
                         dtsearch.RowFilter = "Client_Name like '%" + ddl_Client_Name.Text.ToString() + "%'   and Sub_ProcessName like '%" + ddl_Client_SubProcess.Text.ToString() + "%' and State like '%" + ddl_State.Text.ToString() + "%'";
                     }
-                    else 
+                    else
                     {
                         dtsearch.RowFilter = "Client_Number  =" + ddl_Client_Name.Text.ToString() + "   and Subprocess_Number =" + ddl_Client_SubProcess.Text.ToString() + " and State like '%" + ddl_State.Text.ToString() + "%'";
                     }
@@ -1619,7 +1614,7 @@ namespace Ordermanagement_01
                     {
                         dtsearch.RowFilter = "Client_Name like '%" + ddl_Client_Name.Text.ToString() + "%' and County_Type like '%" + ddl_County_Type.Text.ToString() + "%'";
                     }
-                    else 
+                    else
                     {
                         dtsearch.RowFilter = "Client_Number =" + ddl_Client_Name.Text.ToString() + "   and County_Type like '%" + ddl_County_Type.Text.ToString() + "%'";
                     }
@@ -1630,7 +1625,7 @@ namespace Ordermanagement_01
                     {
                         dtsearch.RowFilter = "Client_Name like '%" + ddl_Client_Name.Text.ToString() + "%'  and Sub_ProcessName like '%" + ddl_Client_SubProcess.Text.ToString() + "%' and County_Type like '%" + ddl_County_Type.Text.ToString() + "%'";
                     }
-                    else 
+                    else
                     {
                         dtsearch.RowFilter = "Client_Number  =" + ddl_Client_Name.Text.ToString() + " and Subprocess_Number  =" + ddl_Client_SubProcess.Text.ToString() + " and County_Type like '%" + ddl_County_Type.Text.ToString() + "%'";
                     }
@@ -1641,10 +1636,10 @@ namespace Ordermanagement_01
                     {
                         dtsearch.RowFilter = "Client_Name like '%" + ddl_Client_Name.Text.ToString() + "%'  and Sub_ProcessName like '%" + ddl_Client_SubProcess.Text.ToString() + "%'  and State like '%" + ddl_State.Text.ToString() + "%'  and County_Type like '%" + ddl_County_Type.Text.ToString() + "%'";
                     }
-                    else 
+                    else
                     {
 
-                        dtsearch.RowFilter = "Client_Number =" + ddl_Client_Name.Text.ToString() + "  and Subprocess_Number =" +ddl_Client_SubProcess.Text.ToString() + " and State like '%" + ddl_State.Text.ToString() + "%'  and County_Type like '%" + ddl_County_Type.Text.ToString() + "%'";
+                        dtsearch.RowFilter = "Client_Number =" + ddl_Client_Name.Text.ToString() + "  and Subprocess_Number =" + ddl_Client_SubProcess.Text.ToString() + " and State like '%" + ddl_State.Text.ToString() + "%'  and County_Type like '%" + ddl_County_Type.Text.ToString() + "%'";
                     }
                 }
                 else if (ddl_Client_Name.SelectedIndex != 0 && ddl_Client_SubProcess.SelectedIndex == 0 && state != "Select" && County_Type != "Select")
@@ -1653,13 +1648,13 @@ namespace Ordermanagement_01
                     {
                         dtsearch.RowFilter = "Client_Name like '%" + ddl_Client_Name.Text.ToString() + "%'  and Sub_ProcessName like '%" + ddl_Client_SubProcess.Text.ToString() + "%'  and State like '%" + ddl_State.Text.ToString() + "%'  and County_Type like '%" + ddl_County_Type.Text.ToString() + "%'";
                     }
-                    else 
+                    else
                     {
 
                         dtsearch.RowFilter = "Client_Number =" + ddl_Client_Name.Text.ToString() + " and Subprocess_Number =" + ddl_Client_SubProcess.Text.ToString() + " and State like '%" + ddl_State.Text.ToString() + "%'  and County_Type like '%" + ddl_County_Type.Text.ToString() + "%'";
-                       
-                       //    dtsearch.RowFilter = "Client_Number like'%" + ddl_Client_Name.Text.ToString().ToString() + "%'  and Subprocess_Number like '%" + ddl_Client_SubProcess.Text.ToString() + "%' and State like '%" + ddl_State.Text.ToString() + "%'  and County_Type like '%" + ddl_County_Type.Text.ToString() + "%'";
-                      
+
+                        //    dtsearch.RowFilter = "Client_Number like'%" + ddl_Client_Name.Text.ToString().ToString() + "%'  and Subprocess_Number like '%" + ddl_Client_SubProcess.Text.ToString() + "%' and State like '%" + ddl_State.Text.ToString() + "%'  and County_Type like '%" + ddl_County_Type.Text.ToString() + "%'";
+
                     }
                 }
 
@@ -1716,7 +1711,7 @@ namespace Ordermanagement_01
                         {
                             grd_order.Rows[i].Cells[2].Value = dt.Rows[i]["Client_Name"].ToString();
                         }
-                        else 
+                        else
                         {
                             grd_order.Rows[i].Cells[2].Value = dt.Rows[i]["Client_Number"].ToString();
                         }
@@ -1724,7 +1719,7 @@ namespace Ordermanagement_01
                         {
                             grd_order.Rows[i].Cells[3].Value = dt.Rows[i]["Sub_ProcessName"].ToString();
                         }
-                        else 
+                        else
                         {
                             grd_order.Rows[i].Cells[3].Value = dt.Rows[i]["Subprocess_Number"].ToString();
 
@@ -1753,14 +1748,14 @@ namespace Ordermanagement_01
                 }
             }
         }
-      
+
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
             load_Progressbar.Start_progres();
             Chk_All_grd_Clients.Checked = false;
             chk_All.Checked = false;
 
-          
+
             ddl_Client_Name.SelectedIndex = 0;
             ddl_State.SelectedIndex = 0;
             ddl_County_Type.SelectedIndex = 0;
@@ -1794,9 +1789,9 @@ namespace Ordermanagement_01
 
             //    dbc.BindClientNo(ddl_Client_Name);
             //}
-           // ddl_Client_Name_SelectionChangeCommitted(sender, e);
+            // ddl_Client_Name_SelectionChangeCommitted(sender, e);
 
-         
+
 
         }
 
@@ -1969,8 +1964,8 @@ namespace Ordermanagement_01
                     }
                     if (Check_Count >= 1)
                     {
-                      
-                      
+
+
                         MessageBox.Show("Order Deallocated Successfully");
                     }
                     Gridview_Bind_All_Orders();
@@ -2003,7 +1998,7 @@ namespace Ordermanagement_01
             chk_All_Click(sender, e);                   //06-03-2018
             Chk_All_grd_Clients_Click(sender, e);
 
-            
+
             lbl_allocated_user.Text = "";
             txt_UserName.Text = "";
             txt_Order_Number.Text = "";
@@ -2012,8 +2007,8 @@ namespace Ordermanagement_01
             //Tree_View_UserId = 0;
             //Gridview_Bind_Orders_Wise_Treeview_Selected();
 
-         //   TreeView1_AfterSelect(sender, e);
-           // btn_Refresh_Click(sender, e);
+            //   TreeView1_AfterSelect(sender, e);
+            // btn_Refresh_Click(sender, e);
         }
 
         private void txt_UserName_TextChanged(object sender, EventArgs e)
@@ -2042,7 +2037,7 @@ namespace Ordermanagement_01
                     string empty = "Empty!";
                     MessageBox.Show("No User Name Found", empty);
                 }
-              
+
                 TreeView1.ExpandAll();
             }
             else
@@ -2135,10 +2130,10 @@ namespace Ordermanagement_01
             {
                 chk_All.Checked = true;
             }
-        
+
         }
 
-        
+
 
         private void grd_order_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -2171,7 +2166,7 @@ namespace Ordermanagement_01
             }
         }
 
-       
+
 
     }
 }

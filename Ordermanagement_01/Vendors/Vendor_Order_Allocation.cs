@@ -214,11 +214,11 @@ namespace Ordermanagement_01.Vendors
                                 if (!string.IsNullOrEmpty(dt.Rows[0]["Vendor_Instructions"].ToString()))
                                 {
                                     string instructions = dt.Rows[0]["Vendor_Instructions"].ToString();
-                                    if (dtKeywords.Rows.Cast<DataRow>().Any(row => instructions.Contains(row["Keyword"].ToString())))
+                                    var matchedWords = dtKeywords.Rows.Cast<DataRow>()
+                                                       .Where(row => instructions.Contains(row["Keyword"].ToString()))
+                                                       .Select(row => row["Keyword"]).ToList();
+                                    if (matchedWords.Count > 0)
                                     {
-                                        var matchedWords = dtKeywords.Rows.Cast<DataRow>()
-                                                           .Where(row => instructions.Contains(row["Keyword"].ToString()))
-                                                           .Select(row => row["Keyword"]).ToList();
                                         XtraMessageBox.Show("Following words not allowed in Vendor Notes : " + string.Join(",", matchedWords));
                                         return;
                                     }

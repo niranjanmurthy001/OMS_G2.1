@@ -219,7 +219,7 @@ namespace Ordermanagement_01.Vendors
                                                        .Select(row => row["Keyword"]).ToList();
                                     if (matchedWords.Count > 0)
                                     {
-                                        XtraMessageBox.Show("Following words not allowed in Vendor Notes : " + string.Join(",", matchedWords));
+                                        XtraMessageBox.Show("Following words are not allowed in Vendor Notes : " + string.Join(",", matchedWords));
                                         return;
                                     }
                                 }

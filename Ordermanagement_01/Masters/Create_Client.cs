@@ -57,6 +57,9 @@ namespace Ordermanagement_01
         private void Create_Client_Load(object sender, EventArgs e)
         {
             //btn_treeview.Left = Width - 60;
+            lbl_ClientRefNo.Visible = false;
+            ListofClientNumbers.Visible = false;
+            ListofClientNumbers.Enabled = false;
             pnlSideTree.Visible = true;
             txt_ClientNumber.Enabled = true;
             AddParent();
@@ -77,27 +80,31 @@ namespace Ordermanagement_01
             textBoximage.Enabled = false;
             txt_CostTATExcel.Enabled = false;
         }
-        private void BindClientNumbers()
+        private bool  BindClientNumbers()
         {
             try
             {
                 Hashtable ht = new Hashtable();
                 DataTable dt = new DataTable();
                 ht.Add("@Trans", "ClientRefValues");
+                ht.Add("@Client_Number", txt_ClientNumber.Text);
                 dt = dataaccess.ExecuteSP("Sp_Client", ht);
-                if (dt.Rows.Count > 0)
-                {
+                if(dt.Rows.Count>0)
+                { 
                     ListofClientNumbers.DataSource = dt;
-                   // ListofClientNumbers.ValueMember = "Client_Id";
+                    ListofClientNumbers.ValueMember = "Client_Id";
                     ListofClientNumbers.DisplayMember = "Client_Number";
                 }
                 else
                 {
-                    MessageBox.Show("ClientNumbers Not Found");
+                    MessageBox.Show("Available Client Numbers Not Found ");
+                    return false;
                 }
+                return true;
             }
             catch(Exception ex)
             {
+                MessageBox.Show(ex.Message.ToString());
                 throw ex;
             }
         }
@@ -664,7 +671,7 @@ namespace Ordermanagement_01
         {
             if (txt_ClientNumber.Text.Length >= 4 && txt_ClientNumber.Text.Length <= 7)
             {
-
+                string clientno = txt_ClientNumber.Text.Trim().ToString();
                 string Client_Numbers = txt_ClientNumber.Text.Trim().ToString();
 
                 if (Client_Numbers.Length > 0)
@@ -673,22 +680,10 @@ namespace Ordermanagement_01
 
                     if (Validate_Result == true)
                     {
+                       
+                       
+
                         MessageBox.Show("Enter Number in Right Format like 1000,2000 etc");
-                        //try
-                        //{
-                        //    DataTable dt = new DataTable();
-                        //    Hashtable ht = new Hashtable();
-                        //     ht.Add("@Trans", "ClientRefValues");
-                        //     ht.Add("@Client_Number", txt_ClientNumber.Text);
-                        //       dt = dataaccess.ExecuteSP("Sp_Client", ht);
-
-
-                        //}
-                        //catch
-                        //{
-
-                        //}
-
 
                     }
 
@@ -1134,8 +1129,14 @@ namespace Ordermanagement_01
         private void ListofClientNumbers_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            txt_ClientNumber.Text = ListofClientNumbers.SelectedItems.ToString();
-            
+
+           // txt_ClientNumber.Text = ListofClientNumbers.SelectedItem.ToString();
+
+        }
+
+        private void ListofClientNumbers_Click(object sender, EventArgs e)
+        {
+            txt_ClientNumber.Text = ListofClientNumbers.SelectedItem.ToString();
         }
 
         private void Grd_Mail_Bind()
@@ -1398,6 +1399,11 @@ namespace Ordermanagement_01
 
         private void txt_ClientNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
+            lbl_ClientRefNo.Visible = true;
+            ListofClientNumbers.Visible = true;
+            ListofClientNumbers.Enabled = true;
+            lbl_ClientRefNo.Visible = true;
+
             e.Handled = !char.IsDigit(e.KeyChar);
             if (!Char.IsLetter(e.KeyChar) && e.KeyChar == (char)Keys.Back)
                 e.Handled = false;
@@ -1445,23 +1451,20 @@ namespace Ordermanagement_01
             {
                 ar.RemoveRange(0, 3);
             }
-            //foreach (object item in ar)
-            //{
-
-            //}
 
             bool Check_Value = false;
             foreach (var value in ar)
             {
                 if (int.Parse(value.ToString()) != 0)
                 {
-                    Check_Value = true;
+                    Check_Value =false;
                     break;
 
                 }
                 else
                 {
-                    Check_Value = false;
+                    Check_Value = true;
+             
 
 
 

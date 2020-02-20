@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_Cancel = new System.Windows.Forms.Button();
             this.btn_Save = new System.Windows.Forms.Button();
             this.tree_Client = new System.Windows.Forms.TreeView();
             this.grp_Client_det = new System.Windows.Forms.GroupBox();
+            this.ListofClientNumbers = new System.Windows.Forms.ListBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.rbtn_Disable = new System.Windows.Forms.RadioButton();
@@ -102,7 +103,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.ListofClientNumbers = new System.Windows.Forms.ListBox();
+            this.lbl_ClientRefNo = new System.Windows.Forms.Label();
             this.grp_Client_det.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_Email)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Client_image)).BeginInit();
@@ -152,6 +153,7 @@
             // 
             // grp_Client_det
             // 
+            this.grp_Client_det.Controls.Add(this.lbl_ClientRefNo);
             this.grp_Client_det.Controls.Add(this.ListofClientNumbers);
             this.grp_Client_det.Controls.Add(this.label24);
             this.grp_Client_det.Controls.Add(this.label29);
@@ -211,6 +213,18 @@
             this.grp_Client_det.TabIndex = 71;
             this.grp_Client_det.TabStop = false;
             this.grp_Client_det.Text = "CLIENT DETAILS";
+            // 
+            // ListofClientNumbers
+            // 
+            this.ListofClientNumbers.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListofClientNumbers.FormattingEnabled = true;
+            this.ListofClientNumbers.ItemHeight = 20;
+            this.ListofClientNumbers.Location = new System.Drawing.Point(374, 103);
+            this.ListofClientNumbers.Name = "ListofClientNumbers";
+            this.ListofClientNumbers.Size = new System.Drawing.Size(102, 64);
+            this.ListofClientNumbers.TabIndex = 246;
+            this.ListofClientNumbers.Click += new System.EventHandler(this.ListofClientNumbers_Click);
+            this.ListofClientNumbers.SelectedIndexChanged += new System.EventHandler(this.ListofClientNumbers_SelectedIndexChanged);
             // 
             // label24
             // 
@@ -345,19 +359,19 @@
             // 
             // grd_Email
             // 
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.Highlight;
-            this.grd_Email.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Highlight;
+            this.grd_Email.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.grd_Email.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grd_Email.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_Email.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.grd_Email.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grd_Email.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column12,
@@ -378,10 +392,10 @@
             // 
             // Column11
             // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column11.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column11.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column11.FillWeight = 194.9239F;
             this.Column11.HeaderText = "Alternative Email Id";
             this.Column11.Name = "Column11";
@@ -949,15 +963,14 @@
             this.panel5.Size = new System.Drawing.Size(1087, 149);
             this.panel5.TabIndex = 2;
             // 
-            // ListofClientNumbers
+            // lbl_ClientRefNo
             // 
-            this.ListofClientNumbers.FormattingEnabled = true;
-            this.ListofClientNumbers.ItemHeight = 20;
-            this.ListofClientNumbers.Location = new System.Drawing.Point(374, 103);
-            this.ListofClientNumbers.Name = "ListofClientNumbers";
-            this.ListofClientNumbers.Size = new System.Drawing.Size(102, 64);
-            this.ListofClientNumbers.TabIndex = 246;
-            this.ListofClientNumbers.SelectedIndexChanged += new System.EventHandler(this.ListofClientNumbers_SelectedIndexChanged);
+            this.lbl_ClientRefNo.AutoSize = true;
+            this.lbl_ClientRefNo.Location = new System.Drawing.Point(375, 80);
+            this.lbl_ClientRefNo.Name = "lbl_ClientRefNo";
+            this.lbl_ClientRefNo.Size = new System.Drawing.Size(101, 20);
+            this.lbl_ClientRefNo.TabIndex = 247;
+            this.lbl_ClientRefNo.Text = "AvailClientNo.....";
             // 
             // Create_Client
             // 
@@ -1065,5 +1078,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.ListBox ListofClientNumbers;
+        private System.Windows.Forms.Label lbl_ClientRefNo;
     }
 }

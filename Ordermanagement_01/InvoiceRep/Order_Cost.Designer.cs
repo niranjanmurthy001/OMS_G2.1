@@ -28,24 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grd_order = new System.Windows.Forms.DataGridView();
-            this.SNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Order_Number = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Client_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sub_ProcessName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Order_Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.STATECOUNTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbo_colmn = new System.Windows.Forms.ComboBox();
             this.btn_New_Invoice = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -64,8 +50,26 @@
             this.btn_Next = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.lbl_Total_orders = new System.Windows.Forms.Label();
+            this.Check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.SNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Order_Number = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Client_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sub_ProcessName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Order_Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STATECOUNTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSend = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.grd_order)).BeginInit();
             this.panel2.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // grd_order
@@ -76,16 +80,17 @@
             this.grd_order.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.grd_order.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.grd_order.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grd_order.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_order.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.grd_order.ColumnHeadersHeight = 30;
             this.grd_order.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Check,
             this.SNo,
             this.Order_Number,
             this.Client_Name,
@@ -100,118 +105,21 @@
             this.Column15,
             this.Column6,
             this.Column8});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.MediumBlue;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grd_order.DefaultCellStyle = dataGridViewCellStyle3;
-            this.grd_order.Location = new System.Drawing.Point(20, 109);
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.MediumBlue;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grd_order.DefaultCellStyle = dataGridViewCellStyle9;
+            this.grd_order.Location = new System.Drawing.Point(14, 109);
             this.grd_order.Name = "grd_order";
             this.grd_order.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.grd_order.RowHeadersVisible = false;
-            this.grd_order.Size = new System.Drawing.Size(1200, 424);
+            this.grd_order.Size = new System.Drawing.Size(1200, 386);
             this.grd_order.TabIndex = 192;
             this.grd_order.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_order_CellClick);
-            // 
-            // SNo
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.SNo.DefaultCellStyle = dataGridViewCellStyle2;
-            this.SNo.FillWeight = 91.37055F;
-            this.SNo.HeaderText = "S. No";
-            this.SNo.Name = "SNo";
-            this.SNo.ReadOnly = true;
-            // 
-            // Order_Number
-            // 
-            this.Order_Number.FillWeight = 153.6957F;
-            this.Order_Number.HeaderText = "ORDER NUMBER";
-            this.Order_Number.Name = "Order_Number";
-            this.Order_Number.ReadOnly = true;
-            this.Order_Number.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Order_Number.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Client_Name
-            // 
-            this.Client_Name.FillWeight = 61.35016F;
-            this.Client_Name.HeaderText = "CLIENT";
-            this.Client_Name.Name = "Client_Name";
-            this.Client_Name.ReadOnly = true;
-            // 
-            // Sub_ProcessName
-            // 
-            this.Sub_ProcessName.FillWeight = 124.9346F;
-            this.Sub_ProcessName.HeaderText = "SUB CLIENT";
-            this.Sub_ProcessName.Name = "Sub_ProcessName";
-            this.Sub_ProcessName.ReadOnly = true;
-            // 
-            // Order_Type
-            // 
-            this.Order_Type.FillWeight = 130.2978F;
-            this.Order_Type.HeaderText = "ORDER TYPE";
-            this.Order_Type.Name = "Order_Type";
-            this.Order_Type.ReadOnly = true;
-            // 
-            // STATECOUNTY
-            // 
-            this.STATECOUNTY.FillWeight = 147.2111F;
-            this.STATECOUNTY.HeaderText = "STATE & COUNTY";
-            this.STATECOUNTY.Name = "STATECOUNTY";
-            this.STATECOUNTY.ReadOnly = true;
-            // 
-            // Date
-            // 
-            this.Date.FillWeight = 132.6245F;
-            this.Date.HeaderText = "RECEIVED DATE";
-            this.Date.Name = "Date";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "ORDER COST";
-            this.Column1.Name = "Column1";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "GEN_DATE";
-            this.Column7.Name = "Column7";
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "PDF";
-            this.Column9.Image = global::Ordermanagement_01.Properties.Resources.PDF;
-            this.Column9.Name = "Column9";
-            this.Column9.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "EMAIL";
-            this.Column5.Image = global::Ordermanagement_01.Properties.Resources.Email;
-            this.Column5.Name = "Column5";
-            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Column15
-            // 
-            this.Column15.HeaderText = "Column15";
-            this.Column15.Name = "Column15";
-            this.Column15.Visible = false;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Column6";
-            this.Column6.Name = "Column6";
-            this.Column6.Visible = false;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Column8";
-            this.Column8.Name = "Column8";
-            this.Column8.Visible = false;
             // 
             // cbo_colmn
             // 
@@ -334,8 +242,6 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.Linen;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.btn_First);
@@ -345,9 +251,10 @@
             this.panel2.Controls.Add(this.btn_Next);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.lbl_Total_orders);
-            this.panel2.Location = new System.Drawing.Point(20, 532);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1200, 38);
+            this.panel2.Size = new System.Drawing.Size(1218, 42);
             this.panel2.TabIndex = 205;
             // 
             // btn_First
@@ -436,12 +343,141 @@
             this.lbl_Total_orders.TabIndex = 26;
             this.lbl_Total_orders.Text = "T";
             // 
+            // Check
+            // 
+            this.Check.HeaderText = "Chk";
+            this.Check.Name = "Check";
+            // 
+            // SNo
+            // 
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.SNo.DefaultCellStyle = dataGridViewCellStyle8;
+            this.SNo.FillWeight = 91.37055F;
+            this.SNo.HeaderText = "S. No";
+            this.SNo.Name = "SNo";
+            this.SNo.ReadOnly = true;
+            // 
+            // Order_Number
+            // 
+            this.Order_Number.FillWeight = 153.6957F;
+            this.Order_Number.HeaderText = "ORDER NUMBER";
+            this.Order_Number.Name = "Order_Number";
+            this.Order_Number.ReadOnly = true;
+            this.Order_Number.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Order_Number.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Client_Name
+            // 
+            this.Client_Name.FillWeight = 61.35016F;
+            this.Client_Name.HeaderText = "CLIENT";
+            this.Client_Name.Name = "Client_Name";
+            this.Client_Name.ReadOnly = true;
+            // 
+            // Sub_ProcessName
+            // 
+            this.Sub_ProcessName.FillWeight = 124.9346F;
+            this.Sub_ProcessName.HeaderText = "SUB CLIENT";
+            this.Sub_ProcessName.Name = "Sub_ProcessName";
+            this.Sub_ProcessName.ReadOnly = true;
+            // 
+            // Order_Type
+            // 
+            this.Order_Type.FillWeight = 130.2978F;
+            this.Order_Type.HeaderText = "ORDER TYPE";
+            this.Order_Type.Name = "Order_Type";
+            this.Order_Type.ReadOnly = true;
+            // 
+            // STATECOUNTY
+            // 
+            this.STATECOUNTY.FillWeight = 147.2111F;
+            this.STATECOUNTY.HeaderText = "STATE & COUNTY";
+            this.STATECOUNTY.Name = "STATECOUNTY";
+            this.STATECOUNTY.ReadOnly = true;
+            // 
+            // Date
+            // 
+            this.Date.FillWeight = 132.6245F;
+            this.Date.HeaderText = "RECEIVED DATE";
+            this.Date.Name = "Date";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ORDER COST";
+            this.Column1.Name = "Column1";
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "GEN_DATE";
+            this.Column7.Name = "Column7";
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "PDF";
+            this.Column9.Image = global::Ordermanagement_01.Properties.Resources.PDF;
+            this.Column9.Name = "Column9";
+            this.Column9.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "EMAIL";
+            this.Column5.Image = global::Ordermanagement_01.Properties.Resources.Email;
+            this.Column5.Name = "Column5";
+            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Column15
+            // 
+            this.Column15.HeaderText = "Column15";
+            this.Column15.Name = "Column15";
+            this.Column15.Visible = false;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Column6";
+            this.Column6.Name = "Column6";
+            this.Column6.Visible = false;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Column8";
+            this.Column8.Name = "Column8";
+            this.Column8.Visible = false;
+            // 
+            // btnSend
+            // 
+            this.btnSend.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnSend.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSend.Location = new System.Drawing.Point(546, 51);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(132, 29);
+            this.btnSend.TabIndex = 206;
+            this.btnSend.Text = "Send";
+            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.btnSend, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 495);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57.83133F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.16867F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1224, 83);
+            this.tableLayoutPanel1.TabIndex = 207;
+            // 
             // Order_Cost
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1224, 578);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.rbtn_Invoice_Sended);
             this.Controls.Add(this.rbtn_Invoice_NotSended);
             this.Controls.Add(this.label25);
@@ -457,6 +493,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grd_order)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -475,6 +512,15 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.RadioButton rbtn_Invoice_Sended;
         private System.Windows.Forms.RadioButton rbtn_Invoice_NotSended;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btn_First;
+        private System.Windows.Forms.Label lbl_Record_status;
+        private System.Windows.Forms.Button btn_Previous;
+        private System.Windows.Forms.Button btn_Last;
+        private System.Windows.Forms.Button btn_Next;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbl_Total_orders;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Check;
         private System.Windows.Forms.DataGridViewTextBoxColumn SNo;
         private System.Windows.Forms.DataGridViewButtonColumn Order_Number;
         private System.Windows.Forms.DataGridViewTextBoxColumn Client_Name;
@@ -489,13 +535,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btn_First;
-        private System.Windows.Forms.Label lbl_Record_status;
-        private System.Windows.Forms.Button btn_Previous;
-        private System.Windows.Forms.Button btn_Last;
-        private System.Windows.Forms.Button btn_Next;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lbl_Total_orders;
+        private System.Windows.Forms.Button btnSend;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

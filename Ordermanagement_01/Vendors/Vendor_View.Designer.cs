@@ -56,6 +56,15 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.grd_Services = new System.Windows.Forms.DataGridView();
+            this.SNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.cbo_colmn = new System.Windows.Forms.ComboBox();
             this.txt_SearchVendor_Name = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -68,15 +77,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.lbl_Total_Orders = new System.Windows.Forms.Label();
             this.btn_Refresh = new System.Windows.Forms.Button();
-            this.SNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.keywordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStrip.SuspendLayout();
             this.ToolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_Services)).BeginInit();
@@ -107,7 +108,8 @@
             this.percentageOfOrderToolStripMenuItem,
             this.toolStripMenuItem1,
             this.vendorTypeMasterToolStripMenuItem,
-            this.vendToolStripMenuItem});
+            this.vendToolStripMenuItem,
+            this.keywordsToolStripMenuItem});
             this.toolStripMenuItem2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(62, 23);
@@ -340,6 +342,84 @@
             this.grd_Services.TabIndex = 3;
             this.grd_Services.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_Services_CellClick);
             // 
+            // SNO
+            // 
+            this.SNO.FillWeight = 2.207937F;
+            this.SNO.HeaderText = "S. No";
+            this.SNO.MinimumWidth = 80;
+            this.SNO.Name = "SNO";
+            this.SNO.ReadOnly = true;
+            this.SNO.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Column7
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column7.FillWeight = 204.8032F;
+            this.Column7.HeaderText = "VENDOR NAME";
+            this.Column7.MinimumWidth = 350;
+            this.Column7.Name = "Column7";
+            this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Column1
+            // 
+            this.Column1.FillWeight = 104.3426F;
+            this.Column1.HeaderText = "PHONE NO";
+            this.Column1.MinimumWidth = 140;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.FillWeight = 64.16607F;
+            this.Column5.HeaderText = "EMAIL";
+            this.Column5.MinimumWidth = 180;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.FillWeight = 27.60588F;
+            this.Column6.HeaderText = "FAX NO";
+            this.Column6.MinimumWidth = 160;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Vendor_Id";
+            this.Column8.MinimumWidth = 50;
+            this.Column8.Name = "Column8";
+            this.Column8.Visible = false;
+            // 
+            // Column3
+            // 
+            this.Column3.FillWeight = 161.7389F;
+            this.Column3.HeaderText = "STATE COUNTY";
+            this.Column3.MinimumWidth = 100;
+            this.Column3.Name = "Column3";
+            this.Column3.Text = "View/Edit";
+            // 
+            // Column4
+            // 
+            this.Column4.FillWeight = 170.0975F;
+            this.Column4.HeaderText = "USER";
+            this.Column4.MinimumWidth = 100;
+            this.Column4.Name = "Column4";
+            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Column2
+            // 
+            this.Column2.FillWeight = 102.7684F;
+            this.Column2.HeaderText = "DELETE";
+            this.Column2.MinimumWidth = 38;
+            this.Column2.Name = "Column2";
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // cbo_colmn
             // 
             this.cbo_colmn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -496,83 +576,12 @@
             this.btn_Refresh.UseVisualStyleBackColor = false;
             this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
             // 
-            // SNO
+            // keywordsToolStripMenuItem
             // 
-            this.SNO.FillWeight = 2.207937F;
-            this.SNO.HeaderText = "S. No";
-            this.SNO.MinimumWidth = 80;
-            this.SNO.Name = "SNO";
-            this.SNO.ReadOnly = true;
-            this.SNO.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column7
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column7.FillWeight = 204.8032F;
-            this.Column7.HeaderText = "VENDOR NAME";
-            this.Column7.MinimumWidth = 350;
-            this.Column7.Name = "Column7";
-            this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Column1
-            // 
-            this.Column1.FillWeight = 104.3426F;
-            this.Column1.HeaderText = "PHONE NO";
-            this.Column1.MinimumWidth = 140;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.FillWeight = 64.16607F;
-            this.Column5.HeaderText = "EMAIL";
-            this.Column5.MinimumWidth = 180;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.FillWeight = 27.60588F;
-            this.Column6.HeaderText = "FAX NO";
-            this.Column6.MinimumWidth = 160;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Vendor_Id";
-            this.Column8.MinimumWidth = 50;
-            this.Column8.Name = "Column8";
-            this.Column8.Visible = false;
-            // 
-            // Column3
-            // 
-            this.Column3.FillWeight = 161.7389F;
-            this.Column3.HeaderText = "STATE COUNTY";
-            this.Column3.MinimumWidth = 100;
-            this.Column3.Name = "Column3";
-            this.Column3.Text = "View/Edit";
-            // 
-            // Column4
-            // 
-            this.Column4.FillWeight = 170.0975F;
-            this.Column4.HeaderText = "USER";
-            this.Column4.MinimumWidth = 100;
-            this.Column4.Name = "Column4";
-            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Column2
-            // 
-            this.Column2.FillWeight = 102.7684F;
-            this.Column2.HeaderText = "DELETE";
-            this.Column2.MinimumWidth = 38;
-            this.Column2.Name = "Column2";
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.keywordsToolStripMenuItem.Name = "keywordsToolStripMenuItem";
+            this.keywordsToolStripMenuItem.Size = new System.Drawing.Size(288, 24);
+            this.keywordsToolStripMenuItem.Text = "Keywords";
+            this.keywordsToolStripMenuItem.Click += new System.EventHandler(this.keywordsToolStripMenuItem_Click);
             // 
             // Vendor_View
             // 
@@ -649,5 +658,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn Column3;
         private System.Windows.Forms.DataGridViewButtonColumn Column4;
         private System.Windows.Forms.DataGridViewButtonColumn Column2;
+        private System.Windows.Forms.ToolStripMenuItem keywordsToolStripMenuItem;
     }
 }

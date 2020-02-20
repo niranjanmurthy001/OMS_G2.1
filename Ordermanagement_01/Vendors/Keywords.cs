@@ -33,6 +33,7 @@ namespace Ordermanagement_01.Vendors
         }
         private async Task BindKeywords()
         {
+            gridControlKeywords.DataSource = null;
             try
             {
                 using (var client = new HttpClient())

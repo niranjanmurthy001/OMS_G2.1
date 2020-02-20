@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+using System.Collections;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using System.Collections;
 using System.Text.RegularExpressions;
-using System.Globalization;
+using System.Windows.Forms;
 
 namespace Ordermanagement_01.Vendors
 {
@@ -19,25 +14,25 @@ namespace Ordermanagement_01.Vendors
         DropDownistBindClass dbc = new DropDownistBindClass();
         DataTable dtselect = new DataTable();
         DataTable dt = new DataTable();
-        int Userid ;
-        static int currentpageindex=0;
+        int Userid;
+        static int currentpageindex = 0;
         int pagesize = 15;
         string vendorname;
         public Regex phoneno = new Regex(@"^\d{10,}$", RegexOptions.Compiled);
         public Regex vendname = new Regex(@"^[A-Z][A-Za-z]*$", RegexOptions.Compiled);
         string User_Role;
-        public Vendor_View(int User_ID,string USER_ROLE)
+        public Vendor_View(int User_ID, string USER_ROLE)
         {
             InitializeComponent();
             Userid = User_ID;
             User_Role = USER_ROLE;
 
-            
+
         }
 
         private void FrimMasterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void importAbstractorToolStripMenuItem_Click(object sender, EventArgs e)
@@ -49,12 +44,12 @@ namespace Ordermanagement_01.Vendors
         {
             Ordermanagement_01.Vendors.Vendor_Capacity vendor_cap = new Ordermanagement_01.Vendors.Vendor_Capacity(Userid);
             vendor_cap.Show();
-                
+
         }
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
@@ -82,7 +77,7 @@ namespace Ordermanagement_01.Vendors
         private void Vendor_View_Load(object sender, EventArgs e)
         {
             Grid_Bind_vendor();
-           
+
             //cbo_colmn.SelectedText = "VENDOR NAME";
             //txt_SearchVendor_Name.Select();
 
@@ -91,23 +86,23 @@ namespace Ordermanagement_01.Vendors
 
 
 
-            cbo_colmn.SelectedItem= "VENDOR NAME";
+            cbo_colmn.SelectedItem = "VENDOR NAME";
             cbo_colmn.Select();
 
-            
+
             //cbo_colmn.SelectedText = "VENDOR NAME";
             //  string vednname = cbo_colmn.SelectedText.ToString();
 
-           txt_SearchVendor_Name.Select();
-          
+            txt_SearchVendor_Name.Select();
+
 
             BindFilterData();
-           
+
         }
 
         private void Grid_Bind_vendor()
         {
-            
+
             Hashtable htselect = new Hashtable();
 
             htselect.Add("@Trans", "SELECT");
@@ -159,18 +154,18 @@ namespace Ordermanagement_01.Vendors
 
         private void vendorCreateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
             Grid_Bind_vendor();
-           
+
 
             DataView dtsearch = new DataView(dtselect);
             string search = txt_SearchVendor_Name.Text;
 
-            cbo_colmn.SelectedIndex=0;
+            cbo_colmn.SelectedIndex = 0;
             txt_SearchVendor_Name.Select();
             BindFilterData();
             txt_SearchVendor_Name.Text = "";
@@ -190,7 +185,7 @@ namespace Ordermanagement_01.Vendors
                 {
                     Ordermanagement_01.Vendors.Vendor_Create vendorcreate = new Ordermanagement_01.Vendors.Vendor_Create(int.Parse(grd_Services.Rows[e.RowIndex].Cells[5].Value.ToString()), Userid, User_Role);
                     vendorcreate.Show();
-                     this.Hide();
+                    this.Hide();
 
                 }
                 else if (e.ColumnIndex == 7)
@@ -258,7 +253,7 @@ namespace Ordermanagement_01.Vendors
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            Ordermanagement_01.Vendors.Vendor_Percntage_New vendor_per = new Ordermanagement_01.Vendors.Vendor_Percntage_New(Userid,User_Role);
+            Ordermanagement_01.Vendors.Vendor_Percntage_New vendor_per = new Ordermanagement_01.Vendors.Vendor_Percntage_New(Userid, User_Role);
             vendor_per.Show();
         }
 
@@ -267,7 +262,7 @@ namespace Ordermanagement_01.Vendors
             BindFilterData();
         }
 
-        private void Get_Row_Table_Search(ref DataRow dest,DataRow source)
+        private void Get_Row_Table_Search(ref DataRow dest, DataRow source)
         {
             foreach (DataColumn col in dt.Columns)
             {
@@ -277,7 +272,7 @@ namespace Ordermanagement_01.Vendors
 
         private void BindFilterData()
         {
-           
+
             if (txt_SearchVendor_Name.Text != "")
             {
                 DataView dtsearch = new DataView(dtselect);
@@ -285,7 +280,7 @@ namespace Ordermanagement_01.Vendors
 
                 dtsearch.RowFilter = "Vendor_Name like '%" + search.ToString() + "%' ";
 
-             
+
                 //if (cbo_colmn.SelectedIndex == 0)
                 //{
                 //    if (!System.Text.RegularExpressions.Regex.IsMatch(search, "^[a-zA-Z]"))
@@ -302,10 +297,10 @@ namespace Ordermanagement_01.Vendors
 
                 if (cbo_colmn.SelectedIndex == 0)
                 {
-                    
 
-                        dtsearch.RowFilter = "Vendor_Name like '%" + search.ToString() + "%' ";
-                    
+
+                    dtsearch.RowFilter = "Vendor_Name like '%" + search.ToString() + "%' ";
+
                 }
                 else if (cbo_colmn.SelectedIndex == 1)
                 {
@@ -324,7 +319,7 @@ namespace Ordermanagement_01.Vendors
                     }
 
                 }
-              
+
                 dt = dtsearch.ToTable();
                 System.Data.DataTable temptable = dt.Clone();
                 int startindex = currentpageindex * pagesize;
@@ -359,15 +354,15 @@ namespace Ordermanagement_01.Vendors
                     }
                     lbl_Total_Orders.Text = dt.Rows.Count.ToString();
                 }
-                   //lbl_Total_Orders.Text = dt.Rows.Count.ToString();
+                //lbl_Total_Orders.Text = dt.Rows.Count.ToString();
 
                 else
                 {
 
-                     grd_Services.Rows.Clear();
-                MessageBox.Show("No Records Found");
-                Grid_Bind_vendor();
-                txt_SearchVendor_Name.Text = "";
+                    grd_Services.Rows.Clear();
+                    MessageBox.Show("No Records Found");
+                    Grid_Bind_vendor();
+                    txt_SearchVendor_Name.Text = "";
                 }
                 lblRecordsStatus.Text = (currentpageindex + 1) + " / " + (int)Math.Ceiling(Convert.ToDecimal(dt.Rows.Count) / pagesize);
             }
@@ -393,23 +388,23 @@ namespace Ordermanagement_01.Vendors
                 btnLast.Enabled = true;
                 btnPrevious.Enabled = true;
                 btnFirst.Enabled = true;
-               currentpageindex = (int)Math.Ceiling(Convert.ToDecimal(dt.Rows.Count) / pagesize) - 1;
+                currentpageindex = (int)Math.Ceiling(Convert.ToDecimal(dt.Rows.Count) / pagesize) - 1;
             }
             if (txt_SearchVendor_Name.Text != "")
             {
-               
+
                 BindFilterData();
             }
             else
             {
-              
+
                 Bind_Vendor_data();
             }
         }
 
         private void btnLast_Click(object sender, EventArgs e)
         {
-            if (txt_SearchVendor_Name.Text!="")
+            if (txt_SearchVendor_Name.Text != "")
             {
                 currentpageindex = (int)Math.Ceiling(Convert.ToDecimal(dt.Rows.Count) / pagesize) - 1;
                 BindFilterData();
@@ -424,7 +419,7 @@ namespace Ordermanagement_01.Vendors
             btnNext.Enabled = false;
             btnLast.Enabled = false;
 
-            
+
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
@@ -445,7 +440,7 @@ namespace Ordermanagement_01.Vendors
             }
             btnNext.Enabled = true;
             btnLast.Enabled = true;
-            if (txt_SearchVendor_Name.Text!="")
+            if (txt_SearchVendor_Name.Text != "")
             {
 
                 BindFilterData();
@@ -464,7 +459,7 @@ namespace Ordermanagement_01.Vendors
             btnNext.Enabled = true;
             btnLast.Enabled = true;
             btnFirst.Enabled = false;
-            if (txt_SearchVendor_Name.Text!="")
+            if (txt_SearchVendor_Name.Text != "")
             {
                 BindFilterData();
 
@@ -482,20 +477,20 @@ namespace Ordermanagement_01.Vendors
 
         private void toolStripMenuItem4_Click(object sender, EventArgs e)
         {
-            
-            Ordermanagement_01.Vendors.Vendor_User vendoruser = new Ordermanagement_01.Vendors.Vendor_User(0, Userid, "Overall","");
+
+            Ordermanagement_01.Vendors.Vendor_User vendoruser = new Ordermanagement_01.Vendors.Vendor_User(0, Userid, "Overall", "");
             vendoruser.Show();
         }
 
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
-            Ordermanagement_01.Vendors.Vendor_User vendoruser = new Ordermanagement_01.Vendors.Vendor_User(0, Userid, "Overall","");
+            Ordermanagement_01.Vendors.Vendor_User vendoruser = new Ordermanagement_01.Vendors.Vendor_User(0, Userid, "Overall", "");
             vendoruser.Show();
         }
 
         private void vendorOrdrerTypetoolStripMenuItem4_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void vendorCreateToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -503,9 +498,9 @@ namespace Ordermanagement_01.Vendors
 
             int Vendor_id = 0;
             Ordermanagement_01.Vendors.Vendor_Create vendor_create = new Ordermanagement_01.Vendors.Vendor_Create(Vendor_id, Userid, User_Role);
-           
-            
-        
+
+
+
             vendor_create.Show();
             this.Hide();
 
@@ -520,8 +515,8 @@ namespace Ordermanagement_01.Vendors
             //    }
             //}
 
-           // vendor_create.Show();
-       
+            // vendor_create.Show();
+
         }
 
         private void toolStripMenuItem1_Click_1(object sender, EventArgs e)
@@ -549,7 +544,7 @@ namespace Ordermanagement_01.Vendors
 
         private void percentageOfOrderToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Ordermanagement_01.Vendors.Vendor_Percntage_New vendor_per = new Ordermanagement_01.Vendors.Vendor_Percntage_New(Userid,User_Role);
+            Ordermanagement_01.Vendors.Vendor_Percntage_New vendor_per = new Ordermanagement_01.Vendors.Vendor_Percntage_New(Userid, User_Role);
             vendor_per.Show();
         }
 
@@ -575,7 +570,7 @@ namespace Ordermanagement_01.Vendors
 
         private void toolStripMenuItem1_Click_2(object sender, EventArgs e)
         {
-            Vendors.Vendor_Client_Instruction vi = new Vendor_Client_Instruction(Userid,User_Role);
+            Vendors.Vendor_Client_Instruction vi = new Vendor_Client_Instruction(Userid, User_Role);
             vi.Show();
         }
 
@@ -594,7 +589,7 @@ namespace Ordermanagement_01.Vendors
 
         private void cbo_colmn_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbo_colmn.SelectedIndex ==0)
+            if (cbo_colmn.SelectedIndex == 0)
             {
                 txt_SearchVendor_Name.Select();
                 BindFilterData();
@@ -608,7 +603,7 @@ namespace Ordermanagement_01.Vendors
                 BindFilterData();
 
             }
-           
+
         }
 
         private void txt_SearchVendor_Name_KeyPress(object sender, KeyPressEventArgs e)
@@ -645,11 +640,15 @@ namespace Ordermanagement_01.Vendors
             //}
 
 
-           
 
-            
+
+
         }
 
-
+        private void keywordsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Keywords kw = new Keywords(Userid);
+            Invoke(new MethodInvoker(() => kw.Show()));
+        }
     }
 }

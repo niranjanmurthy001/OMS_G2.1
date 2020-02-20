@@ -172,7 +172,7 @@ namespace Ordermanagement_01.Vendors
 
         }
 
-        Func<string, DataTable, bool> CheckWords = (word, dtKeywords) => dtKeywords.Rows.Cast<DataRow>().Any(row => row["Keyword"].ToString() == word);
+        // Func<string, DataTable, bool> CheckWords = (word, dtKeywords) => dtKeywords.Rows.Cast<DataRow>().Any(row => row["Keyword"].ToString() == word);
 
 
         private void btn_Allocate_Click(object sender, EventArgs e)
@@ -184,10 +184,12 @@ namespace Ordermanagement_01.Vendors
 
                 int allocated_Vendor_Id = Tree_View_UserId;
 
+                //Keywords to check info in vendor notes in order 
                 var htKeywords = new Hashtable() {
                     { "@Trans" , "SELECT" }
                 };
                 var dtKeywords = dataaccess.ExecuteSP("usp_Vendor_Keywords", htKeywords);
+
                 for (int i = 0; i < grd_order.Rows.Count; i++)
                 {
                     bool isChecked = (bool)grd_order[0, i].FormattedValue;
@@ -206,16 +208,18 @@ namespace Ordermanagement_01.Vendors
                                 { "@Trans","GET_VENDOR_INSTRUCTIONS" },
                                 { "@Order_ID",lbl_Order_Id }
                             };
-
                             var dt = dataaccess.ExecuteSP("Sp_Order", ht);
                             if (dt != null && dt.Rows.Count > 0)
                             {
                                 if (!string.IsNullOrEmpty(dt.Rows[0]["Vendor_Instructions"].ToString()))
                                 {
                                     string instructions = dt.Rows[0]["Vendor_Instructions"].ToString();
-                                    if (instructions.Split(new char[] { ' ', ',', '.', '-', '#' }).ToList().Any(word => CheckWords(word, dtKeywords)))
+                                    if (dtKeywords.Rows.Cast<DataRow>().Any(row => instructions.Contains(row["Keyword"].ToString())))
                                     {
-                                        XtraMessageBox.Show("Vendor notes contains some information which is not allowed, check and allocate");
+                                        var matchedWords = dtKeywords.Rows.Cast<DataRow>()
+                                                           .Where(row => instructions.Contains(row["Keyword"].ToString()))
+                                                           .Select(row => row["Keyword"]).ToList();
+                                        XtraMessageBox.Show("Following words not allowed in Vendor Notes : " + string.Join(",", matchedWords));
                                         return;
                                     }
                                 }

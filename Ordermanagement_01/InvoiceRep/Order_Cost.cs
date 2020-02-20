@@ -537,6 +537,12 @@ namespace Ordermanagement_01.InvoiceRep
 
         }
 
+        private void label25_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
 
         private void Order_Cost_Load(object sender, EventArgs e)
         {

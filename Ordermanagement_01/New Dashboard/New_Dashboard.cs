@@ -73,33 +73,44 @@ namespace Ordermanagement_01.New_Dashboard
                     list.Add("@User_Id", User_Id);
                     var serializedUser = JsonConvert.SerializeObject(list);
                     var content = new StringContent(serializedUser, Encoding.UTF8, "application/json");
-                    var result = await Client.PostAsync(Base_Url.Url + "/ProcessingOrders/Processing_Order_Count", content);
-
-                    if (result.IsSuccessStatusCode)
+                    // Token Header Details
+                    Tuple<bool, string> Token_Header = ApiToken.Token_HeaderDetails(Client);
+                    if (Token_Header.Item1 == true)
                     {
+                        var result = await Client.PostAsync(Base_Url.Url + "/ProcessingOrders/Processing_Order_Count", content);
 
-                        var UserJsonString = await result.Content.ReadAsStringAsync();
-                        Result_Data[] Res_daata = JsonConvert.DeserializeObject<Result_Data[]>(UserJsonString);
-                        if (Res_daata != null)
+                        if (result.IsSuccessStatusCode)
+
                         {
-                            foreach (Result_Data res in Res_daata)
+
+                            var UserJsonString = await result.Content.ReadAsStringAsync();
+                            Result_Data[] Res_daata = JsonConvert.DeserializeObject<Result_Data[]>(UserJsonString);
+                            if (Res_daata != null)
                             {
-                                Tile_Item_Live.Frames[0].Elements[1].Text = res.Live_Order_Count;
-                                Tile_Item_Live.Frames[1].Elements[1].Text = res.Live_Order_Count;
-                                // tileItem1.Frames[0].Elements[0].Appearance.Normal.Font = new Font(pfc.Families[0], 18, FontStyle.Regular);
+                                foreach (Result_Data res in Res_daata)
+                                {
+                                    Tile_Item_Live.Frames[0].Elements[1].Text = res.Live_Order_Count;
+                                    Tile_Item_Live.Frames[1].Elements[1].Text = res.Live_Order_Count;
+                                    // tileItem1.Frames[0].Elements[0].Appearance.Normal.Font = new Font(pfc.Families[0], 18, FontStyle.Regular);
 
-                                Tile_Item_Rework.Frames[0].Elements[1].Text = res.Rework_Order_Count;
-                                Tile_Item_Rework.Frames[1].Elements[1].Text = res.Rework_Order_Count;
+                                    Tile_Item_Rework.Frames[0].Elements[1].Text = res.Rework_Order_Count;
+                                    Tile_Item_Rework.Frames[1].Elements[1].Text = res.Rework_Order_Count;
 
-                                Tile_Item_SuperQc.Frames[0].Elements[1].Text = res.Super_Qc_Order_Count;
-                                Tile_Item_SuperQc.Frames[1].Elements[1].Text = res.Super_Qc_Order_Count;
+                                    Tile_Item_SuperQc.Frames[0].Elements[1].Text = res.Super_Qc_Order_Count;
+                                    Tile_Item_SuperQc.Frames[1].Elements[1].Text = res.Super_Qc_Order_Count;
 
-                                //  tileItem28.Frames[0].Elements[2].Appearance.Normal.Font = new Font(pfc.Families[0], 18, FontStyle.Regular);
+                                    //  tileItem28.Frames[0].Elements[2].Appearance.Normal.Font = new Font(pfc.Families[0], 18, FontStyle.Regular);
 
-                                //   tileItem30.Frames[0].Elements[2].Appearance.Normal.Font = new Font(pfc.Families[0], 18, FontStyle.Regular);
+                                    //   tileItem30.Frames[0].Elements[2].Appearance.Normal.Font = new Font(pfc.Families[0], 18, FontStyle.Regular);
 
+                                }
                             }
                         }
+                    }
+                    else
+                    {
+
+                        XtraMessageBox.Show(Token_Header.Item2.ToString());
                     }
                 }
             }
@@ -116,6 +127,7 @@ namespace Ordermanagement_01.New_Dashboard
                 XtraMessageBox.Show(ex.ToString());
                 XtraMessageBox.Show("Error Occured Please Check With Administrator");
             }
+        
         }
         internal class Result_Data
         {
@@ -1162,43 +1174,62 @@ namespace Ordermanagement_01.New_Dashboard
                     dict_list.Add("@Work_Type", Work_Type_Id);
                     var Serialized_Data = JsonConvert.SerializeObject(dict_list);
                     var content = new StringContent(Serialized_Data, Encoding.UTF8, "application/json");
-                    var result = await client.PostAsync(Base_Url.Url + "/ProcessingOrders/Processing_Orders", content);
-
-                    if (result.IsSuccessStatusCode)
+                    // Token Header Details
+                    Tuple<bool, string> Token_Header = ApiToken.Token_HeaderDetails(client);
+                    if (Token_Header.Item1 == true)
                     {
-                        var DataJsonString = await result.Content.ReadAsStringAsync();
-                        var objResultData = JsonConvert.DeserializeObject<List<Processing_Dashboard>>(DataJsonString);
+                        var result = await client.PostAsync(Base_Url.Url + "/ProcessingOrders/Processing_Orders", content);
 
-                        if (objResultData != null && objResultData.Count > 0)
+
+                        
+
+                        if (result.IsSuccessStatusCode)
                         {
-                            List<Processing_Dashboard> Order_List = objResultData.ToList();
+                            var DataJsonString = await result.Content.ReadAsStringAsync();
+                            var objResultData = JsonConvert.DeserializeObject<List<Processing_Dashboard>>(DataJsonString);
 
-                            if (Tile_Item_Live.Checked == true)
+                            if (objResultData != null && objResultData.Count > 0)
                             {
+                                List<Processing_Dashboard> Order_List = objResultData.ToList();
 
-                                Grd_Live_Orders.DataSource = Order_List;
+                                if (Tile_Item_Live.Checked == true)
+                                {
+
+                                    Grd_Live_Orders.DataSource = Order_List;
+                                }
+                                else if (Tile_Item_Rework.Checked == true)
+                                {
+
+                                    Grd_Rework_Orders.DataSource = Order_List;
+
+                                }
+                                else if (Tile_Item_SuperQc.Checked == true)
+                                {
+
+                                    Grd_Super_Qc_Orders.DataSource = Order_List;
+
+                                }
+
+
                             }
-                            else if (Tile_Item_Rework.Checked == true)
-                            {
+                        }
+                        else if (result.StatusCode.ToString()== "Unauthorized")
+                        {
 
-                                Grd_Rework_Orders.DataSource = Order_List;
+                            ApiToken.Invlid_Token();
 
-                            }
-                            else if (Tile_Item_SuperQc.Checked == true)
-                            {
-
-                                Grd_Super_Qc_Orders.DataSource = Order_List;
-
-                            }
-
-
+                        }
+                        else
+                        {
+                            Grd_Live_Orders.DataSource = null;
+                            Grd_Rework_Orders.DataSource = null;
+                            Grd_Super_Qc_Orders.DataSource = null;
                         }
                     }
                     else
                     {
-                        Grd_Live_Orders.DataSource = null;
-                        Grd_Rework_Orders.DataSource = null;
-                        Grd_Super_Qc_Orders.DataSource = null;
+
+                        XtraMessageBox.Show(Token_Header.Item2.ToString());
                     }
                 }
             }

@@ -91,11 +91,17 @@ namespace Ordermanagement_01.New_Dashboard
 
                 if (result.IsSuccessStatusCode)
                 {
+
                     var UserJsonString = await result.Content.ReadAsStringAsync();
                     var objResultData = JsonConvert.DeserializeObject<Result_Data>(UserJsonString);
                              if (objResultData.Users != null && objResultData.Users.Count > 0)
                     {
+
                         List<Models.Users> _Rlist_data = objResultData.Users.ToList();
+
+                      
+
+
                         //if (_Result == 0)
                         //{
                         _Application_Login_Type = _Rlist_data[0].Application_Login_Type;
@@ -106,14 +112,31 @@ namespace Ordermanagement_01.New_Dashboard
                         _ShiftType = _Rlist_data[0].Shift_Type_Id;
                         _Branch_Id = _Rlist_data[0].Branch_ID;
 
-                     await GetToken(_User_Name, _Password);
+                      
+                   
+
+                        
+
                         if (_Application_Login_Type == 1)
                         {
                             if (_User_Role_Id == 2)
-                            {
+                            {  
+                                
+                                // Get Token Detials for User
 
-                                Employee.Dashboard dashboard = new Employee.Dashboard(_User_Id, _User_Role_Id,_Password,_Branch_Id,_ShiftType);
-                                Invoke(new MethodInvoker(delegate { dashboard.Show(); }));
+                                await ApiToken.GetTokenDetails(_Emp_Code, _Password);
+
+                                if (ApiToken.access_token != null)
+                                {
+
+                                    Employee.Dashboard dashboard = new Employee.Dashboard(_User_Id, _User_Role_Id, _Password, _Branch_Id, _ShiftType);
+                                    Invoke(new MethodInvoker(delegate { dashboard.Show(); }));
+                                }
+                                else
+                                {
+                                    XtraMessageBox.Show("User is not Authenticated");
+                                }
+
                             }
                             else
                             {

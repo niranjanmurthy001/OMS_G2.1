@@ -35,26 +35,33 @@ namespace Ordermanagement_01.Test
             using (var Client = new HttpClient())
             {
 
-                Client.DefaultRequestHeaders.Clear();
-                Client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                //Client.DefaultRequestHeaders.Clear();
+                //Client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "  " + access_token);
+                //Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(ApiToken.token_type, "  " + ApiToken.access_token);
+                
+                
+              Tuple<bool,string> Token_Header = ApiToken.Token_HeaderDetails(Client);
 
-                //var serializedUser = JsonConvert.SerializeObject(_User_det);
-                //var content = new StringContent(serializedUser, Encoding.UTF8, "application/json");
-               
-                HttpResponseMessage reponse = await Client.GetAsync("https://titlelogy.com/TestApi/api/test/Res2");
-
-                if(reponse.IsSuccessStatusCode)
+                if (Token_Header.Item1 == true)
                 {
 
-                    string ResponseStream = await reponse.Content.ReadAsStringAsync();
+                    //var serializedUser = JsonConvert.SerializeObject(_User_det);
+                    //var content = new StringContent(serializedUser, Encoding.UTF8, "application/json");
 
-                    string Result = JsonConvert.DeserializeObject<string>(ResponseStream);
+                    HttpResponseMessage reponse = await Client.GetAsync("http://localhost:28537/api/test/Res2");
 
+                    if (reponse.IsSuccessStatusCode)
+                    {
+
+                        string ResponseStream = await reponse.Content.ReadAsStringAsync();
+
+                        string Result = JsonConvert.DeserializeObject<string>(ResponseStream);
+
+
+                    }
 
                 }
-
 
             }
 
@@ -63,8 +70,9 @@ namespace Ordermanagement_01.Test
         
         private async void button2_Click(object sender, EventArgs e)
         {
+           await ApiToken.GetTokenDetails("DRN/0066","789456");
 
-            GetToken();
+        //    GetToken();
 
         }
 
@@ -78,14 +86,14 @@ namespace Ordermanagement_01.Test
                 Client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 var body = new List<KeyValuePair<string, string>>
                 {
-                    new KeyValuePair<string, string>("UserName","niranjan"),
-                    new KeyValuePair<string, string>("Password","123"),
+                    new KeyValuePair<string, string>("UserName","DRN/0058"),
+                    new KeyValuePair<string, string>("Password","smash@.#123"),
                     new KeyValuePair<string, string>("grant_type","password")
 
                 };
 
                 var Content = new FormUrlEncodedContent(body);
-                HttpResponseMessage response = await Client.PostAsync("https://titlelogy.com/TestApi/token", Content);
+                HttpResponseMessage response = await Client.PostAsync("http://localhost:28537/token", Content);
                 if(response.IsSuccessStatusCode)
                 {
                     string responseStream = await response.Content.ReadAsStringAsync();
@@ -117,6 +125,11 @@ namespace Ordermanagement_01.Test
         {
             Ordermanagement_01.Test.Form1 f1 = new Form1();
             f1.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ApiToken.Invlid_Token();
         }
     }
 }

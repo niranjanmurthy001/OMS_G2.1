@@ -2659,6 +2659,12 @@
     <Compile Include="Test\User_Form1.Designer.cs">
       <DependentUpon>User_Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Test\UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Test\UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Todays_Orders.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -1,30 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
+﻿using iTextSharp.text.pdf;
+using System;
 using System.Collections;
-using System.Speech.Synthesis;
-using System.DirectoryServices;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
-using CrystalDecisions.CrystalReports.Engine;
-using CrystalDecisions.ReportSource;
-using CrystalDecisions.Shared;
-using CrystalDecisions.Windows;
+using System.Data;
 using System.IO;
-using System.Text.RegularExpressions;
-using System.Globalization;
 using System.Net;
+using System.Windows.Forms;
 
 namespace Ordermanagement_01.InvoiceRep
 {
     public partial class Order_Cost : Form
     {
-       
+
         Commonclass Comclass = new Commonclass();
         DataAccess dataaccess = new DataAccess();
         DropDownistBindClass dbc = new DropDownistBindClass();
@@ -82,7 +68,7 @@ namespace Ordermanagement_01.InvoiceRep
 
 
             Hashtable htuser = new Hashtable();
-            
+
 
 
             htuser.Add("@Trans", "GET_ORDER_COST_DETAILS");
@@ -114,7 +100,7 @@ namespace Ordermanagement_01.InvoiceRep
             grd_order.Columns[10].Width = 40;
             grd_order.Columns[11].Width = 40;
 
-            if (User_Role=="1" || User_Role=="6")
+            if (User_Role == "1" || User_Role == "6")
             {
 
                 grd_order.Columns[2].Visible = true;
@@ -129,7 +115,7 @@ namespace Ordermanagement_01.InvoiceRep
                 grd_order.Columns[2].Visible = false;
                 grd_order.Columns[3].Visible = false;
                 grd_order.Columns[7].Visible = false;
-             
+
             }
 
             System.Data.DataTable temptable = dtuser.Clone();
@@ -151,27 +137,27 @@ namespace Ordermanagement_01.InvoiceRep
                 for (int i = 0; i < temptable.Rows.Count; i++)
                 {
                     grd_order.Rows.Add();
-                    grd_order.Rows[i].Cells[0].Value = i + 1;
-                    grd_order.Rows[i].Cells[1].Value = temptable.Rows[i]["Client_Order_Number"].ToString();
+                    grd_order.Rows[i].Cells[1].Value = i + 1;
+                    grd_order.Rows[i].Cells[2].Value = temptable.Rows[i]["Client_Order_Number"].ToString();
                     if (User_Role == "1")
                     {
-                        grd_order.Rows[i].Cells[2].Value = temptable.Rows[i]["Client_Name"].ToString();
-                        grd_order.Rows[i].Cells[3].Value = temptable.Rows[i]["Sub_ProcessName"].ToString();
+                        grd_order.Rows[i].Cells[3].Value = temptable.Rows[i]["Client_Name"].ToString();
+                        grd_order.Rows[i].Cells[4].Value = temptable.Rows[i]["Sub_ProcessName"].ToString();
                     }
-                    else 
+                    else
                     {
-                        grd_order.Rows[i].Cells[2].Value = temptable.Rows[i]["Client_Number"].ToString();
-                        grd_order.Rows[i].Cells[3].Value = temptable.Rows[i]["Subprocess_Number"].ToString();
+                        grd_order.Rows[i].Cells[3].Value = temptable.Rows[i]["Client_Number"].ToString();
+                        grd_order.Rows[i].Cells[4].Value = temptable.Rows[i]["Subprocess_Number"].ToString();
 
                     }
-                    grd_order.Rows[i].Cells[4].Value = temptable.Rows[i]["Order_Type"].ToString();
-                    grd_order.Rows[i].Cells[5].Value = temptable.Rows[i]["STATECOUNTY"].ToString();
-                    grd_order.Rows[i].Cells[6].Value = temptable.Rows[i]["Date"].ToString();
-                    grd_order.Rows[i].Cells[7].Value = temptable.Rows[i]["Order_Cost"].ToString();
-                    grd_order.Rows[i].Cells[8].Value = temptable.Rows[i]["Order_Cost_Date"].ToString();
-                    grd_order.Rows[i].Cells[11].Value = temptable.Rows[i]["Order_ID"].ToString();
-                    grd_order.Rows[i].Cells[12].Value = temptable.Rows[i]["Sub_ProcessId"].ToString();
-                    grd_order.Rows[i].Cells[13].Value = temptable.Rows[i]["Order_Cost_Id"].ToString();
+                    grd_order.Rows[i].Cells[5].Value = temptable.Rows[i]["Order_Type"].ToString();
+                    grd_order.Rows[i].Cells[6].Value = temptable.Rows[i]["STATECOUNTY"].ToString();
+                    grd_order.Rows[i].Cells[7].Value = temptable.Rows[i]["Date"].ToString();
+                    grd_order.Rows[i].Cells[8].Value = temptable.Rows[i]["Order_Cost"].ToString();
+                    grd_order.Rows[i].Cells[9].Value = temptable.Rows[i]["Order_Cost_Date"].ToString();
+                    grd_order.Rows[i].Cells[12].Value = temptable.Rows[i]["Order_ID"].ToString();
+                    grd_order.Rows[i].Cells[13].Value = temptable.Rows[i]["Sub_ProcessId"].ToString();
+                    grd_order.Rows[i].Cells[14].Value = temptable.Rows[i]["Order_Cost_Id"].ToString();
                 }
             }
             else
@@ -182,7 +168,7 @@ namespace Ordermanagement_01.InvoiceRep
             }
             lbl_Total_orders.Text = dtuser.Rows.Count.ToString();
             lbl_Record_status.Text = (currentpageindex + 1) + " / " + (int)Math.Ceiling(Convert.ToDecimal(dtuser.Rows.Count) / pagesize);
-          
+
             //if (dtuser.Rows.Count > 0)
             //{
             //    //ex2.Visible = true;
@@ -319,26 +305,27 @@ namespace Ordermanagement_01.InvoiceRep
                     for (int i = 0; i < temptable.Rows.Count; i++)
                     {
                         grd_order.Rows.Add();
-                        grd_order.Rows[i].Cells[0].Value = i + 1;
-                        grd_order.Rows[i].Cells[1].Value = temptable.Rows[i]["Client_Order_Number"].ToString();
+                        grd_order.Rows[i].Cells[1].Value = i + 1;
+                        grd_order.Rows[i].Cells[2].Value = temptable.Rows[i]["Client_Order_Number"].ToString();
                         if (User_Role == "1")
                         {
-                            grd_order.Rows[i].Cells[2].Value = temptable.Rows[i]["Client_Name"].ToString();
-                            grd_order.Rows[i].Cells[3].Value = temptable.Rows[i]["Sub_ProcessName"].ToString();
+                            grd_order.Rows[i].Cells[3].Value = temptable.Rows[i]["Client_Name"].ToString();
+                            grd_order.Rows[i].Cells[4].Value = temptable.Rows[i]["Sub_ProcessName"].ToString();
                         }
-                        else {
-                            grd_order.Rows[i].Cells[2].Value = temptable.Rows[i]["Client_Number"].ToString();
-                            grd_order.Rows[i].Cells[3].Value = temptable.Rows[i]["Subprocess_Number"].ToString();
+                        else
+                        {
+                            grd_order.Rows[i].Cells[3].Value = temptable.Rows[i]["Client_Number"].ToString();
+                            grd_order.Rows[i].Cells[4].Value = temptable.Rows[i]["Subprocess_Number"].ToString();
 
                         }
-                        grd_order.Rows[i].Cells[4].Value = temptable.Rows[i]["Order_Type"].ToString();
-                        grd_order.Rows[i].Cells[5].Value = temptable.Rows[i]["STATECOUNTY"].ToString();
-                        grd_order.Rows[i].Cells[6].Value = temptable.Rows[i]["Date"].ToString();
-                        grd_order.Rows[i].Cells[7].Value = temptable.Rows[i]["Order_Cost"].ToString();
-                        grd_order.Rows[i].Cells[8].Value = temptable.Rows[i]["Order_Cost_Date"].ToString();
-                        grd_order.Rows[i].Cells[11].Value = temptable.Rows[i]["Order_ID"].ToString();
-                        grd_order.Rows[i].Cells[12].Value = temptable.Rows[i]["Sub_ProcessId"].ToString();
-                        grd_order.Rows[i].Cells[13].Value = temptable.Rows[i]["Order_Cost_Id"].ToString();
+                        grd_order.Rows[i].Cells[5].Value = temptable.Rows[i]["Order_Type"].ToString();
+                        grd_order.Rows[i].Cells[6].Value = temptable.Rows[i]["STATECOUNTY"].ToString();
+                        grd_order.Rows[i].Cells[7].Value = temptable.Rows[i]["Date"].ToString();
+                        grd_order.Rows[i].Cells[8].Value = temptable.Rows[i]["Order_Cost"].ToString();
+                        grd_order.Rows[i].Cells[9].Value = temptable.Rows[i]["Order_Cost_Date"].ToString();
+                        grd_order.Rows[i].Cells[12].Value = temptable.Rows[i]["Order_ID"].ToString();
+                        grd_order.Rows[i].Cells[13].Value = temptable.Rows[i]["Sub_ProcessId"].ToString();
+                        grd_order.Rows[i].Cells[14].Value = temptable.Rows[i]["Order_Cost_Id"].ToString();
                     }
                 }
                 else
@@ -365,13 +352,13 @@ namespace Ordermanagement_01.InvoiceRep
         private void rbtn_Invoice_Sended_CheckedChanged(object sender, EventArgs e)
         {
             Geridview_Bind_Orders_Cost_Details();
-            btn_First_Click(sender,  e);
+            btn_First_Click(sender, e);
         }
 
         private void btn_New_Invoice_Click(object sender, EventArgs e)
         {
 
-            Order_Cost_Details invid = new Order_Cost_Details(0, userid, "Insert",User_Role);
+            Order_Cost_Details invid = new Order_Cost_Details(0, userid, "Insert", User_Role);
             invid.Show();
         }
 
@@ -379,9 +366,9 @@ namespace Ordermanagement_01.InvoiceRep
         {
             if (e.ColumnIndex == 1)
             {
-               // form_loader.Start_progres();
+                // form_loader.Start_progres();
                 //cProbar.startProgress();
-                Order_Id = int.Parse(grd_order.Rows[e.RowIndex].Cells[11].Value.ToString());
+                Order_Id = int.Parse(grd_order.Rows[e.RowIndex].Cells[12].Value.ToString());
                 Order_Cost_Details inv = new Order_Cost_Details(Order_Id, userid, "Update", User_Role);
                 inv.Show();
                 //cProbar.stopProgress();
@@ -390,7 +377,7 @@ namespace Ordermanagement_01.InvoiceRep
             {
                 form_loader.Start_progres();
                 //cProbar.startProgress();
-                Order_Id = int.Parse(grd_order.Rows[e.RowIndex].Cells[11].Value.ToString());
+                Order_Id = int.Parse(grd_order.Rows[e.RowIndex].Cells[12].Value.ToString());
                 View_Search_Document();
                 //cProbar.stopProgress();
             }
@@ -401,11 +388,11 @@ namespace Ordermanagement_01.InvoiceRep
                 {
                     form_loader.Start_progres();
                     //cProbar.startProgress();
-                    Sub_Process_ID = int.Parse(grd_order.Rows[e.RowIndex].Cells[12].Value.ToString());
-                    int Order_Cost_Id = int.Parse(grd_order.Rows[e.RowIndex].Cells[13].Value.ToString());
-                    string Order_Number = grd_order.Rows[e.RowIndex].Cells[1].Value.ToString();
-                    int order_Id = int.Parse(grd_order.Rows[e.RowIndex].Cells[11].Value.ToString());
-                string OrderCost=grd_order.Rows[e.RowIndex].Cells[7].Value.ToString();
+                    Sub_Process_ID = int.Parse(grd_order.Rows[e.RowIndex].Cells[13].Value.ToString());
+                    int Order_Cost_Id = int.Parse(grd_order.Rows[e.RowIndex].Cells[14].Value.ToString());
+                    string Order_Number = grd_order.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    int order_Id = int.Parse(grd_order.Rows[e.RowIndex].Cells[12].Value.ToString());
+                    string OrderCost = grd_order.Rows[e.RowIndex].Cells[8].Value.ToString();
 
                     Hashtable htsearch = new Hashtable();
                     DataTable dtsearch = new DataTable();
@@ -416,8 +403,9 @@ namespace Ordermanagement_01.InvoiceRep
                     if (dtsearch.Rows.Count > 0)
                     {
 
+
                         InvoiceRep.Order_Cost_Email inv = new InvoiceRep.Order_Cost_Email(Order_Number, userid, order_Id, Order_Cost_Id, Sub_Process_ID, OrderCost);
-                       
+
                         Geridview_Bind_Orders_Cost_Details();
                         //cProbar.stopProgress();
                     }
@@ -426,11 +414,11 @@ namespace Ordermanagement_01.InvoiceRep
                         MessageBox.Show("Search Package is not added please check it");
                         //cProbar.stopProgress();
                     }
-                   
+
                 }
                 else if (dialogResult == DialogResult.No)
                 {
-                 
+
                 }
 
 
@@ -490,26 +478,71 @@ namespace Ordermanagement_01.InvoiceRep
 
                 FName = dtsearch.Rows[0]["New_Document_Path"].ToString().Split('\\');
                 string Source_Path = dtsearch.Rows[0]["New_Document_Path"].ToString();
-                string fileName = DateTime.Now.ToString("yyyyMMddHHmmss")+"-"+Path.GetFileName(Source_Path);
+                string fileName = DateTime.Now.ToString("yyyyMMddHHmmss") + "-" + Path.GetFileName(Source_Path);
                 Download_Ftp_File(fileName, Source_Path);
-               
+
                 Hashtable htUpload = new Hashtable();
                 DataTable dtUpload = new System.Data.DataTable();
                 htUpload.Add("@Trans", "SELECT_EMP");
                 htUpload.Add("@Employee_Id", userid);
                 dtUpload = dataaccess.ExecuteSP("Sp_Employee_Status", htUpload);
 
-                System.Diagnostics.Process.Start(Folder_Path +"\\"+ fileName);
+                System.Diagnostics.Process.Start(Folder_Path + "\\" + fileName);
             }
             else
             {
 
-              
-
-                    MessageBox.Show("Search Package is Not added Please Check it");
+                MessageBox.Show("Search Package is Not added Please Check it");
 
             }
         }
+
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            dialogResult = MessageBox.Show("Do you Want to Proceed?", "Some Title", MessageBoxButtons.YesNo);
+
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                form_loader.Start_progres();
+
+                for (int i = 0; i < grd_order.Rows.Count; i++)
+                {
+                    bool isChecked = (bool)grd_order[0, i].FormattedValue;
+
+                    if (isChecked == true)
+                    {
+                        Sub_Process_ID = int.Parse(grd_order.Rows[i].Cells[13].Value.ToString());
+                        int Order_Cost_Id = int.Parse(grd_order.Rows[i].Cells[14].Value.ToString());
+                        string Order_Number = grd_order.Rows[i].Cells[2].Value.ToString();
+                        int order_Id = int.Parse(grd_order.Rows[i].Cells[12].Value.ToString());
+                        string OrderCost = grd_order.Rows[i].Cells[8].Value.ToString();
+
+                        Hashtable htsearch = new Hashtable();
+                        DataTable dtsearch = new DataTable();
+                        htsearch.Add("@Trans", "GET_SEARCH_PACKAGE_DOCUEMNT_PATH");
+                        htsearch.Add("@Order_ID", order_Id);
+                        dtsearch = dataaccess.ExecuteSP("Sp_Order_Cost_Entry", htsearch);
+
+                        if (dtsearch.Rows.Count > 0)
+                        {
+
+                            InvoiceRep.Order_Cost_Email inv = new InvoiceRep.Order_Cost_Email(Order_Number, userid, order_Id, Order_Cost_Id, Sub_Process_ID, OrderCost);
+                            //cProbar.stopProgress();
+                        }
+                    }
+                }
+                Geridview_Bind_Orders_Cost_Details();
+            }
+
+        }
+
+        private void label25_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
 
         private void Order_Cost_Load(object sender, EventArgs e)
         {
@@ -600,7 +633,7 @@ namespace Ordermanagement_01.InvoiceRep
             btn_Previous.Enabled = true;
             btn_Next.Enabled = false;
             btn_Last.Enabled = false;
-            
+
             this.Cursor = currentCursor;
         }
 

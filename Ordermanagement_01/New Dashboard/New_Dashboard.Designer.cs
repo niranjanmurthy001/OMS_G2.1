@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(New_Dashboard));
             DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
@@ -309,7 +310,7 @@
             DevExpress.XtraEditors.TileItemElement tileItemElement228 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement229 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement230 = new DevExpress.XtraEditors.TileItemElement();
-            this.tabbedView = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView();
+            this.tabbedView = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
@@ -469,8 +470,8 @@
             this.tileItem16 = new DevExpress.XtraEditors.TileItem();
             this.tileItem13 = new DevExpress.XtraEditors.TileItem();
             this.tileItem20 = new DevExpress.XtraEditors.TileItem();
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.tileItem21 = new DevExpress.XtraEditors.TileItem();
             this.tileItem18 = new DevExpress.XtraEditors.TileItem();
             this.tileItem19 = new DevExpress.XtraEditors.TileItem();
@@ -647,7 +648,6 @@
             this.Tile_Item_Live.AppearanceItem.Selected.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
             this.Tile_Item_Live.AppearanceItem.Selected.Options.UseBorderColor = true;
             this.Tile_Item_Live.ContentAnimation = DevExpress.XtraEditors.TileItemContentAnimationType.ScrollDown;
-            this.Tile_Item_Live.CurrentFrameIndex = 1;
             tileItemElement1.AnimateTransition = DevExpress.Utils.DefaultBoolean.True;
             tileItemElement1.Appearance.Hovered.Font = new System.Drawing.Font("Segoe UI", 27.75F);
             tileItemElement1.Appearance.Hovered.Options.UseFont = true;
@@ -915,14 +915,13 @@
             // 
             // Tile_Item_Rework
             // 
-            this.Tile_Item_Rework.CurrentFrameIndex = 1;
             tileItemElement10.Appearance.Normal.ForeColor = System.Drawing.Color.Black;
             tileItemElement10.Appearance.Normal.Options.UseForeColor = true;
             tileItemElement10.Image = global::Ordermanagement_01.Properties.Resources.Icon_Rework_40;
             tileItemElement10.ImageLocation = new System.Drawing.Point(0, -15);
             tileItemElement10.Text = "";
             tileItemElement11.Appearance.Normal.BackColor = System.Drawing.Color.Transparent;
-            tileItemElement11.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 27.75F);
+            tileItemElement11.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             tileItemElement11.Appearance.Normal.ForeColor = System.Drawing.Color.Black;
             tileItemElement11.Appearance.Normal.Options.UseBackColor = true;
             tileItemElement11.Appearance.Normal.Options.UseFont = true;
@@ -1012,7 +1011,6 @@
             // 
             // Tile_Item_SuperQc
             // 
-            this.Tile_Item_SuperQc.CurrentFrameIndex = 1;
             tileItemElement19.Image = global::Ordermanagement_01.Properties.Resources.Icon_Superqc_40;
             tileItemElement19.ImageLocation = new System.Drawing.Point(0, -15);
             tileItemElement19.Text = "";
@@ -1084,20 +1082,25 @@
             // 
             // Tile_Item_Test
             // 
-            this.Tile_Item_Test.CurrentFrameIndex = 1;
+            tileItemElement28.Appearance.Normal.ForeColor = System.Drawing.Color.Black;
+            tileItemElement28.Appearance.Normal.Options.UseForeColor = true;
             tileItemElement28.Image = global::Ordermanagement_01.Properties.Resources.Icon_test_40;
             tileItemElement28.ImageLocation = new System.Drawing.Point(0, -15);
             tileItemElement28.Text = "";
             tileItemElement29.Appearance.Hovered.Font = new System.Drawing.Font("Segoe UI", 27.75F);
             tileItemElement29.Appearance.Hovered.Options.UseFont = true;
             tileItemElement29.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 27.75F);
+            tileItemElement29.Appearance.Normal.ForeColor = System.Drawing.Color.Black;
             tileItemElement29.Appearance.Normal.Options.UseFont = true;
+            tileItemElement29.Appearance.Normal.Options.UseForeColor = true;
             tileItemElement29.Text = "0";
             tileItemElement29.TextLocation = new System.Drawing.Point(-15, -5);
             tileItemElement30.Appearance.Hovered.Font = new System.Drawing.Font("Segoe UI", 11F);
             tileItemElement30.Appearance.Hovered.Options.UseFont = true;
             tileItemElement30.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 11F);
+            tileItemElement30.Appearance.Normal.ForeColor = System.Drawing.Color.Black;
             tileItemElement30.Appearance.Normal.Options.UseFont = true;
+            tileItemElement30.Appearance.Normal.Options.UseForeColor = true;
             tileItemElement30.Text = "Test";
             tileItemElement30.TextLocation = new System.Drawing.Point(4, 4);
             this.Tile_Item_Test.Elements.Add(tileItemElement28);
@@ -1267,7 +1270,6 @@
             this.Tile_Task.OptionsAdaptiveLayout.ScrollMode = DevExpress.XtraEditors.TileControlAdaptiveLayoutScrollMode.ItemScrolling;
             this.Tile_Task.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.Tile_Task.Padding = new System.Windows.Forms.Padding(8, 1, 8, 1);
-            this.Tile_Task.Position = 246;
             this.Tile_Task.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Tile_Task.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.ScrollButtons;
             this.Tile_Task.SelectionColor = System.Drawing.Color.Transparent;

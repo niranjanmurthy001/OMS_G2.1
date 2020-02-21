@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,6 +41,7 @@
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_testconnection = new DevExpress.XtraEditors.SimpleButton();
+            this.toolTipController1 = new DevExpress.Utils.ToolTipController();
             this.check_connection_SSL = new DevExpress.XtraEditors.CheckEdit();
             this.txt_OS = new DevExpress.XtraEditors.TextEdit();
             this.txt_IS = new DevExpress.XtraEditors.TextEdit();
@@ -67,7 +67,8 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            this.dxErrorProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -92,6 +93,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_Outgoing_server.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Incoming_server.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Email_address.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -109,7 +111,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.48218F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.51782F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(662, 526);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(668, 526);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // panelControl1
@@ -119,7 +121,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(3, 3);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(656, 49);
+            this.panelControl1.Size = new System.Drawing.Size(662, 49);
             this.panelControl1.TabIndex = 2;
             // 
             // label1
@@ -129,7 +131,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
             this.label1.Location = new System.Drawing.Point(2, 2);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(652, 45);
+            this.label1.Size = new System.Drawing.Size(658, 45);
             this.label1.TabIndex = 1;
             this.label1.Text = "Internet E-mail Settings";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -179,7 +181,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.labelControl3);
             this.splitContainer1.Panel2.Controls.Add(this.labelControl2);
             this.splitContainer1.Panel2.Controls.Add(this.labelControl1);
-            this.splitContainer1.Size = new System.Drawing.Size(656, 465);
+            this.splitContainer1.Size = new System.Drawing.Size(662, 465);
             this.splitContainer1.SplitterDistance = 156;
             this.splitContainer1.TabIndex = 3;
             // 
@@ -227,6 +229,7 @@
             this.txt_name.Properties.Leave += new System.EventHandler(this.txt_name_Properties_Leave);
             this.txt_name.Size = new System.Drawing.Size(160, 20);
             this.txt_name.TabIndex = 1;
+            this.txt_name.Validating += new System.ComponentModel.CancelEventHandler(this.txt_name_Validating);
             // 
             // check_ShowPassword
             // 
@@ -244,7 +247,7 @@
             this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel2.Controls.Add(this.panel2);
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(314, 3);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(320, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(175, 32);
             this.flowLayoutPanel2.TabIndex = 46;
@@ -271,6 +274,9 @@
             this.btn_testconnection.Size = new System.Drawing.Size(172, 29);
             this.btn_testconnection.TabIndex = 48;
             this.btn_testconnection.Text = "Test Account Settings";
+            this.btn_testconnection.ToolTip = "Text Account Settings";
+            this.btn_testconnection.ToolTipController = this.toolTipController1;
+            this.btn_testconnection.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             this.btn_testconnection.Click += new System.EventHandler(this.btn_testconnection_Click);
             // 
             // check_connection_SSL
@@ -297,6 +303,7 @@
             this.txt_OS.Size = new System.Drawing.Size(160, 20);
             this.txt_OS.TabIndex = 7;
             this.txt_OS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_OS_KeyPress);
+            this.txt_OS.Validating += new System.ComponentModel.CancelEventHandler(this.txt_OS_Validating);
             // 
             // txt_IS
             // 
@@ -310,6 +317,7 @@
             this.txt_IS.Size = new System.Drawing.Size(160, 20);
             this.txt_IS.TabIndex = 6;
             this.txt_IS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_IS_KeyPress);
+            this.txt_IS.Validating += new System.ComponentModel.CancelEventHandler(this.txt_IS_Validating);
             // 
             // flowLayoutPanel1
             // 
@@ -318,7 +326,7 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 416);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(492, 45);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(498, 45);
             this.flowLayoutPanel1.TabIndex = 41;
             // 
             // panel1
@@ -326,7 +334,7 @@
             this.panel1.Controls.Add(this.simpleButton2);
             this.panel1.Controls.Add(this.simpleButton1);
             this.panel1.Controls.Add(this.btn_save);
-            this.panel1.Location = new System.Drawing.Point(247, 3);
+            this.panel1.Location = new System.Drawing.Point(253, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(242, 39);
             this.panel1.TabIndex = 0;
@@ -342,6 +350,9 @@
             this.simpleButton2.Size = new System.Drawing.Size(75, 31);
             this.simpleButton2.TabIndex = 13;
             this.simpleButton2.Text = "Delete";
+            this.simpleButton2.ToolTip = "Delete";
+            this.simpleButton2.ToolTipController = this.toolTipController1;
+            this.simpleButton2.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // simpleButton1
@@ -355,6 +366,9 @@
             this.simpleButton1.Size = new System.Drawing.Size(75, 31);
             this.simpleButton1.TabIndex = 12;
             this.simpleButton1.Text = "Clear";
+            this.simpleButton1.ToolTip = "Clear";
+            this.simpleButton1.ToolTipController = this.toolTipController1;
+            this.simpleButton1.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // btn_save
@@ -368,6 +382,9 @@
             this.btn_save.Size = new System.Drawing.Size(75, 31);
             this.btn_save.TabIndex = 11;
             this.btn_save.Text = "Save";
+            this.btn_save.ToolTip = "Save";
+            this.btn_save.ToolTipController = this.toolTipController1;
+            this.btn_save.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // txt_User_Name
@@ -380,6 +397,7 @@
             this.txt_User_Name.TextChanged += new System.EventHandler(this.txt_User_Name_TextChanged);
             this.txt_User_Name.Enter += new System.EventHandler(this.txt_User_Name_Enter);
             this.txt_User_Name.Leave += new System.EventHandler(this.txt_User_Name_Leave);
+            this.txt_User_Name.Validating += new System.ComponentModel.CancelEventHandler(this.txt_User_Name_Validating);
             // 
             // txt_password
             // 
@@ -392,6 +410,7 @@
             this.txt_password.TabIndex = 9;
             this.txt_password.TextChanged += new System.EventHandler(this.txt_password_TextChanged);
             this.txt_password.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_password_KeyPress);
+            this.txt_password.Validating += new System.ComponentModel.CancelEventHandler(this.txt_password_Validating);
             // 
             // txt_Outgoing_server
             // 
@@ -402,6 +421,7 @@
             this.txt_Outgoing_server.TabIndex = 4;
             this.txt_Outgoing_server.TextChanged += new System.EventHandler(this.txt_Outgoing_server_TextChanged);
             this.txt_Outgoing_server.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Outgoing_server_KeyPress);
+            this.txt_Outgoing_server.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Outgoing_server_Validating);
             // 
             // txt_Incoming_server
             // 
@@ -412,6 +432,7 @@
             this.txt_Incoming_server.TabIndex = 3;
             this.txt_Incoming_server.TextChanged += new System.EventHandler(this.txt_Incoming_server_TextChanged);
             this.txt_Incoming_server.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Incoming_server_KeyPress);
+            this.txt_Incoming_server.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Incoming_server_Validating);
             // 
             // txt_Email_address
             // 
@@ -424,6 +445,7 @@
             this.txt_Email_address.TextChanged += new System.EventHandler(this.txt_Email_address_TextChanged);
             this.txt_Email_address.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Email_address_KeyPress);
             this.txt_Email_address.Leave += new System.EventHandler(this.txt_Email_address_Leave);
+            this.txt_Email_address.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Email_address_Validating);
             // 
             // labelControl12
             // 
@@ -573,13 +595,17 @@
             // 
             this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013";
             // 
+            // dxErrorProvider1
+            // 
+            this.dxErrorProvider1.ContainerControl = this;
+            // 
             // EmailSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(662, 526);
+            this.ClientSize = new System.Drawing.Size(668, 526);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.MinimumSize = new System.Drawing.Size(678, 563);
+            this.MinimumSize = new System.Drawing.Size(684, 563);
             this.Name = "EmailSetting";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EmailSetting";
@@ -609,6 +635,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_Outgoing_server.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Incoming_server.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Email_address.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -654,5 +681,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
+        private DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider dxErrorProvider1;
+        private DevExpress.Utils.ToolTipController toolTipController1;
     }
 }

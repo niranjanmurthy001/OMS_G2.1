@@ -690,6 +690,8 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                 link_Order_Count.Text = "0";
                 using (var Client = new HttpClient())
                 {
+                    
+
                     Dictionary<string, object> list = new Dictionary<string, object>();
                     if (userRoleId == 1 || userRoleId == 5 || userRoleId == 6)
                     {
@@ -700,21 +702,33 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                         list.Add("@Trans", "COUNT_OF_ORDERS_WORK_TYPE_WISE_USER_WISE");
                     }
                     list.Add("@User_Id", userId);
+
                     var serializedUser = JsonConvert.SerializeObject(list);
                     var content = new StringContent(serializedUser, Encoding.UTF8, "application/json");
-                    var result = await Client.PostAsync(Base_Url.Url + "/ProcessingOrders/Processing_Order_Count", content);
-
-                    if (result.IsSuccessStatusCode)
+                    // Addding Token Header
+                    Tuple<bool, string> Token_Header = ApiToken.Token_HeaderDetails(Client);
+                    if (Token_Header.Item1 == true)
                     {
-                        var UserJsonString = await result.Content.ReadAsStringAsync();
-                        Result_Data[] Res_daata = JsonConvert.DeserializeObject<Result_Data[]>(UserJsonString);
-                        if (Res_daata != null)
+                        var result = await Client.PostAsync(Base_Url.Url + "/ProcessingOrders/Processing_Order_Count", content);
+
+
+                        if (result.IsSuccessStatusCode)
                         {
-                            foreach (Result_Data res in Res_daata)
+                            var UserJsonString = await result.Content.ReadAsStringAsync();
+                            Result_Data[] Res_daata = JsonConvert.DeserializeObject<Result_Data[]>(UserJsonString);
+                            if (Res_daata != null)
                             {
-                                link_Order_Count.Text = res.Live_Order_Count;
+                                foreach (Result_Data res in Res_daata)
+                                {
+                                    link_Order_Count.Text = res.Live_Order_Count;
+                                }
                             }
                         }
+                    }
+                    else
+                    {
+
+                        XtraMessageBox.Show(Token_Header.Item2.ToString());
                     }
                 }
             }
@@ -1216,50 +1230,81 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                 labelControlShift.Text = string.Empty;
                 using (var httpClient = new HttpClient())
                 {
-                    var response = await httpClient.GetAsync($"{Base_Url.Url}/User/GetUser/{userId}");
-                    if (response.IsSuccessStatusCode)
+
+
+                    //==============Httpclient Headers Details=============
+                    if (ApiToken.access_token != null)
                     {
-                        if (response.StatusCode == HttpStatusCode.OK)
+
+                        // Token Header Details======================
+
+                        Tuple<bool, string> Token_Header = ApiToken.Token_HeaderDetails(httpClient);
+
+                        if (Token_Header.Item1 == true)
                         {
-                            var data = await response.Content.ReadAsStringAsync();
-                            var user = JsonConvert.DeserializeAnonymousType(data, new
+
+
+
+
+                            var response = await httpClient.GetAsync($"{Base_Url.Url}/User/GetUser/{userId}");
+                            if (response.IsSuccessStatusCode)
                             {
-                               EmployeeImage = string.Empty,
-                                EmployeeName = string.Empty,
-                                Code = string.Empty,
-                                Branch = string.Empty,
-                                Role = string.Empty,
-                                Reporting = string.Empty,
-                                Shift = string.Empty,
-                                Theme = string.Empty,
-                                OperationId = string.Empty
-                            });                                                                     
-                            labelControlName.Text = user.EmployeeName ?? string.Empty;
-                            labelControlEmpCode.Text = user.Code ?? string.Empty;
-                            labelControlBranch.Text = user.Branch ?? string.Empty;
-                            labelControlRole.Text = user.Role ?? string.Empty;
-                            labelControlReporting.Text = user.Reporting ?? string.Empty;
-                            labelControlShift.Text = user.Shift ?? string.Empty;
-                            operationId = Convert.ToInt32(user.OperationId);
-                            if (!string.IsNullOrEmpty(user.Theme))
-                            {
-                                lookUpEditSkins.EditValue = Convert.ToInt32(user.Theme);
-                            }
-                            else
-                            {
-                                lookUpEditSkins.EditValue = 0;
-                            }
-                            if (pictureEditProfile.Image == null && !string.IsNullOrEmpty(user.EmployeeImage))
-                            {
-                                bimage = Convert.FromBase64String(user.EmployeeImage);
-                                MemoryStream ms = new MemoryStream(bimage, 0, bimage.Length);
-                                ms.Write(bimage, 0, bimage.Length);
-                                pictureEditProfile.Image = GetDataToImage((byte[])bimage);
-                            }
-                            else {
-                                pictureEditProfile.Image = Resources.pictureEditProfile_EditValue;
+                                if (response.StatusCode == HttpStatusCode.OK)
+                                {
+                                    var data = await response.Content.ReadAsStringAsync();
+                                    var user = JsonConvert.DeserializeAnonymousType(data, new
+                                    {
+                                        EmployeeImage = string.Empty,
+                                        EmployeeName = string.Empty,
+                                        Code = string.Empty,
+                                        Branch = string.Empty,
+                                        Role = string.Empty,
+                                        Reporting = string.Empty,
+                                        Shift = string.Empty,
+                                        Theme = string.Empty,
+                                        OperationId = string.Empty
+                                    });
+                                    labelControlName.Text = user.EmployeeName ?? string.Empty;
+                                    labelControlEmpCode.Text = user.Code ?? string.Empty;
+                                    labelControlBranch.Text = user.Branch ?? string.Empty;
+                                    labelControlRole.Text = user.Role ?? string.Empty;
+                                    labelControlReporting.Text = user.Reporting ?? string.Empty;
+                                    labelControlShift.Text = user.Shift ?? string.Empty;
+                                    operationId = Convert.ToInt32(user.OperationId);
+                                    if (!string.IsNullOrEmpty(user.Theme))
+                                    {
+                                        lookUpEditSkins.EditValue = Convert.ToInt32(user.Theme);
+                                    }
+                                    else
+                                    {
+                                        lookUpEditSkins.EditValue = 0;
+                                    }
+                                    if (pictureEditProfile.Image == null && !string.IsNullOrEmpty(user.EmployeeImage))
+                                    {
+                                        bimage = Convert.FromBase64String(user.EmployeeImage);
+                                        MemoryStream ms = new MemoryStream(bimage, 0, bimage.Length);
+                                        ms.Write(bimage, 0, bimage.Length);
+                                        pictureEditProfile.Image = GetDataToImage((byte[])bimage);
+                                    }
+                                    else
+                                    {
+                                        pictureEditProfile.Image = Resources.pictureEditProfile_EditValue;
+                                    }
+                                }
                             }
                         }
+                        else
+                        {
+
+                            XtraMessageBox.Show(Token_Header.Item2.ToString());
+
+                        }
+                    }
+                    else
+                    {
+                        ApiToken.Invlid_Token();
+
+
                     }
 
                 }
@@ -1377,20 +1422,25 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                         var data = new StringContent(JsonConvert.SerializeObject(dictionary), Encoding.UTF8, "application/json");
                         using (var httpClient = new HttpClient())
                         {
-                            var response = await httpClient.PutAsync(Base_Url.Url + "/User/ChangePassword", data);
-                            if (response.IsSuccessStatusCode)
-                            {
-                                if (response.StatusCode == HttpStatusCode.OK)
+
+                           
+                                var response = await httpClient.PutAsync(Base_Url.Url + "/User/ChangePassword", data);
+
+
+                                if (response.IsSuccessStatusCode)
                                 {
-                                    SplashScreenManager.CloseForm(false);
-                                    XtraMessageBox.Show("Password changed successfully");
+                                    if (response.StatusCode == HttpStatusCode.OK)
+                                    {
+                                        SplashScreenManager.CloseForm(false);
+                                        XtraMessageBox.Show("Password changed successfully");
+                                    }
+                                    else
+                                    {
+                                        SplashScreenManager.CloseForm(false);
+                                        XtraMessageBox.Show("Failed to change password.");
+                                    }
                                 }
-                                else
-                                {
-                                    SplashScreenManager.CloseForm(false);
-                                    XtraMessageBox.Show("Failed to change password.");
-                                }
-                            }
+                           
                         }
                     }
                     catch (Exception ex)
@@ -1723,7 +1773,18 @@ namespace Ordermanagement_01.New_Dashboard.Employee
                 SplashScreenManager.CloseForm(false);
             }
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void link_Order_Count_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
         #endregion
+
         #region Error
         private async Task BindErrorsCount()
         {

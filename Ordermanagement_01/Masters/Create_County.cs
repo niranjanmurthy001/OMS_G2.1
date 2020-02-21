@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
+﻿using ClosedXML.Excel;
+using System;
 using System.Collections;
+using System.Data;
+using System.IO;
+using System.Windows.Forms;
 
 namespace Ordermanagement_01.Masters
 {
@@ -15,7 +12,7 @@ namespace Ordermanagement_01.Masters
         Commonclass Comclass = new Commonclass();
         DataAccess dataaccess = new DataAccess();
         DropDownistBindClass dbc = new DropDownistBindClass();
-        int User_Id,County_Id;
+        int User_Id, County_Id;
         DataTable dtselect = new DataTable();
         DataTable dt = new DataTable();
         System.Data.DataTable dtcounty = new System.Data.DataTable();
@@ -23,6 +20,7 @@ namespace Ordermanagement_01.Masters
         static int currentpageindex = 0;
         int pagesize = 50, State_ID;
         Classes.Load_Progres form_loader = new Classes.Load_Progres();
+        string path1;
         public Create_County(int USER_ID)
         {
             InitializeComponent();
@@ -38,12 +36,12 @@ namespace Ordermanagement_01.Masters
         private void Create_County_Load(object sender, EventArgs e)
         {
             dbc.BindState(ddl_State);
-           
+
             BindGridCounty();
             ddl_State.Focus();
             clear();
             dbc.BindState(ddl_SearchbyState);
-           dbc.BindCounty(ddl_searchCounty, int.Parse(ddl_SearchbyState.SelectedValue.ToString()));
+            dbc.BindCounty(ddl_searchCounty, int.Parse(ddl_SearchbyState.SelectedValue.ToString()));
 
         }
 
@@ -58,7 +56,7 @@ namespace Ordermanagement_01.Masters
         private void Grid_County_Bind()
         {
             ddl_SearchbyState.SelectedIndex = 0;
-          //  ddl_searchCounty.SelectedIndex = 0;
+            //  ddl_searchCounty.SelectedIndex = 0;
             form_loader.Start_progres();
             grd_County.Rows.Clear();
             Hashtable htselect = new Hashtable();
@@ -134,11 +132,11 @@ namespace Ordermanagement_01.Masters
         {
             //grd_County.Rows.Clear();
             //Hashtable htselect = new Hashtable();
-            
+
             //htselect.Add("@Trans", "SELECT_All");
             //dtselect = dataaccess.ExecuteSP("Sp_County_Master", htselect);
 
-            form_loader.Start_progres();           
+            form_loader.Start_progres();
             grd_County.Rows.Clear();
             Hashtable htselect = new Hashtable();
 
@@ -147,7 +145,7 @@ namespace Ordermanagement_01.Masters
             {
                 htselect.Add("@Trans", "SEARCH_BYSTATE");
                 htselect.Add("@State_ID", int.Parse(ddl_SearchbyState.SelectedValue.ToString()));
-                if (ddl_searchCounty.SelectedIndex >0)
+                if (ddl_searchCounty.SelectedIndex > 0)
                 {
                     htselect.Clear();
                     htselect.Add("@Trans", "SEARCH_BYCOUNTY");
@@ -220,7 +218,7 @@ namespace Ordermanagement_01.Masters
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
             clear();
-            btn_searchClear_Click(sender,e);
+            btn_searchClear_Click(sender, e);
         }
 
         private void clear()
@@ -235,21 +233,21 @@ namespace Ordermanagement_01.Masters
         private bool Validation()
         {
             string title = "Validation!";
-            if (ddl_State.SelectedIndex==0)
+            if (ddl_State.SelectedIndex == 0)
             {
-                MessageBox.Show("Select State name",title);
+                MessageBox.Show("Select State name", title);
                 ddl_State.Focus();
                 return false;
             }
             else if (ddl_CountyType.SelectedIndex == 0)
             {
-                MessageBox.Show("Select County Type",title);
+                MessageBox.Show("Select County Type", title);
                 ddl_CountyType.Focus();
                 return false;
             }
             else if (txt_County.Text == "")
             {
-                MessageBox.Show("Enter County name",title);
+                MessageBox.Show("Enter County name", title);
                 txt_County.Focus();
                 return false;
             }
@@ -258,7 +256,7 @@ namespace Ordermanagement_01.Masters
 
         private bool Validate_Duplicate()
         {
-            State_ID=int.Parse(ddl_State.SelectedValue.ToString());
+            State_ID = int.Parse(ddl_State.SelectedValue.ToString());
 
             Hashtable ht = new Hashtable();
             DataTable dt = new DataTable();
@@ -281,7 +279,7 @@ namespace Ordermanagement_01.Masters
 
         private void btn_Submit_Click(object sender, EventArgs e)
         {
-            if (County_Id == 0 && Validation() != false && Validate_Duplicate()!=false)
+            if (County_Id == 0 && Validation() != false && Validate_Duplicate() != false)
             {
                 Hashtable htinsert = new Hashtable();
                 DataTable dtinsert = new DataTable();
@@ -294,13 +292,13 @@ namespace Ordermanagement_01.Masters
                 htinsert.Add("@Status", "True");
                 dtinsert = dataaccess.ExecuteSP("Sp_County_Master", htinsert);
                 string title = "Insert";
-              
-                MessageBox.Show("County Added Successfully",title);
+
+                MessageBox.Show("County Added Successfully", title);
                 County_Id = 0;
                 BindGridCounty();
                 clear();
             }
-            else if (Validation() != false )
+            else if (Validation() != false)
             {
                 Hashtable htinsert = new Hashtable();
                 DataTable dtinsert = new DataTable();
@@ -314,13 +312,13 @@ namespace Ordermanagement_01.Masters
                 htinsert.Add("@Status", "True");
                 dtinsert = dataaccess.ExecuteSP("Sp_County_Master", htinsert);
                 string title = "Update";
-                MessageBox.Show("County Updated Successfully",title);
+                MessageBox.Show("County Updated Successfully", title);
                 County_Id = 0;
-              
+
                 BindGridCounty();
                 clear();
             }
-           
+
         }
 
         private void ddl_State_SelectedIndexChanged(object sender, EventArgs e)
@@ -333,9 +331,9 @@ namespace Ordermanagement_01.Masters
             //BindGridCounty();
             Grid_County_Bind();
             clear();
-           
+
             ddl_SearchbyState.SelectedIndex = 0;
-            btn_searchClear_Click(sender,e);
+            btn_searchClear_Click(sender, e);
 
             dbc.BindState(ddl_SearchbyState);
             dbc.BindCounty(ddl_searchCounty, int.Parse(ddl_SearchbyState.SelectedValue.ToString()));
@@ -393,10 +391,10 @@ namespace Ordermanagement_01.Masters
                             //ddl_State.SelectedIndex = 0;
                             //ddl_CountyType.SelectedIndex = 0;
 
-                            btn_searchClear_Click(sender,e);
+                            btn_searchClear_Click(sender, e);
                         }
                         //BindGridCounty();
-                       // clear();
+                        // clear();
                     }
                     //clear();
                 }
@@ -405,7 +403,7 @@ namespace Ordermanagement_01.Masters
 
         private void ddl_SearchbyState_SelectedIndexChanged(object sender, EventArgs e)
         {
-        
+
             if (ddl_SearchbyState.SelectedIndex != 0)
             {
                 dbc.BindCounty(ddl_searchCounty, int.Parse(ddl_SearchbyState.SelectedValue.ToString()));
@@ -461,13 +459,13 @@ namespace Ordermanagement_01.Masters
                 }
                 else
                 {
-                   // grd_County.Rows.Clear();
+                    // grd_County.Rows.Clear();
                     grd_County.Visible = true;
                     grd_County.DataSource = null;
                     MessageBox.Show("No Records Found");
                     //BindGridCounty();
                 }
-              
+
                 lbl_Total_Orders.Text = dtsort.Rows.Count.ToString();
                 lblRecordsStatus.Text = (currentpageindex + 1) + " / " + (int)Math.Ceiling(Convert.ToDecimal(dtsort.Rows.Count) / pagesize);
 
@@ -511,9 +509,9 @@ namespace Ordermanagement_01.Masters
                 ////lbl_Total_Orders.Text = "Total Orders: " + dt.Rows.Count.ToString();
                 //lbl_Total_Orders.Text = dt.Rows.Count.ToString();
                 //lblRecordsStatus.Text = (currentpageindex + 1) + " / " + (int)Math.Ceiling(Convert.ToDecimal(dt.Rows.Count) / pagesize);
-              
-                
-               // First_Page();
+
+
+                // First_Page();
             }
             //First_Page();
         }
@@ -592,7 +590,7 @@ namespace Ordermanagement_01.Masters
 
 
                 //Hashtable ht = new Hashtable();
-                
+
                 //ht.Add("@Trans", "SEARCH_BYCOUNTY");
                 //ht.Add("@State_ID", int.Parse(ddl_SearchbyState.SelectedValue.ToString()));
                 //ht.Add("@County_ID", int.Parse(ddl_searchCounty.SelectedValue.ToString()));
@@ -703,27 +701,27 @@ namespace Ordermanagement_01.Masters
                         grd_County.DataSource = null;
                         grd_County.Rows.Clear();
                         MessageBox.Show("No Records Found");
-                       // BindGridCounty();
+                        // BindGridCounty();
                         currentpageindex = 0;
                         btnPrevious.Enabled = false;
                         btnNext.Enabled = false;
                         btnLast.Enabled = false;
                         btnFirst.Enabled = true;
-                       // this.Cursor = currentCursor;
+                        // this.Cursor = currentCursor;
                     }
 
                     lbl_Total_Orders.Text = dtcounty.Rows.Count.ToString();
                     lblRecordsStatus.Text = (currentpageindex + 1) + " / " + (int)Math.Ceiling(Convert.ToDecimal(dtcounty.Rows.Count) / pagesize);
                     First_Page();
                 }
-             
+
             }
             First_Page();
         }
 
         private void BindFilterdata()
         {
-            if (ddl_SearchbyState.Text != "Select" || ddl_SearchbyState.Text != "" && ddl_searchCounty.Text != "Select" || ddl_searchCounty.Text !="")
+            if (ddl_SearchbyState.Text != "Select" || ddl_SearchbyState.Text != "" && ddl_searchCounty.Text != "Select" || ddl_searchCounty.Text != "")
             {
                 DataView dtsearch = new DataView(dtselect);
 
@@ -794,13 +792,13 @@ namespace Ordermanagement_01.Masters
             this.Cursor = Cursors.WaitCursor;
 
             currentpageindex = 0;
-            
-       
+
+
             btnPrevious.Enabled = false;
             btnNext.Enabled = true;
             btnLast.Enabled = true;
             btnFirst.Enabled = false;
-          
+
             this.Cursor = currentCursor;
         }
 
@@ -849,7 +847,7 @@ namespace Ordermanagement_01.Masters
                 grd_County.Visible = true;
                 grd_County.DataSource = null;
                 string title = "Empty!";
-                MessageBox.Show("No Records Found",title);
+                MessageBox.Show("No Records Found", title);
             }
             lbl_Total_Orders.Text = dtsort.Rows.Count.ToString();
             lblRecordsStatus.Text = (currentpageindex + 1) + " / " + (int)Math.Ceiling(Convert.ToDecimal(dtsort.Rows.Count) / pagesize);
@@ -907,7 +905,7 @@ namespace Ordermanagement_01.Masters
                 grd_County.Visible = true;
                 grd_County.DataSource = null;
                 string title = "Empty!";
-                MessageBox.Show("No Records Found",title);
+                MessageBox.Show("No Records Found", title);
             }
             lbl_Total_Orders.Text = dtcounty.Rows.Count.ToString();
             lblRecordsStatus.Text = (currentpageindex + 1) + " / " + (int)Math.Ceiling(Convert.ToDecimal(dtcounty.Rows.Count) / pagesize);
@@ -920,7 +918,7 @@ namespace Ordermanagement_01.Masters
 
             currentpageindex++;
             //if (ddl_SearchbyState.Text != "Select" && ddl_searchCounty.Text != "Select")
-            if (ddl_SearchbyState.SelectedIndex>0)
+            if (ddl_SearchbyState.SelectedIndex > 0)
             {
                 if (currentpageindex == (int)Math.Ceiling(Convert.ToDecimal(dtsort.Rows.Count) / pagesize) - 1)
                 {
@@ -957,7 +955,7 @@ namespace Ordermanagement_01.Masters
                 //BindFilterdata();
             }
 
-            else 
+            else
             {
                 if (currentpageindex == (int)Math.Ceiling(Convert.ToDecimal(dtselect.Rows.Count) / pagesize) - 1)
                 {
@@ -978,7 +976,7 @@ namespace Ordermanagement_01.Masters
 
 
 
-         //   BindFilterdata();
+            //   BindFilterdata();
 
             BindGridCounty();
 
@@ -997,7 +995,7 @@ namespace Ordermanagement_01.Masters
             if (ddl_SearchbyState.SelectedIndex > 0)
             {
                 currentpageindex = (int)Math.Ceiling(Convert.ToDecimal(dtsort.Rows.Count) / pagesize) - 1;
-               // BindFilterdata();
+                // BindFilterdata();
                 Filter_State_Data();
             }
             else if (ddl_searchCounty.SelectedIndex > 0)
@@ -1007,7 +1005,7 @@ namespace Ordermanagement_01.Masters
             }
             else
             {
-                currentpageindex= (int)Math.Ceiling(Convert.ToDecimal(dtselect.Rows.Count) / pagesize) - 1;
+                currentpageindex = (int)Math.Ceiling(Convert.ToDecimal(dtselect.Rows.Count) / pagesize) - 1;
                 BindGridCounty();
             }
             btnFirst.Enabled = true;
@@ -1090,6 +1088,50 @@ namespace Ordermanagement_01.Masters
             this.Cursor = currentCursor;
         }
 
+        private void btn_Export_Click(object sender, EventArgs e)
+        {
+            Export_CountyData();
+        }
+        private void Export_CountyData()
+        {
+            //Exporting to Excel
+            dtselect.Columns.Remove("State_Name");
+            dtselect.Columns.Remove("State_ID");
+            dtselect.Columns.Remove("County_ID");
+            string Export_Title_Name = "County_Details";
+            string folderPath = "C:\\Temp\\";
+            path1 = folderPath + DateTime.Now.ToString("dd-MM-yyyy-hh-mm-ss") + "-" + Export_Title_Name + ".xlsx";
+            if (!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+
+
+            }
+
+
+            using (XLWorkbook wb = new XLWorkbook())
+            {
+                wb.Worksheets.Add(dtselect, Export_Title_Name.ToString());
+
+                try
+                {
+
+                    wb.SaveAs(path1);
+
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show("File is Opened, Please Close and Export it");
+                }
+
+
+
+            }
+
+            System.Diagnostics.Process.Start(path1);
+        }
+
         private void txt_County_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((char.IsDigit(e.KeyChar)) && e.KeyChar != (char)Keys.Back)
@@ -1097,7 +1139,7 @@ namespace Ordermanagement_01.Masters
                 e.Handled = true;
                 string title = "Validation!";
                 txt_County.Text = "";
-                MessageBox.Show("Numbers Not Allowed",title);
+                MessageBox.Show("Numbers Not Allowed", title);
             }
 
             if (txt_County.Text.Length == 0)
@@ -1123,6 +1165,6 @@ namespace Ordermanagement_01.Masters
 
         }
 
-       
+
     }
 }

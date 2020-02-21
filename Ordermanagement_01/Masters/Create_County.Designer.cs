@@ -58,6 +58,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btn_Refresh = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_Export = new System.Windows.Forms.Button();
             this.ddl_searchCounty = new System.Windows.Forms.ComboBox();
             this.btn_searchClear = new System.Windows.Forms.Button();
             this.btn_searchSub = new System.Windows.Forms.Button();
@@ -94,7 +95,7 @@
             this.btn_Import.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
             this.btn_Import.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Import.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btn_Import.Location = new System.Drawing.Point(813, 0);
+            this.btn_Import.Location = new System.Drawing.Point(951, 0);
             this.btn_Import.Name = "btn_Import";
             this.btn_Import.Size = new System.Drawing.Size(154, 39);
             this.btn_Import.TabIndex = 16;
@@ -109,7 +110,7 @@
             this.lbl_ErrorInfo.AutoSize = true;
             this.lbl_ErrorInfo.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_ErrorInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(104)))), ((int)(((byte)(156)))));
-            this.lbl_ErrorInfo.Location = new System.Drawing.Point(454, 1);
+            this.lbl_ErrorInfo.Location = new System.Drawing.Point(523, 1);
             this.lbl_ErrorInfo.Name = "lbl_ErrorInfo";
             this.lbl_ErrorInfo.Size = new System.Drawing.Size(92, 31);
             this.lbl_ErrorInfo.TabIndex = 100;
@@ -124,7 +125,7 @@
             this.label45.AutoSize = true;
             this.label45.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label45.ForeColor = System.Drawing.Color.Red;
-            this.label45.Location = new System.Drawing.Point(765, 10);
+            this.label45.Location = new System.Drawing.Point(903, 10);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(200, 19);
             this.label45.TabIndex = 222;
@@ -252,7 +253,7 @@
             this.grd_County.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grd_County.RowTemplate.Height = 25;
             this.grd_County.ShowCellToolTips = false;
-            this.grd_County.Size = new System.Drawing.Size(972, 251);
+            this.grd_County.Size = new System.Drawing.Size(1110, 251);
             this.grd_County.TabIndex = 10;
             this.grd_County.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_County_CellClick);
             // 
@@ -312,7 +313,7 @@
             this.btn_Submit.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
             this.btn_Submit.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_Submit.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btn_Submit.Location = new System.Drawing.Point(362, 1);
+            this.btn_Submit.Location = new System.Drawing.Point(431, 1);
             this.btn_Submit.Name = "btn_Submit";
             this.btn_Submit.Size = new System.Drawing.Size(98, 36);
             this.btn_Submit.TabIndex = 4;
@@ -325,7 +326,7 @@
             this.btn_Cancel.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
             this.btn_Cancel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_Cancel.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btn_Cancel.Location = new System.Drawing.Point(499, 1);
+            this.btn_Cancel.Location = new System.Drawing.Point(568, 1);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(98, 36);
             this.btn_Cancel.TabIndex = 5;
@@ -402,6 +403,7 @@
             // groupBox1
             // 
             this.groupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
+            this.groupBox1.Controls.Add(this.btn_Export);
             this.groupBox1.Controls.Add(this.ddl_searchCounty);
             this.groupBox1.Controls.Add(this.btn_searchClear);
             this.groupBox1.Controls.Add(this.btn_searchSub);
@@ -412,10 +414,21 @@
             this.groupBox1.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(972, 57);
+            this.groupBox1.Size = new System.Drawing.Size(1110, 57);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search By";
+            // 
+            // btn_Export
+            // 
+            this.btn_Export.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Export.Location = new System.Drawing.Point(956, 19);
+            this.btn_Export.Name = "btn_Export";
+            this.btn_Export.Size = new System.Drawing.Size(98, 36);
+            this.btn_Export.TabIndex = 234;
+            this.btn_Export.Text = "Export";
+            this.btn_Export.UseVisualStyleBackColor = true;
+            this.btn_Export.Click += new System.EventHandler(this.btn_Export_Click);
             // 
             // ddl_searchCounty
             // 
@@ -506,7 +519,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 462);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(972, 35);
+            this.panel1.Size = new System.Drawing.Size(1110, 35);
             this.panel1.TabIndex = 13;
             // 
             // btnFirst
@@ -515,7 +528,7 @@
             this.btnFirst.BackColor = System.Drawing.Color.Gainsboro;
             this.btnFirst.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFirst.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFirst.Location = new System.Drawing.Point(207, 10);
+            this.btnFirst.Location = new System.Drawing.Point(276, 10);
             this.btnFirst.Name = "btnFirst";
             this.btnFirst.Size = new System.Drawing.Size(75, 25);
             this.btnFirst.TabIndex = 11;
@@ -529,7 +542,7 @@
             this.lblRecordsStatus.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblRecordsStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblRecordsStatus.Font = new System.Drawing.Font("Ebrima", 9.75F);
-            this.lblRecordsStatus.Location = new System.Drawing.Point(421, 10);
+            this.lblRecordsStatus.Location = new System.Drawing.Point(490, 10);
             this.lblRecordsStatus.Name = "lblRecordsStatus";
             this.lblRecordsStatus.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblRecordsStatus.Size = new System.Drawing.Size(70, 22);
@@ -542,7 +555,7 @@
             this.btnPrevious.BackColor = System.Drawing.Color.Gainsboro;
             this.btnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPrevious.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrevious.Location = new System.Drawing.Point(309, 9);
+            this.btnPrevious.Location = new System.Drawing.Point(378, 9);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(75, 25);
             this.btnPrevious.TabIndex = 12;
@@ -557,7 +570,7 @@
             this.btnLast.BackColor = System.Drawing.Color.Gainsboro;
             this.btnLast.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLast.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLast.Location = new System.Drawing.Point(617, 7);
+            this.btnLast.Location = new System.Drawing.Point(686, 7);
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(75, 25);
             this.btnLast.TabIndex = 15;
@@ -572,7 +585,7 @@
             this.btnNext.BackColor = System.Drawing.Color.Gainsboro;
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNext.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.Location = new System.Drawing.Point(518, 8);
+            this.btnNext.Location = new System.Drawing.Point(587, 8);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(75, 25);
             this.btnNext.TabIndex = 14;
@@ -585,7 +598,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(833, 10);
+            this.label8.Location = new System.Drawing.Point(971, 10);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(91, 19);
@@ -598,7 +611,7 @@
             this.lbl_Total_Orders.AutoSize = true;
             this.lbl_Total_Orders.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Total_Orders.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Total_Orders.Location = new System.Drawing.Point(932, 10);
+            this.lbl_Total_Orders.Location = new System.Drawing.Point(1070, 10);
             this.lbl_Total_Orders.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Total_Orders.Name = "lbl_Total_Orders";
             this.lbl_Total_Orders.Size = new System.Drawing.Size(14, 17);
@@ -626,7 +639,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.75864F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 71.46815F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.08033F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(978, 500);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1116, 500);
             this.tableLayoutPanel1.TabIndex = 231;
             // 
             // panel2
@@ -637,7 +650,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(972, 42);
+            this.panel2.Size = new System.Drawing.Size(1110, 42);
             this.panel2.TabIndex = 0;
             // 
             // panel3
@@ -655,7 +668,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 51);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(972, 40);
+            this.panel3.Size = new System.Drawing.Size(1110, 40);
             this.panel3.TabIndex = 1;
             // 
             // panel4
@@ -668,7 +681,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(3, 97);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(972, 39);
+            this.panel4.Size = new System.Drawing.Size(1110, 39);
             this.panel4.TabIndex = 2;
             // 
             // panel5
@@ -677,7 +690,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(3, 142);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(972, 57);
+            this.panel5.Size = new System.Drawing.Size(1110, 57);
             this.panel5.TabIndex = 3;
             // 
             // panel6
@@ -686,14 +699,14 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(3, 205);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(972, 251);
+            this.panel6.Size = new System.Drawing.Size(1110, 251);
             this.panel6.TabIndex = 4;
             // 
             // Create_County
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(978, 500);
+            this.ClientSize = new System.Drawing.Size(1116, 500);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Create_County";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -766,5 +779,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Button btn_Export;
     }
 }

@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using System.Collections;
-using System.Data.SqlClient;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 
 
@@ -22,7 +18,7 @@ namespace Ordermanagement_01
         int companyid, branchid;
         byte[] bimage;
         private Point pt, pt1, comp_pt, comp_pt1, add_pt, add_pt1, form_pt, form1_pt, client_lbl, client_lbl1, create_cli1, del_cli1, create_cli, del_cli, clear_btn, clear_btn1;
-        
+
         Commonclass Comclass = new Commonclass();
         DataAccess dataaccess = new DataAccess();
         DropDownistBindClass dbc = new DropDownistBindClass();
@@ -39,12 +35,12 @@ namespace Ordermanagement_01
         public Regex CompSlogan = new Regex(@"^[a-zA-Z0-9# ]+$", RegexOptions.Compiled);
         public Regex City = new Regex(@"^[a-zA-Z0-9# ]+$", RegexOptions.Compiled);
 
-        public Create_Client(int user_id,string UserName)
+        public Create_Client(int user_id, string UserName)
         {
             InitializeComponent();
 
             dbc.BindCompany(ddl_Company);
-            dbc.BindBranch(ddl_branchname,int.Parse(ddl_Company.SelectedValue.ToString()));
+            dbc.BindBranch(ddl_branchname, int.Parse(ddl_Company.SelectedValue.ToString()));
             dbc.BindCountry(Ddl_Client_Country);
             if (Ddl_Client_Country.SelectedIndex > 0)
             {
@@ -61,8 +57,11 @@ namespace Ordermanagement_01
         private void Create_Client_Load(object sender, EventArgs e)
         {
             //btn_treeview.Left = Width - 60;
+            lbl_ClientRefNo.Visible = false;
+            ListofClientNumbers.Visible = false;
+            ListofClientNumbers.Enabled = false;
             pnlSideTree.Visible = true;
-            txt_ClientNumber.Enabled = false;
+            txt_ClientNumber.Enabled = true;
             AddParent();
             lbl_Record_Addedby.Text = "";
             lbl_Record_AddedDate.Text = "";
@@ -71,7 +70,7 @@ namespace Ordermanagement_01
             dbc.BindCountry(Ddl_Client_Country);
             GetMaximumClientNumber();
             rbtn_Enable.Checked = true;
-
+            BindClientNumbers();
             textBoximage.Enabled = true;
 
             lbl_Record_Addedby.Text = username;
@@ -80,6 +79,34 @@ namespace Ordermanagement_01
 
             textBoximage.Enabled = false;
             txt_CostTATExcel.Enabled = false;
+        }
+        private bool  BindClientNumbers()
+        {
+            try
+            {
+                Hashtable ht = new Hashtable();
+                DataTable dt = new DataTable();
+                ht.Add("@Trans", "ClientRefValues");
+                ht.Add("@Client_Number", txt_ClientNumber.Text);
+                dt = dataaccess.ExecuteSP("Sp_Client", ht);
+                if(dt.Rows.Count>0)
+                { 
+                    ListofClientNumbers.DataSource = dt;
+                    ListofClientNumbers.ValueMember = "Client_Id";
+                    ListofClientNumbers.DisplayMember = "Client_Number";
+                }
+                else
+                {
+                    MessageBox.Show("Available Client Numbers Not Found ");
+                    return false;
+                }
+                return true;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+                throw ex;
+            }
         }
 
         private void AddParent()
@@ -100,19 +127,19 @@ namespace Ordermanagement_01
                 parentnode = tree_Client.Nodes.Add(sKeyTemp, sKeyTemp);
                 AddChilds(parentnode, companyid);
             }
-            
+
         }
 
-        private void AddChilds(TreeNode parentnode,string sKey)
+        private void AddChilds(TreeNode parentnode, string sKey)
         {
             string sKeyTemp1 = "";
             Hashtable ht = new Hashtable();
             DataTable dt = new System.Data.DataTable();
-          //  TreeNode parentnode1;
+            //  TreeNode parentnode1;
             string clientid;
             ht.Add("@Trans", "Branch_cli");
             ht.Add("@Branch_ID", sKey);
-           // sKeyTemp1 = "Client";
+            // sKeyTemp1 = "Client";
             dt = dataaccess.ExecuteSP("Sp_Tree_Orders", ht);
             for (int i = 0; i < dt.Rows.Count; i++)
             {
@@ -140,7 +167,7 @@ namespace Ordermanagement_01
         //        parentnode1.Nodes.Add(clientid, sKeyTemp2);
         //    }
         //}
-      
+
         private void txt_company_fax_TextChanged(object sender, EventArgs e)
         {
             if (((TextBox)sender).TextLength > 6)
@@ -177,6 +204,8 @@ namespace Ordermanagement_01
             {
                 txt_ClientName.Focus();
             }
+
+            // else if((txt_ClientNumber.Text.Length >4 || txt_ClientNumber.Text.Length<5) && (e.KeyValue&& e.KeyValue && (e.KeyCode == Keys.Back || e.KeyCode == Keys.Delete))
         }
 
         private void txt_ClientName_KeyDown(object sender, KeyEventArgs e)
@@ -288,38 +317,38 @@ namespace Ordermanagement_01
             string title = "Validation!";
             if (txt_ClientName.Text == "")
             {
-                MessageBox.Show("Enter Client Name",title);
+                MessageBox.Show("Enter Client Name", title);
                 txt_ClientName.Focus();
-            //    txt_ClientName.BackColor = System.Drawing.Color.Red;
+                //    txt_ClientName.BackColor = System.Drawing.Color.Red;
                 return false;
             }
             else if (Ddl_Client_Country.Text == "SELECT")
             {
-                MessageBox.Show("Select Country",title);
+                MessageBox.Show("Select Country", title);
                 Ddl_Client_Country.Focus();
-              //  Ddl_Client_Country.BackColor = System.Drawing.Color.Red;
+                //  Ddl_Client_Country.BackColor = System.Drawing.Color.Red;
                 return false;
             }
 
             else if (Ddl_Client_State.Text == "SELECT" || Ddl_Client_State.Text == "")
             {
-                MessageBox.Show("Select  State",title);
+                MessageBox.Show("Select  State", title);
                 Ddl_Client_State.Focus();
                 Ddl_Client_State.BackColor = System.Drawing.Color.Red;
                 return false;
             }
             else if (ddl_Client_district.Text == "SELECT" || ddl_Client_district.Text == "")
             {
-                MessageBox.Show("Select  District",title);
+                MessageBox.Show("Select  District", title);
                 ddl_Client_district.Focus();
                 ddl_Client_district.BackColor = System.Drawing.Color.Red;
                 return false;
             }
-        
-         
-            else if (txt_Client_phono.Text == "" )
+
+
+            else if (txt_Client_phono.Text == "")
             {
-                MessageBox.Show("Enter Phone number",title);
+                MessageBox.Show("Enter Phone number", title);
                 ddl_Client_district.Focus();
                 ddl_Client_district.BackColor = System.Drawing.Color.Red;
                 return false;
@@ -339,7 +368,7 @@ namespace Ordermanagement_01
                 //ddl_Client_district.BackColor = System.Drawing.Color.Red;
                 return false;
             }
-            
+
             return true;
         }
 
@@ -354,7 +383,7 @@ namespace Ordermanagement_01
                 if (txt_ClientName.Text == dt.Rows[i]["Client_Name"].ToString())
                 {
                     string title = "Exist!";
-                    MessageBox.Show("Client Name Already Exist",title);
+                    MessageBox.Show("Client Name Already Exist", title);
                     txt_ClientName.Focus();
                     return false;
                 }
@@ -364,7 +393,7 @@ namespace Ordermanagement_01
 
         protected void clear()
         {
-            Client_id =0;
+            Client_id = 0;
             Client_Mail_Id = 0;
             txt_Client_address.Text = "";
             txt_Client_Code.Text = "";
@@ -377,8 +406,8 @@ namespace Ordermanagement_01
             txt_ClientName.Text = "";
             txt_ClientNumber.Text = "";
             txt_ClientName.BackColor = System.Drawing.Color.White;
-          //  ddl_branchname.SelectedIndex = 0;
-           // dbc.BindBranch(ddl_branchname, int.Parse(ddl_Company.SelectedValue.ToString()));
+            //  ddl_branchname.SelectedIndex = 0;
+            // dbc.BindBranch(ddl_branchname, int.Parse(ddl_Company.SelectedValue.ToString()));
 
             Ddl_Client_Country.SelectedValue = 0;
             Ddl_Client_Country.BackColor = System.Drawing.Color.White;
@@ -390,7 +419,7 @@ namespace Ordermanagement_01
             Client_image.Image = null;
             lbl_Record_Addedby.Text = username;
             textBoximage.Text = "";
-          //  textBoximage.Enabled=false;
+            //  textBoximage.Enabled=false;
             lbl_Record_AddedDate.Text = DateTime.Now.ToString("MM/dd/yyyy hh:mm:ss tt");
             if (rbtn_Enable.Checked)
             {
@@ -416,92 +445,92 @@ namespace Ordermanagement_01
         {
             string emailid;
 
-                for (int k = 0; k < grd_Email.Rows.Count-1; k++)
-                {
-                    Email_ID=grd_Email.Rows[k].Cells[1].Value.ToString();
+            for (int k = 0; k < grd_Email.Rows.Count - 1; k++)
+            {
+                Email_ID = grd_Email.Rows[k].Cells[1].Value.ToString();
 
-                    for (int j = 0; j < k; j++)
+                for (int j = 0; j < k; j++)
+                {
+                    // emailid = dt_Check.Rows[j]["Email-ID"].ToString();
+                    emailid = grd_Email.Rows[j].Cells[1].Value.ToString();
+                    if (Email_ID == emailid)
                     {
-                       // emailid = dt_Check.Rows[j]["Email-ID"].ToString();
-                        emailid = grd_Email.Rows[j].Cells[1].Value.ToString();
-                        if (Email_ID == emailid)
-                        {
-                            string title = "Exist!";
-                            MessageBox.Show("Alternative Email Already Exist", title);
-                            grd_Email.Rows[j].DefaultCellStyle.BackColor = Color.Red;
-                            return false;
+                        string title = "Exist!";
+                        MessageBox.Show("Alternative Email Already Exist", title);
+                        grd_Email.Rows[j].DefaultCellStyle.BackColor = Color.Red;
+                        return false;
 
-                        }
                     }
-               }
-                for (int k = 0; k < grd_Email.Rows.Count - 1; k++)
+                }
+            }
+            for (int k = 0; k < grd_Email.Rows.Count - 1; k++)
+            {
+                Email_ID = grd_Email.Rows[k].Cells[1].Value.ToString();
+                Regex myRegularExpression = new Regex(@"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?");
+                if (myRegularExpression.IsMatch(Email_ID))
                 {
-                    Email_ID = grd_Email.Rows[k].Cells[1].Value.ToString();
-                    Regex myRegularExpression = new Regex(@"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?");
-                    if (myRegularExpression.IsMatch(Email_ID))
+                    //valid e-mail
+                }
+                else
+                {
+                    MessageBox.Show("Alternative Email Address Not Valid");
+                    grd_Email.Rows[k].Cells[1].Selected = CanSelect;
+                    return false;
+                }
+                for (int j = 0; j < k; j++)
+                {
+                    emailid = grd_Email.Rows[j].Cells[1].Value.ToString();
+                    Regex myRegularExpression1 = new Regex(@"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?");
+                    if (myRegularExpression1.IsMatch(emailid))
                     {
                         //valid e-mail
                     }
                     else
                     {
                         MessageBox.Show("Alternative Email Address Not Valid");
-                        grd_Email.Rows[k].Cells[1].Selected= CanSelect;
+                        grd_Email.Rows[j].Cells[1].Selected = CanSelect;
                         return false;
                     }
-                    for (int j = 0; j < k; j++)
-                    {
-                        emailid = grd_Email.Rows[j].Cells[1].Value.ToString();
-                        Regex myRegularExpression1 = new Regex(@"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?");
-                        if (myRegularExpression1.IsMatch(emailid))
-                        {
-                            //valid e-mail
-                        }
-                        else
-                        {
-                            MessageBox.Show("Alternative Email Address Not Valid");
-                            grd_Email.Rows[j].Cells[1].Selected = CanSelect;
-                            return false;
-                        }
-                    }
                 }
+            }
             return true;
         }
 
         private void Grd_Mail_Insert()
         {
-          //  Client_Mail_Id = int.Parse(grd_Email.Rows[i].Cells[0].Value.ToString());
+            //  Client_Mail_Id = int.Parse(grd_Email.Rows[i].Cells[0].Value.ToString());
             for (int i = 0; i < grd_Email.Rows.Count; i++)
             {
-                    if (grd_Email.Rows[i].Cells[1].Value != null)
+                if (grd_Email.Rows[i].Cells[1].Value != null)
+                {
+                    if (grd_Email.Rows[i].Cells[1].Value.ToString() != "")
                     {
-                        if (grd_Email.Rows[i].Cells[1].Value.ToString() != "")
+                        if (Client_Mail_Id == 0 && btn_Save.Text == "Add")
                         {
-                            if (Client_Mail_Id == 0 && btn_Save.Text == "Add")
-                            {
-                                Hashtable ht_Mail = new Hashtable();
-                                DataTable dt_Mail = new DataTable();
-                                ht_Mail.Add("@Trans", "INSERT");
-                                ht_Mail.Add("@Client_Id", Client_insert_Id); // Client_insert_Id
-                                ht_Mail.Add("@Email_ID", grd_Email.Rows[i].Cells[1].Value.ToString());
-                                ht_Mail.Add("@Inserted_By", userid);
-                                // ht_Mail.Add("@Inserted_By", userid);
-                                dt_Mail = dataaccess.ExecuteSP("Sp_Client_Wise_Email", ht_Mail);
-                                Client_Mail_Id = 0;
-                            }
-                            //else if (Client_Mail_Id != 0)
-                            //{
-                            //    Hashtable ht_Update_Mail = new Hashtable();
-                            //    DataTable dt_Update_Mail = new DataTable();
-                            //    ht_Update_Mail.Add("@Trans", "INSERT");
-                            //    ht_Update_Mail.Add("@Client_Mail_Id", Client_Mail_Id);
-                            //    ht_Update_Mail.Add("@Client_Id", Client_id);
-                            //    ht_Update_Mail.Add("@Email_ID", grd_Email.Rows[i].Cells[1].Value.ToString());
-                            //    ht_Update_Mail.Add("@Modified_By", userid);
-                            //    dt_Update_Mail = dataaccess.ExecuteSP("Sp_Client_Wise_Email", ht_Update_Mail);
-                            //}
+                            Hashtable ht_Mail = new Hashtable();
+                            DataTable dt_Mail = new DataTable();
+                            ht_Mail.Add("@Trans", "INSERT");
+                            ht_Mail.Add("@Client_Id", Client_insert_Id); // Client_insert_Id
+                            ht_Mail.Add("@Email_ID", grd_Email.Rows[i].Cells[1].Value.ToString());
+                            ht_Mail.Add("@Inserted_By", userid);
+                            // ht_Mail.Add("@Inserted_By", userid);
+                            dt_Mail = dataaccess.ExecuteSP("Sp_Client_Wise_Email", ht_Mail);
+                            Client_Mail_Id = 0;
                         }
+                        //else if (Client_Mail_Id != 0)
+                        //{
+                        //    Hashtable ht_Update_Mail = new Hashtable();
+                        //    DataTable dt_Update_Mail = new DataTable();
+                        //    ht_Update_Mail.Add("@Trans", "INSERT");
+                        //    ht_Update_Mail.Add("@Client_Mail_Id", Client_Mail_Id);
+                        //    ht_Update_Mail.Add("@Client_Id", Client_id);
+                        //    ht_Update_Mail.Add("@Email_ID", grd_Email.Rows[i].Cells[1].Value.ToString());
+                        //    ht_Update_Mail.Add("@Modified_By", userid);
+                        //    dt_Update_Mail = dataaccess.ExecuteSP("Sp_Client_Wise_Email", ht_Update_Mail);
+                        //}
                     }
-              
+                }
+
             }
         }
 
@@ -510,105 +539,105 @@ namespace Ordermanagement_01
             //if (Ddl_Client_Country.SelectedValue.ToString() != "SELECT" && Ddl_Client_State.SelectedValue.ToString() != "SELECT" && ddl_Client_district.SelectedValue.ToString() != "SELECT")
             //{
 
-            if (Client_id == 0 && Validation() != false && Validate_Client_Name() != false && btn_Save.Text == "Add" && duplic_Email()!=false)
+            if (Client_id == 0 && Validation() != false && Validate_Client_Name() != false && btn_Save.Text == "Add" && duplic_Email() != false)
+            {
+
+
+                Hashtable htinsert = new Hashtable();
+                DataTable dtinsert = new DataTable();
+                DataTable dt = new DataTable();
+                DateTime date = new DateTime();
+                date = DateTime.Now;
+                string dateeval = date.ToString("dd/MM/yyyy");
+                htinsert.Add("@Trans", "INSERT");
+                //htinsert.Add("@Company_Id", int.Parse(ddl_Company.SelectedValue.ToString()));
+                //htinsert.Add("@Branch_ID", branchid);ddl_branchname
+                htinsert.Add("@Branch_ID", ddl_branchname.SelectedValue);
+                htinsert.Add("@Client_Number", txt_ClientNumber.Text);
+                htinsert.Add("@Client_Name", txt_ClientName.Text);
+                htinsert.Add("@Client_Photo", bimage);
+                htinsert.Add("@Client_Code", txt_Client_Code.Text);
+                htinsert.Add("@Client_Country", int.Parse(Ddl_Client_Country.SelectedValue.ToString()));
+                htinsert.Add("@Client_State", int.Parse(Ddl_Client_State.SelectedValue.ToString()));
+                htinsert.Add("@Client_District", int.Parse(ddl_Client_district.SelectedValue.ToString()));
+                htinsert.Add("@Client_City", txt_Client_city.Text);
+                htinsert.Add("@Client_Address", txt_Client_address.Text);
+                htinsert.Add("@Client_Phone", txt_Client_phono.Text);
+                htinsert.Add("@Client_Pin", txt_Client_Pincode.Text);
+                htinsert.Add("@Client_Fax", txt_Client_fax.Text);
+                htinsert.Add("@Client_Email", txt_Client_email.Text);
+                htinsert.Add("@Client_Web", txt_Client_website.Text);
+                htinsert.Add("@Inserted_By", userid);
+                htinsert.Add("@Inserted_date", date);
+                htinsert.Add("@status", "True");
+
+                Client_insert_Id = dataaccess.ExecuteSPForScalar("Sp_Client", htinsert);
+
+                Grd_Mail_Insert();
+                string title = "Insert";
+                MessageBox.Show("Client Created Sucessfully", title);
+                clear();
+                GetMaximumClientNumber();
+                Client_id = 0;
+                AddParent();
+            }
+            else if (Client_id != 0 && Validation() != false && btn_Save.Text == "Edit" && duplic_Email() != false)
+            {
+                //Update
+
+                Hashtable htupdate = new Hashtable();
+                DataTable dtupdate = new DataTable();
+                DataTable dt = new DataTable();
+                DateTime date = new DateTime();
+                date = DateTime.Now;
+                string dateeval = date.ToString("dd/MM/yyyy");
+                htupdate.Add("@Trans", "UPDATE");
+                htupdate.Add("@Client_Id", Client_id);
+                //htupdate.Add("@Company_Id", int.Parse(ddl_Company.SelectedValue.ToString()));
+                htupdate.Add("@Branch_ID", branchid);
+                htupdate.Add("@Client_Number", txt_ClientNumber.Text);
+                htupdate.Add("@Client_Name", txt_ClientName.Text);
+                htupdate.Add("@Client_Code", txt_Client_Code.Text);
+                htupdate.Add("@Client_Photo", bimage);
+                htupdate.Add("@Client_Country", int.Parse(Ddl_Client_Country.SelectedValue.ToString()));
+                htupdate.Add("@Client_State", int.Parse(Ddl_Client_State.SelectedValue.ToString()));
+                htupdate.Add("@Client_District", int.Parse(ddl_Client_district.SelectedValue.ToString()));
+                htupdate.Add("@Client_City", txt_Client_city.Text);
+                htupdate.Add("@Client_Address", txt_Client_address.Text);
+                htupdate.Add("@Client_Phone", txt_Client_phono.Text);
+                htupdate.Add("@Client_Pin", txt_Client_Pincode.Text.ToString());
+                htupdate.Add("@Client_Fax", txt_Client_fax.Text);
+                htupdate.Add("@Client_Email", txt_Client_email.Text);
+                htupdate.Add("@Client_Web", txt_Client_website.Text);
+                htupdate.Add("@Modified_By", userid);
+                htupdate.Add("@Modified_Date", date);
+                htupdate.Add("@status", "True");
+
+
+                if (rbtn_Enable.Checked == true)
                 {
-                   
-                
-                    Hashtable htinsert = new Hashtable();
-                    DataTable dtinsert = new DataTable();
-                    DataTable dt = new DataTable();
-                    DateTime date = new DateTime();
-                    date = DateTime.Now;
-                    string dateeval = date.ToString("dd/MM/yyyy");
-                    htinsert.Add("@Trans", "INSERT");
-                    //htinsert.Add("@Company_Id", int.Parse(ddl_Company.SelectedValue.ToString()));
-                    //htinsert.Add("@Branch_ID", branchid);ddl_branchname
-                    htinsert.Add("@Branch_ID", ddl_branchname.SelectedValue);
-                    htinsert.Add("@Client_Number", txt_ClientNumber.Text);
-                    htinsert.Add("@Client_Name", txt_ClientName.Text);
-                    htinsert.Add("@Client_Photo", bimage);
-                    htinsert.Add("@Client_Code", txt_Client_Code.Text);
-                    htinsert.Add("@Client_Country", int.Parse(Ddl_Client_Country.SelectedValue.ToString()));
-                    htinsert.Add("@Client_State", int.Parse(Ddl_Client_State.SelectedValue.ToString()));
-                    htinsert.Add("@Client_District", int.Parse(ddl_Client_district.SelectedValue.ToString()));
-                    htinsert.Add("@Client_City", txt_Client_city.Text);
-                    htinsert.Add("@Client_Address", txt_Client_address.Text);
-                    htinsert.Add("@Client_Phone", txt_Client_phono.Text);
-                    htinsert.Add("@Client_Pin", txt_Client_Pincode.Text);
-                    htinsert.Add("@Client_Fax", txt_Client_fax.Text);
-                    htinsert.Add("@Client_Email", txt_Client_email.Text);
-                    htinsert.Add("@Client_Web", txt_Client_website.Text);
-                    htinsert.Add("@Inserted_By", userid);
-                    htinsert.Add("@Inserted_date", date);
-                    htinsert.Add("@status", "True");
-
-                    Client_insert_Id = dataaccess.ExecuteSPForScalar("Sp_Client", htinsert);
-
-                    Grd_Mail_Insert();
-                    string title = "Insert";
-                    MessageBox.Show("Client Created Sucessfully",title);
-                    clear();
-                    GetMaximumClientNumber();
-                    Client_id = 0;
-                    AddParent();
+                    htupdate.Add("@Client_Status", "True");
                 }
-               else if (Client_id != 0 && Validation() != false && btn_Save.Text == "Edit" && duplic_Email() != false)
+                else if (rbtn_Disable.Checked == true)
                 {
-                    //Update
 
-                    Hashtable htupdate = new Hashtable();
-                    DataTable dtupdate = new DataTable();
-                    DataTable dt = new DataTable();
-                    DateTime date = new DateTime();
-                    date = DateTime.Now;
-                    string dateeval = date.ToString("dd/MM/yyyy");
-                    htupdate.Add("@Trans", "UPDATE");
-                    htupdate.Add("@Client_Id", Client_id);
-                    //htupdate.Add("@Company_Id", int.Parse(ddl_Company.SelectedValue.ToString()));
-                    htupdate.Add("@Branch_ID", branchid);
-                    htupdate.Add("@Client_Number", txt_ClientNumber.Text);
-                    htupdate.Add("@Client_Name", txt_ClientName.Text);
-                    htupdate.Add("@Client_Code", txt_Client_Code.Text);
-                    htupdate.Add("@Client_Photo", bimage);
-                    htupdate.Add("@Client_Country", int.Parse(Ddl_Client_Country.SelectedValue.ToString()));
-                    htupdate.Add("@Client_State", int.Parse(Ddl_Client_State.SelectedValue.ToString()));
-                    htupdate.Add("@Client_District", int.Parse(ddl_Client_district.SelectedValue.ToString()));
-                    htupdate.Add("@Client_City", txt_Client_city.Text);
-                    htupdate.Add("@Client_Address", txt_Client_address.Text);
-                    htupdate.Add("@Client_Phone", txt_Client_phono.Text);
-                    htupdate.Add("@Client_Pin", txt_Client_Pincode.Text.ToString());
-                    htupdate.Add("@Client_Fax", txt_Client_fax.Text);
-                    htupdate.Add("@Client_Email", txt_Client_email.Text);
-                    htupdate.Add("@Client_Web", txt_Client_website.Text);
-                    htupdate.Add("@Modified_By", userid);
-                    htupdate.Add("@Modified_Date", date);
-                    htupdate.Add("@status", "True");
-
-                    
-                    if (rbtn_Enable.Checked == true)
-                    {
-                        htupdate.Add("@Client_Status", "True");
-                    }
-                    else if (rbtn_Disable.Checked == true)
-                    {
-
-                        htupdate.Add("@Client_Status", "False");
-                    }
-                    dtupdate = dataaccess.ExecuteSP("Sp_Client", htupdate);
-                    Grd_Mail_Update();
-                    string title = "Update";
-                    MessageBox.Show("Client Updated Sucessfully",title);
-                    clear();
-                    GetMaximumClientNumber();
-                   
-                    AddParent();
-                    Grd_Mail_Bind();
-                    Client_id = 0;
-                    GetMaximumClientNumber();
-                    grd_Email.Rows.Clear();
+                    htupdate.Add("@Client_Status", "False");
                 }
+                dtupdate = dataaccess.ExecuteSP("Sp_Client", htupdate);
+                Grd_Mail_Update();
+                string title = "Update";
+                MessageBox.Show("Client Updated Sucessfully", title);
+                clear();
+                GetMaximumClientNumber();
+
+                AddParent();
+                Grd_Mail_Bind();
+                Client_id = 0;
+                GetMaximumClientNumber();
+                grd_Email.Rows.Clear();
+            }
         }
-       
+
         protected void GetMaximumClientNumber()
         {
             Hashtable htselect = new Hashtable();
@@ -632,14 +661,49 @@ namespace Ordermanagement_01
         private void ddl_Company_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ddl_Company.SelectedIndex > 0)
-           {
-              dbc.BindBranch(ddl_branchname, int.Parse(ddl_Company.SelectedValue.ToString()));
-           }
+            {
+                dbc.BindBranch(ddl_branchname, int.Parse(ddl_Company.SelectedValue.ToString()));
+            }
 
         }
 
         private void txt_ClientNumber_TextChanged(object sender, EventArgs e)
         {
+            if (txt_ClientNumber.Text.Length >= 4 && txt_ClientNumber.Text.Length <= 7)
+            {
+                string clientno = txt_ClientNumber.Text.Trim().ToString();
+                string Client_Numbers = txt_ClientNumber.Text.Trim().ToString();
+
+                if (Client_Numbers.Length > 0)
+                {
+                    bool Validate_Result = Validate_Client_Number_Length(Client_Numbers);
+
+                    if (Validate_Result == true)
+                    {
+                       
+                       
+
+                        MessageBox.Show("Enter Number in Right Format like 1000,2000 etc");
+
+                    }
+
+                }
+
+
+
+            }
+            if (txt_ClientNumber.Text.Length <= 4 && txt_ClientNumber.Text.Length >= 7)
+            {
+                MessageBox.Show("please enter Client Number Should  be Greater than 4 Digit And Not Existing ");
+                txt_ClientNumber.Focus();
+            }
+            //if( ClientNoCheck() == false)
+            //{
+            //    MessageBox.Show("Client Number already Exists ,Try Another Number Which is having Greater Than That Value And & Having Increment Of 1000");
+
+            //}
+
+
 
         }
 
@@ -666,9 +730,9 @@ namespace Ordermanagement_01
             {
                 textBoximage.Enabled = false;
             }
-            
+
         }
-       
+
         public Image GetDataToImage(byte[] bimage)
         {
             try
@@ -706,7 +770,7 @@ namespace Ordermanagement_01
                 //hide panel
                 pnlSideTree.Visible = false;
                 //btn_treeview.Location = pt;
-                
+
                 lbl_Client.Location = client_lbl;
                 btn_Save.Location = create_cli;
                 btn_Delete.Location = del_cli;
@@ -715,15 +779,15 @@ namespace Ordermanagement_01
                 grp_Add_det.Location = add_pt;
                 Create_Company.ActiveForm.Width = 1057;
                 Create_Company.ActiveForm.Location = form_pt;
-               // btn_treeview.Image = Image.FromFile(Environment.CurrentDirectory + @"\right.png");
+                // btn_treeview.Image = Image.FromFile(Environment.CurrentDirectory + @"\right.png");
             }
             else
             {
 
                 //show panel
                 pnlSideTree.Visible = true;
-               // btn_treeview.Location = pt1;
-                
+                // btn_treeview.Location = pt1;
+
                 lbl_Client.Location = client_lbl1;
                 btn_Save.Location = create_cli1;
                 btn_Delete.Location = del_cli1;
@@ -732,7 +796,7 @@ namespace Ordermanagement_01
                 grp_Add_det.Location = add_pt1;
                 Create_Company.ActiveForm.Width = 1247;
                 Create_Company.ActiveForm.Location = form1_pt;
-              //  btn_treeview.Image = Image.FromFile(Environment.CurrentDirectory + @"\left.png");
+                //  btn_treeview.Image = Image.FromFile(Environment.CurrentDirectory + @"\left.png");
             }
             AddParent();
         }
@@ -750,7 +814,7 @@ namespace Ordermanagement_01
             if (txt_CostTATExcel.Enabled == false)
             {
                 txt_CostTATExcel.Text = "";
-               
+
             }
 
 
@@ -785,10 +849,10 @@ namespace Ordermanagement_01
                     txt_Client_fax.Text = dt.Rows[0]["Client_Fax"].ToString();
                     txt_Client_email.Text = dt.Rows[0]["Client_Email"].ToString();
                     txt_Client_website.Text = dt.Rows[0]["Client_Web"].ToString();
-                    if(dt.Rows[0]["Client_Photo"].ToString()!="")
+                    if (dt.Rows[0]["Client_Photo"].ToString() != "")
                     {
                         bimage = (Byte[])(dt.Rows[0]["Client_Photo"]);
-                        MemoryStream ms = new MemoryStream(bimage,0,bimage.Length);
+                        MemoryStream ms = new MemoryStream(bimage, 0, bimage.Length);
                         ms.Write(bimage, 0, bimage.Length);
                         Client_image.Image = Image.FromStream(ms, true);
                         textBoximage.Enabled = true;
@@ -797,7 +861,7 @@ namespace Ordermanagement_01
                     {
                         Client_image.Image = null;
                         textBoximage.Text = "";
-                        textBoximage.Enabled=false;
+                        textBoximage.Enabled = false;
                     }
                     if (dt.Rows[0]["Modifiedby"].ToString() != "")
                     {
@@ -823,7 +887,7 @@ namespace Ordermanagement_01
                         rbtn_Disable.Checked = true;
                     }
                 }
-                
+
                 if (Client_id != 0)
                 {
                     btn_Save.Text = "Edit";
@@ -834,36 +898,37 @@ namespace Ordermanagement_01
                 }
 
                 Grd_Mail_Bind();
-              //  Grd_Mail_Insert();
+                //  Grd_Mail_Insert();
             }
         }
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
             //Client_id = int.Parse(tree_Client.SelectedNode.Text.Substring(0, 4));
-             DialogResult dialog = MessageBox.Show("Do you want to Delete Client", "Delete Confirmation", MessageBoxButtons.YesNo);
-             if (dialog == DialogResult.Yes)
-             {
-                 if (Client_id!=0)
-                 {
-                     Hashtable htdelete = new Hashtable();
-                     DataTable dtdelete = new DataTable();
-                     htdelete.Add("@Trans", "DELETE");
-                     htdelete.Add("@Client_Id", Client_id);
-                     dtdelete = dataaccess.ExecuteSP("Sp_Client", htdelete);
-                     int count = dtdelete.Rows.Count;
-                     MessageBox.Show("Client Deleted Successfully ");
-                     clear();
-                     AddParent();
-                 }
-                 else{
-                     string title = "Select!";
-                     MessageBox.Show("Please Select Client to delete",title);
-                     txt_ClientName.Focus();
-                 }
-             }
-             clear();
-             grd_Email.Rows.Clear();
+            DialogResult dialog = MessageBox.Show("Do you want to Delete Client", "Delete Confirmation", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+            {
+                if (Client_id != 0)
+                {
+                    Hashtable htdelete = new Hashtable();
+                    DataTable dtdelete = new DataTable();
+                    htdelete.Add("@Trans", "DELETE");
+                    htdelete.Add("@Client_Id", Client_id);
+                    dtdelete = dataaccess.ExecuteSP("Sp_Client", htdelete);
+                    int count = dtdelete.Rows.Count;
+                    MessageBox.Show("Client Deleted Successfully ");
+                    clear();
+                    AddParent();
+                }
+                else
+                {
+                    string title = "Select!";
+                    MessageBox.Show("Please Select Client to delete", title);
+                    txt_ClientName.Focus();
+                }
+            }
+            clear();
+            grd_Email.Rows.Clear();
         }
 
         private void txt_Client_phono_TextChanged(object sender, EventArgs e)
@@ -872,20 +937,20 @@ namespace Ordermanagement_01
             {
                 MessageBox.Show("Enter Maximum 20 digit Number");
                 txt_Client_phono.Select();
-                
+
             }
         }
-        
+
         private void txt_Client_fax_TextChanged(object sender, EventArgs e)
         {
             if (((TextBox)sender).TextLength > 20)
             {
                 MessageBox.Show("Enter Maximum 20 digit Number");
-               
+
             }
         }
 
-        
+
         private void txt_Client_Pincode_KeyPress(object sender, KeyPressEventArgs e)
         {
             //e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
@@ -999,9 +1064,20 @@ namespace Ordermanagement_01
 
         }
 
+        private void txt_ClientNumber_Validating(object sender, CancelEventArgs e)
+        {
+
+            if (txt_ClientNumber.Text.Length < 4)
+            {
+                e.Cancel = true;
+                MessageBox.Show("please enter Client Number It Should not be Less than 4 Digit");
+            }
+
+        }
+
         private void btn_UploadExcel_Click(object sender, EventArgs e)
         {
-            Ordermanagement_01.Masters.Client_CostTat CostTAT = new Ordermanagement_01.Masters.Client_CostTat(Client_id,userid, txt_ClientName.Text);
+            Ordermanagement_01.Masters.Client_CostTat CostTAT = new Ordermanagement_01.Masters.Client_CostTat(Client_id, userid, txt_ClientName.Text);
             CostTAT.Show();
         }
 
@@ -1050,6 +1126,19 @@ namespace Ordermanagement_01
             }
         }
 
+        private void ListofClientNumbers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+           // txt_ClientNumber.Text = ListofClientNumbers.SelectedItem.ToString();
+
+        }
+
+        private void ListofClientNumbers_Click(object sender, EventArgs e)
+        {
+            txt_ClientNumber.Text = ListofClientNumbers.SelectedItem.ToString();
+        }
+
         private void Grd_Mail_Bind()
         {
             Hashtable ht_Mail_Bind = new Hashtable();
@@ -1061,7 +1150,7 @@ namespace Ordermanagement_01
 
 
             dtse = dt_Mail_Bind;
-      
+
             if (dt_Mail_Bind.Rows.Count > 0)
             {
                 grd_Email.Rows.Clear();
@@ -1103,51 +1192,51 @@ namespace Ordermanagement_01
             string Email_ID;
             Hashtable ht_Mail = new Hashtable();
             DataTable dt_Mail = new DataTable();
-            
+
             for (int i = 0; i < grd_Email.Rows.Count; i++)
             {
                 if (grd_Email.Rows[i].Cells[0].Value == null || grd_Email.Rows[i].Cells[0].Value == "" || grd_Email.Rows[i].DefaultCellStyle.BackColor == Color.White)
+                {
+                    if (grd_Email.Rows[i].Cells[1].Value != null)
                     {
-                        if (grd_Email.Rows[i].Cells[1].Value != null)
+                        if (grd_Email.Rows[i].Cells[1].Value.ToString() != "")
                         {
-                            if (grd_Email.Rows[i].Cells[1].Value.ToString() != "")
-                            {
-                                ht_Mail.Clear();
-                                dt_Mail.Clear();
-                                ht_Mail.Add("@Trans", "INSERT");
-                                ht_Mail.Add("@Client_Id", Client_id);
-                                ht_Mail.Add("@Email_ID", grd_Email.Rows[i].Cells[1].Value.ToString());
-                                ht_Mail.Add("@Inserted_By", userid);
-                                dt_Mail = dataaccess.ExecuteSP("Sp_Client_Wise_Email", ht_Mail);
-                            }
-                        }
-                    }
-                    else
-                    {
-                        if (grd_Email.Rows[i].Cells[1].Value != null || grd_Email.Rows[i].DefaultCellStyle.BackColor == Color.White)
-                        {
-                            if (grd_Email.Rows[i].Cells[1].Value.ToString() != "")
-                            {
-
-                                ht_Mail.Clear();
-                                dt_Mail.Clear();
-
-                                ht_Mail.Add("@Trans", "UPDATE");
-                                ht_Mail.Add("@Client_Mail_Id", grd_Email.Rows[i].Cells[0].Value.ToString());
-                                ht_Mail.Add("@Email_ID", grd_Email.Rows[i].Cells[1].Value.ToString());
-                                ht_Mail.Add("@Modified_By", userid);
-                                dt_Mail = dataaccess.ExecuteSP("Sp_Client_Wise_Email", ht_Mail);
-                            }
+                            ht_Mail.Clear();
+                            dt_Mail.Clear();
+                            ht_Mail.Add("@Trans", "INSERT");
+                            ht_Mail.Add("@Client_Id", Client_id);
+                            ht_Mail.Add("@Email_ID", grd_Email.Rows[i].Cells[1].Value.ToString());
+                            ht_Mail.Add("@Inserted_By", userid);
+                            dt_Mail = dataaccess.ExecuteSP("Sp_Client_Wise_Email", ht_Mail);
                         }
                     }
                 }
-                //if (grd_Email.Rows.Count > 1)
-                //{
-                //    for (int i = 0; i < grd_Email.Rows.Count-1; i++)
-                //    {
-                //        grd_Email.Rows[i].Cells[2].Value = "Delete";
-                //    }
-                //}
+                else
+                {
+                    if (grd_Email.Rows[i].Cells[1].Value != null || grd_Email.Rows[i].DefaultCellStyle.BackColor == Color.White)
+                    {
+                        if (grd_Email.Rows[i].Cells[1].Value.ToString() != "")
+                        {
+
+                            ht_Mail.Clear();
+                            dt_Mail.Clear();
+
+                            ht_Mail.Add("@Trans", "UPDATE");
+                            ht_Mail.Add("@Client_Mail_Id", grd_Email.Rows[i].Cells[0].Value.ToString());
+                            ht_Mail.Add("@Email_ID", grd_Email.Rows[i].Cells[1].Value.ToString());
+                            ht_Mail.Add("@Modified_By", userid);
+                            dt_Mail = dataaccess.ExecuteSP("Sp_Client_Wise_Email", ht_Mail);
+                        }
+                    }
+                }
+            }
+            //if (grd_Email.Rows.Count > 1)
+            //{
+            //    for (int i = 0; i < grd_Email.Rows.Count-1; i++)
+            //    {
+            //        grd_Email.Rows[i].Cells[2].Value = "Delete";
+            //    }
+            //}
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -1158,7 +1247,7 @@ namespace Ordermanagement_01
             Ordermanagement_01.Masters.Client_State_County_Type_Import ci = new Masters.Client_State_County_Type_Import(Client_id);
             ci.Show();
 
-           
+
         }
 
         private void txt_Client_Code_KeyDown(object sender, KeyEventArgs e)
@@ -1224,7 +1313,7 @@ namespace Ordermanagement_01
                 if (e.Handled == true)
                 {
                     MessageBox.Show("White Space not allowed for First Charcter");
-                   
+
                 }
             }
             txt_ClientName.Select();
@@ -1268,7 +1357,7 @@ namespace Ordermanagement_01
                 }
             }
 
-         
+
         }
 
         private void txt_Client_address_KeyPress(object sender, KeyPressEventArgs e)
@@ -1295,7 +1384,7 @@ namespace Ordermanagement_01
             //    }
             //}
 
-           
+
             if ((char.IsWhiteSpace(e.KeyChar)) && txt_Client_Code.Text.Length == 0) //for block first whitespace 
             {
                 e.Handled = true;
@@ -1307,9 +1396,18 @@ namespace Ordermanagement_01
             }
         }
 
-      
+
         private void txt_ClientNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
+            lbl_ClientRefNo.Visible = true;
+            ListofClientNumbers.Visible = true;
+            ListofClientNumbers.Enabled = true;
+            lbl_ClientRefNo.Visible = true;
+
+            e.Handled = !char.IsDigit(e.KeyChar);
+            if (!Char.IsLetter(e.KeyChar) && e.KeyChar == (char)Keys.Back)
+                e.Handled = false;
+
             if ((char.IsWhiteSpace(e.KeyChar)) && txt_ClientNumber.Text.Length == 0) //for block first whitespace 
             {
                 e.Handled = true;
@@ -1319,15 +1417,70 @@ namespace Ordermanagement_01
                     txt_ClientNumber.Select();
                 }
             }
+
         }
 
+
+        private bool Validate_Client_Number_Length(string Client_Number)
+        {
+
+
+            ArrayList ar = new ArrayList();
+            //string[] strings = (string[])ar.ToArray(typeof(string));
+
+            foreach (char item in Client_Number)
+            {
+
+                ar.Add(item);
+
+            }
+
+            if (Client_Number.Length == 4)
+            {
+                ar.RemoveAt(0);
+            }
+            else if (Client_Number.Length == 5)
+            {
+                ar.RemoveRange(0, 1);
+            }
+            else if (Client_Number.Length == 6)
+            {
+                ar.RemoveRange(0, 2);
+            }
+            else if (Client_Number.Length == 7)
+            {
+                ar.RemoveRange(0, 3);
+            }
+
+            bool Check_Value = false;
+            foreach (var value in ar)
+            {
+                if (int.Parse(value.ToString()) != 0)
+                {
+                    Check_Value =false;
+                    break;
+
+                }
+                else
+                {
+                    Check_Value = true;
+             
+
+
+
+                }
+            }
+
+            return Check_Value;
+        }
         private void txt_Client_Pincode_TextChanged(object sender, EventArgs e)
         {
             if (((TextBox)sender).TextLength > 6)
             {
                 MessageBox.Show("Enter 5 or 6 digit Number");
                 txt_Client_Pincode.Select();
-               
+
+
             }
         }
 
@@ -1368,8 +1521,40 @@ namespace Ordermanagement_01
             //    }
             //}
         }
+        public bool ClientNoCheck()
+        {
+            DataTable dt = new DataTable();
+            Hashtable ht = new Hashtable();
+            try
+            {
 
-     
-        
+                if (txt_ClientNumber.Text != "")
+                {
+                    ht.Add("@Trans", "ClientNOCheck");
+                    ht.Add("@Client_Number", txt_ClientNumber.Text);
+                    dt = dataaccess.ExecuteSP("Sp_Client", ht);
+                    int count = Convert.ToInt32(dt.Rows[0]["count"].ToString());
+                    if (count > 0)
+                    {
+                        MessageBox.Show("ClientNumber Already Exists");
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
     }
+
+
 }
+
+

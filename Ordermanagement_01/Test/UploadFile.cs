@@ -1,13 +1,12 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
-
 using System;
 using System.Collections;
 using System.Data;
+using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
-
 namespace Ordermanagement_01.Test
 {
     public partial class UploadFile : XtraForm
@@ -25,24 +24,16 @@ namespace Ordermanagement_01.Test
         public UploadFile()
         {
             InitializeComponent();
-            foreach (int rows in gridView1.GetSelectedRows())
-            {
-                DataRow row = gridView1.GetDataRow(rows);
-            }
+
         }
 
         private void UploadFile_Load(object sender, EventArgs e)
         {
             BindGrid();
-            this.DragDrop += gridControl1_DragDrop;
-            // SystemFolder = "C:\\VijayKumar\\FileUpload";
-            // path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "xxx.pdf");
             path = "C:\\VijayKumar\\FileUpload";
             Directory.CreateDirectory(path);
             DownloadedFilePath = "C:\\VijayKumar\\DownloadedFile";
-            //Directory.CreateDirectory(DownloadedFilePath);
-            ////this.DragEnter += gridControl1_DragEnter;
-            //FolderPath =Path.GetPathRoot(DownloadedFilePath).ToUpper();
+
         }
 
         private void gridControl1_DragDrop(object sender, DragEventArgs e)
@@ -91,7 +82,7 @@ namespace Ordermanagement_01.Test
                                 File.Move(file, dest);
                             ht.Add("@Trans", "INSERT");
                             ht.Add("@FileName", Path.GetFileName(file));
-                            ht.Add("@File_Size", File_size);
+                            ht.Add("@FileSize", File_size);
                             ht.Add("@InsertedDate", DateTime.Now);
                             ht.Add("@DocumentPath", dest);
                             int dt2 = Convert.ToInt32(da.ExecuteSPForScalar("Sp_TblFileUploads", ht));
@@ -115,7 +106,7 @@ namespace Ordermanagement_01.Test
                                     File.Copy(file, dest, true);
                                 ht.Add("@Trans", "INSERT");
                                 ht.Add("@FileName", Path.GetFileName(file));
-                                ht.Add("@File_Size", File_size);
+                                ht.Add("@FileSize", File_size);
                                 ht.Add("@InsertedDate", DateTime.Now);
                                 ht.Add("@DocumentPath", dest);
                                 int dt1 = Convert.ToInt32(da.ExecuteSPForScalar("Sp_TblFileUploads", ht));
@@ -197,27 +188,7 @@ namespace Ordermanagement_01.Test
             else
             {
                 e.Effect = DragDropEffects.Move;
-                //int[] selectedRows = gridView1.GetSelectedRows();
-                //foreach (int rowHandle in selectedRows)
-                //{
-                //    if (rowHandle >= 0)
-                //    {
-                //        var cellvalue = (string)gridView1.GetRowCellValue(rowHandle, "DocumentPath");
-                //        if (cellvalue != null)
-                //        {
-                //            folderBrowserDialog1.ShowDialog();
-                //            string tpath = folderBrowserDialog1.SelectedPath.ToString();
-                //            for (int i = 0; i < cellvalue.Length; i++)
-                //            {
-                //                string[] filename = cellvalue[i].ToString().Split('/');
-                //                string DocName =path.GetFileName(filename.ToString());
-                //                File.Copy(filename[0], @"C:\\Vijaykumar\\DownlodedFiles" + DocName, true);
-                //            }
-                //        }
 
-                //    }
-                //    XtraMessageBox.Show("Drag Move Event Occured");
-                //}
             }
 
         }
@@ -287,59 +258,130 @@ namespace Ordermanagement_01.Test
 
         private void gridControl1_MouseDown(object sender, MouseEventArgs e)
         {
-            DevExpress.Utils.DXMouseEventArgs ea = e as DevExpress.Utils.DXMouseEventArgs;
-            GridView view = sender as GridView;
-            GridHitInfo info = view.CalcHitInfo(ea.Location);
-            if (info.InRow || info.InRowCell)
+            try
             {
-                string caption = info.Column.Caption;
-                if (caption == "DocumentPath")
+
+                if (e.Button == System.Windows.Forms.MouseButtons.Right || e.Button == MouseButtons.Left)
                 {
-                    if (e.Button == System.Windows.Forms.MouseButtons.Right || e.Button == MouseButtons.Left)
+                    GridView view = sender as GridView;
+                    GridHitInfo info = gridView1.CalcHitInfo(e.Location);
+                    if (info.InRowCell == true)
                     {
 
-                        DataRow row = gridView1.GetDataRow(gridView1.FocusedRowHandle);
+                        string caption = info.Column.Caption;
+                        {
+                            if (caption == "DocumentPath")
+                            {
+                                DataRowView vie = gridView1.GetRow(info.RowHandle) as DataRowView;
 
-                        gridControl1.DoDragDrop(row, DragDropEffects.Move);
+                                string CellValue = vie.Row["DocumentPath"].ToString();
 
-                        // int Order_ID = int.Parse(row["Order_Id"].ToString());
-                        // obj_Order_Details_List.Order_Id = Order_ID;
-                        // obj_Order_Details_List.Work_Type_Id = Work_Type_Id;
-                        // Comment_Card cmd = new Comment_Card(obj_Order_Details_List);
-                        // cmd.Show();
+                                //var folderbrowsing = new FolderBrowserDialog();
+                                ////folderbrowsing.ShowDialog();
+                                //DialogResult result = folderBrowserDialog1.ShowDialog();
+                                //if (result == DialogResult.OK)
+                                //{
+                                //    string folderName = folderBrowserDialog1.SelectedPath;
+                                var file = new FileInfo(CellValue);
+                                // File.Copy(CellValue, @"C:\\Vijaykumar\\DownlodedFiles" + "\\" + file.Name, true);
+
+                                ProcessStartInfo myInfo = new ProcessStartInfo("explorer.exe", @"\\192.168.12.20");
+                                Process.Start(myInfo);
+
+
+
+
+
+                                File.Copy(CellValue, @"\\192.168.12.20\Queen" + "\\" + file.Name, true);
+
+                                MessageBox.Show(CellValue.ToString() + " " + "Copied Sucessfully To Selected Folder");
+                            }
+                            else
+                            {
+                                XtraMessageBox.Show("Please Select Folder to copy file");
+                            }
+
+
+
+
+                        }
                     }
+
+
                 }
 
-
-                //if (e.Button == System.Windows.Forms.MouseButtons.Right)
-                //{
-
-                //    GridView view = sender as GridView;
-                //    GridHitInfo hi = view.CalcHitInfo(e.Location);
-                //    DataRow dr = view.GetDataRow(hi.RowHandle);
-
-                //    gridControl1.DoDragDrop(dr, DragDropEffects.Move);
-
-
-
-                //}
-
-
-
-
-
             }
-        }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
-        private void gridControl1_MouseMove(object sender, MouseEventArgs e)
-        {
-            DevExpress.Utils.DXMouseEventArgs ea1 = e as DevExpress.Utils.DXMouseEventArgs;
-            GridView view1 = (GridView)sender;
 
-            //GridHitInfo hitinfo = view1.CalcHitInfo(new Point(e.X, e.Y));
+
+            //    DevExpress.Utils.DXMouseEventArgs ea = e as DevExpress.Utils.DXMouseEventArgs;
+            //    GridView view1 = sender as GridView;
+            //    GridHitInfo hit = view1.CalcHitInfo(e.Location);
+            //    DataRow row = null;
+            //    if (hit.InRow) // HERE  
+            //        row = view1.GetDataRow(hit.RowHandle);
+            //    if (row != null)
+            //    {
+            //        string caption1 = hit.Column.Caption;
+            //        if (caption1 == "DocumentPath")
+            //        {
+            //            DataRow rows = gridView1.GetDataRow(gridView1.FocusedRowHandle);
+
+            //            gridControl1.DoDragDrop(row, DragDropEffects.Move);
+            //        }
+            //    }
+            //}
+
+
+            // DevExpress.Utils.DXMouseEventArgs ea = e as DevExpress.Utils.DXMouseEventArgs;
+            //GridView view = sender as GridView;
+            //GridHitInfo info = view.CalcHitInfo(ea.Location);
+            //if (info.InRow || info.InRowCell)
+            //{
+            //    string caption = info.Column.Caption;
+            //    if (caption == "DocumentPath")
+            //    {
+            //        if (e.Button == System.Windows.Forms.MouseButtons.Right || e.Button == MouseButtons.Left)
+            //        {
+
+            //            DataRow row = gridView1.GetDataRow(gridView1.FocusedRowHandle);
+
+            //            gridControl1.DoDragDrop(row, DragDropEffects.Move);
+
+            //            // int Order_ID = int.Parse(row["Order_Id"].ToString());
+            //            // obj_Order_Details_List.Order_Id = Order_ID;
+            //            // obj_Order_Details_List.Work_Type_Id = Work_Type_Id;
+            //            // Comment_Card cmd = new Comment_Card(obj_Order_Details_List);
+            //            // cmd.Show();
+            //        }
+            //    }
+
+
+
+
+            //if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            //{
+
+            //    GridView view1 = sender as GridView;
+            //    GridHitInfo hi = view.CalcHitInfo(e.Location);
+            //    DataRow dr = view.GetDataRow(hi.RowHandle);
+
+            //    gridControl1.DoDragDrop(dr, DragDropEffects.Move);
+
+
+
+            //}
+
         }
     }
+
+
 }
+
 
 
 

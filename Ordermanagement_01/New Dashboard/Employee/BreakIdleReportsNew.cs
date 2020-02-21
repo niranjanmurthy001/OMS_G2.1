@@ -1,21 +1,21 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using DevExpress.XtraPivotGrid;
+using DevExpress.XtraPrinting;
+using DevExpress.XtraPrintingLinks;
+using DevExpress.XtraSplashScreen;
+using Newtonsoft.Json;
+using Ordermanagement_01.Masters;
+using Ordermanagement_01.Models;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
-using System.Text;
-using System.Linq;
-using DevExpress.XtraEditors;
-using DevExpress.XtraSplashScreen;
-using System.Collections;
-using DevExpress.XtraPivotGrid;
 using System.Globalization;
-using DevExpress.XtraPrinting;
 using System.IO;
-using DevExpress.XtraPrintingLinks;
-using Ordermanagement_01.Masters;
-using System.Net.Http;
-using Newtonsoft.Json;
-using Ordermanagement_01.Models;
+using System.Linq;
 using System.Net;
+using System.Net.Http;
+using System.Text;
 using System.Windows.Forms;
 
 namespace Ordermanagement_01.Reports
@@ -61,7 +61,7 @@ namespace Ordermanagement_01.Reports
             }
             BindSummary();
             BindIdleHours();
-            BindBreakHours();        
+            BindBreakHours();
         }
         private async void BindBreakHours()
         {
@@ -73,7 +73,7 @@ namespace Ordermanagement_01.Reports
                     dictionary.Add("@Trans", "BREAK_HOURS");
                     dictionary.Add("@From_Date", dateEditFromDate.Text);
                     dictionary.Add("@To_Date", dateEditToDate.Text);
-                    if(roleId != 1 && roleId != 4 && roleId != 6)
+                    if (roleId != 1 && roleId != 4 && roleId != 6)
                     {
                         dictionary.Add("@User_Id", userId);
                     }
@@ -103,7 +103,7 @@ namespace Ordermanagement_01.Reports
             finally
             {
                 SplashScreenManager.CloseForm(false);
-            }      
+            }
         }
         private async void BindIdleHours()
         {
@@ -141,11 +141,11 @@ namespace Ordermanagement_01.Reports
             catch (Exception ex)
             {
                 throw ex;
-            }   
+            }
             finally
             {
                 SplashScreenManager.CloseForm(false);
-            }        
+            }
         }
         private async void BindSummary()
         {
@@ -315,7 +315,7 @@ namespace Ordermanagement_01.Reports
                 if (pivotGridControlBreakHours.DataSource == null && pivotGridControlSummary.DataSource == null && pivotGridControlIdleHours.DataSource == null)
                 {
                     SplashScreenManager.CloseForm(false);
-                    XtraMessageBox.Show("Data not found, cannot export");                 
+                    XtraMessageBox.Show("Data not found, cannot export");
                     return;
                 }
                 PivotGridControl[] pivotGrids = new PivotGridControl[] { pivotGridControlSummary, pivotGridControlIdleHours, pivotGridControlBreakHours };
@@ -416,6 +416,6 @@ namespace Ordermanagement_01.Reports
             {
                 e.SheetName = "Break Hours";
             }
-        }        
+        }
     }
 }

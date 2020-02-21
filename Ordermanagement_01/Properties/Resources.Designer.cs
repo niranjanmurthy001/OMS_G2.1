@@ -1323,6 +1323,36 @@ namespace Ordermanagement_01.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap lock_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("lock icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LockIcon {
+            get {
+                object obj = ResourceManager.GetObject("LockIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lockScreenIcon {
+            get {
+                object obj = ResourceManager.GetObject("lockScreenIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Logout {
             get {
                 object obj = ResourceManager.GetObject("Logout", resourceCulture);

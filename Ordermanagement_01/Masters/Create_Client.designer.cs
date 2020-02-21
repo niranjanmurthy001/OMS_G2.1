@@ -35,6 +35,7 @@
             this.btn_Save = new System.Windows.Forms.Button();
             this.tree_Client = new System.Windows.Forms.TreeView();
             this.grp_Client_det = new System.Windows.Forms.GroupBox();
+            this.ListofClientNumbers = new System.Windows.Forms.ListBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.rbtn_Disable = new System.Windows.Forms.RadioButton();
@@ -102,6 +103,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.lbl_ClientRefNo = new System.Windows.Forms.Label();
             this.grp_Client_det.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_Email)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Client_image)).BeginInit();
@@ -151,6 +153,8 @@
             // 
             // grp_Client_det
             // 
+            this.grp_Client_det.Controls.Add(this.lbl_ClientRefNo);
+            this.grp_Client_det.Controls.Add(this.ListofClientNumbers);
             this.grp_Client_det.Controls.Add(this.label24);
             this.grp_Client_det.Controls.Add(this.label29);
             this.grp_Client_det.Controls.Add(this.rbtn_Disable);
@@ -209,6 +213,18 @@
             this.grp_Client_det.TabIndex = 71;
             this.grp_Client_det.TabStop = false;
             this.grp_Client_det.Text = "CLIENT DETAILS";
+            // 
+            // ListofClientNumbers
+            // 
+            this.ListofClientNumbers.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListofClientNumbers.FormattingEnabled = true;
+            this.ListofClientNumbers.ItemHeight = 20;
+            this.ListofClientNumbers.Location = new System.Drawing.Point(374, 103);
+            this.ListofClientNumbers.Name = "ListofClientNumbers";
+            this.ListofClientNumbers.Size = new System.Drawing.Size(102, 64);
+            this.ListofClientNumbers.TabIndex = 246;
+            this.ListofClientNumbers.Click += new System.EventHandler(this.ListofClientNumbers_Click);
+            this.ListofClientNumbers.SelectedIndexChanged += new System.EventHandler(this.ListofClientNumbers_SelectedIndexChanged);
             // 
             // label24
             // 
@@ -478,9 +494,9 @@
             // 
             // Client_image
             // 
-            this.Client_image.Location = new System.Drawing.Point(473, 15);
+            this.Client_image.Location = new System.Drawing.Point(482, 15);
             this.Client_image.Name = "Client_image";
-            this.Client_image.Size = new System.Drawing.Size(179, 129);
+            this.Client_image.Size = new System.Drawing.Size(180, 129);
             this.Client_image.TabIndex = 110;
             this.Client_image.TabStop = false;
             // 
@@ -646,6 +662,7 @@
             this.txt_ClientNumber.TextChanged += new System.EventHandler(this.txt_ClientNumber_TextChanged);
             this.txt_ClientNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_ClientNumber_KeyDown);
             this.txt_ClientNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ClientNumber_KeyPress);
+            this.txt_ClientNumber.Validating += new System.ComponentModel.CancelEventHandler(this.txt_ClientNumber_Validating);
             // 
             // txt_Client_Pincode
             // 
@@ -946,6 +963,15 @@
             this.panel5.Size = new System.Drawing.Size(1087, 149);
             this.panel5.TabIndex = 2;
             // 
+            // lbl_ClientRefNo
+            // 
+            this.lbl_ClientRefNo.AutoSize = true;
+            this.lbl_ClientRefNo.Location = new System.Drawing.Point(375, 80);
+            this.lbl_ClientRefNo.Name = "lbl_ClientRefNo";
+            this.lbl_ClientRefNo.Size = new System.Drawing.Size(101, 20);
+            this.lbl_ClientRefNo.TabIndex = 247;
+            this.lbl_ClientRefNo.Text = "AvailClientNo.....";
+            // 
             // Create_Client
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
@@ -1051,5 +1077,7 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.ListBox ListofClientNumbers;
+        private System.Windows.Forms.Label lbl_ClientRefNo;
     }
 }

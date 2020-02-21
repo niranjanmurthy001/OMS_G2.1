@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grd_order = new System.Windows.Forms.DataGridView();
+            this.Check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.SNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Order_Number = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Client_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,10 +53,7 @@
             this.txt_orderserach_Number = new System.Windows.Forms.TextBox();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btn_Refresh = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
-            this.rbtn_Invoice_Sended = new System.Windows.Forms.RadioButton();
-            this.rbtn_Invoice_NotSended = new System.Windows.Forms.RadioButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_First = new System.Windows.Forms.Button();
             this.lbl_Record_status = new System.Windows.Forms.Label();
@@ -64,8 +62,20 @@
             this.btn_Next = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.lbl_Total_orders = new System.Windows.Forms.Label();
+            this.btnSend = new System.Windows.Forms.Button();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btn_Refresh = new System.Windows.Forms.Button();
+            this.rbtn_Invoice_NotSended = new System.Windows.Forms.RadioButton();
+            this.rbtn_Invoice_Sended = new System.Windows.Forms.RadioButton();
+            this.panel4 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.grd_order)).BeginInit();
             this.panel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // grd_order
@@ -76,16 +86,17 @@
             this.grd_order.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.grd_order.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.grd_order.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grd_order.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_order.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.grd_order.ColumnHeadersHeight = 30;
             this.grd_order.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Check,
             this.SNo,
             this.Order_Number,
             this.Client_Name,
@@ -100,27 +111,33 @@
             this.Column15,
             this.Column6,
             this.Column8});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.MediumBlue;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grd_order.DefaultCellStyle = dataGridViewCellStyle3;
-            this.grd_order.Location = new System.Drawing.Point(20, 109);
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.MediumBlue;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grd_order.DefaultCellStyle = dataGridViewCellStyle9;
+            this.grd_order.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grd_order.Location = new System.Drawing.Point(3, 139);
             this.grd_order.Name = "grd_order";
             this.grd_order.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.grd_order.RowHeadersVisible = false;
-            this.grd_order.Size = new System.Drawing.Size(1200, 424);
+            this.grd_order.Size = new System.Drawing.Size(1218, 350);
             this.grd_order.TabIndex = 192;
             this.grd_order.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_order_CellClick);
             // 
+            // Check
+            // 
+            this.Check.HeaderText = "Chk";
+            this.Check.Name = "Check";
+            // 
             // SNo
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.SNo.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.SNo.DefaultCellStyle = dataGridViewCellStyle8;
             this.SNo.FillWeight = 91.37055F;
             this.SNo.HeaderText = "S. No";
             this.SNo.Name = "SNo";
@@ -224,17 +241,17 @@
             "Sub Client",
             "Received Date",
             "Order Type"});
-            this.cbo_colmn.Location = new System.Drawing.Point(106, 74);
+            this.cbo_colmn.Location = new System.Drawing.Point(319, 8);
             this.cbo_colmn.Name = "cbo_colmn";
-            this.cbo_colmn.Size = new System.Drawing.Size(222, 28);
+            this.cbo_colmn.Size = new System.Drawing.Size(255, 28);
             this.cbo_colmn.TabIndex = 198;
             // 
             // btn_New_Invoice
             // 
             this.btn_New_Invoice.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_New_Invoice.Location = new System.Drawing.Point(641, 70);
+            this.btn_New_Invoice.Location = new System.Drawing.Point(884, 7);
             this.btn_New_Invoice.Name = "btn_New_Invoice";
-            this.btn_New_Invoice.Size = new System.Drawing.Size(152, 33);
+            this.btn_New_Invoice.Size = new System.Drawing.Size(152, 32);
             this.btn_New_Invoice.TabIndex = 200;
             this.btn_New_Invoice.Text = "New Order Cost";
             this.btn_New_Invoice.UseVisualStyleBackColor = true;
@@ -244,7 +261,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(16, 78);
+            this.label2.Location = new System.Drawing.Point(242, 11);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 19);
             this.label2.TabIndex = 197;
@@ -254,10 +271,10 @@
             // 
             this.txt_orderserach_Number.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_orderserach_Number.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_orderserach_Number.Location = new System.Drawing.Point(334, 74);
+            this.txt_orderserach_Number.Location = new System.Drawing.Point(589, 9);
             this.txt_orderserach_Number.Multiline = true;
             this.txt_orderserach_Number.Name = "txt_orderserach_Number";
-            this.txt_orderserach_Number.Size = new System.Drawing.Size(301, 27);
+            this.txt_orderserach_Number.Size = new System.Drawing.Size(279, 27);
             this.txt_orderserach_Number.TabIndex = 199;
             this.txt_orderserach_Number.TextChanged += new System.EventHandler(this.txt_orderserach_Number_TextChanged);
             // 
@@ -279,63 +296,22 @@
             this.dataGridViewImageColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewImageColumn2.Width = 97;
             // 
-            // btn_Refresh
-            // 
-            this.btn_Refresh.BackColor = System.Drawing.Color.White;
-            this.btn_Refresh.BackgroundImage = global::Ordermanagement_01.Properties.Resources.refresh1;
-            this.btn_Refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Refresh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Refresh.ForeColor = System.Drawing.Color.SeaShell;
-            this.btn_Refresh.Location = new System.Drawing.Point(12, 33);
-            this.btn_Refresh.Name = "btn_Refresh";
-            this.btn_Refresh.Size = new System.Drawing.Size(40, 30);
-            this.btn_Refresh.TabIndex = 201;
-            this.btn_Refresh.UseVisualStyleBackColor = false;
-            this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
-            // 
             // label25
             // 
+            this.label25.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label25.Location = new System.Drawing.Point(496, 6);
+            this.label25.Location = new System.Drawing.Point(526, 6);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(214, 31);
             this.label25.TabIndex = 202;
             this.label25.Text = "ORDER COST  DETAILS";
             this.label25.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // rbtn_Invoice_Sended
-            // 
-            this.rbtn_Invoice_Sended.AutoSize = true;
-            this.rbtn_Invoice_Sended.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtn_Invoice_Sended.Location = new System.Drawing.Point(618, 43);
-            this.rbtn_Invoice_Sended.Name = "rbtn_Invoice_Sended";
-            this.rbtn_Invoice_Sended.Size = new System.Drawing.Size(93, 20);
-            this.rbtn_Invoice_Sended.TabIndex = 204;
-            this.rbtn_Invoice_Sended.Text = "Email Sent";
-            this.rbtn_Invoice_Sended.UseVisualStyleBackColor = true;
-            this.rbtn_Invoice_Sended.CheckedChanged += new System.EventHandler(this.rbtn_Invoice_Sended_CheckedChanged);
-            // 
-            // rbtn_Invoice_NotSended
-            // 
-            this.rbtn_Invoice_NotSended.AutoSize = true;
-            this.rbtn_Invoice_NotSended.Checked = true;
-            this.rbtn_Invoice_NotSended.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtn_Invoice_NotSended.Location = new System.Drawing.Point(482, 43);
-            this.rbtn_Invoice_NotSended.Name = "rbtn_Invoice_NotSended";
-            this.rbtn_Invoice_NotSended.Size = new System.Drawing.Size(119, 20);
-            this.rbtn_Invoice_NotSended.TabIndex = 203;
-            this.rbtn_Invoice_NotSended.TabStop = true;
-            this.rbtn_Invoice_NotSended.Text = "Email Not Sent";
-            this.rbtn_Invoice_NotSended.UseVisualStyleBackColor = true;
-            this.rbtn_Invoice_NotSended.CheckedChanged += new System.EventHandler(this.rbtn_Invoice_NotSended_CheckedChanged);
+            this.label25.Click += new System.EventHandler(this.label25_Click);
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.Linen;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.btn_First);
@@ -345,9 +321,10 @@
             this.panel2.Controls.Add(this.btn_Next);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.lbl_Total_orders);
-            this.panel2.Location = new System.Drawing.Point(20, 532);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 495);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1200, 38);
+            this.panel2.Size = new System.Drawing.Size(1218, 40);
             this.panel2.TabIndex = 205;
             // 
             // btn_First
@@ -436,29 +413,134 @@
             this.lbl_Total_orders.TabIndex = 26;
             this.lbl_Total_orders.Text = "T";
             // 
+            // btnSend
+            // 
+            this.btnSend.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnSend.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSend.Location = new System.Drawing.Point(546, 543);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(132, 29);
+            this.btnSend.TabIndex = 206;
+            this.btnSend.Text = "Send";
+            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.panel2, 0, 4);
+            this.tableLayoutPanel3.Controls.Add(this.panel3, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.grd_order, 0, 3);
+            this.tableLayoutPanel3.Controls.Add(this.panel4, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.btnSend, 0, 5);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 6;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1224, 578);
+            this.tableLayoutPanel3.TabIndex = 209;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label25);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1218, 34);
+            this.panel1.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btn_Refresh);
+            this.panel3.Controls.Add(this.rbtn_Invoice_NotSended);
+            this.panel3.Controls.Add(this.rbtn_Invoice_Sended);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(3, 43);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1218, 40);
+            this.panel3.TabIndex = 1;
+            // 
+            // btn_Refresh
+            // 
+            this.btn_Refresh.BackColor = System.Drawing.Color.White;
+            this.btn_Refresh.BackgroundImage = global::Ordermanagement_01.Properties.Resources.refresh1;
+            this.btn_Refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Refresh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Refresh.ForeColor = System.Drawing.Color.SeaShell;
+            this.btn_Refresh.Location = new System.Drawing.Point(3, 3);
+            this.btn_Refresh.Name = "btn_Refresh";
+            this.btn_Refresh.Size = new System.Drawing.Size(40, 38);
+            this.btn_Refresh.TabIndex = 201;
+            this.btn_Refresh.UseVisualStyleBackColor = false;
+            this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
+            // 
+            // rbtn_Invoice_NotSended
+            // 
+            this.rbtn_Invoice_NotSended.AutoSize = true;
+            this.rbtn_Invoice_NotSended.Checked = true;
+            this.rbtn_Invoice_NotSended.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtn_Invoice_NotSended.Location = new System.Drawing.Point(516, 10);
+            this.rbtn_Invoice_NotSended.Name = "rbtn_Invoice_NotSended";
+            this.rbtn_Invoice_NotSended.Size = new System.Drawing.Size(119, 20);
+            this.rbtn_Invoice_NotSended.TabIndex = 203;
+            this.rbtn_Invoice_NotSended.TabStop = true;
+            this.rbtn_Invoice_NotSended.Text = "Email Not Sent";
+            this.rbtn_Invoice_NotSended.UseVisualStyleBackColor = true;
+            this.rbtn_Invoice_NotSended.CheckedChanged += new System.EventHandler(this.rbtn_Invoice_NotSended_CheckedChanged);
+            // 
+            // rbtn_Invoice_Sended
+            // 
+            this.rbtn_Invoice_Sended.AutoSize = true;
+            this.rbtn_Invoice_Sended.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtn_Invoice_Sended.Location = new System.Drawing.Point(677, 10);
+            this.rbtn_Invoice_Sended.Name = "rbtn_Invoice_Sended";
+            this.rbtn_Invoice_Sended.Size = new System.Drawing.Size(93, 20);
+            this.rbtn_Invoice_Sended.TabIndex = 204;
+            this.rbtn_Invoice_Sended.Text = "Email Sent";
+            this.rbtn_Invoice_Sended.UseVisualStyleBackColor = true;
+            this.rbtn_Invoice_Sended.CheckedChanged += new System.EventHandler(this.rbtn_Invoice_Sended_CheckedChanged);
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.btn_New_Invoice);
+            this.panel4.Controls.Add(this.txt_orderserach_Number);
+            this.panel4.Controls.Add(this.cbo_colmn);
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(3, 89);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1218, 44);
+            this.panel4.TabIndex = 2;
+            // 
             // Order_Cost
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1224, 578);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.rbtn_Invoice_Sended);
-            this.Controls.Add(this.rbtn_Invoice_NotSended);
-            this.Controls.Add(this.label25);
-            this.Controls.Add(this.cbo_colmn);
-            this.Controls.Add(this.btn_Refresh);
-            this.Controls.Add(this.btn_New_Invoice);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txt_orderserach_Number);
-            this.Controls.Add(this.grd_order);
+            this.Controls.Add(this.tableLayoutPanel3);
             this.Name = "Order_Cost";
             this.Text = "Order_Cost";
             this.Load += new System.EventHandler(this.Order_Cost_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grd_order)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -466,15 +548,21 @@
 
         private System.Windows.Forms.DataGridView grd_order;
         private System.Windows.Forms.ComboBox cbo_colmn;
-        internal System.Windows.Forms.Button btn_Refresh;
         private System.Windows.Forms.Button btn_New_Invoice;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_orderserach_Number;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.RadioButton rbtn_Invoice_Sended;
-        private System.Windows.Forms.RadioButton rbtn_Invoice_NotSended;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btn_First;
+        private System.Windows.Forms.Label lbl_Record_status;
+        private System.Windows.Forms.Button btn_Previous;
+        private System.Windows.Forms.Button btn_Last;
+        private System.Windows.Forms.Button btn_Next;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbl_Total_orders;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Check;
         private System.Windows.Forms.DataGridViewTextBoxColumn SNo;
         private System.Windows.Forms.DataGridViewButtonColumn Order_Number;
         private System.Windows.Forms.DataGridViewTextBoxColumn Client_Name;
@@ -489,13 +577,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btn_First;
-        private System.Windows.Forms.Label lbl_Record_status;
-        private System.Windows.Forms.Button btn_Previous;
-        private System.Windows.Forms.Button btn_Last;
-        private System.Windows.Forms.Button btn_Next;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lbl_Total_orders;
+        private System.Windows.Forms.Button btnSend;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel3;
+        internal System.Windows.Forms.Button btn_Refresh;
+        private System.Windows.Forms.RadioButton rbtn_Invoice_NotSended;
+        private System.Windows.Forms.RadioButton rbtn_Invoice_Sended;
+        private System.Windows.Forms.Panel panel4;
     }
 }

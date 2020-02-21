@@ -2797,6 +2797,12 @@
     <Compile Include="Vendors\Import_State_County.designer.cs">
       <DependentUpon>Import_State_County.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vendors\Keywords.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vendors\Keywords.Designer.cs">
+      <DependentUpon>Keywords.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vendors\Vendors_Order_Move.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -4187,6 +4193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vendors\Import_State_County.resx">
       <DependentUpon>Import_State_County.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vendors\Keywords.resx">
+      <DependentUpon>Keywords.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vendors\Vendors_Order_Move.resx">
       <DependentUpon>Vendors_Order_Move.cs</DependentUpon>

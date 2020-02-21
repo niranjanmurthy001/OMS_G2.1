@@ -1,22 +1,20 @@
-﻿using System;
-using System.Windows.Forms;
-using System.Collections;
-using System.Net.Mail;
-using System.IO;
-using System.Net;
-using Microsoft.Office.Interop.Word;
-using Word = Microsoft.Office.Interop.Word;
-using System.Runtime.InteropServices;
-using System.Collections.Generic;
+﻿using DevExpress.XtraPrinting;
 using DevExpress.XtraRichEdit;
-using DevExpress.XtraPrinting;
-using System.Threading.Tasks;
-using System.Net.Http;
+using Microsoft.Office.Interop.Word;
 using Newtonsoft.Json;
 using Ordermanagement_01.Models;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using System.Net;
+using System.Net.Http;
+using System.Net.Mail;
+using System.Runtime.InteropServices;
 using System.Text;
-using Microsoft.Office.Interop.Excel;
-using System.Data;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Word = Microsoft.Office.Interop.Word;
 
 namespace Ordermanagement_01.Tax
 {
@@ -33,7 +31,7 @@ namespace Ordermanagement_01.Tax
         public Microsoft.Office.Interop.Word.Document wordDocument { get; set; }
         System.Data.DataTable dtother = new System.Data.DataTable();
         int clientId;
-       System.Data.DataTable dt_Email_Details = new System.Data.DataTable();
+        System.Data.DataTable dt_Email_Details = new System.Data.DataTable();
         private string directoryPath;
         private string year;
         private string month;
@@ -210,9 +208,9 @@ namespace Ordermanagement_01.Tax
                 using (System.Net.Mail.MailMessage mailMessage = new System.Net.Mail.MailMessage())
                 {
                     Get_Email_Id();
-                     mailMessage.To.Add(EMAILID);
+                    mailMessage.To.Add(EMAILID);
 
-                  
+
                     if (EMAILID != "")
                     {
                         if (int.Parse(SUBPROCESSID) == 344)
@@ -223,7 +221,7 @@ namespace Ordermanagement_01.Tax
                         {
                             mailMessage.From = new MailAddress("Taxes@drnds.com");
                         }
-                     
+
                         string Attachment = Ordernumber.ToString() + ".pdf";
                         // this is for Tax Certificate
                         if (Tax_Certificate_Path != "")
@@ -252,14 +250,14 @@ namespace Ordermanagement_01.Tax
                             }
                         }
 
-                        //mailMessage.CC.Add("Taxes@drnds.com");//mail sending cc
+                        mailMessage.CC.Add("Taxes@drnds.com");//mail sending cc
 
                         string Subject = Ordernumber.ToString();
                         mailMessage.Subject = Subject.ToString();//mail subject
                         mailMessage.Body = body;
                         mailMessage.IsBodyHtml = true;
                         SmtpClient smtp = new SmtpClient();
-                       // smtp.Host = "smtpout.secureserver.net";
+                        // smtp.Host = "smtpout.secureserver.net";
                         if (int.Parse(SUBPROCESSID) == 344)
                         {
                             await Get_Email_Details("Taxes@drnds.com");
@@ -292,18 +290,18 @@ namespace Ordermanagement_01.Tax
 
                                 Update_Email_Status();
                             }
-                           // NetworkCred = new NetworkCredential("Taxes@drnds.com", "ffP2mx=EoM");
+                            // NetworkCred = new NetworkCredential("Taxes@drnds.com", "ffP2mx=EoM");
 
 
                         }
-                  
+
                         //// smtp.UseDefaultCredentials = false;
                         //// smtp.EnableSsl = true;
 
                         //smtp.Timeout = (60 * 5 * 1000);
                         //smtp.Credentials = NetworkCred;
                         //smtp.Port = 25;
-                     
+
                     }
                     else
                     {
@@ -326,7 +324,7 @@ namespace Ordermanagement_01.Tax
 
 
                     }
-                  
+
                     string Attachment = Ordernumber.ToString() + ".pdf";
 
                     // this is for Tax Certificate
@@ -359,10 +357,10 @@ namespace Ordermanagement_01.Tax
                     }
 
                     Get_Email_Id();
-                
+
                     mailMessage.To.Add(EMAILID);
 
-                  
+
 
                     string Subject = Ordernumber.ToString();
                     mailMessage.Subject = Subject.ToString();//mail subject
@@ -370,7 +368,7 @@ namespace Ordermanagement_01.Tax
                     mailMessage.IsBodyHtml = true;
                     SmtpClient smtp = new SmtpClient();
 
-                   // smtp.Host = "smtpout.secureserver.net";
+                    // smtp.Host = "smtpout.secureserver.net";
                     if (int.Parse(SUBPROCESSID) == 344)
                     {
                         await Get_Email_Details("Taxes@drnds.com");
@@ -415,11 +413,11 @@ namespace Ordermanagement_01.Tax
                         // NetworkCred = new NetworkCredential("Taxes@drnds.com", "ffP2mx=EoM");
 
                     }
-                //// smtp.EnableSsl = true;
+                    //// smtp.EnableSsl = true;
                     //smtp.Timeout = (60 * 5 * 1000);
                     //smtp.Credentials = NetworkCred;
                     //smtp.Port = 25;
-                
+
                     this.Close();
                     //}
                     //else
@@ -433,16 +431,17 @@ namespace Ordermanagement_01.Tax
 
         private async void SendHtmlFormattedEmail_Word(string mail, string subject, string body)
         {
-            try {
+            try
+            {
                 if (OPERATION == "Bulk")
                 {
                     using (System.Net.Mail.MailMessage mailMessage = new System.Net.Mail.MailMessage())
                     {
                         Get_Email_Id();
-                    
-                         mailMessage.To.Add(EMAILID);
+
+                        mailMessage.To.Add(EMAILID);
                         mailMessage.CC.Add("Taxes@drnds.com");
-                    
+
                         if (EMAILID != "")
                         {
                             if (int.Parse(SUBPROCESSID) == 344)
@@ -453,7 +452,7 @@ namespace Ordermanagement_01.Tax
                             {
                                 mailMessage.From = new MailAddress("Taxes@drnds.com");
                             }
-                           
+
 
                             string Attachment = Ordernumber.ToString() + ".docx";
 
@@ -485,7 +484,7 @@ namespace Ordermanagement_01.Tax
                                 }
                             }
 
-                            //  mailMessage.CC.Add("Taxes@drnds.com");//mail sending cc
+                          //  mailMessage.CC.Add("Taxes@drnds.com");//mail sending cc
                             string Subject = Ordernumber.ToString();
                             mailMessage.Subject = Subject.ToString();//mail subject
                             mailMessage.Body = body;
@@ -534,7 +533,7 @@ namespace Ordermanagement_01.Tax
                                 }
                                 // NetworkCred = new NetworkCredential("Taxes@drnds.com", "ffP2mx=EoM");
                             }
-                       
+
                             //// smtp.UseDefaultCredentials = false;
                             //// smtp.EnableSsl = true;
 
@@ -542,7 +541,7 @@ namespace Ordermanagement_01.Tax
                             //smtp.Timeout = (60 * 5 * 1000);
                             //smtp.Credentials = NetworkCred;
                             //smtp.Port = 25;
-                       
+
                         }
                         else
                         {
@@ -562,7 +561,7 @@ namespace Ordermanagement_01.Tax
                         {
                             mailMessage.From = new MailAddress("Taxes@drnds.com");
                         }
-                       
+
                         string Attachment = Ordernumber.ToString() + ".docx";
 
                         // this is for Tax Certificate
@@ -593,8 +592,8 @@ namespace Ordermanagement_01.Tax
                         }
 
                         Get_Email_Id();
-                     
-                          mailMessage.To.Add(EMAILID);
+
+                        mailMessage.To.Add(EMAILID);
                         mailMessage.CC.Add("Taxes@drnds.com");
 
 
@@ -652,22 +651,22 @@ namespace Ordermanagement_01.Tax
 
                             // NetworkCred = new NetworkCredential("Taxes@drnds.com", "ffP2mx=EoM");
                         }
-                       
+
                         //// smtp.EnableSsl = true;
 
                         //smtp.Timeout = (60 * 5 * 1000);
                         //smtp.Credentials = NetworkCred;
                         //smtp.Port = 25;
-            
+
                         Close();
                     }
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 MessageBox.Show(e.Message);
             }
-            }
+        }
 
         private void Update_Email_Status()
         {
@@ -1009,7 +1008,7 @@ namespace Ordermanagement_01.Tax
             dt_Email_Details.Clear();
             try
             {
-               
+
                 var dictionary = new Dictionary<string, object>()
                                             {
                                                { "@Trans", "SELECT_BY_EMAIL"},
@@ -1024,7 +1023,7 @@ namespace Ordermanagement_01.Tax
                         if (response2.StatusCode == HttpStatusCode.OK)
                         {
                             var result2 = await response2.Content.ReadAsStringAsync();
-                           dt_Email_Details = JsonConvert.DeserializeObject<System.Data.DataTable>(result2);
+                            dt_Email_Details = JsonConvert.DeserializeObject<System.Data.DataTable>(result2);
                         }
                     }
                 }

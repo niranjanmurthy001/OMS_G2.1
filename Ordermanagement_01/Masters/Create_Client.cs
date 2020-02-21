@@ -8,7 +8,6 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 
-
 namespace Ordermanagement_01
 {
     public partial class Create_Client : Form
@@ -64,7 +63,7 @@ namespace Ordermanagement_01
             txt_ClientNumber.Enabled = true;
             AddParent();
             lbl_Record_Addedby.Text = "";
-            lbl_Record_AddedDate.Text = "";
+            lbl_Record_AddedDate.Text = " ";
             dbc.BindCompany(ddl_Company);
             dbc.BindBranch(ddl_branchname, int.Parse(ddl_Company.SelectedValue.ToString()));
             dbc.BindCountry(Ddl_Client_Country);
@@ -80,20 +79,21 @@ namespace Ordermanagement_01
             textBoximage.Enabled = false;
             txt_CostTATExcel.Enabled = false;
         }
-        private bool  BindClientNumbers()
+        private bool BindClientNumbers()
         {
             try
             {
                 Hashtable ht = new Hashtable();
                 DataTable dt = new DataTable();
                 ht.Add("@Trans", "ClientRefValues");
-                ht.Add("@Client_Number", txt_ClientNumber.Text);
+                ht.Add("@Client_Number", txt_ClientNumber.Text.ToString());
                 dt = dataaccess.ExecuteSP("Sp_Client", ht);
-                if(dt.Rows.Count>0)
-                { 
+                if (dt.Rows.Count > 0)
+                {
+                    ListofClientNumbers.DisplayMember = "Number";
+                    ListofClientNumbers.ValueMember = "Number";
                     ListofClientNumbers.DataSource = dt;
-                    ListofClientNumbers.ValueMember = "Client_Id";
-                    ListofClientNumbers.DisplayMember = "Client_Number";
+
                 }
                 else
                 {
@@ -102,7 +102,7 @@ namespace Ordermanagement_01
                 }
                 return true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString());
                 throw ex;
@@ -200,6 +200,8 @@ namespace Ordermanagement_01
 
         private void txt_ClientNumber_KeyDown(object sender, KeyEventArgs e)
         {
+            ListofClientNumbers.Visible = false;
+            lbl_ClientRefNo.Visible = false;
             if (e.KeyCode == Keys.Enter)
             {
                 txt_ClientName.Focus();
@@ -669,39 +671,13 @@ namespace Ordermanagement_01
 
         private void txt_ClientNumber_TextChanged(object sender, EventArgs e)
         {
-            if (txt_ClientNumber.Text.Length >= 4 && txt_ClientNumber.Text.Length <= 7)
-            {
-                string clientno = txt_ClientNumber.Text.Trim().ToString();
-                string Client_Numbers = txt_ClientNumber.Text.Trim().ToString();
-
-                if (Client_Numbers.Length > 0)
-                {
-                    bool Validate_Result = Validate_Client_Number_Length(Client_Numbers);
-
-                    if (Validate_Result == true)
-                    {
-                       
-                       
-
-                        MessageBox.Show("Enter Number in Right Format like 1000,2000 etc");
-
-                    }
-
-                }
-
-
-
-            }
-            if (txt_ClientNumber.Text.Length <= 4 && txt_ClientNumber.Text.Length >= 7)
-            {
-                MessageBox.Show("please enter Client Number Should  be Greater than 4 Digit And Not Existing ");
-                txt_ClientNumber.Focus();
-            }
-            //if( ClientNoCheck() == false)
+            //if(txt_ClientNumber.Text.Length >=4 )
             //{
-            //    MessageBox.Show("Client Number already Exists ,Try Another Number Which is having Greater Than That Value And & Having Increment Of 1000");
-
+            //    ListofClientNumbers.Visible = true;
+            //    lbl_ClientRefNo.Visible = true;
+            //    ListofClientNumbers.Enabled = true;
             //}
+
 
 
 
@@ -803,7 +779,12 @@ namespace Ordermanagement_01
 
         private void tree_Client_AfterSelect(object sender, TreeViewEventArgs e)
         {
+            lbl_ClientRefNo.Visible = false;
+            ListofClientNumbers.Visible = false;
+            BindClientNumbers();
+
             string Checked;
+
             string logo;
             dbc.BindBranch(ddl_branchname, int.Parse(ddl_Company.SelectedValue.ToString()));
             // Company_Id =int.Parse(tvwRightSide.SelectedNode.Text.Substring(0, 4));
@@ -1126,19 +1107,32 @@ namespace Ordermanagement_01
             }
         }
 
-        private void ListofClientNumbers_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-
-           // txt_ClientNumber.Text = ListofClientNumbers.SelectedItem.ToString();
-
-        }
-
         private void ListofClientNumbers_Click(object sender, EventArgs e)
         {
-            txt_ClientNumber.Text = ListofClientNumbers.SelectedItem.ToString();
+            string text = ListofClientNumbers.GetItemText(ListofClientNumbers.SelectedItem);
+            txt_ClientNumber.Text = text;
         }
 
+        private void txt_ClientNumber_Leave_1(object sender, EventArgs e)
+        {
+            //lbl_ClientRefNo.Visible = false;
+            //ListofClientNumbers.Visible = false;
+            if (txt_ClientNumber.Text.Length >= 4 && txt_ClientNumber.Text.Length <= 7)
+            {
+                ClientNoCheck();
+
+            }
+            else
+            {
+                MessageBox.Show("please enter Client Number Should  be Greater than 4 Digit And max 7 digit");
+                txt_ClientNumber.Focus();
+            }
+
+        }
+        private void txt_ClientNumber_TabIndexChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show("Fire");
+        }
         private void Grd_Mail_Bind()
         {
             Hashtable ht_Mail_Bind = new Hashtable();
@@ -1417,14 +1411,33 @@ namespace Ordermanagement_01
                     txt_ClientNumber.Select();
                 }
             }
+            string Client_Numbers = txt_ClientNumber.Text.Trim().ToString();
+            if (Client_Numbers.Length > 0)
+            {
+                string value = txt_ClientNumber.Text.Trim().ToString();
+                bool Validate_Result = Validate_Client_Number_Length(Client_Numbers);
+                if (Validate_Result == true)
+                {
+
+                    MessageBox.Show("Enter Number in Right Format like 1000,2000 etc");
+                    // txt_ClientNumber.Text = value;
+                }
+                else
+                {
+
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Client Number Not Found");
+            }
 
         }
 
 
         private bool Validate_Client_Number_Length(string Client_Number)
         {
-
-
             ArrayList ar = new ArrayList();
             //string[] strings = (string[])ar.ToArray(typeof(string));
 
@@ -1457,21 +1470,21 @@ namespace Ordermanagement_01
             {
                 if (int.Parse(value.ToString()) != 0)
                 {
-                    Check_Value =false;
+                    Check_Value = false;
+
                     break;
 
                 }
                 else
                 {
-                    Check_Value = true;
-             
 
+                    Check_Value = true;
 
 
                 }
             }
-
             return Check_Value;
+
         }
         private void txt_Client_Pincode_TextChanged(object sender, EventArgs e)
         {
@@ -1479,8 +1492,6 @@ namespace Ordermanagement_01
             {
                 MessageBox.Show("Enter 5 or 6 digit Number");
                 txt_Client_Pincode.Select();
-
-
             }
         }
 
@@ -1536,7 +1547,7 @@ namespace Ordermanagement_01
                     int count = Convert.ToInt32(dt.Rows[0]["count"].ToString());
                     if (count > 0)
                     {
-                        MessageBox.Show("ClientNumber Already Exists");
+                        MessageBox.Show("Its an Already Existing ClientNumber ");
                         return false;
                     }
                     else

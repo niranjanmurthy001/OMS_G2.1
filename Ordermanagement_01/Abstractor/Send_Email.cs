@@ -360,8 +360,7 @@ namespace Ordermanagement_01.Abstractor
                         Client_Order_no = Order_number;
                         SendHtmlFormattedEmail("vendors@drnds.com", "Sample", body);
                     }
-                    Assign_Orders_ToAbstractor();
-                    Update_Abstractor_Order_Status();
+                 
                 }
                 catch (Exception error)
                 {
@@ -442,11 +441,11 @@ namespace Ordermanagement_01.Abstractor
 
                 if (Emailid == "vendors@drnds.com")
                 {
-                    mailMessage.To.Add("vendors@drnds.com");
+                    mailMessage.CC.Add("vendors@drnds.com");
                 }
                 else if (Emailid == "neworders@abstractshop.com")
                 {
-                    mailMessage.To.Add("neworders@abstractshop.com");
+                    mailMessage.CC.Add("neworders@abstractshop.com");
                 }
 
                 
@@ -531,8 +530,20 @@ namespace Ordermanagement_01.Abstractor
                     ht_Insert.Add("@Send_By", User_Id);
                     ht_Insert.Add("@status", "True");
                     dt_Insert = dataaccess.ExecuteSP("Sp_Abstractor_Order_Email_Details", ht_Insert);
-                    smtp.Send(mailMessage);
-                    smtp.Dispose();
+                    
+
+                    try
+                    {
+                        smtp.Send(mailMessage);
+                        smtp.Dispose();
+                        Assign_Orders_ToAbstractor();
+                        Update_Abstractor_Order_Status();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Problem while sending email");
+                        
+                    }
                 }
                 else
                 {

@@ -872,10 +872,10 @@
             this.simpleButton1.Location = new System.Drawing.Point(196, 109);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.simpleButton1.Size = new System.Drawing.Size(34, 38);
+            this.simpleButton1.Size = new System.Drawing.Size(34, 32);
             this.simpleButton1.TabIndex = 26;
             this.simpleButton1.ToolTip = "Press (Alt + L) To Lock Screen";
-            //this.simpleButton1.MouseHover += new System.EventHandler(this.simpleButton1_MouseHover);
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // buttonTheme
             // 
@@ -1183,7 +1183,7 @@
             this.link_Order_Count.Text = "000";
             this.link_Order_Count.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.link_Order_Count.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-           // this.link_Order_Count.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.link_Order_Count_LinkClicked);
+            this.link_Order_Count.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.link_Order_Count_LinkClicked);
             this.link_Order_Count.Click += new System.EventHandler(this.link_Order_Count_Click);
             // 
             // panelControl4
@@ -1377,7 +1377,7 @@
             // 
             // defaultLookAndFeel1
             // 
-            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Visual Studio 2013 Light";
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013";
             // 
             // Dashboard
             // 

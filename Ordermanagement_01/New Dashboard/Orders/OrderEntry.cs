@@ -20,21 +20,21 @@ namespace Ordermanagement_01.New_Dashboard.Orders
 {
     public partial class OrderEntry : XtraForm
     {
-        private Dictionary<LayoutControlItem, int> dictionaryLayoutItems;
-        private Dictionary<LayoutControlGroup, int> dictionaryLayoutGroups;
+        private Dictionary<LayoutControlItem, object> dictionaryLayoutItems;
+        private Dictionary<LayoutControlGroup, object> dictionaryLayoutGroups;
         private DataTable dtProcessSettings;
         private System.Threading.Timer timer;
         public OrderEntry()
         {
             InitializeComponent();
-            dictionaryLayoutItems = new Dictionary<LayoutControlItem, int>()
+            dictionaryLayoutItems = new Dictionary<LayoutControlItem, object>()
             {
                 { layoutControlItemPriorDate,1 },
                 { layoutControlItemDeedChain,1 },
                 { layoutControlItemLoanNo, 2 },
                 { layoutControlItemReqType,2 }
             };
-            dictionaryLayoutGroups = new Dictionary<LayoutControlGroup, int>()
+            dictionaryLayoutGroups = new Dictionary<LayoutControlGroup, object>()
             {
                 { layoutControlGroupOrder,1 },
                 { layoutControlGroupOthers,1 },
@@ -44,12 +44,10 @@ namespace Ordermanagement_01.New_Dashboard.Orders
                 { layoutControlGroupTaxCode,4 }
             };
         }
-
         private void OrderEntry_Resize(object sender, EventArgs e)
         {
             // layoutControlGroupAdditional.Expanded = WindowState == FormWindowState.Maximized ? true : false;
         }
-
         private async void OrderEntry_Load(object sender, EventArgs e)
         {
             try
@@ -77,7 +75,6 @@ namespace Ordermanagement_01.New_Dashboard.Orders
                 SplashScreenManager.CloseForm(false);
             }
         }
-
         private void BindStates()
         {
             try
@@ -172,7 +169,6 @@ namespace Ordermanagement_01.New_Dashboard.Orders
                 throw ex;
             }
         }
-
         private async Task BindDepartmentType()
         {
             try
@@ -213,7 +209,6 @@ namespace Ordermanagement_01.New_Dashboard.Orders
                 throw ex;
             }
         }
-
         private async Task BindClients()
         {
             try
@@ -254,7 +249,6 @@ namespace Ordermanagement_01.New_Dashboard.Orders
                 throw ex;
             }
         }
-
         private async Task BindProjectType()
         {
             try
@@ -295,7 +289,6 @@ namespace Ordermanagement_01.New_Dashboard.Orders
                 throw ex;
             }
         }
-
         private class OrderInfo
         {
             public string orderNumber { get; set; }
@@ -305,35 +298,34 @@ namespace Ordermanagement_01.New_Dashboard.Orders
             public string Task { get; set; }
             public string user { get; set; }
         }
-
         private void lookUpEditProjectType_EditValueChanged(object sender, EventArgs e)
         {
-            int projectType = Convert.ToInt32(lookUpEditProjectType.EditValue);
+            int projectType = GetInt(lookUpEditProjectType.EditValue);
             if (projectType > 0)
             {
                 if (projectType == 4)
                 {
-                    dictionaryLayoutGroups.Where(kv => kv.Value == 2).ToList().ForEach(kv => kv.Key.Visibility = LayoutVisibility.Always);
-                    dictionaryLayoutGroups.Where(kv => kv.Value == 1).ToList().ForEach(kv => kv.Key.Visibility = LayoutVisibility.Never);
+                    dictionaryLayoutGroups.Where(kv => GetInt(kv.Value) == 2).ToList().ForEach(kv => kv.Key.Visibility = LayoutVisibility.Always);
+                    dictionaryLayoutGroups.Where(kv => GetInt(kv.Value) == 1).ToList().ForEach(kv => kv.Key.Visibility = LayoutVisibility.Never);
                 }
                 else
                 {
-                    dictionaryLayoutGroups.Where(kv => kv.Value == 1).ToList().ForEach(kv => kv.Key.Visibility = LayoutVisibility.Always);
-                    dictionaryLayoutGroups.Where(kv => kv.Value == 2).ToList().ForEach(kv => kv.Key.Visibility = LayoutVisibility.Never);
+                    dictionaryLayoutGroups.Where(kv => GetInt(kv.Value) == 1).ToList().ForEach(kv => kv.Key.Visibility = LayoutVisibility.Always);
+                    dictionaryLayoutGroups.Where(kv => GetInt(kv.Value) == 2).ToList().ForEach(kv => kv.Key.Visibility = LayoutVisibility.Never);
                 }
                 if (projectType == 1)
                 {
-                    dictionaryLayoutItems.Where(kv => kv.Value == 1).ToList().ForEach(kv => kv.Key.Visibility = LayoutVisibility.Always);
-                    dictionaryLayoutItems.Where(kv => kv.Value != 1).ToList().ForEach(kv => kv.Key.Visibility = LayoutVisibility.Never);
-                    dictionaryLayoutGroups.Where(kv => kv.Value == 3).ToList().ForEach(kv => kv.Key.Visibility = LayoutVisibility.Always);
-                    dictionaryLayoutGroups.Where(kv => kv.Value == 4).ToList().ForEach(kv => kv.Key.Visibility = LayoutVisibility.Never);
+                    dictionaryLayoutItems.Where(kv => GetInt(kv.Value) == 1).ToList().ForEach(kv => kv.Key.Visibility = LayoutVisibility.Always);
+                    dictionaryLayoutItems.Where(kv => GetInt(kv.Value) != 1).ToList().ForEach(kv => kv.Key.Visibility = LayoutVisibility.Never);
+                    dictionaryLayoutGroups.Where(kv => GetInt(kv.Value) == 3).ToList().ForEach(kv => kv.Key.Visibility = LayoutVisibility.Always);
+                    dictionaryLayoutGroups.Where(kv => GetInt(kv.Value) == 4).ToList().ForEach(kv => kv.Key.Visibility = LayoutVisibility.Never);
                 }
                 if (projectType == 2 || projectType == 3)
                 {
-                    dictionaryLayoutItems.Where(kv => kv.Value == 1).ToList().ForEach(kv => kv.Key.Visibility = LayoutVisibility.Never);
-                    dictionaryLayoutItems.Where(kv => kv.Value != 1).ToList().ForEach(kv => kv.Key.Visibility = LayoutVisibility.Always);
-                    dictionaryLayoutGroups.Where(kv => kv.Value == 3).ToList().ForEach(kv => kv.Key.Visibility = LayoutVisibility.Never);
-                    dictionaryLayoutGroups.Where(kv => kv.Value == 4).ToList().ForEach(kv => kv.Key.Visibility = LayoutVisibility.Always);
+                    dictionaryLayoutItems.Where(kv => GetInt(kv.Value) == 1).ToList().ForEach(kv => kv.Key.Visibility = LayoutVisibility.Never);
+                    dictionaryLayoutItems.Where(kv => GetInt(kv.Value) != 1).ToList().ForEach(kv => kv.Key.Visibility = LayoutVisibility.Always);
+                    dictionaryLayoutGroups.Where(kv => GetInt(kv.Value) == 3).ToList().ForEach(kv => kv.Key.Visibility = LayoutVisibility.Never);
+                    dictionaryLayoutGroups.Where(kv => GetInt(kv.Value) == 4).ToList().ForEach(kv => kv.Key.Visibility = LayoutVisibility.Always);
                 }
             }
             else
@@ -341,7 +333,6 @@ namespace Ordermanagement_01.New_Dashboard.Orders
                 dictionaryLayoutGroups.Keys.ToList().ForEach(group => group.Visibility = LayoutVisibility.Never);
             }
         }
-
         private void lookUpEditClient_EditValueChanged(object sender, EventArgs e)
         {
             if (Convert.ToInt32(lookUpEditClient.EditValue) > 0)
@@ -354,7 +345,6 @@ namespace Ordermanagement_01.New_Dashboard.Orders
                 lookUpEditSubClient.Properties.Columns.Clear();
             }
         }
-
         private void BindSubClients(object subClientId)
         {
             lookUpEditSubClient.Properties.DataSource = null;
@@ -392,7 +382,6 @@ namespace Ordermanagement_01.New_Dashboard.Orders
                 }
             }
         }
-
         private void lookUpEditSubClient_EditValueChanged(object sender, EventArgs e)
         {
             if (Convert.ToInt32(lookUpEditSubClient.EditValue) > 0)
@@ -414,7 +403,6 @@ namespace Ordermanagement_01.New_Dashboard.Orders
                 }
             }
         }
-
         private void lookUpEditState_EditValueChanged(object sender, EventArgs e)
         {
             if (Convert.ToInt32(lookUpEditState.EditValue) > 0)
@@ -422,5 +410,6 @@ namespace Ordermanagement_01.New_Dashboard.Orders
                 BindCounties(lookUpEditState.EditValue);
             }
         }
+        Func<object, int> GetInt = a => Convert.ToInt32(a);
     }
 }

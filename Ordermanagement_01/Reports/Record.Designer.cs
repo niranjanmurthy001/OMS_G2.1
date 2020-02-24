@@ -91,7 +91,7 @@
             gridLevelNode1.RelationName = "Level1";
             this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
-            this.gridControl1.Location = new System.Drawing.Point(3, 43);
+            this.gridControl1.Location = new System.Drawing.Point(3, 36);
             this.gridControl1.LookAndFeel.SkinName = "Office 2010 Blue";
             this.gridControl1.LookAndFeel.UseWindowsXPTheme = true;
             this.gridControl1.MainView = this.gridView5;
@@ -105,7 +105,7 @@
             this.repositoryItemHyperLinkEdit4,
             this.repositoryItemHyperLinkEdit3,
             this.repositoryItemLookUpEdit4});
-            this.gridControl1.Size = new System.Drawing.Size(1002, 412);
+            this.gridControl1.Size = new System.Drawing.Size(1002, 419);
             this.gridControl1.TabIndex = 3;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView5});
@@ -161,6 +161,8 @@
             this.gridView5.OptionsSelection.CheckBoxSelectorColumnWidth = 38;
             this.gridView5.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView5.OptionsSelection.EnableAppearanceFocusedRow = false;
+            this.gridView5.OptionsSelection.MultiSelect = true;
+            this.gridView5.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             this.gridView5.OptionsSelection.ShowCheckBoxSelectorInGroupRow = DevExpress.Utils.DefaultBoolean.True;
             this.gridView5.OptionsView.AllowHtmlDrawHeaders = true;
             this.gridView5.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
@@ -195,7 +197,7 @@
             this.gridColumn6.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Order_Number", "{0}")});
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 0;
+            this.gridColumn6.VisibleIndex = 1;
             this.gridColumn6.Width = 90;
             // 
             // repositoryItemHyperLinkEdit3
@@ -227,7 +229,7 @@
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.OptionsColumn.ReadOnly = true;
             this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 2;
+            this.gridColumn7.VisibleIndex = 3;
             this.gridColumn7.Width = 70;
             // 
             // gridColumn8
@@ -245,7 +247,7 @@
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.OptionsColumn.ReadOnly = true;
             this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 3;
+            this.gridColumn8.VisibleIndex = 4;
             this.gridColumn8.Width = 50;
             // 
             // gridColumn9
@@ -264,7 +266,7 @@
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.OptionsColumn.ReadOnly = true;
             this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 4;
+            this.gridColumn9.VisibleIndex = 5;
             this.gridColumn9.Width = 70;
             // 
             // gridColumn10
@@ -282,7 +284,7 @@
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.OptionsColumn.ReadOnly = true;
             this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 5;
+            this.gridColumn10.VisibleIndex = 6;
             this.gridColumn10.Width = 70;
             // 
             // gridColumn11
@@ -301,7 +303,7 @@
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.OptionsColumn.ReadOnly = true;
             this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 6;
+            this.gridColumn11.VisibleIndex = 7;
             this.gridColumn11.Width = 80;
             // 
             // gridColumn12
@@ -320,7 +322,7 @@
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.OptionsColumn.ReadOnly = true;
             this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 7;
+            this.gridColumn12.VisibleIndex = 8;
             this.gridColumn12.Width = 110;
             // 
             // gridColumn17
@@ -333,7 +335,7 @@
             this.gridColumn17.Name = "gridColumn17";
             this.gridColumn17.OptionsColumn.ReadOnly = true;
             this.gridColumn17.Visible = true;
-            this.gridColumn17.VisibleIndex = 8;
+            this.gridColumn17.VisibleIndex = 9;
             this.gridColumn17.Width = 40;
             // 
             // gridColumn26
@@ -352,7 +354,7 @@
             this.gridColumn26.Name = "gridColumn26";
             this.gridColumn26.OptionsColumn.ReadOnly = true;
             this.gridColumn26.Visible = true;
-            this.gridColumn26.VisibleIndex = 9;
+            this.gridColumn26.VisibleIndex = 10;
             this.gridColumn26.Width = 100;
             // 
             // gridColumn27
@@ -371,7 +373,7 @@
             this.gridColumn27.Name = "gridColumn27";
             this.gridColumn27.OptionsColumn.ReadOnly = true;
             this.gridColumn27.Visible = true;
-            this.gridColumn27.VisibleIndex = 10;
+            this.gridColumn27.VisibleIndex = 11;
             this.gridColumn27.Width = 90;
             // 
             // gridColumn29
@@ -390,7 +392,7 @@
             this.gridColumn29.Name = "gridColumn29";
             this.gridColumn29.OptionsColumn.ReadOnly = true;
             this.gridColumn29.Visible = true;
-            this.gridColumn29.VisibleIndex = 1;
+            this.gridColumn29.VisibleIndex = 2;
             this.gridColumn29.Width = 150;
             // 
             // gridColumn33
@@ -409,7 +411,7 @@
             this.gridColumn33.Name = "gridColumn33";
             this.gridColumn33.OptionsColumn.ReadOnly = true;
             this.gridColumn33.Visible = true;
-            this.gridColumn33.VisibleIndex = 13;
+            this.gridColumn33.VisibleIndex = 14;
             this.gridColumn33.Width = 50;
             // 
             // gridColumn34
@@ -428,7 +430,7 @@
             this.gridColumn34.Name = "gridColumn34";
             this.gridColumn34.OptionsColumn.ReadOnly = true;
             this.gridColumn34.Visible = true;
-            this.gridColumn34.VisibleIndex = 11;
+            this.gridColumn34.VisibleIndex = 12;
             this.gridColumn34.Width = 70;
             // 
             // gridColumn35
@@ -447,7 +449,7 @@
             this.gridColumn35.Name = "gridColumn35";
             this.gridColumn35.OptionsColumn.ReadOnly = true;
             this.gridColumn35.Visible = true;
-            this.gridColumn35.VisibleIndex = 12;
+            this.gridColumn35.VisibleIndex = 13;
             this.gridColumn35.Width = 70;
             // 
             // gridColumn36
@@ -466,7 +468,7 @@
             this.gridColumn36.Name = "gridColumn36";
             this.gridColumn36.OptionsColumn.ReadOnly = true;
             this.gridColumn36.Visible = true;
-            this.gridColumn36.VisibleIndex = 14;
+            this.gridColumn36.VisibleIndex = 15;
             this.gridColumn36.Width = 100;
             // 
             // gridColumn39
@@ -485,7 +487,7 @@
             this.gridColumn39.Name = "gridColumn39";
             this.gridColumn39.OptionsColumn.ReadOnly = true;
             this.gridColumn39.Visible = true;
-            this.gridColumn39.VisibleIndex = 15;
+            this.gridColumn39.VisibleIndex = 16;
             this.gridColumn39.Width = 100;
             // 
             // gridColumn40
@@ -500,7 +502,7 @@
             this.gridColumn40.Name = "gridColumn40";
             this.gridColumn40.OptionsColumn.ReadOnly = true;
             this.gridColumn40.Visible = true;
-            this.gridColumn40.VisibleIndex = 16;
+            this.gridColumn40.VisibleIndex = 17;
             this.gridColumn40.Width = 90;
             // 
             // gridColumn46
@@ -510,7 +512,7 @@
             this.gridColumn46.MinWidth = 60;
             this.gridColumn46.Name = "gridColumn46";
             this.gridColumn46.Visible = true;
-            this.gridColumn46.VisibleIndex = 17;
+            this.gridColumn46.VisibleIndex = 18;
             this.gridColumn46.Width = 60;
             // 
             // gridColumn41
@@ -529,7 +531,7 @@
             this.gridColumn41.Name = "gridColumn41";
             this.gridColumn41.OptionsColumn.ReadOnly = true;
             this.gridColumn41.Visible = true;
-            this.gridColumn41.VisibleIndex = 18;
+            this.gridColumn41.VisibleIndex = 19;
             this.gridColumn41.Width = 100;
             // 
             // gridColumn49
@@ -539,7 +541,7 @@
             this.gridColumn49.MinWidth = 70;
             this.gridColumn49.Name = "gridColumn49";
             this.gridColumn49.Visible = true;
-            this.gridColumn49.VisibleIndex = 19;
+            this.gridColumn49.VisibleIndex = 20;
             this.gridColumn49.Width = 70;
             // 
             // gridColumn42
@@ -555,7 +557,7 @@
             this.gridColumn44.MinWidth = 120;
             this.gridColumn44.Name = "gridColumn44";
             this.gridColumn44.Visible = true;
-            this.gridColumn44.VisibleIndex = 20;
+            this.gridColumn44.VisibleIndex = 21;
             this.gridColumn44.Width = 120;
             // 
             // gridColumn45
@@ -565,7 +567,7 @@
             this.gridColumn45.MinWidth = 120;
             this.gridColumn45.Name = "gridColumn45";
             this.gridColumn45.Visible = true;
-            this.gridColumn45.VisibleIndex = 21;
+            this.gridColumn45.VisibleIndex = 22;
             this.gridColumn45.Width = 120;
             // 
             // repositoryItemGridLookUpEdit4
@@ -672,7 +674,7 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1008, 458);
             this.tableLayoutPanel1.TabIndex = 4;
@@ -692,7 +694,7 @@
             this.btnExport.Location = new System.Drawing.Point(920, 3);
             this.btnExport.LookAndFeel.SkinName = "Office 2010 Blue";
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(85, 34);
+            this.btnExport.Size = new System.Drawing.Size(85, 27);
             this.btnExport.TabIndex = 560;
             this.btnExport.Text = "Export";
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);

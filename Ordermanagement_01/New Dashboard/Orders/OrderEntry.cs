@@ -348,6 +348,11 @@ namespace Ordermanagement_01.New_Dashboard.Orders
             {
                 BindSubClients(lookUpEditClient.EditValue);
             }
+            else
+            {
+                lookUpEditSubClient.Properties.DataSource = null;
+                lookUpEditSubClient.Properties.Columns.Clear();
+            }
         }
 
         private void BindSubClients(object subClientId)
@@ -392,12 +397,16 @@ namespace Ordermanagement_01.New_Dashboard.Orders
         {
             if (Convert.ToInt32(lookUpEditSubClient.EditValue) > 0)
             {
+                lookUpEditProjectType.EditValue = lookUpEditProjectType.Properties.GetKeyValueByDisplayText("SELECT");
+                lookUpEditDeptType.EditValue = lookUpEditDeptType.Properties.GetKeyValueByDisplayText("SELECT");
                 try
                 {
-                    var settingsRow = dtProcessSettings.AsEnumerable()
-                        .Single(row => row.Field<long>("Client_Id") == Convert.ToInt64(lookUpEditClient.EditValue) && row.Field<long>("Subprocess_Id") == Convert.ToInt64(lookUpEditSubClient.EditValue));
-                    lookUpEditProjectType.EditValue = string.IsNullOrEmpty(settingsRow["Project_Type_Id"].ToString()) ? "0" : settingsRow["Project_Type_Id"];
-                    lookUpEditDeptType.EditValue = string.IsNullOrEmpty(settingsRow["Department_Type"].ToString()) ? "0" : settingsRow["Department_Type"];
+                    var settingsRow = dtProcessSettings
+                                        .AsEnumerable()
+                                        .Single(row => row.Field<long>("Client_Id") == Convert.ToInt64(lookUpEditClient.EditValue)
+                                         && row.Field<long>("Subprocess_Id") == Convert.ToInt64(lookUpEditSubClient.EditValue));
+                    lookUpEditProjectType.EditValue = settingsRow["Project_Type_Id"];
+                    lookUpEditDeptType.EditValue = settingsRow["Department_Type"];
                 }
                 catch (Exception ex)
                 {

@@ -98,7 +98,7 @@ namespace Ordermanagement_01
                 else
                 {
                     
-                    MessageBox.Show("Available Client Numbers Not Found ");
+                    MessageBox.Show("N/A");
                     ListofClientNumbers.Visible = false;
                     lbl_ClientRefNo.Visible = false;
                         
@@ -699,7 +699,8 @@ namespace Ordermanagement_01
 
             else
             {
-                //MessageBox.Show("Client Number Not Found");
+                //MessageBox.Show("Please Enter A Valid Client Number");
+                txt_ClientNumber.Focus();
             }
             //if (txt_ClientNumber.Text.Length >= 4)
             //{

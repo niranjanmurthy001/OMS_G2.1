@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions36 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions37 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions38 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions39 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions40 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions41 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions42 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            this.components = new System.ComponentModel.Container();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions5 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions6 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions7 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.Window_Ui_Btn_View_List = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
@@ -172,7 +173,7 @@
             this.gridControl6 = new DevExpress.XtraGrid.GridControl();
             this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.emptySpaceItem9 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.textEdit21 = new DevExpress.XtraEditors.TextEdit();
@@ -339,21 +340,21 @@
             this.Window_Ui_Btn_View_List.AppearanceButton.Pressed.Options.UseBackColor = true;
             this.Window_Ui_Btn_View_List.AppearanceButton.Pressed.Options.UseFont = true;
             this.Window_Ui_Btn_View_List.BackColor = System.Drawing.Color.Transparent;
-            windowsUIButtonImageOptions36.Image = global::Ordermanagement_01.Properties.Resources.ic_info_32;
-            windowsUIButtonImageOptions37.Image = global::Ordermanagement_01.Properties.Resources.ic_checklist_32;
-            windowsUIButtonImageOptions38.Image = global::Ordermanagement_01.Properties.Resources.ic_history;
-            windowsUIButtonImageOptions39.Image = global::Ordermanagement_01.Properties.Resources.ic_docs;
-            windowsUIButtonImageOptions40.Image = global::Ordermanagement_01.Properties.Resources.ic_link;
-            windowsUIButtonImageOptions41.Image = global::Ordermanagement_01.Properties.Resources.ic_search_32;
-            windowsUIButtonImageOptions42.Image = global::Ordermanagement_01.Properties.Resources.ic_comments;
+            windowsUIButtonImageOptions1.Image = global::Ordermanagement_01.Properties.Resources.ic_info_32;
+            windowsUIButtonImageOptions2.Image = global::Ordermanagement_01.Properties.Resources.ic_checklist_32;
+            windowsUIButtonImageOptions3.Image = global::Ordermanagement_01.Properties.Resources.ic_history;
+            windowsUIButtonImageOptions4.Image = global::Ordermanagement_01.Properties.Resources.ic_docs;
+            windowsUIButtonImageOptions5.Image = global::Ordermanagement_01.Properties.Resources.ic_link;
+            windowsUIButtonImageOptions6.Image = global::Ordermanagement_01.Properties.Resources.ic_search_32;
+            windowsUIButtonImageOptions7.Image = global::Ordermanagement_01.Properties.Resources.ic_comments;
             this.Window_Ui_Btn_View_List.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Instructions", true, windowsUIButtonImageOptions36, DevExpress.XtraBars.Docking2010.ButtonStyle.CheckButton, "", -1, true, null, true, false, true, "Instructions", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("CheckList", true, windowsUIButtonImageOptions37, DevExpress.XtraBars.Docking2010.ButtonStyle.CheckButton, "", -1, true, null, true, false, true, "CheckList", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("History", true, windowsUIButtonImageOptions38, DevExpress.XtraBars.Docking2010.ButtonStyle.CheckButton, "", -1, true, null, true, false, true, "History", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Docs", true, windowsUIButtonImageOptions39, DevExpress.XtraBars.Docking2010.ButtonStyle.CheckButton, "", -1, true, null, true, false, true, "Docs", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("County Links", true, windowsUIButtonImageOptions40, DevExpress.XtraBars.Docking2010.ButtonStyle.CheckButton, "", -1, true, null, true, false, true, "County Links", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Search Links", true, windowsUIButtonImageOptions41, DevExpress.XtraBars.Docking2010.ButtonStyle.CheckButton, "", -1, true, null, true, false, true, "Search Links", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Comments", true, windowsUIButtonImageOptions42, DevExpress.XtraBars.Docking2010.ButtonStyle.CheckButton, "", -1, true, null, true, false, true, "Comments", -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Instructions", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.CheckButton, "", -1, true, null, true, false, true, "Instructions", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("CheckList", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.CheckButton, "", -1, true, null, true, false, true, "CheckList", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("History", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.CheckButton, "", -1, true, null, true, false, true, "History", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Docs", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.CheckButton, "", -1, true, null, true, false, true, "Docs", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("County Links", true, windowsUIButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.CheckButton, "", -1, true, null, true, false, true, "County Links", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Search Links", true, windowsUIButtonImageOptions6, DevExpress.XtraBars.Docking2010.ButtonStyle.CheckButton, "", -1, true, null, true, false, true, "Search Links", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Comments", true, windowsUIButtonImageOptions7, DevExpress.XtraBars.Docking2010.ButtonStyle.CheckButton, "", -1, true, null, true, false, true, "Comments", -1, false)});
             this.Window_Ui_Btn_View_List.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Window_Ui_Btn_View_List.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Window_Ui_Btn_View_List.Location = new System.Drawing.Point(3, 416);

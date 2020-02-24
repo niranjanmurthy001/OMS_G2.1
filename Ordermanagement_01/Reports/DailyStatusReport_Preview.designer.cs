@@ -270,8 +270,6 @@
             this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridView7 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -1481,8 +1479,10 @@
             // 
             this.btnExport.Appearance.BackColor = System.Drawing.Color.White;
             this.btnExport.Appearance.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExport.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             this.btnExport.Appearance.Options.UseBackColor = true;
             this.btnExport.Appearance.Options.UseFont = true;
+            this.btnExport.Appearance.Options.UseForeColor = true;
             this.btnExport.AppearanceHovered.BackColor = System.Drawing.Color.Transparent;
             this.btnExport.AppearanceHovered.Options.UseBackColor = true;
             this.btnExport.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
@@ -1497,8 +1497,10 @@
             // 
             this.btnClear.Appearance.BackColor = System.Drawing.Color.White;
             this.btnClear.Appearance.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             this.btnClear.Appearance.Options.UseBackColor = true;
             this.btnClear.Appearance.Options.UseFont = true;
+            this.btnClear.Appearance.Options.UseForeColor = true;
             this.btnClear.AppearanceHovered.BackColor = System.Drawing.Color.Transparent;
             this.btnClear.AppearanceHovered.Options.UseBackColor = true;
             this.btnClear.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
@@ -1513,8 +1515,10 @@
             // 
             this.btnSubmit.Appearance.BackColor = System.Drawing.Color.White;
             this.btnSubmit.Appearance.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             this.btnSubmit.Appearance.Options.UseBackColor = true;
             this.btnSubmit.Appearance.Options.UseFont = true;
+            this.btnSubmit.Appearance.Options.UseForeColor = true;
             this.btnSubmit.AppearanceHovered.BackColor = System.Drawing.Color.Transparent;
             this.btnSubmit.AppearanceHovered.Options.UseBackColor = true;
             this.btnSubmit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
@@ -3279,7 +3283,7 @@
             this.panel31.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel31.Location = new System.Drawing.Point(3, 3);
             this.panel31.Name = "panel31";
-            this.panel31.Size = new System.Drawing.Size(912, 40);
+            this.panel31.Size = new System.Drawing.Size(912, 39);
             this.panel31.TabIndex = 0;
             // 
             // dateEditAllClientToDate
@@ -3370,7 +3374,6 @@
             // 
             // lookUpEditAllClientSubProcess
             // 
-            this.lookUpEditAllClientSubProcess.EditValue = "0";
             this.lookUpEditAllClientSubProcess.Location = new System.Drawing.Point(526, 9);
             this.lookUpEditAllClientSubProcess.Name = "lookUpEditAllClientSubProcess";
             this.lookUpEditAllClientSubProcess.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3385,7 +3388,6 @@
             // 
             // lookUpEditAllClientName
             // 
-            this.lookUpEditAllClientName.EditValue = "0";
             this.lookUpEditAllClientName.Location = new System.Drawing.Point(338, 9);
             this.lookUpEditAllClientName.Name = "lookUpEditAllClientName";
             this.lookUpEditAllClientName.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3394,7 +3396,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lookUpEditAllClientName.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
             this.lookUpEditAllClientName.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.lookUpEditAllClientName.Properties.NullText = "ClientName";
+            this.lookUpEditAllClientName.Properties.NullText = "Client Name";
             this.lookUpEditAllClientName.Size = new System.Drawing.Size(182, 26);
             this.lookUpEditAllClientName.TabIndex = 3;
             this.lookUpEditAllClientName.EditValueChanged += new System.EventHandler(this.lookUpEditAllClientName_EditValueChanged);
@@ -3433,9 +3435,9 @@
             this.panel32.Controls.Add(this.gridControlAllClientProduction);
             this.panel32.Controls.Add(this.gridControl5);
             this.panel32.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel32.Location = new System.Drawing.Point(3, 49);
+            this.panel32.Location = new System.Drawing.Point(3, 48);
             this.panel32.Name = "panel32";
-            this.panel32.Size = new System.Drawing.Size(912, 355);
+            this.panel32.Size = new System.Drawing.Size(912, 356);
             this.panel32.TabIndex = 1;
             // 
             // gridControlAllClientProduction
@@ -3450,7 +3452,7 @@
             this.gridControlAllClientProduction.Name = "gridControlAllClientProduction";
             this.gridControlAllClientProduction.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemHyperLinkEdit14});
-            this.gridControlAllClientProduction.Size = new System.Drawing.Size(912, 355);
+            this.gridControlAllClientProduction.Size = new System.Drawing.Size(912, 356);
             this.gridControlAllClientProduction.TabIndex = 2;
             this.gridControlAllClientProduction.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewAllClientProduction,
@@ -3482,8 +3484,6 @@
             this.gridColumn22,
             this.gridColumn23,
             this.gridColumn24,
-            this.gridColumn25,
-            this.gridColumn26,
             this.gridColumn27,
             this.gridColumn28});
             this.gridViewAllClientProduction.GridControl = this.gridControlAllClientProduction;
@@ -3493,10 +3493,10 @@
             this.gridViewAllClientProduction.IndicatorWidth = 30;
             this.gridViewAllClientProduction.Name = "gridViewAllClientProduction";
             this.gridViewAllClientProduction.OptionsBehavior.Editable = false;
-            this.gridViewAllClientProduction.OptionsFind.AlwaysVisible = true;
             this.gridViewAllClientProduction.OptionsPrint.AutoWidth = false;
             this.gridViewAllClientProduction.OptionsView.ColumnAutoWidth = false;
             this.gridViewAllClientProduction.OptionsView.ShowFooter = true;
+            this.gridViewAllClientProduction.OptionsView.ShowGroupPanel = false;
             this.gridViewAllClientProduction.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.gridViewAllClientProduction.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView2_CustomDrawRowIndicator);
             this.gridViewAllClientProduction.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gridViewAllClientProduction_MouseDown);
@@ -3643,7 +3643,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Typing_QC", "{0:0.##}")});
             this.gridColumn16.Visible = true;
             this.gridColumn16.VisibleIndex = 10;
-            this.gridColumn16.Width = 55;
+            this.gridColumn16.Width = 65;
             // 
             // gridColumn17
             // 
@@ -3748,32 +3748,6 @@
             this.gridColumn24.VisibleIndex = 18;
             this.gridColumn24.Width = 60;
             // 
-            // gridColumn25
-            // 
-            this.gridColumn25.Caption = "WFT";
-            this.gridColumn25.ColumnEdit = this.repositoryItemHyperLinkEdit14;
-            this.gridColumn25.FieldName = "WFT";
-            this.gridColumn25.Name = "gridColumn25";
-            this.gridColumn25.OptionsColumn.AllowEdit = false;
-            this.gridColumn25.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "WFT", "{0:0.##}")});
-            this.gridColumn25.Visible = true;
-            this.gridColumn25.VisibleIndex = 19;
-            this.gridColumn25.Width = 60;
-            // 
-            // gridColumn26
-            // 
-            this.gridColumn26.Caption = "SEARCH TAX REQ";
-            this.gridColumn26.ColumnEdit = this.repositoryItemHyperLinkEdit14;
-            this.gridColumn26.FieldName = "Search_Tax";
-            this.gridColumn26.Name = "gridColumn26";
-            this.gridColumn26.OptionsColumn.AllowEdit = false;
-            this.gridColumn26.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Search_Tax", "{0:0.##}")});
-            this.gridColumn26.Visible = true;
-            this.gridColumn26.VisibleIndex = 20;
-            this.gridColumn26.Width = 60;
-            // 
             // gridColumn27
             // 
             this.gridColumn27.Caption = "Client_Id";
@@ -3799,7 +3773,7 @@
             this.gridControl5.LookAndFeel.UseDefaultLookAndFeel = false;
             this.gridControl5.MainView = this.gridView6;
             this.gridControl5.Name = "gridControl5";
-            this.gridControl5.Size = new System.Drawing.Size(912, 355);
+            this.gridControl5.Size = new System.Drawing.Size(912, 356);
             this.gridControl5.TabIndex = 1;
             this.gridControl5.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView6,
@@ -3851,7 +3825,7 @@
             this.panel33.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel33.Location = new System.Drawing.Point(3, 3);
             this.panel33.Name = "panel33";
-            this.panel33.Size = new System.Drawing.Size(912, 41);
+            this.panel33.Size = new System.Drawing.Size(912, 40);
             this.panel33.TabIndex = 0;
             // 
             // simple_Button_Exprt
@@ -3894,7 +3868,6 @@
             // 
             // lookUpEditAllEmpProdSubProcess
             // 
-            this.lookUpEditAllEmpProdSubProcess.EditValue = "0";
             this.lookUpEditAllEmpProdSubProcess.Location = new System.Drawing.Point(560, 5);
             this.lookUpEditAllEmpProdSubProcess.Name = "lookUpEditAllEmpProdSubProcess";
             this.lookUpEditAllEmpProdSubProcess.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3909,7 +3882,6 @@
             // 
             // lookUpEditAllEmpProdClientName
             // 
-            this.lookUpEditAllEmpProdClientName.EditValue = "0";
             this.lookUpEditAllEmpProdClientName.Location = new System.Drawing.Point(404, 5);
             this.lookUpEditAllEmpProdClientName.Name = "lookUpEditAllEmpProdClientName";
             this.lookUpEditAllEmpProdClientName.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3975,9 +3947,9 @@
             // 
             this.panel34.Controls.Add(this.gridControlAllClientEmpProduction);
             this.panel34.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel34.Location = new System.Drawing.Point(3, 50);
+            this.panel34.Location = new System.Drawing.Point(3, 49);
             this.panel34.Name = "panel34";
-            this.panel34.Size = new System.Drawing.Size(912, 354);
+            this.panel34.Size = new System.Drawing.Size(912, 355);
             this.panel34.TabIndex = 1;
             // 
             // gridControlAllClientEmpProduction
@@ -3992,7 +3964,7 @@
             this.gridControlAllClientEmpProduction.Name = "gridControlAllClientEmpProduction";
             this.gridControlAllClientEmpProduction.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemHyperLinkEdit34});
-            this.gridControlAllClientEmpProduction.Size = new System.Drawing.Size(912, 354);
+            this.gridControlAllClientEmpProduction.Size = new System.Drawing.Size(912, 355);
             this.gridControlAllClientEmpProduction.TabIndex = 0;
             this.gridControlAllClientEmpProduction.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewAllClientEmpProduction,
@@ -4037,6 +4009,7 @@
             this.gridViewAllClientEmpProduction.OptionsFind.AlwaysVisible = true;
             this.gridViewAllClientEmpProduction.OptionsView.ColumnAutoWidth = false;
             this.gridViewAllClientEmpProduction.OptionsView.ShowFooter = true;
+            this.gridViewAllClientEmpProduction.OptionsView.ShowGroupPanel = false;
             this.gridViewAllClientEmpProduction.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.gridViewAllClientEmpProduction.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridViewAllClientEmpProduction_RowCellClick);
             this.gridViewAllClientEmpProduction.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView3_CustomDrawRowIndicator);
@@ -4432,7 +4405,6 @@
             // 
             // lookUpEditMyClienSubprocess
             // 
-            this.lookUpEditMyClienSubprocess.EditValue = "0";
             this.lookUpEditMyClienSubprocess.Location = new System.Drawing.Point(542, 13);
             this.lookUpEditMyClienSubprocess.Name = "lookUpEditMyClienSubprocess";
             this.lookUpEditMyClienSubprocess.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -4446,7 +4418,6 @@
             // 
             // lookUpEditMyClientName
             // 
-            this.lookUpEditMyClientName.EditValue = "0";
             this.lookUpEditMyClientName.Location = new System.Drawing.Point(342, 13);
             this.lookUpEditMyClientName.Name = "lookUpEditMyClientName";
             this.lookUpEditMyClientName.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -4557,6 +4528,7 @@
             this.gridViewMyClientProduction.OptionsPrint.AutoWidth = false;
             this.gridViewMyClientProduction.OptionsView.ColumnAutoWidth = false;
             this.gridViewMyClientProduction.OptionsView.ShowFooter = true;
+            this.gridViewMyClientProduction.OptionsView.ShowGroupPanel = false;
             this.gridViewMyClientProduction.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.gridViewMyClientProduction.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView4_CustomDrawRowIndicator);
             this.gridViewMyClientProduction.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gridViewMyClientProduction_MouseDown);
@@ -4912,7 +4884,7 @@
             this.panel36.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel36.Location = new System.Drawing.Point(3, 3);
             this.panel36.Name = "panel36";
-            this.panel36.Size = new System.Drawing.Size(912, 38);
+            this.panel36.Size = new System.Drawing.Size(912, 37);
             this.panel36.TabIndex = 1;
             // 
             // simple_Button_Expt
@@ -4926,7 +4898,7 @@
             this.simple_Button_Expt.AppearanceHovered.BackColor = System.Drawing.Color.Transparent;
             this.simple_Button_Expt.AppearanceHovered.Options.UseBackColor = true;
             this.simple_Button_Expt.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simple_Button_Expt.Location = new System.Drawing.Point(808, 3);
+            this.simple_Button_Expt.Location = new System.Drawing.Point(816, 3);
             this.simple_Button_Expt.Name = "simple_Button_Expt";
             this.simple_Button_Expt.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.True;
             this.simple_Button_Expt.Size = new System.Drawing.Size(94, 32);
@@ -4945,7 +4917,7 @@
             this.simpleButton_Refresh.AppearanceHovered.BackColor = System.Drawing.Color.Transparent;
             this.simpleButton_Refresh.AppearanceHovered.Options.UseBackColor = true;
             this.simpleButton_Refresh.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton_Refresh.Location = new System.Drawing.Point(708, 3);
+            this.simpleButton_Refresh.Location = new System.Drawing.Point(716, 3);
             this.simpleButton_Refresh.Name = "simpleButton_Refresh";
             this.simpleButton_Refresh.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.True;
             this.simpleButton_Refresh.Size = new System.Drawing.Size(94, 32);
@@ -4955,7 +4927,6 @@
             // 
             // lookUpEditMyEmpProdSubprocess
             // 
-            this.lookUpEditMyEmpProdSubprocess.EditValue = "0";
             this.lookUpEditMyEmpProdSubprocess.Location = new System.Drawing.Point(551, 5);
             this.lookUpEditMyEmpProdSubprocess.Name = "lookUpEditMyEmpProdSubprocess";
             this.lookUpEditMyEmpProdSubprocess.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -4964,13 +4935,12 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lookUpEditMyEmpProdSubprocess.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
             this.lookUpEditMyEmpProdSubprocess.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.lookUpEditMyEmpProdSubprocess.Properties.NullText = "SubProcessName";
-            this.lookUpEditMyEmpProdSubprocess.Size = new System.Drawing.Size(140, 26);
+            this.lookUpEditMyEmpProdSubprocess.Properties.NullText = "SubProcess Name";
+            this.lookUpEditMyEmpProdSubprocess.Size = new System.Drawing.Size(159, 26);
             this.lookUpEditMyEmpProdSubprocess.TabIndex = 4;
             // 
             // lookUpEditMyEmpProdClientName
             // 
-            this.lookUpEditMyEmpProdClientName.EditValue = "0";
             this.lookUpEditMyEmpProdClientName.Location = new System.Drawing.Point(405, 5);
             this.lookUpEditMyEmpProdClientName.Name = "lookUpEditMyEmpProdClientName";
             this.lookUpEditMyEmpProdClientName.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -5037,14 +5007,14 @@
             this.gridControlMyClientEmpProduction.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControlMyClientEmpProduction.EmbeddedNavigator.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(221)))), ((int)(((byte)(238)))));
             this.gridControlMyClientEmpProduction.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
-            this.gridControlMyClientEmpProduction.Location = new System.Drawing.Point(3, 47);
+            this.gridControlMyClientEmpProduction.Location = new System.Drawing.Point(3, 46);
             this.gridControlMyClientEmpProduction.LookAndFeel.SkinName = "Office 2010 Blue";
             this.gridControlMyClientEmpProduction.LookAndFeel.UseDefaultLookAndFeel = false;
             this.gridControlMyClientEmpProduction.MainView = this.gridViewMyClientEmpProduction;
             this.gridControlMyClientEmpProduction.Name = "gridControlMyClientEmpProduction";
             this.gridControlMyClientEmpProduction.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemHyperLinkEdit35});
-            this.gridControlMyClientEmpProduction.Size = new System.Drawing.Size(912, 357);
+            this.gridControlMyClientEmpProduction.Size = new System.Drawing.Size(912, 358);
             this.gridControlMyClientEmpProduction.TabIndex = 2;
             this.gridControlMyClientEmpProduction.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewMyClientEmpProduction});
@@ -5088,6 +5058,7 @@
             this.gridViewMyClientEmpProduction.OptionsFind.AlwaysVisible = true;
             this.gridViewMyClientEmpProduction.OptionsView.ColumnAutoWidth = false;
             this.gridViewMyClientEmpProduction.OptionsView.ShowFooter = true;
+            this.gridViewMyClientEmpProduction.OptionsView.ShowGroupPanel = false;
             this.gridViewMyClientEmpProduction.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.gridViewMyClientEmpProduction.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridViewMyClientEmpProduction_RowCellClick);
             this.gridViewMyClientEmpProduction.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView5_CustomDrawRowIndicator);
@@ -6119,8 +6090,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn22;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn23;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn24;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn25;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn26;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn27;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn28;
         private DevExpress.XtraGrid.GridControl gridControl5;

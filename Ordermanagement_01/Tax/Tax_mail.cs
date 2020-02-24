@@ -484,7 +484,7 @@ namespace Ordermanagement_01.Tax
                                 }
                             }
 
-                          //  mailMessage.CC.Add("Taxes@drnds.com");//mail sending cc
+                            mailMessage.CC.Add("Taxes@drnds.com");//mail sending cc
                             string Subject = Ordernumber.ToString();
                             mailMessage.Subject = Subject.ToString();//mail subject
                             mailMessage.Body = body;

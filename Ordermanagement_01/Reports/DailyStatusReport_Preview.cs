@@ -7982,7 +7982,7 @@ namespace Ordermanagement_01
             dt = dataaccess.ExecuteSP("Sp_Client", htParam);
             DataRow dr = dt.NewRow();
             dr[0] = 0;
-            dr[2] = "ALL";
+            dr[2] = "Client Number";
             dt.Rows.InsertAt(dr, 0);
             lookUpEditClientName.Properties.DataSource = dt;
             lookUpEditClientName.Properties.DisplayMember = "Client_Number";
@@ -8137,12 +8137,12 @@ namespace Ordermanagement_01
                     }
 
                 }
-                ht_All_Clients.Add("@Fromdate", Fromdate);
-                ht_All_Clients.Add("@Todate", Todate);
+                ht_All_Clients.Add("@F_Date", dateEditAllClientFromDate.Text.ToString());
+                ht_All_Clients.Add("@T_date", dateEditAllClientToDate.Text.ToString());
                 ht_All_Clients.Add("@Clint", Client);
                 ht_All_Clients.Add("@Log_In_Userid", User_id);
                 ht_All_Clients.Add("@Subprocess_Id", SubProcess);
-                dt_All_Clients = dataaccess.ExecuteSP("Sp_Order_Status_Report", ht_All_Clients);
+                dt_All_Clients = dataaccess.ExecuteSP("usp_Order_Status_Report_Updated", ht_All_Clients);
                 dtclientexport = dt_All_Clients;
                 gridControlAllClientProduction.DataSource = dt_All_Clients;
 
@@ -8543,10 +8543,10 @@ namespace Ordermanagement_01
                 }
 
                 //Inserting Comment Values to Temp table
-                Hashtable htcomment = new Hashtable();
-                htcomment.Add("@Trans", "INSERT");
-                DataTable dtcomment = new DataTable();
-                dtcomment = dataaccess.ExecuteSP("Sp_Temp_User_Order_Comments", htcomment);
+                //Hashtable htcomment = new Hashtable();
+                //htcomment.Add("@Trans", "INSERT");
+                //DataTable dtcomment = new DataTable();
+                //dtcomment = dataaccess.ExecuteSP("Sp_Temp_User_Order_Comments", htcomment);
 
                 DateTime Fromdate = Convert.ToDateTime(dateEditMyClientsFromDate.Text.ToString());
                 DateTime Todate = Convert.ToDateTime(dateEditMyClientsToDate.Text.ToString());
@@ -8605,13 +8605,13 @@ namespace Ordermanagement_01
                 }
 
 
-                ht_Status.Add("@Fromdate", Fromdate);
-                ht_Status.Add("@Todate", Todate);
+                ht_Status.Add("@Fromdate", dateEditMyClientsFromDate.Text);
+                ht_Status.Add("@Todate", dateEditMyClientsToDate.Text);
                 ht_Status.Add("@Clint", Client);
                 ht_Status.Add("@Log_In_Userid", User_id);
                 ht_Status.Add("@user_id", User_id);
                 ht_Status.Add("@Subprocess_Id", SubProcess);
-                dt_Status = dataaccess.ExecuteSP("Sp_Order_Status_Report", ht_Status);
+                dt_Status = dataaccess.ExecuteSP("usp_Order_Status_Report_Updated", ht_Status);
                 gridControlMyClientProduction.DataSource = dt_Status;
                 dtclientexport = dt_Status;
 
@@ -9847,7 +9847,6 @@ namespace Ordermanagement_01
             if (dt.Rows.Count > 0)
             {
                 DataRow dr = dt.NewRow();
-                dr[1] = "ClientName";
                 dr[2] = "ALL";
                 dr[3] = 0;
 
@@ -9907,7 +9906,7 @@ namespace Ordermanagement_01
             dt = dataaccess.ExecuteSP("Sp_Client_SubProcess", htParam);
             DataRow dr = dt.NewRow();
             dr[0] = 0;
-            dr[6] = "ALL";
+            dr[6] = "Sub_ProcessName";
             dt.Rows.InsertAt(dr, 0);
             MyClientSubProcessName.Properties.DataSource = dt;
             MyClientSubProcessName.Properties.DisplayMember = "Sub_ProcessName";

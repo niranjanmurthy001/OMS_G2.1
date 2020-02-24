@@ -18,8 +18,9 @@ namespace Ordermanagement_01
             //Application.Run(new New_Dashboard.Settings.Process_Settings());
             //Application.Run(new New_Dashboard.Settings.EmailSetting());
             // Application.Run(new Vendors.Keywords(1));
-            Application.Run(new New_Dashboard.NewLogin());
+            //Application.Run(new New_Dashboard.NewLogin());
             //Application.Run(new Create_Client(0058, "Demo"));
+            Application.Run(new DailyStatusReport_Preview(101, "1", ""));
 
         }
     }

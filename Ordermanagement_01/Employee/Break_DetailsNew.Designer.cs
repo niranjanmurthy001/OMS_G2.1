@@ -228,7 +228,7 @@
             this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnExit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.ImageOptions.Image")));
             this.btnExit.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnExit.Location = new System.Drawing.Point(392, 130);
+            this.btnExit.Location = new System.Drawing.Point(435, 130);
             this.btnExit.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(83, 47);
@@ -244,7 +244,7 @@
             this.btnStop.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnStop.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnStop.ImageOptions.Image")));
             this.btnStop.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnStop.Location = new System.Drawing.Point(303, 130);
+            this.btnStop.Location = new System.Drawing.Point(346, 130);
             this.btnStop.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(83, 47);
@@ -260,7 +260,7 @@
             this.btnStart.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnStart.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnStart.ImageOptions.Image")));
             this.btnStart.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnStart.Location = new System.Drawing.Point(214, 130);
+            this.btnStart.Location = new System.Drawing.Point(257, 130);
             this.btnStart.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(83, 47);
@@ -272,7 +272,7 @@
             // txtReason
             // 
             this.txtReason.EditValue = "Reason";
-            this.txtReason.Location = new System.Drawing.Point(321, 72);
+            this.txtReason.Location = new System.Drawing.Point(320, 72);
             this.txtReason.Name = "txtReason";
             this.txtReason.Properties.NullText = "Reason";
             this.txtReason.Size = new System.Drawing.Size(207, 20);
@@ -339,6 +339,7 @@
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(703, 337);
             this.Name = "Break_DetailsNew";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Break_DetailsNew";
             this.Load += new System.EventHandler(this.Break_DetailsNew_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Break_Details)).EndInit();

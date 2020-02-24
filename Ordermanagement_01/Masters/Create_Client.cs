@@ -97,7 +97,12 @@ namespace Ordermanagement_01
                 }
                 else
                 {
+                    
                     MessageBox.Show("Available Client Numbers Not Found ");
+                    ListofClientNumbers.Visible = false;
+                    lbl_ClientRefNo.Visible = false;
+                        
+                   
                     return false;
                 }
                 return true;
@@ -200,8 +205,7 @@ namespace Ordermanagement_01
 
         private void txt_ClientNumber_KeyDown(object sender, KeyEventArgs e)
         {
-            ListofClientNumbers.Visible = false;
-            lbl_ClientRefNo.Visible = false;
+
             if (e.KeyCode == Keys.Enter)
             {
                 txt_ClientName.Focus();
@@ -671,7 +675,33 @@ namespace Ordermanagement_01
 
         private void txt_ClientNumber_TextChanged(object sender, EventArgs e)
         {
-            //if(txt_ClientNumber.Text.Length >=4 )
+
+            string Client_Numbers = txt_ClientNumber.Text.Trim().ToString();
+
+            if (Client_Numbers.Length > 0 && Client_Numbers.Length >= 4)
+            {
+                string value = txt_ClientNumber.Text.Trim().ToString();
+                bool Validate_Result = Validate_Client_Number_Length(Client_Numbers);
+                if (Validate_Result == false)
+                {
+
+
+                    txt_ClientNumber.Text = value;
+
+                }
+                else
+                {
+                    BindClientNumbers();
+
+                }
+
+            }
+
+            else
+            {
+                //MessageBox.Show("Client Number Not Found");
+            }
+            //if (txt_ClientNumber.Text.Length >= 4)
             //{
             //    ListofClientNumbers.Visible = true;
             //    lbl_ClientRefNo.Visible = true;
@@ -1051,7 +1081,7 @@ namespace Ordermanagement_01
             if (txt_ClientNumber.Text.Length < 4)
             {
                 e.Cancel = true;
-                MessageBox.Show("please enter Client Number It Should not be Less than 4 Digit");
+                MessageBox.Show("please enter Client Number It Shouldn't be Less than 4 Digit");
             }
 
         }
@@ -1111,19 +1141,24 @@ namespace Ordermanagement_01
         {
             string text = ListofClientNumbers.GetItemText(ListofClientNumbers.SelectedItem);
             txt_ClientNumber.Text = text;
+            ListofClientNumbers.Visible = false;
+            lbl_ClientRefNo.Visible = false;
+            
+            
         }
 
         private void txt_ClientNumber_Leave_1(object sender, EventArgs e)
         {
-            //lbl_ClientRefNo.Visible = false;
-            //ListofClientNumbers.Visible = false;
+           
             if (txt_ClientNumber.Text.Length >= 4 && txt_ClientNumber.Text.Length <= 7)
-            {
+            { 
                 ClientNoCheck();
-
+          
             }
             else
             {
+                ListofClientNumbers.Visible = false;
+                lbl_ClientRefNo.Visible = false;
                 MessageBox.Show("please enter Client Number Should  be Greater than 4 Digit And max 7 digit");
                 txt_ClientNumber.Focus();
             }
@@ -1131,8 +1166,40 @@ namespace Ordermanagement_01
         }
         private void txt_ClientNumber_TabIndexChanged(object sender, EventArgs e)
         {
-            MessageBox.Show("Fire");
+            lbl_ClientRefNo.Visible = false;
+            ListofClientNumbers.Visible = false;
+            MessageBox.Show("Tab Index changed ");
         }
+        private void ListofClientNumbers_KeyDown(object sender, KeyEventArgs e)
+        {
+            this.ListofClientNumbers.Focus();
+            this.ListofClientNumbers.Select();
+
+            if (e.KeyCode == Keys.Up && this.ListofClientNumbers.SelectedIndex - 1 > -1)
+            {
+                ListofClientNumbers.SelectedIndex--;
+            }
+            if (e.KeyCode == Keys.Down && this.ListofClientNumbers.SelectedIndex + 1 < this.ListofClientNumbers.Items.Count)
+            {
+                ListofClientNumbers.SelectedIndex++;
+            }
+            if (e.KeyCode == Keys.Enter)
+            {
+                string value = ListofClientNumbers.GetItemText(ListofClientNumbers.SelectedItem);
+                txt_ClientNumber.Text = value;
+                //ListofClientNumbers.Visible = false;
+                //lbl_ClientRefNo.Visible = false;
+
+            }
+
+        }
+
+        private void txt_ClientNumber_MouseLeave(object sender, EventArgs e)
+       {
+            //ListofClientNumbers.Visible = true;
+            //lbl_ClientRefNo.Visible = true;
+        }
+
         private void Grd_Mail_Bind()
         {
             Hashtable ht_Mail_Bind = new Hashtable();
@@ -1398,6 +1465,7 @@ namespace Ordermanagement_01
             ListofClientNumbers.Enabled = true;
             lbl_ClientRefNo.Visible = true;
 
+            BindClientNumbers();
             e.Handled = !char.IsDigit(e.KeyChar);
             if (!Char.IsLetter(e.KeyChar) && e.KeyChar == (char)Keys.Back)
                 e.Handled = false;
@@ -1411,27 +1479,29 @@ namespace Ordermanagement_01
                     txt_ClientNumber.Select();
                 }
             }
-            string Client_Numbers = txt_ClientNumber.Text.Trim().ToString();
-            if (Client_Numbers.Length > 0)
-            {
-                string value = txt_ClientNumber.Text.Trim().ToString();
-                bool Validate_Result = Validate_Client_Number_Length(Client_Numbers);
-                if (Validate_Result == true)
-                {
+            //string Client_Numbers = txt_ClientNumber.Text.Trim().ToString();
 
-                    MessageBox.Show("Enter Number in Right Format like 1000,2000 etc");
-                    // txt_ClientNumber.Text = value;
-                }
-                else
-                {
+            //    if (Client_Numbers.Length > 0)
+            //    {
+            //        string value = txt_ClientNumber.Text.Trim().ToString();
+            //        bool Validate_Result = Validate_Client_Number_Length(Client_Numbers);
+            //        if (Validate_Result == true)
+            //        {
 
-                }
+            //            MessageBox.Show("Enter Number in Right Format like 1000,2000 etc");
+            //            // txt_ClientNumber.Text = value;
+            //        }
+            //        else
+            //        {
 
-            }
-            else
-            {
-                MessageBox.Show("Client Number Not Found");
-            }
+            //        }
+
+            //   }
+
+            //else
+            //{
+            //   // MessageBox.Show("Client Number Not Found");
+            //}
 
         }
 
@@ -1447,22 +1517,21 @@ namespace Ordermanagement_01
                 ar.Add(item);
 
             }
-
             if (Client_Number.Length == 4)
             {
                 ar.RemoveAt(0);
             }
             else if (Client_Number.Length == 5)
             {
-                ar.RemoveRange(0, 1);
+                ar.RemoveRange(0, 2);
             }
             else if (Client_Number.Length == 6)
             {
-                ar.RemoveRange(0, 2);
+                ar.RemoveRange(0, 3);
             }
             else if (Client_Number.Length == 7)
             {
-                ar.RemoveRange(0, 3);
+                ar.RemoveRange(0, 4);
             }
 
             bool Check_Value = false;

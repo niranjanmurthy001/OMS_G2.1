@@ -14,10 +14,12 @@ namespace Ordermanagement_01
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new New_Dashboard.Orders.OrderEntry());
+            // Application.Run(new New_Dashboard.Orders.OrderEntry());
             //Application.Run(new New_Dashboard.Settings.Process_Settings());
             //Application.Run(new New_Dashboard.Settings.EmailSetting());
             // Application.Run(new Vendors.Keywords(1));
+            Application.Run(new New_Dashboard.NewLogin());
+            //Application.Run(new Create_Client(0058, "Demo"));
 
         }
     }

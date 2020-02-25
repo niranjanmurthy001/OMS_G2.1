@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraSplashScreen;
+using System;
 using System.Collections;
 using System.ComponentModel;
 using System.Data;
@@ -55,34 +56,49 @@ namespace Ordermanagement_01
 
         private void Create_Client_Load(object sender, EventArgs e)
         {
-            //btn_treeview.Left = Width - 60;
-            lbl_ClientRefNo.Visible = false;
-            ListofClientNumbers.Visible = false;
-            ListofClientNumbers.Enabled = false;
-            pnlSideTree.Visible = true;
-            txt_ClientNumber.Enabled = true;
-            AddParent();
-            lbl_Record_Addedby.Text = "";
-            lbl_Record_AddedDate.Text = " ";
-            dbc.BindCompany(ddl_Company);
-            dbc.BindBranch(ddl_branchname, int.Parse(ddl_Company.SelectedValue.ToString()));
-            dbc.BindCountry(Ddl_Client_Country);
-            GetMaximumClientNumber();
-            rbtn_Enable.Checked = true;
-            BindClientNumbers();
-            textBoximage.Enabled = true;
+            try
+            {
+                SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
+                //btn_treeview.Left = Width - 60;
+                lbl_ClientRefNo.Visible = false;
+                ListofClientNumbers.Visible = false;
+                ListofClientNumbers.Enabled = false;
+                pnlSideTree.Visible = true;
+                txt_ClientNumber.Enabled = true;
+                AddParent();
+                lbl_Record_Addedby.Text = "";
+                lbl_Record_AddedDate.Text = " ";
+                dbc.BindCompany(ddl_Company);
+                dbc.BindBranch(ddl_branchname, int.Parse(ddl_Company.SelectedValue.ToString()));
+                dbc.BindCountry(Ddl_Client_Country);
+                GetMaximumClientNumber();
+                rbtn_Enable.Checked = true;
+                BindClientNumbers();
+                textBoximage.Enabled = true;
 
-            lbl_Record_Addedby.Text = username;
-            lbl_Record_AddedDate.Text = DateTime.Now.ToString();
-            ddl_Company.Select();
+                lbl_Record_Addedby.Text = username;
+                lbl_Record_AddedDate.Text = DateTime.Now.ToString();
+                ddl_Company.Select();
 
-            textBoximage.Enabled = false;
-            txt_CostTATExcel.Enabled = false;
+                textBoximage.Enabled = false;
+                txt_CostTATExcel.Enabled = false;
+            }
+
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm(false);
+            }
         }
         private bool BindClientNumbers()
         {
             try
             {
+                SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
                 Hashtable ht = new Hashtable();
                 DataTable dt = new DataTable();
                 ht.Add("@Trans", "ClientRefValues");
@@ -97,20 +113,23 @@ namespace Ordermanagement_01
                 }
                 else
                 {
-                    
-                    MessageBox.Show("N/A");
-                    ListofClientNumbers.Visible = false;
-                    lbl_ClientRefNo.Visible = false;
-                        
-                   
+                    SplashScreenManager.CloseForm(false);
+                    MessageBox.Show("Avail ClientNumber Not found For Particular Client Number");
+                    //ListofClientNumbers.Visible = false;
+                    //lbl_ClientRefNo.Visible = false;
                     return false;
                 }
                 return true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString());
+                SplashScreenManager.CloseForm(false);
+               // MessageBox.Show(ex.Message.ToString());
                 throw ex;
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm(false);
             }
         }
 
@@ -702,12 +721,14 @@ namespace Ordermanagement_01
                 //MessageBox.Show("Please Enter A Valid Client Number");
                 txt_ClientNumber.Focus();
             }
-            //if (txt_ClientNumber.Text.Length >= 4)
-            //{
-            //    ListofClientNumbers.Visible = true;
-            //    lbl_ClientRefNo.Visible = true;
-            //    ListofClientNumbers.Enabled = true;
-            //}
+            if(txt_ClientNumber.Text.Length==0)
+           {
+                ListofClientNumbers.Visible = false;
+                lbl_ClientRefNo.Visible = false;
+
+
+            }
+
 
 
 
@@ -1144,17 +1165,17 @@ namespace Ordermanagement_01
             txt_ClientNumber.Text = text;
             ListofClientNumbers.Visible = false;
             lbl_ClientRefNo.Visible = false;
-            
-            
+
+
         }
 
         private void txt_ClientNumber_Leave_1(object sender, EventArgs e)
         {
-           
+
             if (txt_ClientNumber.Text.Length >= 4 && txt_ClientNumber.Text.Length <= 7)
-            { 
+            {
                 ClientNoCheck();
-          
+
             }
             else
             {
@@ -1193,12 +1214,6 @@ namespace Ordermanagement_01
 
             }
 
-        }
-
-        private void txt_ClientNumber_MouseLeave(object sender, EventArgs e)
-       {
-            //ListofClientNumbers.Visible = true;
-            //lbl_ClientRefNo.Visible = true;
         }
 
         private void Grd_Mail_Bind()
@@ -1480,29 +1495,7 @@ namespace Ordermanagement_01
                     txt_ClientNumber.Select();
                 }
             }
-            //string Client_Numbers = txt_ClientNumber.Text.Trim().ToString();
 
-            //    if (Client_Numbers.Length > 0)
-            //    {
-            //        string value = txt_ClientNumber.Text.Trim().ToString();
-            //        bool Validate_Result = Validate_Client_Number_Length(Client_Numbers);
-            //        if (Validate_Result == true)
-            //        {
-
-            //            MessageBox.Show("Enter Number in Right Format like 1000,2000 etc");
-            //            // txt_ClientNumber.Text = value;
-            //        }
-            //        else
-            //        {
-
-            //        }
-
-            //   }
-
-            //else
-            //{
-            //   // MessageBox.Show("Client Number Not Found");
-            //}
 
         }
 

@@ -674,7 +674,7 @@
             this.txt_ClientNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_ClientNumber_KeyDown);
             this.txt_ClientNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ClientNumber_KeyPress);
             this.txt_ClientNumber.Leave += new System.EventHandler(this.txt_ClientNumber_Leave_1);
-            this.txt_ClientNumber.MouseLeave += new System.EventHandler(this.txt_ClientNumber_MouseLeave);
+          //  this.txt_ClientNumber.MouseLeave += new System.EventHandler(this.txt_ClientNumber_MouseLeave);
             this.txt_ClientNumber.Validating += new System.ComponentModel.CancelEventHandler(this.txt_ClientNumber_Validating);
             // 
             // txt_Client_Pincode

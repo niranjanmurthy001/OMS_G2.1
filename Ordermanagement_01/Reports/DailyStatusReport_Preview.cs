@@ -8095,6 +8095,7 @@ namespace Ordermanagement_01
 
                 gridViewAllClientProduction.BestFitColumns();
 
+                
 
                 DateTimeFormatInfo usDtfi = new CultureInfo("en-US", false).DateTimeFormat;
 
@@ -8174,7 +8175,10 @@ namespace Ordermanagement_01
                     {
                         Client = int.Parse(lookUpEditAllClientName.EditValue.ToString());
                     }
-
+                    else
+                    {
+                        Client = 0;
+                    }
                     if (Convert.ToInt32(lookUpEditAllClientSubProcess.EditValue) > 0)
                     {
                         SubProcess = int.Parse(lookUpEditAllClientSubProcess.EditValue.ToString());
@@ -8196,41 +8200,48 @@ namespace Ordermanagement_01
 
                     if (userRoleId == 1)
                     {
-                        if (lookUpEditAllClientName.Text != "ALL" && lookUpEditAllClientSubProcess.Text == "ALL")
+                        if (Client != 0 && SubProcess == 0)
                         {
+                            ht_Status1.Add("@Filter_Type", "Client_Wise");
                             ht_Status1.Add("@Trans", "Order_Status_Report__ClientWise");
                         }
-                        else if (lookUpEditAllClientName.Text != "ALL" && lookUpEditAllClientSubProcess.Text != "ALL")
+                        else if (Client != 0 && SubProcess != 0)
                         {
+                            ht_Status1.Add("@Filter_Type", "Sub_Client_Wise");
                             ht_Status1.Add("@Trans", "Order_Status_Report__Client_SubprocessWise");
                         }
                         else
                         {
+                            ht_Status1.Add("@Filter_Type", "All");
                             ht_Status1.Add("@Trans", "Order_Status_Report_All_ClientWise");
                         }
                     }
                     else
                     {
-                        if (lookUpEditAllClientName.Text != "ALL" && lookUpEditAllClientSubProcess.Text == "ALL")
+                        if (Client != 0 && SubProcess == 0)
                         {
+                            ht_Status1.Add("@Filter_Type", "Client_Wise");
                             ht_Status1.Add("@Trans", "Order_Status_Report_ClientWise_Employee_User_Role");
                         }
-                        else if (lookUpEditAllClientName.Text != "ALL" && lookUpEditAllClientSubProcess.Text != "ALL")
+                        else if (Client != 0 && SubProcess != 0)
                         {
+                            ht_Status1.Add("@Filter_Type", "Sub_Client_Wise");
                             ht_Status1.Add("@Trans", "Order_Status_Report__Client_SubprocessWise_Employee_User_Role");
                         }
-                        else
+                        else if (Client != 0 && SubProcess != 0)
                         {
+                            ht_Status1.Add("@Filter_Type", "All");
                             ht_Status1.Add("@Trans", "Order_Status_Report_All_ClientWise_Employee_User_Role");
                         }
                     }
-                    ht_Status1.Add("@Fromdate", dateEditAllClientFromDate.Text);
-                    ht_Status1.Add("@Todate", dateEditAllClientToDate.Text);
+                    ht_Status1.Add("@F_Date", dateEditAllClientFromDate.Text);
+                    ht_Status1.Add("@T_date", dateEditAllClientToDate.Text);
                     ht_Status1.Add("@Clint", Client);
                     ht_Status1.Add("@Log_In_Userid", User_id);
                     ht_Status1.Add("@Subprocess_Id", SubProcess);
-                    dt_Status1 = dataaccess.ExecuteSP("Sp_Order_Status_Report", ht_Status1);
+                    dt_Status1 = dataaccess.ExecuteSP("usp_Order_Status_Report_Details_Updated", ht_Status1);
                     gridControl5.DataSource = dt_Status1;
+                    gridView6.BestFitColumns();
 
                     Export_ReportClient_ProductionData();
 
@@ -8542,12 +8553,7 @@ namespace Ordermanagement_01
                     SubProcess = 0;
                 }
 
-                //Inserting Comment Values to Temp table
-                //Hashtable htcomment = new Hashtable();
-                //htcomment.Add("@Trans", "INSERT");
-                //DataTable dtcomment = new DataTable();
-                //dtcomment = dataaccess.ExecuteSP("Sp_Temp_User_Order_Comments", htcomment);
-
+            
                 DateTime Fromdate = Convert.ToDateTime(dateEditMyClientsFromDate.Text.ToString());
                 DateTime Todate = Convert.ToDateTime(dateEditMyClientsToDate.Text.ToString());
                 String dy = Todate.Day.ToString();
@@ -8647,6 +8653,10 @@ namespace Ordermanagement_01
                 {
                     Client = int.Parse(lookUpEditMyClientName.EditValue.ToString());
                 }
+                else
+                {
+                    Client = 0;
+                }
                 if (Convert.ToInt32(lookUpEditMyClienSubprocess.EditValue) > 0)
                 {
                     SubProcess = int.Parse(lookUpEditMyClienSubprocess.EditValue.ToString());
@@ -8670,17 +8680,19 @@ namespace Ordermanagement_01
 
                 if (userRoleId == 1)
                 {
-                    if (lookUpEditMyClientName.Text != "ALL" && lookUpEditMyClienSubprocess.Text == "ALL")
+                    if (Client!=0 && SubProcess == 0)
                     {
                         ht_Status1.Add("@Trans", "Order_Status_Report__ClientWise");
                     }
-                    else if (lookUpEditMyClientName.Text != "ALL" && lookUpEditMyClienSubprocess.Text != "ALL")
+                    else if (Client != 0 && SubProcess != 0)
                     {
                         ht_Status1.Add("@Trans", "Order_Status_Report__Client_SubprocessWise");
                     }
                     else
                     {
+                        ht_Status1.Add("@Filter_Type", "My_Client_Wise");
                         ht_Status1.Add("@Trans", "Order_Status_Report_All_My_ClientWise");
+                        ht_Status1.Add("@My_Clients", MY_Client);
                     }
                 }
 
@@ -8688,32 +8700,33 @@ namespace Ordermanagement_01
                 if (userRoleId != 1)
                 {
 
-                    if (Convert.ToInt32(lookUpEditMyClientName.EditValue) != 0 && Convert.ToInt32(lookUpEditMyClienSubprocess.EditValue) == 0)
+                    if (Client != 0 && SubProcess == 0)
                     {
                         ht_Status1.Add("@Trans", "Order_Status_Report_ClientWise_Employee_User_Role");
                     }
-                    else if (Convert.ToInt32(lookUpEditMyClientName.EditValue) != 0 && Convert.ToInt32(lookUpEditMyClienSubprocess.EditValue) != 0 && lookUpEditMyClientName.Text != "" && lookUpEditMyClienSubprocess.Text != "")
+                    else if (Client != 0 && SubProcess != 0)
                     {
                         ht_Status1.Add("@Trans", "Order_Status_Report__Client_SubprocessWise_Employee_User_Role");
                     }
                     else
                     {
                         ht_Status1.Add("@Trans", "Order_Status_Report_All_My_ClientWise_Employe_User_Role");
-
+                        ht_Status1.Add("@Filter_Type", "My_Client_Wise");
                         ht_Status1.Add("@My_Clients", MY_Client);
                     }
                 }
 
-
-                ht_Status1.Add("@Fromdate", Fromdate);
-                ht_Status1.Add("@Todate", Todate);
+         
+                ht_Status1.Add("@F_Date", dateEditMyClientsFromDate.Text.ToString());
+                ht_Status1.Add("@T_date", dateEditMyClientsToDate.Text.ToString());
                 ht_Status1.Add("@Clint", Client);
                 ht_Status1.Add("@Subprocess_Id", SubProcess);
                 ht_Status1.Add("@Log_In_Userid", User_id);
 
-                dt_Status1 = dataaccess.ExecuteSP("Sp_Order_Status_Report", ht_Status1);
+                dt_Status1 = dataaccess.ExecuteSP("usp_Order_Status_Report_Details_Updated", ht_Status1);
                 dtclientReport = dt_Status1;
                 gridControl6.DataSource = dt_Status1;
+                gridView6.BestFitColumns();
                 Export_MyClient_ProductionData();
             }
             catch (Exception ex)

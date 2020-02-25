@@ -802,7 +802,7 @@ namespace Ordermanagement_01
 
                     Get_Count_Of_Vendor_Orders();
 
-                    Bind_Admin_User_Clients();
+                   // Bind_Admin_User_Clients();
 
                     AddParent_Superqc_My_report();
                     AddParent_Superqc_All_report();
@@ -856,40 +856,44 @@ namespace Ordermanagement_01
                 tabControl1.SelectedIndex = 0;
 
                 //======================Reports Details===================
-                dbc.BindOrderStatusRpt(ddl_Task);
-                dbc.Bind_Order_Progress_rpt(ddl_Status);
-                dbc.BindUserName(ddl_EmployeeName);
-
-                if (User_Role_Id == "1")
-                {
-                    dbc.BindClientName(ddl_ClientName);
-                    dbc.BindClientName(ddl_Client_Status);
-                }
-                else
-                {
-
-                    dbc.BindClientNo(ddl_ClientName);
-                    dbc.BindClientNo(ddl_Client_Status);
-                }
-
-                ddl_ClientName_SelectedIndexChanged(sender, e);
 
 
-                dbc.Bind_Month(ddl_Month);
-                dbc.Bind_Year(ddl_Year);
-                Hashtable htget_Current_Month = new Hashtable();
-                System.Data.DataTable dtget_Current_Month = new System.Data.DataTable();
+                //dbc.BindOrderStatusRpt(ddl_Task);
+                //dbc.Bind_Order_Progress_rpt(ddl_Status);
+                //dbc.BindUserName(ddl_EmployeeName);
 
-                htget_Current_Month.Add("@Trans", "GET_CURRENT_MONTH");
-                dtget_Current_Month = dataaccess.ExecuteSP("Sp_Score_Board", htget_Current_Month);
-                if (dtget_Current_Month.Rows.Count > 0)
-                {
-                    ddl_Month.SelectedValue = dtget_Current_Month.Rows[0]["C_Month"].ToString();
-                }
-                if (User_Role_Id == "1")
-                {
-                    dbc.BindSubProcessName_rpt1(ddl_SubProcess);
-                }
+                //if (User_Role_Id == "1")
+                //{
+                //    dbc.BindClientName(ddl_ClientName);
+                //    dbc.BindClientName(ddl_Client_Status);
+                //}
+                //else
+                //{
+
+                //    dbc.BindClientNo(ddl_ClientName);
+                //    dbc.BindClientNo(ddl_Client_Status);
+                //}
+
+              //  ddl_ClientName_SelectedIndexChanged(sender, e);
+
+
+                //dbc.Bind_Month(ddl_Month);
+                //dbc.Bind_Year(ddl_Year);
+                //Hashtable htget_Current_Month = new Hashtable();
+                //System.Data.DataTable dtget_Current_Month = new System.Data.DataTable();
+
+                //htget_Current_Month.Add("@Trans", "GET_CURRENT_MONTH");
+                //dtget_Current_Month = dataaccess.ExecuteSP("Sp_Score_Board", htget_Current_Month);
+                //if (dtget_Current_Month.Rows.Count > 0)
+                //{
+                //    ddl_Month.SelectedValue = dtget_Current_Month.Rows[0]["C_Month"].ToString();
+                //}
+
+
+                //if (User_Role_Id == "1")
+                //{
+                //  //  dbc.BindSubProcessName_rpt1(ddl_SubProcess);
+                //}
 
                 Bind_Auto_Allocation_Users_List();
 
@@ -1023,17 +1027,17 @@ namespace Ordermanagement_01
                 dbc.Bind_Order_Progress_rpt(ddl_My_Status);
 
                 // dbc.Bind_UserClient_rpt(ddl_My_ClientName, userid);
-                if (User_Role_Id == "1")
-                {
-                    dbc.BindClientName(ddl_My_ClientName);
-                }
-                else
-                {
-                    // dbc.BindClientName_For_Employee(ddl_My_ClientName);
-                    dbc.BindClientName_For_Employee(ddl_My_ClientName);
-                    // dbc.BindClientName_For_Employee_1(ddl_My_ClientName);
-                }
-                ddl_ClientName_SelectedIndexChanged(sender, e);
+                //if (User_Role_Id == "1")
+                //{
+                //    dbc.BindClientName(ddl_My_ClientName);
+                //}
+                //else
+                //{
+                //    // dbc.BindClientName_For_Employee(ddl_My_ClientName);
+                //    dbc.BindClientName_For_Employee(ddl_My_ClientName);
+                //    // dbc.BindClientName_For_Employee_1(ddl_My_ClientName);
+                //}
+                //ddl_ClientName_SelectedIndexChanged(sender, e);
                 // User Role 
                 // dbc.BindOrder1(ddl_My_Ordernumber);
                 // dbc.BindSubProcessName_rpt1(ddl_My_Sub_Client);
@@ -1073,6 +1077,11 @@ namespace Ordermanagement_01
                 Ordermanagement_01.Gen_Forms.Popup_ToastStyle pop_Style = new Ordermanagement_01.Gen_Forms.Popup_ToastStyle();
                 pop_Style.Show();
 
+
+                tabControl1.TabPages.Remove(tabPage2);
+                tabControl1.TabPages.Remove(tabPage5);
+                tabControl1.TabPages.Remove(tabPage8);
+                tabControl1.TabPages.Remove(tabPage10);
                 // notification icon
 
                 // notifyIcon1.ShowBalloonTip(1000, "Important Notice :", "Logged In successfully", ToolTipIcon.Info);
@@ -9680,12 +9689,12 @@ namespace Ordermanagement_01
                     }
 
                 }
-                ht_Status1.Add("@Fromdate", txt_Fromdate.Text);
-                ht_Status1.Add("@Todate", txt_Todate.Text);
+                ht_Status1.Add("@F_Date", txt_Fromdate.Text);
+                ht_Status1.Add("@T_date", txt_Todate.Text);
                 ht_Status1.Add("@Clint", Client);
                 ht_Status1.Add("@Log_In_Userid", userid);
                 ht_Status1.Add("@Subprocess_Id", SubProcess);
-                dt_Status1 = dataaccess.ExecuteSP("Sp_Order_Status_Report", ht_Status1);
+                dt_Status1 = dataaccess.ExecuteSP("usp_Order_Status_Report_Details_Updated", ht_Status1);
 
 
                 dtclientReport = dt_Status1;

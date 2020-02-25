@@ -665,7 +665,6 @@
             // repositoryItemHyperLinkEdit11
             // 
             this.repositoryItemHyperLinkEdit11.AutoHeight = false;
-            this.repositoryItemHyperLinkEdit11.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.repositoryItemHyperLinkEdit11.Name = "repositoryItemHyperLinkEdit11";
             // 
             // repositoryItemHyperLinkEdit7
@@ -3382,7 +3381,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lookUpEditAllClientSubProcess.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
             this.lookUpEditAllClientSubProcess.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.lookUpEditAllClientSubProcess.Properties.NullText = "SubProcessName";
+            this.lookUpEditAllClientSubProcess.Properties.NullText = "Sub Process Name";
             this.lookUpEditAllClientSubProcess.Size = new System.Drawing.Size(177, 26);
             this.lookUpEditAllClientSubProcess.TabIndex = 4;
             // 

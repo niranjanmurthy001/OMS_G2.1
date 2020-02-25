@@ -34,7 +34,6 @@
             DevExpress.XtraEditors.FormatConditionRuleExpression formatConditionRuleExpression1 = new DevExpress.XtraEditors.FormatConditionRuleExpression();
             DevExpress.XtraGrid.GridFormatRule gridFormatRule2 = new DevExpress.XtraGrid.GridFormatRule();
             DevExpress.XtraEditors.FormatConditionRuleExpression formatConditionRuleExpression2 = new DevExpress.XtraEditors.FormatConditionRuleExpression();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemHyperLinkEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -104,6 +103,7 @@
             this.gridColumn60 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn61 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn62 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn53 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
@@ -184,7 +184,20 @@
             this.repositoryItemPopupContainerEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit();
             this.repositoryItemPopupContainerEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.gridColumn53 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn74 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.pivotGridField23 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.pivotGridField24 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.gridColumn75 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.pivotGridField25 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.pivotGridField26 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.gridColumn76 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn77 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.pivotGridField27 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.gridColumn78 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.pivotGridField28 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.pivotGridField29 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.gridColumn79 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn80 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1266,6 +1279,23 @@
             this.gridColumn62.Name = "gridColumn62";
             this.gridColumn62.Width = 20;
             // 
+            // gridColumn53
+            // 
+            this.gridColumn53.AppearanceHeader.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.gridColumn53.AppearanceHeader.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold);
+            this.gridColumn53.AppearanceHeader.Options.UseBackColor = true;
+            this.gridColumn53.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn53.Caption = "Order Prior Date";
+            this.gridColumn53.DisplayFormat.FormatString = "\"MM/dd/YYYY\"";
+            this.gridColumn53.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.gridColumn53.FieldName = "Order_Prior_Date";
+            this.gridColumn53.Name = "gridColumn53";
+            this.gridColumn53.OptionsColumn.AllowEdit = false;
+            this.gridColumn53.OptionsColumn.ReadOnly = true;
+            this.gridColumn53.Visible = true;
+            this.gridColumn53.VisibleIndex = 31;
+            this.gridColumn53.Width = 98;
+            // 
             // repositoryItemGridLookUpEdit1
             // 
             this.repositoryItemGridLookUpEdit1.AutoHeight = false;
@@ -1381,9 +1411,6 @@
             // 
             // gridControl1
             // 
-            gridLevelNode1.RelationName = "Level1";
-            this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
             this.gridControl1.Location = new System.Drawing.Point(233, 93);
             this.gridControl1.LookAndFeel.SkinName = "Office 2010 Blue";
             this.gridControl1.LookAndFeel.UseWindowsXPTheme = true;
@@ -1435,7 +1462,14 @@
             this.gridColumn42,
             this.gridColumn43,
             this.gridColumn44,
-            this.gridColumn45});
+            this.gridColumn45,
+            this.gridColumn79,
+            this.gridColumn80,
+            this.gridColumn74,
+            this.gridColumn75,
+            this.gridColumn76,
+            this.gridColumn77,
+            this.gridColumn78});
             this.gridView5.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView5.GridControl = this.gridControl1;
             this.gridView5.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
@@ -1990,7 +2024,14 @@
             this.pivotGridField15,
             this.pivotGridField20,
             this.pivotGridField21,
-            this.pivotGridField22});
+            this.pivotGridField22,
+            this.pivotGridField28,
+            this.pivotGridField29,
+            this.pivotGridField23,
+            this.pivotGridField24,
+            this.pivotGridField25,
+            this.pivotGridField26,
+            this.pivotGridField27});
             this.pivotGridControl1.Location = new System.Drawing.Point(2, 2);
             this.pivotGridControl1.Name = "pivotGridControl1";
             this.pivotGridControl1.OptionsBehavior.HorizontalScrolling = DevExpress.XtraPivotGrid.PivotGridScrolling.Control;
@@ -2202,26 +2243,100 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemPopupContainerEdit3.Name = "repositoryItemPopupContainerEdit3";
             // 
-            // defaultLookAndFeel1
+            // gridColumn74
             // 
-            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013";
+            this.gridColumn74.Caption = "Client_Id";
+            this.gridColumn74.FieldName = "Client_Id";
+            this.gridColumn74.Name = "gridColumn74";
             // 
-            // gridColumn53
+            // pivotGridField23
             // 
-            this.gridColumn53.AppearanceHeader.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.gridColumn53.AppearanceHeader.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold);
-            this.gridColumn53.AppearanceHeader.Options.UseBackColor = true;
-            this.gridColumn53.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn53.Caption = "Order Prior Date";
-            this.gridColumn53.DisplayFormat.FormatString = "\"MM/dd/YYYY\"";
-            this.gridColumn53.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.gridColumn53.FieldName = "Order_Prior_Date";
-            this.gridColumn53.Name = "gridColumn53";
-            this.gridColumn53.OptionsColumn.AllowEdit = false;
-            this.gridColumn53.OptionsColumn.ReadOnly = true;
-            this.gridColumn53.Visible = true;
-            this.gridColumn53.VisibleIndex = 31;
-            this.gridColumn53.Width = 98;
+            this.pivotGridField23.AreaIndex = 19;
+            this.pivotGridField23.FieldName = "Client_Id";
+            this.pivotGridField23.Name = "pivotGridField23";
+            this.pivotGridField23.Visible = false;
+            // 
+            // pivotGridField24
+            // 
+            this.pivotGridField24.AreaIndex = 19;
+            this.pivotGridField24.FieldName = "Subprocess_Id";
+            this.pivotGridField24.Name = "pivotGridField24";
+            this.pivotGridField24.Visible = false;
+            // 
+            // gridColumn75
+            // 
+            this.gridColumn75.Caption = "Subprocess_Id";
+            this.gridColumn75.FieldName = "Subprocess_Id";
+            this.gridColumn75.Name = "gridColumn75";
+            // 
+            // pivotGridField25
+            // 
+            this.pivotGridField25.AreaIndex = 19;
+            this.pivotGridField25.FieldName = "State_ID";
+            this.pivotGridField25.Name = "pivotGridField25";
+            this.pivotGridField25.Visible = false;
+            // 
+            // pivotGridField26
+            // 
+            this.pivotGridField26.Caption = "County_ID";
+            this.pivotGridField26.FieldName = "County_ID";
+            this.pivotGridField26.Name = "pivotGridField26";
+            this.pivotGridField26.Visible = false;
+            // 
+            // gridColumn76
+            // 
+            this.gridColumn76.Caption = "State_ID";
+            this.gridColumn76.FieldName = "State_ID";
+            this.gridColumn76.Name = "gridColumn76";
+            // 
+            // gridColumn77
+            // 
+            this.gridColumn77.Caption = "County_ID";
+            this.gridColumn77.FieldName = "County_ID";
+            this.gridColumn77.Name = "gridColumn77";
+            // 
+            // pivotGridField27
+            // 
+            this.pivotGridField27.AreaIndex = 19;
+            this.pivotGridField27.FieldName = "OrderType_Abs_Id";
+            this.pivotGridField27.Name = "pivotGridField27";
+            this.pivotGridField27.Visible = false;
+            // 
+            // gridColumn78
+            // 
+            this.gridColumn78.Caption = "OrderType_Abs_Id";
+            this.gridColumn78.FieldName = "OrderType_Abs_Id";
+            this.gridColumn78.Name = "gridColumn78";
+            // 
+            // pivotGridField28
+            // 
+            this.pivotGridField28.AreaIndex = 19;
+            this.pivotGridField28.Caption = "Comments";
+            this.pivotGridField28.FieldName = "Order_Comments";
+            this.pivotGridField28.Name = "pivotGridField28";
+            // 
+            // pivotGridField29
+            // 
+            this.pivotGridField29.AreaIndex = 20;
+            this.pivotGridField29.Caption = "Status Comments";
+            this.pivotGridField29.FieldName = "Status_Comments";
+            this.pivotGridField29.Name = "pivotGridField29";
+            // 
+            // gridColumn79
+            // 
+            this.gridColumn79.Caption = "Comments";
+            this.gridColumn79.FieldName = "Order_Comments";
+            this.gridColumn79.Name = "gridColumn79";
+            this.gridColumn79.Visible = true;
+            this.gridColumn79.VisibleIndex = 23;
+            // 
+            // gridColumn80
+            // 
+            this.gridColumn80.Caption = "Status Comments";
+            this.gridColumn80.FieldName = "Status_Comments";
+            this.gridColumn80.Name = "gridColumn80";
+            this.gridColumn80.Visible = true;
+            this.gridColumn80.VisibleIndex = 24;
             // 
             // DailyStatus_OrderViewDetail_New
             // 
@@ -2441,5 +2556,19 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn72;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn73;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn53;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn74;
+        private DevExpress.XtraPivotGrid.PivotGridField pivotGridField23;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn75;
+        private DevExpress.XtraPivotGrid.PivotGridField pivotGridField24;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn76;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn77;
+        private DevExpress.XtraPivotGrid.PivotGridField pivotGridField25;
+        private DevExpress.XtraPivotGrid.PivotGridField pivotGridField26;
+        private DevExpress.XtraPivotGrid.PivotGridField pivotGridField27;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn78;
+        private DevExpress.XtraPivotGrid.PivotGridField pivotGridField28;
+        private DevExpress.XtraPivotGrid.PivotGridField pivotGridField29;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn79;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn80;
     }
 }

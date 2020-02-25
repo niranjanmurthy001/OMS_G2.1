@@ -58,8 +58,14 @@ namespace Ordermanagement_01.Reports
         private int error_Count_6;
         private StyleFormatCondition styleFormatBlue, styleFormatRed;
         public int Emp_Eff_Allocated_Order_Count { get; private set; }
+        private string operation;
+        private string fromDate;
+        private string toDate;
+        private string client;
+        private int orderStatusId;
+        private string date;
 
-        public Record(DataTable dt, int order_ID, int user_id, string user_Role_Id, string production_Date)
+        public Record(DataTable dt, int order_ID, int user_id, string user_Role_Id, string production_Date, string client, string operation, string fromDate, string toDate, int orderStatusId, string date)
         {
             InitializeComponent();
             dataaccess = new DataAccess();
@@ -67,6 +73,11 @@ namespace Ordermanagement_01.Reports
             this.user_id = user_id;
             this.user_Role_Id = user_Role_Id;
             this.production_Date = production_Date;
+            this.client = client;
+            this.operation = operation;
+            this.fromDate = fromDate;
+            this.toDate = toDate;
+            this.date = date;
             dtOrders = dt;
             styleFormatBlue = new StyleFormatCondition();
             styleFormatBlue.Appearance.BackColor = Color.Blue;
@@ -123,6 +134,60 @@ namespace Ordermanagement_01.Reports
 
         }
 
+        protected void BindOrdersByOperation()
+        {
+            SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
+            try
+            {
+                gridControlOrders.DataSource = null;
+
+
+
+                string spName = "";
+                var httargetorder = new Hashtable();
+
+                httargetorder.Add("@Trans", operation);
+                httargetorder.Add("@Client_Number", client);    //Clint
+                                                                //httargetorder.Add("@Sub_Client", Sub_Process_ID);  // Sub_Process_ID 
+                httargetorder.Add("@Order_Status", orderStatusId);
+                httargetorder.Add("@Fromdate", fromDate);
+                httargetorder.Add("@Todate", toDate);
+                httargetorder.Add("@date", date);
+                // httargetorder.Add("@date", s_Date);
+                if (operation == "AGENT_OPEN_ORDER_DETAILS" || operation == "AGENT_OPEN_ORDER_ROW_TOTAL_CLIENT_DATE_WISE" || operation == "AGENT_OPEN_ORDER_COLUMN_GRANT_TOTAL_WISE" ||
+                     operation == "AGENT_OPEN_ORDER_COLUMN_GRANT_TOTAL_WISE" || operation == "AGENT_OPEN_ORDER_ALL_CLIENT_AND_ORDER_STATUS_WISE" || operation == "AGENT_OPEN_ORDER_CLIENT_AND_DATE_WISE" ||
+                     operation == "AGENT_OPEN_ORDER_CLIENT_AND_ALL_TASK_WISE" || operation == "AGENT_OPEN_ORDER_DATE_WISE" || operation == "AGENT_OPEN_ORDER_CLIENT_AND_ORDER_STATUS_WISE")
+                {
+                    spName = "Sp_Daily_Status_Report_Open";
+                }
+                else if (operation == "AGENT_PENDING_ORDER_DETAILS" || operation == "AGENT_OPEN_ORDER_ROW_TOTAL_CLIENT_DATE_WISE" ||
+                    operation == "AGENT_PENDING_ORDER_CLIENT_AND_STATUS" || operation == "AGENT_PENDING_ORDER_ALL_CLIENT_STATUS_WISE" ||
+                    operation == "AGENT_PENDING_ORDER_CLIENT_DATE_WISE" || operation == "AGENT_PENDING_ORDER_CLIENT_AND_ALL_STATUS_WISE"
+                    || operation == "AGING_PENDING_ORDER_DATE_WISE")
+                {
+                    spName = "Sp_Daily_Status_Report_Pending";
+                }
+                else
+                {
+                    spName = "Sp_Daily_Status_Report";
+                }
+                var dtOrders = dataaccess.ExecuteSP(spName, httargetorder);
+
+                if (dtOrders.Rows.Count > 0)
+                {
+                    gridControlOrders.DataSource = dtOrders;
+                }
+            }
+            catch (Exception ex)
+            {
+                SplashScreenManager.CloseForm(false);
+                MessageBox.Show("Error Occured Please Check With Administrator");
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm(false);
+            }
+        }
         private void BindUsers()
         {
             try
@@ -679,6 +744,7 @@ namespace Ordermanagement_01.Reports
                             {
                                 SplashScreenManager.CloseForm(false);
                                 XtraMessageBox.Show(defaultLookAndFeel1.LookAndFeel, this, "Order ReAllocated Sucessfully.", "Success", MessageBoxButtons.OK);
+                                BindOrdersByOperation();
                                 Clear();
                             }
                             if (Error_Count > 0)
@@ -1097,6 +1163,11 @@ namespace Ordermanagement_01.Reports
                 return false;
             }
             return true;
+        }
+
+        private void groupControlRecords_CustomButtonClick(object sender, DevExpress.XtraBars.Docking2010.BaseButtonEventArgs e)
+        {
+            BindOrdersByOperation();
         }
 
         private void btnDeAllocate_Click(object sender, EventArgs e)
@@ -1585,12 +1656,13 @@ namespace Ordermanagement_01.Reports
                 }
                 catch (Exception ex)
                 {
-
+                    XtraMessageBox.Show("Something went wrong");
                 }
 
                 if (Record_Count > 0)
                 {
                     XtraMessageBox.Show("Orders DeAllocated Successfully");
+                    BindOrdersByOperation();
                     Clear();
                 }
 

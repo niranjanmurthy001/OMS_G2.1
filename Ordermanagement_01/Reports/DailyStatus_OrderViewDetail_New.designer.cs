@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DailyStatus_OrderViewDetail_New));
+            DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions1 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
             DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
             DevExpress.XtraEditors.FormatConditionRuleExpression formatConditionRuleExpression1 = new DevExpress.XtraEditors.FormatConditionRuleExpression();
             DevExpress.XtraGrid.GridFormatRule gridFormatRule2 = new DevExpress.XtraGrid.GridFormatRule();
@@ -145,6 +146,13 @@
             this.gridColumn43 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn44 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn45 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn79 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn80 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn74 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn75 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn76 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn77 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn78 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
@@ -180,24 +188,17 @@
             this.pivotGridField20 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.pivotGridField21 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.pivotGridField22 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.pivotGridField28 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.pivotGridField29 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.pivotGridField23 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.pivotGridField24 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.pivotGridField25 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.pivotGridField26 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.pivotGridField27 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.repositoryItemPopupContainerEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit();
             this.repositoryItemPopupContainerEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit();
             this.repositoryItemPopupContainerEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.gridColumn74 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.pivotGridField23 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.pivotGridField24 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.gridColumn75 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.pivotGridField25 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.pivotGridField26 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.gridColumn76 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn77 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.pivotGridField27 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.gridColumn78 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.pivotGridField28 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.pivotGridField29 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.gridColumn79 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn80 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -316,6 +317,9 @@
             this.groupControl1.Controls.Add(this.panel2);
             this.groupControl1.Controls.Add(this.panel7);
             this.groupControl1.Controls.Add(this.splitContainerControl1);
+            buttonImageOptions1.Image = global::Ordermanagement_01.Properties.Resources.ic_refresh;
+            this.groupControl1.CustomHeaderButtons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
+            new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("", true, buttonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1)});
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.LookAndFeel.SkinName = "Office 2010 Blue";
@@ -324,6 +328,7 @@
             this.groupControl1.Size = new System.Drawing.Size(1148, 624);
             this.groupControl1.TabIndex = 2;
             this.groupControl1.Text = "Order Details";
+            this.groupControl1.CustomButtonClick += new DevExpress.XtraBars.Docking2010.BaseButtonEventHandler(this.groupControl1_CustomButtonClick);
             // 
             // panel2
             // 
@@ -490,14 +495,14 @@
             this.splitContainerControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControl1.Horizontal = false;
-            this.splitContainerControl1.Location = new System.Drawing.Point(2, 37);
+            this.splitContainerControl1.Location = new System.Drawing.Point(2, 43);
             this.splitContainerControl1.Name = "splitContainerControl1";
             this.splitContainerControl1.Panel1.Controls.Add(this.groupControl2);
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.groupControl3);
             this.splitContainerControl1.Panel2.Text = "Panel2";
             this.splitContainerControl1.ShowCaption = true;
-            this.splitContainerControl1.Size = new System.Drawing.Size(1144, 585);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1144, 579);
             this.splitContainerControl1.SplitterPosition = 266;
             this.splitContainerControl1.TabIndex = 561;
             // 
@@ -1405,7 +1410,7 @@
             this.groupControl3.LookAndFeel.UseDefaultLookAndFeel = false;
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.ShowCaption = false;
-            this.groupControl3.Size = new System.Drawing.Size(1140, 290);
+            this.groupControl3.Size = new System.Drawing.Size(1140, 284);
             this.groupControl3.TabIndex = 0;
             this.groupControl3.Text = "Customization Order View Details";
             // 
@@ -1904,6 +1909,52 @@
             this.gridColumn45.VisibleIndex = 22;
             this.gridColumn45.Width = 120;
             // 
+            // gridColumn79
+            // 
+            this.gridColumn79.Caption = "Comments";
+            this.gridColumn79.FieldName = "Order_Comments";
+            this.gridColumn79.Name = "gridColumn79";
+            this.gridColumn79.Visible = true;
+            this.gridColumn79.VisibleIndex = 23;
+            // 
+            // gridColumn80
+            // 
+            this.gridColumn80.Caption = "Status Comments";
+            this.gridColumn80.FieldName = "Status_Comments";
+            this.gridColumn80.Name = "gridColumn80";
+            this.gridColumn80.Visible = true;
+            this.gridColumn80.VisibleIndex = 24;
+            // 
+            // gridColumn74
+            // 
+            this.gridColumn74.Caption = "Client_Id";
+            this.gridColumn74.FieldName = "Client_Id";
+            this.gridColumn74.Name = "gridColumn74";
+            // 
+            // gridColumn75
+            // 
+            this.gridColumn75.Caption = "Subprocess_Id";
+            this.gridColumn75.FieldName = "Subprocess_Id";
+            this.gridColumn75.Name = "gridColumn75";
+            // 
+            // gridColumn76
+            // 
+            this.gridColumn76.Caption = "State_ID";
+            this.gridColumn76.FieldName = "State_ID";
+            this.gridColumn76.Name = "gridColumn76";
+            // 
+            // gridColumn77
+            // 
+            this.gridColumn77.Caption = "County_ID";
+            this.gridColumn77.FieldName = "County_ID";
+            this.gridColumn77.Name = "gridColumn77";
+            // 
+            // gridColumn78
+            // 
+            this.gridColumn78.Caption = "OrderType_Abs_Id";
+            this.gridColumn78.FieldName = "OrderType_Abs_Id";
+            this.gridColumn78.Name = "gridColumn78";
+            // 
             // repositoryItemGridLookUpEdit4
             // 
             this.repositoryItemGridLookUpEdit4.AutoHeight = false;
@@ -2052,7 +2103,7 @@
             this.repositoryItemPopupContainerEdit1,
             this.repositoryItemPopupContainerEdit2,
             this.repositoryItemPopupContainerEdit3});
-            this.pivotGridControl1.Size = new System.Drawing.Size(1136, 286);
+            this.pivotGridControl1.Size = new System.Drawing.Size(1136, 280);
             this.pivotGridControl1.TabIndex = 2;
             this.pivotGridControl1.CellClick += new DevExpress.XtraPivotGrid.PivotCellEventHandler(this.pivotGridControl1_CellClick);
             // 
@@ -2219,6 +2270,55 @@
             this.pivotGridField22.FieldName = "Order_Source_Type_Name";
             this.pivotGridField22.Name = "pivotGridField22";
             // 
+            // pivotGridField28
+            // 
+            this.pivotGridField28.AreaIndex = 19;
+            this.pivotGridField28.Caption = "Comments";
+            this.pivotGridField28.FieldName = "Order_Comments";
+            this.pivotGridField28.Name = "pivotGridField28";
+            // 
+            // pivotGridField29
+            // 
+            this.pivotGridField29.AreaIndex = 20;
+            this.pivotGridField29.Caption = "Status Comments";
+            this.pivotGridField29.FieldName = "Status_Comments";
+            this.pivotGridField29.Name = "pivotGridField29";
+            // 
+            // pivotGridField23
+            // 
+            this.pivotGridField23.AreaIndex = 19;
+            this.pivotGridField23.FieldName = "Client_Id";
+            this.pivotGridField23.Name = "pivotGridField23";
+            this.pivotGridField23.Visible = false;
+            // 
+            // pivotGridField24
+            // 
+            this.pivotGridField24.AreaIndex = 19;
+            this.pivotGridField24.FieldName = "Subprocess_Id";
+            this.pivotGridField24.Name = "pivotGridField24";
+            this.pivotGridField24.Visible = false;
+            // 
+            // pivotGridField25
+            // 
+            this.pivotGridField25.AreaIndex = 19;
+            this.pivotGridField25.FieldName = "State_ID";
+            this.pivotGridField25.Name = "pivotGridField25";
+            this.pivotGridField25.Visible = false;
+            // 
+            // pivotGridField26
+            // 
+            this.pivotGridField26.Caption = "County_ID";
+            this.pivotGridField26.FieldName = "County_ID";
+            this.pivotGridField26.Name = "pivotGridField26";
+            this.pivotGridField26.Visible = false;
+            // 
+            // pivotGridField27
+            // 
+            this.pivotGridField27.AreaIndex = 19;
+            this.pivotGridField27.FieldName = "OrderType_Abs_Id";
+            this.pivotGridField27.Name = "pivotGridField27";
+            this.pivotGridField27.Visible = false;
+            // 
             // repositoryItemPopupContainerEdit1
             // 
             this.repositoryItemPopupContainerEdit1.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuPopup;
@@ -2242,101 +2342,6 @@
             this.repositoryItemPopupContainerEdit3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemPopupContainerEdit3.Name = "repositoryItemPopupContainerEdit3";
-            // 
-            // gridColumn74
-            // 
-            this.gridColumn74.Caption = "Client_Id";
-            this.gridColumn74.FieldName = "Client_Id";
-            this.gridColumn74.Name = "gridColumn74";
-            // 
-            // pivotGridField23
-            // 
-            this.pivotGridField23.AreaIndex = 19;
-            this.pivotGridField23.FieldName = "Client_Id";
-            this.pivotGridField23.Name = "pivotGridField23";
-            this.pivotGridField23.Visible = false;
-            // 
-            // pivotGridField24
-            // 
-            this.pivotGridField24.AreaIndex = 19;
-            this.pivotGridField24.FieldName = "Subprocess_Id";
-            this.pivotGridField24.Name = "pivotGridField24";
-            this.pivotGridField24.Visible = false;
-            // 
-            // gridColumn75
-            // 
-            this.gridColumn75.Caption = "Subprocess_Id";
-            this.gridColumn75.FieldName = "Subprocess_Id";
-            this.gridColumn75.Name = "gridColumn75";
-            // 
-            // pivotGridField25
-            // 
-            this.pivotGridField25.AreaIndex = 19;
-            this.pivotGridField25.FieldName = "State_ID";
-            this.pivotGridField25.Name = "pivotGridField25";
-            this.pivotGridField25.Visible = false;
-            // 
-            // pivotGridField26
-            // 
-            this.pivotGridField26.Caption = "County_ID";
-            this.pivotGridField26.FieldName = "County_ID";
-            this.pivotGridField26.Name = "pivotGridField26";
-            this.pivotGridField26.Visible = false;
-            // 
-            // gridColumn76
-            // 
-            this.gridColumn76.Caption = "State_ID";
-            this.gridColumn76.FieldName = "State_ID";
-            this.gridColumn76.Name = "gridColumn76";
-            // 
-            // gridColumn77
-            // 
-            this.gridColumn77.Caption = "County_ID";
-            this.gridColumn77.FieldName = "County_ID";
-            this.gridColumn77.Name = "gridColumn77";
-            // 
-            // pivotGridField27
-            // 
-            this.pivotGridField27.AreaIndex = 19;
-            this.pivotGridField27.FieldName = "OrderType_Abs_Id";
-            this.pivotGridField27.Name = "pivotGridField27";
-            this.pivotGridField27.Visible = false;
-            // 
-            // gridColumn78
-            // 
-            this.gridColumn78.Caption = "OrderType_Abs_Id";
-            this.gridColumn78.FieldName = "OrderType_Abs_Id";
-            this.gridColumn78.Name = "gridColumn78";
-            // 
-            // pivotGridField28
-            // 
-            this.pivotGridField28.AreaIndex = 19;
-            this.pivotGridField28.Caption = "Comments";
-            this.pivotGridField28.FieldName = "Order_Comments";
-            this.pivotGridField28.Name = "pivotGridField28";
-            // 
-            // pivotGridField29
-            // 
-            this.pivotGridField29.AreaIndex = 20;
-            this.pivotGridField29.Caption = "Status Comments";
-            this.pivotGridField29.FieldName = "Status_Comments";
-            this.pivotGridField29.Name = "pivotGridField29";
-            // 
-            // gridColumn79
-            // 
-            this.gridColumn79.Caption = "Comments";
-            this.gridColumn79.FieldName = "Order_Comments";
-            this.gridColumn79.Name = "gridColumn79";
-            this.gridColumn79.Visible = true;
-            this.gridColumn79.VisibleIndex = 23;
-            // 
-            // gridColumn80
-            // 
-            this.gridColumn80.Caption = "Status Comments";
-            this.gridColumn80.FieldName = "Status_Comments";
-            this.gridColumn80.Name = "gridColumn80";
-            this.gridColumn80.Visible = true;
-            this.gridColumn80.VisibleIndex = 24;
             // 
             // DailyStatus_OrderViewDetail_New
             // 

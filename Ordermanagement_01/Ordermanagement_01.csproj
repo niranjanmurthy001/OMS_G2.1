@@ -4486,6 +4486,7 @@
     <None Include="Resources\ic_checklist_32.png" />
     <None Include="Resources\ic_docs.png" />
     <None Include="Resources\ic_comments.png" />
+    <None Include="Resources\ic_refresh.png" />
     <Content Include="Resources\list.png" />
     <None Include="Resources\list1.png" />
     <None Include="Resources\New_Refresh.png" />

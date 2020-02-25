@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions1 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
             this.gridControlOrders = new DevExpress.XtraGrid.GridControl();
             this.gridViewOrders = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -55,7 +56,12 @@
             this.gridColumn42 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn44 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn45 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemHyperLinkEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
+            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
@@ -68,6 +74,7 @@
             this.repositoryItemLookUpEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.repositoryItemHyperLinkEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.repositoryItemLookUpEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.repositoryItemHyperLinkEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.label2 = new System.Windows.Forms.Label();
@@ -78,16 +85,10 @@
             this.btnDeAllocate = new DevExpress.XtraEditors.SimpleButton();
             this.btnExport = new DevExpress.XtraEditors.SimpleButton();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.groupControlRecords = new DevExpress.XtraEditors.GroupControl();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).BeginInit();
@@ -98,11 +99,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditUsers.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditTask.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControlRecords)).BeginInit();
+            this.groupControlRecords.SuspendLayout();
             this.SuspendLayout();
             // 
             // gridControlOrders
@@ -123,7 +127,7 @@
             this.repositoryItemHyperLinkEdit3,
             this.repositoryItemLookUpEdit4,
             this.repositoryItemHyperLinkEdit1});
-            this.gridControlOrders.Size = new System.Drawing.Size(1002, 408);
+            this.gridControlOrders.Size = new System.Drawing.Size(998, 363);
             this.gridControlOrders.TabIndex = 3;
             this.gridControlOrders.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewOrders});
@@ -594,12 +598,44 @@
             this.gridColumn45.VisibleIndex = 22;
             this.gridColumn45.Width = 120;
             // 
-            // repositoryItemHyperLinkEdit1
+            // gridColumn13
             // 
-            this.repositoryItemHyperLinkEdit1.Appearance.ForeColor = System.Drawing.Color.Blue;
-            this.repositoryItemHyperLinkEdit1.Appearance.Options.UseForeColor = true;
-            this.repositoryItemHyperLinkEdit1.AutoHeight = false;
-            this.repositoryItemHyperLinkEdit1.Name = "repositoryItemHyperLinkEdit1";
+            this.gridColumn13.Caption = "Comments";
+            this.gridColumn13.FieldName = "Order_Comments";
+            this.gridColumn13.Name = "gridColumn13";
+            this.gridColumn13.Visible = true;
+            this.gridColumn13.VisibleIndex = 23;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "Status Comments";
+            this.gridColumn5.FieldName = "Status_Comments";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 24;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Client_Id";
+            this.gridColumn1.FieldName = "Client_Id";
+            this.gridColumn1.Name = "gridColumn1";
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Subprocess_Id";
+            this.gridColumn2.FieldName = "Subprocess_Id";
+            this.gridColumn2.Name = "gridColumn2";
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "State_ID";
+            this.gridColumn3.Name = "gridColumn3";
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "County_ID";
+            this.gridColumn4.FieldName = "County_ID";
+            this.gridColumn4.Name = "gridColumn4";
             // 
             // repositoryItemGridLookUpEdit4
             // 
@@ -695,6 +731,13 @@
             this.repositoryItemLookUpEdit4.EditFormat.FormatString = "0";
             this.repositoryItemLookUpEdit4.Name = "repositoryItemLookUpEdit4";
             // 
+            // repositoryItemHyperLinkEdit1
+            // 
+            this.repositoryItemHyperLinkEdit1.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.repositoryItemHyperLinkEdit1.Appearance.Options.UseForeColor = true;
+            this.repositoryItemHyperLinkEdit1.AutoHeight = false;
+            this.repositoryItemHyperLinkEdit1.Name = "repositoryItemHyperLinkEdit1";
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
@@ -702,7 +745,7 @@
             this.tableLayoutPanel1.Controls.Add(this.panelControl1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.gridControlOrders, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 43);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
@@ -711,7 +754,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1008, 458);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1004, 413);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
             // panelControl1
@@ -727,7 +770,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(3, 3);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1002, 38);
+            this.panelControl1.Size = new System.Drawing.Size(998, 38);
             this.panelControl1.TabIndex = 5;
             // 
             // label2
@@ -736,7 +779,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(215, 9);
+            this.label2.Location = new System.Drawing.Point(211, 9);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 20);
@@ -748,7 +791,7 @@
             this.lookUpEditUsers.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lookUpEditUsers.EditValue = "0";
-            this.lookUpEditUsers.Location = new System.Drawing.Point(304, 6);
+            this.lookUpEditUsers.Location = new System.Drawing.Point(300, 6);
             this.lookUpEditUsers.Name = "lookUpEditUsers";
             this.lookUpEditUsers.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lookUpEditUsers.Properties.Appearance.Options.UseFont = true;
@@ -764,7 +807,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(491, 9);
+            this.label1.Location = new System.Drawing.Point(487, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(42, 20);
@@ -776,7 +819,7 @@
             this.lookUpEditTask.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lookUpEditTask.EditValue = "0";
-            this.lookUpEditTask.Location = new System.Drawing.Point(540, 6);
+            this.lookUpEditTask.Location = new System.Drawing.Point(536, 6);
             this.lookUpEditTask.Name = "lookUpEditTask";
             this.lookUpEditTask.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lookUpEditTask.Properties.Appearance.Options.UseFont = true;
@@ -799,7 +842,7 @@
             this.btnReAllocate.AppearanceHovered.BackColor = System.Drawing.Color.Transparent;
             this.btnReAllocate.AppearanceHovered.Options.UseBackColor = true;
             this.btnReAllocate.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            this.btnReAllocate.Location = new System.Drawing.Point(726, 3);
+            this.btnReAllocate.Location = new System.Drawing.Point(722, 3);
             this.btnReAllocate.LookAndFeel.SkinName = "Office 2010 Blue";
             this.btnReAllocate.Name = "btnReAllocate";
             this.btnReAllocate.Size = new System.Drawing.Size(85, 30);
@@ -820,7 +863,7 @@
             this.btnDeAllocate.AppearanceHovered.BackColor = System.Drawing.Color.Transparent;
             this.btnDeAllocate.AppearanceHovered.Options.UseBackColor = true;
             this.btnDeAllocate.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            this.btnDeAllocate.Location = new System.Drawing.Point(817, 3);
+            this.btnDeAllocate.Location = new System.Drawing.Point(813, 3);
             this.btnDeAllocate.LookAndFeel.SkinName = "Office 2010 Blue";
             this.btnDeAllocate.Name = "btnDeAllocate";
             this.btnDeAllocate.Size = new System.Drawing.Size(85, 30);
@@ -841,7 +884,7 @@
             this.btnExport.AppearanceHovered.BackColor = System.Drawing.Color.Transparent;
             this.btnExport.AppearanceHovered.Options.UseBackColor = true;
             this.btnExport.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            this.btnExport.Location = new System.Drawing.Point(908, 3);
+            this.btnExport.Location = new System.Drawing.Point(904, 3);
             this.btnExport.LookAndFeel.SkinName = "Office 2010 Blue";
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(85, 30);
@@ -849,51 +892,30 @@
             this.btnExport.Text = "Export";
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
-            // gridColumn1
+            // groupControlRecords
             // 
-            this.gridColumn1.Caption = "Client_Id";
-            this.gridColumn1.FieldName = "Client_Id";
-            this.gridColumn1.Name = "gridColumn1";
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Subprocess_Id";
-            this.gridColumn2.FieldName = "Subprocess_Id";
-            this.gridColumn2.Name = "gridColumn2";
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "State_ID";
-            this.gridColumn3.Name = "gridColumn3";
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "County_ID";
-            this.gridColumn4.FieldName = "County_ID";
-            this.gridColumn4.Name = "gridColumn4";
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.Caption = "Status Comments";
-            this.gridColumn5.FieldName = "Status_Comments";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 24;
-            // 
-            // gridColumn13
-            // 
-            this.gridColumn13.Caption = "Comments";
-            this.gridColumn13.FieldName = "Order_Comments";
-            this.gridColumn13.Name = "gridColumn13";
-            this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 23;
+            this.groupControlRecords.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupControlRecords.Appearance.Options.UseFont = true;
+            this.groupControlRecords.AppearanceCaption.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupControlRecords.AppearanceCaption.Options.UseFont = true;
+            this.groupControlRecords.Controls.Add(this.tableLayoutPanel1);
+            buttonImageOptions1.Image = global::Ordermanagement_01.Properties.Resources.ic_refresh;
+            this.groupControlRecords.CustomHeaderButtons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
+            new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("", true, buttonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1)});
+            this.groupControlRecords.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControlRecords.Location = new System.Drawing.Point(0, 0);
+            this.groupControlRecords.Name = "groupControlRecords";
+            this.groupControlRecords.Size = new System.Drawing.Size(1008, 458);
+            this.groupControlRecords.TabIndex = 5;
+            this.groupControlRecords.Text = "Records";
+            this.groupControlRecords.CustomButtonClick += new DevExpress.XtraBars.Docking2010.BaseButtonEventHandler(this.groupControlRecords_CustomButtonClick);
             // 
             // Record
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 458);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.groupControlRecords);
             this.LookAndFeel.SkinName = "Office 2010 Blue";
             this.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Name = "Record";
@@ -902,7 +924,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControlOrders)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewOrders)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).EndInit();
@@ -913,12 +934,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditUsers.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditTask.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControlRecords)).EndInit();
+            this.groupControlRecords.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -980,5 +1004,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraEditors.GroupControl groupControlRecords;
     }
 }

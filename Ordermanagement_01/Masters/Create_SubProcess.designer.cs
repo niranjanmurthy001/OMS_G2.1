@@ -34,12 +34,15 @@
             this.label13 = new System.Windows.Forms.Label();
             this.lbl_Record_AddedDate = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.tree_Subprocess = new System.Windows.Forms.TreeView();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_Cancel = new System.Windows.Forms.Button();
             this.grp_SubProcess = new System.Windows.Forms.GroupBox();
+            this.grd_Email = new System.Windows.Forms.DataGridView();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label5 = new System.Windows.Forms.Label();
             this.chk_No = new System.Windows.Forms.CheckBox();
             this.chk_Yes = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -50,9 +53,6 @@
             this.label21 = new System.Windows.Forms.Label();
             this.ddl_Invoice_Attachment = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.grd_Email = new System.Windows.Forms.DataGridView();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rbtn_Disable = new System.Windows.Forms.RadioButton();
             this.rbtn_Enable = new System.Windows.Forms.RadioButton();
             this.label16 = new System.Windows.Forms.Label();
@@ -74,8 +74,6 @@
             this.ddl_ClientName = new System.Windows.Forms.ComboBox();
             this.txt_ClientNumber = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txt_SubProcessNumber = new System.Windows.Forms.TextBox();
             this.txt_SubProcessName = new System.Windows.Forms.TextBox();
             this.grp_Add_det = new System.Windows.Forms.GroupBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -91,6 +89,10 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txt_SubProcessNumber = new System.Windows.Forms.TextBox();
+            this.ListOfSubProcessNo = new System.Windows.Forms.ListBox();
+            this.lblSubProcessRefNo = new System.Windows.Forms.Label();
             this.grp_SubProcess.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_Email)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tick_Logo)).BeginInit();
@@ -140,21 +142,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(20, 147);
+            this.label4.Location = new System.Drawing.Point(20, 124);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(122, 20);
             this.label4.TabIndex = 83;
             this.label4.Text = "Sub Process Name:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(20, 106);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(135, 20);
-            this.label3.TabIndex = 82;
-            this.label3.Text = "Sub Process Number:";
             // 
             // tree_Subprocess
             // 
@@ -199,6 +191,10 @@
             // 
             // grp_SubProcess
             // 
+            this.grp_SubProcess.Controls.Add(this.lblSubProcessRefNo);
+            this.grp_SubProcess.Controls.Add(this.ListOfSubProcessNo);
+            this.grp_SubProcess.Controls.Add(this.grd_Email);
+            this.grp_SubProcess.Controls.Add(this.label5);
             this.grp_SubProcess.Controls.Add(this.chk_No);
             this.grp_SubProcess.Controls.Add(this.chk_Yes);
             this.grp_SubProcess.Controls.Add(this.label7);
@@ -209,7 +205,6 @@
             this.grp_SubProcess.Controls.Add(this.label21);
             this.grp_SubProcess.Controls.Add(this.ddl_Invoice_Attachment);
             this.grp_SubProcess.Controls.Add(this.label15);
-            this.grp_SubProcess.Controls.Add(this.grd_Email);
             this.grp_SubProcess.Controls.Add(this.rbtn_Disable);
             this.grp_SubProcess.Controls.Add(this.rbtn_Enable);
             this.grp_SubProcess.Controls.Add(this.label16);
@@ -231,7 +226,6 @@
             this.grp_SubProcess.Controls.Add(this.ddl_ClientName);
             this.grp_SubProcess.Controls.Add(this.txt_ClientNumber);
             this.grp_SubProcess.Controls.Add(this.label6);
-            this.grp_SubProcess.Controls.Add(this.label5);
             this.grp_SubProcess.Controls.Add(this.txt_SubProcessNumber);
             this.grp_SubProcess.Controls.Add(this.txt_SubProcessName);
             this.grp_SubProcess.Controls.Add(this.label4);
@@ -246,12 +240,50 @@
             this.grp_SubProcess.TabIndex = 78;
             this.grp_SubProcess.TabStop = false;
             this.grp_SubProcess.Text = "CLIENT DETAILS";
-            this.grp_SubProcess.Enter += new System.EventHandler(this.grp_SubProcess_Enter);
+            // 
+            // grd_Email
+            // 
+            this.grd_Email.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.grd_Email.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.grd_Email.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grd_Email.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column12,
+            this.Column11});
+            this.grd_Email.Location = new System.Drawing.Point(167, 239);
+            this.grd_Email.Name = "grd_Email";
+            this.grd_Email.Size = new System.Drawing.Size(403, 146);
+            this.grd_Email.TabIndex = 240;
+            // 
+            // Column12
+            // 
+            this.Column12.FillWeight = 5.076141F;
+            this.Column12.HeaderText = "Client_Mail_Id";
+            this.Column12.Name = "Column12";
+            this.Column12.Visible = false;
+            // 
+            // Column11
+            // 
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column11.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column11.FillWeight = 194.9239F;
+            this.Column11.HeaderText = "Email Id";
+            this.Column11.Name = "Column11";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(20, 243);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(43, 20);
+            this.label5.TabIndex = 241;
+            this.label5.Text = "Email:";
             // 
             // chk_No
             // 
             this.chk_No.AutoSize = true;
-            this.chk_No.Location = new System.Drawing.Point(762, 271);
+            this.chk_No.Location = new System.Drawing.Point(762, 385);
             this.chk_No.Name = "chk_No";
             this.chk_No.Size = new System.Drawing.Size(46, 24);
             this.chk_No.TabIndex = 239;
@@ -264,20 +296,19 @@
             this.chk_Yes.AutoSize = true;
             this.chk_Yes.Checked = true;
             this.chk_Yes.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk_Yes.Location = new System.Drawing.Point(708, 272);
+            this.chk_Yes.Location = new System.Drawing.Point(708, 386);
             this.chk_Yes.Name = "chk_Yes";
             this.chk_Yes.Size = new System.Drawing.Size(48, 24);
             this.chk_Yes.TabIndex = 238;
             this.chk_Yes.Text = "Yes";
             this.chk_Yes.UseVisualStyleBackColor = true;
-           // this.chk_Yes.CheckedChanged += new System.EventHandler(this.chk_Yes_CheckedChanged);
             this.chk_Yes.CheckStateChanged += new System.EventHandler(this.chk_Yes_CheckStateChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(585, 272);
+            this.label7.Location = new System.Drawing.Point(585, 386);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(76, 20);
             this.label7.TabIndex = 237;
@@ -288,18 +319,19 @@
             this.label45.AutoSize = true;
             this.label45.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label45.ForeColor = System.Drawing.Color.Red;
-            this.label45.Location = new System.Drawing.Point(692, 380);
+            this.label45.Location = new System.Drawing.Point(379, 390);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(200, 19);
             this.label45.TabIndex = 236;
             this.label45.Text = "(Fields with * Mark are Mandatory)";
+           // this.label45.Click += new System.EventHandler(this.label45_Click);
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.Red;
-            this.label20.Location = new System.Drawing.Point(948, 113);
+            this.label20.Location = new System.Drawing.Point(948, 205);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(15, 20);
             this.label20.TabIndex = 230;
@@ -310,7 +342,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.Red;
-            this.label19.Location = new System.Drawing.Point(947, 72);
+            this.label19.Location = new System.Drawing.Point(947, 164);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(15, 20);
             this.label19.TabIndex = 229;
@@ -321,7 +353,7 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.Red;
-            this.label18.Location = new System.Drawing.Point(420, 147);
+            this.label18.Location = new System.Drawing.Point(420, 124);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(15, 20);
             this.label18.TabIndex = 228;
@@ -344,7 +376,7 @@
             this.ddl_Invoice_Attachment.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_Invoice_Attachment.FormattingEnabled = true;
             this.ddl_Invoice_Attachment.ItemHeight = 20;
-            this.ddl_Invoice_Attachment.Location = new System.Drawing.Point(708, 222);
+            this.ddl_Invoice_Attachment.Location = new System.Drawing.Point(708, 336);
             this.ddl_Invoice_Attachment.Name = "ddl_Invoice_Attachment";
             this.ddl_Invoice_Attachment.Size = new System.Drawing.Size(238, 28);
             this.ddl_Invoice_Attachment.TabIndex = 13;
@@ -353,48 +385,17 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(584, 227);
+            this.label15.Location = new System.Drawing.Point(584, 341);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(121, 20);
             this.label15.TabIndex = 109;
             this.label15.Text = "Invoice Attachment:";
             // 
-            // grd_Email
-            // 
-            this.grd_Email.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.grd_Email.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            this.grd_Email.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grd_Email.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column12,
-            this.Column11});
-            this.grd_Email.Location = new System.Drawing.Point(166, 272);
-            this.grd_Email.Name = "grd_Email";
-            this.grd_Email.Size = new System.Drawing.Size(403, 121);
-            this.grd_Email.TabIndex = 14;
-            this.grd_Email.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_Email_CellClick);
-            this.grd_Email.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.grd_Email_KeyPress);
-            // 
-            // Column12
-            // 
-            this.Column12.FillWeight = 5.076141F;
-            this.Column12.HeaderText = "Client_Mail_Id";
-            this.Column12.Name = "Column12";
-            this.Column12.Visible = false;
-            // 
-            // Column11
-            // 
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column11.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column11.FillWeight = 194.9239F;
-            this.Column11.HeaderText = "Email Id";
-            this.Column11.Name = "Column11";
-            // 
             // rbtn_Disable
             // 
             this.rbtn_Disable.AutoSize = true;
             this.rbtn_Disable.Font = new System.Drawing.Font("Ebrima", 9.75F);
-            this.rbtn_Disable.Location = new System.Drawing.Point(773, 184);
+            this.rbtn_Disable.Location = new System.Drawing.Point(773, 298);
             this.rbtn_Disable.Name = "rbtn_Disable";
             this.rbtn_Disable.Size = new System.Drawing.Size(70, 24);
             this.rbtn_Disable.TabIndex = 12;
@@ -406,7 +407,7 @@
             // 
             this.rbtn_Enable.AutoSize = true;
             this.rbtn_Enable.Font = new System.Drawing.Font("Ebrima", 9.75F);
-            this.rbtn_Enable.Location = new System.Drawing.Point(708, 184);
+            this.rbtn_Enable.Location = new System.Drawing.Point(708, 298);
             this.rbtn_Enable.Name = "rbtn_Enable";
             this.rbtn_Enable.Size = new System.Drawing.Size(66, 24);
             this.rbtn_Enable.TabIndex = 11;
@@ -418,7 +419,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(584, 187);
+            this.label16.Location = new System.Drawing.Point(584, 301);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(52, 20);
             this.label16.TabIndex = 105;
@@ -427,7 +428,7 @@
             // txt_SubProcess_City
             // 
             this.txt_SubProcess_City.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_SubProcess_City.Location = new System.Drawing.Point(705, 146);
+            this.txt_SubProcess_City.Location = new System.Drawing.Point(705, 260);
             this.txt_SubProcess_City.Name = "txt_SubProcess_City";
             this.txt_SubProcess_City.Size = new System.Drawing.Size(241, 25);
             this.txt_SubProcess_City.TabIndex = 10;
@@ -438,7 +439,7 @@
             this.ddl_County.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_County.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_County.FormattingEnabled = true;
-            this.ddl_County.Location = new System.Drawing.Point(705, 107);
+            this.ddl_County.Location = new System.Drawing.Point(705, 221);
             this.ddl_County.Name = "ddl_County";
             this.ddl_County.Size = new System.Drawing.Size(241, 28);
             this.ddl_County.TabIndex = 9;
@@ -449,7 +450,7 @@
             this.ddl_State.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_State.FormattingEnabled = true;
             this.ddl_State.ItemHeight = 20;
-            this.ddl_State.Location = new System.Drawing.Point(705, 67);
+            this.ddl_State.Location = new System.Drawing.Point(705, 181);
             this.ddl_State.Name = "ddl_State";
             this.ddl_State.Size = new System.Drawing.Size(241, 28);
             this.ddl_State.TabIndex = 8;
@@ -459,7 +460,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(585, 151);
+            this.label14.Location = new System.Drawing.Point(585, 265);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(30, 20);
             this.label14.TabIndex = 103;
@@ -469,7 +470,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(581, 108);
+            this.label11.Location = new System.Drawing.Point(581, 222);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(52, 20);
             this.label11.TabIndex = 102;
@@ -479,7 +480,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(581, 69);
+            this.label10.Location = new System.Drawing.Point(581, 183);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(41, 20);
             this.label10.TabIndex = 101;
@@ -488,7 +489,7 @@
             // txt_Sub_Process_Code
             // 
             this.txt_Sub_Process_Code.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Sub_Process_Code.Location = new System.Drawing.Point(705, 30);
+            this.txt_Sub_Process_Code.Location = new System.Drawing.Point(705, 144);
             this.txt_Sub_Process_Code.Name = "txt_Sub_Process_Code";
             this.txt_Sub_Process_Code.Size = new System.Drawing.Size(241, 25);
             this.txt_Sub_Process_Code.TabIndex = 7;
@@ -498,7 +499,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(581, 31);
+            this.label9.Location = new System.Drawing.Point(581, 145);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(118, 20);
             this.label9.TabIndex = 99;
@@ -509,7 +510,7 @@
             this.tick_Logo.BackColor = System.Drawing.SystemColors.Window;
             this.tick_Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tick_Logo.Image = ((System.Drawing.Image)(resources.GetObject("tick_Logo.Image")));
-            this.tick_Logo.Location = new System.Drawing.Point(426, 224);
+            this.tick_Logo.Location = new System.Drawing.Point(426, 201);
             this.tick_Logo.Name = "tick_Logo";
             this.tick_Logo.Size = new System.Drawing.Size(26, 26);
             this.tick_Logo.TabIndex = 97;
@@ -520,7 +521,7 @@
             // img_Logo
             // 
             this.img_Logo.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.img_Logo.Location = new System.Drawing.Point(461, 224);
+            this.img_Logo.Location = new System.Drawing.Point(461, 201);
             this.img_Logo.Name = "img_Logo";
             this.img_Logo.Size = new System.Drawing.Size(108, 27);
             this.img_Logo.TabIndex = 6;
@@ -532,7 +533,7 @@
             // 
             this.txt_Logo.BackColor = System.Drawing.SystemColors.Window;
             this.txt_Logo.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Logo.Location = new System.Drawing.Point(166, 224);
+            this.txt_Logo.Location = new System.Drawing.Point(166, 201);
             this.txt_Logo.Name = "txt_Logo";
             this.txt_Logo.ReadOnly = true;
             this.txt_Logo.Size = new System.Drawing.Size(247, 25);
@@ -542,7 +543,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(20, 230);
+            this.label8.Location = new System.Drawing.Point(20, 207);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(42, 20);
             this.label8.TabIndex = 94;
@@ -553,7 +554,7 @@
             this.tick_Instruction.BackColor = System.Drawing.SystemColors.Window;
             this.tick_Instruction.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tick_Instruction.Image = ((System.Drawing.Image)(resources.GetObject("tick_Instruction.Image")));
-            this.tick_Instruction.Location = new System.Drawing.Point(425, 182);
+            this.tick_Instruction.Location = new System.Drawing.Point(425, 159);
             this.tick_Instruction.Name = "tick_Instruction";
             this.tick_Instruction.Size = new System.Drawing.Size(26, 26);
             this.tick_Instruction.TabIndex = 91;
@@ -564,7 +565,7 @@
             // img_Instruction
             // 
             this.img_Instruction.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.img_Instruction.Location = new System.Drawing.Point(462, 182);
+            this.img_Instruction.Location = new System.Drawing.Point(462, 159);
             this.img_Instruction.Name = "img_Instruction";
             this.img_Instruction.Size = new System.Drawing.Size(106, 27);
             this.img_Instruction.TabIndex = 5;
@@ -576,7 +577,7 @@
             // 
             this.txt_Instruction.BackColor = System.Drawing.SystemColors.Window;
             this.txt_Instruction.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Instruction.Location = new System.Drawing.Point(166, 182);
+            this.txt_Instruction.Location = new System.Drawing.Point(166, 159);
             this.txt_Instruction.Name = "txt_Instruction";
             this.txt_Instruction.ReadOnly = true;
             this.txt_Instruction.Size = new System.Drawing.Size(247, 25);
@@ -608,36 +609,16 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(20, 186);
+            this.label6.Location = new System.Drawing.Point(20, 163);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(72, 20);
             this.label6.TabIndex = 85;
             this.label6.Text = "Instruction:";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(20, 272);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 20);
-            this.label5.TabIndex = 84;
-            this.label5.Text = "Email:";
-            // 
-            // txt_SubProcessNumber
-            // 
-            this.txt_SubProcessNumber.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_SubProcessNumber.Location = new System.Drawing.Point(166, 106);
-            this.txt_SubProcessNumber.Name = "txt_SubProcessNumber";
-            this.txt_SubProcessNumber.Size = new System.Drawing.Size(247, 25);
-            this.txt_SubProcessNumber.TabIndex = 3;
-            this.txt_SubProcessNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_SubProcessNumber_KeyDown);
-            this.txt_SubProcessNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_SubProcessNumber_KeyPress);
-            // 
             // txt_SubProcessName
             // 
             this.txt_SubProcessName.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_SubProcessName.Location = new System.Drawing.Point(166, 143);
+            this.txt_SubProcessName.Location = new System.Drawing.Point(166, 120);
             this.txt_SubProcessName.Name = "txt_SubProcessName";
             this.txt_SubProcessName.Size = new System.Drawing.Size(247, 25);
             this.txt_SubProcessName.TabIndex = 4;
@@ -798,6 +779,51 @@
             this.panel5.Size = new System.Drawing.Size(967, 414);
             this.panel5.TabIndex = 3;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(458, 32);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(135, 20);
+            this.label3.TabIndex = 82;
+            this.label3.Text = "Sub Process Number:";
+            // 
+            // txt_SubProcessNumber
+            // 
+            this.txt_SubProcessNumber.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_SubProcessNumber.Location = new System.Drawing.Point(596, 35);
+            this.txt_SubProcessNumber.Name = "txt_SubProcessNumber";
+            this.txt_SubProcessNumber.Size = new System.Drawing.Size(160, 25);
+            this.txt_SubProcessNumber.TabIndex = 3;
+            this.txt_SubProcessNumber.TextChanged += new System.EventHandler(this.txt_SubProcessNumber_TextChanged);
+            this.txt_SubProcessNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_SubProcessNumber_KeyDown);
+            this.txt_SubProcessNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_SubProcessNumber_KeyPress);
+            this.txt_SubProcessNumber.Leave += new System.EventHandler(this.txt_SubProcessNumber_Leave);
+            this.txt_SubProcessNumber.Validating += new System.ComponentModel.CancelEventHandler(this.txt_SubProcessNumber_Validating);
+            // 
+            // ListOfSubProcessNo
+            // 
+            this.ListOfSubProcessNo.FormattingEnabled = true;
+            this.ListOfSubProcessNo.ItemHeight = 20;
+            this.ListOfSubProcessNo.Location = new System.Drawing.Point(762, 35);
+            this.ListOfSubProcessNo.Name = "ListOfSubProcessNo";
+            this.ListOfSubProcessNo.Size = new System.Drawing.Size(200, 104);
+            this.ListOfSubProcessNo.TabIndex = 242;
+            this.ListOfSubProcessNo.Click += new System.EventHandler(this.ListOfSubProcessNo_Click);
+            this.ListOfSubProcessNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ListOfSubProcessNo_KeyDown);
+          //  this.ListOfSubProcessNo.ChangeUICues += new System.Windows.Forms.UICuesEventHandler(this.ListOfSubProcessNo_ChangeUICues);
+            // 
+            // lblSubProcessRefNo
+            // 
+            this.lblSubProcessRefNo.AutoSize = true;
+            this.lblSubProcessRefNo.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubProcessRefNo.Location = new System.Drawing.Point(781, 11);
+            this.lblSubProcessRefNo.Name = "lblSubProcessRefNo";
+            this.lblSubProcessRefNo.Size = new System.Drawing.Size(169, 20);
+            this.lblSubProcessRefNo.TabIndex = 243;
+            this.lblSubProcessRefNo.Text = "Available SubProcessNo...";
+            // 
             // Create_SubProcess
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -835,19 +861,16 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label lbl_Record_AddedDate;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TreeView tree_Subprocess;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_Cancel;
         private System.Windows.Forms.GroupBox grp_SubProcess;
-        private System.Windows.Forms.TextBox txt_SubProcessNumber;
         private System.Windows.Forms.TextBox txt_SubProcessName;
         private System.Windows.Forms.GroupBox grp_Add_det;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btn_Save;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txt_ClientNumber;
         private System.Windows.Forms.ComboBox ddl_ClientName;
         private System.Windows.Forms.Label lbl_SubProcess;
@@ -872,7 +895,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.RadioButton rbtn_Enable;
         private System.Windows.Forms.RadioButton rbtn_Disable;
-        private System.Windows.Forms.DataGridView grd_Email;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox ddl_Invoice_Attachment;
         private System.Windows.Forms.Label label21;
@@ -880,8 +902,6 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
@@ -892,5 +912,13 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.CheckBox chk_No;
         private System.Windows.Forms.CheckBox chk_Yes;
+        private System.Windows.Forms.DataGridView grd_Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblSubProcessRefNo;
+        private System.Windows.Forms.ListBox ListOfSubProcessNo;
+        private System.Windows.Forms.TextBox txt_SubProcessNumber;
+        private System.Windows.Forms.Label label3;
     }
 }

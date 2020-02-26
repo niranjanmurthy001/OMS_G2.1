@@ -358,8 +358,6 @@
             this.gridColumn73 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn74 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn75 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn76 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn77 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn78 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn79 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -3742,7 +3740,7 @@
             this.gridColumn24.Name = "gridColumn24";
             this.gridColumn24.OptionsColumn.AllowEdit = false;
             this.gridColumn24.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Cancelled", "{0}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Cancelled", "{0:0.##}")});
             this.gridColumn24.Visible = true;
             this.gridColumn24.VisibleIndex = 18;
             this.gridColumn24.Width = 60;
@@ -4512,8 +4510,6 @@
             this.gridColumn73,
             this.gridColumn74,
             this.gridColumn75,
-            this.gridColumn76,
-            this.gridColumn77,
             this.gridColumn78,
             this.gridColumn79});
             this.gridViewMyClientProduction.GridControl = this.gridControlMyClientProduction;
@@ -4774,36 +4770,10 @@
             this.gridColumn75.Name = "gridColumn75";
             this.gridColumn75.OptionsColumn.AllowEdit = false;
             this.gridColumn75.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Cancelled", "{0}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Cancelled", "{0:0.##}")});
             this.gridColumn75.Visible = true;
             this.gridColumn75.VisibleIndex = 18;
             this.gridColumn75.Width = 60;
-            // 
-            // gridColumn76
-            // 
-            this.gridColumn76.Caption = "WFT";
-            this.gridColumn76.ColumnEdit = this.repositoryItemHyperLinkEdit36;
-            this.gridColumn76.FieldName = "WFT";
-            this.gridColumn76.Name = "gridColumn76";
-            this.gridColumn76.OptionsColumn.AllowEdit = false;
-            this.gridColumn76.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "WFT", "{0:0.##}")});
-            this.gridColumn76.Visible = true;
-            this.gridColumn76.VisibleIndex = 19;
-            this.gridColumn76.Width = 60;
-            // 
-            // gridColumn77
-            // 
-            this.gridColumn77.Caption = "SEARCH TAX REQ";
-            this.gridColumn77.ColumnEdit = this.repositoryItemHyperLinkEdit36;
-            this.gridColumn77.FieldName = "Search_Tax";
-            this.gridColumn77.Name = "gridColumn77";
-            this.gridColumn77.OptionsColumn.AllowEdit = false;
-            this.gridColumn77.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Search_Tax", "{0:0.##}")});
-            this.gridColumn77.Visible = true;
-            this.gridColumn77.VisibleIndex = 20;
-            this.gridColumn77.Width = 60;
             // 
             // gridColumn78
             // 
@@ -6174,8 +6144,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn73;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn74;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn75;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn76;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn77;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn78;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn79;
         private DevExpress.XtraGrid.GridControl gridControl6;

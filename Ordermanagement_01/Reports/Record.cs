@@ -744,7 +744,7 @@ namespace Ordermanagement_01.Reports
                             {
                                 SplashScreenManager.CloseForm(false);
                                 XtraMessageBox.Show(defaultLookAndFeel1.LookAndFeel, this, "Order ReAllocated Sucessfully.", "Success", MessageBoxButtons.OK);
-                                BindOrdersByOperation();
+                                //BindOrdersByOperation();
                                 Clear();
                             }
                             if (Error_Count > 0)
@@ -1167,7 +1167,7 @@ namespace Ordermanagement_01.Reports
 
         private void groupControlRecords_CustomButtonClick(object sender, DevExpress.XtraBars.Docking2010.BaseButtonEventArgs e)
         {
-            BindOrdersByOperation();
+            //BindOrdersByOperation();
         }
 
         private void btnDeAllocate_Click(object sender, EventArgs e)
@@ -1662,7 +1662,7 @@ namespace Ordermanagement_01.Reports
                 if (Record_Count > 0)
                 {
                     XtraMessageBox.Show("Orders DeAllocated Successfully");
-                    BindOrdersByOperation();
+                    //BindOrdersByOperation();
                     Clear();
                 }
 

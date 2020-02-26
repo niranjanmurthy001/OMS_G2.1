@@ -28,17 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Order_Instruction));
             this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
             this.documentViewsBar1 = new DevExpress.XtraRichEdit.UI.DocumentViewsBar();
             this.switchToSimpleViewItem1 = new DevExpress.XtraRichEdit.UI.SwitchToSimpleViewItem();
             this.switchToDraftViewItem1 = new DevExpress.XtraRichEdit.UI.SwitchToDraftViewItem();
             this.switchToPrintLayoutViewItem1 = new DevExpress.XtraRichEdit.UI.SwitchToPrintLayoutViewItem();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.showEditStyleFormItem1 = new DevExpress.XtraRichEdit.UI.ShowEditStyleFormItem();
             this.repositoryItemRichEditStyleEdit1 = new DevExpress.XtraRichEdit.Design.RepositoryItemRichEditStyleEdit();
             this.richEditControl1 = new DevExpress.XtraRichEdit.RichEditControl();
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.editingBar1 = new DevExpress.XtraRichEdit.UI.EditingBar();
             this.findItem1 = new DevExpress.XtraRichEdit.UI.FindItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -86,7 +87,7 @@
             this.changeStyleItem1 = new DevExpress.XtraRichEdit.UI.ChangeStyleItem();
             this.repositoryItemFontEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemFontEdit();
             this.repositoryItemRichEditFontSizeEdit1 = new DevExpress.XtraRichEdit.Design.RepositoryItemRichEditFontSizeEdit();
-            this.richEditBarController1 = new DevExpress.XtraRichEdit.UI.RichEditBarController();
+            this.richEditBarController1 = new DevExpress.XtraRichEdit.UI.RichEditBarController(this.components);
             this.buttonFinish = new DevExpress.XtraEditors.SimpleButton();
             this.showBar1 = new DevExpress.XtraRichEdit.UI.ShowBar();
             this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
@@ -201,7 +202,7 @@
             this.richEditControl1.Options.Printing.PrintPreviewFormKind = DevExpress.XtraRichEdit.PrintPreviewFormKind.Bars;
             this.richEditControl1.Options.VerticalRuler.Visibility = DevExpress.XtraRichEdit.RichEditRulerVisibility.Hidden;
             this.richEditControl1.ReadOnly = true;
-            this.richEditControl1.Size = new System.Drawing.Size(612, 373);
+            this.richEditControl1.Size = new System.Drawing.Size(612, 382);
             this.richEditControl1.TabIndex = 0;
             this.richEditControl1.Text = "richEditControl1";
             // 
@@ -853,7 +854,7 @@
             this.tabSpecial_Instructions.Name = "tabSpecial_Instructions";
             this.tabSpecial_Instructions.Properties.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabSpecial_Instructions.Properties.AppearanceCaption.Options.UseFont = true;
-            this.tabSpecial_Instructions.Size = new System.Drawing.Size(612, 373);
+            this.tabSpecial_Instructions.Size = new System.Drawing.Size(612, 382);
             this.tabSpecial_Instructions.VisibleChanged += new System.EventHandler(this.tabSpecial_Instructions_VisibleChanged);
             // 
             // tabUs_DueDates

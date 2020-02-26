@@ -1760,6 +1760,8 @@ namespace Ordermanagement_01
 
         }
 
+     
+
         private void simpleButton1_Click(object sender, EventArgs e)
         {
 
@@ -6347,6 +6349,24 @@ namespace Ordermanagement_01
 
         }
 
+
+        void PrintingSystem_XlSheetCreated_Client_reports(object sender, XlSheetCreatedEventArgs e)
+        {
+            if (e.Index == 0)
+            {
+                e.SheetName = "Client Wise Summary";
+
+            }
+
+            if (e.Index == 1)
+            {
+                e.SheetName = "Orders Details";
+
+            }
+
+
+        }
+
         void PrintingSystem_XlSheetCreated_Open_Orders(object sender, XlSheetCreatedEventArgs e)
         {
             if (e.Index == 0)
@@ -8228,7 +8248,7 @@ namespace Ordermanagement_01
                             ht_Status1.Add("@Filter_Type", "Sub_Client_Wise");
                             ht_Status1.Add("@Trans", "Order_Status_Report__Client_SubprocessWise_Employee_User_Role");
                         }
-                        else if (Client != 0 && SubProcess != 0)
+                        else 
                         {
                             ht_Status1.Add("@Filter_Type", "All");
                             ht_Status1.Add("@Trans", "Order_Status_Report_All_ClientWise_Employee_User_Role");
@@ -8240,6 +8260,7 @@ namespace Ordermanagement_01
                     ht_Status1.Add("@Log_In_Userid", User_id);
                     ht_Status1.Add("@Subprocess_Id", SubProcess);
                     dt_Status1 = dataaccess.ExecuteSP("usp_Order_Status_Report_Details_Updated", ht_Status1);
+
                     gridControl5.DataSource = dt_Status1;
                     gridView6.BestFitColumns();
 
@@ -8286,7 +8307,7 @@ namespace Ordermanagement_01
             compositeLink.CreatePageForEachLink();
 
             // this is for Creating excel sheet name
-            ps.XlSheetCreated += PrintingSystem_XlSheetCreated;
+            ps.XlSheetCreated += PrintingSystem_XlSheetCreated_Client_reports;
             //  compositeLink.CreatePageForEachLink();
 
             compositeLink.ExportToXlsx(Path1, new XlsxExportOptions() { ExportMode = XlsxExportMode.SingleFilePageByPage, ExportHyperlinks = false, TextExportMode = TextExportMode.Value, IgnoreErrors = XlIgnoreErrors.NumberStoredAsText });
@@ -8764,7 +8785,7 @@ namespace Ordermanagement_01
             compositeLink.CreatePageForEachLink();
 
             // this is for Creating excel sheet name
-            ps.XlSheetCreated += PrintingSystem_XlSheetCreated;
+            ps.XlSheetCreated += PrintingSystem_XlSheetCreated_Client_reports;
             //  compositeLink.CreatePageForEachLink();
 
             compositeLink.ExportToXlsx(Path1, new XlsxExportOptions() { ExportMode = XlsxExportMode.SingleFilePageByPage, ExportHyperlinks = false, TextExportMode = TextExportMode.Value, IgnoreErrors = XlIgnoreErrors.NumberStoredAsText });

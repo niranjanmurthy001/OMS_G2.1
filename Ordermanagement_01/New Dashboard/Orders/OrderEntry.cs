@@ -392,14 +392,19 @@ namespace Ordermanagement_01.New_Dashboard.Orders
                 {
                     var settingsRow = dtProcessSettings
                                         .AsEnumerable()
-                                        .Single(row => row.Field<long>("Client_Id") == Convert.ToInt64(lookUpEditClient.EditValue)
+                                        .FirstOrDefault(row => row.Field<long>("Client_Id") == Convert.ToInt64(lookUpEditClient.EditValue)
                                          && row.Field<long>("Subprocess_Id") == Convert.ToInt64(lookUpEditSubClient.EditValue));
+                    if (settingsRow == null)
+                    {
+                        XtraMessageBox.Show("Project Type not set for the selected subclient");
+                        return;
+                    }
                     lookUpEditProjectType.EditValue = settingsRow["Project_Type_Id"];
                     lookUpEditDeptType.EditValue = settingsRow["Department_Type"];
                 }
                 catch (Exception ex)
                 {
-                    XtraMessageBox.Show("Project Type not set for the selected subclient");
+                    XtraMessageBox.Show("Something went wrong");
                 }
             }
         }

@@ -507,7 +507,6 @@
             // lookUpEditProjectType
             // 
             this.lookUpEditProjectType.EditValue = "0";
-            this.lookUpEditProjectType.Enabled = false;
             this.lookUpEditProjectType.Location = new System.Drawing.Point(760, 31);
             this.lookUpEditProjectType.MinimumSize = new System.Drawing.Size(170, 25);
             this.lookUpEditProjectType.Name = "lookUpEditProjectType";
@@ -1070,7 +1069,6 @@
             // lookUpEditDeptType
             // 
             this.lookUpEditDeptType.EditValue = "0";
-            this.lookUpEditDeptType.Enabled = false;
             this.lookUpEditDeptType.Location = new System.Drawing.Point(759, 61);
             this.lookUpEditDeptType.MinimumSize = new System.Drawing.Size(170, 25);
             this.lookUpEditDeptType.Name = "lookUpEditDeptType";

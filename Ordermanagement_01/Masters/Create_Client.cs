@@ -114,7 +114,7 @@ namespace Ordermanagement_01
                 else
                 {
                     SplashScreenManager.CloseForm(false);
-                    MessageBox.Show("Avail ClientNumber Not found For Particular Client Number");
+                    MessageBox.Show("Available ClientNumber's Not Found For These Particular Client Number");
                     //ListofClientNumbers.Visible = false;
                     //lbl_ClientRefNo.Visible = false;
                     return false;

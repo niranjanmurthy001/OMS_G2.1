@@ -1,19 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using ClosedXML.Excel;
+using Microsoft.Office.Interop.Excel;
+using System;
+using System.Collections;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using System.Collections;
-using System.Speech.Synthesis;
-using System.IO;
-using Microsoft.Office.Interop.Excel;
-using Excel = Microsoft.Office.Interop.Excel;
-using ClosedXML.Excel;
 using System.Globalization;
-using System.Threading;
+using System.IO;
+using System.Speech.Synthesis;
+using System.Windows.Forms;
 
 namespace Ordermanagement_01
 {
@@ -124,71 +118,40 @@ namespace Ordermanagement_01
             dtAllocate.Clear();
 
 
-            if (Order_Process == "SEARCH_ORDER_ALLOCATE" || Order_Process == "SEARCH_QC_ORDER_ALLOCATE" || Order_Process == "SEARCH_TYPING_ORDER_ALLOCATE" || Order_Process == "TYPING_QC_ORDERS_ALLOCATE" || Order_Process == "UPLOAD_ORDERS_ALLOCATE" || Order_Process == "FINAL_QC_ORDERS_ALLOCATE" || Order_Process == "EXCEPTION_ORDERS_ALLOCATE" || Order_Process=="ORDER_ALLOCATE")
+            if (Order_Process == "SEARCH_ORDER_ALLOCATE" || Order_Process == "SEARCH_QC_ORDER_ALLOCATE" || Order_Process == "SEARCH_TYPING_ORDER_ALLOCATE"
+                || Order_Process == "TYPING_QC_ORDERS_ALLOCATE" || Order_Process == "UPLOAD_ORDERS_ALLOCATE" || Order_Process == "FINAL_QC_ORDERS_ALLOCATE"
+                || Order_Process == "EXCEPTION_ORDERS_ALLOCATE" || Order_Process == "ORDER_ALLOCATE")
             {
                 dtexport.Rows.Clear();
                 htAllocate.Add("@Trans", "NOT ASSIGNED");
                 htAllocate.Add("@Order_Status_Id", Order_Status_Id);
                 dtAllocate = dataaccess.ExecuteSP("Sp_Order_Assignment", htAllocate);
-
-
             }
             else if (Order_Process == "TAX_ORDERS_ALLOCATE")
             {
                 dtexport.Rows.Clear();
                 htAllocate.Add("@Trans", "INTERNAL_TAX_ORDER_ALLOCATE");
-
                 dtAllocate = dataaccess.ExecuteSP("Sp_Order_Assignment", htAllocate);
-
-                //htexp.Add("@Trans", "CLARIFICATION_ORDER_ALLOCATE_PENDING");
-
-                //dtexp = dataaccess.ExecuteSP("Sp_Order_Assignment_Export", htexp);
-
-                //dtexport = dtexp;
             }
 
             else if (Order_Process == "CLARIFICATION_ORDER_ALLOCATE_PENDING")
             {
                 dtexport.Rows.Clear();
                 htAllocate.Add("@Trans", "CLARIFICATION_ORDER_ALLOCATE_PENDING");
-
                 dtAllocate = dataaccess.ExecuteSP("Sp_Order_Assignment", htAllocate);
-
-                //htexp.Add("@Trans", "CLARIFICATION_ORDER_ALLOCATE_PENDING");
-
-                //dtexp = dataaccess.ExecuteSP("Sp_Order_Assignment_Export", htexp);
-
-                //dtexport = dtexp;
             }
 
             else if (Order_Process == "HOLD_ORDER_ALLOCATE_PENDING")
             {
                 dtexport.Rows.Clear();
                 htAllocate.Add("@Trans", "HOLD_ORDER_ALLOCATE_PENDING");
-                // htAllocate.Add("@Order_Status_Id", Order_Status_Id);
                 dtAllocate = dataaccess.ExecuteSP("Sp_Order_Assignment", htAllocate);
-
-
-                //htexp.Add("@Trans", "HOLD_ORDER_ALLOCATE_PENDING");
-                //// htAllocate.Add("@Order_Status_Id", Order_Status_Id);
-                //dtexp = dataaccess.ExecuteSP("Sp_Order_Assignment_Export", htexp);
-
-                //dtexport = dtexp;
             }
             else if (Order_Process == "CANCELLED_ORDER_ALLOCATE_PENDING")
             {
                 dtexport.Rows.Clear();
                 htAllocate.Add("@Trans", "CANCELLED_ORDER_ALLOCATE_PENDING");
-                // htAllocate.Add("@Order_Status_Id", Order_Status_Id);
                 dtAllocate = dataaccess.ExecuteSP("Sp_Order_Assignment", htAllocate);
-
-
-                //htexp.Add("@Trans", "CANCELLED_ORDER_ALLOCATE_PENDING");
-                //// htAllocate.Add("@Order_Status_Id", Order_Status_Id);
-                //dtexp = dataaccess.ExecuteSP("Sp_Order_Assignment_Export", htexp);
-
-
-                //dtexport = dtexp;
             }
             else if (Order_Process == "COMPLETED_ORDER_ALLOCATE")
             {
@@ -196,34 +159,16 @@ namespace Ordermanagement_01
                 htAllocate.Add("@Trans", "COMPLETED_ORDER_ALLOCATE");
                 htAllocate.Add("@Order_Status_Id", Order_Status_Id);
                 dtAllocate = dataaccess.ExecuteSP("Sp_Order_Assignment", htAllocate);
-
-
-                //htexp.Add("@Trans", "CANCELLED_ORDER_ALLOCATE_PENDING");
-                //// htAllocate.Add("@Order_Status_Id", Order_Status_Id);
-                //dtexp = dataaccess.ExecuteSP("Sp_Order_Assignment_Export", htexp);
-
-
-                //dtexport = dtexp;
             }
             else if (Order_Process == "REASSIGNED_ORDER_ALLOCATE_PENDING")
             {
                 dtexport.Rows.Clear();
                 htAllocate.Add("@Trans", "REASSIGNED_ORDER_ALLOCATE_PENDING");
-                // htAllocate.Add("@Order_Status_Id", Order_Status_Id);
                 dtAllocate = dataaccess.ExecuteSP("Sp_Order_Assignment", htAllocate);
-
-
-                //htexp.Add("@Trans", "REASSIGNED_ORDER_ALLOCATE_PENDING");
-                //// htAllocate.Add("@Order_Status_Id", Order_Status_Id);
-                //dtexp = dataaccess.ExecuteSP("Sp_Order_Assignment_Export", htexp);
-
-
-                //dtexport = dtexp;
             }
-          
+
             grd_order.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.SkyBlue;
-           
-            grd_order.EnableHeadersVisualStyles = false;          
+            grd_order.EnableHeadersVisualStyles = false;
             grd_order.Columns[0].Width = 35;
             grd_order.Columns[1].Width = 50;
             grd_order.Columns[2].Width = 110;
@@ -231,11 +176,9 @@ namespace Ordermanagement_01
             grd_order.Columns[4].Width = 195;
             grd_order.Columns[5].Width = 160;
             grd_order.Columns[6].Width = 125;
-            grd_order.Columns[7].Width = 120;         
-          //  grd_order.Columns["Date"].DefaultCellStyle.Format = "MM/dd/yyyy";
-
+            grd_order.Columns[7].Width = 120;
+            //  grd_order.Columns["Date"].DefaultCellStyle.Format = "MM/dd/yyyy";
             System.Data.DataTable temptable = dtAllocate;
-
             if (temptable.Rows.Count > 0)
             {
                 grd_order.Rows.Clear();
@@ -261,7 +204,7 @@ namespace Ordermanagement_01
                     grd_order.Rows[i].Cells[7].Value = temptable.Rows[i]["STATECOUNTY"].ToString();
                     grd_order.Rows[i].Cells[8].Value = temptable.Rows[i]["County_Type"].ToString();
                     grd_order.Rows[i].Cells[9].Value = Convert.ToDateTime(temptable.Rows[i]["Date"].ToString());
-                   //grd_order.Rows[i].Cells[9].Value = Convert.ToDateTime().ToString("MM/dd/yyyy");
+                    //grd_order.Rows[i].Cells[9].Value = Convert.ToDateTime().ToString("MM/dd/yyyy");
                     grd_order.Rows[i].Cells[10].Value = temptable.Rows[i]["Order_ID"].ToString();
                     grd_order.Rows[i].Cells[11].Value = 0;//Not requried its from titlelogy 
                     grd_order.Rows[i].Cells[12].Value = temptable.Rows[i]["Order_Status"].ToString();
@@ -306,8 +249,6 @@ namespace Ordermanagement_01
                 lbl_Total_Orders.Text = temptable.Rows.Count.ToString();
 
             }
-            // lbl_Total_Orders.Text = temptable.Rows.Count.ToString();
-
         }
         //------------------------
         public void BindNew_Branch(ComboBox ddlBranch)
@@ -370,6 +311,7 @@ namespace Ordermanagement_01
 
 
             dbc.BindOrderStatus_For_Reallocate(ddl_Order_Status_Reallocate);
+            dbc.BindOrderStatus_For_Reallocate(ddl_Order_Allocate_Task);
 
             dbc.Bind_Order_Assign_Type(ddl_County_Type);
             // Sub_AddParent();
@@ -465,33 +407,10 @@ namespace Ordermanagement_01
                 ddl_Order_Allocate_Task.Visible = true;
 
             }
-            // grd_order.VirtualMode = true;
             Gridview_Bind_All_Orders();
-            //if (userroleid == "1")
-            //{
-            //    btn_Export.Enabled = true;
-            //    btn_user_Export.Enabled = true;
-            //}
-            //else
-            //{
-            //    btn_Export.Enabled = false;
-            //    btn_user_Export.Enabled = false;
-
-            //}
             txt_UserName.Select();
-
-            this.Text = lbl_Header.Text;
-
-            // this is for Effecincy
-
-
-
-
+            Text = lbl_Header.Text;
         }
-
-
-
-
         private void Bind_User_Orders_Count()
         {
 
@@ -637,7 +556,7 @@ namespace Ordermanagement_01
                         grd_order_Allocated.Rows[i].Cells[21].Value = dtuser.Rows[i]["OrderType_ABS_Id"].ToString();
                         grd_order_Allocated.Rows[i].Cells[22].Value = dtuser.Rows[i]["Category_Type_Id"].ToString();
                         grd_order_Allocated.Rows[i].Cells[23].Value = dtuser.Rows[i]["Order_Source_Type_Name"].ToString();
-                        grd_order_Allocated.Rows[i].Cells[4].Style.BackColor = System.Drawing.Color.DarkCyan;
+                        grd_order_Allocated.Rows[i].Cells[4].Style.BackColor = Color.DarkCyan;
                     }
 
 
@@ -1211,19 +1130,13 @@ namespace Ordermanagement_01
         private void btn_Allocate_Click(object sender, EventArgs e)
         {
             load_Progressbar.Start_progres();
-
-
             int CheckedCount = 0;
-            if (Tree_View_UserId != 0)
+            if (Tree_View_UserId != 0 && ddl_Order_Allocate_Task.SelectedIndex == 0)
             {
                 int allocated_Userid = Tree_View_UserId;
-
                 if (Emp_Job_role_Id != 0 && Emp_Sal != 0)
                 {
-
                     Get_Effecncy_Category();
-
-
                     for (int i = 0; i < grd_order.Rows.Count; i++)
                     {
                         bool isChecked = (bool)grd_order[0, i].FormattedValue;
@@ -1231,7 +1144,6 @@ namespace Ordermanagement_01
                         //hearer lblInternal_tax Request is indicates to the Order has Sent to Tax Request and Come back for allocation
                         if (isChecked == true && Order_Status_Id != 22)
                         {
-
                             // ============Effecincy Cal start======================================
                             Eff_Client_Id = int.Parse(grd_order.Rows[i].Cells[14].Value.ToString());
                             Eff_State_Id = int.Parse(grd_order.Rows[i].Cells[13].Value.ToString());
@@ -1245,7 +1157,6 @@ namespace Ordermanagement_01
                             }
                             Get_Order_Source_Type_For_Effeciency();
                             //========= Effecincy Cal End=========================================
-
                             CheckedCount = 1;
                             string lbl_Order_Id = grd_order.Rows[i].Cells[10].Value.ToString();
                             int Client_Id = int.Parse(grd_order.Rows[i].Cells[16].Value.ToString());
@@ -1256,8 +1167,6 @@ namespace Ordermanagement_01
                             string dateeval = date.ToString("dd/MM/yyyy");
                             string time = date.ToString("hh:mm tt");
 
-                            int Check_Count;
-
                             Hashtable htchk_Assign = new Hashtable();
                             System.Data.DataTable dtchk_Assign = new System.Data.DataTable();
                             htchk_Assign.Add("@Trans", "CHECK");
@@ -1267,7 +1176,6 @@ namespace Ordermanagement_01
                             {
                                 Hashtable htupassin = new Hashtable();
                                 System.Data.DataTable dtupassign = new System.Data.DataTable();
-
                                 htupassin.Add("@Trans", "DELET_BY_ORDER");
                                 htupassin.Add("@Order_Id", lbl_Order_Id);
                                 dtupassign = dataaccess.ExecuteSP("Sp_Order_Assignment", htupassin);
@@ -1293,6 +1201,7 @@ namespace Ordermanagement_01
                             htupdate.Add("@Modified_By", User_id);
                             htupdate.Add("@Modified_Date", date);
                             dtupdate = dataaccess.ExecuteSP("Sp_Order", htupdate);
+
                             Hashtable htprogress = new Hashtable();
                             System.Data.DataTable dtprogress = new System.Data.DataTable();
                             htprogress.Add("@Trans", "UPDATE_PROGRESS");
@@ -1301,6 +1210,7 @@ namespace Ordermanagement_01
                             htprogress.Add("@Modified_By", User_id);
                             htprogress.Add("@Modified_Date", date);
                             dtprogress = dataaccess.ExecuteSP("Sp_Order", htprogress);
+
                             Hashtable ht_Update_Emp_Status = new Hashtable();
                             System.Data.DataTable dt_Update_Emp_Status = new System.Data.DataTable();
                             ht_Update_Emp_Status.Add("@Trans", "Update_Allocate_Status");
@@ -1323,8 +1233,6 @@ namespace Ordermanagement_01
 
 
                             //==================================External Client_Vendor_Orders=====================================================
-
-
                             Hashtable htCheck_Order_InTitlelogy = new Hashtable();
                             System.Data.DataTable dt_Order_InTitleLogy = new System.Data.DataTable();
                             htCheck_Order_InTitlelogy.Add("@Trans", "CHECK_ORDER_IN_TITLLELOGY");
@@ -1346,11 +1254,7 @@ namespace Ordermanagement_01
                                 }
                             }
                             CheckedCount = 1;
-                            //TreeView1.SelectedNode.Value =ViewState["User_Id"].ToString();
-                            //   lbl_allocated_user.Text = ViewState["User_Wise_Count"].ToString();
-                            //  ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Msg", "<script> alert('Order Reallocated Successfully')</script>", false);
                         }
-
 
                         // Internal Tax Order Assigning to Users
 
@@ -1365,8 +1269,6 @@ namespace Ordermanagement_01
                             date = DateTime.Now;
                             string dateeval = date.ToString("dd/MM/yyyy");
                             string time = date.ToString("hh:mm tt");
-
-                            int Check_Count;
 
                             Hashtable htchk_Assign = new Hashtable();
                             System.Data.DataTable dtchk_Assign = new System.Data.DataTable();
@@ -1417,17 +1319,10 @@ namespace Ordermanagement_01
                             dt_Order_History = dataaccess.ExecuteSP("Sp_Order_History", ht_Order_History);
                             CheckedCount = 1;
                         }
-                        //else
-                        //{
-                        //    CheckedCount = 0;
-                        //}
-
-
                     }
                     if (CheckedCount == 1)
                     {
                         MessageBox.Show("Order Allocated Successfully");
-
                         lbl_allocated_user.Text = "";
                     }
 
@@ -1436,11 +1331,216 @@ namespace Ordermanagement_01
                         MessageBox.Show("Select Record to a Allocate");
                     }
                     Gridview_Bind_All_Orders();
+                    Bind_User_Orders_Count();
+                    Users_Order_Count();
+                    Gridview_Bind_Orders_Wise_Selected();
+                }
+                else
+                {
+                    MessageBox.Show("Employee Job Role and Salary is not Updated Please Update");
+                }
+            }
+            if (Tree_View_UserId != 0 && ddl_Order_Allocate_Task.SelectedIndex > 0)
+            {
+                int allocated_Userid = Tree_View_UserId;
+                if (Emp_Job_role_Id != 0 && Emp_Sal != 0)
+                {
+                    Get_Effecncy_Category();
+                    for (int i = 0; i < grd_order.Rows.Count; i++)
+                    {
+                        bool isChecked = (bool)grd_order[0, i].FormattedValue;
+                        // string lbl_Internal_Tax_request_Id = grd_order.Rows[i].Cells[19].Value.ToString();
+                        //hearer lblInternal_tax Request is indicates to the Order has Sent to Tax Request and Come back for allocation
+                        if (isChecked == true && Convert.ToInt32(ddl_Order_Allocate_Task.SelectedValue) != 22)
+                        {
+                            // ============Effecincy Cal start======================================
+                            Eff_Client_Id = int.Parse(grd_order.Rows[i].Cells[14].Value.ToString());
+                            Eff_State_Id = int.Parse(grd_order.Rows[i].Cells[13].Value.ToString());
+                            Eff_County_Id = int.Parse(grd_order.Rows[i].Cells[22].Value.ToString());
+                            Eff_Order_Type_Abs_Id = int.Parse(grd_order.Rows[i].Cells[23].Value.ToString());
+                            Eff_Order_Task_Id = int.Parse(grd_order.Rows[i].Cells[12].Value.ToString());
+                            Eff_Sub_Process_Id = int.Parse(grd_order.Rows[i].Cells[15].Value.ToString());
+                            if (grd_order.Rows[i].Cells[24].Value.ToString() != "" && grd_order.Rows[i].Cells[24].Value.ToString() != null)
+                            {
+                                Target_Category_Id = int.Parse(grd_order.Rows[i].Cells[24].Value.ToString());
+                            }
+                            Get_Order_Source_Type_For_Effeciency();
+                            //========= Effecincy Cal End=========================================
+
+                            CheckedCount = 1;
+                            string lbl_Order_Id = grd_order.Rows[i].Cells[10].Value.ToString();
+                            int Client_Id = int.Parse(grd_order.Rows[i].Cells[16].Value.ToString());
+                            Hashtable htinsertrec = new Hashtable();
+                            System.Data.DataTable dtinsertrec = new System.Data.DataTable();
+                            DateTime date = new DateTime();
+                            date = DateTime.Now;
+                            string dateeval = date.ToString("dd/MM/yyyy");
+                            string time = date.ToString("hh:mm tt");
+
+                            Hashtable htchk_Assign = new Hashtable();
+                            System.Data.DataTable dtchk_Assign = new System.Data.DataTable();
+                            htchk_Assign.Add("@Trans", "CHECK");
+                            htchk_Assign.Add("@Order_Id", lbl_Order_Id);
+                            dtchk_Assign = dataaccess.ExecuteSP("Sp_Order_Assignment", htchk_Assign);
+                            if (dtchk_Assign.Rows.Count > 0)
+                            {
+                                Hashtable htupassin = new Hashtable();
+                                System.Data.DataTable dtupassign = new System.Data.DataTable();
+                                htupassin.Add("@Trans", "DELET_BY_ORDER");
+                                htupassin.Add("@Order_Id", lbl_Order_Id);
+                                dtupassign = dataaccess.ExecuteSP("Sp_Order_Assignment", htupassin);
+                            }
+                            htinsertrec.Add("@Trans", "INSERT");
+                            htinsertrec.Add("@Order_Id", lbl_Order_Id);
+                            htinsertrec.Add("@User_Id", allocated_Userid);
+                            htinsertrec.Add("@Order_Status_Id", ddl_Order_Allocate_Task.SelectedValue);
+                            htinsertrec.Add("@Order_Progress_Id", 6);
+                            htinsertrec.Add("@Assigned_Date", dateeval);
+                            htinsertrec.Add("@Assigned_By", User_id);
+                            htinsertrec.Add("@Inserted_By", User_id);
+                            htinsertrec.Add("@Inserted_date", date);
+                            htinsertrec.Add("@status", "True");
+                            htinsertrec.Add("@Order_Percentage", Eff_Order_User_Effecncy);
+                            dtinsertrec = dataaccess.ExecuteSP("Sp_Order_Assignment", htinsertrec);
+
+                            Hashtable htupdate = new Hashtable();
+                            System.Data.DataTable dtupdate = new System.Data.DataTable();
+                            htupdate.Add("@Trans", "UPDATE_STATUS");
+                            htupdate.Add("@Order_ID", lbl_Order_Id);
+                            htupdate.Add("@Order_Status", ddl_Order_Allocate_Task.SelectedValue);
+                            htupdate.Add("@Modified_By", User_id);
+                            htupdate.Add("@Modified_Date", date);
+                            dtupdate = dataaccess.ExecuteSP("Sp_Order", htupdate);
+
+                            Hashtable htprogress = new Hashtable();
+                            System.Data.DataTable dtprogress = new System.Data.DataTable();
+                            htprogress.Add("@Trans", "UPDATE_PROGRESS");
+                            htprogress.Add("@Order_ID", lbl_Order_Id);
+                            htprogress.Add("@Order_Progress", 6);
+                            htprogress.Add("@Modified_By", User_id);
+                            htprogress.Add("@Modified_Date", date);
+                            dtprogress = dataaccess.ExecuteSP("Sp_Order", htprogress);
+
+                            Hashtable ht_Update_Emp_Status = new Hashtable();
+                            System.Data.DataTable dt_Update_Emp_Status = new System.Data.DataTable();
+                            ht_Update_Emp_Status.Add("@Trans", "Update_Allocate_Status");
+                            ht_Update_Emp_Status.Add("@Employee_Id", allocated_Userid);
+                            ht_Update_Emp_Status.Add("@Allocate_Status", "True");
+                            dt_Update_Emp_Status = dataaccess.ExecuteSP("Sp_Employee_Status", ht_Update_Emp_Status);
+
+                            //OrderHistory
+                            Hashtable ht_Order_History = new Hashtable();
+                            System.Data.DataTable dt_Order_History = new System.Data.DataTable();
+                            ht_Order_History.Add("@Trans", "INSERT");
+                            ht_Order_History.Add("@Order_Id", lbl_Order_Id);
+                            ht_Order_History.Add("@User_Id", allocated_Userid);
+                            ht_Order_History.Add("@Status_Id", ddl_Order_Allocate_Task.SelectedValue);
+                            ht_Order_History.Add("@Progress_Id", 6);
+                            ht_Order_History.Add("@Work_Type", 1);
+                            ht_Order_History.Add("@Assigned_By", User_id);
+                            ht_Order_History.Add("@Modification_Type", "Order Allocate");
+                            dt_Order_History = dataaccess.ExecuteSP("Sp_Order_History", ht_Order_History);
 
 
-                    //Gridview_Bind_Orders_Wise_Treeview_Selected();
-                    //  Restrict_Controls();
-                    // Sub_AddParent();
+                            //==================================External Client_Vendor_Orders=====================================================
+                            Hashtable htCheck_Order_InTitlelogy = new Hashtable();
+                            System.Data.DataTable dt_Order_InTitleLogy = new System.Data.DataTable();
+                            htCheck_Order_InTitlelogy.Add("@Trans", "CHECK_ORDER_IN_TITLLELOGY");
+                            htCheck_Order_InTitlelogy.Add("@Order_ID", lbl_Order_Id);
+                            dt_Order_InTitleLogy = dataaccess.ExecuteSP("Sp_Order", htCheck_Order_InTitlelogy);
+                            if (dt_Order_InTitleLogy.Rows.Count > 0)
+                            {
+                                External_Client_Order_Id = int.Parse(dt_Order_InTitleLogy.Rows[0]["External_Order_Id"].ToString());
+                                External_Client_Order_Task_Id = int.Parse(dt_Order_InTitleLogy.Rows[0]["External_Order_Task_id"].ToString());
+                                if (External_Client_Order_Task_Id != 18 && Client_Id != 33)
+                                {
+                                    Hashtable ht_Titlelogy_Order_Task_Status = new Hashtable();
+                                    System.Data.DataTable dt_TitleLogy_Order_Task_Status = new System.Data.DataTable();
+                                    ht_Titlelogy_Order_Task_Status.Add("@Trans", "UPDATE_ORDER_TASK_STATUS");
+                                    ht_Titlelogy_Order_Task_Status.Add("@Order_Id", External_Client_Order_Id);
+                                    ht_Titlelogy_Order_Task_Status.Add("@Order_Task", ddl_Order_Allocate_Task.SelectedValue);
+                                    ht_Titlelogy_Order_Task_Status.Add("@Order_Status", 14);
+                                    dt_TitleLogy_Order_Task_Status = dataaccess.ExecuteSP("Sp_External_Client_Orders", ht_Titlelogy_Order_Task_Status);
+                                }
+                            }
+                            CheckedCount = 1;
+                        }
+
+                        // Internal Tax Order Assigning to Users
+
+                        else if (isChecked == true && Convert.ToInt32(ddl_Order_Allocate_Task.SelectedValue) == 22)
+                        {
+
+                            CheckedCount = 1;
+                            string lbl_Order_Id = grd_order.Rows[i].Cells[10].Value.ToString();
+                            Hashtable htinsertrec = new Hashtable();
+                            System.Data.DataTable dtinsertrec = new System.Data.DataTable();
+                            DateTime date = new DateTime();
+                            date = DateTime.Now;
+                            string dateeval = date.ToString("dd/MM/yyyy");
+                            string time = date.ToString("hh:mm tt");
+
+                            Hashtable htchk_Assign = new Hashtable();
+                            System.Data.DataTable dtchk_Assign = new System.Data.DataTable();
+                            htchk_Assign.Add("@Trans", "CHECK");
+                            htchk_Assign.Add("@Order_Id", lbl_Order_Id);
+                            dtchk_Assign = dataaccess.ExecuteSP("Sp_Order_Assignment", htchk_Assign);
+                            if (dtchk_Assign.Rows.Count > 0)
+                            {
+                                Hashtable htupassin = new Hashtable();
+                                System.Data.DataTable dtupassign = new System.Data.DataTable();
+                                htupassin.Add("@Trans", "DELET_BY_ORDER");
+                                htupassin.Add("@Order_Id", lbl_Order_Id);
+                                dtupassign = dataaccess.ExecuteSP("Sp_Order_Assignment", htupassin);
+                            }
+                            htinsertrec.Add("@Trans", "INSERT");
+                            htinsertrec.Add("@Order_Id", lbl_Order_Id);
+                            htinsertrec.Add("@User_Id", allocated_Userid);
+                            htinsertrec.Add("@Order_Status_Id", 22);// for internal tax Order Assign
+                            htinsertrec.Add("@Order_Progress_Id", 6);
+                            htinsertrec.Add("@Assigned_Date", dateeval);
+                            htinsertrec.Add("@Assigned_By", User_id);
+                            htinsertrec.Add("@Inserted_By", User_id);
+                            htinsertrec.Add("@Inserted_date", date);
+                            htinsertrec.Add("@status", "True");
+                            dtinsertrec = dataaccess.ExecuteSP("Sp_Order_Assignment", htinsertrec);
+
+                            //Updtating Internal Tax Order Status in Tbl_Order Table
+                            Hashtable htupdate = new Hashtable();
+                            System.Data.DataTable dtupdate = new System.Data.DataTable();
+                            htupdate.Add("@Trans", "UPDATE_INTERNAL_TAX_STATUS");
+                            htupdate.Add("@Order_ID", lbl_Order_Id);
+                            htupdate.Add("@Search_Tax_Req_Inhouse_Status", 6);
+                            htupdate.Add("@Modified_By", User_id);
+                            htupdate.Add("@Modified_Date", date);
+                            dtupdate = dataaccess.ExecuteSP("Sp_Order", htupdate);
+
+                            //OrderHistory
+                            Hashtable ht_Order_History = new Hashtable();
+                            System.Data.DataTable dt_Order_History = new System.Data.DataTable();
+                            ht_Order_History.Add("@Trans", "INSERT");
+                            ht_Order_History.Add("@Order_Id", lbl_Order_Id);
+                            ht_Order_History.Add("@User_Id", allocated_Userid);
+                            ht_Order_History.Add("@Status_Id", 22);
+                            ht_Order_History.Add("@Progress_Id", 6);
+                            ht_Order_History.Add("@Work_Type", 1);
+                            ht_Order_History.Add("@Assigned_By", User_id);
+                            ht_Order_History.Add("@Modification_Type", "Order Assigned For tax");
+                            dt_Order_History = dataaccess.ExecuteSP("Sp_Order_History", ht_Order_History);
+                            CheckedCount = 1;
+                        }
+                    }
+                    if (CheckedCount == 1)
+                    {
+                        MessageBox.Show("Order Allocated Successfully");
+                        lbl_allocated_user.Text = "";
+                    }
+
+                    if (CheckedCount == 0)
+                    {
+                        MessageBox.Show("Select Record to a Allocate");
+                    }
+                    Gridview_Bind_All_Orders();
                     Bind_User_Orders_Count();
                     Users_Order_Count();
                     Gridview_Bind_Orders_Wise_Selected();
@@ -1451,12 +1551,97 @@ namespace Ordermanagement_01
 
                 }
             }
-            else
+            else if (Tree_View_UserId == 0 && ddl_Order_Allocate_Task.SelectedIndex > 0)
             {
+                int Check_Count = 0;
+                for (int i = 0; i < grd_order.Rows.Count; i++)
+                {
+                    bool isChecked = (bool)grd_order[0, i].FormattedValue;
 
-                MessageBox.Show("Select User Name to a Allocate");
+                    if (isChecked == true)
+                    {
+                        Check_Count = 1;
+                        string lbl_Order_Id = grd_order.Rows[i].Cells[10].Value.ToString();
+                        string lbl_County_ID = grd_order.Rows[i].Cells[22].Value.ToString();
+                        string Order_Status_Id = ddl_Order_Allocate_Task.SelectedValue.ToString();
+
+                        Hashtable htinsertrec = new Hashtable();
+                        System.Data.DataTable dtinsertrec = new System.Data.DataTable();
+                        DateTime date = new DateTime();
+                        date = DateTime.Now;
+                        string dateeval = date.ToString("dd/MM/yyyy");
+                        string time = date.ToString("hh:mm tt");
+
+                        htinsertrec.Add("@Trans", "UPDATE_DEALLOCATE");
+                        htinsertrec.Add("@Order_Id", lbl_Order_Id);
+                        htinsertrec.Add("@Order_Progress_Id", 8);
+                        htinsertrec.Add("@Assigned_Date", Convert.ToString(dateeval));
+                        htinsertrec.Add("@Assigned_By", User_id);
+                        htinsertrec.Add("@Modified_By", User_id);
+                        htinsertrec.Add("@Modified_Date", DateTime.Now);
+                        htinsertrec.Add("@status", "True");
+                        dtinsertrec = dataaccess.ExecuteSP("Sp_Order_Assignment", htinsertrec);
+                        Hashtable htupdate_Prog = new Hashtable();
+                        System.Data.DataTable dtupdate_Prog = new System.Data.DataTable();
+                        htupdate_Prog.Add("@Trans", "UPDATE_PROGRESS");
+                        htupdate_Prog.Add("@Order_ID", lbl_Order_Id);
+                        htupdate_Prog.Add("@Order_Progress", 8);
+                        htupdate_Prog.Add("@Modified_By", User_id);
+                        htupdate_Prog.Add("@Modified_Date", DateTime.Now);
+                        dtupdate_Prog = dataaccess.ExecuteSP("Sp_Order", htupdate_Prog);
+                        Hashtable htcountyType = new Hashtable();
+                        System.Data.DataTable dtcountytype = new System.Data.DataTable();
+                        htcountyType.Add("@Trans", "GET_COUNTY_TYPE");
+                        htcountyType.Add("@County", lbl_County_ID);
+                        dtcountytype = dataaccess.ExecuteSP("Sp_Order", htcountyType);
+                        if (dtcountytype.Rows.Count > 0)
+                        {
+                            County_Type = dtcountytype.Rows[0]["County_Type"].ToString();
+                        }
+                        Hashtable htcheckabbstract = new Hashtable();
+                        System.Data.DataTable dtcheckabbstract = new System.Data.DataTable();
+                        htcheckabbstract.Add("@Trans", "GET_ABSTRACTOR_CHECK");
+                        htcheckabbstract.Add("@Order_ID", lbl_Order_Id);
+                        dtcheckabbstract = dataaccess.ExecuteSP("Sp_Order", htcheckabbstract);
+                        if (dtcheckabbstract.Rows.Count > 0)
+                        {
+                            Abstractor_Check = Convert.ToBoolean(dtcheckabbstract.Rows[0]["Abstractor_Chk"].ToString());
+                        }
+                        if (County_Type == "TIER 2" && Abstractor_Check == false)
+                        {
+
+                            Hashtable htupdateabstractcheck = new Hashtable();
+                            System.Data.DataTable dtupdateabstractcheck = new System.Data.DataTable();
+                            htupdateabstractcheck.Add("@Trans", "UPDATE_ABSTRACTOR_CHECK");
+                            htupdateabstractcheck.Add("@Order_ID", lbl_Order_Id);
+                            dtupdateabstractcheck = dataaccess.ExecuteSP("Sp_Order", htupdateabstractcheck);
+                        }
+                        Hashtable ht_Order_History = new Hashtable();
+                        System.Data.DataTable dt_Order_History = new System.Data.DataTable();
+                        ht_Order_History.Add("@Trans", "INSERT");
+                        ht_Order_History.Add("@Order_Id", lbl_Order_Id);
+                        ht_Order_History.Add("@Status_Id", int.Parse(Order_Status_Id.ToString()));
+                        ht_Order_History.Add("@Progress_Id", 8);
+                        ht_Order_History.Add("@Assigned_By", User_id);
+                        ht_Order_History.Add("@Work_Type", 1);
+                        ht_Order_History.Add("@Modification_Type", "Order Deallocate");
+                        dt_Order_History = dataaccess.ExecuteSP("Sp_Order_History", ht_Order_History);
+                    }
+                }
+                if (Check_Count >= 1)
+                {
+                    string success = "Successfull..";
+                    MessageBox.Show("Order Deallocated Sucessfully", success);
+                }
+                if (Check_Count == 0)
+                {
+                    MessageBox.Show("Select Record to Deallocate");
+                }
+                Gridview_Bind_All_Orders();
+                Bind_User_Orders_Count();
+                Users_Order_Count();
+                Gridview_Bind_Orders_Wise_Selected();
             }
-
         }
         protected void Gridview_Bind_Orders_Wise_Selected()
         {
@@ -2517,8 +2702,6 @@ namespace Ordermanagement_01
 
                             if (Differnce_Time > 5 || Differnce_Time == 0)
                             {
-
-
                                 Hashtable htinsertrec = new Hashtable();
                                 System.Data.DataTable dtinsertrec = new System.Data.DataTable();
                                 DateTime date = new DateTime();
@@ -2536,8 +2719,6 @@ namespace Ordermanagement_01
                                 htinsertrec.Add("@Modified_Date", DateTime.Now);
                                 htinsertrec.Add("@status", "True");
                                 dtinsertrec = dataaccess.ExecuteSP("Sp_Order_Assignment", htinsertrec);
-
-
 
                                 Hashtable htorderStatus = new Hashtable();
                                 System.Data.DataTable dtorderStatus = new System.Data.DataTable();
@@ -2672,7 +2853,6 @@ namespace Ordermanagement_01
                         }
                         else
                         {
-
                             MessageBox.Show("Some Orders Were not Deallocted beacuse of Orders are Work in Progress");
                         }
 
@@ -2714,7 +2894,6 @@ namespace Ordermanagement_01
 
                             htinsertrec.Add("@Trans", "UPDATE_DEALLOCATE");
                             htinsertrec.Add("@Order_Id", lbl_Order_Id);
-                            //   htinsertrec.Add("@User_Id", 1);
                             htinsertrec.Add("@Order_Progress_Id", 8);
                             htinsertrec.Add("@Assigned_Date", Convert.ToString(dateeval));
                             htinsertrec.Add("@Assigned_By", User_id);
@@ -2722,8 +2901,6 @@ namespace Ordermanagement_01
                             htinsertrec.Add("@Modified_Date", DateTime.Now);
                             htinsertrec.Add("@status", "True");
                             dtinsertrec = dataaccess.ExecuteSP("Sp_Order_Assignment", htinsertrec);
-
-
                             Hashtable htupdate_Prog = new Hashtable();
                             System.Data.DataTable dtupdate_Prog = new System.Data.DataTable();
                             htupdate_Prog.Add("@Trans", "UPDATE_PROGRESS");
@@ -2731,37 +2908,25 @@ namespace Ordermanagement_01
                             htupdate_Prog.Add("@Order_Progress", 8);
                             htupdate_Prog.Add("@Modified_By", User_id);
                             htupdate_Prog.Add("@Modified_Date", DateTime.Now);
-
                             dtupdate_Prog = dataaccess.ExecuteSP("Sp_Order", htupdate_Prog);
-
                             Hashtable htcountyType = new Hashtable();
                             System.Data.DataTable dtcountytype = new System.Data.DataTable();
                             htcountyType.Add("@Trans", "GET_COUNTY_TYPE");
                             htcountyType.Add("@County", lbl_County_ID);
-
                             dtcountytype = dataaccess.ExecuteSP("Sp_Order", htcountyType);
-
                             if (dtcountytype.Rows.Count > 0)
                             {
-
                                 County_Type = dtcountytype.Rows[0]["County_Type"].ToString();
-
                             }
-
                             Hashtable htcheckabbstract = new Hashtable();
                             System.Data.DataTable dtcheckabbstract = new System.Data.DataTable();
                             htcheckabbstract.Add("@Trans", "GET_ABSTRACTOR_CHECK");
                             htcheckabbstract.Add("@Order_ID", lbl_Order_Id);
-
                             dtcheckabbstract = dataaccess.ExecuteSP("Sp_Order", htcheckabbstract);
-
                             if (dtcheckabbstract.Rows.Count > 0)
                             {
-
                                 Abstractor_Check = Convert.ToBoolean(dtcheckabbstract.Rows[0]["Abstractor_Chk"].ToString());
-
                             }
-
                             if (County_Type == "TIER 2" && Abstractor_Check == false)
                             {
 
@@ -2771,37 +2936,23 @@ namespace Ordermanagement_01
                                 htupdateabstractcheck.Add("@Order_ID", lbl_Order_Id);
                                 dtupdateabstractcheck = dataaccess.ExecuteSP("Sp_Order", htupdateabstractcheck);
                             }
-                            // Gridview_Bind_Orders_Wise_Selected();
-                            // PopulateTreeview();
-                            // ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Msg", "<script> alert('Order Deallocated Successfully')</script>", false);
-
-
-                            //OrderHistory
-
-                            //OrderHistory
                             Hashtable ht_Order_History = new Hashtable();
                             System.Data.DataTable dt_Order_History = new System.Data.DataTable();
                             ht_Order_History.Add("@Trans", "INSERT");
                             ht_Order_History.Add("@Order_Id", lbl_Order_Id);
-                            //ht_Order_History.Add("@User_Id", int.Parse(ddl_UserName.SelectedValue.ToString()));
                             ht_Order_History.Add("@Status_Id", int.Parse(Order_Status_Id.ToString()));
                             ht_Order_History.Add("@Progress_Id", 8);
                             ht_Order_History.Add("@Assigned_By", User_id);
                             ht_Order_History.Add("@Work_Type", 1);
                             ht_Order_History.Add("@Modification_Type", "Order Deallocate");
                             dt_Order_History = dataaccess.ExecuteSP("Sp_Order_History", ht_Order_History);
-
-
                         }
-
                     }
-
                     if (Check_Count >= 1)
                     {
                         string success = "Successfull..";
                         MessageBox.Show("Order Deallocated Sucessfully", success);
                     }
-
                 }
             }
 
@@ -4825,78 +4976,6 @@ namespace Ordermanagement_01
             }
 
         }
-
-        private void chkItems_CheckedChanged(object sender, EventArgs e)
-        {
-            foreach (DataGridViewRow row in grd_order_Allocated.Rows)
-            {
-                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells["Chk_Allocate"];
-                if (chk.Selected == true)
-                {
-                    // btn_ClientWise_Delete.Visible = true;
-                    // chk_All.Checked = false;
-
-                }
-                else
-                {
-                    //(grd_order_Allocated)row.Cells["Chk_Allocate"].FormattedValue = "true";
-                }
-            }
-
-
-
-
-        }
-
-
-        private void ddl_Order_Status_Reallocate_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-
-
-
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_count_order_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnl_help_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Chk_All_grd_Clients_CheckedChanged(object sender, EventArgs e)
-        {
-            //if (Chk_All_grd_Clients.Checked == true)
-            //{
-
-            //    for (int i = 0; i < grd_order.Rows.Count; i++)
-            //    {
-
-            //        grd_order[0, i].Value = true;
-            //    }
-            //}
-            //else if (Chk_All_grd_Clients.Checked == false)
-            //{
-
-            //    for (int i = 0; i < grd_order.Rows.Count; i++)
-            //    {
-
-            //        grd_order[0, i].Value = false;
-            //    }
-            //}
-        }
-
         private void txt_Order_allocate_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((char.IsWhiteSpace(e.KeyChar)) && txt_Order_allocate.Text.Length == 0) //for block first whitespace 
@@ -4922,28 +5001,16 @@ namespace Ordermanagement_01
             }
         }
 
-        private void ddl_Status_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void btn_Clear_Click(object sender, EventArgs e)
         {
-            // lbl_User_And_Status
-            //ddl_Status.SelectedIndex=0;
-            //  lbl_Task
-            //ddl_Order_Status_Reallocate.SelectedIndex=0;
-            //ddl_UserName.SelectedIndex = 0;
             dbc.BindUserName_Allocate(ddl_UserName);
             dbc.BindOrderStatus(ddl_Order_Status_Reallocate);
             dbc.BindOrderStatus(ddl_Order_Allocate_Task);
             dbc.Bind_Order_Progress_FOR_REAALOCATE(ddl_Status);
-            //Gridview_Bind_Orders_Wise_Treeview_Selected();
-
             Chk_All_grd_Clients.Checked = false;
             chk_All.Checked = false;
             Tree_View_UserId = 0;
-
             Gridview_Bind_Orders_Wise_Treeview_Selected();
         }
 
@@ -4979,8 +5046,6 @@ namespace Ordermanagement_01
 
         private void txt_UserName_MouseEnter(object sender, EventArgs e)
         {
-            //txt_UserName.Text = "";
-
             if (txt_UserName.Text == "Search User name...")
             {
                 txt_UserName.Text = "";
@@ -5042,11 +5107,6 @@ namespace Ordermanagement_01
                 Chk_All_grd_Clients.Checked = true;
             }
         }
-
-
-
-
-
         private void Grd_Users_Order_Count_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode.Equals(Keys.Down))
@@ -5291,11 +5351,5 @@ namespace Ordermanagement_01
                 Grd_Users_Order_Count.Rows.Clear();
             }
         }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
     }
 }

@@ -16,10 +16,12 @@ namespace Ordermanagement_01
 
             //Application.Run(new New_Dashboard.Orders.OrderEntry());
             //Application.Run(new New_Dashboard.Settings.Process_Settings());
-           Application.Run(new New_Dashboard.Settings.EmailSetting());
+           //Application.Run(new New_Dashboard.Settings.EmailSetting());
             // Application.Run(new Vendors.Keywords(1));
-         //  Application.Run(new New_Dashboard.NewLogin());
-           //Application.Run(new DailyStatusReport_Preview(1,"2",""));
+            //  Application.Run(new New_Dashboard.NewLogin());
+            //Application.Run(new DailyStatusReport_Preview(1,"2",""));
+            Application.Run(new Create_SubProcess(0058, ""));
+            //Application.Run(new Create_Client(0058, ""));
         }
     }
 }

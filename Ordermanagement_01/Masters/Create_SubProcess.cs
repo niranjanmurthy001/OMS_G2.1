@@ -121,12 +121,12 @@ namespace Ordermanagement_01
                 else
                 {
                     SplashScreenManager.CloseForm(false);
-                    MessageBox.Show("Available SubProcessNo's Were Not Found To These SubProcessNo");
+                    //  MessageBox.Show("Available SubProcessNo's Were Not Found To These SubProcessNo");
                     ListOfSubProcessNo.Visible = false;
                     ListOfSubProcessNo.Visible = false;
                     return false;
                 }
-                return true; 
+                return true;
             }
             catch (Exception ex)
             {
@@ -930,37 +930,37 @@ namespace Ordermanagement_01
             }
             return Check_Value;
         }
-        public bool SubprocessNoCheck()
-        {
-            DataTable dt = new DataTable();
-            Hashtable ht = new Hashtable();
-            try
-            {
+        //public bool SubprocessNoCheck()
+        //{
+        //    DataTable dt = new DataTable();
+        //    Hashtable ht = new Hashtable();
+        //    try
+        //    {
 
-                if (txt_SubProcessNumber.Text != "")
-                {
-                    ht.Add("@Trans", "SubProcessNumCheck");
-                    ht.Add("@Subprocess_Number", txt_SubProcessNumber.Text);
-                    dt = dataaccess.ExecuteSP("Sp_Client_SubProcess", ht);
-                    int count = Convert.ToInt32(dt.Rows[0]["count"].ToString());
-                    if (count > 0)
-                    {
-                        MessageBox.Show("Its an Already Existing Subprocess Number ");
-                        return false;
-                    }
-                    else
-                    {
-                        return true;
-                    }
-                }
-                return true;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+        //        if (txt_SubProcessNumber.Text != "" && txt_SubProcessNumber.Text.Length >= 4)
+        //        {
+        //            ht.Add("@Trans", "SubProcessNumCheck");
+        //            ht.Add("@Subprocess_Number", txt_SubProcessNumber.Text);
+        //            dt = dataaccess.ExecuteSP("Sp_Client_SubProcess", ht);
+        //            int count = Convert.ToInt32(dt.Rows[0]["count"].ToString());
+        //            if (count > 0)
+        //            {
+        //                MessageBox.Show("Its an Already Existing Subprocess Number ");
+        //                return false;
+        //            }
+        //            else
+        //            {
+        //                return true;
+        //            }
+        //        }
+        //        return true;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
 
-        }
+        //}
 
         private void ListOfSubProcessNo_Click(object sender, EventArgs e)
         {
@@ -1044,6 +1044,12 @@ namespace Ordermanagement_01
                 MessageBox.Show("Select County", title);
                 ddl_County.Focus();
                 // ddl_County.BackColor = System.Drawing.Color.Red;
+                return false;
+            }
+            else if (txt_SubProcessNumber.Text.Length == 0 && txt_SubProcessNumber.Text.Length <= 4)
+            {
+                MessageBox.Show("Enter a Valid SubprocessNumber");
+                txt_SubProcessNumber.Focus();
                 return false;
             }
             Hashtable ht = new Hashtable();

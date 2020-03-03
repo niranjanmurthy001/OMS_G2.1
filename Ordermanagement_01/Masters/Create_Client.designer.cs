@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_Cancel = new System.Windows.Forms.Button();
             this.btn_Save = new System.Windows.Forms.Button();
             this.tree_Client = new System.Windows.Forms.TreeView();
@@ -369,19 +369,19 @@
             // 
             // grd_Email
             // 
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.Highlight;
-            this.grd_Email.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Highlight;
+            this.grd_Email.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.grd_Email.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grd_Email.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_Email.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.grd_Email.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grd_Email.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column12,
@@ -402,10 +402,10 @@
             // 
             // Column11
             // 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column11.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column11.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column11.FillWeight = 194.9239F;
             this.Column11.HeaderText = "Alternative Email Id";
             this.Column11.Name = "Column11";
@@ -504,7 +504,7 @@
             // 
             // Client_image
             // 
-            this.Client_image.Location = new System.Drawing.Point(904, 13);
+            this.Client_image.Location = new System.Drawing.Point(904, 26);
             this.Client_image.Name = "Client_image";
             this.Client_image.Size = new System.Drawing.Size(180, 129);
             this.Client_image.TabIndex = 110;
@@ -674,7 +674,6 @@
             this.txt_ClientNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_ClientNumber_KeyDown);
             this.txt_ClientNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ClientNumber_KeyPress);
             this.txt_ClientNumber.Leave += new System.EventHandler(this.txt_ClientNumber_Leave_1);
-          //  this.txt_ClientNumber.MouseLeave += new System.EventHandler(this.txt_ClientNumber_MouseLeave);
             this.txt_ClientNumber.Validating += new System.ComponentModel.CancelEventHandler(this.txt_ClientNumber_Validating);
             // 
             // txt_Client_Pincode

@@ -5,6 +5,7 @@ using DevExpress.XtraSplashScreen;
 using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -1418,138 +1419,209 @@ namespace Ordermanagement_01
 
         }
 
+
+        protected void Get_Allocate_Orders_Count()
+        {
+
+            System.Data.DataTable dt = new System.Data.DataTable();
+            IDictionary<string, object> Idict = new Dictionary<string, object>();
+            Idict.Add("@Trans", "ALLOCAION_COUNT_ORDERS");
+            dt = dataaccess.ExecuteSPNew("usp_Order_Counts", Idict);
+
+            if (dt.Rows.Count > 0)
+            {
+
+                lb_ReSearch_Order_ALlocate_count.Text = "RE SEARCH " + "(" + dt.Rows[0]["Research"].ToString() + ")";
+                lb_Search_Order_ALlocate_count.Text = "SEARCH " + "(" + dt.Rows[0]["Search"].ToString() + ")";
+                lbl_search_Qc_Allocate_Count.Text = "SEARCH QC " + "(" + dt.Rows[0]["SearchQc"].ToString() + ")";
+                lbl_typing_Allocate_Count.Text = "TYPING " + "(" + dt.Rows[0]["Typing"].ToString() + ")";
+                lbl_Typing_Allocate_Qc_Count.Text = "TYPING QC " + "(" + dt.Rows[0]["Typing_Qc"].ToString() + ")";
+                lbl_Final_Qc_Orders_Allocation_Count.Text = "FINAL QC " + "(" + dt.Rows[0]["Final_Qc"].ToString() + ")";
+                lbl_Upload_Orders_Allocate_Count.Text = "UPLOAD " + "(" + dt.Rows[0]["Upload"].ToString() + ")";
+                lbl_Exception_Orders_Allocation_Count.Text = "EXCEPTION  " + "(" + dt.Rows[0]["Exception"].ToString() + ")";
+
+                btn_Image_req_Allocation.Text = "IMAGE REQ " + "(" + dt.Rows[0]["Image_Request"].ToString() + ")";
+                btn_DataDepth_Allocation.Text = "DATA DEPTH " + "(" + dt.Rows[0]["Data_Depth"].ToString() + ")";
+                btn_Tax_Req_Allocation.Text = "TAX REQ " + "(" + dt.Rows[0]["Tax_Request"].ToString() + ")";
+
+                Lbl_Clarification_orders.Text = "CLARIFICATION  " + "(" + dt.Rows[0]["Clarification"].ToString() + ")";
+
+                lbl_Hold.Text= "HOLD  " + "(" + dt.Rows[0]["Hold"].ToString() + ")";
+
+                lbl_CANCELLED.Text = "CANCELLED  " + "(" + dt.Rows[0]["Cancelled"].ToString() + ")";
+
+            }
+
+            else {
+
+
+                lb_ReSearch_Order_ALlocate_count.Text = "RE SEARCH     " + "(0)";
+                lb_Search_Order_ALlocate_count.Text = "SEARCH     " + "(0)";
+                lbl_search_Qc_Allocate_Count.Text = "SEARCH QC " + "(0)";
+                lbl_typing_Allocate_Count.Text = "  TYPING     " + "(0)";
+                lbl_Typing_Allocate_Qc_Count.Text = "  TYPING QC     " + "(0)";
+                lbl_Final_Qc_Orders_Allocation_Count.Text = "  FINAL QC     " + "(0)";
+                lbl_Upload_Orders_Allocate_Count.Text = "  FINAL QC     " + "(0)";
+                lbl_Exception_Orders_Allocation_Count.Text = "  EXCEPTION    " + "(0)";
+
+                btn_Image_req_Allocation.Text = "  IMAGE REQ    " + "(0)";
+                btn_DataDepth_Allocation.Text = "  DATA DEPTH   " + "(0)";
+                btn_Tax_Req_Allocation.Text = "  TAX REQ    " + "(0)";
+
+                Lbl_Clarification_orders.Text = "CLARIFICATION  " + "(0)";
+                lbl_Hold.Text = "HOLD  " + "(0)";
+                lbl_CANCELLED.Text = "CANCELLED  " + "(0)";
+
+            }
+
+
+
+
+
+
+
+
+
+
+        }
         protected void Get_Count_Of_Orders()
         {
             Ordermanagement_01.Gen_Forms.Login Login = new Ordermanagement_01.Gen_Forms.Login();
 
-            Hashtable htResearch = new Hashtable();
-            System.Data.DataTable dtResearch = new System.Data.DataTable();
-
-            htResearch.Add("@Trans", "RESEARCH_ORDER_ALLOCATE");
-            //htselect.Add("@Sub_ProcessId", Subprocess_id);
-            dtResearch = dataaccess.ExecuteSP("Sp_Order_Count", htResearch);
-            if (dtResearch.Rows.Count > 0)
-            {
-                //  divSearc_Order_alocate.Visible = true;
-
-                if (InvokeRequired)
-                {
-
-                    this.Invoke(new MethodInvoker(delegate
-                    {
-                        if (User_Role_Id == "1")
-                        {
-                            lb_ReSearch_Order_ALlocate_count.Text = "RE SEARCH     " + "(" + dtResearch.Rows[0]["count"].ToString() + ")";
-                        }
-                        else
-                        {
-                            lb_ReSearch_Order_ALlocate_count.Text = "RE SEARCH     " + "(" + dtResearch.Rows[0]["count"].ToString() + ")";
-                        }
-                    }));
-                }
-
-                else
-                {
-                    if (User_Role_Id == "1")
-                    {
-                        lb_ReSearch_Order_ALlocate_count.Text = "RE SEARCH     " + "(" + dtResearch.Rows[0]["count"].ToString() + ")";
-                    }
-                    else
-                    {
-                        lb_ReSearch_Order_ALlocate_count.Text = "RE SEARCH     " + "(" + dtResearch.Rows[0]["count"].ToString() + ")";
-                    }
-
-                }
-
-            }
-            else
-            {
-
-                //div_web.Visible = false;
-            }
 
 
-            Hashtable htselect = new Hashtable();
-            System.Data.DataTable dtselect = new System.Data.DataTable();
+            Get_Allocate_Orders_Count();
 
-            htselect.Add("@Trans", "SEARCH_ORDER_ALLOCATE");
-            //htselect.Add("@Sub_ProcessId", Subprocess_id);
-            dtselect = dataaccess.ExecuteSP("Sp_Order_Count", htselect);
-            if (dtselect.Rows.Count > 0)
-            {
-                //  divSearc_Order_alocate.Visible = true;
+            //Hashtable htResearch = new Hashtable();
+            //System.Data.DataTable dtResearch = new System.Data.DataTable();
 
-                if (InvokeRequired)
-                {
+            //htResearch.Add("@Trans", "RESEARCH_ORDER_ALLOCATE");
+            ////htselect.Add("@Sub_ProcessId", Subprocess_id);
+            //dtResearch = dataaccess.ExecuteSP("Sp_Order_Count", htResearch);
+            //if (dtResearch.Rows.Count > 0)
+            //{
+            //    //  divSearc_Order_alocate.Visible = true;
 
-                    this.Invoke(new MethodInvoker(delegate
-                    {
-                        if (User_Role_Id == "1")
-                        {
-                            lb_Search_Order_ALlocate_count.Text = "SEARCH     " + "(" + dtselect.Rows[0]["count"].ToString() + ")";
-                        }
-                        else
-                        {
-                            lb_Search_Order_ALlocate_count.Text = "SEARCH     " + "(" + dtselect.Rows[0]["count"].ToString() + ")";
-                        }
+            //    if (InvokeRequired)
+            //    {
 
-                    }));
-                }
-                else
-                {
+            //        this.Invoke(new MethodInvoker(delegate
+            //        {
+            //            if (User_Role_Id == "1")
+            //            {
+            //                lb_ReSearch_Order_ALlocate_count.Text = "RE SEARCH     " + "(" + dtResearch.Rows[0]["count"].ToString() + ")";
+            //            }
+            //            else
+            //            {
+            //                lb_ReSearch_Order_ALlocate_count.Text = "RE SEARCH     " + "(" + dtResearch.Rows[0]["count"].ToString() + ")";
+            //            }
+            //        }));
+            //    }
 
-                    if (User_Role_Id == "1")
-                    {
-                        lb_Search_Order_ALlocate_count.Text = "SEARCH     " + "(" + dtselect.Rows[0]["count"].ToString() + ")";
-                    }
-                    else
-                    {
-                        lb_Search_Order_ALlocate_count.Text = "SEARCH     " + "(" + dtselect.Rows[0]["count"].ToString() + ")";
-                    }
-                }
-            }
-            else
-            {
+            //    else
+            //    {
+            //        if (User_Role_Id == "1")
+            //        {
+            //            lb_ReSearch_Order_ALlocate_count.Text = "RE SEARCH     " + "(" + dtResearch.Rows[0]["count"].ToString() + ")";
+            //        }
+            //        else
+            //        {
+            //            lb_ReSearch_Order_ALlocate_count.Text = "RE SEARCH     " + "(" + dtResearch.Rows[0]["count"].ToString() + ")";
+            //        }
 
-                //div_web.Visible = false;
-            }
+            //    }
+
+            //}
+            //else
+            //{
+
+            //    //div_web.Visible = false;
+            //}
+
+
+            //Hashtable htselect = new Hashtable();
+            //System.Data.DataTable dtselect = new System.Data.DataTable();
+
+            //htselect.Add("@Trans", "SEARCH_ORDER_ALLOCATE");
+            ////htselect.Add("@Sub_ProcessId", Subprocess_id);
+            //dtselect = dataaccess.ExecuteSP("Sp_Order_Count", htselect);
+            //if (dtselect.Rows.Count > 0)
+            //{
+            //    //  divSearc_Order_alocate.Visible = true;
+
+            //    if (InvokeRequired)
+            //    {
+
+            //        this.Invoke(new MethodInvoker(delegate
+            //        {
+            //            if (User_Role_Id == "1")
+            //            {
+            //                lb_Search_Order_ALlocate_count.Text = "SEARCH     " + "(" + dtselect.Rows[0]["count"].ToString() + ")";
+            //            }
+            //            else
+            //            {
+            //                lb_Search_Order_ALlocate_count.Text = "SEARCH     " + "(" + dtselect.Rows[0]["count"].ToString() + ")";
+            //            }
+
+            //        }));
+            //    }
+            //    else
+            //    {
+
+            //        if (User_Role_Id == "1")
+            //        {
+            //            lb_Search_Order_ALlocate_count.Text = "SEARCH     " + "(" + dtselect.Rows[0]["count"].ToString() + ")";
+            //        }
+            //        else
+            //        {
+            //            lb_Search_Order_ALlocate_count.Text = "SEARCH     " + "(" + dtselect.Rows[0]["count"].ToString() + ")";
+            //        }
+            //    }
+            //}
+            //else
+            //{
+
+            //    //div_web.Visible = false;
+            //}
+
             //Search Qc_Orders
-            Hashtable htsearch_qc_Allocate = new Hashtable();
-            System.Data.DataTable dtsearch_qc_Allocate = new System.Data.DataTable();
-            htsearch_qc_Allocate.Add("@Trans", "SEARCH_QC_ORDER_ALLOCATE");
-            htsearch_qc_Allocate.Add("@Sub_ProcessId", Subprocess_id);
-            dtsearch_qc_Allocate = dataaccess.ExecuteSP("Sp_Order_Count", htsearch_qc_Allocate);
-            if (dtsearch_qc_Allocate.Rows.Count > 0)
-            {
-                // divSearc_Order_alocate.Visible = true;
-                //if (User_Role_Id == "1")
-                //{
-                //    lbl_search_Qc_Allocate_Count.Text = "SEARCH QC " + "(" + dtsearch_qc_Allocate.Rows[0]["count"].ToString() + ")";
-                //}
-                //else if (User_Role_Id == "2")
-                //{
-                if (InvokeRequired)
-                {
+            //Hashtable htsearch_qc_Allocate = new Hashtable();
+            //System.Data.DataTable dtsearch_qc_Allocate = new System.Data.DataTable();
+            //htsearch_qc_Allocate.Add("@Trans", "SEARCH_QC_ORDER_ALLOCATE");
+            //htsearch_qc_Allocate.Add("@Sub_ProcessId", Subprocess_id);
+            //dtsearch_qc_Allocate = dataaccess.ExecuteSP("Sp_Order_Count", htsearch_qc_Allocate);
+            //if (dtsearch_qc_Allocate.Rows.Count > 0)
+            //{
+            //    // divSearc_Order_alocate.Visible = true;
+            //    //if (User_Role_Id == "1")
+            //    //{
+            //    //    lbl_search_Qc_Allocate_Count.Text = "SEARCH QC " + "(" + dtsearch_qc_Allocate.Rows[0]["count"].ToString() + ")";
+            //    //}
+            //    //else if (User_Role_Id == "2")
+            //    //{
+            //    if (InvokeRequired)
+            //    {
 
-                    this.Invoke(new MethodInvoker(delegate
-                    {
-                        lbl_search_Qc_Allocate_Count.Text = "SEARCH QC " + "(" + dtsearch_qc_Allocate.Rows[0]["count"].ToString() + ")";
-                    }));
-                }
-                else
-                {
-                    lbl_search_Qc_Allocate_Count.Text = "SEARCH QC " + "(" + dtsearch_qc_Allocate.Rows[0]["count"].ToString() + ")";
+            //        this.Invoke(new MethodInvoker(delegate
+            //        {
+            //            lbl_search_Qc_Allocate_Count.Text = "SEARCH QC " + "(" + dtsearch_qc_Allocate.Rows[0]["count"].ToString() + ")";
+            //        }));
+            //    }
+            //    else
+            //    {
+            //        lbl_search_Qc_Allocate_Count.Text = "SEARCH QC " + "(" + dtsearch_qc_Allocate.Rows[0]["count"].ToString() + ")";
 
-                }
-                // }
+            //    }
+            //    // }
 
 
-            }
-            else
-            {
+            //}
+            //else
+            //{
 
-                //div_web.Visible = false;
-            }
+            //    //div_web.Visible = false;
+            //}
+
             Hashtable htwebreaserch = new Hashtable();
             System.Data.DataTable dtwebresearch = new System.Data.DataTable();
             if (User_Role_Id == "2" || User_Role_Id == "3" || User_Role_Id == "4")
@@ -1654,202 +1726,202 @@ namespace Ordermanagement_01
                 }
             }
 
-            Hashtable htmail1 = new Hashtable();
-            System.Data.DataTable dtmail1 = new System.Data.DataTable();
-            htmail1.Add("@Trans", "TYPING_ORDERS_ALLOCATE");
-            htmail1.Add("@Sub_ProcessId", Subprocess_id);
-            dtmail1 = dataaccess.ExecuteSP("Sp_Order_Count", htmail1);
+            //Hashtable htmail1 = new Hashtable();
+            //System.Data.DataTable dtmail1 = new System.Data.DataTable();
+            //htmail1.Add("@Trans", "TYPING_ORDERS_ALLOCATE");
+            //htmail1.Add("@Sub_ProcessId", Subprocess_id);
+            //dtmail1 = dataaccess.ExecuteSP("Sp_Order_Count", htmail1);
 
-            if (dtmail1.Rows.Count > 0)
-            {
-                //div_mail.Visible = true;
+            //if (dtmail1.Rows.Count > 0)
+            //{
+            //    //div_mail.Visible = true;
 
-                //div_Web_Work.Visible = true;
-                if (InvokeRequired)
-                {
+            //    //div_Web_Work.Visible = true;
+            //    if (InvokeRequired)
+            //    {
 
-                    this.Invoke(new MethodInvoker(delegate
-                    {
-                        if (User_Role_Id == "1")
-                        {
-                            lbl_typing_Allocate_Count.Text = "  TYPING     " + "(" + dtmail1.Rows[0]["count"].ToString() + ")";
-                        }
-                        else
-                        {
-                            lbl_typing_Allocate_Count.Text = "  TYPING     " + "(" + dtmail1.Rows[0]["count"].ToString() + ")";
-                        }
+            //        this.Invoke(new MethodInvoker(delegate
+            //        {
+            //            if (User_Role_Id == "1")
+            //            {
+            //                lbl_typing_Allocate_Count.Text = "  TYPING     " + "(" + dtmail1.Rows[0]["count"].ToString() + ")";
+            //            }
+            //            else
+            //            {
+            //                lbl_typing_Allocate_Count.Text = "  TYPING     " + "(" + dtmail1.Rows[0]["count"].ToString() + ")";
+            //            }
 
-                    }));
-                }
-                else
-                {
+            //        }));
+            //    }
+            //    else
+            //    {
 
-                    if (User_Role_Id == "1")
-                    {
-                        lbl_typing_Allocate_Count.Text = "  TYPING     " + "(" + dtmail1.Rows[0]["count"].ToString() + ")";
-                    }
-                    else
-                    {
-                        lbl_typing_Allocate_Count.Text = "  TYPING     " + "(" + dtmail1.Rows[0]["count"].ToString() + ")";
-                    }
-                }
+            //        if (User_Role_Id == "1")
+            //        {
+            //            lbl_typing_Allocate_Count.Text = "  TYPING     " + "(" + dtmail1.Rows[0]["count"].ToString() + ")";
+            //        }
+            //        else
+            //        {
+            //            lbl_typing_Allocate_Count.Text = "  TYPING     " + "(" + dtmail1.Rows[0]["count"].ToString() + ")";
+            //        }
+            //    }
 
 
 
-            }
-            else
-            {
+            //}
+            //else
+            //{
 
-                //div_mail.Visible = false;
-            }
+            //    //div_mail.Visible = false;
+            //}
 
 
             //Typing Ac Allocate
-            Hashtable htTypingQc_Allocate = new Hashtable();
-            System.Data.DataTable dtTyping_Qc_Allocate = new System.Data.DataTable();
-            htTypingQc_Allocate.Add("@Trans", "TYPING_QC_ORDERS_ALLOCATE");
-            htTypingQc_Allocate.Add("@Sub_ProcessId", Subprocess_id);
-            dtTyping_Qc_Allocate = dataaccess.ExecuteSP("Sp_Order_Count", htTypingQc_Allocate);
+            //Hashtable htTypingQc_Allocate = new Hashtable();
+            //System.Data.DataTable dtTyping_Qc_Allocate = new System.Data.DataTable();
+            //htTypingQc_Allocate.Add("@Trans", "TYPING_QC_ORDERS_ALLOCATE");
+            //htTypingQc_Allocate.Add("@Sub_ProcessId", Subprocess_id);
+            //dtTyping_Qc_Allocate = dataaccess.ExecuteSP("Sp_Order_Count", htTypingQc_Allocate);
 
-            if (dtTyping_Qc_Allocate.Rows.Count > 0)
-            {
-                //div_mail.Visible = true;
-                if (InvokeRequired)
-                {
+            //if (dtTyping_Qc_Allocate.Rows.Count > 0)
+            //{
+            //    //div_mail.Visible = true;
+            //    if (InvokeRequired)
+            //    {
 
-                    this.Invoke(new MethodInvoker(delegate
-                    {
-                        if (User_Role_Id == "1")
-                        {
-                            lbl_Typing_Allocate_Qc_Count.Text = "TYPING QC " + "(" + dtTyping_Qc_Allocate.Rows[0]["count"].ToString() + ")";
-                        }
-                        else
-                        {
-                            lbl_Typing_Allocate_Qc_Count.Text = "TYPING QC " + "(" + dtTyping_Qc_Allocate.Rows[0]["count"].ToString() + ")";
-                        }
+            //        this.Invoke(new MethodInvoker(delegate
+            //        {
+            //            if (User_Role_Id == "1")
+            //            {
+            //                lbl_Typing_Allocate_Qc_Count.Text = "TYPING QC " + "(" + dtTyping_Qc_Allocate.Rows[0]["count"].ToString() + ")";
+            //            }
+            //            else
+            //            {
+            //                lbl_Typing_Allocate_Qc_Count.Text = "TYPING QC " + "(" + dtTyping_Qc_Allocate.Rows[0]["count"].ToString() + ")";
+            //            }
 
-                    }));
-                }
-                else
-                {
-                    if (User_Role_Id == "1")
-                    {
-                        lbl_Typing_Allocate_Qc_Count.Text = "TYPING QC " + "(" + dtTyping_Qc_Allocate.Rows[0]["count"].ToString() + ")";
-                    }
-                    else
-                    {
-                        lbl_Typing_Allocate_Qc_Count.Text = "TYPING QC " + "(" + dtTyping_Qc_Allocate.Rows[0]["count"].ToString() + ")";
-                    }
+            //        }));
+            //    }
+            //    else
+            //    {
+            //        if (User_Role_Id == "1")
+            //        {
+            //            lbl_Typing_Allocate_Qc_Count.Text = "TYPING QC " + "(" + dtTyping_Qc_Allocate.Rows[0]["count"].ToString() + ")";
+            //        }
+            //        else
+            //        {
+            //            lbl_Typing_Allocate_Qc_Count.Text = "TYPING QC " + "(" + dtTyping_Qc_Allocate.Rows[0]["count"].ToString() + ")";
+            //        }
 
-                }
+            //    }
 
-            }
-            else
-            {
+            //}
+            //else
+            //{
 
-                //div_mail.Visible = false;
-            }
+            //    //div_mail.Visible = false;
+            //}
 
 
 
             //Final qc Allocate
-            Hashtable htFinalQc_Allocate = new Hashtable();
-            System.Data.DataTable dtFinal_Qc_Allocate = new System.Data.DataTable();
-            htFinalQc_Allocate.Add("@Trans", "FINAL_QC_ORDERS_ALLOCATE");
-            htFinalQc_Allocate.Add("@Sub_ProcessId", Subprocess_id);
-            dtFinal_Qc_Allocate = dataaccess.ExecuteSP("Sp_Order_Count", htFinalQc_Allocate);
+            //Hashtable htFinalQc_Allocate = new Hashtable();
+            //System.Data.DataTable dtFinal_Qc_Allocate = new System.Data.DataTable();
+            //htFinalQc_Allocate.Add("@Trans", "FINAL_QC_ORDERS_ALLOCATE");
+            //htFinalQc_Allocate.Add("@Sub_ProcessId", Subprocess_id);
+            //dtFinal_Qc_Allocate = dataaccess.ExecuteSP("Sp_Order_Count", htFinalQc_Allocate);
 
-            if (dtFinal_Qc_Allocate.Rows.Count > 0)
-            {
-                //div_mail.Visible = true;
+            //if (dtFinal_Qc_Allocate.Rows.Count > 0)
+            //{
+            //    //div_mail.Visible = true;
 
-                if (InvokeRequired)
-                {
+            //    if (InvokeRequired)
+            //    {
 
-                    this.Invoke(new MethodInvoker(delegate
-                    {
-                        if (User_Role_Id == "1")
-                        {
-                            lbl_Final_Qc_Orders_Allocation_Count.Text = "FINAL QC " + "(" + dtFinal_Qc_Allocate.Rows[0]["count"].ToString() + ")";
-                        }
-                        else
-                        {
-                            lbl_Final_Qc_Orders_Allocation_Count.Text = "FINAL QC " + "(" + dtFinal_Qc_Allocate.Rows[0]["count"].ToString() + ")";
-                        }
+            //        this.Invoke(new MethodInvoker(delegate
+            //        {
+            //            if (User_Role_Id == "1")
+            //            {
+            //                lbl_Final_Qc_Orders_Allocation_Count.Text = "FINAL QC " + "(" + dtFinal_Qc_Allocate.Rows[0]["count"].ToString() + ")";
+            //            }
+            //            else
+            //            {
+            //                lbl_Final_Qc_Orders_Allocation_Count.Text = "FINAL QC " + "(" + dtFinal_Qc_Allocate.Rows[0]["count"].ToString() + ")";
+            //            }
 
-                    }));
-                }
-                else
-                {
-                    if (User_Role_Id == "1")
-                    {
-                        lbl_Final_Qc_Orders_Allocation_Count.Text = "FINAL QC " + "(" + dtFinal_Qc_Allocate.Rows[0]["count"].ToString() + ")";
-                    }
-                    else
-                    {
-                        lbl_Final_Qc_Orders_Allocation_Count.Text = "FINAL QC " + "(" + dtFinal_Qc_Allocate.Rows[0]["count"].ToString() + ")";
-                    }
-
-
-                }
+            //        }));
+            //    }
+            //    else
+            //    {
+            //        if (User_Role_Id == "1")
+            //        {
+            //            lbl_Final_Qc_Orders_Allocation_Count.Text = "FINAL QC " + "(" + dtFinal_Qc_Allocate.Rows[0]["count"].ToString() + ")";
+            //        }
+            //        else
+            //        {
+            //            lbl_Final_Qc_Orders_Allocation_Count.Text = "FINAL QC " + "(" + dtFinal_Qc_Allocate.Rows[0]["count"].ToString() + ")";
+            //        }
 
 
-            }
-            else
-            {
+            //    }
 
-                //div_mail.Visible = false;
-            }
+
+            //}
+            //else
+            //{
+
+            //    //div_mail.Visible = false;
+            //}
 
 
 
             //Exception Allocate
-            Hashtable htException_Allocate = new Hashtable();
-            System.Data.DataTable dtException_Allocate = new System.Data.DataTable();
-            htException_Allocate.Add("@Trans", "EXCEPTION_ORDERS_ALLOCATE");
-            htException_Allocate.Add("@Sub_ProcessId", Subprocess_id);
-            dtException_Allocate = dataaccess.ExecuteSP("Sp_Order_Count", htException_Allocate);
+            //Hashtable htException_Allocate = new Hashtable();
+            //System.Data.DataTable dtException_Allocate = new System.Data.DataTable();
+            //htException_Allocate.Add("@Trans", "EXCEPTION_ORDERS_ALLOCATE");
+            //htException_Allocate.Add("@Sub_ProcessId", Subprocess_id);
+            //dtException_Allocate = dataaccess.ExecuteSP("Sp_Order_Count", htException_Allocate);
 
-            if (dtException_Allocate.Rows.Count > 0)
-            {
-                //div_mail.Visible = true;
-                if (InvokeRequired)
-                {
+            //if (dtException_Allocate.Rows.Count > 0)
+            //{
+            //    //div_mail.Visible = true;
+            //    if (InvokeRequired)
+            //    {
 
-                    this.Invoke(new MethodInvoker(delegate
-                    {
-                        if (User_Role_Id == "1")
-                        {
+            //        this.Invoke(new MethodInvoker(delegate
+            //        {
+            //            if (User_Role_Id == "1")
+            //            {
 
-                            lbl_Exception_Orders_Allocation_Count.Text = "EXCEPTION " + "(" + dtException_Allocate.Rows[0]["count"].ToString() + ")";
-                        }
-                        else
-                        {
-                            lbl_Exception_Orders_Allocation_Count.Text = "EXCEPTION " + "(" + dtException_Allocate.Rows[0]["count"].ToString() + ")";
-                        }
-                    }));
-                }
-                else
-                {
+            //                lbl_Exception_Orders_Allocation_Count.Text = "EXCEPTION " + "(" + dtException_Allocate.Rows[0]["count"].ToString() + ")";
+            //            }
+            //            else
+            //            {
+            //                lbl_Exception_Orders_Allocation_Count.Text = "EXCEPTION " + "(" + dtException_Allocate.Rows[0]["count"].ToString() + ")";
+            //            }
+            //        }));
+            //    }
+            //    else
+            //    {
 
-                    if (User_Role_Id == "1")
-                    {
+            //        if (User_Role_Id == "1")
+            //        {
 
-                        lbl_Exception_Orders_Allocation_Count.Text = "EXCEPTION " + "(" + dtException_Allocate.Rows[0]["count"].ToString() + ")";
-                    }
-                    else
-                    {
-                        lbl_Exception_Orders_Allocation_Count.Text = "EXCEPTION " + "(" + dtException_Allocate.Rows[0]["count"].ToString() + ")";
-                    }
-                }
+            //            lbl_Exception_Orders_Allocation_Count.Text = "EXCEPTION " + "(" + dtException_Allocate.Rows[0]["count"].ToString() + ")";
+            //        }
+            //        else
+            //        {
+            //            lbl_Exception_Orders_Allocation_Count.Text = "EXCEPTION " + "(" + dtException_Allocate.Rows[0]["count"].ToString() + ")";
+            //        }
+            //    }
 
 
-            }
-            else
-            {
+            //}
+            //else
+            //{
 
-                //div_mail.Visible = false;
-            }
+            //    //div_mail.Visible = false;
+            //}
 
 
 
@@ -2118,41 +2190,41 @@ namespace Ordermanagement_01
 
             }
             //Order Uploaded
-            Hashtable htOrder_Uploaded = new Hashtable();
-            System.Data.DataTable dtOrder_Uploaded = new System.Data.DataTable();
-            htOrder_Uploaded.Add("@Trans", "UPLOAD_ORDERS_ALLOCATE");
-            htOrder_Uploaded.Add("@Sub_ProcessId", Subprocess_id);
-            dtOrder_Uploaded = dataaccess.ExecuteSP("Sp_Order_Count", htOrder_Uploaded);
-            if (dtOrder_Uploaded.Rows.Count > 0)
-            {
-                //div_Qc_Allocated_Count.Visible = true;
-                //if (User_Role_Id == "1")
-                if (InvokeRequired)
-                {
+            //Hashtable htOrder_Uploaded = new Hashtable();
+            //System.Data.DataTable dtOrder_Uploaded = new System.Data.DataTable();
+            //htOrder_Uploaded.Add("@Trans", "UPLOAD_ORDERS_ALLOCATE");
+            //htOrder_Uploaded.Add("@Sub_ProcessId", Subprocess_id);
+            //dtOrder_Uploaded = dataaccess.ExecuteSP("Sp_Order_Count", htOrder_Uploaded);
+            //if (dtOrder_Uploaded.Rows.Count > 0)
+            //{
+            //    //div_Qc_Allocated_Count.Visible = true;
+            //    //if (User_Role_Id == "1")
+            //    if (InvokeRequired)
+            //    {
 
-                    this.Invoke(new MethodInvoker(delegate
-                    {
-                        lbl_Upload_Orders_Allocate_Count.Text = "UPLOAD" + "(" + dtOrder_Uploaded.Rows[0]["count"].ToString() + ")";
-                    }));
-                }
-                else
-                {
+            //        this.Invoke(new MethodInvoker(delegate
+            //        {
+            //            lbl_Upload_Orders_Allocate_Count.Text = "UPLOAD" + "(" + dtOrder_Uploaded.Rows[0]["count"].ToString() + ")";
+            //        }));
+            //    }
+            //    else
+            //    {
 
-                }
+            //    }
 
-                //}
-                //else if (User_Role_Id == "2")
-                //{
-                //    lbl_Upload_Orders_Allocate_Count.Text = "UPLOAD       " + "(" + dtOrder_Uploaded.Rows[0]["count"].ToString() + ")";
-                //}
+            //    //}
+            //    //else if (User_Role_Id == "2")
+            //    //{
+            //    //    lbl_Upload_Orders_Allocate_Count.Text = "UPLOAD       " + "(" + dtOrder_Uploaded.Rows[0]["count"].ToString() + ")";
+            //    //}
 
 
-            }
-            else
-            {
+            //}
+            //else
+            //{
 
-                //div_Qc_Allocated_Count.Visible = false;
-            }
+            //    //div_Qc_Allocated_Count.Visible = false;
+            //}
 
 
             Hashtable htqcWork = new Hashtable();
@@ -2206,112 +2278,114 @@ namespace Ordermanagement_01
 
 
 
-            Hashtable htsearchPending = new Hashtable();
-            System.Data.DataTable dtsearchPending = new System.Data.DataTable();
-            htsearchPending.Add("@Trans", "ORDER_ALLOCATE_CLARIFICATION");
-            htsearchPending.Add("@User_Id", userid);
-            dtsearchPending = dataaccess.ExecuteSP("Sp_Order_Count", htsearchPending);
-            if (dtsearchPending.Rows.Count > 0)
-            {
-                //div_Web_Work.Visible = true;
-                //if (User_Role_Id == "1")
-                //{
-                if (InvokeRequired)
-                {
+            //Hashtable htsearchPending = new Hashtable();
+            //System.Data.DataTable dtsearchPending = new System.Data.DataTable();
+            //htsearchPending.Add("@Trans", "ORDER_ALLOCATE_CLARIFICATION");
+            //htsearchPending.Add("@User_Id", userid);
+            //dtsearchPending = dataaccess.ExecuteSP("Sp_Order_Count", htsearchPending);
+            //if (dtsearchPending.Rows.Count > 0)
+            //{
+            //    //div_Web_Work.Visible = true;
+            //    //if (User_Role_Id == "1")
+            //    //{
+            //    if (InvokeRequired)
+            //    {
 
-                    this.Invoke(new MethodInvoker(delegate
-                    {
-                        Lbl_Clarification_orders.Text = "CLARIFICATION " + "(" + dtsearchPending.Rows[0]["count"].ToString() + ")";
-                    }));
-                }
-                else
-                {
-                    Lbl_Clarification_orders.Text = "CLARIFICATION " + "(" + dtsearchPending.Rows[0]["count"].ToString() + ")";
+            //        this.Invoke(new MethodInvoker(delegate
+            //        {
+            //            Lbl_Clarification_orders.Text = "CLARIFICATION " + "(" + dtsearchPending.Rows[0]["count"].ToString() + ")";
+            //        }));
+            //    }
+            //    else
+            //    {
+            //        Lbl_Clarification_orders.Text = "CLARIFICATION " + "(" + dtsearchPending.Rows[0]["count"].ToString() + ")";
 
-                }
-                //}
-                //else if (User_Role_Id == "2")
-                //{
-                //    Lbl_Clarification_orders.Text = "CLARIFICATION " + "(" + dtsearchPending.Rows[0]["count"].ToString() + ")";
-                //}
+            //    }
+            //    //}
+            //    //else if (User_Role_Id == "2")
+            //    //{
+            //    //    Lbl_Clarification_orders.Text = "CLARIFICATION " + "(" + dtsearchPending.Rows[0]["count"].ToString() + ")";
+            //    //}
 
-            }
-            else
-            {
+            //}
+            //else
+            //{
 
-                //  div_Web_Work.Visible = false;
-            }
+            //    //  div_Web_Work.Visible = false;
+            //}
 
-            Hashtable htsearchQcPending = new Hashtable();
-            System.Data.DataTable dtsearchQcPending = new System.Data.DataTable();
-            htsearchQcPending.Add("@Trans", "ORDER_ALLOCATE_HOLD");
-            htsearchQcPending.Add("@User_Id", userid);
-            dtsearchQcPending = dataaccess.ExecuteSP("Sp_Order_Count", htsearchQcPending);
-            if (dtsearchQcPending.Rows.Count > 0)
-            {
-                ////div_Web_Work.Visible = true;
-                //if (User_Role_Id == "1")
-                //{
+            //Hashtable htsearchQcPending = new Hashtable();
+            //System.Data.DataTable dtsearchQcPending = new System.Data.DataTable();
+            //htsearchQcPending.Add("@Trans", "ORDER_ALLOCATE_HOLD");
+            //htsearchQcPending.Add("@User_Id", userid);
+            //dtsearchQcPending = dataaccess.ExecuteSP("Sp_Order_Count", htsearchQcPending);
+            //if (dtsearchQcPending.Rows.Count > 0)
+            //{
+            //    ////div_Web_Work.Visible = true;
+            //    //if (User_Role_Id == "1")
+            //    //{
 
-                if (InvokeRequired)
-                {
+            //    if (InvokeRequired)
+            //    {
 
-                    this.Invoke(new MethodInvoker(delegate
-                    {
-                        lbl_Hold.Text = "   HOLD      " + "(" + dtsearchQcPending.Rows[0]["count"].ToString() + ")";
-                    }));
-                }
-                else
-                {
-                    lbl_Hold.Text = "   HOLD      " + "(" + dtsearchQcPending.Rows[0]["count"].ToString() + ")";
+            //        this.Invoke(new MethodInvoker(delegate
+            //        {
+            //            lbl_Hold.Text = "   HOLD      " + "(" + dtsearchQcPending.Rows[0]["count"].ToString() + ")";
+            //        }));
+            //    }
+            //    else
+            //    {
+            //        lbl_Hold.Text = "   HOLD      " + "(" + dtsearchQcPending.Rows[0]["count"].ToString() + ")";
 
-                }
-                //}
-                //else if (User_Role_Id == "2")
-                //{
-                //    lbl_Hold.Text = "   HOLD      " + "(" + dtsearchQcPending.Rows[0]["count"].ToString() + ")";
-                //}
+            //    }
+            //    //}
+            //    //else if (User_Role_Id == "2")
+            //    //{
+            //    //    lbl_Hold.Text = "   HOLD      " + "(" + dtsearchQcPending.Rows[0]["count"].ToString() + ")";
+            //    //}
 
 
-            }
-            else
-            {
+            //}
+            //else
+            //{
 
-                //  div_Web_Work.Visible = false;
-            }
-            Hashtable htTypingPending = new Hashtable();
-            System.Data.DataTable dtTypingPending = new System.Data.DataTable();
-            htTypingPending.Add("@Trans", "ORDER_ALLOCATE_CANCELLED");
-            htTypingPending.Add("@User_Id", userid);
-            dtTypingPending = dataaccess.ExecuteSP("Sp_Order_Count", htTypingPending);
-            if (dtTypingPending.Rows.Count > 0)
-            {
-                //div_Web_Work.Visible = true;
-                //if (User_Role_Id == "1")
-                //{
+            //    //  div_Web_Work.Visible = false;
+            //}
 
-                if (InvokeRequired)
-                {
 
-                    this.Invoke(new MethodInvoker(delegate
-                    {
-                        lbl_CANCELLED.Text = "CANCELLED " + "(" + dtTypingPending.Rows[0]["count"].ToString() + ")";
-                    }));
-                }
-                else
-                {
-                    lbl_CANCELLED.Text = "CANCELLED " + "(" + dtTypingPending.Rows[0]["count"].ToString() + ")";
-                }
-                //}
-                //else if (User_Role_Id == "2")
-                //{
-                //    lbl_CANCELLED.Text = "CANCELLED " + "(" + dtTypingPending.Rows[0]["count"].ToString() + ")";
-                //}
-            }
-            else
-            {
-                //  div_Web_Work.Visible = false;
-            }
+            //Hashtable htTypingPending = new Hashtable();
+            //System.Data.DataTable dtTypingPending = new System.Data.DataTable();
+            //htTypingPending.Add("@Trans", "ORDER_ALLOCATE_CANCELLED");
+            //htTypingPending.Add("@User_Id", userid);
+            //dtTypingPending = dataaccess.ExecuteSP("Sp_Order_Count", htTypingPending);
+            //if (dtTypingPending.Rows.Count > 0)
+            //{
+            //    //div_Web_Work.Visible = true;
+            //    //if (User_Role_Id == "1")
+            //    //{
+
+            //    if (InvokeRequired)
+            //    {
+
+            //        this.Invoke(new MethodInvoker(delegate
+            //        {
+            //            lbl_CANCELLED.Text = "CANCELLED " + "(" + dtTypingPending.Rows[0]["count"].ToString() + ")";
+            //        }));
+            //    }
+            //    else
+            //    {
+            //        lbl_CANCELLED.Text = "CANCELLED " + "(" + dtTypingPending.Rows[0]["count"].ToString() + ")";
+            //    }
+            //    //}
+            //    //else if (User_Role_Id == "2")
+            //    //{
+            //    //    lbl_CANCELLED.Text = "CANCELLED " + "(" + dtTypingPending.Rows[0]["count"].ToString() + ")";
+            //    //}
+            //}
+            //else
+            //{
+            //    //  div_Web_Work.Visible = false;
+            //}
             Hashtable htTypingQcPending = new Hashtable();
             System.Data.DataTable dtTypingQcPending = new System.Data.DataTable();
             htTypingQcPending.Add("@Trans", "TYPING_QC_ORDERS_ALLOCATE_PENDING");
@@ -31758,6 +31832,88 @@ namespace Ordermanagement_01
         {
             Ordermanagement_01.New_Dashboard.Settings.Process_Settings processsettings = new New_Dashboard.Settings.Process_Settings();
             processsettings.Show();
+        }
+
+        private void btn_Image_req_Allocation_Click(object sender, EventArgs e)
+        {
+            SplashScreenManager.ShowForm(this, typeof(Ordermanagement_01.Masters.WaitForm1), true, true, false);
+            try
+            {
+                //   Thread t = new Thread((ThreadStart)delegate { System.Windows.Forms.Application.Run(new Ordermanagement_01.Order_Allocate("SEARCH_ORDER_ALLOCATE", 2, userid, User_Role_Id)); });
+                //   t.SetApartmentState(ApartmentState.STA);
+                //   t.Start();
+                Ordermanagement_01.Order_Allocate Orderallocate = new Order_Allocate("ORDER_ALLOCATE", 27, userid, User_Role_Id, Production_Date);
+                Orderallocate.Show();
+            }
+            catch (Exception ex)
+
+            {
+
+                //Close Wait Form
+                SplashScreenManager.CloseForm(false);
+
+                MessageBox.Show("Error Occured Please Check With Administrator");
+            }
+            finally
+            {
+                //Close Wait Form
+                SplashScreenManager.CloseForm(false);
+            }
+
+        }
+
+        private void btn_DataDepth_Allocation_Click(object sender, EventArgs e)
+        {
+            SplashScreenManager.ShowForm(this, typeof(Ordermanagement_01.Masters.WaitForm1), true, true, false);
+            try
+            {
+                //   Thread t = new Thread((ThreadStart)delegate { System.Windows.Forms.Application.Run(new Ordermanagement_01.Order_Allocate("SEARCH_ORDER_ALLOCATE", 2, userid, User_Role_Id)); });
+                //   t.SetApartmentState(ApartmentState.STA);
+                //   t.Start();
+                Ordermanagement_01.Order_Allocate Orderallocate = new Order_Allocate("ORDER_ALLOCATE", 28, userid, User_Role_Id, Production_Date);
+                Orderallocate.Show();
+            }
+            catch (Exception ex)
+
+            {
+
+                //Close Wait Form
+                SplashScreenManager.CloseForm(false);
+
+                MessageBox.Show("Error Occured Please Check With Administrator");
+            }
+            finally
+            {
+                //Close Wait Form
+                SplashScreenManager.CloseForm(false);
+            }
+        }
+
+        private void btn_Tax_Req_Allocation_Click(object sender, EventArgs e)
+        {
+            SplashScreenManager.ShowForm(this, typeof(Ordermanagement_01.Masters.WaitForm1), true, true, false);
+            try
+            {
+                //   Thread t = new Thread((ThreadStart)delegate { System.Windows.Forms.Application.Run(new Ordermanagement_01.Order_Allocate("SEARCH_ORDER_ALLOCATE", 2, userid, User_Role_Id)); });
+                //   t.SetApartmentState(ApartmentState.STA);
+                //   t.Start();
+                Ordermanagement_01.Order_Allocate Orderallocate = new Order_Allocate("ORDER_ALLOCATE", 29, userid, User_Role_Id, Production_Date);
+                Orderallocate.Show();
+            }
+            catch (Exception ex)
+
+            {
+
+                //Close Wait Form
+                SplashScreenManager.CloseForm(false);
+
+                MessageBox.Show("Error Occured Please Check With Administrator");
+            }
+            finally
+            {
+                //Close Wait Form
+                SplashScreenManager.CloseForm(false);
+            }
         }
 
         private void AdminDashboard_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)

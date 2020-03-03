@@ -100,6 +100,58 @@ public class DataAccess
     #endregion
 
 
+    #region ExecuteSpNew
+
+    public DataTable ExecuteSPNew(string Procedure_Name, IDictionary<string,object> Idict)
+    {
+
+        DataTable dt = new DataTable();
+
+        try
+        {
+
+            using (SqlCommand cmd=new SqlCommand (Procedure_Name,connectionstring))
+            {
+
+                cmd.Connection = connectionstring;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandTimeout = 0;
+
+                connectionstring.Open();
+
+                foreach (KeyValuePair<string,object> kvp in Idict)
+                {
+
+                    cmd.Parameters.Add(kvp.Key.ToString(),kvp.Value);
+                }
+
+                using (SqlDataAdapter adp = new SqlDataAdapter(cmd))
+                {
+
+                    adp.Fill(dt);
+
+                }
+
+                connectionstring.Close();
+            }
+        }
+        catch (Exception ex)
+        {
+            connection_sql = 1;
+            connectionstring.Close();
+
+        }
+        finally
+        {
+            connectionstring.Close();
+
+        }
+
+        return dt;
+    }
+
+    #endregion
+
 
 
     #region ExecuteSPForCRUD
@@ -138,6 +190,7 @@ public class DataAccess
     }
 
     #endregion
+
 
     #region ExecuteSPForScalar
 

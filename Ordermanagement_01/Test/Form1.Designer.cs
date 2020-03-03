@@ -28,8 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.groupBox2.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.Sienna;
+            this.groupBox2.Location = new System.Drawing.Point(12, 131);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(595, 91);
+            this.groupBox2.TabIndex = 21;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "REWORK AND SUPER QC";
             // 
             // label1
             // 
@@ -44,7 +57,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.ClientSize = new System.Drawing.Size(1063, 480);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -56,6 +70,7 @@
 
         #endregion
 
+        internal System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
     }
 }

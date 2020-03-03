@@ -1744,6 +1744,12 @@
     <Compile Include="New Dashboard\Employee\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="New Dashboard\Employee\Document_Check_Type.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New Dashboard\Employee\Document_Check_Type.Designer.cs">
+      <DependentUpon>Document_Check_Type.cs</DependentUpon>
+    </Compile>
     <Compile Include="New Dashboard\Employee\Efficiency Summary.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -3639,6 +3645,9 @@
     <EmbeddedResource Include="New Dashboard\Employee\ChangePassword.resx" />
     <EmbeddedResource Include="New Dashboard\Employee\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New Dashboard\Employee\Document_Check_Type.resx">
+      <DependentUpon>Document_Check_Type.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="New Dashboard\Employee\Efficiency Summary.resx">
       <DependentUpon>Efficiency Summary.cs</DependentUpon>

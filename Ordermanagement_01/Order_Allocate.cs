@@ -124,7 +124,7 @@ namespace Ordermanagement_01
             dtAllocate.Clear();
 
 
-            if (Order_Process == "SEARCH_ORDER_ALLOCATE" || Order_Process == "SEARCH_QC_ORDER_ALLOCATE" || Order_Process == "SEARCH_TYPING_ORDER_ALLOCATE" || Order_Process == "TYPING_QC_ORDERS_ALLOCATE" || Order_Process == "UPLOAD_ORDERS_ALLOCATE" || Order_Process == "FINAL_QC_ORDERS_ALLOCATE" || Order_Process == "EXCEPTION_ORDERS_ALLOCATE")
+            if (Order_Process == "SEARCH_ORDER_ALLOCATE" || Order_Process == "SEARCH_QC_ORDER_ALLOCATE" || Order_Process == "SEARCH_TYPING_ORDER_ALLOCATE" || Order_Process == "TYPING_QC_ORDERS_ALLOCATE" || Order_Process == "UPLOAD_ORDERS_ALLOCATE" || Order_Process == "FINAL_QC_ORDERS_ALLOCATE" || Order_Process == "EXCEPTION_ORDERS_ALLOCATE" || Order_Process=="ORDER_ALLOCATE")
             {
                 dtexport.Rows.Clear();
                 htAllocate.Add("@Trans", "NOT ASSIGNED");
@@ -443,6 +443,27 @@ namespace Ordermanagement_01
             {
 
                 lbl_Header.Text = "TAX ORDER ALLOCATION";
+            }
+            else if (Order_Process == "ORDER_ALLOCATE" || Order_Status_Id == 27)
+            {
+                lbl_Header.Text = "IMAGE REQ ALLOCATION";
+                lbl_Allocate_Task.Visible = true;
+                ddl_Order_Allocate_Task.Visible = true;
+            }
+
+            else if (Order_Process == "ORDER_ALLOCATE" || Order_Status_Id == 28)
+            {
+                lbl_Header.Text = "DATA DEPTH ALLOCATION";
+                lbl_Allocate_Task.Visible = true;
+                ddl_Order_Allocate_Task.Visible = true;
+
+            }
+            else if (Order_Process == "ORDER_ALLOCATE" || Order_Status_Id == 29)
+            {
+                lbl_Header.Text = "TAX REQ ALLOCATION";
+                lbl_Allocate_Task.Visible = true;
+                ddl_Order_Allocate_Task.Visible = true;
+
             }
             // grd_order.VirtualMode = true;
             Gridview_Bind_All_Orders();
@@ -1190,6 +1211,8 @@ namespace Ordermanagement_01
         private void btn_Allocate_Click(object sender, EventArgs e)
         {
             load_Progressbar.Start_progres();
+
+
             int CheckedCount = 0;
             if (Tree_View_UserId != 0)
             {
@@ -4913,7 +4936,7 @@ namespace Ordermanagement_01
             //ddl_UserName.SelectedIndex = 0;
             dbc.BindUserName_Allocate(ddl_UserName);
             dbc.BindOrderStatus(ddl_Order_Status_Reallocate);
-
+            dbc.BindOrderStatus(ddl_Order_Allocate_Task);
             dbc.Bind_Order_Progress_FOR_REAALOCATE(ddl_Status);
             //Gridview_Bind_Orders_Wise_Treeview_Selected();
 

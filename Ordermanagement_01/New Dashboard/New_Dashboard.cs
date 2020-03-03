@@ -73,8 +73,10 @@ namespace Ordermanagement_01.New_Dashboard
                     list.Add("@User_Id", User_Id);
                     var serializedUser = JsonConvert.SerializeObject(list);
                     var content = new StringContent(serializedUser, Encoding.UTF8, "application/json");
+
                     // Token Header Details
                     Tuple<bool, string> Token_Header = ApiToken.Token_HeaderDetails(Client);
+
                     if (Token_Header.Item1 == true)
                     {
                         var result = await Client.PostAsync(Base_Url.Url + "/ProcessingOrders/Processing_Order_Count", content);
@@ -167,7 +169,9 @@ namespace Ordermanagement_01.New_Dashboard
         private void New_Dashboard_Load(object sender, EventArgs e)
         {
             SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
+
             Load_Order_Count();
+
             lbl_Order_Header.Text = "Live Orders Queue";
             Work_Type_Id = 1;
             Bind_Order_Count_Work_Type_Wise(1);

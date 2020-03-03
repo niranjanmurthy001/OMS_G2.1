@@ -28,7 +28,7 @@ namespace Ordermanagement_01.Models
 
                     Client.DefaultRequestHeaders.Clear();
                     Client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                    var body = new List<KeyValuePair<string, string>>
+                    var header = new List<KeyValuePair<string, string>>
                 {
                     new KeyValuePair<string, string>("UserName",User_Name),
                     new KeyValuePair<string, string>("Password",Password),
@@ -36,7 +36,7 @@ namespace Ordermanagement_01.Models
 
                 };
 
-                    var Content = new FormUrlEncodedContent(body);
+                    var Content = new FormUrlEncodedContent(header);
                     HttpResponseMessage response = await Client.PostAsync(Base_Url.Token_Url + "/token", Content);
                     if (response.IsSuccessStatusCode)
                     {

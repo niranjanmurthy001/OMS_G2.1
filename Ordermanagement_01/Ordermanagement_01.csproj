@@ -1719,6 +1719,7 @@
     <Compile Include="Models\OrderDetails.cs" />
     <Compile Include="Models\Order_Passing_Params.cs" />
     <Compile Include="Models\Users.cs" />
+    <Compile Include="New Dashboard\ColumnData.cs" />
     <Compile Include="New Dashboard\Employee\Accuracy Summary.cs">
       <SubType>Form</SubType>
     </Compile>

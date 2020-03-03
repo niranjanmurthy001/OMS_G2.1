@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode4 = new DevExpress.XtraGrid.GridLevelNode();
             this.Grd_Tax_Client_Setup = new DevExpress.XtraEditors.GroupControl();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -57,7 +56,8 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_Clear = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Submit = new DevExpress.XtraEditors.SimpleButton();
-            this.Default_Look_Confirmation = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.Default_Look_Confirmation = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            this.cachedChecklist_Detail_Report1 = new Ordermanagement_01.Reports.CrystalReport.CachedChecklist_Detail_Report();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Tax_Client_Setup)).BeginInit();
             this.Grd_Tax_Client_Setup.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -148,11 +148,11 @@
             // 
             this.Grd_Client_Setup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Grd_Client_Setup.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            gridLevelNode1.RelationName = "Level1";
-            gridLevelNode2.RelationName = "Level2";
+            gridLevelNode3.RelationName = "Level1";
+            gridLevelNode4.RelationName = "Level2";
             this.Grd_Client_Setup.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1,
-            gridLevelNode2});
+            gridLevelNode3,
+            gridLevelNode4});
             this.Grd_Client_Setup.Location = new System.Drawing.Point(0, 0);
             this.Grd_Client_Setup.LookAndFeel.SkinName = "Office 2010 Blue";
             this.Grd_Client_Setup.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -460,8 +460,9 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel7;
-       // private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
+        private Reports.CrystalReport.CachedChecklist_Detail_Report cachedChecklist_Detail_Report1;
+        // private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
         //private DevExpress.XtraWaitForm.ProgressPanel progressPanel1;
-       
+
     }
 }

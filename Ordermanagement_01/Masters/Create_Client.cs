@@ -114,7 +114,7 @@ namespace Ordermanagement_01
                 else
                 {
                     SplashScreenManager.CloseForm(false);
-                    MessageBox.Show("Available ClientNumber's Not Found For These Particular Client Number");
+                    // MessageBox.Show("Available ClientNumber's Not Found For These Particular Client Number");
                     //ListofClientNumbers.Visible = false;
                     //lbl_ClientRefNo.Visible = false;
                     return false;
@@ -124,7 +124,7 @@ namespace Ordermanagement_01
             catch (Exception ex)
             {
                 SplashScreenManager.CloseForm(false);
-               // MessageBox.Show(ex.Message.ToString());
+                // MessageBox.Show(ex.Message.ToString());
                 throw ex;
             }
             finally
@@ -391,6 +391,12 @@ namespace Ordermanagement_01
                 MessageBox.Show("Enter  Email", title);
                 //ddl_Client_district.Focus();
                 //ddl_Client_district.BackColor = System.Drawing.Color.Red;
+                return false;
+            }
+            else if (txt_ClientNumber.Text.Length == 0 && txt_ClientNumber.Text.Length <= 4)
+            {
+                MessageBox.Show(" Enter a Valid Client Number", title);
+                txt_ClientNumber.Focus();
                 return false;
             }
 
@@ -721,8 +727,8 @@ namespace Ordermanagement_01
                 //MessageBox.Show("Please Enter A Valid Client Number");
                 txt_ClientNumber.Focus();
             }
-            if(txt_ClientNumber.Text.Length==0)
-           {
+            if (txt_ClientNumber.Text.Length == 0)
+            {
                 ListofClientNumbers.Visible = false;
                 lbl_ClientRefNo.Visible = false;
 

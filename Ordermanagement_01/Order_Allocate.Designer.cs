@@ -243,7 +243,7 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "SUB CLIENT :";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            //this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -542,7 +542,7 @@
             this.lbl_count_order.TabIndex = 11;
             this.lbl_count_order.Text = "label5";
             this.lbl_count_order.Visible = false;
-            //this.lbl_count_order.Click += new System.EventHandler(this.lbl_count_order_Click);
+            this.lbl_count_order.Click += new System.EventHandler(this.lbl_count_order_Click);
             // 
             // btn_Reallocate
             // 
@@ -584,7 +584,7 @@
             this.ddl_Order_Status_Reallocate.Name = "ddl_Order_Status_Reallocate";
             this.ddl_Order_Status_Reallocate.Size = new System.Drawing.Size(213, 28);
             this.ddl_Order_Status_Reallocate.TabIndex = 22;
-            //this.ddl_Order_Status_Reallocate.SelectedIndexChanged += new System.EventHandler(this.ddl_Order_Status_Reallocate_SelectedIndexChanged);
+            this.ddl_Order_Status_Reallocate.SelectedIndexChanged += new System.EventHandler(this.ddl_Order_Status_Reallocate_SelectedIndexChanged);
             // 
             // ddl_UserName
             // 
@@ -818,7 +818,7 @@
             this.ddl_Status.Name = "ddl_Status";
             this.ddl_Status.Size = new System.Drawing.Size(205, 28);
             this.ddl_Status.TabIndex = 21;
-            //this.ddl_Status.SelectedIndexChanged += new System.EventHandler(this.ddl_Status_SelectedIndexChanged);
+            this.ddl_Status.SelectedIndexChanged += new System.EventHandler(this.ddl_Status_SelectedIndexChanged);
             // 
             // btn_Status
             // 
@@ -974,7 +974,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1362, 698);
             this.tableLayoutPanel1.TabIndex = 148;
-            //this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // panel1
             // 
@@ -1171,7 +1171,7 @@
             this.Chk_All_grd_Clients.TabIndex = 5;
             this.Chk_All_grd_Clients.Text = "All";
             this.Chk_All_grd_Clients.UseVisualStyleBackColor = true;
-            //this.Chk_All_grd_Clients.CheckedChanged += new System.EventHandler(this.Chk_All_grd_Clients_CheckedChanged);
+            this.Chk_All_grd_Clients.CheckedChanged += new System.EventHandler(this.Chk_All_grd_Clients_CheckedChanged);
             this.Chk_All_grd_Clients.Click += new System.EventHandler(this.Chk_All_grd_Clients_Click);
             // 
             // panel10

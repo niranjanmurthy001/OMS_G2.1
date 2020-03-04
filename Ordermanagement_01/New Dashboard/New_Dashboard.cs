@@ -424,7 +424,7 @@ namespace Ordermanagement_01.New_Dashboard
 
         private void Tile_Item_Test_ItemClick(object sender, TileItemEventArgs e)
         {
-            SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
+            SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
             Check_Item_Status("Test");
             lbl_Order_Header.Text = "Test Orders Queue";
             Work_Type_Id = 4;
@@ -500,7 +500,6 @@ namespace Ordermanagement_01.New_Dashboard
                                     Tile_Final_Qc.Frames[0].Elements[1].Text = Result.Final_Qc.ToString();
                                     Tile_Exception.Frames[0].Elements[1].Text = Result.Exception.ToString();
                                     Tile_Upload.Frames[0].Elements[1].Text = Result.Upload.ToString();
-
                                     Title_Image_Req.Frames[0].Elements[1].Text = Result.Image_Request.ToString();
                                     Title_Data_Depth.Frames[0].Elements[1].Text = Result.DataDepth.ToString();
                                     Title_Tax_req.Frames[0].Elements[1].Text = Result.TaxRequest.ToString();
@@ -511,7 +510,6 @@ namespace Ordermanagement_01.New_Dashboard
                             else
                             {
                                 Tile_Live_All.Frames[0].Elements[1].Text = "0";
-
                                 Tile_Search.Frames[0].Elements[1].Text = "0";
                                 Tile_Search_Qc.Frames[0].Elements[1].Text = "0";
                                 Tile_Typing.Frames[0].Elements[1].Text = "0";
@@ -686,6 +684,7 @@ namespace Ordermanagement_01.New_Dashboard
             DataTable dtbulk = new DataTable();
             try
             {
+                SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
                 dtbulk.Clear();
                 dtbulk.Columns.AddRange(new DataColumn[4]
                     {
@@ -727,9 +726,9 @@ namespace Ordermanagement_01.New_Dashboard
 
         private async void Bind_Gridview_Columns_Status()
         {
-            // list
             try
             {
+                SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
                 using (var Client = new HttpClient())
                 {
                     Dictionary<string, object> dist_Column_List = new Dictionary<string, object>();
@@ -740,7 +739,6 @@ namespace Ordermanagement_01.New_Dashboard
                         var Serialised_Data = JsonConvert.SerializeObject(dist_Column_List);
                         var content = new StringContent(Serialised_Data, Encoding.UTF8, "application/json");
                         var result = await Client.PostAsync(Base_Url.Url + "/ProcessingOrders/Get_Column_Data", content);
-
                         if (result.IsSuccessStatusCode)
                         {
                             string DataJsonString = await result.Content.ReadAsStringAsync();
@@ -757,6 +755,7 @@ namespace Ordermanagement_01.New_Dashboard
                                     gridViewOrders.Columns[col.FieldName].VisibleIndex = col.VisibleIndex;
                                     gridViewOrders.Columns[col.FieldName].Visible = col.Visible;
                                 });
+                                SplashScreenManager.CloseForm(false);
                             }
                         }
                     }
@@ -764,8 +763,12 @@ namespace Ordermanagement_01.New_Dashboard
             }
             catch (Exception ex)
             {
-
+                SplashScreenManager.CloseForm(false);
                 throw ex;
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm(false);
             }
         }
         private void tile_Item_Judgement_ItemClick(object sender, TileItemEventArgs e)

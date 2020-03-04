@@ -29,82 +29,81 @@
         private void InitializeComponent()
         {
             DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager2 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, null, true, true);
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle595 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle596 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle597 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle598 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle599 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle600 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle601 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle602 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle603 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle604 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle605 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle606 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle607 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle608 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle609 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle610 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle611 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle612 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle613 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle614 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle615 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle616 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle617 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle618 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle619 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle620 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle622 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle623 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle621 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle624 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle627 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle628 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle625 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle626 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle629 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle630 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle631 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle632 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle633 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle634 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle635 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle638 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle639 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle636 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle637 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle640 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle641 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle642 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle643 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle644 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle645 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle646 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle650 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle651 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle647 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle648 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle649 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle652 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle653 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle654 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle655 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle656 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle657 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle658 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle659 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle660 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle133 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle134 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle135 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle136 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle137 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle138 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle139 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle140 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle141 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle142 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle143 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle144 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle145 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle146 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle147 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle148 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle149 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle150 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle151 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle152 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle153 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle154 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle155 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle156 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle157 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle158 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle160 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle161 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle159 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle162 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle165 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle166 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle163 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle164 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle167 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle168 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle169 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle170 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle171 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle172 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle173 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle176 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle177 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle174 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle175 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle178 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle179 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle180 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle181 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle182 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle183 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle184 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle188 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle189 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle185 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle186 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle187 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle190 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle191 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle192 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle193 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle194 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle195 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle196 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle197 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle198 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDashboard));
             this.toolTip = new System.Windows.Forms.ToolTip();
             this.Gb_Processing = new System.Windows.Forms.GroupBox();
+            this.btn_Tax_Req_Processing = new System.Windows.Forms.Button();
             this.btn_tax_Order_Processing = new System.Windows.Forms.Button();
+            this.btn_DataDepth_Processing = new System.Windows.Forms.Button();
             this.lbl_Exception_Orders_Work_Count = new System.Windows.Forms.Button();
+            this.btn_Image_Request_Processing = new System.Windows.Forms.Button();
             this.lbl_Final_Qc_Orders_Work_Count = new System.Windows.Forms.Button();
-            this.lbl_Exam_Qc = new System.Windows.Forms.Button();
-            this.lbl_Rework_Count = new System.Windows.Forms.Button();
-            this.lbl_Rus_Order_Work_COunt = new System.Windows.Forms.Button();
-            this.lbl_Oms_Abstractor_Processing_Que = new System.Windows.Forms.Button();
             this.lbl_Upload_Order_Work_Count = new System.Windows.Forms.Button();
             this.lbl_Typing_Qc_Orders_Work_Count = new System.Windows.Forms.Button();
             this.lbl_Typing_work_Count = new System.Windows.Forms.Button();
@@ -126,12 +125,18 @@
             this.btn_Order_Cost_Eamil = new System.Windows.Forms.Button();
             this.btn_Order_Cost_Count = new System.Windows.Forms.Button();
             this.btn_Email_Alerts = new System.Windows.Forms.Button();
+            this.lbl_Exam_Qc = new System.Windows.Forms.Button();
+            this.lbl_Rework_Count = new System.Windows.Forms.Button();
+            this.lbl_Rus_Order_Work_COunt = new System.Windows.Forms.Button();
+            this.lbl_Oms_Abstractor_Processing_Que = new System.Windows.Forms.Button();
             this.btn_Internal_Tax_Allocation = new System.Windows.Forms.Button();
             this.lbl_Appstraction = new System.Windows.Forms.Button();
             this.lbl_SearchSuper_Qc_Allocation = new System.Windows.Forms.Button();
             this.lbl_Rework_Allocation = new System.Windows.Forms.Button();
             this.Mainpanel = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lbl_Rework_Pending_Allocation = new System.Windows.Forms.Button();
             this.lbl_Reassigned = new System.Windows.Forms.Button();
@@ -675,16 +680,13 @@
             this.alertControl1 = new DevExpress.XtraBars.Alerter.AlertControl();
             this.buttonIdleReports = new System.Windows.Forms.Button();
             this.buttonIdleMode = new System.Windows.Forms.Button();
-            this.btn_Tax_Req_Processing = new System.Windows.Forms.Button();
-            this.btn_DataDepth_Processing = new System.Windows.Forms.Button();
-            this.btn_Image_Request_Processing = new System.Windows.Forms.Button();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.Gb_Processing.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.Mainpanel.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.Grp_TAT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_DashEmployee_efficency)).BeginInit();
@@ -754,8 +756,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.grid_User)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox7.SuspendLayout();
-            this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
             // splashScreenManager2
@@ -788,13 +788,27 @@
             this.toolTip.SetToolTip(this.Gb_Processing, "Processing queu");
             this.Gb_Processing.Enter += new System.EventHandler(this.Gb_Processing_Enter);
             // 
+            // btn_Tax_Req_Processing
+            // 
+            this.btn_Tax_Req_Processing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_Tax_Req_Processing.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Tax_Req_Processing.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Tax_Req_Processing.ForeColor = System.Drawing.Color.Maroon;
+            this.btn_Tax_Req_Processing.Location = new System.Drawing.Point(316, 19);
+            this.btn_Tax_Req_Processing.Name = "btn_Tax_Req_Processing";
+            this.btn_Tax_Req_Processing.Size = new System.Drawing.Size(121, 53);
+            this.btn_Tax_Req_Processing.TabIndex = 54;
+            this.btn_Tax_Req_Processing.Text = "TAX REQ";
+            this.btn_Tax_Req_Processing.UseVisualStyleBackColor = false;
+            this.btn_Tax_Req_Processing.Click += new System.EventHandler(this.btn_Tax_Req_Processing_Click);
+            // 
             // btn_tax_Order_Processing
             // 
             this.btn_tax_Order_Processing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_tax_Order_Processing.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_tax_Order_Processing.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_tax_Order_Processing.ForeColor = System.Drawing.Color.Maroon;
-            this.btn_tax_Order_Processing.Location = new System.Drawing.Point(1053, 18);
+            this.btn_tax_Order_Processing.Location = new System.Drawing.Point(1050, 19);
             this.btn_tax_Order_Processing.Name = "btn_tax_Order_Processing";
             this.btn_tax_Order_Processing.Size = new System.Drawing.Size(116, 53);
             this.btn_tax_Order_Processing.TabIndex = 48;
@@ -802,13 +816,27 @@
             this.btn_tax_Order_Processing.UseVisualStyleBackColor = false;
             this.btn_tax_Order_Processing.Click += new System.EventHandler(this.btn_tax_Order_Processing_Click);
             // 
+            // btn_DataDepth_Processing
+            // 
+            this.btn_DataDepth_Processing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_DataDepth_Processing.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_DataDepth_Processing.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_DataDepth_Processing.ForeColor = System.Drawing.Color.Maroon;
+            this.btn_DataDepth_Processing.Location = new System.Drawing.Point(191, 19);
+            this.btn_DataDepth_Processing.Name = "btn_DataDepth_Processing";
+            this.btn_DataDepth_Processing.Size = new System.Drawing.Size(121, 53);
+            this.btn_DataDepth_Processing.TabIndex = 53;
+            this.btn_DataDepth_Processing.Text = "DATA DEPTH";
+            this.btn_DataDepth_Processing.UseVisualStyleBackColor = false;
+            this.btn_DataDepth_Processing.Click += new System.EventHandler(this.btn_DataDepth_Processing_Click);
+            // 
             // lbl_Exception_Orders_Work_Count
             // 
             this.lbl_Exception_Orders_Work_Count.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.lbl_Exception_Orders_Work_Count.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lbl_Exception_Orders_Work_Count.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Exception_Orders_Work_Count.ForeColor = System.Drawing.Color.Maroon;
-            this.lbl_Exception_Orders_Work_Count.Location = new System.Drawing.Point(947, 18);
+            this.lbl_Exception_Orders_Work_Count.Location = new System.Drawing.Point(943, 19);
             this.lbl_Exception_Orders_Work_Count.Name = "lbl_Exception_Orders_Work_Count";
             this.lbl_Exception_Orders_Work_Count.Size = new System.Drawing.Size(102, 53);
             this.lbl_Exception_Orders_Work_Count.TabIndex = 47;
@@ -816,13 +844,27 @@
             this.lbl_Exception_Orders_Work_Count.UseVisualStyleBackColor = false;
             this.lbl_Exception_Orders_Work_Count.Click += new System.EventHandler(this.lbl_Exception_Orders_Work_Count_Click);
             // 
+            // btn_Image_Request_Processing
+            // 
+            this.btn_Image_Request_Processing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_Image_Request_Processing.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Image_Request_Processing.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Image_Request_Processing.ForeColor = System.Drawing.Color.Maroon;
+            this.btn_Image_Request_Processing.Location = new System.Drawing.Point(91, 19);
+            this.btn_Image_Request_Processing.Name = "btn_Image_Request_Processing";
+            this.btn_Image_Request_Processing.Size = new System.Drawing.Size(96, 53);
+            this.btn_Image_Request_Processing.TabIndex = 52;
+            this.btn_Image_Request_Processing.Text = "IMAGE REQ";
+            this.btn_Image_Request_Processing.UseVisualStyleBackColor = false;
+            this.btn_Image_Request_Processing.Click += new System.EventHandler(this.btn_Image_Request_Processing_Click);
+            // 
             // lbl_Final_Qc_Orders_Work_Count
             // 
             this.lbl_Final_Qc_Orders_Work_Count.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.lbl_Final_Qc_Orders_Work_Count.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lbl_Final_Qc_Orders_Work_Count.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Final_Qc_Orders_Work_Count.ForeColor = System.Drawing.Color.Maroon;
-            this.lbl_Final_Qc_Orders_Work_Count.Location = new System.Drawing.Point(734, 18);
+            this.lbl_Final_Qc_Orders_Work_Count.Location = new System.Drawing.Point(728, 19);
             this.lbl_Final_Qc_Orders_Work_Count.Name = "lbl_Final_Qc_Orders_Work_Count";
             this.lbl_Final_Qc_Orders_Work_Count.Size = new System.Drawing.Size(105, 53);
             this.lbl_Final_Qc_Orders_Work_Count.TabIndex = 25;
@@ -830,69 +872,13 @@
             this.lbl_Final_Qc_Orders_Work_Count.UseVisualStyleBackColor = false;
             this.lbl_Final_Qc_Orders_Work_Count.Click += new System.EventHandler(this.lbl_Final_Qc_Orders_Work_Count_Click);
             // 
-            // lbl_Exam_Qc
-            // 
-            this.lbl_Exam_Qc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.lbl_Exam_Qc.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_Exam_Qc.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Exam_Qc.ForeColor = System.Drawing.Color.Maroon;
-            this.lbl_Exam_Qc.Location = new System.Drawing.Point(138, 28);
-            this.lbl_Exam_Qc.Name = "lbl_Exam_Qc";
-            this.lbl_Exam_Qc.Size = new System.Drawing.Size(98, 35);
-            this.lbl_Exam_Qc.TabIndex = 24;
-            this.lbl_Exam_Qc.Text = "SUPER QC";
-            this.lbl_Exam_Qc.UseVisualStyleBackColor = false;
-            this.lbl_Exam_Qc.Click += new System.EventHandler(this.lbl_Exam_Qc_Click);
-            // 
-            // lbl_Rework_Count
-            // 
-            this.lbl_Rework_Count.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.lbl_Rework_Count.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_Rework_Count.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Rework_Count.ForeColor = System.Drawing.Color.Maroon;
-            this.lbl_Rework_Count.Location = new System.Drawing.Point(23, 28);
-            this.lbl_Rework_Count.Name = "lbl_Rework_Count";
-            this.lbl_Rework_Count.Size = new System.Drawing.Size(98, 35);
-            this.lbl_Rework_Count.TabIndex = 23;
-            this.lbl_Rework_Count.Text = "REWORK";
-            this.lbl_Rework_Count.UseVisualStyleBackColor = false;
-            this.lbl_Rework_Count.Click += new System.EventHandler(this.lbl_Rework_Count_Click);
-            // 
-            // lbl_Rus_Order_Work_COunt
-            // 
-            this.lbl_Rus_Order_Work_COunt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.lbl_Rus_Order_Work_COunt.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_Rus_Order_Work_COunt.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Rus_Order_Work_COunt.ForeColor = System.Drawing.Color.Maroon;
-            this.lbl_Rus_Order_Work_COunt.Location = new System.Drawing.Point(560, 25);
-            this.lbl_Rus_Order_Work_COunt.Name = "lbl_Rus_Order_Work_COunt";
-            this.lbl_Rus_Order_Work_COunt.Size = new System.Drawing.Size(91, 53);
-            this.lbl_Rus_Order_Work_COunt.TabIndex = 20;
-            this.lbl_Rus_Order_Work_COunt.Text = "RUSH/DUE";
-            this.lbl_Rus_Order_Work_COunt.UseVisualStyleBackColor = false;
-            this.lbl_Rus_Order_Work_COunt.Click += new System.EventHandler(this.lbl_Rus_Order_Work_COunt_Click);
-            // 
-            // lbl_Oms_Abstractor_Processing_Que
-            // 
-            this.lbl_Oms_Abstractor_Processing_Que.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.lbl_Oms_Abstractor_Processing_Que.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_Oms_Abstractor_Processing_Que.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Oms_Abstractor_Processing_Que.ForeColor = System.Drawing.Color.Maroon;
-            this.lbl_Oms_Abstractor_Processing_Que.Location = new System.Drawing.Point(448, 27);
-            this.lbl_Oms_Abstractor_Processing_Que.Name = "lbl_Oms_Abstractor_Processing_Que";
-            this.lbl_Oms_Abstractor_Processing_Que.Size = new System.Drawing.Size(106, 53);
-            this.lbl_Oms_Abstractor_Processing_Que.TabIndex = 19;
-            this.lbl_Oms_Abstractor_Processing_Que.Text = "ABSTRACTOR ";
-            this.lbl_Oms_Abstractor_Processing_Que.UseVisualStyleBackColor = false;
-            this.lbl_Oms_Abstractor_Processing_Que.Click += new System.EventHandler(this.lbl_Oms_Abstractor_Processing_Que_Click);
-            // 
             // lbl_Upload_Order_Work_Count
             // 
             this.lbl_Upload_Order_Work_Count.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.lbl_Upload_Order_Work_Count.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lbl_Upload_Order_Work_Count.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Upload_Order_Work_Count.ForeColor = System.Drawing.Color.Maroon;
-            this.lbl_Upload_Order_Work_Count.Location = new System.Drawing.Point(842, 18);
+            this.lbl_Upload_Order_Work_Count.Location = new System.Drawing.Point(837, 19);
             this.lbl_Upload_Order_Work_Count.Name = "lbl_Upload_Order_Work_Count";
             this.lbl_Upload_Order_Work_Count.Size = new System.Drawing.Size(102, 53);
             this.lbl_Upload_Order_Work_Count.TabIndex = 18;
@@ -906,7 +892,7 @@
             this.lbl_Typing_Qc_Orders_Work_Count.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lbl_Typing_Qc_Orders_Work_Count.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Typing_Qc_Orders_Work_Count.ForeColor = System.Drawing.Color.Maroon;
-            this.lbl_Typing_Qc_Orders_Work_Count.Location = new System.Drawing.Point(636, 18);
+            this.lbl_Typing_Qc_Orders_Work_Count.Location = new System.Drawing.Point(629, 19);
             this.lbl_Typing_Qc_Orders_Work_Count.Name = "lbl_Typing_Qc_Orders_Work_Count";
             this.lbl_Typing_Qc_Orders_Work_Count.Size = new System.Drawing.Size(95, 53);
             this.lbl_Typing_Qc_Orders_Work_Count.TabIndex = 17;
@@ -920,7 +906,7 @@
             this.lbl_Typing_work_Count.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lbl_Typing_work_Count.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Typing_work_Count.ForeColor = System.Drawing.Color.Maroon;
-            this.lbl_Typing_work_Count.Location = new System.Drawing.Point(545, 18);
+            this.lbl_Typing_work_Count.Location = new System.Drawing.Point(537, 19);
             this.lbl_Typing_work_Count.Name = "lbl_Typing_work_Count";
             this.lbl_Typing_work_Count.Size = new System.Drawing.Size(88, 53);
             this.lbl_Typing_work_Count.TabIndex = 16;
@@ -934,7 +920,7 @@
             this.lbl_Search_orders_Qc_Count.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lbl_Search_orders_Qc_Count.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Search_orders_Qc_Count.ForeColor = System.Drawing.Color.Maroon;
-            this.lbl_Search_orders_Qc_Count.Location = new System.Drawing.Point(450, 18);
+            this.lbl_Search_orders_Qc_Count.Location = new System.Drawing.Point(441, 19);
             this.lbl_Search_orders_Qc_Count.Name = "lbl_Search_orders_Qc_Count";
             this.lbl_Search_orders_Qc_Count.Size = new System.Drawing.Size(92, 53);
             this.lbl_Search_orders_Qc_Count.TabIndex = 15;
@@ -1193,6 +1179,62 @@
             this.btn_Email_Alerts.UseVisualStyleBackColor = false;
             this.btn_Email_Alerts.Click += new System.EventHandler(this.btn_Email_Alerts_Click);
             // 
+            // lbl_Exam_Qc
+            // 
+            this.lbl_Exam_Qc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.lbl_Exam_Qc.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lbl_Exam_Qc.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Exam_Qc.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_Exam_Qc.Location = new System.Drawing.Point(138, 28);
+            this.lbl_Exam_Qc.Name = "lbl_Exam_Qc";
+            this.lbl_Exam_Qc.Size = new System.Drawing.Size(98, 35);
+            this.lbl_Exam_Qc.TabIndex = 24;
+            this.lbl_Exam_Qc.Text = "SUPER QC";
+            this.lbl_Exam_Qc.UseVisualStyleBackColor = false;
+            this.lbl_Exam_Qc.Click += new System.EventHandler(this.lbl_Exam_Qc_Click);
+            // 
+            // lbl_Rework_Count
+            // 
+            this.lbl_Rework_Count.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.lbl_Rework_Count.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lbl_Rework_Count.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Rework_Count.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_Rework_Count.Location = new System.Drawing.Point(23, 28);
+            this.lbl_Rework_Count.Name = "lbl_Rework_Count";
+            this.lbl_Rework_Count.Size = new System.Drawing.Size(98, 35);
+            this.lbl_Rework_Count.TabIndex = 23;
+            this.lbl_Rework_Count.Text = "REWORK";
+            this.lbl_Rework_Count.UseVisualStyleBackColor = false;
+            this.lbl_Rework_Count.Click += new System.EventHandler(this.lbl_Rework_Count_Click);
+            // 
+            // lbl_Rus_Order_Work_COunt
+            // 
+            this.lbl_Rus_Order_Work_COunt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.lbl_Rus_Order_Work_COunt.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lbl_Rus_Order_Work_COunt.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Rus_Order_Work_COunt.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_Rus_Order_Work_COunt.Location = new System.Drawing.Point(560, 25);
+            this.lbl_Rus_Order_Work_COunt.Name = "lbl_Rus_Order_Work_COunt";
+            this.lbl_Rus_Order_Work_COunt.Size = new System.Drawing.Size(91, 53);
+            this.lbl_Rus_Order_Work_COunt.TabIndex = 20;
+            this.lbl_Rus_Order_Work_COunt.Text = "RUSH/DUE";
+            this.lbl_Rus_Order_Work_COunt.UseVisualStyleBackColor = false;
+            this.lbl_Rus_Order_Work_COunt.Click += new System.EventHandler(this.lbl_Rus_Order_Work_COunt_Click);
+            // 
+            // lbl_Oms_Abstractor_Processing_Que
+            // 
+            this.lbl_Oms_Abstractor_Processing_Que.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.lbl_Oms_Abstractor_Processing_Que.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lbl_Oms_Abstractor_Processing_Que.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Oms_Abstractor_Processing_Que.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_Oms_Abstractor_Processing_Que.Location = new System.Drawing.Point(448, 27);
+            this.lbl_Oms_Abstractor_Processing_Que.Name = "lbl_Oms_Abstractor_Processing_Que";
+            this.lbl_Oms_Abstractor_Processing_Que.Size = new System.Drawing.Size(106, 53);
+            this.lbl_Oms_Abstractor_Processing_Que.TabIndex = 19;
+            this.lbl_Oms_Abstractor_Processing_Que.Text = "ABSTRACTOR ";
+            this.lbl_Oms_Abstractor_Processing_Que.UseVisualStyleBackColor = false;
+            this.lbl_Oms_Abstractor_Processing_Que.Click += new System.EventHandler(this.lbl_Oms_Abstractor_Processing_Que_Click);
+            // 
             // btn_Internal_Tax_Allocation
             // 
             this.btn_Internal_Tax_Allocation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
@@ -1284,6 +1326,32 @@
             this.groupBox5.TabIndex = 52;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "REWORK AND SUPER QC";
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.lbl_Rework_Count);
+            this.groupBox8.Controls.Add(this.lbl_Exam_Qc);
+            this.groupBox8.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox8.ForeColor = System.Drawing.Color.Sienna;
+            this.groupBox8.Location = new System.Drawing.Point(268, 24);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(261, 70);
+            this.groupBox8.TabIndex = 26;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "PROCESSING";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.lbl_SearchSuper_Qc_Allocation);
+            this.groupBox7.Controls.Add(this.lbl_Rework_Allocation);
+            this.groupBox7.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox7.ForeColor = System.Drawing.Color.Sienna;
+            this.groupBox7.Location = new System.Drawing.Point(10, 24);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(252, 70);
+            this.groupBox7.TabIndex = 25;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "ALLOCATION";
             // 
             // groupBox4
             // 
@@ -3028,30 +3096,30 @@
             this.Grd_OrderTime.AllowUserToDeleteRows = false;
             this.Grd_OrderTime.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.Grd_OrderTime.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle595.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle595.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle595.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle595.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle595.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle595.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle595.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grd_OrderTime.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle595;
+            dataGridViewCellStyle133.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle133.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle133.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle133.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle133.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle133.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle133.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grd_OrderTime.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle133;
             this.Grd_OrderTime.ColumnHeadersHeight = 30;
             this.Grd_OrderTime.Location = new System.Drawing.Point(3, 3);
             this.Grd_OrderTime.Name = "Grd_OrderTime";
             this.Grd_OrderTime.ReadOnly = true;
             this.Grd_OrderTime.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle596.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle596.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle596.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle596.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle596.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle596.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle596.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grd_OrderTime.RowHeadersDefaultCellStyle = dataGridViewCellStyle596;
+            dataGridViewCellStyle134.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle134.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle134.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle134.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle134.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle134.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle134.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grd_OrderTime.RowHeadersDefaultCellStyle = dataGridViewCellStyle134;
             this.Grd_OrderTime.RowHeadersVisible = false;
-            dataGridViewCellStyle597.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Grd_OrderTime.RowsDefaultCellStyle = dataGridViewCellStyle597;
+            dataGridViewCellStyle135.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Grd_OrderTime.RowsDefaultCellStyle = dataGridViewCellStyle135;
             this.Grd_OrderTime.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.Grd_OrderTime.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.SystemColors.Control;
             this.Grd_OrderTime.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3069,30 +3137,30 @@
             // 
             this.gridclient.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.gridclient.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle598.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle598.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle598.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle598.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle598.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle598.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle598.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridclient.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle598;
+            dataGridViewCellStyle136.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle136.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle136.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle136.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle136.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle136.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle136.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridclient.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle136;
             this.gridclient.ColumnHeadersHeight = 30;
             this.gridclient.Location = new System.Drawing.Point(38, 24);
             this.gridclient.Name = "gridclient";
             this.gridclient.ReadOnly = true;
             this.gridclient.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle599.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle599.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle599.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle599.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle599.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle599.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle599.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridclient.RowHeadersDefaultCellStyle = dataGridViewCellStyle599;
+            dataGridViewCellStyle137.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle137.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle137.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle137.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle137.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle137.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle137.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridclient.RowHeadersDefaultCellStyle = dataGridViewCellStyle137;
             this.gridclient.RowHeadersVisible = false;
-            dataGridViewCellStyle600.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.gridclient.RowsDefaultCellStyle = dataGridViewCellStyle600;
+            dataGridViewCellStyle138.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.gridclient.RowsDefaultCellStyle = dataGridViewCellStyle138;
             this.gridclient.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.gridclient.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.SystemColors.Control;
             this.gridclient.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3153,30 +3221,30 @@
             // 
             this.grid_User_Production_Report.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.grid_User_Production_Report.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle601.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle601.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle601.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle601.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle601.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle601.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle601.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid_User_Production_Report.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle601;
+            dataGridViewCellStyle139.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle139.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle139.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle139.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle139.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle139.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle139.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid_User_Production_Report.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle139;
             this.grid_User_Production_Report.ColumnHeadersHeight = 30;
             this.grid_User_Production_Report.Location = new System.Drawing.Point(6, 189);
             this.grid_User_Production_Report.Name = "grid_User_Production_Report";
             this.grid_User_Production_Report.ReadOnly = true;
             this.grid_User_Production_Report.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle602.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle602.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle602.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle602.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle602.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle602.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle602.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid_User_Production_Report.RowHeadersDefaultCellStyle = dataGridViewCellStyle602;
+            dataGridViewCellStyle140.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle140.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle140.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle140.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle140.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle140.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle140.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid_User_Production_Report.RowHeadersDefaultCellStyle = dataGridViewCellStyle140;
             this.grid_User_Production_Report.RowHeadersVisible = false;
-            dataGridViewCellStyle603.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.grid_User_Production_Report.RowsDefaultCellStyle = dataGridViewCellStyle603;
+            dataGridViewCellStyle141.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.grid_User_Production_Report.RowsDefaultCellStyle = dataGridViewCellStyle141;
             this.grid_User_Production_Report.Size = new System.Drawing.Size(1308, 330);
             this.grid_User_Production_Report.TabIndex = 95;
             this.grid_User_Production_Report.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_User_Production_Report_CellClick);
@@ -3444,30 +3512,30 @@
             // 
             this.grd_My_Client.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.grd_My_Client.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle604.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle604.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle604.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle604.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle604.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle604.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle604.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grd_My_Client.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle604;
+            dataGridViewCellStyle142.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle142.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle142.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle142.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle142.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle142.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle142.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_My_Client.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle142;
             this.grd_My_Client.ColumnHeadersHeight = 30;
             this.grd_My_Client.Location = new System.Drawing.Point(21, 97);
             this.grd_My_Client.Name = "grd_My_Client";
             this.grd_My_Client.ReadOnly = true;
             this.grd_My_Client.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle605.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle605.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle605.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle605.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle605.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle605.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle605.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grd_My_Client.RowHeadersDefaultCellStyle = dataGridViewCellStyle605;
+            dataGridViewCellStyle143.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle143.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle143.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle143.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle143.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle143.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle143.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_My_Client.RowHeadersDefaultCellStyle = dataGridViewCellStyle143;
             this.grd_My_Client.RowHeadersVisible = false;
-            dataGridViewCellStyle606.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.grd_My_Client.RowsDefaultCellStyle = dataGridViewCellStyle606;
+            dataGridViewCellStyle144.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.grd_My_Client.RowsDefaultCellStyle = dataGridViewCellStyle144;
             this.grd_My_Client.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.grd_My_Client.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.SystemColors.Control;
             this.grd_My_Client.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3505,30 +3573,30 @@
             // 
             this.Grid_My_Report.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.Grid_My_Report.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle607.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle607.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle607.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle607.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle607.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle607.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle607.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_My_Report.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle607;
+            dataGridViewCellStyle145.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle145.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle145.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle145.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle145.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle145.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle145.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_My_Report.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle145;
             this.Grid_My_Report.ColumnHeadersHeight = 30;
             this.Grid_My_Report.Location = new System.Drawing.Point(22, 80);
             this.Grid_My_Report.Name = "Grid_My_Report";
             this.Grid_My_Report.ReadOnly = true;
             this.Grid_My_Report.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle608.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle608.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle608.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle608.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle608.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle608.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle608.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_My_Report.RowHeadersDefaultCellStyle = dataGridViewCellStyle608;
+            dataGridViewCellStyle146.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle146.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle146.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle146.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle146.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle146.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle146.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_My_Report.RowHeadersDefaultCellStyle = dataGridViewCellStyle146;
             this.Grid_My_Report.RowHeadersVisible = false;
-            dataGridViewCellStyle609.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Grid_My_Report.RowsDefaultCellStyle = dataGridViewCellStyle609;
+            dataGridViewCellStyle147.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Grid_My_Report.RowsDefaultCellStyle = dataGridViewCellStyle147;
             this.Grid_My_Report.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.Grid_My_Report.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.SystemColors.Control;
             this.Grid_My_Report.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3701,39 +3769,39 @@
             // 
             this.grd_My_Emp_Production.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.grd_My_Emp_Production.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle610.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle610.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle610.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle610.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle610.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle610.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle610.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grd_My_Emp_Production.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle610;
+            dataGridViewCellStyle148.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle148.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle148.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle148.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle148.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle148.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle148.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_My_Emp_Production.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle148;
             this.grd_My_Emp_Production.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle611.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle611.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle611.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle611.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle611.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle611.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle611.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grd_My_Emp_Production.DefaultCellStyle = dataGridViewCellStyle611;
+            dataGridViewCellStyle149.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle149.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle149.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle149.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle149.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle149.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle149.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grd_My_Emp_Production.DefaultCellStyle = dataGridViewCellStyle149;
             this.grd_My_Emp_Production.Location = new System.Drawing.Point(9, 178);
             this.grd_My_Emp_Production.Name = "grd_My_Emp_Production";
             this.grd_My_Emp_Production.ReadOnly = true;
             this.grd_My_Emp_Production.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle612.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle612.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle612.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle612.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle612.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle612.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle612.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grd_My_Emp_Production.RowHeadersDefaultCellStyle = dataGridViewCellStyle612;
+            dataGridViewCellStyle150.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle150.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle150.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle150.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle150.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle150.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle150.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_My_Emp_Production.RowHeadersDefaultCellStyle = dataGridViewCellStyle150;
             this.grd_My_Emp_Production.RowHeadersVisible = false;
-            dataGridViewCellStyle613.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle613.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grd_My_Emp_Production.RowsDefaultCellStyle = dataGridViewCellStyle613;
+            dataGridViewCellStyle151.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle151.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_My_Emp_Production.RowsDefaultCellStyle = dataGridViewCellStyle151;
             this.grd_My_Emp_Production.Size = new System.Drawing.Size(1308, 354);
             this.grd_My_Emp_Production.TabIndex = 115;
             this.grd_My_Emp_Production.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_My_Emp_Production_CellClick);
@@ -3985,31 +4053,31 @@
             this.grd_My_Reports.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.grd_My_Reports.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.grd_My_Reports.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle614.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle614.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle614.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle614.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle614.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle614.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle614.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grd_My_Reports.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle614;
+            dataGridViewCellStyle152.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle152.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle152.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle152.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle152.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle152.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle152.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_My_Reports.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle152;
             this.grd_My_Reports.ColumnHeadersHeight = 30;
             this.grd_My_Reports.Location = new System.Drawing.Point(-4, -4);
             this.grd_My_Reports.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.grd_My_Reports.Name = "grd_My_Reports";
             this.grd_My_Reports.ReadOnly = true;
             this.grd_My_Reports.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle615.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle615.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle615.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle615.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle615.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle615.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle615.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grd_My_Reports.RowHeadersDefaultCellStyle = dataGridViewCellStyle615;
+            dataGridViewCellStyle153.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle153.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle153.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle153.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle153.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle153.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle153.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_My_Reports.RowHeadersDefaultCellStyle = dataGridViewCellStyle153;
             this.grd_My_Reports.RowHeadersVisible = false;
-            dataGridViewCellStyle616.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.grd_My_Reports.RowsDefaultCellStyle = dataGridViewCellStyle616;
+            dataGridViewCellStyle154.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.grd_My_Reports.RowsDefaultCellStyle = dataGridViewCellStyle154;
             this.grd_My_Reports.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.grd_My_Reports.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.SystemColors.Control;
             this.grd_My_Reports.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Ebrima", 9.75F);
@@ -4404,30 +4472,30 @@
             this.Grid_Score.AllowUserToDeleteRows = false;
             this.Grid_Score.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.Grid_Score.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle617.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle617.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle617.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle617.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle617.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle617.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle617.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_Score.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle617;
+            dataGridViewCellStyle155.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle155.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle155.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle155.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle155.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle155.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle155.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_Score.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle155;
             this.Grid_Score.ColumnHeadersHeight = 30;
             this.Grid_Score.Location = new System.Drawing.Point(0, 0);
             this.Grid_Score.Name = "Grid_Score";
             this.Grid_Score.ReadOnly = true;
             this.Grid_Score.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle618.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle618.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle618.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle618.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle618.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle618.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle618.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_Score.RowHeadersDefaultCellStyle = dataGridViewCellStyle618;
+            dataGridViewCellStyle156.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle156.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle156.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle156.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle156.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle156.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle156.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_Score.RowHeadersDefaultCellStyle = dataGridViewCellStyle156;
             this.Grid_Score.RowHeadersVisible = false;
-            dataGridViewCellStyle619.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Grid_Score.RowsDefaultCellStyle = dataGridViewCellStyle619;
+            dataGridViewCellStyle157.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Grid_Score.RowsDefaultCellStyle = dataGridViewCellStyle157;
             this.Grid_Score.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.Grid_Score.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.SystemColors.Control;
             this.Grid_Score.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -4447,14 +4515,14 @@
             this.Grd_Score_Board.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Grd_Score_Board.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.Grd_Score_Board.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle620.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle620.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle620.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle620.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle620.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle620.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle620.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grd_Score_Board.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle620;
+            dataGridViewCellStyle158.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle158.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle158.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle158.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle158.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle158.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle158.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grd_Score_Board.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle158;
             this.Grd_Score_Board.ColumnHeadersHeight = 30;
             this.Grd_Score_Board.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column2,
@@ -4494,22 +4562,22 @@
             this.Grd_Score_Board.Name = "Grd_Score_Board";
             this.Grd_Score_Board.ReadOnly = true;
             this.Grd_Score_Board.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle622.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle622.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle622.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle622.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle622.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle622.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle622.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grd_Score_Board.RowHeadersDefaultCellStyle = dataGridViewCellStyle622;
+            dataGridViewCellStyle160.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle160.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle160.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle160.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle160.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle160.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle160.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grd_Score_Board.RowHeadersDefaultCellStyle = dataGridViewCellStyle160;
             this.Grd_Score_Board.RowHeadersVisible = false;
-            dataGridViewCellStyle623.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle623.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle623.Font = new System.Drawing.Font("Ebrima", 9.75F);
-            dataGridViewCellStyle623.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle623.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle623.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.Grd_Score_Board.RowsDefaultCellStyle = dataGridViewCellStyle623;
+            dataGridViewCellStyle161.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle161.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle161.Font = new System.Drawing.Font("Ebrima", 9.75F);
+            dataGridViewCellStyle161.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle161.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle161.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.Grd_Score_Board.RowsDefaultCellStyle = dataGridViewCellStyle161;
             this.Grd_Score_Board.RowTemplate.Height = 26;
             this.Grd_Score_Board.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.Grd_Score_Board.Size = new System.Drawing.Size(187, 44);
@@ -4713,11 +4781,11 @@
             // 
             // User_id
             // 
-            dataGridViewCellStyle621.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle621.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle621.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle621.SelectionForeColor = System.Drawing.Color.Red;
-            this.User_id.DefaultCellStyle = dataGridViewCellStyle621;
+            dataGridViewCellStyle159.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle159.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle159.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle159.SelectionForeColor = System.Drawing.Color.Red;
+            this.User_id.DefaultCellStyle = dataGridViewCellStyle159;
             this.User_id.HeaderText = "User_id";
             this.User_id.Name = "User_id";
             this.User_id.ReadOnly = true;
@@ -4942,14 +5010,14 @@
             this.grd_Rework_Scoreboard.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.grd_Rework_Scoreboard.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.grd_Rework_Scoreboard.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle624.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle624.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle624.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle624.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle624.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle624.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle624.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grd_Rework_Scoreboard.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle624;
+            dataGridViewCellStyle162.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle162.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle162.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle162.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle162.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle162.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle162.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_Rework_Scoreboard.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle162;
             this.grd_Rework_Scoreboard.ColumnHeadersHeight = 30;
             this.grd_Rework_Scoreboard.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -4962,22 +5030,22 @@
             this.grd_Rework_Scoreboard.Name = "grd_Rework_Scoreboard";
             this.grd_Rework_Scoreboard.ReadOnly = true;
             this.grd_Rework_Scoreboard.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle627.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle627.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle627.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle627.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle627.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle627.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle627.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grd_Rework_Scoreboard.RowHeadersDefaultCellStyle = dataGridViewCellStyle627;
+            dataGridViewCellStyle165.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle165.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle165.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle165.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle165.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle165.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle165.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_Rework_Scoreboard.RowHeadersDefaultCellStyle = dataGridViewCellStyle165;
             this.grd_Rework_Scoreboard.RowHeadersVisible = false;
-            dataGridViewCellStyle628.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle628.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle628.Font = new System.Drawing.Font("Ebrima", 9.75F);
-            dataGridViewCellStyle628.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle628.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle628.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.grd_Rework_Scoreboard.RowsDefaultCellStyle = dataGridViewCellStyle628;
+            dataGridViewCellStyle166.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle166.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle166.Font = new System.Drawing.Font("Ebrima", 9.75F);
+            dataGridViewCellStyle166.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle166.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle166.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.grd_Rework_Scoreboard.RowsDefaultCellStyle = dataGridViewCellStyle166;
             this.grd_Rework_Scoreboard.RowTemplate.Height = 26;
             this.grd_Rework_Scoreboard.Size = new System.Drawing.Size(580, 481);
             this.grd_Rework_Scoreboard.TabIndex = 80;
@@ -4985,8 +5053,8 @@
             // 
             // dataGridViewTextBoxColumn1
             // 
-            dataGridViewCellStyle625.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle625;
+            dataGridViewCellStyle163.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle163;
             this.dataGridViewTextBoxColumn1.FillWeight = 75.08664F;
             this.dataGridViewTextBoxColumn1.HeaderText = "RANK";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
@@ -5012,11 +5080,11 @@
             // 
             // dataGridViewTextBoxColumn3
             // 
-            dataGridViewCellStyle626.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle626.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle626.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle626.SelectionForeColor = System.Drawing.Color.Red;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle626;
+            dataGridViewCellStyle164.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle164.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle164.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle164.SelectionForeColor = System.Drawing.Color.Red;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle164;
             this.dataGridViewTextBoxColumn3.HeaderText = "User_id";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
@@ -5074,30 +5142,30 @@
             // 
             this.grd_Rework_Reports.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.grd_Rework_Reports.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle629.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle629.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle629.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle629.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle629.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle629.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle629.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grd_Rework_Reports.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle629;
+            dataGridViewCellStyle167.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle167.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle167.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle167.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle167.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle167.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle167.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_Rework_Reports.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle167;
             this.grd_Rework_Reports.ColumnHeadersHeight = 30;
             this.grd_Rework_Reports.Location = new System.Drawing.Point(227, 253);
             this.grd_Rework_Reports.Name = "grd_Rework_Reports";
             this.grd_Rework_Reports.ReadOnly = true;
             this.grd_Rework_Reports.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle630.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle630.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle630.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle630.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle630.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle630.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle630.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grd_Rework_Reports.RowHeadersDefaultCellStyle = dataGridViewCellStyle630;
+            dataGridViewCellStyle168.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle168.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle168.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle168.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle168.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle168.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle168.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_Rework_Reports.RowHeadersDefaultCellStyle = dataGridViewCellStyle168;
             this.grd_Rework_Reports.RowHeadersVisible = false;
-            dataGridViewCellStyle631.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.grd_Rework_Reports.RowsDefaultCellStyle = dataGridViewCellStyle631;
+            dataGridViewCellStyle169.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.grd_Rework_Reports.RowsDefaultCellStyle = dataGridViewCellStyle169;
             this.grd_Rework_Reports.Size = new System.Drawing.Size(1086, 266);
             this.grd_Rework_Reports.TabIndex = 155;
             this.grd_Rework_Reports.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_Rework_Reports_CellClick);
@@ -5109,7 +5177,7 @@
             this.lbl_All_report_notfound.AutoSize = true;
             this.lbl_All_report_notfound.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_All_report_notfound.ForeColor = System.Drawing.Color.Red;
-            this.lbl_All_report_notfound.Location = new System.Drawing.Point(658, 669);
+            this.lbl_All_report_notfound.Location = new System.Drawing.Point(658, 671);
             this.lbl_All_report_notfound.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_All_report_notfound.Name = "lbl_All_report_notfound";
             this.lbl_All_report_notfound.Size = new System.Drawing.Size(119, 20);
@@ -5124,7 +5192,7 @@
             this.cr_Rework_AllReportsViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.cr_Rework_AllReportsViewer.Cursor = System.Windows.Forms.Cursors.Default;
             this.cr_Rework_AllReportsViewer.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cr_Rework_AllReportsViewer.Location = new System.Drawing.Point(232, 306);
+            this.cr_Rework_AllReportsViewer.Location = new System.Drawing.Point(232, 308);
             this.cr_Rework_AllReportsViewer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cr_Rework_AllReportsViewer.Name = "cr_Rework_AllReportsViewer";
             this.cr_Rework_AllReportsViewer.ShowGroupTreeButton = false;
@@ -5204,7 +5272,7 @@
             this.ddl_Rework_Task.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_Rework_Task.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_Rework_Task.FormattingEnabled = true;
-            this.ddl_Rework_Task.Location = new System.Drawing.Point(995, 160);
+            this.ddl_Rework_Task.Location = new System.Drawing.Point(995, 162);
             this.ddl_Rework_Task.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ddl_Rework_Task.Name = "ddl_Rework_Task";
             this.ddl_Rework_Task.Size = new System.Drawing.Size(164, 27);
@@ -5215,7 +5283,7 @@
             this.lbl_All_Rework_Task.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_All_Rework_Task.AutoSize = true;
             this.lbl_All_Rework_Task.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_All_Rework_Task.Location = new System.Drawing.Point(942, 160);
+            this.lbl_All_Rework_Task.Location = new System.Drawing.Point(942, 162);
             this.lbl_All_Rework_Task.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_All_Rework_Task.Name = "lbl_All_Rework_Task";
             this.lbl_All_Rework_Task.Size = new System.Drawing.Size(35, 19);
@@ -5252,7 +5320,7 @@
             this.ddl_Rework_Subprocess.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_Rework_Subprocess.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_Rework_Subprocess.FormattingEnabled = true;
-            this.ddl_Rework_Subprocess.Location = new System.Drawing.Point(705, 160);
+            this.ddl_Rework_Subprocess.Location = new System.Drawing.Point(705, 162);
             this.ddl_Rework_Subprocess.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ddl_Rework_Subprocess.Name = "ddl_Rework_Subprocess";
             this.ddl_Rework_Subprocess.Size = new System.Drawing.Size(169, 27);
@@ -5263,7 +5331,7 @@
             this.lbl_All_Rework_Subpro.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_All_Rework_Subpro.AutoSize = true;
             this.lbl_All_Rework_Subpro.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_All_Rework_Subpro.Location = new System.Drawing.Point(584, 160);
+            this.lbl_All_Rework_Subpro.Location = new System.Drawing.Point(584, 162);
             this.lbl_All_Rework_Subpro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_All_Rework_Subpro.Name = "lbl_All_Rework_Subpro";
             this.lbl_All_Rework_Subpro.Size = new System.Drawing.Size(106, 19);
@@ -5276,7 +5344,7 @@
             this.ddl_Rework_client.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_Rework_client.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_Rework_client.FormattingEnabled = true;
-            this.ddl_Rework_client.Location = new System.Drawing.Point(403, 160);
+            this.ddl_Rework_client.Location = new System.Drawing.Point(403, 162);
             this.ddl_Rework_client.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ddl_Rework_client.Name = "ddl_Rework_client";
             this.ddl_Rework_client.Size = new System.Drawing.Size(173, 27);
@@ -5288,7 +5356,7 @@
             this.lbl_All_Rework_client.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_All_Rework_client.AutoSize = true;
             this.lbl_All_Rework_client.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_All_Rework_client.Location = new System.Drawing.Point(316, 160);
+            this.lbl_All_Rework_client.Location = new System.Drawing.Point(316, 162);
             this.lbl_All_Rework_client.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_All_Rework_client.Name = "lbl_All_Rework_client";
             this.lbl_All_Rework_client.Size = new System.Drawing.Size(79, 19);
@@ -5301,7 +5369,7 @@
             this.dtp_Rework_Todate.CustomFormat = "MM/DD/YYYY";
             this.dtp_Rework_Todate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_Rework_Todate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_Rework_Todate.Location = new System.Drawing.Point(918, 66);
+            this.dtp_Rework_Todate.Location = new System.Drawing.Point(918, 68);
             this.dtp_Rework_Todate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dtp_Rework_Todate.Name = "dtp_Rework_Todate";
             this.dtp_Rework_Todate.Size = new System.Drawing.Size(170, 24);
@@ -5314,7 +5382,7 @@
             this.dtp_Rework_Fromdate.CustomFormat = "MM/DD/YYYY";
             this.dtp_Rework_Fromdate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_Rework_Fromdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_Rework_Fromdate.Location = new System.Drawing.Point(604, 66);
+            this.dtp_Rework_Fromdate.Location = new System.Drawing.Point(604, 68);
             this.dtp_Rework_Fromdate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dtp_Rework_Fromdate.Name = "dtp_Rework_Fromdate";
             this.dtp_Rework_Fromdate.Size = new System.Drawing.Size(173, 24);
@@ -5326,7 +5394,7 @@
             this.lbl_AllTodate.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_AllTodate.AutoSize = true;
             this.lbl_AllTodate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_AllTodate.Location = new System.Drawing.Point(829, 71);
+            this.lbl_AllTodate.Location = new System.Drawing.Point(829, 73);
             this.lbl_AllTodate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_AllTodate.Name = "lbl_AllTodate";
             this.lbl_AllTodate.Size = new System.Drawing.Size(59, 19);
@@ -5338,7 +5406,7 @@
             this.lbl_AllFromDate.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_AllFromDate.AutoSize = true;
             this.lbl_AllFromDate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_AllFromDate.Location = new System.Drawing.Point(502, 71);
+            this.lbl_AllFromDate.Location = new System.Drawing.Point(502, 73);
             this.lbl_AllFromDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_AllFromDate.Name = "lbl_AllFromDate";
             this.lbl_AllFromDate.Size = new System.Drawing.Size(74, 19);
@@ -5394,7 +5462,7 @@
             this.lbl_Record_notfound.AutoSize = true;
             this.lbl_Record_notfound.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Record_notfound.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Record_notfound.Location = new System.Drawing.Point(616, 540);
+            this.lbl_Record_notfound.Location = new System.Drawing.Point(616, 542);
             this.lbl_Record_notfound.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Record_notfound.Name = "lbl_Record_notfound";
             this.lbl_Record_notfound.Size = new System.Drawing.Size(243, 20);
@@ -5409,7 +5477,7 @@
             this.cr_Rework_ReportsViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.cr_Rework_ReportsViewer.Cursor = System.Windows.Forms.Cursors.Default;
             this.cr_Rework_ReportsViewer.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cr_Rework_ReportsViewer.Location = new System.Drawing.Point(228, 268);
+            this.cr_Rework_ReportsViewer.Location = new System.Drawing.Point(228, 270);
             this.cr_Rework_ReportsViewer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cr_Rework_ReportsViewer.Name = "cr_Rework_ReportsViewer";
             this.cr_Rework_ReportsViewer.ShowGroupTreeButton = false;
@@ -5433,31 +5501,31 @@
             this.grd_Rework_MyReport.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.grd_Rework_MyReport.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.grd_Rework_MyReport.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle632.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle632.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle632.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle632.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle632.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle632.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle632.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grd_Rework_MyReport.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle632;
+            dataGridViewCellStyle170.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle170.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle170.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle170.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle170.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle170.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle170.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_Rework_MyReport.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle170;
             this.grd_Rework_MyReport.ColumnHeadersHeight = 30;
-            this.grd_Rework_MyReport.Location = new System.Drawing.Point(228, 292);
+            this.grd_Rework_MyReport.Location = new System.Drawing.Point(228, 294);
             this.grd_Rework_MyReport.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.grd_Rework_MyReport.Name = "grd_Rework_MyReport";
             this.grd_Rework_MyReport.ReadOnly = true;
             this.grd_Rework_MyReport.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle633.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle633.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle633.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle633.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle633.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle633.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle633.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grd_Rework_MyReport.RowHeadersDefaultCellStyle = dataGridViewCellStyle633;
+            dataGridViewCellStyle171.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle171.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle171.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle171.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle171.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle171.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle171.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_Rework_MyReport.RowHeadersDefaultCellStyle = dataGridViewCellStyle171;
             this.grd_Rework_MyReport.RowHeadersVisible = false;
-            dataGridViewCellStyle634.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.grd_Rework_MyReport.RowsDefaultCellStyle = dataGridViewCellStyle634;
+            dataGridViewCellStyle172.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.grd_Rework_MyReport.RowsDefaultCellStyle = dataGridViewCellStyle172;
             this.grd_Rework_MyReport.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.grd_Rework_MyReport.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.SystemColors.Control;
             this.grd_Rework_MyReport.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Ebrima", 9.75F);
@@ -5477,7 +5545,7 @@
             this.ddl_MyTask.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_MyTask.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_MyTask.FormattingEnabled = true;
-            this.ddl_MyTask.Location = new System.Drawing.Point(995, 163);
+            this.ddl_MyTask.Location = new System.Drawing.Point(995, 165);
             this.ddl_MyTask.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ddl_MyTask.Name = "ddl_MyTask";
             this.ddl_MyTask.Size = new System.Drawing.Size(164, 27);
@@ -5546,7 +5614,7 @@
             this.lbl_Rework_Myerrror.AutoSize = true;
             this.lbl_Rework_Myerrror.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Rework_Myerrror.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Rework_Myerrror.Location = new System.Drawing.Point(1022, 540);
+            this.lbl_Rework_Myerrror.Location = new System.Drawing.Point(1022, 542);
             this.lbl_Rework_Myerrror.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Rework_Myerrror.Name = "lbl_Rework_Myerrror";
             this.lbl_Rework_Myerrror.Size = new System.Drawing.Size(240, 20);
@@ -5559,7 +5627,7 @@
             this.lbl_Rework_MyTask.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_Rework_MyTask.AutoSize = true;
             this.lbl_Rework_MyTask.Font = new System.Drawing.Font("Ebrima", 9F);
-            this.lbl_Rework_MyTask.Location = new System.Drawing.Point(952, 163);
+            this.lbl_Rework_MyTask.Location = new System.Drawing.Point(952, 165);
             this.lbl_Rework_MyTask.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Rework_MyTask.Name = "lbl_Rework_MyTask";
             this.lbl_Rework_MyTask.Size = new System.Drawing.Size(35, 19);
@@ -5572,7 +5640,7 @@
             this.ddl_MySubprocess.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_MySubprocess.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_MySubprocess.FormattingEnabled = true;
-            this.ddl_MySubprocess.Location = new System.Drawing.Point(702, 163);
+            this.ddl_MySubprocess.Location = new System.Drawing.Point(702, 165);
             this.ddl_MySubprocess.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ddl_MySubprocess.Name = "ddl_MySubprocess";
             this.ddl_MySubprocess.Size = new System.Drawing.Size(169, 27);
@@ -5584,7 +5652,7 @@
             this.lbl_Rework_Mysubpro.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_Rework_Mysubpro.AutoSize = true;
             this.lbl_Rework_Mysubpro.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Rework_Mysubpro.Location = new System.Drawing.Point(588, 163);
+            this.lbl_Rework_Mysubpro.Location = new System.Drawing.Point(588, 165);
             this.lbl_Rework_Mysubpro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Rework_Mysubpro.Name = "lbl_Rework_Mysubpro";
             this.lbl_Rework_Mysubpro.Size = new System.Drawing.Size(106, 19);
@@ -5609,7 +5677,7 @@
             this.ddl_MyClient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_MyClient.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_MyClient.FormattingEnabled = true;
-            this.ddl_MyClient.Location = new System.Drawing.Point(406, 163);
+            this.ddl_MyClient.Location = new System.Drawing.Point(406, 165);
             this.ddl_MyClient.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ddl_MyClient.Name = "ddl_MyClient";
             this.ddl_MyClient.Size = new System.Drawing.Size(173, 27);
@@ -5632,7 +5700,7 @@
             this.lbl_Rework_Myclient.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_Rework_Myclient.AutoSize = true;
             this.lbl_Rework_Myclient.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Rework_Myclient.Location = new System.Drawing.Point(309, 163);
+            this.lbl_Rework_Myclient.Location = new System.Drawing.Point(309, 165);
             this.lbl_Rework_Myclient.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Rework_Myclient.Name = "lbl_Rework_Myclient";
             this.lbl_Rework_Myclient.Size = new System.Drawing.Size(79, 19);
@@ -5645,7 +5713,7 @@
             this.dtp_MyTodate.CustomFormat = "MM/DD/YYYY";
             this.dtp_MyTodate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_MyTodate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_MyTodate.Location = new System.Drawing.Point(886, 59);
+            this.dtp_MyTodate.Location = new System.Drawing.Point(886, 61);
             this.dtp_MyTodate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dtp_MyTodate.Name = "dtp_MyTodate";
             this.dtp_MyTodate.Size = new System.Drawing.Size(170, 24);
@@ -5658,7 +5726,7 @@
             this.dtp_MyFromdate.CustomFormat = "MM/DD/YYYY";
             this.dtp_MyFromdate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_MyFromdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_MyFromdate.Location = new System.Drawing.Point(592, 59);
+            this.dtp_MyFromdate.Location = new System.Drawing.Point(592, 61);
             this.dtp_MyFromdate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dtp_MyFromdate.Name = "dtp_MyFromdate";
             this.dtp_MyFromdate.Size = new System.Drawing.Size(173, 24);
@@ -5670,7 +5738,7 @@
             this.lbl_Rework_Todate.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_Rework_Todate.AutoSize = true;
             this.lbl_Rework_Todate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Rework_Todate.Location = new System.Drawing.Point(812, 59);
+            this.lbl_Rework_Todate.Location = new System.Drawing.Point(812, 61);
             this.lbl_Rework_Todate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Rework_Todate.Name = "lbl_Rework_Todate";
             this.lbl_Rework_Todate.Size = new System.Drawing.Size(59, 19);
@@ -5682,7 +5750,7 @@
             this.lbl_Rework_Fromdate.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_Rework_Fromdate.AutoSize = true;
             this.lbl_Rework_Fromdate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Rework_Fromdate.Location = new System.Drawing.Point(505, 59);
+            this.lbl_Rework_Fromdate.Location = new System.Drawing.Point(505, 61);
             this.lbl_Rework_Fromdate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Rework_Fromdate.Name = "lbl_Rework_Fromdate";
             this.lbl_Rework_Fromdate.Size = new System.Drawing.Size(74, 19);
@@ -5780,14 +5848,14 @@
             this.grd_Superqc_Scoreboard.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.grd_Superqc_Scoreboard.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.grd_Superqc_Scoreboard.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle635.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle635.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle635.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle635.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle635.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle635.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle635.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grd_Superqc_Scoreboard.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle635;
+            dataGridViewCellStyle173.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle173.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle173.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle173.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle173.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle173.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle173.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_Superqc_Scoreboard.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle173;
             this.grd_Superqc_Scoreboard.ColumnHeadersHeight = 30;
             this.grd_Superqc_Scoreboard.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn5,
@@ -5800,22 +5868,22 @@
             this.grd_Superqc_Scoreboard.Name = "grd_Superqc_Scoreboard";
             this.grd_Superqc_Scoreboard.ReadOnly = true;
             this.grd_Superqc_Scoreboard.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle638.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle638.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle638.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle638.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle638.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle638.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle638.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grd_Superqc_Scoreboard.RowHeadersDefaultCellStyle = dataGridViewCellStyle638;
+            dataGridViewCellStyle176.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle176.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle176.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle176.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle176.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle176.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle176.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_Superqc_Scoreboard.RowHeadersDefaultCellStyle = dataGridViewCellStyle176;
             this.grd_Superqc_Scoreboard.RowHeadersVisible = false;
-            dataGridViewCellStyle639.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle639.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle639.Font = new System.Drawing.Font("Ebrima", 9.75F);
-            dataGridViewCellStyle639.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle639.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle639.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.grd_Superqc_Scoreboard.RowsDefaultCellStyle = dataGridViewCellStyle639;
+            dataGridViewCellStyle177.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle177.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle177.Font = new System.Drawing.Font("Ebrima", 9.75F);
+            dataGridViewCellStyle177.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle177.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle177.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.grd_Superqc_Scoreboard.RowsDefaultCellStyle = dataGridViewCellStyle177;
             this.grd_Superqc_Scoreboard.RowTemplate.Height = 26;
             this.grd_Superqc_Scoreboard.Size = new System.Drawing.Size(341, 485);
             this.grd_Superqc_Scoreboard.TabIndex = 80;
@@ -5823,8 +5891,8 @@
             // 
             // dataGridViewTextBoxColumn5
             // 
-            dataGridViewCellStyle636.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle636;
+            dataGridViewCellStyle174.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle174;
             this.dataGridViewTextBoxColumn5.FillWeight = 75.08664F;
             this.dataGridViewTextBoxColumn5.HeaderText = "RANK";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
@@ -5850,11 +5918,11 @@
             // 
             // dataGridViewTextBoxColumn7
             // 
-            dataGridViewCellStyle637.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle637.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle637.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle637.SelectionForeColor = System.Drawing.Color.Red;
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle637;
+            dataGridViewCellStyle175.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle175.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle175.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle175.SelectionForeColor = System.Drawing.Color.Red;
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle175;
             this.dataGridViewTextBoxColumn7.HeaderText = "User_id";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
@@ -5913,30 +5981,30 @@
             // 
             this.grd_All_SuperQc_Report.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.grd_All_SuperQc_Report.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle640.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle640.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle640.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle640.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle640.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle640.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle640.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grd_All_SuperQc_Report.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle640;
+            dataGridViewCellStyle178.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle178.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle178.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle178.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle178.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle178.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle178.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_All_SuperQc_Report.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle178;
             this.grd_All_SuperQc_Report.ColumnHeadersHeight = 30;
             this.grd_All_SuperQc_Report.Location = new System.Drawing.Point(222, 251);
             this.grd_All_SuperQc_Report.Name = "grd_All_SuperQc_Report";
             this.grd_All_SuperQc_Report.ReadOnly = true;
             this.grd_All_SuperQc_Report.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle641.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle641.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle641.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle641.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle641.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle641.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle641.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grd_All_SuperQc_Report.RowHeadersDefaultCellStyle = dataGridViewCellStyle641;
+            dataGridViewCellStyle179.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle179.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle179.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle179.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle179.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle179.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle179.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_All_SuperQc_Report.RowHeadersDefaultCellStyle = dataGridViewCellStyle179;
             this.grd_All_SuperQc_Report.RowHeadersVisible = false;
-            dataGridViewCellStyle642.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.grd_All_SuperQc_Report.RowsDefaultCellStyle = dataGridViewCellStyle642;
+            dataGridViewCellStyle180.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.grd_All_SuperQc_Report.RowsDefaultCellStyle = dataGridViewCellStyle180;
             this.grd_All_SuperQc_Report.Size = new System.Drawing.Size(1089, 273);
             this.grd_All_SuperQc_Report.TabIndex = 154;
             this.grd_All_SuperQc_Report.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_All_SuperQc_Report_CellClick);
@@ -5947,7 +6015,7 @@
             this.lbl_AllSuperqc_Error.AutoSize = true;
             this.lbl_AllSuperqc_Error.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_AllSuperqc_Error.ForeColor = System.Drawing.Color.Red;
-            this.lbl_AllSuperqc_Error.Location = new System.Drawing.Point(620, 699);
+            this.lbl_AllSuperqc_Error.Location = new System.Drawing.Point(620, 701);
             this.lbl_AllSuperqc_Error.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_AllSuperqc_Error.Name = "lbl_AllSuperqc_Error";
             this.lbl_AllSuperqc_Error.Size = new System.Drawing.Size(0, 20);
@@ -5961,7 +6029,7 @@
             this.crv_All_Superqc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crv_All_Superqc.Cursor = System.Windows.Forms.Cursors.Default;
             this.crv_All_Superqc.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.crv_All_Superqc.Location = new System.Drawing.Point(223, 327);
+            this.crv_All_Superqc.Location = new System.Drawing.Point(223, 329);
             this.crv_All_Superqc.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.crv_All_Superqc.Name = "crv_All_Superqc";
             this.crv_All_Superqc.ShowGroupTreeButton = false;
@@ -5974,7 +6042,7 @@
             this.lbl_All_SuperqcRecordnotfound.AutoSize = true;
             this.lbl_All_SuperqcRecordnotfound.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_All_SuperqcRecordnotfound.ForeColor = System.Drawing.Color.Red;
-            this.lbl_All_SuperqcRecordnotfound.Location = new System.Drawing.Point(620, 719);
+            this.lbl_All_SuperqcRecordnotfound.Location = new System.Drawing.Point(620, 721);
             this.lbl_All_SuperqcRecordnotfound.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_All_SuperqcRecordnotfound.Name = "lbl_All_SuperqcRecordnotfound";
             this.lbl_All_SuperqcRecordnotfound.Size = new System.Drawing.Size(243, 20);
@@ -5999,7 +6067,7 @@
             this.ddl_Superqc_Task.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_Superqc_Task.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_Superqc_Task.FormattingEnabled = true;
-            this.ddl_Superqc_Task.Location = new System.Drawing.Point(1013, 168);
+            this.ddl_Superqc_Task.Location = new System.Drawing.Point(1013, 170);
             this.ddl_Superqc_Task.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ddl_Superqc_Task.Name = "ddl_Superqc_Task";
             this.ddl_Superqc_Task.Size = new System.Drawing.Size(194, 27);
@@ -6065,7 +6133,7 @@
             this.lbl_All_Superqc_Task.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_All_Superqc_Task.AutoSize = true;
             this.lbl_All_Superqc_Task.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_All_Superqc_Task.Location = new System.Drawing.Point(970, 168);
+            this.lbl_All_Superqc_Task.Location = new System.Drawing.Point(970, 170);
             this.lbl_All_Superqc_Task.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_All_Superqc_Task.Name = "lbl_All_Superqc_Task";
             this.lbl_All_Superqc_Task.Size = new System.Drawing.Size(35, 19);
@@ -6078,7 +6146,7 @@
             this.ddl_Superqc_Subprocess.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_Superqc_Subprocess.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_Superqc_Subprocess.FormattingEnabled = true;
-            this.ddl_Superqc_Subprocess.Location = new System.Drawing.Point(717, 168);
+            this.ddl_Superqc_Subprocess.Location = new System.Drawing.Point(717, 170);
             this.ddl_Superqc_Subprocess.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ddl_Superqc_Subprocess.Name = "ddl_Superqc_Subprocess";
             this.ddl_Superqc_Subprocess.Size = new System.Drawing.Size(194, 27);
@@ -6089,7 +6157,7 @@
             this.lbl_All_Superqc_Subpro.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_All_Superqc_Subpro.AutoSize = true;
             this.lbl_All_Superqc_Subpro.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_All_Superqc_Subpro.Location = new System.Drawing.Point(603, 168);
+            this.lbl_All_Superqc_Subpro.Location = new System.Drawing.Point(603, 170);
             this.lbl_All_Superqc_Subpro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_All_Superqc_Subpro.Name = "lbl_All_Superqc_Subpro";
             this.lbl_All_Superqc_Subpro.Size = new System.Drawing.Size(106, 19);
@@ -6102,7 +6170,7 @@
             this.ddl_Superqc_client.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_Superqc_client.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_Superqc_client.FormattingEnabled = true;
-            this.ddl_Superqc_client.Location = new System.Drawing.Point(384, 168);
+            this.ddl_Superqc_client.Location = new System.Drawing.Point(384, 170);
             this.ddl_Superqc_client.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ddl_Superqc_client.Name = "ddl_Superqc_client";
             this.ddl_Superqc_client.Size = new System.Drawing.Size(194, 27);
@@ -6114,7 +6182,7 @@
             this.lbl_All_Superqc_client.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_All_Superqc_client.AutoSize = true;
             this.lbl_All_Superqc_client.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_All_Superqc_client.Location = new System.Drawing.Point(297, 168);
+            this.lbl_All_Superqc_client.Location = new System.Drawing.Point(297, 170);
             this.lbl_All_Superqc_client.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_All_Superqc_client.Name = "lbl_All_Superqc_client";
             this.lbl_All_Superqc_client.Size = new System.Drawing.Size(79, 19);
@@ -6127,7 +6195,7 @@
             this.dtp_All_SuperqcTodate.CustomFormat = "MM/DD/YYYY";
             this.dtp_All_SuperqcTodate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_All_SuperqcTodate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_All_SuperqcTodate.Location = new System.Drawing.Point(867, 59);
+            this.dtp_All_SuperqcTodate.Location = new System.Drawing.Point(867, 61);
             this.dtp_All_SuperqcTodate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dtp_All_SuperqcTodate.Name = "dtp_All_SuperqcTodate";
             this.dtp_All_SuperqcTodate.Size = new System.Drawing.Size(173, 24);
@@ -6140,7 +6208,7 @@
             this.dtp_All_SuperqcFromdate.CustomFormat = "MM/DD/YYYY";
             this.dtp_All_SuperqcFromdate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_All_SuperqcFromdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_All_SuperqcFromdate.Location = new System.Drawing.Point(593, 59);
+            this.dtp_All_SuperqcFromdate.Location = new System.Drawing.Point(593, 61);
             this.dtp_All_SuperqcFromdate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dtp_All_SuperqcFromdate.Name = "dtp_All_SuperqcFromdate";
             this.dtp_All_SuperqcFromdate.Size = new System.Drawing.Size(173, 24);
@@ -6152,7 +6220,7 @@
             this.lbl_All_SuperqcTodate.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_All_SuperqcTodate.AutoSize = true;
             this.lbl_All_SuperqcTodate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_All_SuperqcTodate.Location = new System.Drawing.Point(789, 59);
+            this.lbl_All_SuperqcTodate.Location = new System.Drawing.Point(789, 61);
             this.lbl_All_SuperqcTodate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_All_SuperqcTodate.Name = "lbl_All_SuperqcTodate";
             this.lbl_All_SuperqcTodate.Size = new System.Drawing.Size(59, 19);
@@ -6164,7 +6232,7 @@
             this.lbl_All_SuperqcFromdate.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_All_SuperqcFromdate.AutoSize = true;
             this.lbl_All_SuperqcFromdate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_All_SuperqcFromdate.Location = new System.Drawing.Point(504, 59);
+            this.lbl_All_SuperqcFromdate.Location = new System.Drawing.Point(504, 61);
             this.lbl_All_SuperqcFromdate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_All_SuperqcFromdate.Name = "lbl_All_SuperqcFromdate";
             this.lbl_All_SuperqcFromdate.Size = new System.Drawing.Size(74, 19);
@@ -6244,7 +6312,7 @@
             this.lbl_Superqc_Error.AutoSize = true;
             this.lbl_Superqc_Error.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Superqc_Error.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Superqc_Error.Location = new System.Drawing.Point(693, 500);
+            this.lbl_Superqc_Error.Location = new System.Drawing.Point(693, 502);
             this.lbl_Superqc_Error.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Superqc_Error.Name = "lbl_Superqc_Error";
             this.lbl_Superqc_Error.Size = new System.Drawing.Size(111, 20);
@@ -6259,7 +6327,7 @@
             this.crv_My_Superqc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crv_My_Superqc.Cursor = System.Windows.Forms.Cursors.Default;
             this.crv_My_Superqc.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.crv_My_Superqc.Location = new System.Drawing.Point(222, 290);
+            this.crv_My_Superqc.Location = new System.Drawing.Point(222, 292);
             this.crv_My_Superqc.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.crv_My_Superqc.Name = "crv_My_Superqc";
             this.crv_My_Superqc.ShowGroupTreeButton = false;
@@ -6338,7 +6406,7 @@
             this.lbl_My_Superqc_Task.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.lbl_My_Superqc_Task.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_My_Superqc_Task.FormattingEnabled = true;
-            this.lbl_My_Superqc_Task.Location = new System.Drawing.Point(971, 185);
+            this.lbl_My_Superqc_Task.Location = new System.Drawing.Point(971, 187);
             this.lbl_My_Superqc_Task.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lbl_My_Superqc_Task.Name = "lbl_My_Superqc_Task";
             this.lbl_My_Superqc_Task.Size = new System.Drawing.Size(174, 27);
@@ -6349,7 +6417,7 @@
             this.lbl_Superqc_MyTask.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_Superqc_MyTask.AutoSize = true;
             this.lbl_Superqc_MyTask.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Superqc_MyTask.Location = new System.Drawing.Point(928, 185);
+            this.lbl_Superqc_MyTask.Location = new System.Drawing.Point(928, 187);
             this.lbl_Superqc_MyTask.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Superqc_MyTask.Name = "lbl_Superqc_MyTask";
             this.lbl_Superqc_MyTask.Size = new System.Drawing.Size(35, 19);
@@ -6362,7 +6430,7 @@
             this.ddl_MySuperqc_Subprocess.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_MySuperqc_Subprocess.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_MySuperqc_Subprocess.FormattingEnabled = true;
-            this.ddl_MySuperqc_Subprocess.Location = new System.Drawing.Point(671, 185);
+            this.ddl_MySuperqc_Subprocess.Location = new System.Drawing.Point(671, 187);
             this.ddl_MySuperqc_Subprocess.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ddl_MySuperqc_Subprocess.Name = "ddl_MySuperqc_Subprocess";
             this.ddl_MySuperqc_Subprocess.Size = new System.Drawing.Size(174, 27);
@@ -6373,7 +6441,7 @@
             this.lbl_My_Superqc_Subpro.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_My_Superqc_Subpro.AutoSize = true;
             this.lbl_My_Superqc_Subpro.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_My_Superqc_Subpro.Location = new System.Drawing.Point(557, 185);
+            this.lbl_My_Superqc_Subpro.Location = new System.Drawing.Point(557, 187);
             this.lbl_My_Superqc_Subpro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_My_Superqc_Subpro.Name = "lbl_My_Superqc_Subpro";
             this.lbl_My_Superqc_Subpro.Size = new System.Drawing.Size(106, 19);
@@ -6386,7 +6454,7 @@
             this.ddl_MySuperqc_Client.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_MySuperqc_Client.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_MySuperqc_Client.FormattingEnabled = true;
-            this.ddl_MySuperqc_Client.Location = new System.Drawing.Point(374, 185);
+            this.ddl_MySuperqc_Client.Location = new System.Drawing.Point(374, 187);
             this.ddl_MySuperqc_Client.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ddl_MySuperqc_Client.Name = "ddl_MySuperqc_Client";
             this.ddl_MySuperqc_Client.Size = new System.Drawing.Size(174, 27);
@@ -6398,7 +6466,7 @@
             this.lbl_Superqc_Myclient.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_Superqc_Myclient.AutoSize = true;
             this.lbl_Superqc_Myclient.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Superqc_Myclient.Location = new System.Drawing.Point(287, 185);
+            this.lbl_Superqc_Myclient.Location = new System.Drawing.Point(287, 187);
             this.lbl_Superqc_Myclient.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Superqc_Myclient.Name = "lbl_Superqc_Myclient";
             this.lbl_Superqc_Myclient.Size = new System.Drawing.Size(79, 19);
@@ -6410,31 +6478,31 @@
             this.grd_My_SuperQc_Report.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.grd_My_SuperQc_Report.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.grd_My_SuperQc_Report.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle643.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle643.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle643.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle643.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle643.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle643.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle643.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grd_My_SuperQc_Report.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle643;
+            dataGridViewCellStyle181.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle181.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle181.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle181.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle181.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle181.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle181.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_My_SuperQc_Report.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle181;
             this.grd_My_SuperQc_Report.ColumnHeadersHeight = 30;
-            this.grd_My_SuperQc_Report.Location = new System.Drawing.Point(225, 315);
+            this.grd_My_SuperQc_Report.Location = new System.Drawing.Point(225, 317);
             this.grd_My_SuperQc_Report.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.grd_My_SuperQc_Report.Name = "grd_My_SuperQc_Report";
             this.grd_My_SuperQc_Report.ReadOnly = true;
             this.grd_My_SuperQc_Report.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle644.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle644.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle644.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle644.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle644.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle644.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle644.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grd_My_SuperQc_Report.RowHeadersDefaultCellStyle = dataGridViewCellStyle644;
+            dataGridViewCellStyle182.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle182.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle182.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle182.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle182.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle182.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle182.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_My_SuperQc_Report.RowHeadersDefaultCellStyle = dataGridViewCellStyle182;
             this.grd_My_SuperQc_Report.RowHeadersVisible = false;
-            dataGridViewCellStyle645.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.grd_My_SuperQc_Report.RowsDefaultCellStyle = dataGridViewCellStyle645;
+            dataGridViewCellStyle183.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.grd_My_SuperQc_Report.RowsDefaultCellStyle = dataGridViewCellStyle183;
             this.grd_My_SuperQc_Report.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.grd_My_SuperQc_Report.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.SystemColors.Control;
             this.grd_My_SuperQc_Report.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Ebrima", 9.75F);
@@ -6478,7 +6546,7 @@
             this.lbl_Superqc_Myerrror.AutoSize = true;
             this.lbl_Superqc_Myerrror.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Superqc_Myerrror.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Superqc_Myerrror.Location = new System.Drawing.Point(1043, 531);
+            this.lbl_Superqc_Myerrror.Location = new System.Drawing.Point(1043, 533);
             this.lbl_Superqc_Myerrror.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Superqc_Myerrror.Name = "lbl_Superqc_Myerrror";
             this.lbl_Superqc_Myerrror.Size = new System.Drawing.Size(240, 20);
@@ -6492,7 +6560,7 @@
             this.dtp_MySuperqc_To.CustomFormat = "MM/DD/YYYY";
             this.dtp_MySuperqc_To.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_MySuperqc_To.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_MySuperqc_To.Location = new System.Drawing.Point(879, 86);
+            this.dtp_MySuperqc_To.Location = new System.Drawing.Point(879, 88);
             this.dtp_MySuperqc_To.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dtp_MySuperqc_To.Name = "dtp_MySuperqc_To";
             this.dtp_MySuperqc_To.Size = new System.Drawing.Size(173, 24);
@@ -6505,7 +6573,7 @@
             this.dtp_MySuperqcFrom.CustomFormat = "MM/DD/YYYY";
             this.dtp_MySuperqcFrom.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_MySuperqcFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_MySuperqcFrom.Location = new System.Drawing.Point(583, 86);
+            this.dtp_MySuperqcFrom.Location = new System.Drawing.Point(583, 88);
             this.dtp_MySuperqcFrom.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dtp_MySuperqcFrom.Name = "dtp_MySuperqcFrom";
             this.dtp_MySuperqcFrom.Size = new System.Drawing.Size(173, 24);
@@ -6517,7 +6585,7 @@
             this.lbl_My_SuperqcTodate.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_My_SuperqcTodate.AutoSize = true;
             this.lbl_My_SuperqcTodate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_My_SuperqcTodate.Location = new System.Drawing.Point(798, 86);
+            this.lbl_My_SuperqcTodate.Location = new System.Drawing.Point(798, 88);
             this.lbl_My_SuperqcTodate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_My_SuperqcTodate.Name = "lbl_My_SuperqcTodate";
             this.lbl_My_SuperqcTodate.Size = new System.Drawing.Size(59, 19);
@@ -6529,7 +6597,7 @@
             this.lbl_My_SuperqcFromdate.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_My_SuperqcFromdate.AutoSize = true;
             this.lbl_My_SuperqcFromdate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_My_SuperqcFromdate.Location = new System.Drawing.Point(501, 86);
+            this.lbl_My_SuperqcFromdate.Location = new System.Drawing.Point(501, 88);
             this.lbl_My_SuperqcFromdate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_My_SuperqcFromdate.Name = "lbl_My_SuperqcFromdate";
             this.lbl_My_SuperqcFromdate.Size = new System.Drawing.Size(74, 19);
@@ -6642,14 +6710,14 @@
             this.grd_Employee_Production.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.grd_Employee_Production.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.grd_Employee_Production.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle646.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle646.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle646.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle646.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle646.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle646.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle646.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grd_Employee_Production.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle646;
+            dataGridViewCellStyle184.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle184.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle184.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle184.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle184.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle184.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle184.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_Employee_Production.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle184;
             this.grd_Employee_Production.ColumnHeadersHeight = 30;
             this.grd_Employee_Production.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column30,
@@ -6696,22 +6764,22 @@
             this.grd_Employee_Production.Name = "grd_Employee_Production";
             this.grd_Employee_Production.ReadOnly = true;
             this.grd_Employee_Production.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle650.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle650.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle650.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle650.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle650.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle650.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle650.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grd_Employee_Production.RowHeadersDefaultCellStyle = dataGridViewCellStyle650;
+            dataGridViewCellStyle188.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle188.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle188.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle188.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle188.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle188.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle188.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_Employee_Production.RowHeadersDefaultCellStyle = dataGridViewCellStyle188;
             this.grd_Employee_Production.RowHeadersVisible = false;
-            dataGridViewCellStyle651.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle651.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle651.Font = new System.Drawing.Font("Ebrima", 9.75F);
-            dataGridViewCellStyle651.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle651.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle651.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.grd_Employee_Production.RowsDefaultCellStyle = dataGridViewCellStyle651;
+            dataGridViewCellStyle189.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle189.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle189.Font = new System.Drawing.Font("Ebrima", 9.75F);
+            dataGridViewCellStyle189.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle189.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle189.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.grd_Employee_Production.RowsDefaultCellStyle = dataGridViewCellStyle189;
             this.grd_Employee_Production.RowTemplate.Height = 26;
             this.grd_Employee_Production.Size = new System.Drawing.Size(1335, 499);
             this.grd_Employee_Production.TabIndex = 77;
@@ -6723,9 +6791,9 @@
             // 
             // Column30
             // 
-            dataGridViewCellStyle647.Format = "N0";
-            dataGridViewCellStyle647.NullValue = null;
-            this.Column30.DefaultCellStyle = dataGridViewCellStyle647;
+            dataGridViewCellStyle185.Format = "N0";
+            dataGridViewCellStyle185.NullValue = null;
+            this.Column30.DefaultCellStyle = dataGridViewCellStyle185;
             this.Column30.HeaderText = "SI.NO";
             this.Column30.Name = "Column30";
             this.Column30.ReadOnly = true;
@@ -6742,9 +6810,9 @@
             // 
             // Column32
             // 
-            dataGridViewCellStyle648.Format = "N0";
-            dataGridViewCellStyle648.NullValue = null;
-            this.Column32.DefaultCellStyle = dataGridViewCellStyle648;
+            dataGridViewCellStyle186.Format = "N0";
+            dataGridViewCellStyle186.NullValue = null;
+            this.Column32.DefaultCellStyle = dataGridViewCellStyle186;
             this.Column32.HeaderText = "TOTAL COMP";
             this.Column32.Name = "Column32";
             this.Column32.ReadOnly = true;
@@ -6759,9 +6827,9 @@
             // 
             // Column34
             // 
-            dataGridViewCellStyle649.Format = "N2";
-            dataGridViewCellStyle649.NullValue = null;
-            this.Column34.DefaultCellStyle = dataGridViewCellStyle649;
+            dataGridViewCellStyle187.Format = "N2";
+            dataGridViewCellStyle187.NullValue = null;
+            this.Column34.DefaultCellStyle = dataGridViewCellStyle187;
             this.Column34.HeaderText = "EFFICIENCY";
             this.Column34.Name = "Column34";
             this.Column34.ReadOnly = true;
@@ -7108,14 +7176,14 @@
             this.Grid_Auto_Not_Assigned_Orders.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Grid_Auto_Not_Assigned_Orders.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.Grid_Auto_Not_Assigned_Orders.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle652.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle652.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle652.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle652.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle652.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle652.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle652.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_Auto_Not_Assigned_Orders.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle652;
+            dataGridViewCellStyle190.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle190.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle190.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle190.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle190.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle190.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle190.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_Auto_Not_Assigned_Orders.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle190;
             this.Grid_Auto_Not_Assigned_Orders.ColumnHeadersHeight = 30;
             this.Grid_Auto_Not_Assigned_Orders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewCheckBoxColumn1,
@@ -7130,23 +7198,23 @@
             this.Grid_Auto_Not_Assigned_Orders.Location = new System.Drawing.Point(3, 41);
             this.Grid_Auto_Not_Assigned_Orders.Name = "Grid_Auto_Not_Assigned_Orders";
             this.Grid_Auto_Not_Assigned_Orders.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle653.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle653.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle653.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle653.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle653.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle653.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle653.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_Auto_Not_Assigned_Orders.RowHeadersDefaultCellStyle = dataGridViewCellStyle653;
+            dataGridViewCellStyle191.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle191.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle191.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle191.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle191.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle191.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle191.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_Auto_Not_Assigned_Orders.RowHeadersDefaultCellStyle = dataGridViewCellStyle191;
             this.Grid_Auto_Not_Assigned_Orders.RowHeadersVisible = false;
-            dataGridViewCellStyle654.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle654.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle654.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle654.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle654.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle654.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle654.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_Auto_Not_Assigned_Orders.RowsDefaultCellStyle = dataGridViewCellStyle654;
+            dataGridViewCellStyle192.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle192.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle192.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle192.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle192.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle192.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle192.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_Auto_Not_Assigned_Orders.RowsDefaultCellStyle = dataGridViewCellStyle192;
             this.Grid_Auto_Not_Assigned_Orders.RowTemplate.Height = 25;
             this.Grid_Auto_Not_Assigned_Orders.Size = new System.Drawing.Size(1038, 364);
             this.Grid_Auto_Not_Assigned_Orders.TabIndex = 254;
@@ -7263,14 +7331,14 @@
             this.Grid_Auto_Assigned_Order.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Grid_Auto_Assigned_Order.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.Grid_Auto_Assigned_Order.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle655.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle655.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle655.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle655.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle655.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle655.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle655.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_Auto_Assigned_Order.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle655;
+            dataGridViewCellStyle193.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle193.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle193.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle193.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle193.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle193.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle193.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_Auto_Assigned_Order.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle193;
             this.Grid_Auto_Assigned_Order.ColumnHeadersHeight = 30;
             this.Grid_Auto_Assigned_Order.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewCheckBoxColumn2,
@@ -7283,26 +7351,26 @@
             this.dataGridViewTextBoxColumn18,
             this.Column46,
             this.dataGridViewTextBoxColumn19});
-            this.Grid_Auto_Assigned_Order.Location = new System.Drawing.Point(3, 199);
+            this.Grid_Auto_Assigned_Order.Location = new System.Drawing.Point(3, 201);
             this.Grid_Auto_Assigned_Order.Name = "Grid_Auto_Assigned_Order";
             this.Grid_Auto_Assigned_Order.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle656.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle656.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle656.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle656.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle656.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle656.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle656.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_Auto_Assigned_Order.RowHeadersDefaultCellStyle = dataGridViewCellStyle656;
+            dataGridViewCellStyle194.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle194.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle194.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle194.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle194.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle194.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle194.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_Auto_Assigned_Order.RowHeadersDefaultCellStyle = dataGridViewCellStyle194;
             this.Grid_Auto_Assigned_Order.RowHeadersVisible = false;
-            dataGridViewCellStyle657.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle657.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle657.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle657.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle657.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle657.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle657.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_Auto_Assigned_Order.RowsDefaultCellStyle = dataGridViewCellStyle657;
+            dataGridViewCellStyle195.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle195.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle195.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle195.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle195.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle195.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle195.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_Auto_Assigned_Order.RowsDefaultCellStyle = dataGridViewCellStyle195;
             this.Grid_Auto_Assigned_Order.RowTemplate.Height = 25;
             this.Grid_Auto_Assigned_Order.Size = new System.Drawing.Size(1038, 361);
             this.Grid_Auto_Assigned_Order.TabIndex = 255;
@@ -7372,14 +7440,14 @@
             this.grid_User.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.grid_User.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.grid_User.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle658.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle658.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle658.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle658.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle658.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle658.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle658.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid_User.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle658;
+            dataGridViewCellStyle196.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle196.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle196.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle196.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle196.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle196.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle196.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid_User.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle196;
             this.grid_User.ColumnHeadersHeight = 30;
             this.grid_User.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Production,
@@ -7390,23 +7458,23 @@
             this.grid_User.Name = "grid_User";
             this.grid_User.ReadOnly = true;
             this.grid_User.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle659.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle659.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle659.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle659.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle659.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle659.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle659.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid_User.RowHeadersDefaultCellStyle = dataGridViewCellStyle659;
+            dataGridViewCellStyle197.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle197.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle197.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle197.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle197.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle197.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle197.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid_User.RowHeadersDefaultCellStyle = dataGridViewCellStyle197;
             this.grid_User.RowHeadersVisible = false;
-            dataGridViewCellStyle660.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle660.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle660.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle660.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle660.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle660.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle660.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid_User.RowsDefaultCellStyle = dataGridViewCellStyle660;
+            dataGridViewCellStyle198.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle198.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle198.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle198.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle198.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle198.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle198.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid_User.RowsDefaultCellStyle = dataGridViewCellStyle198;
             this.grid_User.RowTemplate.Height = 25;
             this.grid_User.Size = new System.Drawing.Size(261, 497);
             this.grid_User.TabIndex = 253;
@@ -7662,74 +7730,6 @@
             this.buttonIdleMode.UseVisualStyleBackColor = false;
             this.buttonIdleMode.Click += new System.EventHandler(this.buttonIdleMode_Click);
             // 
-            // btn_Tax_Req_Processing
-            // 
-            this.btn_Tax_Req_Processing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_Tax_Req_Processing.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Tax_Req_Processing.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Tax_Req_Processing.ForeColor = System.Drawing.Color.Maroon;
-            this.btn_Tax_Req_Processing.Location = new System.Drawing.Point(321, 19);
-            this.btn_Tax_Req_Processing.Name = "btn_Tax_Req_Processing";
-            this.btn_Tax_Req_Processing.Size = new System.Drawing.Size(121, 53);
-            this.btn_Tax_Req_Processing.TabIndex = 54;
-            this.btn_Tax_Req_Processing.Text = "TAX REQ";
-            this.btn_Tax_Req_Processing.UseVisualStyleBackColor = false;
-            this.btn_Tax_Req_Processing.Click += new System.EventHandler(this.btn_Tax_Req_Processing_Click);
-            // 
-            // btn_DataDepth_Processing
-            // 
-            this.btn_DataDepth_Processing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_DataDepth_Processing.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_DataDepth_Processing.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_DataDepth_Processing.ForeColor = System.Drawing.Color.Maroon;
-            this.btn_DataDepth_Processing.Location = new System.Drawing.Point(195, 19);
-            this.btn_DataDepth_Processing.Name = "btn_DataDepth_Processing";
-            this.btn_DataDepth_Processing.Size = new System.Drawing.Size(121, 53);
-            this.btn_DataDepth_Processing.TabIndex = 53;
-            this.btn_DataDepth_Processing.Text = "DATA DEPTH";
-            this.btn_DataDepth_Processing.UseVisualStyleBackColor = false;
-            this.btn_DataDepth_Processing.Click += new System.EventHandler(this.btn_DataDepth_Processing_Click);
-            // 
-            // btn_Image_Request_Processing
-            // 
-            this.btn_Image_Request_Processing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_Image_Request_Processing.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Image_Request_Processing.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Image_Request_Processing.ForeColor = System.Drawing.Color.Maroon;
-            this.btn_Image_Request_Processing.Location = new System.Drawing.Point(94, 19);
-            this.btn_Image_Request_Processing.Name = "btn_Image_Request_Processing";
-            this.btn_Image_Request_Processing.Size = new System.Drawing.Size(96, 53);
-            this.btn_Image_Request_Processing.TabIndex = 52;
-            this.btn_Image_Request_Processing.Text = "IMAGE REQ";
-            this.btn_Image_Request_Processing.UseVisualStyleBackColor = false;
-            this.btn_Image_Request_Processing.Click += new System.EventHandler(this.btn_Image_Request_Processing_Click);
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.lbl_SearchSuper_Qc_Allocation);
-            this.groupBox7.Controls.Add(this.lbl_Rework_Allocation);
-            this.groupBox7.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox7.ForeColor = System.Drawing.Color.Sienna;
-            this.groupBox7.Location = new System.Drawing.Point(10, 24);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(252, 70);
-            this.groupBox7.TabIndex = 25;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "ALLOCATION";
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.lbl_Rework_Count);
-            this.groupBox8.Controls.Add(this.lbl_Exam_Qc);
-            this.groupBox8.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox8.ForeColor = System.Drawing.Color.Sienna;
-            this.groupBox8.Location = new System.Drawing.Point(268, 24);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(261, 70);
-            this.groupBox8.TabIndex = 26;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "PROCESSING";
-            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -7772,6 +7772,8 @@
             this.groupBox6.ResumeLayout(false);
             this.Mainpanel.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.Grp_TAT.ResumeLayout(false);
             this.Grp_TAT.PerformLayout();
@@ -7861,8 +7863,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.grid_User)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox8.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

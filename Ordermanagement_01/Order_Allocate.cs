@@ -369,7 +369,7 @@ namespace Ordermanagement_01
             dbc.BindUserName_Allocate(ddl_UserName);
 
 
-            dbc.BindOrderStatus_For_Reallocate(ddl_Order_Status_Reallocate);
+            dbc.Bind_OrderStatus(ddl_Order_Status_Reallocate);
 
             dbc.Bind_Order_Assign_Type(ddl_County_Type);
             // Sub_AddParent();
@@ -447,22 +447,22 @@ namespace Ordermanagement_01
             else if (Order_Process == "ORDER_ALLOCATE" || Order_Status_Id == 27)
             {
                 lbl_Header.Text = "IMAGE REQ ALLOCATION";
-                lbl_Allocate_Task.Visible = true;
-                ddl_Order_Allocate_Task.Visible = true;
+                //lbl_Allocate_Task.Visible = true;
+                //ddl_Order_Allocate_Task.Visible = true;
             }
 
             else if (Order_Process == "ORDER_ALLOCATE" || Order_Status_Id == 28)
             {
                 lbl_Header.Text = "DATA DEPTH ALLOCATION";
-                lbl_Allocate_Task.Visible = true;
-                ddl_Order_Allocate_Task.Visible = true;
+                //lbl_Allocate_Task.Visible = true;
+                //ddl_Order_Allocate_Task.Visible = true;
 
             }
             else if (Order_Process == "ORDER_ALLOCATE" || Order_Status_Id == 29)
             {
                 lbl_Header.Text = "TAX REQ ALLOCATION";
-                lbl_Allocate_Task.Visible = true;
-                ddl_Order_Allocate_Task.Visible = true;
+              //  lbl_Allocate_Task.Visible = true;
+               // ddl_Order_Allocate_Task.Visible = true;
 
             }
             // grd_order.VirtualMode = true;
@@ -4936,7 +4936,7 @@ namespace Ordermanagement_01
             //ddl_UserName.SelectedIndex = 0;
             dbc.BindUserName_Allocate(ddl_UserName);
             dbc.BindOrderStatus(ddl_Order_Status_Reallocate);
-            dbc.BindOrderStatus(ddl_Order_Allocate_Task);
+            
             dbc.Bind_Order_Progress_FOR_REAALOCATE(ddl_Status);
             //Gridview_Bind_Orders_Wise_Treeview_Selected();
 

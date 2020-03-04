@@ -129,13 +129,18 @@ namespace Ordermanagement_01.New_Dashboard
             public string Super_Qc_Order_Count { get; set; }
             public string Test_Order_Count { get; set; }
             public string User_Id { get; set; }
+            public Nullable<int> All_Orders { get; set; }
             public Nullable<int> Search { get; set; }
+
             public Nullable<int> Search_Qc { get; set; }
             public Nullable<int> Typing { get; set; }
             public Nullable<int> Typing_Qc { get; set; }
             public Nullable<int> Final_Qc { get; set; }
             public Nullable<int> Exception { get; set; }
             public Nullable<int> Upload { get; set; }
+            public Nullable<int> Image_Request { get; set; }
+            public Nullable<int> DataDepth { get; set; }
+            public Nullable<int> TaxRequest { get; set; }
 
             public List<Models.Users> Users { get; set; }
             // public List<Models.Dashboard.Processing_Dashboard> Processing_Dashboard { get; set; }            
@@ -167,7 +172,9 @@ namespace Ordermanagement_01.New_Dashboard
             Work_Type_Id = 1;
             Bind_Gridview_Columns_Status();
             Bind_Order_Count_Work_Type_Wise(1);
-            Bind_Order_Detilas_Task_Wise(Tile_Search.Id, Work_Type_Id);
+            Tile_Live_All.Checked = true;
+
+            Bind_Order_Detilas_Task_Wise(Tile_Live_All.Id, Work_Type_Id);
             //  Tile_Task.SelectedItem.Id = 2;
             // Tile_Search.Checked = true;
             navigationFrame.SelectedPageIndex = 0;
@@ -175,6 +182,10 @@ namespace Ordermanagement_01.New_Dashboard
             this.WindowState = FormWindowState.Maximized;
             columnList = new List<ColumnData>();
             SplashScreenManager.CloseForm(false);
+
+
+
+
             //try
             //{
 
@@ -481,6 +492,7 @@ namespace Ordermanagement_01.New_Dashboard
                             {
                                 foreach (var Result in Res_Data)
                                 {
+                                    Tile_Live_All.Frames[0].Elements[1].Text = Result.All_Orders.ToString();
                                     Tile_Search.Frames[0].Elements[1].Text = Result.Search.ToString();
                                     Tile_Search_Qc.Frames[0].Elements[1].Text = Result.Search_Qc.ToString();
                                     Tile_Typing.Frames[0].Elements[1].Text = Result.Typing.ToString();
@@ -488,10 +500,17 @@ namespace Ordermanagement_01.New_Dashboard
                                     Tile_Final_Qc.Frames[0].Elements[1].Text = Result.Final_Qc.ToString();
                                     Tile_Exception.Frames[0].Elements[1].Text = Result.Exception.ToString();
                                     Tile_Upload.Frames[0].Elements[1].Text = Result.Upload.ToString();
+
+                                    Title_Image_Req.Frames[0].Elements[1].Text = Result.Image_Request.ToString();
+                                    Title_Data_Depth.Frames[0].Elements[1].Text = Result.DataDepth.ToString();
+                                    Title_Tax_req.Frames[0].Elements[1].Text = Result.TaxRequest.ToString();
+
+
                                 }
                             }
                             else
                             {
+                                Tile_Live_All.Frames[0].Elements[1].Text = "0";
 
                                 Tile_Search.Frames[0].Elements[1].Text = "0";
                                 Tile_Search_Qc.Frames[0].Elements[1].Text = "0";
@@ -500,6 +519,9 @@ namespace Ordermanagement_01.New_Dashboard
                                 Tile_Final_Qc.Frames[0].Elements[1].Text = "0";
                                 Tile_Exception.Frames[0].Elements[1].Text = "0";
                                 Tile_Upload.Frames[0].Elements[1].Text = "0";
+                                Title_Image_Req.Frames[0].Elements[1].Text = "0";
+                                Title_Data_Depth.Frames[0].Elements[1].Text = "0";
+                                Title_Tax_req.Frames[0].Elements[1].Text = "0";
                             }
                         }
                     }
@@ -523,7 +545,7 @@ namespace Ordermanagement_01.New_Dashboard
             {
 
                 SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
-                Load_Socket_Details();
+                // Load_Socket_Details();
                 Bind_Order_Detilas_Task_Wise(Tile_Search.Id, Work_Type_Id);
 
             }
@@ -543,7 +565,7 @@ namespace Ordermanagement_01.New_Dashboard
             try
             {
                 SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
-                Load_Socket_Details();
+                //Load_Socket_Details();
                 Bind_Order_Detilas_Task_Wise(Tile_Search_Qc.Id, Work_Type_Id);
             }
             catch (Exception ex)
@@ -562,7 +584,7 @@ namespace Ordermanagement_01.New_Dashboard
             try
             {
                 SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
-                Load_Socket_Details();
+                // Load_Socket_Details();
                 Bind_Order_Detilas_Task_Wise(Tile_Typing.Id, Work_Type_Id);
 
             }
@@ -582,7 +604,7 @@ namespace Ordermanagement_01.New_Dashboard
             try
             {
                 SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
-                Load_Socket_Details();
+                // Load_Socket_Details();
                 Bind_Order_Detilas_Task_Wise(Tile_Typing_Qc.Id, Work_Type_Id);
             }
             catch (Exception ex)
@@ -600,7 +622,7 @@ namespace Ordermanagement_01.New_Dashboard
             try
             {
                 SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
-                Load_Socket_Details();
+                // Load_Socket_Details();
                 Bind_Order_Detilas_Task_Wise(Tile_Final_Qc.Id, Work_Type_Id);
             }
             catch (Exception ex)
@@ -619,7 +641,7 @@ namespace Ordermanagement_01.New_Dashboard
             try
             {
                 SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
-                Load_Socket_Details();
+                //Load_Socket_Details();
                 Bind_Order_Detilas_Task_Wise(Tile_Exception.Id, Work_Type_Id);
 
             }
@@ -1237,6 +1259,9 @@ namespace Ordermanagement_01.New_Dashboard
 
                     Dictionary<string, object> dict_list = new Dictionary<string, object>();
                     dict_list.Add("@Trans", "SELECT_ORDERS_TASK_WISE");
+
+
+
                     if (User_Role_Id == 2 || User_Role_Id == 3)
                     {
 
@@ -1247,6 +1272,19 @@ namespace Ordermanagement_01.New_Dashboard
 
                         dict_list.Add("@User_Wise", "All");
                     }
+
+                    if (Tile_Task.SelectedItem.Text == "All")
+
+                    {
+
+                        dict_list.Add("@Order_Task_Type", "All");
+                    }
+                    else
+                    {
+                        dict_list.Add("@Order_Task_Type", "");
+
+                    }
+
                     dict_list.Add("@User_Id", User_Id);
 
                     dict_list.Add("@Order_Task", Order_Task_Id);
@@ -1703,6 +1741,48 @@ namespace Ordermanagement_01.New_Dashboard
                 SplashScreenManager.CloseForm(false);
             }
         }
+
+        private void Title_Image_Req_ItemClick(object sender, TileItemEventArgs e)
+        {
+            try
+            {
+                SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
+                Load_Socket_Details();
+                Bind_Order_Detilas_Task_Wise(Title_Image_Req.Id, Work_Type_Id);
+
+            }
+            catch (Exception ex)
+            {
+                SplashScreenManager.CloseForm(false);
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm(false);
+            }
+        }
+
+        private void Tile_Live_All_ItemClick(object sender, TileItemEventArgs e)
+        {
+            try
+            {
+                SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
+                //Load_Socket_Details();
+                Bind_Order_Detilas_Task_Wise(Title_Image_Req.Id, Work_Type_Id);
+
+            }
+            catch (Exception ex)
+            {
+                SplashScreenManager.CloseForm(false);
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm(false);
+            }
+
+        }
+
         private void gridView2_KeyDown(object sender, KeyEventArgs e)
         {
 

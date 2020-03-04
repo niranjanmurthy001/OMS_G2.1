@@ -3595,6 +3595,7 @@ namespace Ordermanagement_01
                     for (int i = 0; i < dtselect.Rows.Count; i++)
                     {
                         grd_order.Rows.Add();
+                        grd_order.Rows[i].Cells[0].Value = true;
                         grd_order.Rows[i].Cells[1].Value = i + 1;
                         grd_order.Rows[i].Cells[2].Value = dtselect.Rows[i]["Client_Order_Number"].ToString();
                         grd_order.Rows[i].Cells[3].Value = dtselect.Rows[i]["Order_Number"].ToString();

@@ -1760,7 +1760,7 @@ namespace Ordermanagement_01
 
         }
 
-     
+
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
@@ -8115,7 +8115,7 @@ namespace Ordermanagement_01
 
                 gridViewAllClientProduction.BestFitColumns();
 
-                
+
 
                 DateTimeFormatInfo usDtfi = new CultureInfo("en-US", false).DateTimeFormat;
 
@@ -8249,7 +8249,7 @@ namespace Ordermanagement_01
                             ht_Status1.Add("@Filter_Type", "Sub_Client_Wise");
                             ht_Status1.Add("@Trans", "Order_Status_Report__Client_SubprocessWise_Employee_User_Role");
                         }
-                        else 
+                        else
                         {
                             ht_Status1.Add("@Filter_Type", "All");
                             ht_Status1.Add("@Trans", "Order_Status_Report_All_ClientWise_Employee_User_Role");
@@ -8575,7 +8575,7 @@ namespace Ordermanagement_01
                     SubProcess = 0;
                 }
 
-            
+
                 DateTime Fromdate = Convert.ToDateTime(dateEditMyClientsFromDate.Text.ToString());
                 DateTime Todate = Convert.ToDateTime(dateEditMyClientsToDate.Text.ToString());
                 String dy = Todate.Day.ToString();
@@ -8702,7 +8702,7 @@ namespace Ordermanagement_01
 
                 if (userRoleId == 1)
                 {
-                    if (Client!=0 && SubProcess == 0)
+                    if (Client != 0 && SubProcess == 0)
                     {
                         ht_Status1.Add("@Trans", "Order_Status_Report__ClientWise");
                     }
@@ -8738,7 +8738,7 @@ namespace Ordermanagement_01
                     }
                 }
 
-         
+
                 ht_Status1.Add("@F_Date", dateEditMyClientsFromDate.Text.ToString());
                 ht_Status1.Add("@T_date", dateEditMyClientsToDate.Text.ToString());
                 ht_Status1.Add("@Clint", Client);
@@ -9029,6 +9029,58 @@ namespace Ordermanagement_01
                         return;
                     }
                 }
+
+                if (gridHit.Column.FieldName == "Image_Request")
+                {
+                    if (Convert.ToInt32(gridViewAllClientProduction.GetRowCellValue(gridHit.RowHandle, "Image_Request")) == 0) { return; }
+                    if (subProcessId == 0)
+                    {
+                        orderView = new Order_View_Details(clientId.ToString(), "GET_IMAGE_REQ_ORDER", "GET_IMAGE_REQ_ORDER_COUNT", dateEditAllClientFromDate.Text, dateEditAllClientToDate.Text, User_id, 0, userroleid, "");
+                        orderView.Show();
+                        return;
+                    }
+                    if (subProcessId > 0)
+                    {
+                        orderView = new Order_View_Details(clientId.ToString(), "GET_IMAGE_REQ_ORDER_SUB_PROCESS_WISE", "GET_IMAGE_REQ_ORDER_COUNT_SUB_PROCESS_WISE", dateEditAllClientFromDate.Text, dateEditAllClientToDate.Text, User_id, subProcessId, userroleid, "");
+                        orderView.Show();
+                        return;
+                    }
+                }
+
+                if (gridHit.Column.FieldName == "Data_Depth_Request")
+                {
+                    if (Convert.ToInt32(gridViewAllClientProduction.GetRowCellValue(gridHit.RowHandle, "Data_Depth_Request")) == 0) { return; }
+                    if (subProcessId == 0)
+                    {
+                        orderView = new Order_View_Details(clientId.ToString(), "GET_DATA_DEPTH_REQ_ORDER", "GET_DATA_DEPTH_REQ_ORDER_COUNT", dateEditAllClientFromDate.Text, dateEditAllClientToDate.Text, User_id, 0, userroleid, "");
+                        orderView.Show();
+                        return;
+                    }
+                    if (subProcessId > 0)
+                    {
+                        orderView = new Order_View_Details(clientId.ToString(), "GET_DATA_DEPTH_REQ_ORDER_SUB_PROCESS_WISE", "GET_DATA_DEPTH_REQ_ORDER_COUNT_SUB_PROCESS_WISE", dateEditAllClientFromDate.Text, dateEditAllClientToDate.Text, User_id, subProcessId, userroleid, "");
+                        orderView.Show();
+                        return;
+                    }
+                }
+
+                if (gridHit.Column.FieldName == "Tax_Cert_request")
+                {
+                    if (Convert.ToInt32(gridViewAllClientProduction.GetRowCellValue(gridHit.RowHandle, "Tax_Cert_request")) == 0) { return; }
+                    if (subProcessId == 0)
+                    {
+                        orderView = new Order_View_Details(clientId.ToString(), "GET_TAX_CERT_REQ_ORDER", "GET_TAX_CERT_REQ_ORDER_COUNT", dateEditAllClientFromDate.Text, dateEditAllClientToDate.Text, User_id, 0, userroleid, "");
+                        orderView.Show();
+                        return;
+                    }
+                    if (subProcessId > 0)
+                    {
+                        orderView = new Order_View_Details(clientId.ToString(), "GET_TAX_CERT_REQ_ORDER_SUB_PROCESS_WISE", "GET_TAX_CERT_REQ_ORDER_COUNT_SUB_PROCESS_WISE", dateEditAllClientFromDate.Text, dateEditAllClientToDate.Text, User_id, subProcessId, userroleid, "");
+                        orderView.Show();
+                        return;
+                    }
+                }
+
                 if (gridHit.Column.FieldName == "Search_Qc")
                 {
                     if (Convert.ToInt32(gridViewAllClientProduction.GetRowCellValue(gridHit.RowHandle, "Search_Qc")) == 0) { return; }
@@ -9285,6 +9337,25 @@ namespace Ordermanagement_01
                     orderView.Show();
                     return;
                 }
+                if (info.Column.FieldName == "Image_Request")
+                {
+                    orderView = new Order_View_Details(null, "GET_IMAGE_REQUEST_ORDER_ALL", "GET_IMAGE_REQUEST_ORDER_COUNT_ALL", dateEditAllClientFromDate.Text, dateEditAllClientToDate.Text, User_id, 0, userroleid, "");
+                    orderView.Show();
+                    return;
+                }
+                if (info.Column.FieldName == "Data_Depth_Request")
+                {
+                    orderView = new Order_View_Details(null, "GET_DATA_DEPTH_REQ_ORDER_ALL", "GET_DATA_DEPTH_REQ_ORDER_COUNT_ALL", dateEditAllClientFromDate.Text, dateEditAllClientToDate.Text, User_id, 0, userroleid, "");
+                    orderView.Show();
+                    return;
+                }
+                if (info.Column.FieldName == "Tax_Cert_request")
+                {
+                    orderView = new Order_View_Details(null, "GET_TAX_CERT_REQ_ORDER_ALL", "GET_TAX_CERT_REQ_ORDER_COUNT_ALL", dateEditAllClientFromDate.Text, dateEditAllClientToDate.Text, User_id, 0, userroleid, "");
+                    orderView.Show();
+                    return;
+                }
+
                 if (info.Column.FieldName == "Search_Qc")
                 {
                     orderView = new Order_View_Details(null, "GET_SEARCH_QC_ORDER_ALL", "GET_SEARCH_QC_ORDER_COUNT_ALL", dateEditAllClientFromDate.Text, dateEditAllClientToDate.Text, User_id, 0, userroleid, "");
@@ -9484,6 +9555,56 @@ namespace Ordermanagement_01
                     if (subProcessId > 0)
                     {
                         orderView = new Order_View_Details(clientId.ToString(), "GET_SEARCH_ORDER_SUB_PROCESS_WISE", "GET_SEARCH_ORDER_COUNT_SUB_PROCESS_WISE", dateEditMyClientsFromDate.Text, dateEditMyClientsToDate.Text, User_id, subProcessId, userroleid, "");
+                        orderView.Show();
+                        return;
+                    }
+                }
+                if (gridHit.Column.FieldName == "Image_Request")
+                {
+                    if (Convert.ToInt32(gridViewMyClientProduction.GetRowCellValue(gridHit.RowHandle, "Image_Request")) == 0) { return; }
+                    if (subProcessId == 0)
+                    {
+                        orderView = new Order_View_Details(clientId.ToString(), "GET_IMAGE_REQ_ORDER", "GET_IMAGE_REQ_ORDER_COUNT", dateEditAllClientFromDate.Text, dateEditAllClientToDate.Text, User_id, 0, userroleid, "");
+                        orderView.Show();
+                        return;
+                    }
+                    if (subProcessId > 0)
+                    {
+                        orderView = new Order_View_Details(clientId.ToString(), "GET_IMAGE_REQ_ORDER_SUB_PROCESS_WISE", "GET_IMAGE_REQ_ORDER_COUNT_SUB_PROCESS_WISE", dateEditAllClientFromDate.Text, dateEditAllClientToDate.Text, User_id, subProcessId, userroleid, "");
+                        orderView.Show();
+                        return;
+                    }
+                }
+
+                if (gridHit.Column.FieldName == "Data_Depth_Request")
+                {
+                    if (Convert.ToInt32(gridViewMyClientProduction.GetRowCellValue(gridHit.RowHandle, "Data_Depth_Request")) == 0) { return; }
+                    if (subProcessId == 0)
+                    {
+                        orderView = new Order_View_Details(clientId.ToString(), "GET_DATA_DEPTH_REQ_ORDER", "GET_DATA_DEPTH_REQ_ORDER_COUNT", dateEditAllClientFromDate.Text, dateEditAllClientToDate.Text, User_id, 0, userroleid, "");
+                        orderView.Show();
+                        return;
+                    }
+                    if (subProcessId > 0)
+                    {
+                        orderView = new Order_View_Details(clientId.ToString(), "GET_DATA_DEPTH_REQ_ORDER_SUB_PROCESS_WISE", "GET_DATA_DEPTH_REQ_ORDER_COUNT_SUB_PROCESS_WISE", dateEditAllClientFromDate.Text, dateEditAllClientToDate.Text, User_id, subProcessId, userroleid, "");
+                        orderView.Show();
+                        return;
+                    }
+                }
+
+                if (gridHit.Column.FieldName == "Tax_Cert_request")
+                {
+                    if (Convert.ToInt32(gridViewMyClientProduction.GetRowCellValue(gridHit.RowHandle, "Tax_Cert_request")) == 0) { return; }
+                    if (subProcessId == 0)
+                    {
+                        orderView = new Order_View_Details(clientId.ToString(), "GET_TAX_CERT_REQ_ORDER", "GET_TAX_CERT_REQ_ORDER_COUNT", dateEditAllClientFromDate.Text, dateEditAllClientToDate.Text, User_id, 0, userroleid, "");
+                        orderView.Show();
+                        return;
+                    }
+                    if (subProcessId > 0)
+                    {
+                        orderView = new Order_View_Details(clientId.ToString(), "GET_TAX_CERT_REQ_ORDER_SUB_PROCESS_WISE", "GET_TAX_CERT_REQ_ORDER_COUNT_SUB_PROCESS_WISE", dateEditAllClientFromDate.Text, dateEditAllClientToDate.Text, User_id, subProcessId, userroleid, "");
                         orderView.Show();
                         return;
                     }
@@ -9741,6 +9862,24 @@ namespace Ordermanagement_01
                 if (info.Column.FieldName == "Search")
                 {
                     orderView = new Order_View_Details(null, "GET_SEARCH_ORDER_ALL", "GET_SEARCH_ORDER_COUNT_ALL", dateEditMyClientsFromDate.Text, dateEditMyClientsToDate.Text, User_id, 0, userroleid, "");
+                    orderView.Show();
+                    return;
+                }
+                if (info.Column.FieldName == "Image_Request")
+                {
+                    orderView = new Order_View_Details(null, "GET_IMAGE_REQUEST_ORDER_ALL", "GET_IMAGE_REQUEST_ORDER_COUNT_ALL", dateEditAllClientFromDate.Text, dateEditAllClientToDate.Text, User_id, 0, userroleid, "");
+                    orderView.Show();
+                    return;
+                }
+                if (info.Column.FieldName == "Data_Depth_Request")
+                {
+                    orderView = new Order_View_Details(null, "GET_DATA_DEPTH_REQ_ORDER_ALL", "GET_DATA_DEPTH_REQ_ORDER_COUNT_ALL", dateEditAllClientFromDate.Text, dateEditAllClientToDate.Text, User_id, 0, userroleid, "");
+                    orderView.Show();
+                    return;
+                }
+                if (info.Column.FieldName == "Tax_Cert_request")
+                {
+                    orderView = new Order_View_Details(null, "GET_TAX_CERT_REQ_ORDER_ALL", "GET_TAX_CERT_REQ_ORDER_COUNT_ALL", dateEditAllClientFromDate.Text, dateEditAllClientToDate.Text, User_id, 0, userroleid, "");
                     orderView.Show();
                     return;
                 }

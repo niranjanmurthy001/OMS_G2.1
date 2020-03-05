@@ -7964,7 +7964,8 @@ namespace Ordermanagement_01
                         else
                         {
                             Ordermanagement_01.New_Dashboard.Employee.Document_Check_Type Doc_Check_Type = new New_Dashboard.Employee.Document_Check_Type(obj_Order_Details_List, this);
-                            Doc_Check_Type.Show();
+
+                            Doc_Check_Type.ShowDialog();
                         }
                        
                     }

@@ -174,6 +174,7 @@ namespace Ordermanagement_01.New_Dashboard
             Bind_Order_Count_Work_Type_Wise(1);
             Tile_Live_All.Checked = true;
 
+           // Tile_Task.SelectedItem.Text = "All";
             Bind_Order_Detilas_Task_Wise(Tile_Live_All.Id, Work_Type_Id,Tile_Live_All);
             //  Tile_Task.SelectedItem.Id = 2;
             // Tile_Search.Checked = true;
@@ -1299,17 +1300,19 @@ namespace Ordermanagement_01.New_Dashboard
                         dict_list.Add("@User_Wise", "All");
                     }
 
-                    if (Tile_Task.SelectedItem.Text == "All")
-
+                    if (Tile_Live_All.Checked == true)
                     {
-
                         dict_list.Add("@Order_Task_Type", "All");
+
+
                     }
                     else
                     {
                         dict_list.Add("@Order_Task_Type", "");
 
                     }
+
+                  
 
                     dict_list.Add("@User_Id", User_Id);
 

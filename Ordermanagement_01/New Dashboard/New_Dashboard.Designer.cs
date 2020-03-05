@@ -1254,6 +1254,7 @@
             // 
             this.Tile_Task.AllowItemHover = true;
             this.Tile_Task.AllowSelectedItem = true;
+            this.Tile_Task.AllowSelectedItemBorder = false;
             this.Tile_Task.BackColor = System.Drawing.Color.Transparent;
             this.Tile_Task.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Tile_Task.ContextButtonOptions.TopPanelPadding = new System.Windows.Forms.Padding(5, 0, 5, 0);
@@ -1281,7 +1282,6 @@
             this.Tile_Task.OptionsAdaptiveLayout.ScrollMode = DevExpress.XtraEditors.TileControlAdaptiveLayoutScrollMode.ItemScrolling;
             this.Tile_Task.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.Tile_Task.Padding = new System.Windows.Forms.Padding(8, 1, 8, 1);
-            this.Tile_Task.Position = 171;
             this.Tile_Task.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Tile_Task.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.ScrollButtons;
             this.Tile_Task.SelectionColor = System.Drawing.Color.Transparent;

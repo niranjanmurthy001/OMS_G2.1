@@ -174,7 +174,7 @@ namespace Ordermanagement_01.New_Dashboard
             Bind_Order_Count_Work_Type_Wise(1);
             Tile_Live_All.Checked = true;
 
-            Bind_Order_Detilas_Task_Wise(Tile_Live_All.Id, Work_Type_Id);
+            Bind_Order_Detilas_Task_Wise(Tile_Live_All.Id, Work_Type_Id,Tile_Live_All);
             //  Tile_Task.SelectedItem.Id = 2;
             // Tile_Search.Checked = true;
             navigationFrame.SelectedPageIndex = 0;
@@ -325,6 +325,28 @@ namespace Ordermanagement_01.New_Dashboard
         }
 
         #endregion
+
+        private void Check_Task_Items(TileItem Tile_Item)
+        {
+
+
+
+                  for (int i = 0; i < Tile_Task.Groups.Count; i++)
+                  {
+
+                      for (int j = 0; j < Tile_Task.Groups[i].Items.Count; j++)
+                      {
+                          Tile_Task.Groups[i].Items[j].Checked = false;
+
+                      }
+
+
+                  }
+
+            Tile_Item.Checked = true;
+
+
+        }
 
         #region Check_SubItem_Status
 
@@ -544,7 +566,7 @@ namespace Ordermanagement_01.New_Dashboard
 
                 SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
                 // Load_Socket_Details();
-                Bind_Order_Detilas_Task_Wise(Tile_Search.Id, Work_Type_Id);
+                Bind_Order_Detilas_Task_Wise(Tile_Search.Id, Work_Type_Id,e.Item);
 
             }
             catch (Exception ex)
@@ -564,7 +586,7 @@ namespace Ordermanagement_01.New_Dashboard
             {
                 SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
                 //Load_Socket_Details();
-                Bind_Order_Detilas_Task_Wise(Tile_Search_Qc.Id, Work_Type_Id);
+                Bind_Order_Detilas_Task_Wise(Tile_Search_Qc.Id, Work_Type_Id,e.Item);
             }
             catch (Exception ex)
             {
@@ -583,7 +605,7 @@ namespace Ordermanagement_01.New_Dashboard
             {
                 SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
                 // Load_Socket_Details();
-                Bind_Order_Detilas_Task_Wise(Tile_Typing.Id, Work_Type_Id);
+                Bind_Order_Detilas_Task_Wise(Tile_Typing.Id, Work_Type_Id, e.Item);
 
             }
             catch (Exception ex)
@@ -603,7 +625,7 @@ namespace Ordermanagement_01.New_Dashboard
             {
                 SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
                 // Load_Socket_Details();
-                Bind_Order_Detilas_Task_Wise(Tile_Typing_Qc.Id, Work_Type_Id);
+                Bind_Order_Detilas_Task_Wise(Tile_Typing_Qc.Id, Work_Type_Id, e.Item);
             }
             catch (Exception ex)
             {
@@ -621,7 +643,7 @@ namespace Ordermanagement_01.New_Dashboard
             {
                 SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
                 // Load_Socket_Details();
-                Bind_Order_Detilas_Task_Wise(Tile_Final_Qc.Id, Work_Type_Id);
+                Bind_Order_Detilas_Task_Wise(Tile_Final_Qc.Id, Work_Type_Id, e.Item);
             }
             catch (Exception ex)
             {
@@ -640,7 +662,7 @@ namespace Ordermanagement_01.New_Dashboard
             {
                 SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
                 //Load_Socket_Details();
-                Bind_Order_Detilas_Task_Wise(Tile_Exception.Id, Work_Type_Id);
+                Bind_Order_Detilas_Task_Wise(Tile_Exception.Id, Work_Type_Id, e.Item);
 
             }
             catch (Exception ex)
@@ -776,7 +798,7 @@ namespace Ordermanagement_01.New_Dashboard
             try
             {
                 SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
-                Bind_Order_Detilas_Task_Wise(27, Work_Type_Id);
+                Bind_Order_Detilas_Task_Wise(27, Work_Type_Id, e.Item);
             }
             catch (Exception ex)
             {
@@ -1251,11 +1273,12 @@ namespace Ordermanagement_01.New_Dashboard
             return List_Order_Details;
         }
         #endregion
-        private async void Bind_Order_Detilas_Task_Wise(int Order_Task_Id, int Work_Type_Id)
+        private async void Bind_Order_Detilas_Task_Wise(int Order_Task_Id, int Work_Type_Id,TileItem Tile_Item)
         {
 
             try
             {
+                Check_Task_Items(Tile_Item);
 
                 using (var client = new HttpClient())
                 {
@@ -1731,7 +1754,7 @@ namespace Ordermanagement_01.New_Dashboard
             {
                 SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
                 Load_Socket_Details();
-                Bind_Order_Detilas_Task_Wise(Tile_Upload.Id, Work_Type_Id);
+                Bind_Order_Detilas_Task_Wise(Tile_Upload.Id, Work_Type_Id,e.Item);
 
             }
             catch (Exception ex)
@@ -1751,7 +1774,7 @@ namespace Ordermanagement_01.New_Dashboard
             {
                 SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
                 Load_Socket_Details();
-                Bind_Order_Detilas_Task_Wise(Title_Image_Req.Id, Work_Type_Id);
+                Bind_Order_Detilas_Task_Wise(Title_Image_Req.Id, Work_Type_Id, e.Item);
 
             }
             catch (Exception ex)
@@ -1770,8 +1793,10 @@ namespace Ordermanagement_01.New_Dashboard
             try
             {
                 SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
-                //Load_Socket_Details();
-                Bind_Order_Detilas_Task_Wise(Title_Image_Req.Id, Work_Type_Id);
+
+            
+           
+                Bind_Order_Detilas_Task_Wise(Tile_Live_All.Id, Work_Type_Id, e.Item);
 
             }
             catch (Exception ex)
@@ -1784,6 +1809,48 @@ namespace Ordermanagement_01.New_Dashboard
                 SplashScreenManager.CloseForm(false);
             }
 
+        }
+
+        private void Title_Data_Depth_ItemClick(object sender, TileItemEventArgs e)
+        {
+            try
+            {
+                SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
+                //Load_Socket_Details();
+                Bind_Order_Detilas_Task_Wise(Title_Data_Depth.Id, Work_Type_Id, e.Item);
+
+            }
+            catch (Exception ex)
+            {
+                SplashScreenManager.CloseForm(false);
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm(false);
+            }
+        }
+
+        private void Title_Tax_req_ItemClick(object sender, TileItemEventArgs e)
+        {
+            try
+            {
+                SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
+                //Load_Socket_Details();
+                Bind_Order_Detilas_Task_Wise(Title_Tax_req.Id, Work_Type_Id, e.Item);
+
+
+
+            }
+            catch (Exception ex)
+            {
+                SplashScreenManager.CloseForm(false);
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm(false);
+            }
         }
 
         private void gridView2_KeyDown(object sender, KeyEventArgs e)

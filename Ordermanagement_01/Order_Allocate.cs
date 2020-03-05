@@ -444,7 +444,7 @@ namespace Ordermanagement_01
 
                 lbl_Header.Text = "TAX ORDER ALLOCATION";
             }
-            else if (Order_Process == "ORDER_ALLOCATE" || Order_Status_Id == 27)
+            else if (Order_Process == "ORDER_ALLOCATE" && Order_Status_Id == 27)
             {
                 lbl_Header.Text = "IMAGE REQ ALLOCATION";
                 //lbl_Allocate_Task.Visible = true;

@@ -169,6 +169,7 @@
             this.ddl_Order_Source = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
             this.tableLayoutPanel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_Comments)).BeginInit();
@@ -1829,6 +1830,10 @@
             this.label14.TabIndex = 20;
             this.label14.Text = "Effective Date :";
             // 
+            // defaultLookAndFeel1
+            // 
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013";
+            // 
             // Employee_Order_Entry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2012,5 +2017,6 @@
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Button btn_TypingEntry;
         private System.Windows.Forms.Button BtnInstruction;
+        private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
     }
 }

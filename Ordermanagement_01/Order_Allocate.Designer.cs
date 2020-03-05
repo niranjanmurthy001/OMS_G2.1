@@ -622,10 +622,11 @@
             // 
             // lbl_Header
             // 
+            this.lbl_Header.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_Header.AutoSize = true;
             this.lbl_Header.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Header.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lbl_Header.Location = new System.Drawing.Point(325, 2);
+            this.lbl_Header.Location = new System.Drawing.Point(386, 2);
             this.lbl_Header.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Header.Name = "lbl_Header";
             this.lbl_Header.Size = new System.Drawing.Size(266, 31);

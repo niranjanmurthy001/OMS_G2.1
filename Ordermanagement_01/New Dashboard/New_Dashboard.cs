@@ -954,7 +954,7 @@ namespace Ordermanagement_01.New_Dashboard
 
                         if (Work_Type_Id == 1 || Work_Type_Id == 2)
                         {
-                            if (orderStatusId != 12 && orderStatusId != 22 && orderStatusId != 24)
+                            if (orderStatusId != 12 && orderStatusId != 22 && orderStatusId != 24 && orderStatusId != 27 && orderStatusId != 28 && orderStatusId!=29 )
                             {
                                 if (!ValidateCheckList(dtCheckList))
                                 {

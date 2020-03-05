@@ -451,14 +451,14 @@ namespace Ordermanagement_01
                 //ddl_Order_Allocate_Task.Visible = true;
             }
 
-            else if (Order_Process == "ORDER_ALLOCATE" || Order_Status_Id == 28)
+            else if (Order_Process == "ORDER_ALLOCATE" && Order_Status_Id == 28)
             {
                 lbl_Header.Text = "DATA DEPTH ALLOCATION";
                 //lbl_Allocate_Task.Visible = true;
                 //ddl_Order_Allocate_Task.Visible = true;
 
             }
-            else if (Order_Process == "ORDER_ALLOCATE" || Order_Status_Id == 29)
+            else if (Order_Process == "ORDER_ALLOCATE" && Order_Status_Id == 29)
             {
                 lbl_Header.Text = "TAX REQ ALLOCATION";
               //  lbl_Allocate_Task.Visible = true;

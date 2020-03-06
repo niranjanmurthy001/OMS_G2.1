@@ -1,40 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Windows.Forms;
+﻿using ClosedXML.Excel;
 using DevExpress.XtraEditors;
-using System.Collections;
-using System.Data.OleDb;
-using System.Globalization;
-using System.Data.SqlClient;
-using DevExpress.XtraGrid.Columns;
-using DevExpress.XtraEditors.Repository;
-using System.Windows.Controls;
-using ClosedXML.Excel;
-using System.IO;
-using System.Diagnostics;
 using DevExpress.XtraSplashScreen;
+using System;
+using System.Collections;
+using System.Data;
+using System.Data.SqlClient;
+using System.Diagnostics;
+using System.Drawing;
+using System.IO;
+using System.Windows.Forms;
 
 namespace Ordermanagement_01
 {
-    public partial class Import_Orders_New : DevExpress.XtraEditors.XtraForm
+    public partial class Import_Orders_New : XtraForm
     {
         Commonclass Comclass = new Commonclass();
         DataAccess dataaccess = new DataAccess();
         Hashtable ht_Subprocess = new Hashtable();
-        DataTable dt_Subprocess = new System.Data.DataTable();
-        DataTable dt = new System.Data.DataTable();
+        DataTable dt_Subprocess = new DataTable();
+        DataTable dt = new DataTable();
         Hashtable ht_Ordertype = new Hashtable();
-        DataTable dt_Ordertype = new System.Data.DataTable();
+        DataTable dt_Ordertype = new DataTable();
         DropDownistBindClass dbc = new DropDownistBindClass();
         private DataAccess da;
         SqlConnection con;
         Hashtable htDuplicate = new Hashtable();
-        DataTable dtDuplicate = new System.Data.DataTable();
+        DataTable dtDuplicate = new DataTable();
         Classes.Load_Progres form_loader = new Classes.Load_Progres();
         string MAX_ORDER_NUMBER;
         int clientId, subProcessId, orderStatusId, orderTypeId, stateId, countyId, categoryType, CHECK_ORDER;
@@ -46,7 +37,8 @@ namespace Ordermanagement_01
         int No_Of_Order_Assignd_for_Vendor, Vendor_Id;
         string Vendors_State_County, Vendors_Order_Type, Vendors_Client_Sub_Client;
         int Vendor_Id_For_Assign;
-        string lblOrder_Type_For_Vendor, Vend_date, clientOrderNumber, orderType, orderTask, client, subClient, state, county, borrowerFirstName, borrowerLastName, address;
+        string lblOrder_Type_For_Vendor, Vend_date, clientOrderNumber, orderType, orderTask, client, subClient, state, county,
+            borrowerFirstName, borrowerLastName, address, copyType;
         DataTable dataTableErrors = new DataTable();
         DataTable dataTableExportToDb = new DataTable();
         DataTable dataTableImportExcel = new DataTable();
@@ -55,11 +47,10 @@ namespace Ordermanagement_01
         private object EnteredOrderId;
         private int Vendor_Order_Allocation_Count;
 
-
         public Import_Orders_New(int User_id)
         {
             InitializeComponent();
-            this.WindowState = FormWindowState.Maximized;
+            WindowState = FormWindowState.Maximized;
             openFileDialogImport_Orders.CheckFileExists = true;
             openFileDialogImport_Orders.CheckPathExists = true;
             openFileDialogImport_Orders.Title = "Browse files to import";
@@ -115,13 +106,13 @@ namespace Ordermanagement_01
             {
                 txtFileName = fdlg.FileName;
                 ProcessImport(txtFileName);
-                System.Windows.Forms.Application.DoEvents();
+                Application.DoEvents();
             }
         }
 
         private void ProcessImport(string fileName)
         {
-            SplashScreenManager.ShowForm(this, typeof(Ordermanagement_01.Masters.WaitForm1), true, true, false);
+            SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
             dataTableImportExcel.Columns.Clear();
             dataTableImportExcel.Rows.Clear();
             try
@@ -217,6 +208,7 @@ namespace Ordermanagement_01
                         bulkCopy.ColumnMappings.Add("Prior_Effective_Date", "Prior_Effective_Date");
                         bulkCopy.ColumnMappings.Add("APN", "APN");
                         bulkCopy.ColumnMappings.Add("Target_Category", "Category_Type");
+                        bulkCopy.ColumnMappings.Add("Copy_Type", "Copy_Type");
                         // bulkCopy.ColumnMappings.Add("Temp_Order_Id", "Temp_Order_Id");
                         bulkCopy.BulkCopyTimeout = 3000;
                         bulkCopy.BatchSize = 10000;
@@ -281,57 +273,57 @@ namespace Ordermanagement_01
                 for (int i = 0; i < grd_order_View.DataRowCount; i++)
                 {
                     // null or empty value in columns 
-                    if (String.IsNullOrWhiteSpace(grd_order_View.GetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Client_Order_Number")).ToString()))
+                    if (string.IsNullOrWhiteSpace(grd_order_View.GetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Client_Order_Number")).ToString()))
                     {
                         tempErrors += 1;
                         grd_order_View.SetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Error_Status"), "Order Number not found");
                     }
-                    else if (String.IsNullOrWhiteSpace(grd_order_View.GetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Task")).ToString())
-                        || String.IsNullOrWhiteSpace(grd_order_View.GetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Order_Status_ID")).ToString()))
+                    else if (string.IsNullOrWhiteSpace(grd_order_View.GetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Task")).ToString())
+                        || string.IsNullOrWhiteSpace(grd_order_View.GetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Order_Status_ID")).ToString()))
                     {
                         tempErrors += 1;
                         grd_order_View.SetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Error_Status"), "Order_Task Missing");
                     }
-                    else if (String.IsNullOrWhiteSpace(grd_order_View.GetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Order_Type")).ToString())
-                        || String.IsNullOrWhiteSpace(grd_order_View.GetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Order_Type_ID")).ToString()))
+                    else if (string.IsNullOrWhiteSpace(grd_order_View.GetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Order_Type")).ToString())
+                        || string.IsNullOrWhiteSpace(grd_order_View.GetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Order_Type_ID")).ToString()))
                     {
 
                         tempErrors += 1;
                         grd_order_View.SetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Error_Status"), "Order Type missing or invalid order type");
                     }
-                    else if (String.IsNullOrWhiteSpace(grd_order_View.GetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Received_Date")).ToString()))
+                    else if (string.IsNullOrWhiteSpace(grd_order_View.GetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Received_Date")).ToString()))
                     {
                         tempErrors += 1;
                         grd_order_View.SetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Error_Status"), "Date not found");
                     }
-                    else if (String.IsNullOrWhiteSpace(grd_order_View.GetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Time")).ToString()))
+                    else if (string.IsNullOrWhiteSpace(grd_order_View.GetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Time")).ToString()))
                     {
                         tempErrors += 1;
                         grd_order_View.SetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Error_Status"), "Time not found");
                     }
 
-                    else if (String.IsNullOrWhiteSpace(grd_order_View.GetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Client")).ToString())
-                        || String.IsNullOrWhiteSpace(grd_order_View.GetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Client_Id")).ToString()))
+                    else if (string.IsNullOrWhiteSpace(grd_order_View.GetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Client")).ToString())
+                        || string.IsNullOrWhiteSpace(grd_order_View.GetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Client_Id")).ToString()))
                     {
                         tempErrors += 1;
                         grd_order_View.SetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Error_Status"), "Client not found");
                     }
 
-                    else if (String.IsNullOrWhiteSpace(grd_order_View.GetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Sub_Client")).ToString())
-                        || String.IsNullOrWhiteSpace(grd_order_View.GetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Subprocess_Id")).ToString()))
+                    else if (string.IsNullOrWhiteSpace(grd_order_View.GetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Sub_Client")).ToString())
+                        || string.IsNullOrWhiteSpace(grd_order_View.GetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Subprocess_Id")).ToString()))
                     {
                         tempErrors += 1;
                         grd_order_View.SetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Error_Status"), "Sub Client not found");
                     }
 
-                    else if (String.IsNullOrWhiteSpace(grd_order_View.GetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("State")).ToString())
-                        || String.IsNullOrWhiteSpace(grd_order_View.GetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("State_ID")).ToString()))
+                    else if (string.IsNullOrWhiteSpace(grd_order_View.GetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("State")).ToString())
+                        || string.IsNullOrWhiteSpace(grd_order_View.GetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("State_ID")).ToString()))
                     {
                         tempErrors += 1;
                         grd_order_View.SetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Error_Status"), "State not found");
                     }
-                    else if (String.IsNullOrWhiteSpace(grd_order_View.GetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("County")).ToString())
-                        || String.IsNullOrWhiteSpace(grd_order_View.GetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("County_ID")).ToString()))
+                    else if (string.IsNullOrWhiteSpace(grd_order_View.GetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("County")).ToString())
+                        || string.IsNullOrWhiteSpace(grd_order_View.GetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("County_ID")).ToString()))
                     {
                         tempErrors += 1;
                         grd_order_View.SetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Error_Status"), "County not found");
@@ -346,8 +338,13 @@ namespace Ordermanagement_01
                         duplicateCount += 1;
                         grd_order_View.SetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Error_Status"), "Duplicate");
                     }
-                    else if (String.IsNullOrWhiteSpace(grd_order_View.GetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Category_Type")).ToString())
-                                           || String.IsNullOrWhiteSpace(grd_order_View.GetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Order_Source_Type_ID")).ToString()))
+                    else if (Convert.ToInt32(grd_order_View.GetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("ad_duplicate_count"))) > 0)
+                    {
+                        duplicateCount += 1;
+                        grd_order_View.SetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Error_Status"), "Duplicate Address");
+                    }
+                    else if (string.IsNullOrWhiteSpace(grd_order_View.GetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Category_Type")).ToString())
+                                           || string.IsNullOrWhiteSpace(grd_order_View.GetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Order_Source_Type_ID")).ToString()))
                     {
                         tempErrors += 1;
                         grd_order_View.SetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Error_Status"), "Target Category Not Found");
@@ -392,7 +389,7 @@ namespace Ordermanagement_01
             dataTableExportToDb.Rows.Clear();
             for (int i = 0; i < grd_order_View.DataRowCount; i++)
             {
-                if (String.IsNullOrEmpty(grd_order_View.GetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Error_Status")).ToString()))
+                if (string.IsNullOrEmpty(grd_order_View.GetRowCellValue(i, grd_order_View.Columns.ColumnByFieldName("Error_Status")).ToString()))
                 {
                     dataTableExportToDb.ImportRow(grd_order_View.GetDataRow(i));
                 }
@@ -419,6 +416,7 @@ namespace Ordermanagement_01
                     row1["Prior_Effective_Date"] = row["Prior_Effective_Date"];
                     row1["APN"] = row["APN"];
                     row1["Target_Category"] = row["Category_Type"];
+                    row1["Copy_Type"] = row["Copy_Type"];
                     row1["Error_Status"] = row["Error_Status"];
                     row1["State_ID"] = row["State_ID"];
                     row1["County_ID"] = row["County_ID"];
@@ -541,9 +539,9 @@ namespace Ordermanagement_01
                         APN = row["APN"].ToString();
                         priorEffectiveDate = row["Prior_Effective_Date"].ToString();
                         clientOrderRef = row["Client_Order_Ref"].ToString();
+                        copyType = row["Copy_Type"].ToString();
 
                         lblOrder_Type_For_Vendor = orderType;
-
                         stateId = Convert.ToInt32(row["State_ID"].ToString());
                         countyId = Convert.ToInt32(row["County_ID"].ToString());
                         orderTypeId = Convert.ToInt32(row["Order_Type_ID"].ToString());
@@ -556,7 +554,7 @@ namespace Ordermanagement_01
 
                         // get_max order number
                         Hashtable htmax = new Hashtable();
-                        DataTable dtmax = new System.Data.DataTable();
+                        DataTable dtmax = new DataTable();
                         htmax.Add("@Trans", "MAX_ORDER_NO");
                         dtmax = dataaccess.ExecuteSP("Sp_Order", htmax);
                         if (dtmax.Rows.Count > 0)
@@ -566,7 +564,7 @@ namespace Ordermanagement_01
 
                         //check order number exist
                         Hashtable htcheck = new Hashtable();
-                        DataTable dtcheck = new System.Data.DataTable();
+                        DataTable dtcheck = new DataTable();
 
                         htcheck.Add("@Trans", "CHECK_ORDER_NUMBER");
                         htcheck.Add("@Client_Order_Number", clientOrderNumber);
@@ -601,7 +599,7 @@ namespace Ordermanagement_01
                         if (CHECK_ORDER == 0)
                         {
                             Hashtable htinsertrec = new Hashtable();
-                            DataTable dtinsertrec = new System.Data.DataTable();
+                            DataTable dtinsertrec = new DataTable();
 
                             htinsertrec.Add("@Trans", "INSERT");
                             htinsertrec.Add("@Sub_ProcessId", subProcessId);
@@ -679,6 +677,7 @@ namespace Ordermanagement_01
                             htinsertrec.Add("@Inserted_By", userid);
                             htinsertrec.Add("@Inserted_date", DateTime.Now);
                             htinsertrec.Add("@Category_Type_Id", categoryType);
+                            htinsertrec.Add("@Copy_Type", copyType);
                             htinsertrec.Add("@status", "True");
                             htinsertrec.Add("@Order_Assign_Type", Assign_County_Type_ID);
                             //Entered_OrderId = dataaccess.ExecuteSPForScalar("Sp_Order", htinsertrec);
@@ -699,7 +698,7 @@ namespace Ordermanagement_01
                             DataTable dt_Order_History = new DataTable();
                             ht_Order_History.Add("@Trans", "INSERT");
                             ht_Order_History.Add("@Order_Id", EnteredOrderId);
-                           // For Tax Orders
+                            // For Tax Orders
                             if (Check_Count == 0)
                             {
                                 if (orderTypeId != 70 || orderTypeId != 110)

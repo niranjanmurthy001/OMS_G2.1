@@ -21,6 +21,7 @@ namespace Ordermanagement_01
            Application.Run(new New_Dashboard.NewLogin());
             //Application.Run(new DailyStatusReport_Preview(1,"2",""));
           //  Application.Run(new New_Dashboard.New_Dashboard(0058, 2));
+         
         }
     }
 }

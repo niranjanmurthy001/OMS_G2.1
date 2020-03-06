@@ -31,24 +31,20 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Import_Orders_New));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.labelErrors = new System.Windows.Forms.Label();
-            this.btn_Upload = new DevExpress.XtraEditors.SimpleButton();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.labelExistingOrdersCount = new System.Windows.Forms.Label();
-            this.btn_Sample_Excel_Fromat = new DevExpress.XtraEditors.SimpleButton();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.labelExistingOrdersCount = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelOrders = new System.Windows.Forms.Label();
             this.labelOrdersCount = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.labelDuplicatesCount = new System.Windows.Forms.Label();
+            this.btn_Upload = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_Sample_Excel_Fromat = new DevExpress.XtraEditors.SimpleButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.grd_order_Control = new DevExpress.XtraGrid.GridControl();
@@ -72,6 +68,7 @@
             this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -82,6 +79,7 @@
             this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Exist_count = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Duplicate_Count = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ad_duplicate_count = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel9 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_Clear = new DevExpress.XtraEditors.SimpleButton();
@@ -91,13 +89,9 @@
             this.openFileDialogImport_Orders = new System.Windows.Forms.OpenFileDialog();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -122,49 +116,59 @@
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.69767F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.30232F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1237, 470);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(980, 443);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.panel7);
+            this.panel1.Controls.Add(this.pictureBox3);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.labelErrors);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.pictureBox4);
+            this.panel1.Controls.Add(this.labelExistingOrdersCount);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.labelOrders);
+            this.panel1.Controls.Add(this.labelOrdersCount);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.labelDuplicatesCount);
             this.panel1.Controls.Add(this.btn_Upload);
-            this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.btn_Sample_Excel_Fromat);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel5);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1231, 38);
+            this.panel1.Size = new System.Drawing.Size(974, 37);
             this.panel1.TabIndex = 0;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.pictureBox3);
-            this.panel7.Controls.Add(this.label3);
-            this.panel7.Controls.Add(this.labelErrors);
-            this.panel7.Location = new System.Drawing.Point(793, 3);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(157, 36);
-            this.panel7.TabIndex = 4;
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(106)))), ((int)(((byte)(4)))));
-            this.pictureBox3.Location = new System.Drawing.Point(3, 13);
+            this.pictureBox3.Location = new System.Drawing.Point(663, 12);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(33, 15);
             this.pictureBox3.TabIndex = 12;
             this.pictureBox3.TabStop = false;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.pictureBox2.Location = new System.Drawing.Point(493, 14);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(33, 15);
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
+            // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(42, 12);
+            this.label3.Location = new System.Drawing.Point(702, 14);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 14);
             this.label3.TabIndex = 11;
@@ -172,13 +176,101 @@
             // 
             // labelErrors
             // 
+            this.labelErrors.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelErrors.AutoSize = true;
             this.labelErrors.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelErrors.Location = new System.Drawing.Point(117, 13);
+            this.labelErrors.Location = new System.Drawing.Point(776, 14);
             this.labelErrors.Name = "labelErrors";
             this.labelErrors.Size = new System.Drawing.Size(19, 14);
             this.labelErrors.TabIndex = 10;
             this.labelErrors.Text = "00";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(531, 14);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 14);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Existing Orders";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox4.BackColor = System.Drawing.Color.DarkCyan;
+            this.pictureBox4.Location = new System.Drawing.Point(337, 14);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(33, 15);
+            this.pictureBox4.TabIndex = 9;
+            this.pictureBox4.TabStop = false;
+            // 
+            // labelExistingOrdersCount
+            // 
+            this.labelExistingOrdersCount.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelExistingOrdersCount.AutoSize = true;
+            this.labelExistingOrdersCount.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelExistingOrdersCount.Location = new System.Drawing.Point(619, 14);
+            this.labelExistingOrdersCount.Name = "labelExistingOrdersCount";
+            this.labelExistingOrdersCount.Size = new System.Drawing.Size(19, 14);
+            this.labelExistingOrdersCount.TabIndex = 9;
+            this.labelExistingOrdersCount.Text = "00";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(50)))), ((int)(((byte)(26)))));
+            this.pictureBox1.Location = new System.Drawing.Point(177, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(33, 15);
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
+            // labelOrders
+            // 
+            this.labelOrders.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelOrders.AutoSize = true;
+            this.labelOrders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelOrders.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelOrders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            this.labelOrders.Location = new System.Drawing.Point(375, 14);
+            this.labelOrders.Name = "labelOrders";
+            this.labelOrders.Size = new System.Drawing.Size(70, 14);
+            this.labelOrders.TabIndex = 0;
+            this.labelOrders.Text = "No of Orders";
+            // 
+            // labelOrdersCount
+            // 
+            this.labelOrdersCount.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelOrdersCount.AutoSize = true;
+            this.labelOrdersCount.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelOrdersCount.Location = new System.Drawing.Point(450, 14);
+            this.labelOrdersCount.Name = "labelOrdersCount";
+            this.labelOrdersCount.Size = new System.Drawing.Size(19, 14);
+            this.labelOrdersCount.TabIndex = 7;
+            this.labelOrdersCount.Text = "00";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(215, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Duplicates";
+            // 
+            // labelDuplicatesCount
+            // 
+            this.labelDuplicatesCount.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelDuplicatesCount.AutoSize = true;
+            this.labelDuplicatesCount.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDuplicatesCount.Location = new System.Drawing.Point(287, 15);
+            this.labelDuplicatesCount.Name = "labelDuplicatesCount";
+            this.labelDuplicatesCount.Size = new System.Drawing.Size(19, 14);
+            this.labelDuplicatesCount.TabIndex = 8;
+            this.labelDuplicatesCount.Text = "00";
             // 
             // btn_Upload
             // 
@@ -189,51 +281,12 @@
             this.btn_Upload.AppearanceHovered.BackColor = System.Drawing.Color.Transparent;
             this.btn_Upload.AppearanceHovered.Options.UseBackColor = true;
             this.btn_Upload.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.btn_Upload.Location = new System.Drawing.Point(3, 3);
+            this.btn_Upload.Location = new System.Drawing.Point(3, 5);
             this.btn_Upload.Name = "btn_Upload";
-            this.btn_Upload.Size = new System.Drawing.Size(125, 32);
+            this.btn_Upload.Size = new System.Drawing.Size(95, 28);
             this.btn_Upload.TabIndex = 9;
             this.btn_Upload.Text = "Upload Excel";
             this.btn_Upload.Click += new System.EventHandler(this.btn_Upload_Click);
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.pictureBox2);
-            this.panel6.Controls.Add(this.label2);
-            this.panel6.Controls.Add(this.labelExistingOrdersCount);
-            this.panel6.Location = new System.Drawing.Point(623, 3);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(164, 37);
-            this.panel6.TabIndex = 3;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.pictureBox2.Location = new System.Drawing.Point(3, 13);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(33, 15);
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(42, 13);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 14);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Existing Orders";
-            // 
-            // labelExistingOrdersCount
-            // 
-            this.labelExistingOrdersCount.AutoSize = true;
-            this.labelExistingOrdersCount.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelExistingOrdersCount.Location = new System.Drawing.Point(126, 13);
-            this.labelExistingOrdersCount.Name = "labelExistingOrdersCount";
-            this.labelExistingOrdersCount.Size = new System.Drawing.Size(19, 14);
-            this.labelExistingOrdersCount.TabIndex = 9;
-            this.labelExistingOrdersCount.Text = "00";
             // 
             // btn_Sample_Excel_Fromat
             // 
@@ -245,99 +298,20 @@
             this.btn_Sample_Excel_Fromat.AppearanceHovered.BackColor = System.Drawing.Color.Transparent;
             this.btn_Sample_Excel_Fromat.AppearanceHovered.Options.UseBackColor = true;
             this.btn_Sample_Excel_Fromat.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.btn_Sample_Excel_Fromat.Location = new System.Drawing.Point(1108, 3);
+            this.btn_Sample_Excel_Fromat.Location = new System.Drawing.Point(867, 5);
             this.btn_Sample_Excel_Fromat.Name = "btn_Sample_Excel_Fromat";
-            this.btn_Sample_Excel_Fromat.Size = new System.Drawing.Size(120, 32);
+            this.btn_Sample_Excel_Fromat.Size = new System.Drawing.Size(104, 28);
             this.btn_Sample_Excel_Fromat.TabIndex = 8;
             this.btn_Sample_Excel_Fromat.Text = "Sample Format";
             this.btn_Sample_Excel_Fromat.Click += new System.EventHandler(this.btn_Sample_Excel_Fromat_Click);
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.pictureBox4);
-            this.panel4.Controls.Add(this.labelOrders);
-            this.panel4.Controls.Add(this.labelOrdersCount);
-            this.panel4.Location = new System.Drawing.Point(453, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(164, 37);
-            this.panel4.TabIndex = 1;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.DarkCyan;
-            this.pictureBox4.Location = new System.Drawing.Point(11, 12);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(33, 15);
-            this.pictureBox4.TabIndex = 9;
-            this.pictureBox4.TabStop = false;
-            // 
-            // labelOrders
-            // 
-            this.labelOrders.AutoSize = true;
-            this.labelOrders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelOrders.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelOrders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            this.labelOrders.Location = new System.Drawing.Point(50, 13);
-            this.labelOrders.Name = "labelOrders";
-            this.labelOrders.Size = new System.Drawing.Size(70, 14);
-            this.labelOrders.TabIndex = 0;
-            this.labelOrders.Text = "No of Orders";
-            // 
-            // labelOrdersCount
-            // 
-            this.labelOrdersCount.AutoSize = true;
-            this.labelOrdersCount.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelOrdersCount.Location = new System.Drawing.Point(126, 13);
-            this.labelOrdersCount.Name = "labelOrdersCount";
-            this.labelOrdersCount.Size = new System.Drawing.Size(19, 14);
-            this.labelOrdersCount.TabIndex = 7;
-            this.labelOrdersCount.Text = "00";
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.pictureBox1);
-            this.panel5.Controls.Add(this.label1);
-            this.panel5.Controls.Add(this.labelDuplicatesCount);
-            this.panel5.Location = new System.Drawing.Point(282, 3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(164, 37);
-            this.panel5.TabIndex = 2;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(50)))), ((int)(((byte)(26)))));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(33, 15);
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(42, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Duplicates";
-            // 
-            // labelDuplicatesCount
-            // 
-            this.labelDuplicatesCount.AutoSize = true;
-            this.labelDuplicatesCount.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDuplicatesCount.Location = new System.Drawing.Point(114, 12);
-            this.labelDuplicatesCount.Name = "labelDuplicatesCount";
-            this.labelDuplicatesCount.Size = new System.Drawing.Size(19, 14);
-            this.labelDuplicatesCount.TabIndex = 8;
-            this.labelDuplicatesCount.Text = "00";
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.panel8);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(3, 47);
+            this.panel3.Location = new System.Drawing.Point(3, 46);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1231, 364);
+            this.panel3.Size = new System.Drawing.Size(974, 354);
             this.panel3.TabIndex = 2;
             // 
             // panel8
@@ -346,7 +320,7 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1231, 364);
+            this.panel8.Size = new System.Drawing.Size(974, 354);
             this.panel8.TabIndex = 0;
             // 
             // grd_order_Control
@@ -355,7 +329,7 @@
             this.grd_order_Control.Location = new System.Drawing.Point(0, 0);
             this.grd_order_Control.MainView = this.grd_order_View;
             this.grd_order_Control.Name = "grd_order_Control";
-            this.grd_order_Control.Size = new System.Drawing.Size(1231, 364);
+            this.grd_order_Control.Size = new System.Drawing.Size(974, 354);
             this.grd_order_Control.TabIndex = 0;
             this.grd_order_Control.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grd_order_View});
@@ -382,6 +356,7 @@
             this.gridColumn17,
             this.gridColumn18,
             this.gridColumn20,
+            this.gridColumn28,
             this.gridColumn19,
             this.gridColumn21,
             this.gridColumn22,
@@ -391,7 +366,8 @@
             this.gridColumn26,
             this.gridColumn27,
             this.Exist_count,
-            this.Duplicate_Count});
+            this.Duplicate_Count,
+            this.ad_duplicate_count});
             this.grd_order_View.GridControl = this.grd_order_Control;
             this.grd_order_View.IndicatorWidth = 10;
             this.grd_order_View.Name = "grd_order_View";
@@ -570,6 +546,14 @@
             this.gridColumn20.Visible = true;
             this.gridColumn20.VisibleIndex = 18;
             // 
+            // gridColumn28
+            // 
+            this.gridColumn28.Caption = "Copy_Type";
+            this.gridColumn28.FieldName = "Copy_Type";
+            this.gridColumn28.Name = "gridColumn28";
+            this.gridColumn28.Visible = true;
+            this.gridColumn28.VisibleIndex = 19;
+            // 
             // gridColumn19
             // 
             this.gridColumn19.Caption = "Error Status";
@@ -577,7 +561,7 @@
             this.gridColumn19.Name = "gridColumn19";
             this.gridColumn19.UnboundType = DevExpress.Data.UnboundColumnType.Object;
             this.gridColumn19.Visible = true;
-            this.gridColumn19.VisibleIndex = 19;
+            this.gridColumn19.VisibleIndex = 20;
             this.gridColumn19.Width = 150;
             // 
             // gridColumn21
@@ -634,13 +618,19 @@
             this.Duplicate_Count.FieldName = "Duplicate_Count";
             this.Duplicate_Count.Name = "Duplicate_Count";
             // 
+            // ad_duplicate_count
+            // 
+            this.ad_duplicate_count.Caption = "ad_duplicate_count";
+            this.ad_duplicate_count.FieldName = "ad_duplicate_count";
+            this.ad_duplicate_count.Name = "ad_duplicate_count";
+            // 
             // panel9
             // 
             this.panel9.Controls.Add(this.flowLayoutPanel1);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(3, 417);
+            this.panel9.Location = new System.Drawing.Point(3, 406);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(1231, 50);
+            this.panel9.Size = new System.Drawing.Size(974, 34);
             this.panel9.TabIndex = 3;
             // 
             // flowLayoutPanel1
@@ -652,7 +642,7 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1231, 50);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(974, 34);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // btn_Clear
@@ -664,9 +654,9 @@
             this.btn_Clear.AppearanceHovered.BackColor = System.Drawing.Color.Transparent;
             this.btn_Clear.AppearanceHovered.Options.UseBackColor = true;
             this.btn_Clear.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.btn_Clear.Location = new System.Drawing.Point(1112, 3);
+            this.btn_Clear.Location = new System.Drawing.Point(876, 3);
             this.btn_Clear.Name = "btn_Clear";
-            this.btn_Clear.Size = new System.Drawing.Size(116, 32);
+            this.btn_Clear.Size = new System.Drawing.Size(95, 28);
             this.btn_Clear.TabIndex = 7;
             this.btn_Clear.Text = "Clear";
             this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click);
@@ -682,9 +672,9 @@
             this.btn_Import_Orders.AppearanceHovered.Options.UseBackColor = true;
             this.btn_Import_Orders.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.btn_Import_Orders.Enabled = false;
-            this.btn_Import_Orders.Location = new System.Drawing.Point(980, 3);
+            this.btn_Import_Orders.Location = new System.Drawing.Point(770, 3);
             this.btn_Import_Orders.Name = "btn_Import_Orders";
-            this.btn_Import_Orders.Size = new System.Drawing.Size(126, 32);
+            this.btn_Import_Orders.Size = new System.Drawing.Size(100, 28);
             this.btn_Import_Orders.TabIndex = 11;
             this.btn_Import_Orders.Text = "Import Orders";
             this.btn_Import_Orders.Click += new System.EventHandler(this.btn_Import_Orders_Click);
@@ -699,9 +689,9 @@
             this.btn_Export_Errors.AppearanceHovered.Options.UseBackColor = true;
             this.btn_Export_Errors.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.btn_Export_Errors.Enabled = false;
-            this.btn_Export_Errors.Location = new System.Drawing.Point(853, 3);
+            this.btn_Export_Errors.Location = new System.Drawing.Point(669, 3);
             this.btn_Export_Errors.Name = "btn_Export_Errors";
-            this.btn_Export_Errors.Size = new System.Drawing.Size(121, 32);
+            this.btn_Export_Errors.Size = new System.Drawing.Size(95, 28);
             this.btn_Export_Errors.TabIndex = 10;
             this.btn_Export_Errors.Text = "Export Errors";
             this.btn_Export_Errors.Click += new System.EventHandler(this.btn_Export_Errors_Click);
@@ -722,7 +712,7 @@
             this.groupControl1.LookAndFeel.SkinName = "Office 2010 Blue";
             this.groupControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1241, 509);
+            this.groupControl1.Size = new System.Drawing.Size(984, 482);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "Import Orders";
             // 
@@ -734,25 +724,19 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1241, 509);
+            this.ClientSize = new System.Drawing.Size(984, 482);
             this.Controls.Add(this.groupControl1);
             this.LookAndFeel.SkinName = "Office 2010 Blue";
             this.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.MinimumSize = new System.Drawing.Size(1000, 520);
             this.Name = "Import_Orders_New";
             this.Text = "Import Orders";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
@@ -808,19 +792,15 @@
         private DevExpress.XtraEditors.SimpleButton btn_Clear;
         private DevExpress.XtraEditors.SimpleButton btn_Import_Orders;
         private DevExpress.XtraEditors.SimpleButton btn_Export_Errors;
-        private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label labelErrors;
-        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelExistingOrdersCount;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label labelOrders;
         private System.Windows.Forms.Label labelOrdersCount;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelDuplicatesCount;
@@ -828,5 +808,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn Duplicate_Count;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn27;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn28;
+        private DevExpress.XtraGrid.Columns.GridColumn ad_duplicate_count;
     }
 }

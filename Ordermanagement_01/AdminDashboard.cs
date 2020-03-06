@@ -2684,14 +2684,14 @@ namespace Ordermanagement_01
 
                     this.Invoke(new MethodInvoker(delegate
                     {
-                        lbl_Exam_Qc.Text = "SUPER QC  " + "(" + dtsuperqc_Work_Orders.Rows[0]["count"].ToString() + ")";
+                        lbl_Exam_Qc.Text = "SUPER QC " + "(" + dtsuperqc_Work_Orders.Rows[0]["count"].ToString() + ")";
                     }));
 
                 }
                 else
                 {
 
-                    lbl_Exam_Qc.Text = "SUPER QC  " + "(" + dtsuperqc_Work_Orders.Rows[0]["count"].ToString() + ")";
+                    lbl_Exam_Qc.Text = "SUPER QC " + "(" + dtsuperqc_Work_Orders.Rows[0]["count"].ToString() + ")";
                 }
 
             }
@@ -31928,8 +31928,7 @@ namespace Ordermanagement_01
                 //Close Wait Form
                 SplashScreenManager.CloseForm(false);
             }
-
-        }
+                    }
 
         private void btn_DataDepth_Allocation_Click(object sender, EventArgs e)
         {
@@ -32415,7 +32414,7 @@ namespace Ordermanagement_01
                         // ADMINSTRATION
                         if (User_Access_Id == 134 && Checked == "True") { AdminstrationToolStripMenuItem.Enabled = true; } else if (User_Access_Id == 134 && Checked == "False") { AdminstrationToolStripMenuItem.Enabled = false; }
                         // Help
-                        if (User_Access_Id == 141 && Checked == "True") { AboutUsToolStripMenuItem.Enabled = true; } else if (User_Access_Id == 141 && Checked == "False") { AboutUsToolStripMenuItem.Enabled = false; }
+                      //  if (User_Access_Id == 141 && Checked == "True") { AboutUsToolStripMenuItem.Enabled = true; } else if (User_Access_Id == 141 && Checked == "False") { AboutUsToolStripMenuItem.Enabled = false; }
                         // Websearch
                         if (User_Access_Id == 135 && Checked == "True") { webSearcherToolStripMenuItem1.Enabled = true; } else if (User_Access_Id == 135 && Checked == "False") { webSearcherToolStripMenuItem1.Enabled = false; }
                         // ABSTRACTOR

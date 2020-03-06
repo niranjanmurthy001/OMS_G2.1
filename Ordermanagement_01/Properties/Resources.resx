@@ -157,8 +157,8 @@
   <data name="buttonRefresh.ImageOptions.Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\buttonRefresh.ImageOptions.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Greenboxbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Greenboxbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="lockScreenIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lockScreenIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="right_arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\right_arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -168,6 +168,9 @@
   </data>
   <data name="Background007" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Background007.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="refresh icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\refresh icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="shapes-and-symbols" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shapes-and-symbols.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -213,6 +216,9 @@
   </data>
   <data name="list" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\list1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="refresh11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\refresh11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="user-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -331,6 +337,9 @@
   <data name="buttonImageOptions4.Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\buttonImageOptions4.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="refresh (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\refresh (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="instructions" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\instructions.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -400,9 +409,6 @@
   <data name="refresh0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\refresh0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="lockScreenIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lockScreenIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="skin3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\skin31.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -412,8 +418,8 @@
   <data name="pause1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pause.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="view (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\view (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Tax" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tax1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="My_Orders_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\My_Orders_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -429,6 +435,9 @@
   </data>
   <data name="computer_files_transfer_sm_wm" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\computer_files_transfer_sm_wm.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Greenboxbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Greenboxbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Background0051" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Background0051.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -493,11 +502,11 @@
   <data name="Not_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Not_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Tax" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Tax1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Icon_test_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icon_test_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="YellowRoundbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\YellowRoundbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="red" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -589,6 +598,9 @@
   <data name="vendor_new" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\vendor_new.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-synchronize-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-synchronize-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="assigner" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\assigner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -600,6 +612,9 @@
   </data>
   <data name="Search_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Search_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ic_refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pictureEdit7.EditValue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pictureEdit7.EditValue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -730,6 +745,9 @@
   <data name="LockIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LockIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="refresh (6)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\refresh (6).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="left_arrow2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\left_arrow21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -742,8 +760,8 @@
   <data name="Redbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Redbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="YellowRoundbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\YellowRoundbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="view (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\view (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="diamond_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\diamond_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -808,7 +826,7 @@
   <data name="Progress_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Progress_32.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ic_refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ic_refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logout icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logout icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

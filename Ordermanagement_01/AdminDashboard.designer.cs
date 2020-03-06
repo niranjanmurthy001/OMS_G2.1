@@ -777,8 +777,8 @@
             this.Gb_Processing.Controls.Add(this.lbl_Search_orders_Qc_Count);
             this.Gb_Processing.Controls.Add(this.lbl_Search_Work_Orders_Count);
             this.Gb_Processing.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Gb_Processing.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Gb_Processing.ForeColor = System.Drawing.Color.SteelBlue;
+            this.Gb_Processing.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Gb_Processing.ForeColor = System.Drawing.Color.Black;
             this.Gb_Processing.Location = new System.Drawing.Point(14, 66);
             this.Gb_Processing.Name = "Gb_Processing";
             this.Gb_Processing.Size = new System.Drawing.Size(1218, 80);
@@ -790,10 +790,11 @@
             // 
             // btn_Tax_Req_Processing
             // 
-            this.btn_Tax_Req_Processing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_Tax_Req_Processing.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Tax_Req_Processing.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Tax_Req_Processing.ForeColor = System.Drawing.Color.Maroon;
+            this.btn_Tax_Req_Processing.BackColor = System.Drawing.Color.White;
+            this.btn_Tax_Req_Processing.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.btn_Tax_Req_Processing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Tax_Req_Processing.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Tax_Req_Processing.ForeColor = System.Drawing.Color.Black;
             this.btn_Tax_Req_Processing.Location = new System.Drawing.Point(316, 19);
             this.btn_Tax_Req_Processing.Name = "btn_Tax_Req_Processing";
             this.btn_Tax_Req_Processing.Size = new System.Drawing.Size(121, 53);
@@ -804,10 +805,11 @@
             // 
             // btn_tax_Order_Processing
             // 
-            this.btn_tax_Order_Processing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_tax_Order_Processing.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_tax_Order_Processing.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_tax_Order_Processing.ForeColor = System.Drawing.Color.Maroon;
+            this.btn_tax_Order_Processing.BackColor = System.Drawing.Color.White;
+            this.btn_tax_Order_Processing.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.btn_tax_Order_Processing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_tax_Order_Processing.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_tax_Order_Processing.ForeColor = System.Drawing.Color.Black;
             this.btn_tax_Order_Processing.Location = new System.Drawing.Point(1050, 19);
             this.btn_tax_Order_Processing.Name = "btn_tax_Order_Processing";
             this.btn_tax_Order_Processing.Size = new System.Drawing.Size(116, 53);
@@ -818,10 +820,11 @@
             // 
             // btn_DataDepth_Processing
             // 
-            this.btn_DataDepth_Processing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_DataDepth_Processing.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_DataDepth_Processing.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_DataDepth_Processing.ForeColor = System.Drawing.Color.Maroon;
+            this.btn_DataDepth_Processing.BackColor = System.Drawing.Color.White;
+            this.btn_DataDepth_Processing.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.btn_DataDepth_Processing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_DataDepth_Processing.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_DataDepth_Processing.ForeColor = System.Drawing.Color.Black;
             this.btn_DataDepth_Processing.Location = new System.Drawing.Point(191, 19);
             this.btn_DataDepth_Processing.Name = "btn_DataDepth_Processing";
             this.btn_DataDepth_Processing.Size = new System.Drawing.Size(121, 53);
@@ -832,10 +835,11 @@
             // 
             // lbl_Exception_Orders_Work_Count
             // 
-            this.lbl_Exception_Orders_Work_Count.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.lbl_Exception_Orders_Work_Count.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_Exception_Orders_Work_Count.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Exception_Orders_Work_Count.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_Exception_Orders_Work_Count.BackColor = System.Drawing.Color.White;
+            this.lbl_Exception_Orders_Work_Count.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lbl_Exception_Orders_Work_Count.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Exception_Orders_Work_Count.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Exception_Orders_Work_Count.ForeColor = System.Drawing.Color.Black;
             this.lbl_Exception_Orders_Work_Count.Location = new System.Drawing.Point(943, 19);
             this.lbl_Exception_Orders_Work_Count.Name = "lbl_Exception_Orders_Work_Count";
             this.lbl_Exception_Orders_Work_Count.Size = new System.Drawing.Size(102, 53);
@@ -846,10 +850,11 @@
             // 
             // btn_Image_Request_Processing
             // 
-            this.btn_Image_Request_Processing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_Image_Request_Processing.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Image_Request_Processing.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Image_Request_Processing.ForeColor = System.Drawing.Color.Maroon;
+            this.btn_Image_Request_Processing.BackColor = System.Drawing.Color.White;
+            this.btn_Image_Request_Processing.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.btn_Image_Request_Processing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Image_Request_Processing.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Image_Request_Processing.ForeColor = System.Drawing.Color.Black;
             this.btn_Image_Request_Processing.Location = new System.Drawing.Point(91, 19);
             this.btn_Image_Request_Processing.Name = "btn_Image_Request_Processing";
             this.btn_Image_Request_Processing.Size = new System.Drawing.Size(96, 53);
@@ -860,10 +865,11 @@
             // 
             // lbl_Final_Qc_Orders_Work_Count
             // 
-            this.lbl_Final_Qc_Orders_Work_Count.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.lbl_Final_Qc_Orders_Work_Count.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_Final_Qc_Orders_Work_Count.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Final_Qc_Orders_Work_Count.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_Final_Qc_Orders_Work_Count.BackColor = System.Drawing.Color.White;
+            this.lbl_Final_Qc_Orders_Work_Count.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lbl_Final_Qc_Orders_Work_Count.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Final_Qc_Orders_Work_Count.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Final_Qc_Orders_Work_Count.ForeColor = System.Drawing.Color.Black;
             this.lbl_Final_Qc_Orders_Work_Count.Location = new System.Drawing.Point(728, 19);
             this.lbl_Final_Qc_Orders_Work_Count.Name = "lbl_Final_Qc_Orders_Work_Count";
             this.lbl_Final_Qc_Orders_Work_Count.Size = new System.Drawing.Size(105, 53);
@@ -874,10 +880,11 @@
             // 
             // lbl_Upload_Order_Work_Count
             // 
-            this.lbl_Upload_Order_Work_Count.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.lbl_Upload_Order_Work_Count.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_Upload_Order_Work_Count.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Upload_Order_Work_Count.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_Upload_Order_Work_Count.BackColor = System.Drawing.Color.White;
+            this.lbl_Upload_Order_Work_Count.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lbl_Upload_Order_Work_Count.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Upload_Order_Work_Count.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Upload_Order_Work_Count.ForeColor = System.Drawing.Color.Black;
             this.lbl_Upload_Order_Work_Count.Location = new System.Drawing.Point(837, 19);
             this.lbl_Upload_Order_Work_Count.Name = "lbl_Upload_Order_Work_Count";
             this.lbl_Upload_Order_Work_Count.Size = new System.Drawing.Size(102, 53);
@@ -888,10 +895,11 @@
             // 
             // lbl_Typing_Qc_Orders_Work_Count
             // 
-            this.lbl_Typing_Qc_Orders_Work_Count.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.lbl_Typing_Qc_Orders_Work_Count.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_Typing_Qc_Orders_Work_Count.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Typing_Qc_Orders_Work_Count.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_Typing_Qc_Orders_Work_Count.BackColor = System.Drawing.Color.White;
+            this.lbl_Typing_Qc_Orders_Work_Count.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lbl_Typing_Qc_Orders_Work_Count.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Typing_Qc_Orders_Work_Count.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Typing_Qc_Orders_Work_Count.ForeColor = System.Drawing.Color.Black;
             this.lbl_Typing_Qc_Orders_Work_Count.Location = new System.Drawing.Point(629, 19);
             this.lbl_Typing_Qc_Orders_Work_Count.Name = "lbl_Typing_Qc_Orders_Work_Count";
             this.lbl_Typing_Qc_Orders_Work_Count.Size = new System.Drawing.Size(95, 53);
@@ -902,10 +910,11 @@
             // 
             // lbl_Typing_work_Count
             // 
-            this.lbl_Typing_work_Count.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.lbl_Typing_work_Count.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_Typing_work_Count.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Typing_work_Count.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_Typing_work_Count.BackColor = System.Drawing.Color.White;
+            this.lbl_Typing_work_Count.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lbl_Typing_work_Count.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Typing_work_Count.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Typing_work_Count.ForeColor = System.Drawing.Color.Black;
             this.lbl_Typing_work_Count.Location = new System.Drawing.Point(537, 19);
             this.lbl_Typing_work_Count.Name = "lbl_Typing_work_Count";
             this.lbl_Typing_work_Count.Size = new System.Drawing.Size(88, 53);
@@ -916,10 +925,11 @@
             // 
             // lbl_Search_orders_Qc_Count
             // 
-            this.lbl_Search_orders_Qc_Count.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.lbl_Search_orders_Qc_Count.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_Search_orders_Qc_Count.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Search_orders_Qc_Count.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_Search_orders_Qc_Count.BackColor = System.Drawing.Color.White;
+            this.lbl_Search_orders_Qc_Count.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lbl_Search_orders_Qc_Count.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Search_orders_Qc_Count.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Search_orders_Qc_Count.ForeColor = System.Drawing.Color.Black;
             this.lbl_Search_orders_Qc_Count.Location = new System.Drawing.Point(441, 19);
             this.lbl_Search_orders_Qc_Count.Name = "lbl_Search_orders_Qc_Count";
             this.lbl_Search_orders_Qc_Count.Size = new System.Drawing.Size(92, 53);
@@ -930,10 +940,11 @@
             // 
             // lbl_Search_Work_Orders_Count
             // 
-            this.lbl_Search_Work_Orders_Count.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.lbl_Search_Work_Orders_Count.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_Search_Work_Orders_Count.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Search_Work_Orders_Count.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_Search_Work_Orders_Count.BackColor = System.Drawing.Color.White;
+            this.lbl_Search_Work_Orders_Count.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lbl_Search_Work_Orders_Count.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Search_Work_Orders_Count.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Search_Work_Orders_Count.ForeColor = System.Drawing.Color.Black;
             this.lbl_Search_Work_Orders_Count.Location = new System.Drawing.Point(6, 19);
             this.lbl_Search_Work_Orders_Count.Name = "lbl_Search_Work_Orders_Count";
             this.lbl_Search_Work_Orders_Count.Size = new System.Drawing.Size(81, 53);
@@ -956,8 +967,8 @@
             this.groupBox1.Controls.Add(this.lbl_search_Qc_Allocate_Count);
             this.groupBox1.Controls.Add(this.lb_Search_Order_ALlocate_count);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox1.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(13, 148);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1219, 80);
@@ -969,10 +980,11 @@
             // 
             // btn_Tax_Req_Allocation
             // 
-            this.btn_Tax_Req_Allocation.BackColor = System.Drawing.Color.DarkSalmon;
-            this.btn_Tax_Req_Allocation.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Tax_Req_Allocation.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Tax_Req_Allocation.ForeColor = System.Drawing.Color.DarkRed;
+            this.btn_Tax_Req_Allocation.BackColor = System.Drawing.Color.White;
+            this.btn_Tax_Req_Allocation.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.btn_Tax_Req_Allocation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Tax_Req_Allocation.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Tax_Req_Allocation.ForeColor = System.Drawing.Color.Black;
             this.btn_Tax_Req_Allocation.Location = new System.Drawing.Point(330, 20);
             this.btn_Tax_Req_Allocation.Name = "btn_Tax_Req_Allocation";
             this.btn_Tax_Req_Allocation.Size = new System.Drawing.Size(121, 53);
@@ -983,10 +995,11 @@
             // 
             // btn_DataDepth_Allocation
             // 
-            this.btn_DataDepth_Allocation.BackColor = System.Drawing.Color.DarkSalmon;
-            this.btn_DataDepth_Allocation.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_DataDepth_Allocation.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_DataDepth_Allocation.ForeColor = System.Drawing.Color.DarkRed;
+            this.btn_DataDepth_Allocation.BackColor = System.Drawing.Color.White;
+            this.btn_DataDepth_Allocation.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.btn_DataDepth_Allocation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_DataDepth_Allocation.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_DataDepth_Allocation.ForeColor = System.Drawing.Color.Black;
             this.btn_DataDepth_Allocation.Location = new System.Drawing.Point(204, 20);
             this.btn_DataDepth_Allocation.Name = "btn_DataDepth_Allocation";
             this.btn_DataDepth_Allocation.Size = new System.Drawing.Size(121, 53);
@@ -997,10 +1010,11 @@
             // 
             // btn_Image_req_Allocation
             // 
-            this.btn_Image_req_Allocation.BackColor = System.Drawing.Color.DarkSalmon;
-            this.btn_Image_req_Allocation.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Image_req_Allocation.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Image_req_Allocation.ForeColor = System.Drawing.Color.DarkRed;
+            this.btn_Image_req_Allocation.BackColor = System.Drawing.Color.White;
+            this.btn_Image_req_Allocation.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.btn_Image_req_Allocation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Image_req_Allocation.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Image_req_Allocation.ForeColor = System.Drawing.Color.Black;
             this.btn_Image_req_Allocation.Location = new System.Drawing.Point(103, 20);
             this.btn_Image_req_Allocation.Name = "btn_Image_req_Allocation";
             this.btn_Image_req_Allocation.Size = new System.Drawing.Size(96, 53);
@@ -1011,10 +1025,11 @@
             // 
             // lb_ReSearch_Order_ALlocate_count
             // 
-            this.lb_ReSearch_Order_ALlocate_count.BackColor = System.Drawing.Color.DarkSalmon;
-            this.lb_ReSearch_Order_ALlocate_count.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lb_ReSearch_Order_ALlocate_count.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_ReSearch_Order_ALlocate_count.ForeColor = System.Drawing.Color.DarkRed;
+            this.lb_ReSearch_Order_ALlocate_count.BackColor = System.Drawing.Color.White;
+            this.lb_ReSearch_Order_ALlocate_count.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lb_ReSearch_Order_ALlocate_count.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lb_ReSearch_Order_ALlocate_count.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_ReSearch_Order_ALlocate_count.ForeColor = System.Drawing.Color.Black;
             this.lb_ReSearch_Order_ALlocate_count.Location = new System.Drawing.Point(7, 20);
             this.lb_ReSearch_Order_ALlocate_count.Name = "lb_ReSearch_Order_ALlocate_count";
             this.lb_ReSearch_Order_ALlocate_count.Size = new System.Drawing.Size(91, 53);
@@ -1025,10 +1040,11 @@
             // 
             // lbl_Exception_Orders_Allocation_Count
             // 
-            this.lbl_Exception_Orders_Allocation_Count.BackColor = System.Drawing.Color.DarkSalmon;
-            this.lbl_Exception_Orders_Allocation_Count.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_Exception_Orders_Allocation_Count.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Exception_Orders_Allocation_Count.ForeColor = System.Drawing.Color.DarkRed;
+            this.lbl_Exception_Orders_Allocation_Count.BackColor = System.Drawing.Color.White;
+            this.lbl_Exception_Orders_Allocation_Count.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lbl_Exception_Orders_Allocation_Count.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Exception_Orders_Allocation_Count.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Exception_Orders_Allocation_Count.ForeColor = System.Drawing.Color.Black;
             this.lbl_Exception_Orders_Allocation_Count.Location = new System.Drawing.Point(1065, 20);
             this.lbl_Exception_Orders_Allocation_Count.Name = "lbl_Exception_Orders_Allocation_Count";
             this.lbl_Exception_Orders_Allocation_Count.Size = new System.Drawing.Size(102, 53);
@@ -1039,10 +1055,11 @@
             // 
             // lbl_Final_Qc_Orders_Allocation_Count
             // 
-            this.lbl_Final_Qc_Orders_Allocation_Count.BackColor = System.Drawing.Color.DarkSalmon;
-            this.lbl_Final_Qc_Orders_Allocation_Count.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_Final_Qc_Orders_Allocation_Count.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Final_Qc_Orders_Allocation_Count.ForeColor = System.Drawing.Color.DarkRed;
+            this.lbl_Final_Qc_Orders_Allocation_Count.BackColor = System.Drawing.Color.White;
+            this.lbl_Final_Qc_Orders_Allocation_Count.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lbl_Final_Qc_Orders_Allocation_Count.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Final_Qc_Orders_Allocation_Count.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Final_Qc_Orders_Allocation_Count.ForeColor = System.Drawing.Color.Black;
             this.lbl_Final_Qc_Orders_Allocation_Count.Location = new System.Drawing.Point(848, 20);
             this.lbl_Final_Qc_Orders_Allocation_Count.Name = "lbl_Final_Qc_Orders_Allocation_Count";
             this.lbl_Final_Qc_Orders_Allocation_Count.Size = new System.Drawing.Size(105, 53);
@@ -1053,10 +1070,11 @@
             // 
             // lbl_Upload_Orders_Allocate_Count
             // 
-            this.lbl_Upload_Orders_Allocate_Count.BackColor = System.Drawing.Color.DarkSalmon;
-            this.lbl_Upload_Orders_Allocate_Count.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_Upload_Orders_Allocate_Count.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Upload_Orders_Allocate_Count.ForeColor = System.Drawing.Color.DarkRed;
+            this.lbl_Upload_Orders_Allocate_Count.BackColor = System.Drawing.Color.White;
+            this.lbl_Upload_Orders_Allocate_Count.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lbl_Upload_Orders_Allocate_Count.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Upload_Orders_Allocate_Count.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Upload_Orders_Allocate_Count.ForeColor = System.Drawing.Color.Black;
             this.lbl_Upload_Orders_Allocate_Count.Location = new System.Drawing.Point(958, 20);
             this.lbl_Upload_Orders_Allocate_Count.Name = "lbl_Upload_Orders_Allocate_Count";
             this.lbl_Upload_Orders_Allocate_Count.Size = new System.Drawing.Size(102, 53);
@@ -1067,10 +1085,11 @@
             // 
             // lbl_Typing_Allocate_Qc_Count
             // 
-            this.lbl_Typing_Allocate_Qc_Count.BackColor = System.Drawing.Color.DarkSalmon;
-            this.lbl_Typing_Allocate_Qc_Count.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_Typing_Allocate_Qc_Count.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Typing_Allocate_Qc_Count.ForeColor = System.Drawing.Color.DarkRed;
+            this.lbl_Typing_Allocate_Qc_Count.BackColor = System.Drawing.Color.White;
+            this.lbl_Typing_Allocate_Qc_Count.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lbl_Typing_Allocate_Qc_Count.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Typing_Allocate_Qc_Count.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Typing_Allocate_Qc_Count.ForeColor = System.Drawing.Color.Black;
             this.lbl_Typing_Allocate_Qc_Count.Location = new System.Drawing.Point(738, 20);
             this.lbl_Typing_Allocate_Qc_Count.Name = "lbl_Typing_Allocate_Qc_Count";
             this.lbl_Typing_Allocate_Qc_Count.Size = new System.Drawing.Size(105, 53);
@@ -1081,10 +1100,11 @@
             // 
             // lbl_typing_Allocate_Count
             // 
-            this.lbl_typing_Allocate_Count.BackColor = System.Drawing.Color.DarkSalmon;
-            this.lbl_typing_Allocate_Count.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_typing_Allocate_Count.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_typing_Allocate_Count.ForeColor = System.Drawing.Color.DarkRed;
+            this.lbl_typing_Allocate_Count.BackColor = System.Drawing.Color.White;
+            this.lbl_typing_Allocate_Count.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lbl_typing_Allocate_Count.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_typing_Allocate_Count.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_typing_Allocate_Count.ForeColor = System.Drawing.Color.Black;
             this.lbl_typing_Allocate_Count.Location = new System.Drawing.Point(642, 20);
             this.lbl_typing_Allocate_Count.Name = "lbl_typing_Allocate_Count";
             this.lbl_typing_Allocate_Count.Size = new System.Drawing.Size(91, 53);
@@ -1095,10 +1115,11 @@
             // 
             // lbl_search_Qc_Allocate_Count
             // 
-            this.lbl_search_Qc_Allocate_Count.BackColor = System.Drawing.Color.DarkSalmon;
-            this.lbl_search_Qc_Allocate_Count.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_search_Qc_Allocate_Count.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_search_Qc_Allocate_Count.ForeColor = System.Drawing.Color.DarkRed;
+            this.lbl_search_Qc_Allocate_Count.BackColor = System.Drawing.Color.White;
+            this.lbl_search_Qc_Allocate_Count.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lbl_search_Qc_Allocate_Count.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_search_Qc_Allocate_Count.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_search_Qc_Allocate_Count.ForeColor = System.Drawing.Color.Black;
             this.lbl_search_Qc_Allocate_Count.Location = new System.Drawing.Point(542, 20);
             this.lbl_search_Qc_Allocate_Count.Name = "lbl_search_Qc_Allocate_Count";
             this.lbl_search_Qc_Allocate_Count.Size = new System.Drawing.Size(95, 53);
@@ -1109,10 +1130,11 @@
             // 
             // lb_Search_Order_ALlocate_count
             // 
-            this.lb_Search_Order_ALlocate_count.BackColor = System.Drawing.Color.DarkSalmon;
-            this.lb_Search_Order_ALlocate_count.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lb_Search_Order_ALlocate_count.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Search_Order_ALlocate_count.ForeColor = System.Drawing.Color.DarkRed;
+            this.lb_Search_Order_ALlocate_count.BackColor = System.Drawing.Color.White;
+            this.lb_Search_Order_ALlocate_count.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lb_Search_Order_ALlocate_count.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lb_Search_Order_ALlocate_count.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Search_Order_ALlocate_count.ForeColor = System.Drawing.Color.Black;
             this.lb_Search_Order_ALlocate_count.Location = new System.Drawing.Point(456, 20);
             this.lb_Search_Order_ALlocate_count.Name = "lb_Search_Order_ALlocate_count";
             this.lb_Search_Order_ALlocate_count.Size = new System.Drawing.Size(81, 53);
@@ -1181,10 +1203,11 @@
             // 
             // lbl_Exam_Qc
             // 
-            this.lbl_Exam_Qc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.lbl_Exam_Qc.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_Exam_Qc.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Exam_Qc.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_Exam_Qc.BackColor = System.Drawing.Color.White;
+            this.lbl_Exam_Qc.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lbl_Exam_Qc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Exam_Qc.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Exam_Qc.ForeColor = System.Drawing.Color.Black;
             this.lbl_Exam_Qc.Location = new System.Drawing.Point(127, 26);
             this.lbl_Exam_Qc.Name = "lbl_Exam_Qc";
             this.lbl_Exam_Qc.Size = new System.Drawing.Size(98, 35);
@@ -1195,10 +1218,11 @@
             // 
             // lbl_Rework_Count
             // 
-            this.lbl_Rework_Count.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.lbl_Rework_Count.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_Rework_Count.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Rework_Count.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_Rework_Count.BackColor = System.Drawing.Color.White;
+            this.lbl_Rework_Count.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lbl_Rework_Count.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Rework_Count.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Rework_Count.ForeColor = System.Drawing.Color.Black;
             this.lbl_Rework_Count.Location = new System.Drawing.Point(23, 26);
             this.lbl_Rework_Count.Name = "lbl_Rework_Count";
             this.lbl_Rework_Count.Size = new System.Drawing.Size(98, 35);
@@ -1209,10 +1233,11 @@
             // 
             // lbl_Rus_Order_Work_COunt
             // 
-            this.lbl_Rus_Order_Work_COunt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.lbl_Rus_Order_Work_COunt.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_Rus_Order_Work_COunt.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Rus_Order_Work_COunt.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_Rus_Order_Work_COunt.BackColor = System.Drawing.Color.White;
+            this.lbl_Rus_Order_Work_COunt.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lbl_Rus_Order_Work_COunt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Rus_Order_Work_COunt.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Rus_Order_Work_COunt.ForeColor = System.Drawing.Color.Black;
             this.lbl_Rus_Order_Work_COunt.Location = new System.Drawing.Point(560, 25);
             this.lbl_Rus_Order_Work_COunt.Name = "lbl_Rus_Order_Work_COunt";
             this.lbl_Rus_Order_Work_COunt.Size = new System.Drawing.Size(91, 53);
@@ -1223,10 +1248,11 @@
             // 
             // lbl_Oms_Abstractor_Processing_Que
             // 
-            this.lbl_Oms_Abstractor_Processing_Que.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.lbl_Oms_Abstractor_Processing_Que.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_Oms_Abstractor_Processing_Que.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Oms_Abstractor_Processing_Que.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_Oms_Abstractor_Processing_Que.BackColor = System.Drawing.Color.White;
+            this.lbl_Oms_Abstractor_Processing_Que.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lbl_Oms_Abstractor_Processing_Que.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Oms_Abstractor_Processing_Que.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Oms_Abstractor_Processing_Que.ForeColor = System.Drawing.Color.Black;
             this.lbl_Oms_Abstractor_Processing_Que.Location = new System.Drawing.Point(437, 27);
             this.lbl_Oms_Abstractor_Processing_Que.Name = "lbl_Oms_Abstractor_Processing_Que";
             this.lbl_Oms_Abstractor_Processing_Que.Size = new System.Drawing.Size(106, 53);
@@ -1237,10 +1263,11 @@
             // 
             // btn_Internal_Tax_Allocation
             // 
-            this.btn_Internal_Tax_Allocation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btn_Internal_Tax_Allocation.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Internal_Tax_Allocation.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Internal_Tax_Allocation.ForeColor = System.Drawing.Color.DarkRed;
+            this.btn_Internal_Tax_Allocation.BackColor = System.Drawing.Color.White;
+            this.btn_Internal_Tax_Allocation.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.btn_Internal_Tax_Allocation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Internal_Tax_Allocation.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Internal_Tax_Allocation.ForeColor = System.Drawing.Color.Black;
             this.btn_Internal_Tax_Allocation.Location = new System.Drawing.Point(444, 25);
             this.btn_Internal_Tax_Allocation.Name = "btn_Internal_Tax_Allocation";
             this.btn_Internal_Tax_Allocation.Size = new System.Drawing.Size(110, 53);
@@ -1251,10 +1278,11 @@
             // 
             // lbl_Appstraction
             // 
-            this.lbl_Appstraction.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.lbl_Appstraction.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_Appstraction.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Appstraction.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.lbl_Appstraction.BackColor = System.Drawing.Color.White;
+            this.lbl_Appstraction.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lbl_Appstraction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Appstraction.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Appstraction.ForeColor = System.Drawing.Color.Black;
             this.lbl_Appstraction.Location = new System.Drawing.Point(557, 25);
             this.lbl_Appstraction.Name = "lbl_Appstraction";
             this.lbl_Appstraction.Size = new System.Drawing.Size(106, 53);
@@ -1265,10 +1293,11 @@
             // 
             // lbl_SearchSuper_Qc_Allocation
             // 
-            this.lbl_SearchSuper_Qc_Allocation.BackColor = System.Drawing.Color.BurlyWood;
-            this.lbl_SearchSuper_Qc_Allocation.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_SearchSuper_Qc_Allocation.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_SearchSuper_Qc_Allocation.ForeColor = System.Drawing.Color.DarkRed;
+            this.lbl_SearchSuper_Qc_Allocation.BackColor = System.Drawing.Color.White;
+            this.lbl_SearchSuper_Qc_Allocation.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lbl_SearchSuper_Qc_Allocation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_SearchSuper_Qc_Allocation.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_SearchSuper_Qc_Allocation.ForeColor = System.Drawing.Color.Black;
             this.lbl_SearchSuper_Qc_Allocation.Location = new System.Drawing.Point(127, 26);
             this.lbl_SearchSuper_Qc_Allocation.Name = "lbl_SearchSuper_Qc_Allocation";
             this.lbl_SearchSuper_Qc_Allocation.Size = new System.Drawing.Size(98, 35);
@@ -1279,10 +1308,11 @@
             // 
             // lbl_Rework_Allocation
             // 
-            this.lbl_Rework_Allocation.BackColor = System.Drawing.Color.BurlyWood;
-            this.lbl_Rework_Allocation.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_Rework_Allocation.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Rework_Allocation.ForeColor = System.Drawing.Color.DarkRed;
+            this.lbl_Rework_Allocation.BackColor = System.Drawing.Color.White;
+            this.lbl_Rework_Allocation.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lbl_Rework_Allocation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Rework_Allocation.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Rework_Allocation.ForeColor = System.Drawing.Color.Black;
             this.lbl_Rework_Allocation.Location = new System.Drawing.Point(23, 26);
             this.lbl_Rework_Allocation.Name = "lbl_Rework_Allocation";
             this.lbl_Rework_Allocation.Size = new System.Drawing.Size(98, 35);
@@ -1318,8 +1348,8 @@
             this.groupBox5.Controls.Add(this.groupBox8);
             this.groupBox5.Controls.Add(this.groupBox7);
             this.groupBox5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox5.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.ForeColor = System.Drawing.Color.Sienna;
+            this.groupBox5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox5.ForeColor = System.Drawing.Color.Black;
             this.groupBox5.Location = new System.Drawing.Point(697, 228);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(535, 98);
@@ -1331,8 +1361,8 @@
             // 
             this.groupBox8.Controls.Add(this.lbl_Rework_Count);
             this.groupBox8.Controls.Add(this.lbl_Exam_Qc);
-            this.groupBox8.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox8.ForeColor = System.Drawing.Color.Sienna;
+            this.groupBox8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.groupBox8.Location = new System.Drawing.Point(268, 24);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(261, 70);
@@ -1344,8 +1374,8 @@
             // 
             this.groupBox7.Controls.Add(this.lbl_SearchSuper_Qc_Allocation);
             this.groupBox7.Controls.Add(this.lbl_Rework_Allocation);
-            this.groupBox7.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox7.ForeColor = System.Drawing.Color.Sienna;
+            this.groupBox7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.groupBox7.Location = new System.Drawing.Point(8, 24);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(252, 70);
@@ -1361,8 +1391,8 @@
             this.groupBox4.Controls.Add(this.lbl_Over_Due_Count);
             this.groupBox4.Controls.Add(this.lbl_Oms_Abstractor_Processing_Que);
             this.groupBox4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox4.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.ForeColor = System.Drawing.Color.Sienna;
+            this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.ForeColor = System.Drawing.Color.Black;
             this.groupBox4.Location = new System.Drawing.Point(13, 317);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(678, 91);
@@ -1372,10 +1402,11 @@
             // 
             // lbl_Rework_Pending_Allocation
             // 
-            this.lbl_Rework_Pending_Allocation.BackColor = System.Drawing.Color.PeachPuff;
-            this.lbl_Rework_Pending_Allocation.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_Rework_Pending_Allocation.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Rework_Pending_Allocation.ForeColor = System.Drawing.Color.DarkRed;
+            this.lbl_Rework_Pending_Allocation.BackColor = System.Drawing.Color.White;
+            this.lbl_Rework_Pending_Allocation.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lbl_Rework_Pending_Allocation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Rework_Pending_Allocation.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Rework_Pending_Allocation.ForeColor = System.Drawing.Color.Black;
             this.lbl_Rework_Pending_Allocation.Location = new System.Drawing.Point(328, 27);
             this.lbl_Rework_Pending_Allocation.Name = "lbl_Rework_Pending_Allocation";
             this.lbl_Rework_Pending_Allocation.Size = new System.Drawing.Size(101, 53);
@@ -1386,10 +1417,11 @@
             // 
             // lbl_Reassigned
             // 
-            this.lbl_Reassigned.BackColor = System.Drawing.Color.PeachPuff;
-            this.lbl_Reassigned.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_Reassigned.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Reassigned.ForeColor = System.Drawing.Color.DarkRed;
+            this.lbl_Reassigned.BackColor = System.Drawing.Color.White;
+            this.lbl_Reassigned.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lbl_Reassigned.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Reassigned.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Reassigned.ForeColor = System.Drawing.Color.Black;
             this.lbl_Reassigned.Location = new System.Drawing.Point(7, 27);
             this.lbl_Reassigned.Name = "lbl_Reassigned";
             this.lbl_Reassigned.Size = new System.Drawing.Size(95, 53);
@@ -1400,10 +1432,11 @@
             // 
             // lbl_Rus_Order_Count
             // 
-            this.lbl_Rus_Order_Count.BackColor = System.Drawing.Color.PeachPuff;
-            this.lbl_Rus_Order_Count.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_Rus_Order_Count.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Rus_Order_Count.ForeColor = System.Drawing.Color.DarkRed;
+            this.lbl_Rus_Order_Count.BackColor = System.Drawing.Color.White;
+            this.lbl_Rus_Order_Count.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lbl_Rus_Order_Count.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Rus_Order_Count.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Rus_Order_Count.ForeColor = System.Drawing.Color.Black;
             this.lbl_Rus_Order_Count.Location = new System.Drawing.Point(109, 27);
             this.lbl_Rus_Order_Count.Name = "lbl_Rus_Order_Count";
             this.lbl_Rus_Order_Count.Size = new System.Drawing.Size(106, 53);
@@ -1414,10 +1447,11 @@
             // 
             // lbl_Over_Due_Count
             // 
-            this.lbl_Over_Due_Count.BackColor = System.Drawing.Color.PeachPuff;
-            this.lbl_Over_Due_Count.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_Over_Due_Count.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Over_Due_Count.ForeColor = System.Drawing.Color.DarkRed;
+            this.lbl_Over_Due_Count.BackColor = System.Drawing.Color.White;
+            this.lbl_Over_Due_Count.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lbl_Over_Due_Count.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Over_Due_Count.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Over_Due_Count.ForeColor = System.Drawing.Color.Black;
             this.lbl_Over_Due_Count.Location = new System.Drawing.Point(222, 27);
             this.lbl_Over_Due_Count.Name = "lbl_Over_Due_Count";
             this.lbl_Over_Due_Count.Size = new System.Drawing.Size(98, 53);
@@ -1456,6 +1490,7 @@
             this.btn_Employee_Red.Size = new System.Drawing.Size(59, 43);
             this.btn_Employee_Red.TabIndex = 31;
             this.btn_Employee_Red.UseVisualStyleBackColor = false;
+            this.btn_Employee_Red.Visible = false;
             this.btn_Employee_Red.Click += new System.EventHandler(this.btn_Employee_Red_Click);
             // 
             // label5
@@ -1493,6 +1528,7 @@
             this.btn_Employee_Yellow.Size = new System.Drawing.Size(64, 43);
             this.btn_Employee_Yellow.TabIndex = 30;
             this.btn_Employee_Yellow.UseVisualStyleBackColor = false;
+            this.btn_Employee_Yellow.Visible = false;
             this.btn_Employee_Yellow.Click += new System.EventHandler(this.btn_Employee_Yellow_Click);
             // 
             // lnk_Completed
@@ -1519,6 +1555,7 @@
             this.label12.TabIndex = 24;
             this.label12.Text = "CLIENT TAT";
             this.label12.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.label12.Visible = false;
             this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // label6
@@ -1542,6 +1579,7 @@
             this.btn_Employee_Green.Size = new System.Drawing.Size(57, 43);
             this.btn_Employee_Green.TabIndex = 29;
             this.btn_Employee_Green.UseVisualStyleBackColor = false;
+            this.btn_Employee_Green.Visible = false;
             this.btn_Employee_Green.Click += new System.EventHandler(this.btn_Employee_Green_Click);
             // 
             // btn_Client_Red
@@ -1554,6 +1592,7 @@
             this.btn_Client_Red.Size = new System.Drawing.Size(55, 43);
             this.btn_Client_Red.TabIndex = 27;
             this.btn_Client_Red.UseVisualStyleBackColor = false;
+            this.btn_Client_Red.Visible = false;
             this.btn_Client_Red.Click += new System.EventHandler(this.btn_Client_Red_Click);
             // 
             // btn_Client_Yellow
@@ -1566,6 +1605,7 @@
             this.btn_Client_Yellow.Size = new System.Drawing.Size(54, 43);
             this.btn_Client_Yellow.TabIndex = 26;
             this.btn_Client_Yellow.UseVisualStyleBackColor = false;
+            this.btn_Client_Yellow.Visible = false;
             this.btn_Client_Yellow.Click += new System.EventHandler(this.btn_Client_Yellow_Click);
             // 
             // label13
@@ -1577,6 +1617,7 @@
             this.label13.Size = new System.Drawing.Size(127, 26);
             this.label13.TabIndex = 28;
             this.label13.Text = "EMPLOYEE TAT";
+            this.label13.Visible = false;
             this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // btn_Client_Green
@@ -1589,6 +1630,7 @@
             this.btn_Client_Green.Size = new System.Drawing.Size(61, 43);
             this.btn_Client_Green.TabIndex = 25;
             this.btn_Client_Green.UseVisualStyleBackColor = false;
+            this.btn_Client_Green.Visible = false;
             this.btn_Client_Green.Click += new System.EventHandler(this.btn_Client_Green_Click);
             // 
             // grd_DashEmployee_efficency
@@ -1667,8 +1709,8 @@
             this.group_Tax.Controls.Add(this.lbl_Tax_Cancelled);
             this.group_Tax.Controls.Add(this.lbl_Tax_Processing_Count);
             this.group_Tax.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.group_Tax.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.group_Tax.ForeColor = System.Drawing.Color.Coral;
+            this.group_Tax.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.group_Tax.ForeColor = System.Drawing.Color.Black;
             this.group_Tax.Location = new System.Drawing.Point(697, 406);
             this.group_Tax.Name = "group_Tax";
             this.group_Tax.Size = new System.Drawing.Size(535, 93);
@@ -1678,10 +1720,11 @@
             // 
             // lbl_Tax_Reports
             // 
-            this.lbl_Tax_Reports.BackColor = System.Drawing.Color.LightGreen;
-            this.lbl_Tax_Reports.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_Tax_Reports.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Tax_Reports.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lbl_Tax_Reports.BackColor = System.Drawing.Color.White;
+            this.lbl_Tax_Reports.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lbl_Tax_Reports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Tax_Reports.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Tax_Reports.ForeColor = System.Drawing.Color.Black;
             this.lbl_Tax_Reports.Location = new System.Drawing.Point(344, 25);
             this.lbl_Tax_Reports.Name = "lbl_Tax_Reports";
             this.lbl_Tax_Reports.Size = new System.Drawing.Size(107, 53);
@@ -1692,10 +1735,11 @@
             // 
             // lbl_tax_Hold
             // 
-            this.lbl_tax_Hold.BackColor = System.Drawing.Color.LightGreen;
-            this.lbl_tax_Hold.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_tax_Hold.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tax_Hold.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lbl_tax_Hold.BackColor = System.Drawing.Color.White;
+            this.lbl_tax_Hold.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lbl_tax_Hold.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_tax_Hold.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tax_Hold.ForeColor = System.Drawing.Color.Black;
             this.lbl_tax_Hold.Location = new System.Drawing.Point(122, 25);
             this.lbl_tax_Hold.Name = "lbl_tax_Hold";
             this.lbl_tax_Hold.Size = new System.Drawing.Size(106, 53);
@@ -1706,10 +1750,11 @@
             // 
             // lbl_Tax_Cancelled
             // 
-            this.lbl_Tax_Cancelled.BackColor = System.Drawing.Color.LightGreen;
-            this.lbl_Tax_Cancelled.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_Tax_Cancelled.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Tax_Cancelled.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lbl_Tax_Cancelled.BackColor = System.Drawing.Color.White;
+            this.lbl_Tax_Cancelled.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lbl_Tax_Cancelled.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Tax_Cancelled.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Tax_Cancelled.ForeColor = System.Drawing.Color.Black;
             this.lbl_Tax_Cancelled.Location = new System.Drawing.Point(233, 25);
             this.lbl_Tax_Cancelled.Name = "lbl_Tax_Cancelled";
             this.lbl_Tax_Cancelled.Size = new System.Drawing.Size(105, 53);
@@ -1720,10 +1765,11 @@
             // 
             // lbl_Tax_Processing_Count
             // 
-            this.lbl_Tax_Processing_Count.BackColor = System.Drawing.Color.LightGreen;
-            this.lbl_Tax_Processing_Count.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_Tax_Processing_Count.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Tax_Processing_Count.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lbl_Tax_Processing_Count.BackColor = System.Drawing.Color.White;
+            this.lbl_Tax_Processing_Count.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lbl_Tax_Processing_Count.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Tax_Processing_Count.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Tax_Processing_Count.ForeColor = System.Drawing.Color.Black;
             this.lbl_Tax_Processing_Count.Location = new System.Drawing.Point(10, 25);
             this.lbl_Tax_Processing_Count.Name = "lbl_Tax_Processing_Count";
             this.lbl_Tax_Processing_Count.Size = new System.Drawing.Size(106, 53);
@@ -1740,8 +1786,8 @@
             this.group_Box_Vendor.Controls.Add(this.lbl_Vendor_Processing);
             this.group_Box_Vendor.Controls.Add(this.lbl_Vendor_Waiting_for_Acceptance);
             this.group_Box_Vendor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.group_Box_Vendor.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.group_Box_Vendor.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.group_Box_Vendor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.group_Box_Vendor.ForeColor = System.Drawing.Color.Black;
             this.group_Box_Vendor.Location = new System.Drawing.Point(697, 327);
             this.group_Box_Vendor.Name = "group_Box_Vendor";
             this.group_Box_Vendor.Size = new System.Drawing.Size(535, 80);
@@ -1751,10 +1797,11 @@
             // 
             // btn_Vendort_Report
             // 
-            this.btn_Vendort_Report.BackColor = System.Drawing.SystemColors.Info;
-            this.btn_Vendort_Report.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Vendort_Report.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold);
-            this.btn_Vendort_Report.ForeColor = System.Drawing.Color.Maroon;
+            this.btn_Vendort_Report.BackColor = System.Drawing.Color.White;
+            this.btn_Vendort_Report.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.btn_Vendort_Report.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Vendort_Report.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Vendort_Report.ForeColor = System.Drawing.Color.Black;
             this.btn_Vendort_Report.Location = new System.Drawing.Point(431, 21);
             this.btn_Vendort_Report.Name = "btn_Vendort_Report";
             this.btn_Vendort_Report.Size = new System.Drawing.Size(80, 53);
@@ -1765,10 +1812,11 @@
             // 
             // lbl_Vendor_Rejected
             // 
-            this.lbl_Vendor_Rejected.BackColor = System.Drawing.SystemColors.Info;
-            this.lbl_Vendor_Rejected.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_Vendor_Rejected.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold);
-            this.lbl_Vendor_Rejected.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_Vendor_Rejected.BackColor = System.Drawing.Color.White;
+            this.lbl_Vendor_Rejected.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lbl_Vendor_Rejected.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Vendor_Rejected.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Vendor_Rejected.ForeColor = System.Drawing.Color.Black;
             this.lbl_Vendor_Rejected.Location = new System.Drawing.Point(345, 21);
             this.lbl_Vendor_Rejected.Name = "lbl_Vendor_Rejected";
             this.lbl_Vendor_Rejected.Size = new System.Drawing.Size(80, 53);
@@ -1779,10 +1827,11 @@
             // 
             // lbl_Vendor_Returned
             // 
-            this.lbl_Vendor_Returned.BackColor = System.Drawing.SystemColors.Info;
-            this.lbl_Vendor_Returned.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_Vendor_Returned.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold);
-            this.lbl_Vendor_Returned.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_Vendor_Returned.BackColor = System.Drawing.Color.White;
+            this.lbl_Vendor_Returned.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lbl_Vendor_Returned.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Vendor_Returned.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Vendor_Returned.ForeColor = System.Drawing.Color.Black;
             this.lbl_Vendor_Returned.Location = new System.Drawing.Point(251, 21);
             this.lbl_Vendor_Returned.Name = "lbl_Vendor_Returned";
             this.lbl_Vendor_Returned.Size = new System.Drawing.Size(87, 53);
@@ -1793,10 +1842,11 @@
             // 
             // lbl_Vendor_Processing
             // 
-            this.lbl_Vendor_Processing.BackColor = System.Drawing.SystemColors.Info;
-            this.lbl_Vendor_Processing.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_Vendor_Processing.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold);
-            this.lbl_Vendor_Processing.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_Vendor_Processing.BackColor = System.Drawing.Color.White;
+            this.lbl_Vendor_Processing.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lbl_Vendor_Processing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Vendor_Processing.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Vendor_Processing.ForeColor = System.Drawing.Color.Black;
             this.lbl_Vendor_Processing.Location = new System.Drawing.Point(155, 21);
             this.lbl_Vendor_Processing.Name = "lbl_Vendor_Processing";
             this.lbl_Vendor_Processing.Size = new System.Drawing.Size(90, 53);
@@ -1807,10 +1857,11 @@
             // 
             // lbl_Vendor_Waiting_for_Acceptance
             // 
-            this.lbl_Vendor_Waiting_for_Acceptance.BackColor = System.Drawing.SystemColors.Info;
-            this.lbl_Vendor_Waiting_for_Acceptance.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_Vendor_Waiting_for_Acceptance.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold);
-            this.lbl_Vendor_Waiting_for_Acceptance.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_Vendor_Waiting_for_Acceptance.BackColor = System.Drawing.Color.White;
+            this.lbl_Vendor_Waiting_for_Acceptance.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lbl_Vendor_Waiting_for_Acceptance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Vendor_Waiting_for_Acceptance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Vendor_Waiting_for_Acceptance.ForeColor = System.Drawing.Color.Black;
             this.lbl_Vendor_Waiting_for_Acceptance.Location = new System.Drawing.Point(6, 21);
             this.lbl_Vendor_Waiting_for_Acceptance.Name = "lbl_Vendor_Waiting_for_Acceptance";
             this.lbl_Vendor_Waiting_for_Acceptance.Size = new System.Drawing.Size(143, 53);
@@ -1828,8 +1879,8 @@
             this.group_box_abstractor.Controls.Add(this.lbl_Abstarctor_Processing_Que);
             this.group_box_abstractor.Controls.Add(this.lbl_Abstractor_Allocation_Que);
             this.group_box_abstractor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.group_box_abstractor.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.group_box_abstractor.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.group_box_abstractor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.group_box_abstractor.ForeColor = System.Drawing.Color.Black;
             this.group_box_abstractor.Location = new System.Drawing.Point(13, 406);
             this.group_box_abstractor.Name = "group_box_abstractor";
             this.group_box_abstractor.Size = new System.Drawing.Size(678, 93);
@@ -1840,10 +1891,11 @@
             // 
             // btn_Abstractor_Deallocate
             // 
-            this.btn_Abstractor_Deallocate.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.btn_Abstractor_Deallocate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Abstractor_Deallocate.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Abstractor_Deallocate.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_Abstractor_Deallocate.BackColor = System.Drawing.Color.White;
+            this.btn_Abstractor_Deallocate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.btn_Abstractor_Deallocate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Abstractor_Deallocate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Abstractor_Deallocate.ForeColor = System.Drawing.Color.Black;
             this.btn_Abstractor_Deallocate.Location = new System.Drawing.Point(449, 25);
             this.btn_Abstractor_Deallocate.Name = "btn_Abstractor_Deallocate";
             this.btn_Abstractor_Deallocate.Size = new System.Drawing.Size(100, 53);
@@ -1854,10 +1906,11 @@
             // 
             // lbl_Abstractor_Cancelled_Que
             // 
-            this.lbl_Abstractor_Cancelled_Que.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.lbl_Abstractor_Cancelled_Que.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_Abstractor_Cancelled_Que.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Abstractor_Cancelled_Que.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.lbl_Abstractor_Cancelled_Que.BackColor = System.Drawing.Color.White;
+            this.lbl_Abstractor_Cancelled_Que.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lbl_Abstractor_Cancelled_Que.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Abstractor_Cancelled_Que.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Abstractor_Cancelled_Que.ForeColor = System.Drawing.Color.Black;
             this.lbl_Abstractor_Cancelled_Que.Location = new System.Drawing.Point(337, 25);
             this.lbl_Abstractor_Cancelled_Que.Name = "lbl_Abstractor_Cancelled_Que";
             this.lbl_Abstractor_Cancelled_Que.Size = new System.Drawing.Size(105, 53);
@@ -1868,10 +1921,11 @@
             // 
             // lbl_Abstractor_Returned_Que
             // 
-            this.lbl_Abstractor_Returned_Que.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.lbl_Abstractor_Returned_Que.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_Abstractor_Returned_Que.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Abstractor_Returned_Que.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.lbl_Abstractor_Returned_Que.BackColor = System.Drawing.Color.White;
+            this.lbl_Abstractor_Returned_Que.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lbl_Abstractor_Returned_Que.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Abstractor_Returned_Que.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Abstractor_Returned_Que.ForeColor = System.Drawing.Color.Black;
             this.lbl_Abstractor_Returned_Que.Location = new System.Drawing.Point(238, 25);
             this.lbl_Abstractor_Returned_Que.Name = "lbl_Abstractor_Returned_Que";
             this.lbl_Abstractor_Returned_Que.Size = new System.Drawing.Size(92, 53);
@@ -1882,10 +1936,11 @@
             // 
             // lbl_Abstarctor_Processing_Que
             // 
-            this.lbl_Abstarctor_Processing_Que.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.lbl_Abstarctor_Processing_Que.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_Abstarctor_Processing_Que.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Abstarctor_Processing_Que.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.lbl_Abstarctor_Processing_Que.BackColor = System.Drawing.Color.White;
+            this.lbl_Abstarctor_Processing_Que.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lbl_Abstarctor_Processing_Que.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Abstarctor_Processing_Que.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Abstarctor_Processing_Que.ForeColor = System.Drawing.Color.Black;
             this.lbl_Abstarctor_Processing_Que.Location = new System.Drawing.Point(128, 25);
             this.lbl_Abstarctor_Processing_Que.Name = "lbl_Abstarctor_Processing_Que";
             this.lbl_Abstarctor_Processing_Que.Size = new System.Drawing.Size(104, 53);
@@ -1896,10 +1951,11 @@
             // 
             // lbl_Abstractor_Allocation_Que
             // 
-            this.lbl_Abstractor_Allocation_Que.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.lbl_Abstractor_Allocation_Que.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_Abstractor_Allocation_Que.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Abstractor_Allocation_Que.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.lbl_Abstractor_Allocation_Que.BackColor = System.Drawing.Color.White;
+            this.lbl_Abstractor_Allocation_Que.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lbl_Abstractor_Allocation_Que.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Abstractor_Allocation_Que.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Abstractor_Allocation_Que.ForeColor = System.Drawing.Color.Black;
             this.lbl_Abstractor_Allocation_Que.Location = new System.Drawing.Point(6, 25);
             this.lbl_Abstractor_Allocation_Que.Name = "lbl_Abstractor_Allocation_Que";
             this.lbl_Abstractor_Allocation_Que.Size = new System.Drawing.Size(116, 53);
@@ -1935,6 +1991,7 @@
             this.btn_Chat.TabIndex = 37;
             this.btn_Chat.Text = "CHAT";
             this.btn_Chat.UseVisualStyleBackColor = false;
+            this.btn_Chat.Visible = false;
             this.btn_Chat.Click += new System.EventHandler(this.btn_Chat_Click);
             // 
             // btn_Refresh
@@ -1961,8 +2018,8 @@
             this.groupBox2.Controls.Add(this.lbl_Hold);
             this.groupBox2.Controls.Add(this.Lbl_Clarification_orders);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox2.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.Color.Sienna;
+            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.Black;
             this.groupBox2.Location = new System.Drawing.Point(13, 228);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(676, 88);
@@ -1973,10 +2030,11 @@
             // 
             // lbl_COmpleted_Order_Count
             // 
-            this.lbl_COmpleted_Order_Count.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.lbl_COmpleted_Order_Count.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_COmpleted_Order_Count.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_COmpleted_Order_Count.ForeColor = System.Drawing.Color.DarkRed;
+            this.lbl_COmpleted_Order_Count.BackColor = System.Drawing.Color.White;
+            this.lbl_COmpleted_Order_Count.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lbl_COmpleted_Order_Count.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_COmpleted_Order_Count.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_COmpleted_Order_Count.ForeColor = System.Drawing.Color.Black;
             this.lbl_COmpleted_Order_Count.Location = new System.Drawing.Point(333, 25);
             this.lbl_COmpleted_Order_Count.Name = "lbl_COmpleted_Order_Count";
             this.lbl_COmpleted_Order_Count.Size = new System.Drawing.Size(105, 53);
@@ -1987,10 +2045,11 @@
             // 
             // lbl_CANCELLED
             // 
-            this.lbl_CANCELLED.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.lbl_CANCELLED.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_CANCELLED.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_CANCELLED.ForeColor = System.Drawing.Color.DarkRed;
+            this.lbl_CANCELLED.BackColor = System.Drawing.Color.White;
+            this.lbl_CANCELLED.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lbl_CANCELLED.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_CANCELLED.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CANCELLED.ForeColor = System.Drawing.Color.Black;
             this.lbl_CANCELLED.Location = new System.Drawing.Point(235, 25);
             this.lbl_CANCELLED.Name = "lbl_CANCELLED";
             this.lbl_CANCELLED.Size = new System.Drawing.Size(92, 53);
@@ -2001,10 +2060,11 @@
             // 
             // lbl_Hold
             // 
-            this.lbl_Hold.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.lbl_Hold.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_Hold.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Hold.ForeColor = System.Drawing.Color.DarkRed;
+            this.lbl_Hold.BackColor = System.Drawing.Color.White;
+            this.lbl_Hold.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.lbl_Hold.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Hold.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Hold.ForeColor = System.Drawing.Color.Black;
             this.lbl_Hold.Location = new System.Drawing.Point(125, 25);
             this.lbl_Hold.Name = "lbl_Hold";
             this.lbl_Hold.Size = new System.Drawing.Size(104, 53);
@@ -2015,10 +2075,11 @@
             // 
             // Lbl_Clarification_orders
             // 
-            this.Lbl_Clarification_orders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.Lbl_Clarification_orders.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Lbl_Clarification_orders.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_Clarification_orders.ForeColor = System.Drawing.Color.DarkRed;
+            this.Lbl_Clarification_orders.BackColor = System.Drawing.Color.White;
+            this.Lbl_Clarification_orders.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.Lbl_Clarification_orders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Lbl_Clarification_orders.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Clarification_orders.ForeColor = System.Drawing.Color.Black;
             this.Lbl_Clarification_orders.Location = new System.Drawing.Point(6, 25);
             this.Lbl_Clarification_orders.Name = "Lbl_Clarification_orders";
             this.Lbl_Clarification_orders.Size = new System.Drawing.Size(114, 53);
@@ -2030,6 +2091,7 @@
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.Teal;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button4.Font = new System.Drawing.Font("Ebrima", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.Snow;
@@ -2044,6 +2106,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Teal;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Ebrima", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Snow;
@@ -2058,6 +2121,7 @@
             // btn_reallocate
             // 
             this.btn_reallocate.BackColor = System.Drawing.Color.Teal;
+            this.btn_reallocate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
             this.btn_reallocate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_reallocate.Font = new System.Drawing.Font("Ebrima", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_reallocate.ForeColor = System.Drawing.Color.Snow;
@@ -5177,7 +5241,7 @@
             this.lbl_All_report_notfound.AutoSize = true;
             this.lbl_All_report_notfound.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_All_report_notfound.ForeColor = System.Drawing.Color.Red;
-            this.lbl_All_report_notfound.Location = new System.Drawing.Point(658, 673);
+            this.lbl_All_report_notfound.Location = new System.Drawing.Point(658, 675);
             this.lbl_All_report_notfound.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_All_report_notfound.Name = "lbl_All_report_notfound";
             this.lbl_All_report_notfound.Size = new System.Drawing.Size(119, 20);
@@ -5192,7 +5256,7 @@
             this.cr_Rework_AllReportsViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.cr_Rework_AllReportsViewer.Cursor = System.Windows.Forms.Cursors.Default;
             this.cr_Rework_AllReportsViewer.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cr_Rework_AllReportsViewer.Location = new System.Drawing.Point(232, 310);
+            this.cr_Rework_AllReportsViewer.Location = new System.Drawing.Point(232, 312);
             this.cr_Rework_AllReportsViewer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cr_Rework_AllReportsViewer.Name = "cr_Rework_AllReportsViewer";
             this.cr_Rework_AllReportsViewer.ShowGroupTreeButton = false;
@@ -5272,7 +5336,7 @@
             this.ddl_Rework_Task.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_Rework_Task.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_Rework_Task.FormattingEnabled = true;
-            this.ddl_Rework_Task.Location = new System.Drawing.Point(995, 164);
+            this.ddl_Rework_Task.Location = new System.Drawing.Point(995, 166);
             this.ddl_Rework_Task.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ddl_Rework_Task.Name = "ddl_Rework_Task";
             this.ddl_Rework_Task.Size = new System.Drawing.Size(164, 27);
@@ -5283,7 +5347,7 @@
             this.lbl_All_Rework_Task.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_All_Rework_Task.AutoSize = true;
             this.lbl_All_Rework_Task.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_All_Rework_Task.Location = new System.Drawing.Point(942, 164);
+            this.lbl_All_Rework_Task.Location = new System.Drawing.Point(942, 166);
             this.lbl_All_Rework_Task.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_All_Rework_Task.Name = "lbl_All_Rework_Task";
             this.lbl_All_Rework_Task.Size = new System.Drawing.Size(35, 19);
@@ -5320,7 +5384,7 @@
             this.ddl_Rework_Subprocess.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_Rework_Subprocess.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_Rework_Subprocess.FormattingEnabled = true;
-            this.ddl_Rework_Subprocess.Location = new System.Drawing.Point(705, 164);
+            this.ddl_Rework_Subprocess.Location = new System.Drawing.Point(705, 166);
             this.ddl_Rework_Subprocess.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ddl_Rework_Subprocess.Name = "ddl_Rework_Subprocess";
             this.ddl_Rework_Subprocess.Size = new System.Drawing.Size(169, 27);
@@ -5331,7 +5395,7 @@
             this.lbl_All_Rework_Subpro.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_All_Rework_Subpro.AutoSize = true;
             this.lbl_All_Rework_Subpro.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_All_Rework_Subpro.Location = new System.Drawing.Point(584, 164);
+            this.lbl_All_Rework_Subpro.Location = new System.Drawing.Point(584, 166);
             this.lbl_All_Rework_Subpro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_All_Rework_Subpro.Name = "lbl_All_Rework_Subpro";
             this.lbl_All_Rework_Subpro.Size = new System.Drawing.Size(106, 19);
@@ -5344,7 +5408,7 @@
             this.ddl_Rework_client.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_Rework_client.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_Rework_client.FormattingEnabled = true;
-            this.ddl_Rework_client.Location = new System.Drawing.Point(403, 164);
+            this.ddl_Rework_client.Location = new System.Drawing.Point(403, 166);
             this.ddl_Rework_client.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ddl_Rework_client.Name = "ddl_Rework_client";
             this.ddl_Rework_client.Size = new System.Drawing.Size(173, 27);
@@ -5356,7 +5420,7 @@
             this.lbl_All_Rework_client.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_All_Rework_client.AutoSize = true;
             this.lbl_All_Rework_client.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_All_Rework_client.Location = new System.Drawing.Point(316, 164);
+            this.lbl_All_Rework_client.Location = new System.Drawing.Point(316, 166);
             this.lbl_All_Rework_client.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_All_Rework_client.Name = "lbl_All_Rework_client";
             this.lbl_All_Rework_client.Size = new System.Drawing.Size(79, 19);
@@ -5369,7 +5433,7 @@
             this.dtp_Rework_Todate.CustomFormat = "MM/DD/YYYY";
             this.dtp_Rework_Todate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_Rework_Todate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_Rework_Todate.Location = new System.Drawing.Point(918, 70);
+            this.dtp_Rework_Todate.Location = new System.Drawing.Point(918, 72);
             this.dtp_Rework_Todate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dtp_Rework_Todate.Name = "dtp_Rework_Todate";
             this.dtp_Rework_Todate.Size = new System.Drawing.Size(170, 24);
@@ -5382,7 +5446,7 @@
             this.dtp_Rework_Fromdate.CustomFormat = "MM/DD/YYYY";
             this.dtp_Rework_Fromdate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_Rework_Fromdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_Rework_Fromdate.Location = new System.Drawing.Point(604, 70);
+            this.dtp_Rework_Fromdate.Location = new System.Drawing.Point(604, 72);
             this.dtp_Rework_Fromdate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dtp_Rework_Fromdate.Name = "dtp_Rework_Fromdate";
             this.dtp_Rework_Fromdate.Size = new System.Drawing.Size(173, 24);
@@ -5394,7 +5458,7 @@
             this.lbl_AllTodate.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_AllTodate.AutoSize = true;
             this.lbl_AllTodate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_AllTodate.Location = new System.Drawing.Point(829, 75);
+            this.lbl_AllTodate.Location = new System.Drawing.Point(829, 77);
             this.lbl_AllTodate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_AllTodate.Name = "lbl_AllTodate";
             this.lbl_AllTodate.Size = new System.Drawing.Size(59, 19);
@@ -5406,7 +5470,7 @@
             this.lbl_AllFromDate.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_AllFromDate.AutoSize = true;
             this.lbl_AllFromDate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_AllFromDate.Location = new System.Drawing.Point(502, 75);
+            this.lbl_AllFromDate.Location = new System.Drawing.Point(502, 77);
             this.lbl_AllFromDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_AllFromDate.Name = "lbl_AllFromDate";
             this.lbl_AllFromDate.Size = new System.Drawing.Size(74, 19);
@@ -5462,7 +5526,7 @@
             this.lbl_Record_notfound.AutoSize = true;
             this.lbl_Record_notfound.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Record_notfound.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Record_notfound.Location = new System.Drawing.Point(616, 544);
+            this.lbl_Record_notfound.Location = new System.Drawing.Point(616, 546);
             this.lbl_Record_notfound.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Record_notfound.Name = "lbl_Record_notfound";
             this.lbl_Record_notfound.Size = new System.Drawing.Size(243, 20);
@@ -5477,7 +5541,7 @@
             this.cr_Rework_ReportsViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.cr_Rework_ReportsViewer.Cursor = System.Windows.Forms.Cursors.Default;
             this.cr_Rework_ReportsViewer.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cr_Rework_ReportsViewer.Location = new System.Drawing.Point(228, 272);
+            this.cr_Rework_ReportsViewer.Location = new System.Drawing.Point(228, 274);
             this.cr_Rework_ReportsViewer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cr_Rework_ReportsViewer.Name = "cr_Rework_ReportsViewer";
             this.cr_Rework_ReportsViewer.ShowGroupTreeButton = false;
@@ -5510,7 +5574,7 @@
             dataGridViewCellStyle104.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grd_Rework_MyReport.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle104;
             this.grd_Rework_MyReport.ColumnHeadersHeight = 30;
-            this.grd_Rework_MyReport.Location = new System.Drawing.Point(228, 296);
+            this.grd_Rework_MyReport.Location = new System.Drawing.Point(228, 298);
             this.grd_Rework_MyReport.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.grd_Rework_MyReport.Name = "grd_Rework_MyReport";
             this.grd_Rework_MyReport.ReadOnly = true;
@@ -5545,7 +5609,7 @@
             this.ddl_MyTask.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_MyTask.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_MyTask.FormattingEnabled = true;
-            this.ddl_MyTask.Location = new System.Drawing.Point(995, 167);
+            this.ddl_MyTask.Location = new System.Drawing.Point(995, 169);
             this.ddl_MyTask.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ddl_MyTask.Name = "ddl_MyTask";
             this.ddl_MyTask.Size = new System.Drawing.Size(164, 27);
@@ -5614,7 +5678,7 @@
             this.lbl_Rework_Myerrror.AutoSize = true;
             this.lbl_Rework_Myerrror.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Rework_Myerrror.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Rework_Myerrror.Location = new System.Drawing.Point(1022, 544);
+            this.lbl_Rework_Myerrror.Location = new System.Drawing.Point(1022, 546);
             this.lbl_Rework_Myerrror.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Rework_Myerrror.Name = "lbl_Rework_Myerrror";
             this.lbl_Rework_Myerrror.Size = new System.Drawing.Size(240, 20);
@@ -5627,7 +5691,7 @@
             this.lbl_Rework_MyTask.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_Rework_MyTask.AutoSize = true;
             this.lbl_Rework_MyTask.Font = new System.Drawing.Font("Ebrima", 9F);
-            this.lbl_Rework_MyTask.Location = new System.Drawing.Point(952, 167);
+            this.lbl_Rework_MyTask.Location = new System.Drawing.Point(952, 169);
             this.lbl_Rework_MyTask.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Rework_MyTask.Name = "lbl_Rework_MyTask";
             this.lbl_Rework_MyTask.Size = new System.Drawing.Size(35, 19);
@@ -5640,7 +5704,7 @@
             this.ddl_MySubprocess.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_MySubprocess.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_MySubprocess.FormattingEnabled = true;
-            this.ddl_MySubprocess.Location = new System.Drawing.Point(702, 167);
+            this.ddl_MySubprocess.Location = new System.Drawing.Point(702, 169);
             this.ddl_MySubprocess.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ddl_MySubprocess.Name = "ddl_MySubprocess";
             this.ddl_MySubprocess.Size = new System.Drawing.Size(169, 27);
@@ -5652,7 +5716,7 @@
             this.lbl_Rework_Mysubpro.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_Rework_Mysubpro.AutoSize = true;
             this.lbl_Rework_Mysubpro.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Rework_Mysubpro.Location = new System.Drawing.Point(588, 167);
+            this.lbl_Rework_Mysubpro.Location = new System.Drawing.Point(588, 169);
             this.lbl_Rework_Mysubpro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Rework_Mysubpro.Name = "lbl_Rework_Mysubpro";
             this.lbl_Rework_Mysubpro.Size = new System.Drawing.Size(106, 19);
@@ -5677,7 +5741,7 @@
             this.ddl_MyClient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_MyClient.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_MyClient.FormattingEnabled = true;
-            this.ddl_MyClient.Location = new System.Drawing.Point(406, 167);
+            this.ddl_MyClient.Location = new System.Drawing.Point(406, 169);
             this.ddl_MyClient.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ddl_MyClient.Name = "ddl_MyClient";
             this.ddl_MyClient.Size = new System.Drawing.Size(173, 27);
@@ -5700,7 +5764,7 @@
             this.lbl_Rework_Myclient.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_Rework_Myclient.AutoSize = true;
             this.lbl_Rework_Myclient.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Rework_Myclient.Location = new System.Drawing.Point(309, 167);
+            this.lbl_Rework_Myclient.Location = new System.Drawing.Point(309, 169);
             this.lbl_Rework_Myclient.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Rework_Myclient.Name = "lbl_Rework_Myclient";
             this.lbl_Rework_Myclient.Size = new System.Drawing.Size(79, 19);
@@ -5713,7 +5777,7 @@
             this.dtp_MyTodate.CustomFormat = "MM/DD/YYYY";
             this.dtp_MyTodate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_MyTodate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_MyTodate.Location = new System.Drawing.Point(886, 63);
+            this.dtp_MyTodate.Location = new System.Drawing.Point(886, 65);
             this.dtp_MyTodate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dtp_MyTodate.Name = "dtp_MyTodate";
             this.dtp_MyTodate.Size = new System.Drawing.Size(170, 24);
@@ -5726,7 +5790,7 @@
             this.dtp_MyFromdate.CustomFormat = "MM/DD/YYYY";
             this.dtp_MyFromdate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_MyFromdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_MyFromdate.Location = new System.Drawing.Point(592, 63);
+            this.dtp_MyFromdate.Location = new System.Drawing.Point(592, 65);
             this.dtp_MyFromdate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dtp_MyFromdate.Name = "dtp_MyFromdate";
             this.dtp_MyFromdate.Size = new System.Drawing.Size(173, 24);
@@ -5738,7 +5802,7 @@
             this.lbl_Rework_Todate.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_Rework_Todate.AutoSize = true;
             this.lbl_Rework_Todate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Rework_Todate.Location = new System.Drawing.Point(812, 63);
+            this.lbl_Rework_Todate.Location = new System.Drawing.Point(812, 65);
             this.lbl_Rework_Todate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Rework_Todate.Name = "lbl_Rework_Todate";
             this.lbl_Rework_Todate.Size = new System.Drawing.Size(59, 19);
@@ -5750,7 +5814,7 @@
             this.lbl_Rework_Fromdate.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_Rework_Fromdate.AutoSize = true;
             this.lbl_Rework_Fromdate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Rework_Fromdate.Location = new System.Drawing.Point(505, 63);
+            this.lbl_Rework_Fromdate.Location = new System.Drawing.Point(505, 65);
             this.lbl_Rework_Fromdate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Rework_Fromdate.Name = "lbl_Rework_Fromdate";
             this.lbl_Rework_Fromdate.Size = new System.Drawing.Size(74, 19);
@@ -6015,7 +6079,7 @@
             this.lbl_AllSuperqc_Error.AutoSize = true;
             this.lbl_AllSuperqc_Error.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_AllSuperqc_Error.ForeColor = System.Drawing.Color.Red;
-            this.lbl_AllSuperqc_Error.Location = new System.Drawing.Point(620, 703);
+            this.lbl_AllSuperqc_Error.Location = new System.Drawing.Point(620, 705);
             this.lbl_AllSuperqc_Error.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_AllSuperqc_Error.Name = "lbl_AllSuperqc_Error";
             this.lbl_AllSuperqc_Error.Size = new System.Drawing.Size(0, 20);
@@ -6029,7 +6093,7 @@
             this.crv_All_Superqc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crv_All_Superqc.Cursor = System.Windows.Forms.Cursors.Default;
             this.crv_All_Superqc.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.crv_All_Superqc.Location = new System.Drawing.Point(223, 331);
+            this.crv_All_Superqc.Location = new System.Drawing.Point(223, 333);
             this.crv_All_Superqc.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.crv_All_Superqc.Name = "crv_All_Superqc";
             this.crv_All_Superqc.ShowGroupTreeButton = false;
@@ -6042,7 +6106,7 @@
             this.lbl_All_SuperqcRecordnotfound.AutoSize = true;
             this.lbl_All_SuperqcRecordnotfound.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_All_SuperqcRecordnotfound.ForeColor = System.Drawing.Color.Red;
-            this.lbl_All_SuperqcRecordnotfound.Location = new System.Drawing.Point(620, 723);
+            this.lbl_All_SuperqcRecordnotfound.Location = new System.Drawing.Point(620, 725);
             this.lbl_All_SuperqcRecordnotfound.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_All_SuperqcRecordnotfound.Name = "lbl_All_SuperqcRecordnotfound";
             this.lbl_All_SuperqcRecordnotfound.Size = new System.Drawing.Size(243, 20);
@@ -6067,7 +6131,7 @@
             this.ddl_Superqc_Task.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_Superqc_Task.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_Superqc_Task.FormattingEnabled = true;
-            this.ddl_Superqc_Task.Location = new System.Drawing.Point(1013, 172);
+            this.ddl_Superqc_Task.Location = new System.Drawing.Point(1013, 174);
             this.ddl_Superqc_Task.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ddl_Superqc_Task.Name = "ddl_Superqc_Task";
             this.ddl_Superqc_Task.Size = new System.Drawing.Size(194, 27);
@@ -6133,7 +6197,7 @@
             this.lbl_All_Superqc_Task.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_All_Superqc_Task.AutoSize = true;
             this.lbl_All_Superqc_Task.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_All_Superqc_Task.Location = new System.Drawing.Point(970, 172);
+            this.lbl_All_Superqc_Task.Location = new System.Drawing.Point(970, 174);
             this.lbl_All_Superqc_Task.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_All_Superqc_Task.Name = "lbl_All_Superqc_Task";
             this.lbl_All_Superqc_Task.Size = new System.Drawing.Size(35, 19);
@@ -6146,7 +6210,7 @@
             this.ddl_Superqc_Subprocess.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_Superqc_Subprocess.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_Superqc_Subprocess.FormattingEnabled = true;
-            this.ddl_Superqc_Subprocess.Location = new System.Drawing.Point(717, 172);
+            this.ddl_Superqc_Subprocess.Location = new System.Drawing.Point(717, 174);
             this.ddl_Superqc_Subprocess.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ddl_Superqc_Subprocess.Name = "ddl_Superqc_Subprocess";
             this.ddl_Superqc_Subprocess.Size = new System.Drawing.Size(194, 27);
@@ -6157,7 +6221,7 @@
             this.lbl_All_Superqc_Subpro.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_All_Superqc_Subpro.AutoSize = true;
             this.lbl_All_Superqc_Subpro.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_All_Superqc_Subpro.Location = new System.Drawing.Point(603, 172);
+            this.lbl_All_Superqc_Subpro.Location = new System.Drawing.Point(603, 174);
             this.lbl_All_Superqc_Subpro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_All_Superqc_Subpro.Name = "lbl_All_Superqc_Subpro";
             this.lbl_All_Superqc_Subpro.Size = new System.Drawing.Size(106, 19);
@@ -6170,7 +6234,7 @@
             this.ddl_Superqc_client.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_Superqc_client.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_Superqc_client.FormattingEnabled = true;
-            this.ddl_Superqc_client.Location = new System.Drawing.Point(384, 172);
+            this.ddl_Superqc_client.Location = new System.Drawing.Point(384, 174);
             this.ddl_Superqc_client.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ddl_Superqc_client.Name = "ddl_Superqc_client";
             this.ddl_Superqc_client.Size = new System.Drawing.Size(194, 27);
@@ -6182,7 +6246,7 @@
             this.lbl_All_Superqc_client.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_All_Superqc_client.AutoSize = true;
             this.lbl_All_Superqc_client.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_All_Superqc_client.Location = new System.Drawing.Point(297, 172);
+            this.lbl_All_Superqc_client.Location = new System.Drawing.Point(297, 174);
             this.lbl_All_Superqc_client.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_All_Superqc_client.Name = "lbl_All_Superqc_client";
             this.lbl_All_Superqc_client.Size = new System.Drawing.Size(79, 19);
@@ -6195,7 +6259,7 @@
             this.dtp_All_SuperqcTodate.CustomFormat = "MM/DD/YYYY";
             this.dtp_All_SuperqcTodate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_All_SuperqcTodate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_All_SuperqcTodate.Location = new System.Drawing.Point(867, 63);
+            this.dtp_All_SuperqcTodate.Location = new System.Drawing.Point(867, 65);
             this.dtp_All_SuperqcTodate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dtp_All_SuperqcTodate.Name = "dtp_All_SuperqcTodate";
             this.dtp_All_SuperqcTodate.Size = new System.Drawing.Size(173, 24);
@@ -6208,7 +6272,7 @@
             this.dtp_All_SuperqcFromdate.CustomFormat = "MM/DD/YYYY";
             this.dtp_All_SuperqcFromdate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_All_SuperqcFromdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_All_SuperqcFromdate.Location = new System.Drawing.Point(593, 63);
+            this.dtp_All_SuperqcFromdate.Location = new System.Drawing.Point(593, 65);
             this.dtp_All_SuperqcFromdate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dtp_All_SuperqcFromdate.Name = "dtp_All_SuperqcFromdate";
             this.dtp_All_SuperqcFromdate.Size = new System.Drawing.Size(173, 24);
@@ -6220,7 +6284,7 @@
             this.lbl_All_SuperqcTodate.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_All_SuperqcTodate.AutoSize = true;
             this.lbl_All_SuperqcTodate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_All_SuperqcTodate.Location = new System.Drawing.Point(789, 63);
+            this.lbl_All_SuperqcTodate.Location = new System.Drawing.Point(789, 65);
             this.lbl_All_SuperqcTodate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_All_SuperqcTodate.Name = "lbl_All_SuperqcTodate";
             this.lbl_All_SuperqcTodate.Size = new System.Drawing.Size(59, 19);
@@ -6232,7 +6296,7 @@
             this.lbl_All_SuperqcFromdate.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_All_SuperqcFromdate.AutoSize = true;
             this.lbl_All_SuperqcFromdate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_All_SuperqcFromdate.Location = new System.Drawing.Point(504, 63);
+            this.lbl_All_SuperqcFromdate.Location = new System.Drawing.Point(504, 65);
             this.lbl_All_SuperqcFromdate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_All_SuperqcFromdate.Name = "lbl_All_SuperqcFromdate";
             this.lbl_All_SuperqcFromdate.Size = new System.Drawing.Size(74, 19);
@@ -6312,7 +6376,7 @@
             this.lbl_Superqc_Error.AutoSize = true;
             this.lbl_Superqc_Error.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Superqc_Error.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Superqc_Error.Location = new System.Drawing.Point(693, 504);
+            this.lbl_Superqc_Error.Location = new System.Drawing.Point(693, 506);
             this.lbl_Superqc_Error.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Superqc_Error.Name = "lbl_Superqc_Error";
             this.lbl_Superqc_Error.Size = new System.Drawing.Size(111, 20);
@@ -6327,7 +6391,7 @@
             this.crv_My_Superqc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crv_My_Superqc.Cursor = System.Windows.Forms.Cursors.Default;
             this.crv_My_Superqc.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.crv_My_Superqc.Location = new System.Drawing.Point(222, 294);
+            this.crv_My_Superqc.Location = new System.Drawing.Point(222, 296);
             this.crv_My_Superqc.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.crv_My_Superqc.Name = "crv_My_Superqc";
             this.crv_My_Superqc.ShowGroupTreeButton = false;
@@ -6406,7 +6470,7 @@
             this.lbl_My_Superqc_Task.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.lbl_My_Superqc_Task.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_My_Superqc_Task.FormattingEnabled = true;
-            this.lbl_My_Superqc_Task.Location = new System.Drawing.Point(971, 189);
+            this.lbl_My_Superqc_Task.Location = new System.Drawing.Point(971, 191);
             this.lbl_My_Superqc_Task.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lbl_My_Superqc_Task.Name = "lbl_My_Superqc_Task";
             this.lbl_My_Superqc_Task.Size = new System.Drawing.Size(174, 27);
@@ -6417,7 +6481,7 @@
             this.lbl_Superqc_MyTask.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_Superqc_MyTask.AutoSize = true;
             this.lbl_Superqc_MyTask.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Superqc_MyTask.Location = new System.Drawing.Point(928, 189);
+            this.lbl_Superqc_MyTask.Location = new System.Drawing.Point(928, 191);
             this.lbl_Superqc_MyTask.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Superqc_MyTask.Name = "lbl_Superqc_MyTask";
             this.lbl_Superqc_MyTask.Size = new System.Drawing.Size(35, 19);
@@ -6430,7 +6494,7 @@
             this.ddl_MySuperqc_Subprocess.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_MySuperqc_Subprocess.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_MySuperqc_Subprocess.FormattingEnabled = true;
-            this.ddl_MySuperqc_Subprocess.Location = new System.Drawing.Point(671, 189);
+            this.ddl_MySuperqc_Subprocess.Location = new System.Drawing.Point(671, 191);
             this.ddl_MySuperqc_Subprocess.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ddl_MySuperqc_Subprocess.Name = "ddl_MySuperqc_Subprocess";
             this.ddl_MySuperqc_Subprocess.Size = new System.Drawing.Size(174, 27);
@@ -6441,7 +6505,7 @@
             this.lbl_My_Superqc_Subpro.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_My_Superqc_Subpro.AutoSize = true;
             this.lbl_My_Superqc_Subpro.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_My_Superqc_Subpro.Location = new System.Drawing.Point(557, 189);
+            this.lbl_My_Superqc_Subpro.Location = new System.Drawing.Point(557, 191);
             this.lbl_My_Superqc_Subpro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_My_Superqc_Subpro.Name = "lbl_My_Superqc_Subpro";
             this.lbl_My_Superqc_Subpro.Size = new System.Drawing.Size(106, 19);
@@ -6454,7 +6518,7 @@
             this.ddl_MySuperqc_Client.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_MySuperqc_Client.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddl_MySuperqc_Client.FormattingEnabled = true;
-            this.ddl_MySuperqc_Client.Location = new System.Drawing.Point(374, 189);
+            this.ddl_MySuperqc_Client.Location = new System.Drawing.Point(374, 191);
             this.ddl_MySuperqc_Client.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ddl_MySuperqc_Client.Name = "ddl_MySuperqc_Client";
             this.ddl_MySuperqc_Client.Size = new System.Drawing.Size(174, 27);
@@ -6466,7 +6530,7 @@
             this.lbl_Superqc_Myclient.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_Superqc_Myclient.AutoSize = true;
             this.lbl_Superqc_Myclient.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Superqc_Myclient.Location = new System.Drawing.Point(287, 189);
+            this.lbl_Superqc_Myclient.Location = new System.Drawing.Point(287, 191);
             this.lbl_Superqc_Myclient.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Superqc_Myclient.Name = "lbl_Superqc_Myclient";
             this.lbl_Superqc_Myclient.Size = new System.Drawing.Size(79, 19);
@@ -6487,7 +6551,7 @@
             dataGridViewCellStyle115.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grd_My_SuperQc_Report.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle115;
             this.grd_My_SuperQc_Report.ColumnHeadersHeight = 30;
-            this.grd_My_SuperQc_Report.Location = new System.Drawing.Point(225, 319);
+            this.grd_My_SuperQc_Report.Location = new System.Drawing.Point(225, 321);
             this.grd_My_SuperQc_Report.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.grd_My_SuperQc_Report.Name = "grd_My_SuperQc_Report";
             this.grd_My_SuperQc_Report.ReadOnly = true;
@@ -6546,7 +6610,7 @@
             this.lbl_Superqc_Myerrror.AutoSize = true;
             this.lbl_Superqc_Myerrror.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Superqc_Myerrror.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Superqc_Myerrror.Location = new System.Drawing.Point(1043, 535);
+            this.lbl_Superqc_Myerrror.Location = new System.Drawing.Point(1043, 537);
             this.lbl_Superqc_Myerrror.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Superqc_Myerrror.Name = "lbl_Superqc_Myerrror";
             this.lbl_Superqc_Myerrror.Size = new System.Drawing.Size(240, 20);
@@ -6560,7 +6624,7 @@
             this.dtp_MySuperqc_To.CustomFormat = "MM/DD/YYYY";
             this.dtp_MySuperqc_To.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_MySuperqc_To.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_MySuperqc_To.Location = new System.Drawing.Point(879, 90);
+            this.dtp_MySuperqc_To.Location = new System.Drawing.Point(879, 92);
             this.dtp_MySuperqc_To.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dtp_MySuperqc_To.Name = "dtp_MySuperqc_To";
             this.dtp_MySuperqc_To.Size = new System.Drawing.Size(173, 24);
@@ -6573,7 +6637,7 @@
             this.dtp_MySuperqcFrom.CustomFormat = "MM/DD/YYYY";
             this.dtp_MySuperqcFrom.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_MySuperqcFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_MySuperqcFrom.Location = new System.Drawing.Point(583, 90);
+            this.dtp_MySuperqcFrom.Location = new System.Drawing.Point(583, 92);
             this.dtp_MySuperqcFrom.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dtp_MySuperqcFrom.Name = "dtp_MySuperqcFrom";
             this.dtp_MySuperqcFrom.Size = new System.Drawing.Size(173, 24);
@@ -6585,7 +6649,7 @@
             this.lbl_My_SuperqcTodate.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_My_SuperqcTodate.AutoSize = true;
             this.lbl_My_SuperqcTodate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_My_SuperqcTodate.Location = new System.Drawing.Point(798, 90);
+            this.lbl_My_SuperqcTodate.Location = new System.Drawing.Point(798, 92);
             this.lbl_My_SuperqcTodate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_My_SuperqcTodate.Name = "lbl_My_SuperqcTodate";
             this.lbl_My_SuperqcTodate.Size = new System.Drawing.Size(59, 19);
@@ -6597,7 +6661,7 @@
             this.lbl_My_SuperqcFromdate.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_My_SuperqcFromdate.AutoSize = true;
             this.lbl_My_SuperqcFromdate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_My_SuperqcFromdate.Location = new System.Drawing.Point(501, 90);
+            this.lbl_My_SuperqcFromdate.Location = new System.Drawing.Point(501, 92);
             this.lbl_My_SuperqcFromdate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_My_SuperqcFromdate.Name = "lbl_My_SuperqcFromdate";
             this.lbl_My_SuperqcFromdate.Size = new System.Drawing.Size(74, 19);
@@ -7351,7 +7415,7 @@
             this.dataGridViewTextBoxColumn18,
             this.Column46,
             this.dataGridViewTextBoxColumn19});
-            this.Grid_Auto_Assigned_Order.Location = new System.Drawing.Point(3, 203);
+            this.Grid_Auto_Assigned_Order.Location = new System.Drawing.Point(3, 205);
             this.Grid_Auto_Assigned_Order.Name = "Grid_Auto_Assigned_Order";
             this.Grid_Auto_Assigned_Order.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle128.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -7571,6 +7635,7 @@
             // btn_Break
             // 
             this.btn_Break.BackColor = System.Drawing.Color.Teal;
+            this.btn_Break.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
             this.btn_Break.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Break.Font = new System.Drawing.Font("Ebrima", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Break.ForeColor = System.Drawing.Color.Snow;
@@ -7590,6 +7655,7 @@
             // btn_Errors
             // 
             this.btn_Errors.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btn_Errors.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
             this.btn_Errors.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Errors.Font = new System.Drawing.Font("Ebrima", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Errors.ForeColor = System.Drawing.Color.Snow;
@@ -7604,6 +7670,7 @@
             // btn_Target_Matrix
             // 
             this.btn_Target_Matrix.BackColor = System.Drawing.Color.Teal;
+            this.btn_Target_Matrix.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
             this.btn_Target_Matrix.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Target_Matrix.Font = new System.Drawing.Font("Ebrima", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Target_Matrix.ForeColor = System.Drawing.Color.Snow;
@@ -7618,6 +7685,7 @@
             // btn_Lien_Name
             // 
             this.btn_Lien_Name.BackColor = System.Drawing.Color.Teal;
+            this.btn_Lien_Name.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
             this.btn_Lien_Name.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Lien_Name.Font = new System.Drawing.Font("Ebrima", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Lien_Name.ForeColor = System.Drawing.Color.Snow;
@@ -7632,6 +7700,7 @@
             // btn_Attendance
             // 
             this.btn_Attendance.BackColor = System.Drawing.Color.Teal;
+            this.btn_Attendance.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
             this.btn_Attendance.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Attendance.Font = new System.Drawing.Font("Ebrima", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Attendance.ForeColor = System.Drawing.Color.Snow;
@@ -7646,6 +7715,7 @@
             // btn_Dail_Attendance_Report
             // 
             this.btn_Dail_Attendance_Report.BackColor = System.Drawing.Color.Teal;
+            this.btn_Dail_Attendance_Report.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
             this.btn_Dail_Attendance_Report.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Dail_Attendance_Report.Font = new System.Drawing.Font("Ebrima", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Dail_Attendance_Report.ForeColor = System.Drawing.Color.Snow;
@@ -7669,6 +7739,7 @@
             // btn_Accuracy
             // 
             this.btn_Accuracy.BackColor = System.Drawing.Color.Teal;
+            this.btn_Accuracy.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
             this.btn_Accuracy.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Accuracy.Font = new System.Drawing.Font("Ebrima", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Accuracy.ForeColor = System.Drawing.Color.Snow;
@@ -7683,6 +7754,7 @@
             // btn_Scorr_Board
             // 
             this.btn_Scorr_Board.BackColor = System.Drawing.Color.Teal;
+            this.btn_Scorr_Board.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
             this.btn_Scorr_Board.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Scorr_Board.Font = new System.Drawing.Font("Ebrima", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Scorr_Board.ForeColor = System.Drawing.Color.Snow;
@@ -7705,6 +7777,7 @@
             // buttonIdleReports
             // 
             this.buttonIdleReports.BackColor = System.Drawing.Color.Teal;
+            this.buttonIdleReports.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
             this.buttonIdleReports.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonIdleReports.Font = new System.Drawing.Font("Ebrima", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonIdleReports.ForeColor = System.Drawing.Color.Snow;
@@ -7719,6 +7792,7 @@
             // buttonIdleMode
             // 
             this.buttonIdleMode.BackColor = System.Drawing.Color.Teal;
+            this.buttonIdleMode.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
             this.buttonIdleMode.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonIdleMode.Font = new System.Drawing.Font("Ebrima", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonIdleMode.ForeColor = System.Drawing.Color.Snow;

@@ -4497,6 +4497,7 @@
     <None Include="Resources\ic_docs.png" />
     <None Include="Resources\ic_comments.png" />
     <None Include="Resources\ic_refresh.png" />
+    <None Include="Resources\icons8-synchronize-64.png" />
     <Content Include="Resources\list.png" />
     <None Include="Resources\list1.png" />
     <None Include="Resources\New_Refresh.png" />
@@ -4531,6 +4532,11 @@
     <None Include="Resources\LockIcon.png" />
     <None Include="Resources\lock icon1.png" />
     <None Include="Resources\lockScreenIcon.png" />
+    <None Include="Resources\refresh11.png" />
+    <None Include="Resources\refresh icon.png" />
+    <None Include="Resources\refresh %283%29.png" />
+    <None Include="Resources\refresh %286%29.png" />
+    <None Include="Resources\logout icon.png" />
     <Content Include="Resources\windowsUIButtonImageOptions1.Image.png" />
     <None Include="Resources\windowsUIButtonImageOptions1.Image1.png" />
     <Content Include="Resources\windowsUIButtonImageOptions2.Image.png" />

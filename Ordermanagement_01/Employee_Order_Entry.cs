@@ -7378,86 +7378,6 @@ namespace Ordermanagement_01
                 dtComments = dataaccess.ExecuteSP("Sp_Order_User_Wise_Time_Track", htComments);
 
 
-                Hashtable htcheckorder_Assignd_to_Abstarctor = new Hashtable();
-                DataTable dtcheck_Order_Assigned_To_Abstractor = new DataTable();
-                int check_Abstarctor;
-                htcheckorder_Assignd_to_Abstarctor.Add("@Trans", "CHECK_ORDER_IS_ASSIGNED_TO_ABSTRACTOR");
-                htcheckorder_Assignd_to_Abstarctor.Add("@Order_ID", Order_Id);
-                dtcheck_Order_Assigned_To_Abstractor = dataaccess.ExecuteSP("Sp_Order", htcheckorder_Assignd_to_Abstarctor);
-                if (dtcheck_Order_Assigned_To_Abstractor.Rows.Count > 0)
-                {
-
-                    check_Abstarctor = int.Parse(dtcheck_Order_Assigned_To_Abstractor.Rows[0]["count"].ToString());
-
-                }
-                else
-                {
-
-                    check_Abstarctor = 0;
-                }
-
-
-
-                if (check_Abstarctor == 0)
-                {
-                    Hashtable htcheckorder_Progress = new Hashtable();
-                    DataTable dtcheck_Order_Progress = new DataTable();
-
-                    htcheckorder_Progress.Add("@Trans", "GET_ORDER_PROGRESS");
-                    htcheckorder_Progress.Add("@Order_ID", Order_Id);
-                    dtcheck_Order_Progress = dataaccess.ExecuteSP("Sp_Order", htcheckorder_Progress);
-                    int Check_Progress_Count = 0;
-
-                    if (dtcheck_Order_Progress.Rows.Count > 0)
-                    {
-
-                        Check_Progress_Count = int.Parse(dtcheck_Order_Progress.Rows[0]["count"].ToString());
-                        Check_Order_Progress = int.Parse(dtcheck_Order_Progress.Rows[0]["Order_Progress"].ToString());
-                    }
-                    else
-                    {
-
-                        Check_Progress_Count = 0;
-
-                    }
-
-
-                    if (check_Abstarctor == 0 && Check_Progress_Count == 0)
-                    {
-
-
-                        Hashtable htorder_update = new Hashtable();
-                        DataTable dtorder_update = new System.Data.DataTable();
-                        htorder_update.Add("@Trans", "UPDATE_PROGRESS");
-                        htorder_update.Add("@Order_Progress", 6);
-                        htorder_update.Add("@Modified_By", userid);
-                        htorder_update.Add("@Order_ID", Order_Id);
-                        dtorder_update = dataaccess.ExecuteSP("Sp_Order", htorder_update);
-                    }
-                    else if (Check_Order_Progress == 14 && check_Abstarctor == 0)
-                    {
-                        Hashtable htorder_update = new Hashtable();
-                        DataTable dtorder_update = new System.Data.DataTable();
-                        htorder_update.Add("@Trans", "UPDATE_PROGRESS");
-                        htorder_update.Add("@Order_Progress", 6);
-                        htorder_update.Add("@Modified_By", userid);
-                        htorder_update.Add("@Order_ID", Order_Id);
-                        dtorder_update = dataaccess.ExecuteSP("Sp_Order", htorder_update);
-
-                    }
-
-                }
-
-
-
-
-                Hashtable htorderAssign_update = new Hashtable();
-                DataTable dtorderAssign_update = new System.Data.DataTable();
-                htorderAssign_update.Add("@Trans", "UPDATE");
-                htorderAssign_update.Add("@Order_Progress_Id", 6);
-                htorderAssign_update.Add("@Modified_By", userid);
-                htorderAssign_update.Add("@Order_Id", Order_Id);
-                dtorderAssign_update = dataaccess.ExecuteSP("Sp_Order_Assignment", htorderAssign_update);
 
             }
 
@@ -9428,26 +9348,6 @@ namespace Ordermanagement_01
 
                     // This for Search Task
 
-
-                    if (Order_Task == 2)
-                    {
-                        btn_Submit_Clicked = false;
-                        Validate_Document_Check_Type(Order_Task, btn_Submit_Clicked);
-
-                    }
-
-                    if (Order_Task == 27 || Order_Task == 28 || Order_Task == 29)
-                    {
-                        btn_Checklist.Enabled = false;
-                        btn_submit.Enabled = true;
-
-                        ddl_order_Task.Items.Insert(0, "Search QC");
-                        ddl_order_Task.Items.Insert(1, "Typing");
-                        ddl_order_Task.Items.Insert(2, "Final QC");
-                        ddl_order_Task.Items.Insert(3, "Exception");
-
-                    }
-
                     if (Order_Task == 2 || Order_Task == 3)
                     {
 
@@ -9582,6 +9482,27 @@ namespace Ordermanagement_01
 
 
                     }
+
+                    if (Order_Task == 2)
+                    {
+                        btn_Submit_Clicked = false;
+                        Validate_Document_Check_Type(Order_Task, btn_Submit_Clicked);
+
+                    }
+
+                    if (Order_Task == 27 || Order_Task == 28 || Order_Task == 29)
+                    {
+                        btn_Checklist.Enabled = false;
+                        btn_submit.Enabled = true;
+
+                        ddl_order_Task.Items.Insert(0, "Search QC");
+                        ddl_order_Task.Items.Insert(1, "Typing");
+                        ddl_order_Task.Items.Insert(2, "Final QC");
+                        ddl_order_Task.Items.Insert(3, "Exception");
+
+                    }
+
+                    
 
                    
 

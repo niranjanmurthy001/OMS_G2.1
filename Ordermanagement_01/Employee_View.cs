@@ -926,74 +926,75 @@ namespace Ordermanagement_01
                                         }
                                     }
 
+                                    else if (Work_Type_Id == 1 && ValidationChecklist_Quest_Entry() != false && Validation_Emp_Eff_Count() != false)
+                                    {
+                                        Hashtable htComments = new Hashtable();
+                                        DataTable dtComments = new DataTable();
+
+                                        DateTime time;
+                                        time = DateTime.Now;
+                                        string date = time.ToString("MM/dd/yyyy");
+
+                                        htComments.Add("@Trans", "INSERT");
+                                        htComments.Add("@Order_Id", int.Parse(grd_Admin_orders.Rows[e.RowIndex].Cells[12].Value.ToString()));
+                                        htComments.Add("@Order_Status_Id", Order_Status);
+                                        htComments.Add("@Start_Time", date);
+                                        htComments.Add("@End_Time", date);
+                                        htComments.Add("@User_Id", userid);
+                                        htComments.Add("@Order_Progress_Id", 14);
+                                        object Max_time_Id = dataaccess.ExecuteSPForScalar("Sp_Order_User_Wise_Time_Track", htComments);
+
+                                        MAX_TIME_ID = int.Parse(Max_time_Id.ToString());
+
+                                        if (Order_Status_Id != 22)
+                                        {
+
+                                            Hashtable htProgress_update = new Hashtable();
+                                            DataTable dtProgress_update = new DataTable();
+                                            htProgress_update.Add("@Trans", "UPDATE_PROGRESS");
+                                            htProgress_update.Add("@Order_Progress", 14);
+                                            htProgress_update.Add("@Order_ID", int.Parse(grd_Admin_orders.Rows[e.RowIndex].Cells[12].Value.ToString()));
+                                            dtProgress_update = dataaccess.ExecuteSP("Sp_Order", htProgress_update);
+                                        }
+
+                                        Hashtable htorderAssign_update = new Hashtable();
+                                        DataTable dtorderAssign_update = new DataTable();
+                                        htorderAssign_update.Add("@Trans", "UPDATE");
+                                        htorderAssign_update.Add("@Order_Progress_Id", 14);
+                                        htorderAssign_update.Add("@Modified_By", userid);
+                                        htorderAssign_update.Add("@Order_Id", int.Parse(grd_Admin_orders.Rows[e.RowIndex].Cells[12].Value.ToString()));
+                                        dtorderAssign_update = dataaccess.ExecuteSP("Sp_Order_Assignment", htorderAssign_update);
+
+                                        if (grd_Admin_orders.Rows[e.RowIndex].Cells[16].Value.ToString() == "3")
+                                        {
+
+                                            Tax_Completed = 1;
+                                        }
+                                        else
+                                        {
+
+                                            Tax_Completed = 0;
+                                        }
+
+                                        // }
+
+                                        Employee_Order_Entry entry = new Employee_Order_Entry(grd_Admin_orders.Rows[e.RowIndex].Cells[4].Value.ToString(), int.Parse(grd_Admin_orders.Rows[e.RowIndex].Cells[12].Value.ToString()), userid, User_Role_Id, Order_Process, Order_Status_Type, Order_Status_Id, Work_Type_Id, MAX_TIME_ID, Tax_Completed);
+                                        this.Invoke(new MethodInvoker(delegate
+                                        {
+                                            entry.Show();
+                                        }));
+
+
+                                        if (!CheckOpened("Employee_Order_Entry"))
+                                        {
+                                            // OrderEntry.Show();
+                                            this.Close();
+                                        }
+                                    }
+
                                 }
                                 
-                                                      
-                                else if(Work_Type_Id == 1 && ValidationChecklist_Quest_Entry() != false && Validation_Emp_Eff_Count() != false)
-                                {                                    
-                                    Hashtable htComments = new Hashtable();
-                                    DataTable dtComments = new DataTable();
-
-                                    DateTime time;
-                                    time = DateTime.Now;
-                                    string date = time.ToString("MM/dd/yyyy");
-
-                                    htComments.Add("@Trans", "INSERT");
-                                    htComments.Add("@Order_Id", int.Parse(grd_Admin_orders.Rows[e.RowIndex].Cells[12].Value.ToString()));
-                                    htComments.Add("@Order_Status_Id", Order_Status);
-                                    htComments.Add("@Start_Time", date);
-                                    htComments.Add("@End_Time", date);
-                                    htComments.Add("@User_Id", userid);
-                                    htComments.Add("@Order_Progress_Id", 14);
-                                    object Max_time_Id = dataaccess.ExecuteSPForScalar("Sp_Order_User_Wise_Time_Track", htComments);
-
-                                    MAX_TIME_ID = int.Parse(Max_time_Id.ToString());
-
-                                    if (Order_Status_Id != 22)
-                                    {
-
-                                        Hashtable htProgress_update = new Hashtable();
-                                        DataTable dtProgress_update = new DataTable();
-                                        htProgress_update.Add("@Trans", "UPDATE_PROGRESS");
-                                        htProgress_update.Add("@Order_Progress", 14);
-                                        htProgress_update.Add("@Order_ID", int.Parse(grd_Admin_orders.Rows[e.RowIndex].Cells[12].Value.ToString()));
-                                        dtProgress_update = dataaccess.ExecuteSP("Sp_Order", htProgress_update);
-                                    }
-
-                                    Hashtable htorderAssign_update = new Hashtable();
-                                    DataTable dtorderAssign_update = new DataTable();
-                                    htorderAssign_update.Add("@Trans", "UPDATE");
-                                    htorderAssign_update.Add("@Order_Progress_Id", 14);
-                                    htorderAssign_update.Add("@Modified_By", userid);
-                                    htorderAssign_update.Add("@Order_Id", int.Parse(grd_Admin_orders.Rows[e.RowIndex].Cells[12].Value.ToString()));
-                                    dtorderAssign_update = dataaccess.ExecuteSP("Sp_Order_Assignment", htorderAssign_update);
-
-                                    if (grd_Admin_orders.Rows[e.RowIndex].Cells[16].Value.ToString() == "3")
-                                    {
-
-                                        Tax_Completed = 1;
-                                    }
-                                    else
-                                    {
-
-                                        Tax_Completed = 0;
-                                    }
-
-                                    // }
-
-                                    Employee_Order_Entry entry = new Employee_Order_Entry(grd_Admin_orders.Rows[e.RowIndex].Cells[4].Value.ToString(), int.Parse(grd_Admin_orders.Rows[e.RowIndex].Cells[12].Value.ToString()), userid, User_Role_Id, Order_Process, Order_Status_Type, Order_Status_Id, Work_Type_Id, MAX_TIME_ID, Tax_Completed);
-                                    this.Invoke(new MethodInvoker(delegate
-                                    {
-                                        entry.Show();
-                                    }));
-
-
-                                    if (!CheckOpened("Employee_Order_Entry"))
-                                    {
-                                        // OrderEntry.Show();
-                                        this.Close();
-                                    }
-                                }
+                               
                                 else if (Work_Type_Id == 2 && ValidationChecklist_Quest_Entry() != false)
                                 {
                                     Hashtable htComments = new Hashtable();

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordermanagement_01", "Ordermanagement_01\Ordermanagement_01.csproj", "{C7C76CA0-DA8E-4F56-8E08-43370550FAFC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OMSG2", "Ordermanagement_01\OMSG2.csproj", "{C7C76CA0-DA8E-4F56-8E08-43370550FAFC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

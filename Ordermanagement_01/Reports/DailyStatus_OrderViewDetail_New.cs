@@ -1,26 +1,26 @@
-﻿using System;
+﻿using DevExpress.Utils;
+using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Controls;
+using DevExpress.XtraGrid;
+using DevExpress.XtraGrid.Columns;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
+using DevExpress.XtraPivotGrid;
+using DevExpress.XtraPrinting;
+using DevExpress.XtraSplashScreen;
+using Ordermanagement_01.CommentCard;
+using Ordermanagement_01.Masters;
+using Ordermanagement_01.Models;
+using Ordermanagement_01.Reports;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
-using DevExpress.XtraGrid;
-using DevExpress.XtraGrid.Views.Grid;
-using DevExpress.XtraPivotGrid;
-using DevExpress.XtraSplashScreen;
-using DevExpress.XtraPrinting;
-using DevExpress.XtraEditors.Controls;
-using Ordermanagement_01.Reports;
-using DevExpress.XtraGrid.Columns;
-using System.Collections;
-using DevExpress.Utils;
-using DevExpress.XtraGrid.Views.Grid.ViewInfo;
-using Ordermanagement_01.CommentCard;
-using Ordermanagement_01.Models;
-using Ordermanagement_01.Masters;
 using System.Text;
+using System.Windows.Forms;
 
 namespace Ordermanagement_01
 {
@@ -96,6 +96,11 @@ namespace Ordermanagement_01
 
             //    gridView2.SetRowCellValue(gridView2.FocusedRowHandle, "Order_Production_Date", DBNull.Value);
             //}
+        }
+
+        private void groupControl1_CustomButtonClick(object sender, DevExpress.XtraBars.Docking2010.BaseButtonEventArgs e)
+        {
+            BindOrdersByOperation();
         }
 
         private void gridView2_MouseMove(object sender, MouseEventArgs e)
@@ -383,91 +388,84 @@ namespace Ordermanagement_01
             }
 
         }
-        protected void Get_Client_Wise_Production_Count_Orders_To_GridviewBind()
+        protected void BindOrdersByOperation()
         {
-
-            //DateTime Fromdate = Convert.ToDateTime(From_date.ToString());
-            //DateTime Todate = Convert.ToDateTime(To_Date.ToString());
-
-            string Fromdate = From_date.ToString();
-            string Todate = To_Date.ToString();
-
-            //DateTime F_date = DateTime.ParseExact(Fromdate, "dd-MM-yyyy HH:mm:ss", CultureInfo.InvariantCulture);
-            //DateTime T_date = DateTime.ParseExact(Todate, "dd-MM-yyyy HH:mm:ss", CultureInfo.InvariantCulture);
-
-
-            //string Form_Date_1 = F_date.ToString("MM/dd/yyyy");
-            //string To_Date_1 = T_date.ToString("MM/dd/yyyy");
-
-
-            //DateTime grid_date = DateTime.ParseExact(date, "dd-MM-yyyy", CultureInfo.InvariantCulture);
-            // //s will be MM/dd/yyyy format string
-            // string s_Date = grid_date.ToString("MM/dd/yyyy");
-
-
-
-            string spName = "";
-            httargetorder.Clear();
-            dttargetorder.Clear();
-
-            httargetorder.Add("@Trans", Operation);
-            httargetorder.Add("@Client_Number", Client_Number);    //Clint
-            //httargetorder.Add("@Sub_Client", Sub_Process_ID);  // Sub_Process_ID 
-            httargetorder.Add("@Order_Status", Order_Status);
-            httargetorder.Add("@Fromdate", Fromdate);
-            httargetorder.Add("@Todate", Todate);
-            httargetorder.Add("@date", date);
-            // httargetorder.Add("@date", s_Date);
-            if (Operation == "AGENT_OPEN_ORDER_DETAILS" || Operation == "AGENT_OPEN_ORDER_ROW_TOTAL_CLIENT_DATE_WISE" || Operation == "AGENT_OPEN_ORDER_COLUMN_GRANT_TOTAL_WISE" ||
-                 Operation == "AGENT_OPEN_ORDER_COLUMN_GRANT_TOTAL_WISE" || Operation == "AGENT_OPEN_ORDER_ALL_CLIENT_AND_ORDER_STATUS_WISE" || Operation == "AGENT_OPEN_ORDER_CLIENT_AND_DATE_WISE" ||
-                 Operation == "AGENT_OPEN_ORDER_CLIENT_AND_ALL_TASK_WISE" || Operation == "AGENT_OPEN_ORDER_DATE_WISE" || Operation == "AGENT_OPEN_ORDER_CLIENT_AND_ORDER_STATUS_WISE")
+            SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
+            try
             {
-                spName = "Sp_Daily_Status_Report_Open";
-            }
-            else if (Operation == "AGENT_PENDING_ORDER_DETAILS" || Operation == "AGENT_OPEN_ORDER_ROW_TOTAL_CLIENT_DATE_WISE" || 
-                Operation == "AGENT_PENDING_ORDER_CLIENT_AND_STATUS" || Operation == "AGENT_PENDING_ORDER_ALL_CLIENT_STATUS_WISE" ||
-                Operation == "AGENT_PENDING_ORDER_CLIENT_DATE_WISE" || Operation == "AGENT_PENDING_ORDER_CLIENT_AND_ALL_STATUS_WISE" 
-                || Operation == "AGING_PENDING_ORDER_DATE_WISE")
-            {
-                spName = "Sp_Daily_Status_Report_Pending";
-            }
-            else
-            {
-                spName = "Sp_Daily_Status_Report";
-            }
-            dttargetorder = dataaccess.ExecuteSP(spName, httargetorder);
-            dt_Order_Details = dttargetorder;
-            if (dttargetorder.Rows.Count > 0)
-            {
-                grd_Targetorder.DataSource = dttargetorder;
-                if (User_Role_Id == "1")
+                grd_Targetorder.DataSource = null;
+                pivotGridControl1.DataSource = null;
+                string Fromdate = From_date.ToString();
+                string Todate = To_Date.ToString();
+
+                string spName = "";
+                httargetorder.Clear();
+                dttargetorder.Clear();
+
+                httargetorder.Add("@Trans", Operation);
+                httargetorder.Add("@Client_Number", Client_Number);    //Clint
+                                                                       //httargetorder.Add("@Sub_Client", Sub_Process_ID);  // Sub_Process_ID 
+                httargetorder.Add("@Order_Status", Order_Status);
+                httargetorder.Add("@Fromdate", Fromdate);
+                httargetorder.Add("@Todate", Todate);
+                httargetorder.Add("@date", date);
+                // httargetorder.Add("@date", s_Date);
+                if (Operation == "AGENT_OPEN_ORDER_DETAILS" || Operation == "AGENT_OPEN_ORDER_ROW_TOTAL_CLIENT_DATE_WISE" || Operation == "AGENT_OPEN_ORDER_COLUMN_GRANT_TOTAL_WISE" ||
+                     Operation == "AGENT_OPEN_ORDER_COLUMN_GRANT_TOTAL_WISE" || Operation == "AGENT_OPEN_ORDER_ALL_CLIENT_AND_ORDER_STATUS_WISE" || Operation == "AGENT_OPEN_ORDER_CLIENT_AND_DATE_WISE" ||
+                     Operation == "AGENT_OPEN_ORDER_CLIENT_AND_ALL_TASK_WISE" || Operation == "AGENT_OPEN_ORDER_DATE_WISE" || Operation == "AGENT_OPEN_ORDER_CLIENT_AND_ORDER_STATUS_WISE")
                 {
-                    gridColumn14.Visible = true;
-                    gridColumn15.Visible = true;
-
-                    gridColumn37.Visible = false;
-                    gridColumn38.Visible = false;
-
-                    gridView2.Columns["Client_Name"].Visible = true;
-                    gridView2.Columns["Sub_ProcessName"].Visible = true;
-
+                    spName = "Sp_Daily_Status_Report_Open";
+                }
+                else if (Operation == "AGENT_PENDING_ORDER_DETAILS" || Operation == "AGENT_OPEN_ORDER_ROW_TOTAL_CLIENT_DATE_WISE" ||
+                    Operation == "AGENT_PENDING_ORDER_CLIENT_AND_STATUS" || Operation == "AGENT_PENDING_ORDER_ALL_CLIENT_STATUS_WISE" ||
+                    Operation == "AGENT_PENDING_ORDER_CLIENT_DATE_WISE" || Operation == "AGENT_PENDING_ORDER_CLIENT_AND_ALL_STATUS_WISE"
+                    || Operation == "AGING_PENDING_ORDER_DATE_WISE")
+                {
+                    spName = "Sp_Daily_Status_Report_Pending";
                 }
                 else
                 {
-                    gridColumn14.Visible = false;
-                    gridColumn15.Visible = false;
-
-                    gridColumn37.Visible = true;
-                    gridColumn38.Visible = true;
-
-                    gridView2.Columns["Client_Number"].Visible = true;
-                    gridView2.Columns["Subprocess_Number"].Visible = true;
+                    spName = "Sp_Daily_Status_Report";
                 }
+                dttargetorder = dataaccess.ExecuteSP(spName, httargetorder);
+                dt_Order_Details = dttargetorder;
+                if (dttargetorder.Rows.Count > 0)
+                {
+                    grd_Targetorder.DataSource = dttargetorder;
+                    pivotGridControl1.DataSource = dttargetorder;
+                    if (User_Role_Id == "1")
+                    {
+                        gridColumn14.Visible = true;
+                        gridColumn15.Visible = true;
 
+                        gridColumn37.Visible = false;
+                        gridColumn38.Visible = false;
+
+                        gridView2.Columns["Client_Name"].Visible = true;
+                        gridView2.Columns["Sub_ProcessName"].Visible = true;
+
+                    }
+                    else
+                    {
+                        gridColumn14.Visible = false;
+                        gridColumn15.Visible = false;
+
+                        gridColumn37.Visible = true;
+                        gridColumn38.Visible = true;
+
+                        gridView2.Columns["Client_Number"].Visible = true;
+                        gridView2.Columns["Subprocess_Number"].Visible = true;
+                    }
+                }
             }
-            else
+            catch (Exception ex)
             {
-                //grd_Targetorder.DataSource = null;
+                SplashScreenManager.CloseForm(false);
+                MessageBox.Show("Error Occured Please Check With Administrator");
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm(false);
             }
         }
         public void SetupLookup()
@@ -910,7 +908,7 @@ namespace Ordermanagement_01
                 gridControl1.DataSource = e.CreateDrillDownDataSource();
                 dt_Section = GetDataTable(gridView5);
                 //  gridControl1.DataSource = dt_Section;
-                Record record = new Record(dt_Section, Order_ID, User_id, User_Role_Id, Production_Date);
+                Record record = new Record(dt_Section, Order_ID, User_id, User_Role_Id, Production_Date, Client_Number, Operation, From_date, To_Date, Order_Status, date);
                 record.Show();
                 //form.Bounds = new Rectangle(100, 100, 600, 450);
                 // form.WindowState = FormWindowState.Maximized;
@@ -2075,7 +2073,7 @@ namespace Ordermanagement_01
                             SplashScreenManager.CloseForm(false);
 
                             DevExpress.XtraEditors.XtraMessageBox.Show(defaultLookAndFeel1.LookAndFeel, this, "Order ReAllocated Sucessfully.", "Success", MessageBoxButtons.OK);
-                            Get_Client_Wise_Production_Count_Orders_To_GridviewBind();
+                            BindOrdersByOperation();
                             btn_Clear_Click(sender, e);
                         }
                         if (Error_Count > 0)
@@ -3322,7 +3320,7 @@ namespace Ordermanagement_01
                         styleFormatForOffer.Column = this.gridColumn31;
 
                         DevExpress.XtraEditors.XtraMessageBox.Show(defaultLookAndFeel1.LookAndFeel, this, "Order DeAllocated Sucessfully.", "Success", MessageBoxButtons.OK);
-                        Get_Client_Wise_Production_Count_Orders_To_GridviewBind();
+                        BindOrdersByOperation();
                         btn_Clear_Click(sender, e);
 
                     }
@@ -3335,7 +3333,7 @@ namespace Ordermanagement_01
                         styleFormatForOffer.Appearance.Options.UseBackColor = true;
                         styleFormatForOffer.Column = this.gridColumn31;
                         XtraMessageBox.Show(defaultLookAndFeel1.LookAndFeel, this, "Few Orders are not DeAllocated Please check in Error Status Column.", "Warning", MessageBoxButtons.OK);
-                        Get_Client_Wise_Production_Count_Orders_To_GridviewBind();
+                        BindOrdersByOperation();
                     }
 
 

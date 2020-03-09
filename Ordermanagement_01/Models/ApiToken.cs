@@ -3,15 +3,13 @@ using DevExpress.XtraSplashScreen;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ordermanagement_01.Models
 {
-  public static class ApiToken
+    public static class ApiToken
     {
         public static string access_token { get; set; }
 
@@ -19,7 +17,7 @@ namespace Ordermanagement_01.Models
 
         public static Nullable<int> expires_in { get; set; }
 
-        public static async Task GetTokenDetails(string User_Name,string Password)
+        public static async Task GetTokenDetails(string User_Name, string Password)
         {
             try
             {
@@ -28,7 +26,7 @@ namespace Ordermanagement_01.Models
 
                     Client.DefaultRequestHeaders.Clear();
                     Client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                    var body = new List<KeyValuePair<string, string>>
+                    var header = new List<KeyValuePair<string, string>>
                 {
                     new KeyValuePair<string, string>("UserName",User_Name),
                     new KeyValuePair<string, string>("Password",Password),
@@ -36,7 +34,7 @@ namespace Ordermanagement_01.Models
 
                 };
 
-                    var Content = new FormUrlEncodedContent(body);
+                    var Content = new FormUrlEncodedContent(header);
                     HttpResponseMessage response = await Client.PostAsync(Base_Url.Token_Url + "/token", Content);
                     if (response.IsSuccessStatusCode)
                     {
@@ -61,7 +59,7 @@ namespace Ordermanagement_01.Models
             }
             catch (Exception ex)
             {
-
+                SplashScreenManager.CloseForm(false);
                 XtraMessageBox.Show(ex.ToString());
             }
         }
@@ -74,7 +72,7 @@ namespace Ordermanagement_01.Models
 
         }
 
-        public static Tuple<bool,string> Token_HeaderDetails(HttpClient Client)
+        public static Tuple<bool, string> Token_HeaderDetails(HttpClient Client)
         {
 
             try
@@ -84,27 +82,29 @@ namespace Ordermanagement_01.Models
                     Client.DefaultRequestHeaders.Clear();
                     Client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
                     Client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue(ApiToken.token_type, " " + ApiToken.access_token);
+                    SplashScreenManager.CloseForm(false);
                     return Tuple.Create(true, "No Error");
                 }
                 else
                 {
+                    SplashScreenManager.CloseForm(false);
                     return Tuple.Create(false, "Invalid Token Details");
 
                 }
-                
+
             }
             catch (Exception ex)
             {
-
+                SplashScreenManager.CloseForm(false);
                 return Tuple.Create(false, ex.ToString());
-             
+
             }
-            
+
 
 
         }
 
     }
 
-    
+
 }

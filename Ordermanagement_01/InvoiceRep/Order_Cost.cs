@@ -527,7 +527,7 @@ namespace Ordermanagement_01.InvoiceRep
                         if (dtsearch.Rows.Count > 0)
                         {
 
-                            InvoiceRep.Order_Cost_Email inv = new InvoiceRep.Order_Cost_Email(Order_Number, userid, order_Id, Order_Cost_Id, Sub_Process_ID, OrderCost);
+                            InvoiceRep.Order_Cost_Email inv = new Order_Cost_Email(Order_Number, userid, order_Id, Order_Cost_Id, Sub_Process_ID, OrderCost);
                             //cProbar.stopProgress();
                         }
                     }

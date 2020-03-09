@@ -1013,6 +1013,16 @@ namespace Ordermanagement_01.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ic_refresh {
+            get {
+                object obj = ResourceManager.GetObject("ic_refresh", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ic_search {
             get {
                 object obj = ResourceManager.GetObject("ic_search", resourceCulture);
@@ -1116,6 +1126,16 @@ namespace Ordermanagement_01.Properties {
         internal static System.Drawing.Bitmap icons8_summary_list_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-summary-list-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_synchronize_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-synchronize-64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1356,6 +1376,16 @@ namespace Ordermanagement_01.Properties {
         internal static System.Drawing.Bitmap Logout {
             get {
                 object obj = ResourceManager.GetObject("Logout", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logout_icon {
+            get {
+                object obj = ResourceManager.GetObject("logout icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1733,6 +1763,36 @@ namespace Ordermanagement_01.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap refresh__3_ {
+            get {
+                object obj = ResourceManager.GetObject("refresh (3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap refresh__6_ {
+            get {
+                object obj = ResourceManager.GetObject("refresh (6)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap refresh_icon {
+            get {
+                object obj = ResourceManager.GetObject("refresh icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap refresh0 {
             get {
                 object obj = ResourceManager.GetObject("refresh0", resourceCulture);
@@ -1756,6 +1816,16 @@ namespace Ordermanagement_01.Properties {
         internal static System.Drawing.Bitmap refresh1 {
             get {
                 object obj = ResourceManager.GetObject("refresh1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap refresh11 {
+            get {
+                object obj = ResourceManager.GetObject("refresh11", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

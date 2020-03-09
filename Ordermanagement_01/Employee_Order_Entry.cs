@@ -122,8 +122,10 @@ namespace Ordermanagement_01
         int Tax_Completed_Count = 0;
         int Order_Task;
         int Order_Status_Id;
-
+        int Document_Check_Type_Id = 0;
         Order_Passing_Params obj_Order_Details_List = new Order_Passing_Params();
+
+        private bool btn_Submit_Clicked = false;
         public Employee_Order_Entry(string SESSIONORDERNO, int Orderid, int User_id, string Role_id, string OrderProcess, string SESSSIONORDERTYPE, int SESSIONORDERTASK, int WORK_TYPE_ID, int MAX_TIMING_ID, int TAX_COMPLETED)
         {
             Chk = 0;
@@ -1889,26 +1891,6 @@ namespace Ordermanagement_01
 
         private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Column_index == 2)
-            {
-                if (((ComboBox)sender).SelectedValue != null)
-                {
-
-                    Error_Type_id = int.Parse(((ComboBox)sender).SelectedValue.ToString());
-                    Hashtable htselect = new Hashtable();
-                    DataTable dtselect = new DataTable();
-                    htselect.Add("@Trans", "SELECT_Error_description");
-                    htselect.Add("@Error_Type_Id", Error_Type_id);
-                    dtselect = dataaccess.ExecuteSP("Sp_Errors_Details", htselect);
-                    ddl_Error_description.DataSource = dtselect;
-                    ddl_Error_description.ValueMember = "Error_description_Id";
-                    ddl_Error_description.DisplayMember = "Error_description";
-                }
-            }
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
 
         }
 
@@ -1922,11 +1904,21 @@ namespace Ordermanagement_01
 
         private void btn_submit_Click(object sender, EventArgs e)
         {
+          
 
             if (Work_Type_Id == 1)
             {
+                btn_Submit_Clicked = true;
+                int Order_Task = int.Parse(SESSION_ORDER_TASK.ToString());
+                if (Order_Task == 27 || Order_Task == 28 || Order_Task == 29)
+                {
 
-                Submit_Live_data();
+                    Submit_Live_Data_For_Image_req_Tax_Req_DataDepth_req();
+                }
+                else
+                {
+                    Submit_Live_data();
+                }
 
             }
             else if (Work_Type_Id == 2)
@@ -2071,6 +2063,186 @@ namespace Ordermanagement_01
 
         }
 
+
+        private void Submit_Live_Data_For_Image_req_Tax_Req_DataDepth_req()
+        {
+            if (ddl_order_Staus.SelectedValue.ToString() == "3")
+            {
+
+                if (Validate_Order_Info() != false)
+                {
+
+                    SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
+                    try
+                    {
+
+                        if (Chk_Self_Allocate.Checked == false)
+                        {
+
+
+                            int Order_Task = int.Parse(SESSION_ORDER_TASK.ToString().ToString());
+
+                            form_loader.Start_progres();
+
+
+                            if (ddl_order_Task.Visible == true && ddl_order_Task.Text != "Upload Completed")
+                            {
+
+
+
+                                Hashtable htuser = new Hashtable();
+                                DataTable dtuser = new System.Data.DataTable();
+                                htuser.Add("@Trans", "SELECT_STATUSID");
+                                htuser.Add("@Order_Status", ddl_order_Task.Text);
+                                dtuser = dataaccess.ExecuteSP("Sp_Order_Status", htuser);
+
+
+
+
+                                Hashtable htEffectivedate = new Hashtable();
+                                DataTable dtEffectivdate = new System.Data.DataTable();
+                                htEffectivedate.Add("@Trans", "UPDATE_EFFECTIVEDATE");
+                                htEffectivedate.Add("@Order_ID", Order_Id);
+                                htEffectivedate.Add("@Effective_date", txt_Effectivedate.Text);
+                                htEffectivedate.Add("@Modified_By", userid);
+                                dtEffectivdate = dataaccess.ExecuteSP("Sp_Order", htEffectivedate);
+
+
+                                Hashtable ht_Productiondate = new Hashtable();
+                                DataTable dt_Production_date = new DataTable();
+
+                                ht_Productiondate.Add("@Trans", "CHK_PRODUCTION_DATE");
+                                ht_Productiondate.Add("@Order_ID", Order_Id);
+                                ht_Productiondate.Add("@Order_Status_Id", SESSION_ORDER_TASK.ToString());
+                                dt_Production_date = dataaccess.ExecuteSP("Sp_Order_ProductionDate", ht_Productiondate);
+
+                                if (dt_Production_date.Rows.Count > 0)
+                                {
+
+                                    Chk_Production_date = int.Parse(dt_Production_date.Rows[0]["count"].ToString());
+
+
+                                }
+                                else
+                                {
+
+                                    Chk_Production_date = 0;
+                                }
+
+                                if (Chk_Production_date > 0)
+                                {
+                                    OPERATE_PRODUCTION_DATE = "UPDATE";
+                                    Insert_ProductionDate();
+
+                                }
+                                else if (Chk_Production_date == 0)
+                                {
+                                    OPERATE_PRODUCTION_DATE = "INSERT";
+                                    Insert_ProductionDate();
+                                }
+
+                                int Next_Order_Task = 0;
+
+                                Hashtable ht_Status = new Hashtable();
+                                DataTable dt_Status = new System.Data.DataTable();
+
+                                Hashtable htupdate = new Hashtable();
+                                DataTable dtupdate = new System.Data.DataTable();
+
+
+                                ht_Status.Add("@Trans", "UPDATE_STATUS");
+                                ht_Status.Add("@Order_ID", Order_Id);
+
+                                if (ddl_order_Task.Visible != true)
+                                {
+                                    ht_Status.Add("@Order_Status", SESSION_ORDER_TASK.ToString());
+                                    htupdate.Add("@Order_Progress", int.Parse(ddl_order_Staus.SelectedValue.ToString()));
+
+                                }
+                                else if (ddl_order_Task.Visible == true && ddl_order_Task.Text != "Upload Completed")
+                                {
+                                    htuser.Clear();
+                                    dtuser.Clear();
+                                    htuser.Add("@Trans", "SELECT_STATUSID");
+                                    htuser.Add("@Order_Status", ddl_order_Task.Text);
+
+                                    dtuser = dataaccess.ExecuteSP("Sp_Order_Status", htuser);
+
+                                    ht_Status.Add("@Order_Status", int.Parse(dtuser.Rows[0]["Order_Status_ID"].ToString()));
+
+                                    htupdate.Add("@Order_Progress", 8);
+
+                                }
+                                else if (ddl_order_Task.Visible == true && ddl_order_Task.Text == "Upload Completed")
+                                {
+                                    htuser.Clear();
+                                    dtuser.Clear();
+                                    htuser.Add("@Trans", "SELECT_STATUSID");
+                                    htuser.Add("@Order_Status", ddl_order_Task.Text);
+                                    dtuser = dataaccess.ExecuteSP("Sp_Order_Status", htuser);
+
+                                    Next_Order_Task = int.Parse(dtuser.Rows[0]["Order_Status_ID"].ToString());
+                                    ht_Status.Add("@Order_Status", int.Parse(dtuser.Rows[0]["Order_Status_ID"].ToString()));
+                                    
+                                    htupdate.Add("@Order_Progress", 3);
+
+                                }
+                                ht_Status.Add("@Modified_By", userid);
+
+                                dt_Status = dataaccess.ExecuteSP("Sp_Order", ht_Status);
+
+
+
+                                htupdate.Add("@Trans", "UPDATE_PROGRESS");
+                                htupdate.Add("@Order_ID", Order_Id);
+
+                                htupdate.Add("@Modified_By", userid);
+
+                                dtupdate = dataaccess.ExecuteSP("Sp_Order", htupdate);
+
+
+                                Update_User_Order_Time_Info_Status();
+
+
+                                //OrderHistory
+                                Hashtable ht_Order_History = new Hashtable();
+                                DataTable dt_Order_History = new DataTable();
+                                ht_Order_History.Add("@Trans", "INSERT");
+                                ht_Order_History.Add("@Order_Id", Order_Id);
+                                //  ht_Order_History.Add("@User_Id", int.Parse(ddl_UserName.SelectedValue.ToString()));
+                                ht_Order_History.Add("@Status_Id", Next_Order_Task);
+                                ht_Order_History.Add("@Progress_Id", 8);
+                                ht_Order_History.Add("@Work_Type", 1);
+                                ht_Order_History.Add("@Assigned_By", userid);
+                                ht_Order_History.Add("@Modification_Type", "Order Complete");
+                                dt_Order_History = dataaccess.ExecuteSP("Sp_Order_History", ht_Order_History);
+
+                                SplashScreenManager.CloseForm(false);
+                                MessageBox.Show("Order Submitted Sucessfully");
+
+                                this.Close();
+
+
+                            }
+
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        SplashScreenManager.CloseForm(false);
+                    }
+
+                    finally
+                    {
+
+                    }
+
+
+                }
+            }
+        }
 
         public void Submit_Live_data()
         {
@@ -2218,7 +2390,11 @@ namespace Ordermanagement_01
                     else
                     {
 
-                        if (Validate_Order_Info() != false && Valid_date() != false && validate_subscription() != false && validate_subscription_Website() != false && Validate_Effective_Date() != false && Validate_Document_List() != false && Validate_Search_Cost() != false && Validate_Error_Entry() != false && Validate_Tax_Internal_Status() != false && Validate_Tax_Internal_Status_Client_Sub_Client_Wise() != false && Validate_Search_And_Search_Qc_Note() != false && Validate_Searcher_Link() != false && Validate_Email_Check() != false)
+                      
+                            
+                    
+
+                        if (Validate_Order_Info() != false && Validate_Document_Check_Type(int.Parse(SESSION_ORDER_TASK),true) != false && Valid_date() != false && validate_subscription() != false && validate_subscription_Website() != false && Validate_Effective_Date() != false && Validate_Document_List() != false && Validate_Search_Cost() != false && Validate_Error_Entry() != false && Validate_Tax_Internal_Status() != false && Validate_Tax_Internal_Status_Client_Sub_Client_Wise() != false && Validate_Search_And_Search_Qc_Note() != false && Validate_Searcher_Link() != false && Validate_Email_Check() != false )
                         {
                             SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
                             try
@@ -7202,86 +7378,6 @@ namespace Ordermanagement_01
                 dtComments = dataaccess.ExecuteSP("Sp_Order_User_Wise_Time_Track", htComments);
 
 
-                Hashtable htcheckorder_Assignd_to_Abstarctor = new Hashtable();
-                DataTable dtcheck_Order_Assigned_To_Abstractor = new DataTable();
-                int check_Abstarctor;
-                htcheckorder_Assignd_to_Abstarctor.Add("@Trans", "CHECK_ORDER_IS_ASSIGNED_TO_ABSTRACTOR");
-                htcheckorder_Assignd_to_Abstarctor.Add("@Order_ID", Order_Id);
-                dtcheck_Order_Assigned_To_Abstractor = dataaccess.ExecuteSP("Sp_Order", htcheckorder_Assignd_to_Abstarctor);
-                if (dtcheck_Order_Assigned_To_Abstractor.Rows.Count > 0)
-                {
-
-                    check_Abstarctor = int.Parse(dtcheck_Order_Assigned_To_Abstractor.Rows[0]["count"].ToString());
-
-                }
-                else
-                {
-
-                    check_Abstarctor = 0;
-                }
-
-
-
-                if (check_Abstarctor == 0)
-                {
-                    Hashtable htcheckorder_Progress = new Hashtable();
-                    DataTable dtcheck_Order_Progress = new DataTable();
-
-                    htcheckorder_Progress.Add("@Trans", "GET_ORDER_PROGRESS");
-                    htcheckorder_Progress.Add("@Order_ID", Order_Id);
-                    dtcheck_Order_Progress = dataaccess.ExecuteSP("Sp_Order", htcheckorder_Progress);
-                    int Check_Progress_Count = 0;
-
-                    if (dtcheck_Order_Progress.Rows.Count > 0)
-                    {
-
-                        Check_Progress_Count = int.Parse(dtcheck_Order_Progress.Rows[0]["count"].ToString());
-                        Check_Order_Progress = int.Parse(dtcheck_Order_Progress.Rows[0]["Order_Progress"].ToString());
-                    }
-                    else
-                    {
-
-                        Check_Progress_Count = 0;
-
-                    }
-
-
-                    if (check_Abstarctor == 0 && Check_Progress_Count == 0)
-                    {
-
-
-                        Hashtable htorder_update = new Hashtable();
-                        DataTable dtorder_update = new System.Data.DataTable();
-                        htorder_update.Add("@Trans", "UPDATE_PROGRESS");
-                        htorder_update.Add("@Order_Progress", 6);
-                        htorder_update.Add("@Modified_By", userid);
-                        htorder_update.Add("@Order_ID", Order_Id);
-                        dtorder_update = dataaccess.ExecuteSP("Sp_Order", htorder_update);
-                    }
-                    else if (Check_Order_Progress == 14 && check_Abstarctor == 0)
-                    {
-                        Hashtable htorder_update = new Hashtable();
-                        DataTable dtorder_update = new System.Data.DataTable();
-                        htorder_update.Add("@Trans", "UPDATE_PROGRESS");
-                        htorder_update.Add("@Order_Progress", 6);
-                        htorder_update.Add("@Modified_By", userid);
-                        htorder_update.Add("@Order_ID", Order_Id);
-                        dtorder_update = dataaccess.ExecuteSP("Sp_Order", htorder_update);
-
-                    }
-
-                }
-
-
-
-
-                Hashtable htorderAssign_update = new Hashtable();
-                DataTable dtorderAssign_update = new System.Data.DataTable();
-                htorderAssign_update.Add("@Trans", "UPDATE");
-                htorderAssign_update.Add("@Order_Progress_Id", 6);
-                htorderAssign_update.Add("@Modified_By", userid);
-                htorderAssign_update.Add("@Order_Id", Order_Id);
-                dtorderAssign_update = dataaccess.ExecuteSP("Sp_Order_Assignment", htorderAssign_update);
 
             }
 
@@ -7751,6 +7847,163 @@ namespace Ordermanagement_01
         }
 
 
+        private bool Validate_Document_Check_Type(int Order_Task,bool btn_Submit_Check)
+        {
+            // this is validate only for search task
+            if (Order_Task == 2)
+            {
+
+
+                int Count = 0;
+
+                Hashtable htcheck = new Hashtable();
+                DataTable dtcheck = new DataTable();
+                htcheck.Add("@Trans", "CHECK_BY_USER");
+                htcheck.Add("@Order_Id", Order_Id);
+                htcheck.Add("@Order_Task", SESSION_ORDER_TASK);
+                htcheck.Add("@User_Id", userid);
+                dtcheck = dataaccess.ExecuteSP("usp_Docuement_Check_Type", htcheck);
+                if (dtcheck.Rows.Count > 0)
+                {
+                    Count = int.Parse(dtcheck.Rows[0]["COUNT"].ToString());
+                }
+
+
+                if (btn_Submit_Check == false && Count >= 0)
+                {
+                    if (ddl_order_Staus.SelectedValue.ToString() == "3")
+
+                    {
+                        MessageBox.Show("Please Select Document Check Type");
+
+                        if (Application.OpenForms["Document_Check_Type"] != null)
+                        {
+
+                            Application.OpenForms["Document_Check_Type"].Focus();
+                        }
+                        else
+                        {
+                            Ordermanagement_01.New_Dashboard.Employee.Document_Check_Type Doc_Check_Type = new New_Dashboard.Employee.Document_Check_Type(obj_Order_Details_List, this);
+
+                            Doc_Check_Type.ShowDialog();
+                        }
+                       
+                    }
+                    return false;
+                }
+
+                else if (btn_Submit_Check == true && Count > 0)
+                {
+
+                    return true;
+
+                }
+                else
+                {
+
+                    return false;
+                }
+
+            }
+
+            else
+            {
+
+                return true;
+            }
+        }
+
+        public void Disable_Next_Task_Method()
+        {
+
+
+            Hashtable htcheck = new Hashtable();
+            DataTable dtcheck = new DataTable();
+            htcheck.Add("@Trans", "CHECK_DOCUMENT_TYPE_FOR_ORDER");
+            htcheck.Add("@Order_Id", Order_Id);
+            htcheck.Add("@Order_Task", SESSION_ORDER_TASK);
+            htcheck.Add("@User_Id", userid);
+            dtcheck = dataaccess.ExecuteSP("usp_Docuement_Check_Type", htcheck);
+
+           int Document_Check_Count=0;
+            if (dtcheck.Rows.Count > 0)
+            {
+                Document_Check_Count = int.Parse(dtcheck.Rows[0]["Check_Count"].ToString());
+
+            }
+
+            if (Document_Check_Count > 1)
+            {
+
+                ddl_order_Staus.SelectedValue = "1";
+
+
+
+            }
+            else if (Document_Check_Count == 1)
+            {
+                Document_Check_Type_Id = int.Parse(dtcheck.Rows[0]["Document_Check_Type_Id"].ToString());
+                if (Document_Check_Type_Id != 4)
+                {
+
+                    ddl_order_Task.Enabled = false;
+                    ddl_order_Task.Items.Insert(0, "Image Request");
+                    ddl_order_Task.Items.Insert(1, "Datadepth Request");
+                    ddl_order_Task.Items.Insert(2, "Tax Certificate Request");
+
+                    //   dbc.Bind_Order_Task_Document_Check_Type_Wise(ddl_order_Task);
+                    if (Document_Check_Type_Id == 1) ddl_order_Task.SelectedIndex = 0;
+                    else if (Document_Check_Type_Id == 2) ddl_order_Task.SelectedIndex = 1;
+                    else if (Document_Check_Type_Id == 3) ddl_order_Task.SelectedIndex = 2;
+
+                }
+                else
+                {
+
+                    if (Document_Check_Type_Id==4)
+                    {
+
+                        ddl_order_Task.Enabled = true;
+
+
+                        ddl_order_Task.Visible = true;
+                        txt_Task.Visible = false;
+                        // Chk_Self_Allocate.Visible = true;
+                        ddl_order_Task.Items.Clear();
+
+                        if (SESSSION_ORDER_TYPE == "Search")
+                        {
+                            ddl_order_Task.Items.Insert(0, "Search QC");
+                            ddl_order_Task.Items.Insert(1, "Typing");
+                            ddl_order_Task.Items.Insert(2, "Final QC");
+                            ddl_order_Task.Items.Insert(3, "Exception");
+
+                            // This option is enabled only for 40 client id
+                            if (Client_id == 40 || Client_id == 4)
+                            {
+                                ddl_order_Task.Items.Insert(4, "Upload Completed");
+                            }
+                            // This is for 52002 Sub Clients
+
+                            if (Sub_ProcessId == 395)
+                            {
+
+                                ddl_order_Task.Items.Insert(4, "Upload Completed");
+                            }
+                        }
+                        
+
+
+
+                    }
+
+
+                }
+
+            }
+          
+            
+        }
         protected void Insert_delay_Order_Comments(int Work_Type_Id)
         {
 
@@ -8272,338 +8525,6 @@ namespace Ordermanagement_01
         }
 
 
-
-        private void ddl_order_Staus_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            if (Work_Type_Id == 1 || Work_Type_Id == 2)
-            {
-
-
-                if (ddl_order_Staus.SelectedValue.ToString() == "1" || ddl_order_Staus.SelectedValue.ToString() == "5" || ddl_order_Staus.SelectedValue.ToString() == "4" || ddl_order_Staus.SelectedValue.ToString() == "9")
-                {
-                    Chk = 0;
-                    txt_Task.Visible = true;
-
-                    //Userhold,hold,clarification queues
-                    btn_Checklist.Enabled = false;
-                    btn_submit.Enabled = true;
-                }
-                else
-                {
-                    Chk = 1;
-                }
-                if (ddl_order_Staus.SelectedValue.ToString() == "3")
-                {
-                    if (lbl_Order_Task_Type.Text == "Upload" || lbl_Order_Task_Type.Text == "Exception" || lbl_Order_Task_Type.Text == "Search Tax Request")
-                    {
-                        // Userhold,hold,clarification queues
-                        btn_Checklist.Enabled = false;
-                        btn_submit.Enabled = true;
-                    }
-
-                    else
-                    {
-                        btn_Checklist.Enabled = true;
-                        btn_submit.Enabled = false;
-
-                    }
-
-                    //// For issue Updatyed
-
-                    //btn_submit.Enabled = true;
-
-                    //btn_Checklist.Enabled = false;
-                    //============================
-
-
-
-                    int Order_Task = int.Parse(SESSION_ORDER_TASK.ToString());
-
-                    ////its is to restrict the task on client wise
-
-                    //Hashtable htget_Client_Wise_Restricted_task = new Hashtable();
-                    //DataTable dtget_Client_Wise_Restricted_task = new DataTable();
-
-                    //htget_Client_Wise_Restricted_task.Add("@Trans", "GET_TASK_LIST_CLIENT_AND_TASK_WISE");
-                    //htget_Client_Wise_Restricted_task.Add("@Client_Id",Client_id);
-                    //htget_Client_Wise_Restricted_task.Add("@Task_Stage_Id",Order_Task);
-                    //dtget_Client_Wise_Restricted_task = dataaccess.ExecuteSP("Sp_Client_Task_Stage_Target", htget_Client_Wise_Restricted_task);
-                    //ddl_order_Task.Visible = true;
-                    //if (dtget_Client_Wise_Restricted_task.Rows.Count > 0)
-                    //{
-                    //    txt_Task.Visible = false;
-
-
-                    //    dbc.Bind_Order_Task_Client_Wise(ddl_order_Task, Client_id, Order_Task);
-
-
-                    //}
-                    //else
-                    //{
-
-
-
-                    if (Order_Task == 2 || Order_Task == 3)
-                    {
-
-
-
-
-                        ddl_order_Task.Visible = true;
-                        txt_Task.Visible = false;
-                        // Chk_Self_Allocate.Visible = true;
-                        ddl_order_Task.Items.Clear();
-
-                        if (SESSSION_ORDER_TYPE == "Search")
-                        {
-                            ddl_order_Task.Items.Insert(0, "Search QC");
-                            ddl_order_Task.Items.Insert(1, "Typing");
-                            ddl_order_Task.Items.Insert(2, "Final QC");
-                            ddl_order_Task.Items.Insert(3, "Exception");
-
-                            // This option is enabled only for 40 client id
-                            if (Client_id == 40 || Client_id == 4)
-                            {
-                                ddl_order_Task.Items.Insert(4, "Upload Completed");
-                            }
-                            // This is for 52002 Sub Clients
-
-                            if (Sub_ProcessId == 395)
-                            {
-
-                                ddl_order_Task.Items.Insert(4, "Upload Completed");
-                            }
-                        }
-                        if (SESSSION_ORDER_TYPE == "Search QC")
-                        {
-                            ddl_order_Task.Items.Insert(0, "Typing");
-                            ddl_order_Task.Items.Insert(1, "Final QC");
-                            ddl_order_Task.Items.Insert(2, "Exception");
-                            // This option is enabled only for 40 client id
-                            if (Client_id == 40 || Client_id == 4)
-                            {
-                                ddl_order_Task.Items.Insert(3, "Upload Completed");
-                            }
-                            // This is for 52002 Sub Clients
-
-                            if (Sub_ProcessId == 395)
-                            {
-
-                                ddl_order_Task.Items.Insert(4, "Upload Completed");
-                            }
-                        }
-                        if (SESSSION_ORDER_TYPE == "Typing")
-                        {
-                            ddl_order_Task.Items.Insert(0, "Typing QC");
-                            ddl_order_Task.Items.Insert(1, "Final QC");
-                            ddl_order_Task.Items.Insert(2, "Exception");
-                            // This option is enabled only for 40 client id
-                            if (Client_id == 40 || Client_id == 4 || Client_id == 9)
-                            {
-                                ddl_order_Task.Items.Insert(3, "Upload Completed");
-                            }
-
-                            if (Client_id == 26)
-                            {
-                                ddl_order_Task.Items.Insert(3, "Upload Completed");
-                            }
-
-                            // This is for 52002 Sub Clients
-
-                            if (Sub_ProcessId == 395)
-                            {
-
-                                ddl_order_Task.Items.Insert(4, "Upload Completed");
-                            }
-                        }
-                        if (SESSSION_ORDER_TYPE == "Typing QC")
-                        {
-                            ddl_order_Task.Items.Insert(0, "Final QC");
-                            ddl_order_Task.Items.Insert(1, "Exception");
-                            // This option is enabled only for 40 client id
-                            if (Client_id == 40 || Client_id == 4 || Client_id == 9)
-                            {
-                                ddl_order_Task.Items.Insert(2, "Upload Completed");
-                            }
-                            if (Client_id == 26)
-                            {
-                                ddl_order_Task.Items.Insert(2, "Upload Completed");
-                            }
-
-                            // This is for 52002 Sub Clients
-
-                            if (Sub_ProcessId == 395)
-                            {
-
-                                ddl_order_Task.Items.Insert(4, "Upload Completed");
-                            }
-                        }
-                        if (SESSSION_ORDER_TYPE == "Upload")
-                        {
-                            ddl_order_Task.Items.Insert(0, "Final QC");
-                            ddl_order_Task.Items.Insert(1, "Exception");
-                            ddl_order_Task.Items.Insert(2, "Upload Completed");
-                        }
-                        if (SESSSION_ORDER_TYPE == "Final QC")
-                        {
-                            ddl_order_Task.Items.Insert(0, "Exception");
-                            ddl_order_Task.Items.Insert(1, "Upload");
-                            ddl_order_Task.Items.Insert(2, "Upload Completed");
-                        }
-                        if (SESSSION_ORDER_TYPE == "Exception")
-                        {
-                            ddl_order_Task.Items.Insert(0, "Upload");
-                            ddl_order_Task.Items.Insert(1, "Upload Completed");
-                        }
-                        if (SESSSION_ORDER_TYPE == "Search Tax Request")
-                        {
-
-
-                            ddl_order_Task.Visible = false;
-
-                            //ddl_order_Task.SelectedIndex = 0;
-                        }
-
-                        // Not required we are validating during Submit
-                        //if (SESSSION_ORDER_TYPE != "Search Tax Request")
-                        //{
-                        //    // this is commited for Server issue
-
-                        //    Ordermanagement_01.Order_Document_List Order_Document_List = new Ordermanagement_01.Order_Document_List(userid, Order_Id, int.Parse(SESSION_ORDER_TASK.ToString()), Work_Type_Id);
-                        //    Order_Document_List.Show();
-
-                        //}
-
-
-
-                    }
-
-
-
-                    else if (Order_Task != 2 && Order_Task != 3)
-                    {
-
-                        // Label81.Visible = true;
-                        ddl_order_Task.Visible = true;
-                        txt_Task.Visible = false;
-                        ddl_order_Task.Items.Clear();
-                        // Chk_Self_Allocate.Visible = true;
-                        if (SESSSION_ORDER_TYPE == "Search")
-                        {
-                            ddl_order_Task.Items.Insert(0, "Search QC");
-                            ddl_order_Task.Items.Insert(1, "Typing");
-                            ddl_order_Task.Items.Insert(2, "Final QC");
-                            ddl_order_Task.Items.Insert(3, "Exception");
-                            // This option is enabled only for 40 client id
-                            if (Client_id == 40)
-                            {
-                                ddl_order_Task.Items.Insert(4, "Upload Completed");
-                            }
-                        }
-                        if (SESSSION_ORDER_TYPE == "Search QC")
-                        {
-                            ddl_order_Task.Items.Insert(0, "Typing");
-                            ddl_order_Task.Items.Insert(1, "Final QC");
-                            ddl_order_Task.Items.Insert(2, "Exception");
-                            // This option is enabled only for 40 client id
-                            if (Client_id == 40)
-                            {
-                                ddl_order_Task.Items.Insert(3, "Upload Completed");
-                            }
-                        }
-                        if (SESSSION_ORDER_TYPE == "Typing")
-                        {
-                            ddl_order_Task.Items.Insert(0, "Typing QC");
-                            ddl_order_Task.Items.Insert(1, "Final QC");
-                            ddl_order_Task.Items.Insert(2, "Exception");
-                            // This option is enabled only for 40 client id
-                            if (Client_id == 40 || Client_id == 4 || Client_id == 9)
-                            {
-                                ddl_order_Task.Items.Insert(3, "Upload Completed");
-                            }
-                            if (Client_id == 26)
-                            {
-                                ddl_order_Task.Items.Insert(3, "Upload Completed");
-                            }
-                        }
-                        if (SESSSION_ORDER_TYPE == "Typing QC")
-                        {
-                            ddl_order_Task.Items.Insert(0, "Final QC");
-                            ddl_order_Task.Items.Insert(1, "Exception");
-                            // This option is enabled only for 40 client id
-                            if (Client_id == 40 || Client_id == 4 || Client_id == 9)
-                            {
-                                ddl_order_Task.Items.Insert(2, "Upload Completed");
-                            }
-                            if (Client_id == 26)
-                            {
-                                ddl_order_Task.Items.Insert(2, "Upload Completed");
-                            }
-                        }
-                        if (SESSSION_ORDER_TYPE == "Upload")
-                        {
-                            ddl_order_Task.Items.Insert(0, "Final QC");
-
-                            ddl_order_Task.Items.Insert(1, "Upload Completed");
-                        }
-                        if (SESSSION_ORDER_TYPE == "Final QC")
-                        {
-                            ddl_order_Task.Items.Insert(0, "Exception");
-                            ddl_order_Task.Items.Insert(1, "Upload");
-                            ddl_order_Task.Items.Insert(2, "Upload Completed");
-                        }
-                        if (SESSSION_ORDER_TYPE == "Exception")
-                        {
-                            ddl_order_Task.Items.Insert(0, "Upload");
-                            ddl_order_Task.Items.Insert(1, "Upload Completed");
-                        }
-                        if (SESSSION_ORDER_TYPE == "Search Tax Request")
-                        {
-
-
-                            ddl_order_Task.Visible = false;
-
-                            //ddl_order_Task.SelectedIndex = 0;
-                        }
-
-
-
-
-
-                    }
-                    else
-                    {
-
-
-                    }
-
-                }
-
-
-
-
-
-
-
-
-                else
-                {
-                    txt_Task.Visible = true;
-                    //btn_submit.Enabled = true;
-
-                    ddl_order_Task.Visible = false;
-
-
-                    //Userhold,hold,clarification queues
-                    btn_Checklist.Enabled = false;
-                    btn_submit.Enabled = true;
-                }
-            }
-
-            Enable_Tax_Client_Wise_Task_Wise();
-
-        }
 
 
         private void Count_Of_Docuemnt_list()
@@ -9350,6 +9271,372 @@ namespace Ordermanagement_01
             }
         }
 
+        private void ddl_order_Staus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (Work_Type_Id == 1 || Work_Type_Id == 2)
+            {
+
+
+                if (ddl_order_Staus.SelectedValue.ToString() == "1" || ddl_order_Staus.SelectedValue.ToString() == "5" || ddl_order_Staus.SelectedValue.ToString() == "4" || ddl_order_Staus.SelectedValue.ToString() == "9")
+                {
+                    Chk = 0;
+                    txt_Task.Visible = true;
+
+                    //Userhold,hold,clarification queues
+                    btn_Checklist.Enabled = false;
+                    btn_submit.Enabled = true;
+                }
+                else
+                {
+                    Chk = 1;
+                }
+                if (ddl_order_Staus.SelectedValue.ToString() == "3")
+                {
+                    if (lbl_Order_Task_Type.Text == "Upload" || lbl_Order_Task_Type.Text == "Exception" || lbl_Order_Task_Type.Text == "Search Tax Request")
+                    {
+                        // Userhold,hold,clarification queues
+                        btn_Checklist.Enabled = false;
+                        btn_submit.Enabled = true;
+                    }
+
+                    else
+                    {
+                        btn_Checklist.Enabled = true;
+                        btn_submit.Enabled = false;
+
+                    }
+
+
+
+
+
+                    //// For issue Updatyed
+
+                    //btn_submit.Enabled = true;
+
+                    //btn_Checklist.Enabled = false;
+                    //============================
+
+
+
+                    int Order_Task = int.Parse(SESSION_ORDER_TASK.ToString());
+
+
+
+                    ////its is to restrict the task on client wise
+
+                    //Hashtable htget_Client_Wise_Restricted_task = new Hashtable();
+                    //DataTable dtget_Client_Wise_Restricted_task = new DataTable();
+
+                    //htget_Client_Wise_Restricted_task.Add("@Trans", "GET_TASK_LIST_CLIENT_AND_TASK_WISE");
+                    //htget_Client_Wise_Restricted_task.Add("@Client_Id",Client_id);
+                    //htget_Client_Wise_Restricted_task.Add("@Task_Stage_Id",Order_Task);
+                    //dtget_Client_Wise_Restricted_task = dataaccess.ExecuteSP("Sp_Client_Task_Stage_Target", htget_Client_Wise_Restricted_task);
+                    //ddl_order_Task.Visible = true;
+                    //if (dtget_Client_Wise_Restricted_task.Rows.Count > 0)
+                    //{
+                    //    txt_Task.Visible = false;
+
+
+                    //    dbc.Bind_Order_Task_Client_Wise(ddl_order_Task, Client_id, Order_Task);
+
+
+                    //}
+                    //else
+                    //{
+
+                    // This for Search Task
+
+                    if (Order_Task == 2 || Order_Task == 3)
+                    {
+
+
+
+
+                        ddl_order_Task.Visible = true;
+                        txt_Task.Visible = false;
+                        // Chk_Self_Allocate.Visible = true;
+                        ddl_order_Task.Items.Clear();
+
+                        if (SESSSION_ORDER_TYPE == "Search")
+                        {
+                            ddl_order_Task.Items.Insert(0, "Search QC");
+                            ddl_order_Task.Items.Insert(1, "Typing");
+                            ddl_order_Task.Items.Insert(2, "Final QC");
+                            ddl_order_Task.Items.Insert(3, "Exception");
+
+                            // This option is enabled only for 40 client id
+                            if (Client_id == 40 || Client_id == 4)
+                            {
+                                ddl_order_Task.Items.Insert(4, "Upload Completed");
+                            }
+                            // This is for 52002 Sub Clients
+
+                            if (Sub_ProcessId == 395)
+                            {
+
+                                ddl_order_Task.Items.Insert(4, "Upload Completed");
+                            }
+                        }
+                        if (SESSSION_ORDER_TYPE == "Search QC")
+                        {
+                            ddl_order_Task.Items.Insert(0, "Typing");
+                            ddl_order_Task.Items.Insert(1, "Final QC");
+                            ddl_order_Task.Items.Insert(2, "Exception");
+                            // This option is enabled only for 40 client id
+                            if (Client_id == 40 || Client_id == 4)
+                            {
+                                ddl_order_Task.Items.Insert(3, "Upload Completed");
+                            }
+                            // This is for 52002 Sub Clients
+
+                            if (Sub_ProcessId == 395)
+                            {
+
+                                ddl_order_Task.Items.Insert(4, "Upload Completed");
+                            }
+                        }
+                        if (SESSSION_ORDER_TYPE == "Typing")
+                        {
+                            ddl_order_Task.Items.Insert(0, "Typing QC");
+                            ddl_order_Task.Items.Insert(1, "Final QC");
+                            ddl_order_Task.Items.Insert(2, "Exception");
+                            // This option is enabled only for 40 client id
+                            if (Client_id == 40 || Client_id == 4 || Client_id == 9)
+                            {
+                                ddl_order_Task.Items.Insert(3, "Upload Completed");
+                            }
+
+                            if (Client_id == 26)
+                            {
+                                ddl_order_Task.Items.Insert(3, "Upload Completed");
+                            }
+
+                            // This is for 52002 Sub Clients
+
+                            if (Sub_ProcessId == 395)
+                            {
+
+                                ddl_order_Task.Items.Insert(4, "Upload Completed");
+                            }
+                        }
+                        if (SESSSION_ORDER_TYPE == "Typing QC")
+                        {
+                            ddl_order_Task.Items.Insert(0, "Final QC");
+                            ddl_order_Task.Items.Insert(1, "Exception");
+                            // This option is enabled only for 40 client id
+                            if (Client_id == 40 || Client_id == 4 || Client_id == 9)
+                            {
+                                ddl_order_Task.Items.Insert(2, "Upload Completed");
+                            }
+                            if (Client_id == 26)
+                            {
+                                ddl_order_Task.Items.Insert(2, "Upload Completed");
+                            }
+
+                            // This is for 52002 Sub Clients
+
+                            if (Sub_ProcessId == 395)
+                            {
+
+                                ddl_order_Task.Items.Insert(4, "Upload Completed");
+                            }
+                        }
+                        if (SESSSION_ORDER_TYPE == "Upload")
+                        {
+                            ddl_order_Task.Items.Insert(0, "Final QC");
+                            ddl_order_Task.Items.Insert(1, "Exception");
+                            ddl_order_Task.Items.Insert(2, "Upload Completed");
+                        }
+                        if (SESSSION_ORDER_TYPE == "Final QC")
+                        {
+                            ddl_order_Task.Items.Insert(0, "Exception");
+                            ddl_order_Task.Items.Insert(1, "Upload");
+                            ddl_order_Task.Items.Insert(2, "Upload Completed");
+                        }
+                        if (SESSSION_ORDER_TYPE == "Exception")
+                        {
+                            ddl_order_Task.Items.Insert(0, "Upload");
+                            ddl_order_Task.Items.Insert(1, "Upload Completed");
+                        }
+                        if (SESSSION_ORDER_TYPE == "Search Tax Request")
+                        {
+
+
+                            ddl_order_Task.Visible = false;
+
+                            //ddl_order_Task.SelectedIndex = 0;
+                        }
+
+                        // Not required we are validating during Submit
+                        //if (SESSSION_ORDER_TYPE != "Search Tax Request")
+                        //{
+                        //    // this is commited for Server issue
+
+                        //    Ordermanagement_01.Order_Document_List Order_Document_List = new Ordermanagement_01.Order_Document_List(userid, Order_Id, int.Parse(SESSION_ORDER_TASK.ToString()), Work_Type_Id);
+                        //    Order_Document_List.Show();
+
+                        //}
+
+
+
+                    }
+
+                    if (Order_Task == 2)
+                    {
+                        btn_Submit_Clicked = false;
+                        Validate_Document_Check_Type(Order_Task, btn_Submit_Clicked);
+
+                    }
+
+                    if (Order_Task == 27 || Order_Task == 28 || Order_Task == 29)
+                    {
+                        btn_Checklist.Enabled = false;
+                        btn_submit.Enabled = true;
+
+                        ddl_order_Task.Items.Insert(0, "Search QC");
+                        ddl_order_Task.Items.Insert(1, "Typing");
+                        ddl_order_Task.Items.Insert(2, "Final QC");
+                        ddl_order_Task.Items.Insert(3, "Exception");
+
+                    }
+
+                    
+
+                   
+
+                    else if (Order_Task != 2 && Order_Task != 3)
+                    {
+
+                        if (Order_Task != 27 && Order_Task != 28 && Order_Task != 29)
+                        {
+
+                            // Label81.Visible = true;
+                            ddl_order_Task.Visible = true;
+                            txt_Task.Visible = false;
+                            ddl_order_Task.Items.Clear();
+                            // Chk_Self_Allocate.Visible = true;
+                            if (SESSSION_ORDER_TYPE == "Search")
+                            {
+                                ddl_order_Task.Items.Insert(0, "Search QC");
+                                ddl_order_Task.Items.Insert(1, "Typing");
+                                ddl_order_Task.Items.Insert(2, "Final QC");
+                                ddl_order_Task.Items.Insert(3, "Exception");
+                                // This option is enabled only for 40 client id
+                                if (Client_id == 40)
+                                {
+                                    ddl_order_Task.Items.Insert(4, "Upload Completed");
+                                }
+                            }
+                            if (SESSSION_ORDER_TYPE == "Search QC")
+                            {
+                                ddl_order_Task.Items.Insert(0, "Typing");
+                                ddl_order_Task.Items.Insert(1, "Final QC");
+                                ddl_order_Task.Items.Insert(2, "Exception");
+                                // This option is enabled only for 40 client id
+                                if (Client_id == 40)
+                                {
+                                    ddl_order_Task.Items.Insert(3, "Upload Completed");
+                                }
+                            }
+                            if (SESSSION_ORDER_TYPE == "Typing")
+                            {
+                                ddl_order_Task.Items.Insert(0, "Typing QC");
+                                ddl_order_Task.Items.Insert(1, "Final QC");
+                                ddl_order_Task.Items.Insert(2, "Exception");
+                                // This option is enabled only for 40 client id
+                                if (Client_id == 40 || Client_id == 4 || Client_id == 9)
+                                {
+                                    ddl_order_Task.Items.Insert(3, "Upload Completed");
+                                }
+                                if (Client_id == 26)
+                                {
+                                    ddl_order_Task.Items.Insert(3, "Upload Completed");
+                                }
+                            }
+                            if (SESSSION_ORDER_TYPE == "Typing QC")
+                            {
+                                ddl_order_Task.Items.Insert(0, "Final QC");
+                                ddl_order_Task.Items.Insert(1, "Exception");
+                                // This option is enabled only for 40 client id
+                                if (Client_id == 40 || Client_id == 4 || Client_id == 9)
+                                {
+                                    ddl_order_Task.Items.Insert(2, "Upload Completed");
+                                }
+                                if (Client_id == 26)
+                                {
+                                    ddl_order_Task.Items.Insert(2, "Upload Completed");
+                                }
+                            }
+                            if (SESSSION_ORDER_TYPE == "Upload")
+                            {
+                                ddl_order_Task.Items.Insert(0, "Final QC");
+
+                                ddl_order_Task.Items.Insert(1, "Upload Completed");
+                            }
+                            if (SESSSION_ORDER_TYPE == "Final QC")
+                            {
+                                ddl_order_Task.Items.Insert(0, "Exception");
+                                ddl_order_Task.Items.Insert(1, "Upload");
+                                ddl_order_Task.Items.Insert(2, "Upload Completed");
+                            }
+                            if (SESSSION_ORDER_TYPE == "Exception")
+                            {
+                                ddl_order_Task.Items.Insert(0, "Upload");
+                                ddl_order_Task.Items.Insert(1, "Upload Completed");
+                            }
+                            if (SESSSION_ORDER_TYPE == "Search Tax Request")
+                            {
+
+
+                                ddl_order_Task.Visible = false;
+
+                                //ddl_order_Task.SelectedIndex = 0;
+                            }
+
+
+
+
+
+
+                        }
+
+
+                    }
+                    else
+                    {
+
+
+                    }
+
+                }
+
+
+
+
+
+
+
+
+                else
+                {
+                    txt_Task.Visible = true;
+                    //btn_submit.Enabled = true;
+
+                    ddl_order_Task.Visible = false;
+
+
+                    //Userhold,hold,clarification queues
+                    btn_Checklist.Enabled = false;
+                    btn_submit.Enabled = true;
+                }
+            }
+
+            Enable_Tax_Client_Wise_Task_Wise();
+
+        }
+
         private void Employee_Order_Entry_FormClosing(object sender, FormClosingEventArgs e)
         {
 
@@ -9440,33 +9727,6 @@ namespace Ordermanagement_01
 
         }
 
-
-        private void Btn_Instruction_Click(object sender, EventArgs e)
-        {
-            string Path1;
-            DataAccess dataaccess = new DataAccess();
-            Hashtable htselect = new Hashtable();
-            DataTable dtselect = new DataTable();
-            htselect.Add("@Trans", "SELECTSUBPROCESSWISE");
-            htselect.Add("@Subprocess_Id", Sub_ProcessId);
-            dtselect = dataaccess.ExecuteSP("Sp_Client_SubProcess", htselect);
-            Path1 = dtselect.Rows[0]["Instruction_Upload_Path"].ToString();
-            if (Path1 != "")
-            {
-                Path.GetFileName(Path1);
-                Path.GetDirectoryName(Path1);
-                System.IO.Directory.CreateDirectory(@"C:\temp");
-
-                File.Copy(Path1, @"C:\temp\" + Path.GetFileName(Path1), true);
-
-                System.Diagnostics.Process.Start(@"C:\temp\" + Path.GetFileName(Path1));
-            }
-            else
-            {
-
-                MessageBox.Show("Instruction is not uploaded kindly check");
-            }
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -9609,29 +9869,6 @@ namespace Ordermanagement_01
         //{
         //    if (e.ColumnIndex == 4)
         //    {
-
-        //    }
-        //    if (e.ColumnIndex == 5)
-        //    {
-        //        int Note_Id = int.Parse(grd_Error.Rows[e.RowIndex].Cells[6].Value.ToString());
-        //        Hashtable htdelete = new Hashtable();
-        //        DataTable dtdelete = new DataTable();
-        //        htdelete.Add("@Trans", "DELETE");
-        //        htdelete.Add("@Note_Id", Note_Id);
-        //        dtdelete = dataaccess.ExecuteSP("Sp_Order_Notes", htdelete);
-        //    }
-        //    if (e.ColumnIndex == 2)
-        //    {
-        //        Column_index = 2;
-        //    }
-        //    if (e.ColumnIndex == 3)
-        //    {
-        //        Column_index =3;
-        //    }
-        //}
-        private void ddl_Error_Type_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
         private void grd_Error_SelectionChanged(object sender, EventArgs e)
         {
             //string result = ((ComboBox)sender).SelectedItem.ToString();
@@ -9658,11 +9895,6 @@ namespace Ordermanagement_01
         //        Error_Type_id = int.Parse(cell.Value.ToString());
         //    }
         //}
-
-        private void lbl_APN_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void Employee_Order_Entry_FormClosed(object sender, FormClosedEventArgs e)
         {

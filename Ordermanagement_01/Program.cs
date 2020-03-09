@@ -14,10 +14,14 @@ namespace Ordermanagement_01
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new New_Dashboard.NewLogin());
+            //Application.Run(new New_Dashboard.Orders.OrderEntry());
             //Application.Run(new New_Dashboard.Settings.Process_Settings());
             //Application.Run(new New_Dashboard.Settings.EmailSetting());
-             //Application.Run(new Test.ApiTest());
+            // Application.Run(new Vendors.Keywords(1));
+           Application.Run(new New_Dashboard.NewLogin());
+            //Application.Run(new DailyStatusReport_Preview(1,"2",""));
+          //  Application.Run(new New_Dashboard.New_Dashboard(0058, 2));
+         
         }
     }
 }

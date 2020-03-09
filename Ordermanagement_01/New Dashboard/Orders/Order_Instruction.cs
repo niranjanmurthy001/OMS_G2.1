@@ -1,16 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Text;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
-using System.Runtime.InteropServices;
+﻿using DevExpress.XtraEditors;
 using DevExpress.XtraSplashScreen;
-using System.Net;
 using Newtonsoft.Json;
 using Ordermanagement_01.Masters;
-using System.Net.Http;
 using Ordermanagement_01.Models;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Net;
+using System.Net.Http;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Windows.Forms;
 
 namespace Ordermanagement_01.New_Dashboard.Orders
 {
@@ -103,6 +103,7 @@ namespace Ordermanagement_01.New_Dashboard.Orders
         {
             try
             {
+                SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
                 if (Form_View_Type != "View")
                 {
                     var dictionary = new Dictionary<string, object>()
@@ -128,12 +129,13 @@ namespace Ordermanagement_01.New_Dashboard.Orders
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
             finally
             {
+                SplashScreenManager.CloseForm(false);
                 Close();
             }
         }
@@ -200,6 +202,7 @@ namespace Ordermanagement_01.New_Dashboard.Orders
         {
             try
             {
+                SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
                 var dictionary = new Dictionary<string, object>()
                 {
                     {"@Trans","SELECT_TAX"},
@@ -231,6 +234,10 @@ namespace Ordermanagement_01.New_Dashboard.Orders
             catch (Exception ex)
             {
                 throw ex;
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm(false);
             }
         }
         private void tabPane_SelectedPageChanging(object sender, DevExpress.XtraBars.Navigation.SelectedPageChangingEventArgs e)
@@ -279,11 +286,16 @@ namespace Ordermanagement_01.New_Dashboard.Orders
             {
                 throw ex;
             }
-        }  
+            finally
+            {
+                SplashScreenManager.CloseForm(false);
+            }
+        }
         private async void Statue_Of_Limitations()
         {
             try
             {
+                SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
                 richEditControl2.Text = "";
                 var dictionary = new Dictionary<string, object>()
                     {
@@ -312,12 +324,17 @@ namespace Ordermanagement_01.New_Dashboard.Orders
             {
                 throw ex;
             }
+            finally
+            {
+                SplashScreenManager.CloseForm(false);
+            }
         }
         private async void Check_All_Client_Sub()
         {
             StringBuilder appendtext = new StringBuilder();
             try
             {
+                SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
                 var dictionary = new Dictionary<string, object>()
                 {
                      {"@Trans","CHECK_ALL_CLIENT_SUB" },
@@ -397,6 +414,10 @@ namespace Ordermanagement_01.New_Dashboard.Orders
             catch (Exception ex)
             {
                 throw ex;
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm(false);
             }
         }
     }

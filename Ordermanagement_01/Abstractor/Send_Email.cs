@@ -1,18 +1,18 @@
-﻿using System;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
+using Newtonsoft.Json;
+using Ordermanagement_01.Models;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
-using System.Text;
-using System.Windows.Forms;
-using System.Net;
-using System.Net.Mail;
-using CrystalDecisions.CrystalReports.Engine;
-using CrystalDecisions.Shared;
-using System.Collections;
 using System.IO;
-using Ordermanagement_01.Models;
+using System.Net;
 using System.Net.Http;
-using Newtonsoft.Json;
+using System.Net.Mail;
+using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Ordermanagement_01.Abstractor
 {
@@ -39,7 +39,7 @@ namespace Ordermanagement_01.Abstractor
         int Ab_Order_Email_Number;
         string Ftp_Domain_Name, Ftp_User_Name, Ftp_Password;
         string OutGoingMailServer;
-        int  OutgoingServerPort;
+        int OutgoingServerPort;
         private string EmailAddress;
         string UserName;
         string Password;
@@ -61,15 +61,22 @@ namespace Ordermanagement_01.Abstractor
             DataTable dt_ftp_Details = dbc.Get_Ftp_Details();
             if (dt_ftp_Details.Rows.Count > 0)
             {
-                Ftp_Domain_Name = dt_ftp_Details.Rows[0]["Ftp_Host_Name"].ToString();
-                Ftp_User_Name = dt_ftp_Details.Rows[0]["Ftp_User_Name"].ToString();
-                string Ftp_pass = dt_ftp_Details.Rows[0]["Ftp_Password"].ToString();
-                if (Ftp_pass != "")
+                try
                 {
-                    Ftp_Password = dbc.Decrypt(Ftp_pass);
+                    Ftp_Domain_Name = dt_ftp_Details.Rows[0]["Ftp_Host_Name"].ToString();
+                    Ftp_User_Name = dt_ftp_Details.Rows[0]["Ftp_User_Name"].ToString();
+                    string Ftp_pass = dt_ftp_Details.Rows[0]["Ftp_Password"].ToString();
+                    if (Ftp_pass != "")
+                    {
+                        Ftp_Password = dbc.Decrypt(Ftp_pass);
+                    }
+                    Export_Report();
+                    Send_Html_Email_Body();
                 }
-                Export_Report();
-                Send_Html_Email_Body();
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Something went wrong");
+                }
             }
             else
             {
@@ -152,127 +159,134 @@ namespace Ordermanagement_01.Abstractor
         }
         public void Export_Report()
         {
-            if (DEED_CHAIN == "Yes")
+            try
             {
-                rptDoc = new Abstractor_Reports.Abstract_Order_Search_Deed_Chain();
-                Logon_To_Crystal();
-                rptDoc.SetParameterValue("@Order_ID", Order_Id);
-                rptDoc.SetParameterValue("@Abstractor_Id", abstarctor_id);
-                rptDoc.SetParameterValue("@Abstractor_Cost", "False");
-                if (Emailid == "vendors@drnds.com")
+                if (DEED_CHAIN == "Yes")
                 {
-                    rptDoc.SetParameterValue("@Trans", "DRN");
+                    rptDoc = new Abstractor_Reports.Abstract_Order_Search_Deed_Chain();
+                    Logon_To_Crystal();
+                    rptDoc.SetParameterValue("@Order_ID", Order_Id);
+                    rptDoc.SetParameterValue("@Abstractor_Id", abstarctor_id);
+                    rptDoc.SetParameterValue("@Abstractor_Cost", "False");
+                    if (Emailid == "vendors@drnds.com")
+                    {
+                        rptDoc.SetParameterValue("@Trans", "DRN");
+                    }
+                    else if (Emailid == "neworders@abstractshop.com")
+                    {
+                        rptDoc.SetParameterValue("@Trans", "ABS");
+                    }
+                    crViewer.ReportSource = rptDoc;
                 }
-                else if (Emailid == "neworders@abstractshop.com")
+                else if (DEED_CHAIN == "No")
                 {
-                    rptDoc.SetParameterValue("@Trans", "ABS");
+                    if (Order_Type == 1 || Order_Type == 5)
+                    {
+                        rptDoc = new Abstractor_Reports.Current_Owner_Search();
+                        Report_Name = "Current Owner Search";
+                    }
+                    else if (Order_Type == 29)
+                    {
+                        rptDoc = new Abstractor_Reports.Two_Owner_Search();
+                        Report_Name = "Two Owner Search";
+                    }
+                    else if (Order_Type == 30)
+                    {
+                        rptDoc = new Abstractor_Reports.ThirtyYears_Search();
+                        Report_Name = "Thirty Years Search";
+                    }
+                    else if (Order_Type == 36)
+                    {
+                        rptDoc = new Abstractor_Reports.Full_Search();
+                        Report_Name = "Full Search";
+                    }
+                    else if (Order_Type == 7)
+                    {
+                        rptDoc = new Abstractor_Reports.Update_Search();
+                        Report_Name = "Update Search";
+                    }
+                    else if (Order_Type == 21)
+                    {
+                        rptDoc = new Abstractor_Reports.DocumentRetrival();
+                        Report_Name = "Document Retrival";
+                    }
+                    else if (Order_Type == 43)
+                    {
+                        rptDoc = new Abstractor_Reports.Twenty_Year_Search();
+                        Report_Name = "Twenty Years Search";
+                    }
+                    else if (Order_Type == 49)
+                    {
+                        rptDoc = new Abstractor_Reports.Fifty_Year_Search();
+                        Report_Name = "Fifty Years Search";
+                    }
+                    else if (Order_Type == 70)
+                    {
+                        rptDoc = new Abstractor_Reports.Current_Owner_Deed_Chain();
+                        Report_Name = "Current Owner Deed Chain";
+
+                    }
+                    else if (Order_Type == 71)
+                    {
+                        rptDoc = new Abstractor_Reports.Two_Owner_DeadChain();
+                        Report_Name = "Two Owner Deed Chain";
+                    }
+                    else if (Order_Type == 38)
+                    {
+                        rptDoc = new Abstractor_Reports.FourtyYearSearch();
+                        Report_Name = "40 Years Search";
+                    }
+                    else if (Order_Type == 72)
+                    {
+                        rptDoc = new Abstractor_Reports.HundredYearSearch();
+                        Report_Name = "100 Years Search";
+                    }
+                    else if (Order_Type == 32)
+                    {
+                        rptDoc = new Abstractor_Reports.Mortgage_Assessment_Search();
+                        Report_Name = "Mortgage and Assignment";
+
+                    }
+                    else if (Order_Type == 73)
+                    {
+                        rptDoc = new Abstractor_Reports.Full_Owner_Deed_Chain();
+                        Report_Name = "Full Owner Deed Chain";
+                    }
+                    else if (Order_Type == 76)
+                    {
+                        rptDoc = new Abstractor_Reports.Current_Owner_Search_Report();
+                        Report_Name = "Current Owner Report";
+                    }
+                    Logon_To_Crystal();
+                    rptDoc.SetParameterValue("@Order_ID", Order_Id);
+                    rptDoc.SetParameterValue("@Abstractor_Id", abstarctor_id);
+                    rptDoc.SetParameterValue("@Abstractor_Cost", "False");
+                    if (Emailid == "vendors@drnds.com")
+                    {
+                        rptDoc.SetParameterValue("@Trans", "DRN");
+                    }
+                    else if (Emailid == "neworders@abstractshop.com")
+                    {
+                        rptDoc.SetParameterValue("@Trans", "ABS");
+                    }
                 }
-                crViewer.ReportSource = rptDoc;
+                Download_Ftp_File("AbstractorReport.pdf", "ftp://titlelogy.com/FTP_Application_Files/OMS/Oms_reports/AbstractorReport.pdf");
+                ExportOptions CrExportOptions;
+                FileInfo newFile = new FileInfo("C:\\OMS\\Temp" + "\\" + "AbstractorReport.pdf");
+                DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
+                PdfFormatOptions CrFormatTypeOptions = new PdfFormatOptions();
+                CrDiskFileDestinationOptions.DiskFileName = newFile.ToString();
+                CrExportOptions = rptDoc.ExportOptions;
+                CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                CrExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
+                CrExportOptions.FormatOptions = CrFormatTypeOptions;
+                rptDoc.Export();
             }
-            else if (DEED_CHAIN == "No")
+            catch (Exception ex)
             {
-                if (Order_Type == 1 || Order_Type == 5)
-                {
-                    rptDoc = new Abstractor_Reports.Current_Owner_Search();
-                    Report_Name = "Current Owner Search";
-                }
-                else if (Order_Type == 29)
-                {
-                    rptDoc = new Abstractor_Reports.Two_Owner_Search();
-                    Report_Name = "Two Owner Search";
-                }
-                else if (Order_Type == 30)
-                {
-                    rptDoc = new Abstractor_Reports.ThirtyYears_Search();
-                    Report_Name = "Thirty Years Search";
-                }
-                else if (Order_Type == 36)
-                {
-                    rptDoc = new Abstractor_Reports.Full_Search();
-                    Report_Name = "Full Search";
-                }
-                else if (Order_Type == 7)
-                {
-                    rptDoc = new Abstractor_Reports.Update_Search();
-                    Report_Name = "Update Search";
-                }
-                else if (Order_Type == 21)
-                {
-                    rptDoc = new Abstractor_Reports.DocumentRetrival();
-                    Report_Name = "Document Retrival";
-                }
-                else if (Order_Type == 43)
-                {
-                    rptDoc = new Abstractor_Reports.Twenty_Year_Search();
-                    Report_Name = "Twenty Years Search";
-                }
-                else if (Order_Type == 49)
-                {
-                    rptDoc = new Abstractor_Reports.Fifty_Year_Search();
-                    Report_Name = "Fifty Years Search";
-                }
-                else if (Order_Type == 70)
-                {
-                    rptDoc = new Abstractor_Reports.Current_Owner_Deed_Chain();
-                    Report_Name = "Current Owner Deed Chain";
-
-                }
-                else if (Order_Type == 71)
-                {
-                    rptDoc = new Abstractor_Reports.Two_Owner_DeadChain();
-                    Report_Name = "Two Owner Deed Chain";
-                }
-                else if (Order_Type == 38)
-                {
-                    rptDoc = new Abstractor_Reports.FourtyYearSearch();
-                    Report_Name = "40 Years Search";
-                }
-                else if (Order_Type == 72)
-                {
-                    rptDoc = new Abstractor_Reports.HundredYearSearch();
-                    Report_Name = "100 Years Search";
-                }
-                else if (Order_Type == 32)
-                {
-                    rptDoc = new Abstractor_Reports.Mortgage_Assessment_Search();
-                    Report_Name = "Mortgage and Assignment";
-
-                }
-                else if (Order_Type == 73)
-                {
-                    rptDoc = new Abstractor_Reports.Full_Owner_Deed_Chain();
-                    Report_Name = "Full Owner Deed Chain";
-                }
-                else if (Order_Type == 76)
-                {
-                    rptDoc = new Abstractor_Reports.Current_Owner_Search_Report();
-                    Report_Name = "Current Owner Report";
-                }
-                Logon_To_Crystal();
-                rptDoc.SetParameterValue("@Order_ID", Order_Id);
-                rptDoc.SetParameterValue("@Abstractor_Id", abstarctor_id);
-                rptDoc.SetParameterValue("@Abstractor_Cost", "False");
-                if (Emailid == "vendors@drnds.com")
-                {
-                    rptDoc.SetParameterValue("@Trans", "DRN");
-                }
-                else if (Emailid == "neworders@abstractshop.com")
-                {
-                    rptDoc.SetParameterValue("@Trans", "ABS");
-                }
+                throw ex;
             }
-            Download_Ftp_File("AbstractorReport.pdf", "ftp://titlelogy.com/FTP_Application_Files/OMS/Oms_reports/AbstractorReport.pdf");
-            ExportOptions CrExportOptions;
-            FileInfo newFile = new FileInfo("C:\\OMS\\Temp" + "\\" + "AbstractorReport.pdf");
-            DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
-            PdfFormatOptions CrFormatTypeOptions = new PdfFormatOptions();
-            CrDiskFileDestinationOptions.DiskFileName = newFile.ToString();
-            CrExportOptions = rptDoc.ExportOptions;
-            CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
-            CrExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
-            CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
-            CrExportOptions.FormatOptions = CrFormatTypeOptions;
-            rptDoc.Export();
         }
         public void Search_Instructions()
         {
@@ -360,41 +374,47 @@ namespace Ordermanagement_01.Abstractor
                         Client_Order_no = Order_number;
                         SendHtmlFormattedEmail("vendors@drnds.com", "Sample", body);
                     }
-                 
+
                 }
                 catch (Exception error)
                 {
-                    MessageBox.Show(error.Message);
-                    return;
+                    throw error;
                 }
             }
         }
         public string PopulateBody(string Order_Number, string OrderType, string OwnerName, string Property_Address, string County, string Instructions)
         {
-            string body = string.Empty;
+            try
+            {
+                string body = string.Empty;
 
-            if (Emailid == "vendors@drnds.com")
-            {
-                body = Read_Body_From_Url("https://titlelogy.com/Ftp_Application_Files/OMS/Oms_Email_Templates/SendEmail.htm");
+                if (Emailid == "vendors@drnds.com")
+                {
+                    body = Read_Body_From_Url("https://titlelogy.com/Ftp_Application_Files/OMS/Oms_Email_Templates/SendEmail.htm");
+                }
+                else if (Emailid == "neworders@abstractshop.com")
+                {
+                    body = Read_Body_From_Url("https://titlelogy.com/Ftp_Application_Files/OMS/Oms_Email_Templates/SendEmail_Abs.htm");
+                }
+                body = body.Replace("{Order_Number}", Order_Number);
+                if (DEED_CHAIN == "No")
+                {
+                    body = body.Replace("{OrderType}", OrderType);
+                }
+                else if (DEED_CHAIN == "Yes")
+                {
+                    body = body.Replace("{OrderType}", Report_Name);
+                }
+                body = body.Replace("{OwnerName}", OwnerName);
+                body = body.Replace("{Property_Address}", Property_Address);
+                body = body.Replace("{County}", County);
+                body = body.Replace("{Instructions}", Instructions);
+                return body;
             }
-            else if (Emailid == "neworders@abstractshop.com")
+            catch (Exception ex)
             {
-                body = Read_Body_From_Url("https://titlelogy.com/Ftp_Application_Files/OMS/Oms_Email_Templates/SendEmail_Abs.htm");
+                throw ex;
             }
-            body = body.Replace("{Order_Number}", Order_Number);
-            if (DEED_CHAIN == "No")
-            {
-                body = body.Replace("{OrderType}", OrderType);
-            }
-            else if (DEED_CHAIN == "Yes")
-            {
-                body = body.Replace("{OrderType}", Report_Name);
-            }
-            body = body.Replace("{OwnerName}", OwnerName);
-            body = body.Replace("{Property_Address}", Property_Address);
-            body = body.Replace("{County}", County);
-            body = body.Replace("{Instructions}", Instructions);
-            return body;
         }
         public string Read_Body_From_Url(string Url)
         {
@@ -409,146 +429,145 @@ namespace Ordermanagement_01.Abstractor
         }
         private async void SendHtmlFormattedEmail(string recepientEmail, string subject, string body)
         {
-            using (MailMessage mailMessage = new MailMessage())
+            try
             {
-                if (Emailid == "vendors@drnds.com")
+                using (MailMessage mailMessage = new MailMessage())
                 {
-                    mailMessage.From = new MailAddress("vendors@drnds.com");
-                }
-                else if (Emailid == "neworders@abstractshop.com")
-                {
-                    mailMessage.From = new MailAddress("neworders@abstractshop.com");
-                }
-                string Path1 = "C:\\OMS\\Temp" + "\\" + "AbstractorReport.pdf";
-                MemoryStream ms = new MemoryStream(File.ReadAllBytes(Path1));
-                string Attachment_Name = Report_Name.ToString() + '-' + Client_Order_no.ToString() + ".pdf";
-                mailMessage.Attachments.Add(new Attachment(ms, Attachment_Name.ToString()));
-                //Current Owener Search Report Adding Abstractor Orer Typing Format
-                MemoryStream ms1 = new MemoryStream();
-                if (Order_Type == 76)
-                {
-                    // Reading Ftp Files from Server
-                    const string filename = "Abstractor_Order_Typing_Format.docx";
-                    FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://titlelogy.com/Ftp_Application_Files/OMS/Abstractor_Documents/" + filename);
-                    request.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password);
-                    request.Method = WebRequestMethods.Ftp.DownloadFile;
-                    Stream contentStream = request.GetResponse().GetResponseStream();
-                    Attachment attachment = new Attachment(contentStream, filename);
-                    mailMessage.Attachments.Add(attachment);
-                }
+                    if (Emailid == "vendors@drnds.com")
+                    {
+                        mailMessage.From = new MailAddress("vendors@drnds.com");
+                    }
+                    else if (Emailid == "neworders@abstractshop.com")
+                    {
+                        mailMessage.From = new MailAddress("neworders@abstractshop.com");
+                    }
+                    string Path1 = "C:\\OMS\\Temp" + "\\" + "AbstractorReport.pdf";
+                    MemoryStream ms = new MemoryStream(File.ReadAllBytes(Path1));
+                    string Attachment_Name = Report_Name.ToString() + '-' + Client_Order_no.ToString() + ".pdf";
+                    mailMessage.Attachments.Add(new Attachment(ms, Attachment_Name.ToString()));
+                    //Current Owener Search Report Adding Abstractor Orer Typing Format
+                    MemoryStream ms1 = new MemoryStream();
+                    if (Order_Type == 76)
+                    {
+                        // Reading Ftp Files from Server
+                        const string filename = "Abstractor_Order_Typing_Format.docx";
+                        FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://titlelogy.com/Ftp_Application_Files/OMS/Abstractor_Documents/" + filename);
+                        request.Credentials = new NetworkCredential(@"" + Ftp_User_Name + "", Ftp_Password);
+                        request.Method = WebRequestMethods.Ftp.DownloadFile;
+                        Stream contentStream = request.GetResponse().GetResponseStream();
+                        Attachment attachment = new Attachment(contentStream, filename);
+                        mailMessage.Attachments.Add(attachment);
+                    }
 
-                mailMessage.To.Add(Email);
+                    mailMessage.To.Add(Email);
 
-                if (Emailid == "vendors@drnds.com")
-                {
-                    mailMessage.CC.Add("vendors@drnds.com");
-                }
-                else if (Emailid == "neworders@abstractshop.com")
-                {
-                    mailMessage.CC.Add("neworders@abstractshop.com");
-                }
+                    if (Emailid == "vendors@drnds.com")
+                    {
+                        mailMessage.CC.Add("vendors@drnds.com");
+                    }
+                    else if (Emailid == "neworders@abstractshop.com")
+                    {
+                        mailMessage.CC.Add("neworders@abstractshop.com");
+                    }
 
-                
 
-                if (Alternative_Email != "")
-                {
-                    mailMessage.To.Add(Alternative_Email);
-                }
 
-                txt_Subject.Text = "New Search Request - " + Client_Order_no + "-" + Report_Name.ToString();
-                mailMessage.Subject = txt_Subject.Text;
-                StringBuilder sb = new StringBuilder();
-                sb.Append("Subject: " + txt_Subject.ToString() + "" + Environment.NewLine);
-                mailMessage.Body = body;
-                mailMessage.IsBodyHtml = true;
+                    if (Alternative_Email != "")
+                    {
+                        mailMessage.To.Add(Alternative_Email);
+                    }
 
-                SmtpClient smtp = new SmtpClient();
+                    txt_Subject.Text = "New Search Request - " + Client_Order_no + "-" + Report_Name.ToString();
+                    mailMessage.Subject = txt_Subject.Text;
+                    StringBuilder sb = new StringBuilder();
+                    sb.Append("Subject: " + txt_Subject.ToString() + "" + Environment.NewLine);
+                    mailMessage.Body = body;
+                    mailMessage.IsBodyHtml = true;
 
-                if (Emailid == "vendors@drnds.com")
-                {
-                   
-                    await Get_Email_Details("vendors@drnds.com");
-                 
+                    SmtpClient smtp = new SmtpClient();
+
+                    if (Emailid == "vendors@drnds.com")
+                    {
+
+                        await Get_Email_Details("vendors@drnds.com");
+
+                        if (dt_Email_Details.Rows.Count > 0)
+                        {
+                            smtp.Host = dt_Email_Details.Rows[0]["Outgoing_Mail_Server"].ToString();
+                            NetworkCredential NetworkCred = new NetworkCredential(dt_Email_Details.Rows[0]["User_Name"].ToString(), dt_Email_Details.Rows[0]["Password"].ToString());
+                            smtp.EnableSsl = false;
+                            smtp.Credentials = NetworkCred;
+                            smtp.Port = int.Parse(dt_Email_Details.Rows[0]["Outgoing_Server_Port"].ToString());
+
+                        }
+                    }
+                    else if (Emailid == "neworders@abstractshop.com")
+                    {
+
+
+                        await Get_Email_Details("neworders@abstractshop.com");
+
+                        if (dt_Email_Details.Rows.Count > 0)
+                        {
+                            smtp.Host = dt_Email_Details.Rows[0]["Outgoing_Mail_Server"].ToString();
+                            NetworkCredential NetworkCred1 = new NetworkCredential(dt_Email_Details.Rows[0]["User_Name"].ToString(), dt_Email_Details.Rows[0]["Password"].ToString());
+                            smtp.EnableSsl = false;
+                            smtp.Credentials = NetworkCred1;
+                            smtp.Port = int.Parse(dt_Email_Details.Rows[0]["Outgoing_Server_Port"].ToString());
+
+                        }
+
+
+                        //smtp.Host = "smtpout.secureserver.net";
+                        //NetworkCredential NetworkCred1 = new NetworkCredential("neworders@abstractshop.com", "DinNavABS");
+                        //smtp.UseDefaultCredentials = true;
+                        //smtp.Credentials = NetworkCred1;
+                        //smtp.Port = 80;
+                    }
                     if (dt_Email_Details.Rows.Count > 0)
-                    {                      
-                        smtp.Host = dt_Email_Details.Rows[0]["Outgoing_Mail_Server"].ToString(); 
-                        NetworkCredential NetworkCred = new NetworkCredential(dt_Email_Details.Rows[0]["User_Name"].ToString(), dt_Email_Details.Rows[0]["Password"].ToString());
-                        smtp.EnableSsl = false;
-                        smtp.Credentials = NetworkCred;
-                        smtp.Port = int.Parse(dt_Email_Details.Rows[0]["Outgoing_Server_Port"].ToString());
-
-                    }
-                }
-                else if (Emailid == "neworders@abstractshop.com")
-                {
-
-
-                    await Get_Email_Details("neworders@abstractshop.com");
-
-                    if (dt_Email_Details.Rows.Count > 0)
                     {
-                        smtp.Host = dt_Email_Details.Rows[0]["Outgoing_Mail_Server"].ToString();
-                        NetworkCredential NetworkCred1 = new NetworkCredential(dt_Email_Details.Rows[0]["User_Name"].ToString(), dt_Email_Details.Rows[0]["Password"].ToString());
-                        smtp.EnableSsl = false;
-                        smtp.Credentials = NetworkCred1;
-                        smtp.Port = int.Parse(dt_Email_Details.Rows[0]["Outgoing_Server_Port"].ToString());
+                        Hashtable ht_GetMax_Ab_Order_EmailNum = new Hashtable();
+                        DataTable dt_GetMax_Ab_Order_EmailNum = new DataTable();
 
-                    }
+                        ht_GetMax_Ab_Order_EmailNum.Add("@Trans", "GET_MAX_AD_ORDER_EMAIL_ID");
+                        ht_GetMax_Ab_Order_EmailNum.Add("@Order_Id", Order_Id);
+                        dt_GetMax_Ab_Order_EmailNum = dataaccess.ExecuteSP("Sp_Abstractor_Order_Email_Attachments", ht_GetMax_Ab_Order_EmailNum);
 
+                        if (dt_GetMax_Ab_Order_EmailNum.Rows.Count > 0)
+                        {
+                            Ab_Order_Email_Number = int.Parse(dt_GetMax_Ab_Order_EmailNum.Rows[0]["Ab_Order_Email_Number"].ToString());
+                        }
 
-                    //smtp.Host = "smtpout.secureserver.net";
-                    //NetworkCredential NetworkCred1 = new NetworkCredential("neworders@abstractshop.com", "DinNavABS");
-                    //smtp.UseDefaultCredentials = true;
-                    //smtp.Credentials = NetworkCred1;
-                    //smtp.Port = 80;
-                }
-                if (dt_Email_Details.Rows.Count > 0)
-                {
-                    Hashtable ht_GetMax_Ab_Order_EmailNum = new Hashtable();
-                    DataTable dt_GetMax_Ab_Order_EmailNum = new DataTable();
+                        Hashtable ht_Insert = new Hashtable();
+                        DataTable dt_Insert = new DataTable();
+                        ht_Insert.Add("@Trans", "INSERT");
+                        ht_Insert.Add("@Ab_Order_Email_Number", Ab_Order_Email_Number);
+                        ht_Insert.Add("@Order_Id", Order_Id);
+                        ht_Insert.Add("@Abstractor_Id", abstarctor_id);
+                        ht_Insert.Add("@To", Email);
+                        ht_Insert.Add("@From", Emailid);
+                        ht_Insert.Add("@Cc", Emailid);
+                        ht_Insert.Add("@Subject", txt_Subject.Text);
+                        ht_Insert.Add("@Message", body.ToString());
+                        ht_Insert.Add("@Send_By", User_Id);
+                        ht_Insert.Add("@status", "True");
+                        dt_Insert = dataaccess.ExecuteSP("Sp_Abstractor_Order_Email_Details", ht_Insert);
 
-                    ht_GetMax_Ab_Order_EmailNum.Add("@Trans", "GET_MAX_AD_ORDER_EMAIL_ID");
-                    ht_GetMax_Ab_Order_EmailNum.Add("@Order_Id", Order_Id);
-                    dt_GetMax_Ab_Order_EmailNum = dataaccess.ExecuteSP("Sp_Abstractor_Order_Email_Attachments", ht_GetMax_Ab_Order_EmailNum);
-
-                    if (dt_GetMax_Ab_Order_EmailNum.Rows.Count > 0)
-                    {
-                        Ab_Order_Email_Number = int.Parse(dt_GetMax_Ab_Order_EmailNum.Rows[0]["Ab_Order_Email_Number"].ToString());
-                    }
-
-                    Hashtable ht_Insert = new Hashtable();
-                    DataTable dt_Insert = new DataTable();
-                    ht_Insert.Add("@Trans", "INSERT");
-                    ht_Insert.Add("@Ab_Order_Email_Number", Ab_Order_Email_Number);
-                    ht_Insert.Add("@Order_Id", Order_Id);
-                    ht_Insert.Add("@Abstractor_Id", abstarctor_id);
-                    ht_Insert.Add("@To", Email);
-                    ht_Insert.Add("@From", Emailid);
-                    ht_Insert.Add("@Cc", Emailid);
-                    ht_Insert.Add("@Subject", txt_Subject.Text);
-                    ht_Insert.Add("@Message", body.ToString());
-                    ht_Insert.Add("@Send_By", User_Id);
-                    ht_Insert.Add("@status", "True");
-                    dt_Insert = dataaccess.ExecuteSP("Sp_Abstractor_Order_Email_Details", ht_Insert);
-                    
-
-                    try
-                    {
                         smtp.Send(mailMessage);
                         smtp.Dispose();
                         Assign_Orders_ToAbstractor();
                         Update_Abstractor_Order_Status();
+
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        MessageBox.Show("Problem while sending email");
-                        
+                        MessageBox.Show("Smtp Credientials Were Not Added To Send an  Email ");
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Smtp Credientials Were Not Added To Send an  Email ");
-                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
         public void Assign_Orders_ToAbstractor()
@@ -598,17 +617,15 @@ namespace Ordermanagement_01.Abstractor
             htprogress.Add("@Modified_Date", date);
             dtprogress = dataaccess.ExecuteSP("Sp_Order", htprogress);
 
-
-
         }
 
         private async Task<DataTable> Get_Email_Details(string Email)
         {
 
             // Call api
-           dt_Email_Details.Clear();
+            dt_Email_Details.Clear();
 
-             var dictionary = new Dictionary<string, object>()
+            var dictionary = new Dictionary<string, object>()
                                             {
                                                { "@Trans", "SELECT_BY_EMAIL"},
                                                { "@Email_Address",Email},
@@ -623,23 +640,23 @@ namespace Ordermanagement_01.Abstractor
                     {
                         var result2 = await response2.Content.ReadAsStringAsync();
                         dt_Email_Details = JsonConvert.DeserializeObject<DataTable>(result2);
-                     
+
 
 
                     }
 
-                 
+
                 }
             }
 
             // get data
-         
+
             return dt_Email_Details;
         }
 
 
 
-       
+
         public void Update_Abstractor_Order_Status()
         {
 
@@ -668,10 +685,6 @@ namespace Ordermanagement_01.Abstractor
                 htinsertrec.Add("@status", "True");
                 dtinsertrec = dataaccess.ExecuteSP("Sp_Abstractor_Order_Status", htinsertrec);
             }
-
-
-
-
-        }      
+        }
     }
 }

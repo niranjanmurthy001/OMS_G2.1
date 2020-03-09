@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Employee_Order_Entry));
             this.lbl_Order_Task_Type = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.timer1 = new System.Windows.Forms.Timer();
+            this.timer2 = new System.Windows.Forms.Timer();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbl_Property_Address = new System.Windows.Forms.TextBox();
@@ -71,6 +70,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.BtnInstruction = new System.Windows.Forms.Button();
             this.lbl_Task_Type = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -122,7 +122,6 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.ddl_Tax_Task = new System.Windows.Forms.ComboBox();
             this.lbl_tax = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
             this.ddl_order_Task = new System.Windows.Forms.ComboBox();
             this.txt_Task = new System.Windows.Forms.TextBox();
             this.lbl_Next_Task = new System.Windows.Forms.Label();
@@ -132,6 +131,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txt_Delay_Text = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
             this.lbl_mandnoofdoc = new System.Windows.Forms.Label();
             this.txt_No_of_documents = new System.Windows.Forms.TextBox();
             this.lbl_No_of_Documents = new System.Windows.Forms.Label();
@@ -169,7 +169,7 @@
             this.ddl_Order_Source = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.BtnInstruction = new System.Windows.Forms.Button();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
             this.tableLayoutPanel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_Comments)).BeginInit();
@@ -620,13 +620,28 @@
             this.panel2.Size = new System.Drawing.Size(1258, 35);
             this.panel2.TabIndex = 3;
             // 
+            // BtnInstruction
+            // 
+            this.BtnInstruction.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnInstruction.BackgroundImage")));
+            this.BtnInstruction.FlatAppearance.BorderSize = 0;
+            this.BtnInstruction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnInstruction.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold);
+            this.BtnInstruction.ForeColor = System.Drawing.Color.White;
+            this.BtnInstruction.Location = new System.Drawing.Point(1018, -3);
+            this.BtnInstruction.Name = "BtnInstruction";
+            this.BtnInstruction.Size = new System.Drawing.Size(130, 38);
+            this.BtnInstruction.TabIndex = 75;
+            this.BtnInstruction.Text = "Order Instruction";
+            this.BtnInstruction.UseVisualStyleBackColor = true;
+            this.BtnInstruction.Click += new System.EventHandler(this.button2_Click);
+            // 
             // lbl_Task_Type
             // 
             this.lbl_Task_Type.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Task_Type.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lbl_Task_Type.Location = new System.Drawing.Point(150, 3);
+            this.lbl_Task_Type.Location = new System.Drawing.Point(150, 2);
             this.lbl_Task_Type.Name = "lbl_Task_Type";
-            this.lbl_Task_Type.Size = new System.Drawing.Size(216, 43);
+            this.lbl_Task_Type.Size = new System.Drawing.Size(502, 43);
             this.lbl_Task_Type.TabIndex = 74;
             this.lbl_Task_Type.Text = "TASK TYPE:";
             this.lbl_Task_Type.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -644,7 +659,7 @@
             // 
             this.label1.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label1.Location = new System.Drawing.Point(-2, 1);
+            this.label1.Location = new System.Drawing.Point(-2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(154, 44);
             this.label1.TabIndex = 1;
@@ -1249,7 +1264,6 @@
             // 
             this.panel8.Controls.Add(this.ddl_Tax_Task);
             this.panel8.Controls.Add(this.lbl_tax);
-            this.panel8.Controls.Add(this.label45);
             this.panel8.Controls.Add(this.ddl_order_Task);
             this.panel8.Controls.Add(this.txt_Task);
             this.panel8.Controls.Add(this.lbl_Next_Task);
@@ -1266,9 +1280,9 @@
             this.ddl_Tax_Task.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_Tax_Task.Font = new System.Drawing.Font("Ebrima", 8.25F);
             this.ddl_Tax_Task.FormattingEnabled = true;
-            this.ddl_Tax_Task.Location = new System.Drawing.Point(753, 5);
+            this.ddl_Tax_Task.Location = new System.Drawing.Point(755, 4);
             this.ddl_Tax_Task.Name = "ddl_Tax_Task";
-            this.ddl_Tax_Task.Size = new System.Drawing.Size(221, 25);
+            this.ddl_Tax_Task.Size = new System.Drawing.Size(208, 25);
             this.ddl_Tax_Task.TabIndex = 207;
             this.ddl_Tax_Task.Visible = false;
             // 
@@ -1276,23 +1290,12 @@
             // 
             this.lbl_tax.AutoSize = true;
             this.lbl_tax.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tax.Location = new System.Drawing.Point(655, 7);
+            this.lbl_tax.Location = new System.Drawing.Point(657, 6);
             this.lbl_tax.Name = "lbl_tax";
             this.lbl_tax.Size = new System.Drawing.Size(98, 20);
             this.lbl_tax.TabIndex = 206;
             this.lbl_tax.Text = "Tax Certificate :";
             this.lbl_tax.Visible = false;
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.ForeColor = System.Drawing.Color.Red;
-            this.label45.Location = new System.Drawing.Point(1049, 2);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(200, 19);
-            this.label45.TabIndex = 205;
-            this.label45.Text = "(Fields with * Mark are Mandatory)";
             // 
             // ddl_order_Task
             // 
@@ -1320,7 +1323,7 @@
             // 
             this.lbl_Next_Task.AutoSize = true;
             this.lbl_Next_Task.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Next_Task.Location = new System.Drawing.Point(353, 6);
+            this.lbl_Next_Task.Location = new System.Drawing.Point(350, 6);
             this.lbl_Next_Task.Name = "lbl_Next_Task";
             this.lbl_Next_Task.Size = new System.Drawing.Size(73, 20);
             this.lbl_Next_Task.TabIndex = 70;
@@ -1361,6 +1364,7 @@
             // 
             this.groupBox2.Controls.Add(this.txt_Delay_Text);
             this.groupBox2.Controls.Add(this.label33);
+            this.groupBox2.Controls.Add(this.label45);
             this.groupBox2.Controls.Add(this.lbl_mandnoofdoc);
             this.groupBox2.Controls.Add(this.txt_No_of_documents);
             this.groupBox2.Controls.Add(this.lbl_No_of_Documents);
@@ -1425,6 +1429,17 @@
             this.label33.Size = new System.Drawing.Size(114, 20);
             this.label33.TabIndex = 96;
             this.label33.Text = "Delay Comments :";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label45.ForeColor = System.Drawing.Color.Red;
+            this.label45.Location = new System.Drawing.Point(1049, 136);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(200, 19);
+            this.label45.TabIndex = 205;
+            this.label45.Text = "(Fields with * Mark are Mandatory)";
             // 
             // lbl_mandnoofdoc
             // 
@@ -1815,20 +1830,9 @@
             this.label14.TabIndex = 20;
             this.label14.Text = "Effective Date :";
             // 
-            // BtnInstruction
+            // defaultLookAndFeel1
             // 
-            this.BtnInstruction.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnInstruction.BackgroundImage")));
-            this.BtnInstruction.FlatAppearance.BorderSize = 0;
-            this.BtnInstruction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnInstruction.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold);
-            this.BtnInstruction.ForeColor = System.Drawing.Color.White;
-            this.BtnInstruction.Location = new System.Drawing.Point(1018, -3);
-            this.BtnInstruction.Name = "BtnInstruction";
-            this.BtnInstruction.Size = new System.Drawing.Size(130, 38);
-            this.BtnInstruction.TabIndex = 75;
-            this.BtnInstruction.Text = "Order Instruction";
-            this.BtnInstruction.UseVisualStyleBackColor = true;
-            this.BtnInstruction.Click += new System.EventHandler(this.button2_Click);
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013";
             // 
             // Employee_Order_Entry
             // 
@@ -2013,5 +2017,6 @@
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Button btn_TypingEntry;
         private System.Windows.Forms.Button BtnInstruction;
+        private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
     }
 }

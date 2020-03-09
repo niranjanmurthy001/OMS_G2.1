@@ -140,7 +140,7 @@
             // 
             this.barDockControl1.CausesValidation = false;
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControl1.Location = new System.Drawing.Point(0, 28);
+            this.barDockControl1.Location = new System.Drawing.Point(0, 31);
             this.barDockControl1.Manager = null;
             this.barDockControl1.Size = new System.Drawing.Size(640, 0);
             // 
@@ -171,10 +171,6 @@
             // 
             this.switchToPrintLayoutViewItem1.Id = 130;
             this.switchToPrintLayoutViewItem1.Name = "switchToPrintLayoutViewItem1";
-            // 
-            // defaultLookAndFeel1
-            // 
-            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013";
             // 
             // showEditStyleFormItem1
             // 
@@ -287,7 +283,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(640, 28);
+            this.barDockControlTop.Size = new System.Drawing.Size(640, 31);
             // 
             // barDockControlBottom
             // 
@@ -301,17 +297,17 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 28);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 31);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 510);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 507);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(640, 28);
+            this.barDockControlRight.Location = new System.Drawing.Point(640, 31);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 510);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 507);
             // 
             // undoItem1
             // 
@@ -641,7 +637,7 @@
             this.panelControl1.Controls.Add(this.buttonNext);
             this.panelControl1.Controls.Add(this.buttonFinish);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(3, 436);
+            this.panelControl1.Location = new System.Drawing.Point(3, 427);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(630, 36);
             this.panelControl1.TabIndex = 1;
@@ -888,9 +884,9 @@
             this.tabUs_DueDates,
             this.tabAlert,
             this.tabConfirmation});
-            this.tabPane.RegularSize = new System.Drawing.Size(630, 427);
+            this.tabPane.RegularSize = new System.Drawing.Size(630, 418);
             this.tabPane.SelectedPage = this.tabSpecial_Instructions;
-            this.tabPane.Size = new System.Drawing.Size(630, 427);
+            this.tabPane.Size = new System.Drawing.Size(630, 418);
             this.tabPane.TabIndex = 0;
             this.tabPane.Text = " ";
             this.tabPane.SelectedPageChanging += new DevExpress.XtraBars.Navigation.SelectedPageChangingEventHandler(this.tabPane_SelectedPageChanging);
@@ -902,12 +898,12 @@
             this.tableLayoutPanel1.Controls.Add(this.tabPane, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panelControl1, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 33);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 39);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 91.19171F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.80829F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(636, 475);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(636, 466);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // groupControl1
@@ -917,9 +913,9 @@
             this.groupControl1.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("groupControl1.CaptionImageOptions.Image")));
             this.groupControl1.Controls.Add(this.tableLayoutPanel1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(0, 28);
+            this.groupControl1.Location = new System.Drawing.Point(0, 31);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(640, 510);
+            this.groupControl1.Size = new System.Drawing.Size(640, 507);
             this.groupControl1.TabIndex = 18;
             this.groupControl1.Text = "Order Instructions";
             // 

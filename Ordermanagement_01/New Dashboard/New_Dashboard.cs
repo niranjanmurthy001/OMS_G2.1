@@ -1,34 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using DevExpress.XtraBars.Docking2010;
 using DevExpress.XtraEditors;
-using System.ComponentModel.DataAnnotations;
-using System.IO;
-using DevExpress.XtraLayout.Helpers;
-using DevExpress.XtraLayout;
-using System.Runtime.InteropServices;
-using System.Reflection;
-using System.Drawing.Text;
-using System.Windows.Media;
 using DevExpress.XtraEditors.Controls;
-using DevExpress.XtraEditors.Repository;
-using System.Net.Http;
-using Newtonsoft.Json;
-using Ordermanagement_01.Models.Dashboard;
-using System.Web.Script.Serialization;
-using DevExpress.XtraSplashScreen;
 using DevExpress.XtraGrid.Views.Grid;
-using Ordermanagement_01.Models;
-using DevExpress.XtraBars.Docking2010;
-using Ordermanagement_01.New_Dashboard.Orders;
+using DevExpress.XtraSplashScreen;
+using Newtonsoft.Json;
 using Ordermanagement_01.Masters;
+using Ordermanagement_01.Models;
+using Ordermanagement_01.Models.Dashboard;
+using Ordermanagement_01.New_Dashboard.Orders;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Drawing.Text;
+using System.Linq;
 using System.Net;
+using System.Net.Http;
+using System.Text;
+using System.Windows.Forms;
 
 namespace Ordermanagement_01.New_Dashboard
 {
@@ -42,6 +30,8 @@ namespace Ordermanagement_01.New_Dashboard
         private int Work_Type_Id;
 
         List<int> Selected_Row_List;
+        private List<ColumnData> columnList;
+
         public New_Dashboard(int USER_ID, int USER_ROLE_ID)
         {
             SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
@@ -50,6 +40,7 @@ namespace Ordermanagement_01.New_Dashboard
             User_Id = USER_ID;
             User_Role_Id = USER_ROLE_ID;
             Selected_Row_List = new List<int>();
+            //columnList.ForEach(c => gridViewOrders.Columns[c.FieldName].VisibleIndex = c.VisibleIndex);
             SplashScreenManager.CloseForm(false);
         }
 
@@ -73,8 +64,10 @@ namespace Ordermanagement_01.New_Dashboard
                     list.Add("@User_Id", User_Id);
                     var serializedUser = JsonConvert.SerializeObject(list);
                     var content = new StringContent(serializedUser, Encoding.UTF8, "application/json");
+
                     // Token Header Details
                     Tuple<bool, string> Token_Header = ApiToken.Token_HeaderDetails(Client);
+
                     if (Token_Header.Item1 == true)
                     {
                         var result = await Client.PostAsync(Base_Url.Url + "/ProcessingOrders/Processing_Order_Count", content);
@@ -127,7 +120,7 @@ namespace Ordermanagement_01.New_Dashboard
                 XtraMessageBox.Show(ex.ToString());
                 XtraMessageBox.Show("Error Occured Please Check With Administrator");
             }
-        
+
         }
         internal class Result_Data
         {
@@ -136,13 +129,18 @@ namespace Ordermanagement_01.New_Dashboard
             public string Super_Qc_Order_Count { get; set; }
             public string Test_Order_Count { get; set; }
             public string User_Id { get; set; }
+            public Nullable<int> All_Orders { get; set; }
             public Nullable<int> Search { get; set; }
+
             public Nullable<int> Search_Qc { get; set; }
             public Nullable<int> Typing { get; set; }
             public Nullable<int> Typing_Qc { get; set; }
             public Nullable<int> Final_Qc { get; set; }
             public Nullable<int> Exception { get; set; }
             public Nullable<int> Upload { get; set; }
+            public Nullable<int> Image_Request { get; set; }
+            public Nullable<int> DataDepth { get; set; }
+            public Nullable<int> TaxRequest { get; set; }
 
             public List<Models.Users> Users { get; set; }
             // public List<Models.Dashboard.Processing_Dashboard> Processing_Dashboard { get; set; }            
@@ -167,17 +165,28 @@ namespace Ordermanagement_01.New_Dashboard
         private void New_Dashboard_Load(object sender, EventArgs e)
         {
             SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
+
             Load_Order_Count();
+
             lbl_Order_Header.Text = "Live Orders Queue";
             Work_Type_Id = 1;
+            Bind_Gridview_Columns_Status();
             Bind_Order_Count_Work_Type_Wise(1);
-            Bind_Order_Detilas_Task_Wise(Tile_Search.Id,Work_Type_Id);
+            Tile_Live_All.Checked = true;
+
+           // Tile_Task.SelectedItem.Text = "All";
+            Bind_Order_Detilas_Task_Wise(Tile_Live_All.Id, Work_Type_Id,Tile_Live_All);
             //  Tile_Task.SelectedItem.Id = 2;
             // Tile_Search.Checked = true;
             navigationFrame.SelectedPageIndex = 0;
             Tile_Item_Live.Checked = true;
             this.WindowState = FormWindowState.Maximized;
+            columnList = new List<ColumnData>();
             SplashScreenManager.CloseForm(false);
+
+
+
+
             //try
             //{
 
@@ -248,7 +257,7 @@ namespace Ordermanagement_01.New_Dashboard
             RepositoryItemButtonEdit1.Buttons[0].Kind = ButtonPredefines.Glyph;
             RepositoryItemButtonEdit1.Buttons[0].Caption = "Remove";
 
-            gridView2.Columns.Add(column);
+            gridViewOrders.Columns.Add(column);
         }
 
         private void tileItem26_ItemClick(object sender, TileItemEventArgs e)
@@ -317,6 +326,28 @@ namespace Ordermanagement_01.New_Dashboard
         }
 
         #endregion
+
+        private void Check_Task_Items(TileItem Tile_Item)
+        {
+
+
+
+                  for (int i = 0; i < Tile_Task.Groups.Count; i++)
+                  {
+
+                      for (int j = 0; j < Tile_Task.Groups[i].Items.Count; j++)
+                      {
+                          Tile_Task.Groups[i].Items[j].Checked = false;
+
+                      }
+
+
+                  }
+
+            Tile_Item.Checked = true;
+
+
+        }
 
         #region Check_SubItem_Status
 
@@ -416,7 +447,7 @@ namespace Ordermanagement_01.New_Dashboard
 
         private void Tile_Item_Test_ItemClick(object sender, TileItemEventArgs e)
         {
-            SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
+            SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
             Check_Item_Status("Test");
             lbl_Order_Header.Text = "Test Orders Queue";
             Work_Type_Id = 4;
@@ -484,6 +515,7 @@ namespace Ordermanagement_01.New_Dashboard
                             {
                                 foreach (var Result in Res_Data)
                                 {
+                                    Tile_Live_All.Frames[0].Elements[1].Text = Result.All_Orders.ToString();
                                     Tile_Search.Frames[0].Elements[1].Text = Result.Search.ToString();
                                     Tile_Search_Qc.Frames[0].Elements[1].Text = Result.Search_Qc.ToString();
                                     Tile_Typing.Frames[0].Elements[1].Text = Result.Typing.ToString();
@@ -491,11 +523,16 @@ namespace Ordermanagement_01.New_Dashboard
                                     Tile_Final_Qc.Frames[0].Elements[1].Text = Result.Final_Qc.ToString();
                                     Tile_Exception.Frames[0].Elements[1].Text = Result.Exception.ToString();
                                     Tile_Upload.Frames[0].Elements[1].Text = Result.Upload.ToString();
+                                    Title_Image_Req.Frames[0].Elements[1].Text = Result.Image_Request.ToString();
+                                    Title_Data_Depth.Frames[0].Elements[1].Text = Result.DataDepth.ToString();
+                                    Title_Tax_req.Frames[0].Elements[1].Text = Result.TaxRequest.ToString();
+
+
                                 }
                             }
                             else
                             {
-
+                                Tile_Live_All.Frames[0].Elements[1].Text = "0";
                                 Tile_Search.Frames[0].Elements[1].Text = "0";
                                 Tile_Search_Qc.Frames[0].Elements[1].Text = "0";
                                 Tile_Typing.Frames[0].Elements[1].Text = "0";
@@ -503,6 +540,9 @@ namespace Ordermanagement_01.New_Dashboard
                                 Tile_Final_Qc.Frames[0].Elements[1].Text = "0";
                                 Tile_Exception.Frames[0].Elements[1].Text = "0";
                                 Tile_Upload.Frames[0].Elements[1].Text = "0";
+                                Title_Image_Req.Frames[0].Elements[1].Text = "0";
+                                Title_Data_Depth.Frames[0].Elements[1].Text = "0";
+                                Title_Tax_req.Frames[0].Elements[1].Text = "0";
                             }
                         }
                     }
@@ -526,8 +566,8 @@ namespace Ordermanagement_01.New_Dashboard
             {
 
                 SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
-                Load_Socket_Details();
-                Bind_Order_Detilas_Task_Wise(Tile_Search.Id,Work_Type_Id);
+                // Load_Socket_Details();
+                Bind_Order_Detilas_Task_Wise(Tile_Search.Id, Work_Type_Id,e.Item);
 
             }
             catch (Exception ex)
@@ -546,8 +586,8 @@ namespace Ordermanagement_01.New_Dashboard
             try
             {
                 SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
-                Load_Socket_Details();
-                Bind_Order_Detilas_Task_Wise(Tile_Search_Qc.Id,Work_Type_Id);
+                //Load_Socket_Details();
+                Bind_Order_Detilas_Task_Wise(Tile_Search_Qc.Id, Work_Type_Id,e.Item);
             }
             catch (Exception ex)
             {
@@ -565,8 +605,8 @@ namespace Ordermanagement_01.New_Dashboard
             try
             {
                 SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
-                Load_Socket_Details();
-                Bind_Order_Detilas_Task_Wise(Tile_Typing.Id,Work_Type_Id);
+                // Load_Socket_Details();
+                Bind_Order_Detilas_Task_Wise(Tile_Typing.Id, Work_Type_Id, e.Item);
 
             }
             catch (Exception ex)
@@ -585,8 +625,8 @@ namespace Ordermanagement_01.New_Dashboard
             try
             {
                 SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
-                Load_Socket_Details();
-                Bind_Order_Detilas_Task_Wise(Tile_Typing_Qc.Id,Work_Type_Id);
+                // Load_Socket_Details();
+                Bind_Order_Detilas_Task_Wise(Tile_Typing_Qc.Id, Work_Type_Id, e.Item);
             }
             catch (Exception ex)
             {
@@ -603,8 +643,8 @@ namespace Ordermanagement_01.New_Dashboard
             try
             {
                 SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
-                Load_Socket_Details();
-                Bind_Order_Detilas_Task_Wise(Tile_Final_Qc.Id,Work_Type_Id);
+                // Load_Socket_Details();
+                Bind_Order_Detilas_Task_Wise(Tile_Final_Qc.Id, Work_Type_Id, e.Item);
             }
             catch (Exception ex)
             {
@@ -622,8 +662,8 @@ namespace Ordermanagement_01.New_Dashboard
             try
             {
                 SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
-                Load_Socket_Details();
-                Bind_Order_Detilas_Task_Wise(Tile_Exception.Id,Work_Type_Id);
+                //Load_Socket_Details();
+                Bind_Order_Detilas_Task_Wise(Tile_Exception.Id, Work_Type_Id, e.Item);
 
             }
             catch (Exception ex)
@@ -662,17 +702,104 @@ namespace Ordermanagement_01.New_Dashboard
                 }
             }
         }
-        private void gridView2_ColumnPositionChanged(object sender, EventArgs e)
+        private async void gridView2_ColumnPositionChanged(object sender, EventArgs e)
         {
-            gridView2.BestFitColumns(true);
+            DataTable dtbulk = new DataTable();
+            try
+            {
+                SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
+                dtbulk.Clear();
+                dtbulk.Columns.AddRange(new DataColumn[4]
+                    {
+                        new DataColumn("User_ID",typeof(int)),
+                        new DataColumn("Column_Name",typeof(string)),
+                        new DataColumn("Column_Visible_Index",typeof(int)),
+                        new DataColumn("Column_Visible_Status",typeof(bool))
+                    });
+
+                gridViewOrders.Columns.ToList().ForEach(col => dtbulk.Rows.Add(User_Id, col.FieldName, col.VisibleIndex, col.Visible));
+
+                SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
+                var data = new StringContent(JsonConvert.SerializeObject(dtbulk), Encoding.UTF8, "application/json");
+                using (var httpClient = new HttpClient())
+                {
+                    var response = await httpClient.PostAsync(Base_Url.Url + "/ProcessingOrders/Insert", data);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        if (response.StatusCode == HttpStatusCode.OK)
+                        {
+                            var result = await response.Content.ReadAsStringAsync();
+                            SplashScreenManager.CloseForm(false);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                SplashScreenManager.CloseForm(false);
+                throw ex;
+            }
+            finally
+            {
+
+                SplashScreenManager.CloseForm(false);
+            }
+            gridViewOrders.BestFitColumns(true);
         }
 
+        private async void Bind_Gridview_Columns_Status()
+        {
+            try
+            {
+                SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
+                using (var Client = new HttpClient())
+                {
+                    Dictionary<string, object> dist_Column_List = new Dictionary<string, object>();
+                    if (Work_Type_Id == 1)
+                    {
+                        dist_Column_List.Add("@Trans", "SELECT");
+                        dist_Column_List.Add("@User_Id", User_Id);
+                        var Serialised_Data = JsonConvert.SerializeObject(dist_Column_List);
+                        var content = new StringContent(Serialised_Data, Encoding.UTF8, "application/json");
+                        var result = await Client.PostAsync(Base_Url.Url + "/ProcessingOrders/Get_Column_Data", content);
+                        if (result.IsSuccessStatusCode)
+                        {
+                            string DataJsonString = await result.Content.ReadAsStringAsync();
+                            if (DataJsonString != null)
+                            {
+                                DataTable dt = JsonConvert.DeserializeObject<DataTable>(DataJsonString);
+                                dt.AsEnumerable().Select(row => new ColumnData()
+                                {
+                                    FieldName = row["Column_Name"].ToString(),
+                                    VisibleIndex = Convert.ToInt32(row["Column_Visible_Index"]),
+                                    Visible = Convert.ToBoolean(row["Column_Visible_Status"])
+                                }).ToList()?.ForEach(col =>
+                                {
+                                    gridViewOrders.Columns[col.FieldName].VisibleIndex = col.VisibleIndex;
+                                    gridViewOrders.Columns[col.FieldName].Visible = col.Visible;
+                                });
+                                SplashScreenManager.CloseForm(false);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                SplashScreenManager.CloseForm(false);
+                throw ex;
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm(false);
+            }
+        }
         private void tile_Item_Judgement_ItemClick(object sender, TileItemEventArgs e)
         {
             try
             {
                 SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
-                Bind_Order_Detilas_Task_Wise(27,Work_Type_Id);
+                Bind_Order_Detilas_Task_Wise(27, Work_Type_Id, e.Item);
             }
             catch (Exception ex)
             {
@@ -704,7 +831,7 @@ namespace Ordermanagement_01.New_Dashboard
 
                 if (Tile_Item_Live.Checked == true)
                 {
-                    Order_List = Get_Order_List(gridView2);
+                    Order_List = Get_Order_List(gridViewOrders);
                 }
                 else if (Tile_Item_Rework.Checked == true)
                 {
@@ -779,7 +906,7 @@ namespace Ordermanagement_01.New_Dashboard
 
                     foreach (WindowsUIButton button in Window_Ui_Btn_View_List.Buttons)
                     {
-                                button.Checked = false;
+                        button.Checked = false;
                     }
                 }
                 else
@@ -850,7 +977,7 @@ namespace Ordermanagement_01.New_Dashboard
 
                         if (Work_Type_Id == 1 || Work_Type_Id == 2)
                         {
-                            if (orderStatusId != 12 && orderStatusId != 22 && orderStatusId != 24)
+                            if (orderStatusId != 12 && orderStatusId != 22 && orderStatusId != 24 && orderStatusId != 27 && orderStatusId != 28 && orderStatusId!=29 )
                             {
                                 if (!ValidateCheckList(dtCheckList))
                                 {
@@ -1147,17 +1274,21 @@ namespace Ordermanagement_01.New_Dashboard
             return List_Order_Details;
         }
         #endregion
-        private async void Bind_Order_Detilas_Task_Wise(int Order_Task_Id,int Work_Type_Id)
+        private async void Bind_Order_Detilas_Task_Wise(int Order_Task_Id, int Work_Type_Id,TileItem Tile_Item)
         {
 
             try
             {
+                Check_Task_Items(Tile_Item);
 
                 using (var client = new HttpClient())
                 {
 
                     Dictionary<string, object> dict_list = new Dictionary<string, object>();
                     dict_list.Add("@Trans", "SELECT_ORDERS_TASK_WISE");
+
+
+
                     if (User_Role_Id == 2 || User_Role_Id == 3)
                     {
 
@@ -1168,6 +1299,21 @@ namespace Ordermanagement_01.New_Dashboard
 
                         dict_list.Add("@User_Wise", "All");
                     }
+
+                    if (Tile_Live_All.Checked == true)
+                    {
+                        dict_list.Add("@Order_Task_Type", "All");
+
+
+                    }
+                    else
+                    {
+                        dict_list.Add("@Order_Task_Type", "");
+
+                    }
+
+                  
+
                     dict_list.Add("@User_Id", User_Id);
 
                     dict_list.Add("@Order_Task", Order_Task_Id);
@@ -1181,7 +1327,7 @@ namespace Ordermanagement_01.New_Dashboard
                         var result = await client.PostAsync(Base_Url.Url + "/ProcessingOrders/Processing_Orders", content);
 
 
-                        
+
 
                         if (result.IsSuccessStatusCode)
                         {
@@ -1213,7 +1359,7 @@ namespace Ordermanagement_01.New_Dashboard
 
                             }
                         }
-                        else if (result.StatusCode.ToString()== "Unauthorized")
+                        else if (result.StatusCode.ToString() == "Unauthorized")
                         {
 
                             ApiToken.Invlid_Token();
@@ -1253,9 +1399,9 @@ namespace Ordermanagement_01.New_Dashboard
 
             try
             {
-                Selected_Row_List = gridView2.GetSelectedRows().ToList();
+                Selected_Row_List = gridViewOrders.GetSelectedRows().ToList();
 
-                int Selected_Rows_Count = gridView2.SelectedRowsCount;
+                int Selected_Rows_Count = gridViewOrders.SelectedRowsCount;
 
 
                 if (Selected_Rows_Count > 1 || Selected_Rows_Count == 0)
@@ -1269,7 +1415,7 @@ namespace Ordermanagement_01.New_Dashboard
                     Window_Ui_Btn_View_List.Visible = true;
                 }
 
-                gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+                gridViewOrders.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             }
             catch (Exception EX)
             {
@@ -1282,9 +1428,9 @@ namespace Ordermanagement_01.New_Dashboard
         {
             try
             {
-                Selected_Row_List = gridView2.GetSelectedRows().ToList();
+                Selected_Row_List = gridViewOrders.GetSelectedRows().ToList();
 
-                int Selected_Rows_Count = gridView2.SelectedRowsCount;
+                int Selected_Rows_Count = gridViewOrders.SelectedRowsCount;
 
 
                 if (Selected_Rows_Count > 1 || Selected_Rows_Count == 0)
@@ -1316,7 +1462,7 @@ namespace Ordermanagement_01.New_Dashboard
 
         private void Window_Ui_Btn_View_List_Click(object sender, EventArgs e)
         {
-                
+
         }
 
         private void buttonRefresh_Click(object sender, EventArgs e)
@@ -1509,7 +1655,7 @@ namespace Ordermanagement_01.New_Dashboard
                 int Selected_Rows_Count = 0;
                 Selected_Row_List = gridView1.GetSelectedRows().ToList();
 
-                 Selected_Rows_Count = gridView1.SelectedRowsCount;
+                Selected_Rows_Count = gridView1.SelectedRowsCount;
 
 
                 if (Selected_Rows_Count > 1 || Selected_Rows_Count == 0)
@@ -1535,11 +1681,11 @@ namespace Ordermanagement_01.New_Dashboard
         {
             try
             {
-                int  Selected_Rows_Count = 0;
+                int Selected_Rows_Count = 0;
 
                 Selected_Row_List = gridView3.GetSelectedRows().ToList();
 
-                 Selected_Rows_Count = gridView3.SelectedRowsCount;
+                Selected_Rows_Count = gridView3.SelectedRowsCount;
 
 
                 if (Selected_Rows_Count > 1 || Selected_Rows_Count == 0)
@@ -1611,7 +1757,92 @@ namespace Ordermanagement_01.New_Dashboard
             {
                 SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
                 Load_Socket_Details();
-                Bind_Order_Detilas_Task_Wise(Tile_Upload.Id, Work_Type_Id);
+                Bind_Order_Detilas_Task_Wise(Tile_Upload.Id, Work_Type_Id,e.Item);
+
+            }
+            catch (Exception ex)
+            {
+                SplashScreenManager.CloseForm(false);
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm(false);
+            }
+        }
+
+        private void Title_Image_Req_ItemClick(object sender, TileItemEventArgs e)
+        {
+            try
+            {
+                SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
+                Load_Socket_Details();
+                Bind_Order_Detilas_Task_Wise(Title_Image_Req.Id, Work_Type_Id, e.Item);
+
+            }
+            catch (Exception ex)
+            {
+                SplashScreenManager.CloseForm(false);
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm(false);
+            }
+        }
+
+        private void Tile_Live_All_ItemClick(object sender, TileItemEventArgs e)
+        {
+            try
+            {
+                SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
+
+            
+           
+                Bind_Order_Detilas_Task_Wise(Tile_Live_All.Id, Work_Type_Id, e.Item);
+
+            }
+            catch (Exception ex)
+            {
+                SplashScreenManager.CloseForm(false);
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm(false);
+            }
+
+        }
+
+        private void Title_Data_Depth_ItemClick(object sender, TileItemEventArgs e)
+        {
+            try
+            {
+                SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
+                //Load_Socket_Details();
+                Bind_Order_Detilas_Task_Wise(Title_Data_Depth.Id, Work_Type_Id, e.Item);
+
+            }
+            catch (Exception ex)
+            {
+                SplashScreenManager.CloseForm(false);
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm(false);
+            }
+        }
+
+        private void Title_Tax_req_ItemClick(object sender, TileItemEventArgs e)
+        {
+            try
+            {
+                SplashScreenManager.ShowForm(this, typeof(Masters.WaitForm1), true, true, false);
+                //Load_Socket_Details();
+                Bind_Order_Detilas_Task_Wise(Title_Tax_req.Id, Work_Type_Id, e.Item);
+
+
 
             }
             catch (Exception ex)
@@ -1648,6 +1879,6 @@ namespace Ordermanagement_01.New_Dashboard
 
         }
 
-   
+
     }
 }

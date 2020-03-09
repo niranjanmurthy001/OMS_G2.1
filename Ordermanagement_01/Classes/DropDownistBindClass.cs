@@ -105,6 +105,23 @@ public class DropDownistBindClass
         ddlName.ValueMember = "Order_Status_ID";
 
     }
+
+    public void Bind_Order_Task_Document_Check_Type_Wise(ComboBox ddlName)
+    {
+        Hashtable htParam = new Hashtable();
+
+        htParam.Add("@Trans", "SELECT_ORDER_TASK_FOR_DOCUMENT_TYPE");
+        dt = da.ExecuteSP("usp_Docuement_Check_Type", htParam);
+        DataRow dr = dt.NewRow();
+        dr[0] = 0;
+        dr[1] = "SELECT";
+        dt.Rows.InsertAt(dr, 0);
+
+        ddlName.DataSource = dt;
+        ddlName.DisplayMember = "Order_Status";
+        ddlName.ValueMember = "Order_Status_ID";
+
+    }
     public void Bind_Order_Task_Client_Wise(ComboBox ddlName,int Client_Id,int Task_Stage_Id)
     {
         Hashtable htParam = new Hashtable();
@@ -3384,4 +3401,31 @@ public class DropDownistBindClass
 
         return dt;
     }
+
+
+    public void Bind_Document_Check_Type(DevExpress.XtraEditors.CheckedListBoxControl Chk)
+    {
+
+        IDictionary<string, object> dict_List = new Dictionary<string, object>();
+
+        dict_List.Add("@Trans", "SELECT_DOCUMENT_TYPE");
+
+        dt = da.ExecuteSPNew("usp_Docuement_Check_Type", dict_List);
+
+
+        if (dt.Rows.Count > 0)
+        {
+
+            Chk.DataSource = dt;
+            Chk.ValueMember = "Document_Check_Type_Id";
+            Chk.DisplayMember = "Document_Check_Type";
+                
+
+        }
+
+        
+
+    }
+
+    
 }
